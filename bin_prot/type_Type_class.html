@@ -1,0 +1,183 @@
+<html><head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Binable" rel="Chapter" href="Binable.html">
+<link title="Nat0" rel="Chapter" href="Nat0.html">
+<link title="Common" rel="Chapter" href="Common.html">
+<link title="Unsafe_common" rel="Chapter" href="Unsafe_common.html">
+<link title="Unsafe_write_c" rel="Chapter" href="Unsafe_write_c.html">
+<link title="Unsafe_read_c" rel="Chapter" href="Unsafe_read_c.html">
+<link title="Size" rel="Chapter" href="Size.html">
+<link title="Write_ml" rel="Chapter" href="Write_ml.html">
+<link title="Read_ml" rel="Chapter" href="Read_ml.html">
+<link title="Write_c" rel="Chapter" href="Write_c.html">
+<link title="Read_c" rel="Chapter" href="Read_c.html">
+<link title="Std" rel="Chapter" href="Std.html">
+<link title="Type_class" rel="Chapter" href="Type_class.html">
+<link title="Map_to_safe" rel="Chapter" href="Map_to_safe.html">
+<link title="Utils" rel="Chapter" href="Utils.html"><title>Type_class</title>
+</head>
+<body>
+<code class="code"><span class="keyword">sig</span><br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;writer&nbsp;=&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;size&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Size</span>.sizer;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;write&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Write_ml</span>.writer;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;unsafe_write&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Unsafe_write_c</span>.writer;<br>
+&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;reader&nbsp;=&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;read&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Read_ml</span>.reader;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;unsafe_read&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Unsafe_read_c</span>.reader;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;unsafe_vtag_read&nbsp;:&nbsp;(int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a)&nbsp;<span class="constructor">Unsafe_read_c</span>.reader;<br>
+&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;=&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;writer&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Type_class</span>.writer;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;reader&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Type_class</span>.reader;<br>
+&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;writer0&nbsp;=&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;reader0&nbsp;=&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;t0&nbsp;=&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">S1</span>&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">sig</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>b)&nbsp;writer&nbsp;=&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Type_class</span>.writer0&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>b&nbsp;<span class="constructor">Type_class</span>.writer0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>b)&nbsp;reader&nbsp;=&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Type_class</span>.reader0&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>b&nbsp;<span class="constructor">Type_class</span>.reader0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>b)&nbsp;t&nbsp;=&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Type_class</span>.t0&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>b&nbsp;<span class="constructor">Type_class</span>.t0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span><br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">S2</span>&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">sig</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>b,&nbsp;<span class="keywordsign">'</span>c)&nbsp;writer&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Type_class</span>.writer0&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(<span class="keywordsign">'</span>b,&nbsp;<span class="keywordsign">'</span>c)&nbsp;<span class="constructor">Type_class</span>.<span class="constructor">S1</span>.writer<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>b,&nbsp;<span class="keywordsign">'</span>c)&nbsp;reader&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Type_class</span>.reader0&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(<span class="keywordsign">'</span>b,&nbsp;<span class="keywordsign">'</span>c)&nbsp;<span class="constructor">Type_class</span>.<span class="constructor">S1</span>.reader<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>b,&nbsp;<span class="keywordsign">'</span>c)&nbsp;t&nbsp;=&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Type_class</span>.t0&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(<span class="keywordsign">'</span>b,&nbsp;<span class="keywordsign">'</span>c)&nbsp;<span class="constructor">Type_class</span>.<span class="constructor">S1</span>.t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span><br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">S3</span>&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">sig</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>b,&nbsp;<span class="keywordsign">'</span>c,&nbsp;<span class="keywordsign">'</span>d)&nbsp;writer&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Type_class</span>.writer0&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(<span class="keywordsign">'</span>b,&nbsp;<span class="keywordsign">'</span>c,&nbsp;<span class="keywordsign">'</span>d)&nbsp;<span class="constructor">Type_class</span>.<span class="constructor">S2</span>.writer<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>b,&nbsp;<span class="keywordsign">'</span>c,&nbsp;<span class="keywordsign">'</span>d)&nbsp;reader&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Type_class</span>.reader0&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(<span class="keywordsign">'</span>b,&nbsp;<span class="keywordsign">'</span>c,&nbsp;<span class="keywordsign">'</span>d)&nbsp;<span class="constructor">Type_class</span>.<span class="constructor">S2</span>.reader<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>b,&nbsp;<span class="keywordsign">'</span>c,&nbsp;<span class="keywordsign">'</span>d)&nbsp;t&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Type_class</span>.t0&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(<span class="keywordsign">'</span>b,&nbsp;<span class="keywordsign">'</span>c,&nbsp;<span class="keywordsign">'</span>d)&nbsp;<span class="constructor">Type_class</span>.<span class="constructor">S2</span>.t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span><br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_unit&nbsp;:&nbsp;unit&nbsp;<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_unit&nbsp;:&nbsp;unit&nbsp;<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_unit&nbsp;:&nbsp;unit&nbsp;<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_bool&nbsp;:&nbsp;bool&nbsp;<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_bool&nbsp;:&nbsp;bool&nbsp;<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_bool&nbsp;:&nbsp;bool&nbsp;<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_string&nbsp;:&nbsp;string&nbsp;<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_string&nbsp;:&nbsp;string&nbsp;<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_string&nbsp;:&nbsp;string&nbsp;<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_char&nbsp;:&nbsp;char&nbsp;<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_char&nbsp;:&nbsp;char&nbsp;<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_char&nbsp;:&nbsp;char&nbsp;<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_int&nbsp;:&nbsp;int&nbsp;<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_int&nbsp;:&nbsp;int&nbsp;<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_int&nbsp;:&nbsp;int&nbsp;<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_float&nbsp;:&nbsp;float&nbsp;<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_float&nbsp;:&nbsp;float&nbsp;<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_float&nbsp;:&nbsp;float&nbsp;<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_int32&nbsp;:&nbsp;int32&nbsp;<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_int32&nbsp;:&nbsp;int32&nbsp;<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_int32&nbsp;:&nbsp;int32&nbsp;<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_int64&nbsp;:&nbsp;int64&nbsp;<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_int64&nbsp;:&nbsp;int64&nbsp;<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_int64&nbsp;:&nbsp;int64&nbsp;<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_nativeint&nbsp;:&nbsp;nativeint&nbsp;<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_nativeint&nbsp;:&nbsp;nativeint&nbsp;<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_nativeint&nbsp;:&nbsp;nativeint&nbsp;<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_nat0&nbsp;:&nbsp;<span class="constructor">Nat0</span>.t&nbsp;<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_nat0&nbsp;:&nbsp;<span class="constructor">Nat0</span>.t&nbsp;<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_nat0&nbsp;:&nbsp;<span class="constructor">Nat0</span>.t&nbsp;<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_ref&nbsp;:&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Pervasives</span>.ref)&nbsp;<span class="constructor">Type_class</span>.<span class="constructor">S1</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_ref&nbsp;:&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Pervasives</span>.ref)&nbsp;<span class="constructor">Type_class</span>.<span class="constructor">S1</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_ref&nbsp;:&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Pervasives</span>.ref)&nbsp;<span class="constructor">Type_class</span>.<span class="constructor">S1</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_lazy&nbsp;:&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>a&nbsp;lazy_t)&nbsp;<span class="constructor">Type_class</span>.<span class="constructor">S1</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_lazy&nbsp;:&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>a&nbsp;lazy_t)&nbsp;<span class="constructor">Type_class</span>.<span class="constructor">S1</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_lazy&nbsp;:&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>a&nbsp;lazy_t)&nbsp;<span class="constructor">Type_class</span>.<span class="constructor">S1</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_option&nbsp;:&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>a&nbsp;option)&nbsp;<span class="constructor">Type_class</span>.<span class="constructor">S1</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_option&nbsp;:&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>a&nbsp;option)&nbsp;<span class="constructor">Type_class</span>.<span class="constructor">S1</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_option&nbsp;:&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>a&nbsp;option)&nbsp;<span class="constructor">Type_class</span>.<span class="constructor">S1</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_pair&nbsp;:&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>b,&nbsp;<span class="keywordsign">'</span>a&nbsp;*&nbsp;<span class="keywordsign">'</span>b)&nbsp;<span class="constructor">Type_class</span>.<span class="constructor">S2</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_pair&nbsp;:&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>b,&nbsp;<span class="keywordsign">'</span>a&nbsp;*&nbsp;<span class="keywordsign">'</span>b)&nbsp;<span class="constructor">Type_class</span>.<span class="constructor">S2</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_pair&nbsp;:&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>b,&nbsp;<span class="keywordsign">'</span>a&nbsp;*&nbsp;<span class="keywordsign">'</span>b)&nbsp;<span class="constructor">Type_class</span>.<span class="constructor">S2</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_triple&nbsp;:&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>b,&nbsp;<span class="keywordsign">'</span>c,&nbsp;<span class="keywordsign">'</span>a&nbsp;*&nbsp;<span class="keywordsign">'</span>b&nbsp;*&nbsp;<span class="keywordsign">'</span>c)&nbsp;<span class="constructor">Type_class</span>.<span class="constructor">S3</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_triple&nbsp;:&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>b,&nbsp;<span class="keywordsign">'</span>c,&nbsp;<span class="keywordsign">'</span>a&nbsp;*&nbsp;<span class="keywordsign">'</span>b&nbsp;*&nbsp;<span class="keywordsign">'</span>c)&nbsp;<span class="constructor">Type_class</span>.<span class="constructor">S3</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_triple&nbsp;:&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>b,&nbsp;<span class="keywordsign">'</span>c,&nbsp;<span class="keywordsign">'</span>a&nbsp;*&nbsp;<span class="keywordsign">'</span>b&nbsp;*&nbsp;<span class="keywordsign">'</span>c)&nbsp;<span class="constructor">Type_class</span>.<span class="constructor">S3</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_list&nbsp;:&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>a&nbsp;list)&nbsp;<span class="constructor">Type_class</span>.<span class="constructor">S1</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_list&nbsp;:&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>a&nbsp;list)&nbsp;<span class="constructor">Type_class</span>.<span class="constructor">S1</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_list&nbsp;:&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>a&nbsp;list)&nbsp;<span class="constructor">Type_class</span>.<span class="constructor">S1</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_array&nbsp;:&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>a&nbsp;array)&nbsp;<span class="constructor">Type_class</span>.<span class="constructor">S1</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_array&nbsp;:&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>a&nbsp;array)&nbsp;<span class="constructor">Type_class</span>.<span class="constructor">S1</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_array&nbsp;:&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>a&nbsp;array)&nbsp;<span class="constructor">Type_class</span>.<span class="constructor">S1</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_hashtbl&nbsp;:&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>b,&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>b)&nbsp;<span class="constructor">Hashtbl</span>.t)&nbsp;<span class="constructor">Type_class</span>.<span class="constructor">S2</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_hashtbl&nbsp;:&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>b,&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>b)&nbsp;<span class="constructor">Hashtbl</span>.t)&nbsp;<span class="constructor">Type_class</span>.<span class="constructor">S2</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_hashtbl&nbsp;:&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>b,&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>b)&nbsp;<span class="constructor">Hashtbl</span>.t)&nbsp;<span class="constructor">Type_class</span>.<span class="constructor">S2</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_float32_vec&nbsp;:&nbsp;<span class="constructor">Common</span>.vec32&nbsp;<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_float32_vec&nbsp;:&nbsp;<span class="constructor">Common</span>.vec32&nbsp;<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_float32_vec&nbsp;:&nbsp;<span class="constructor">Common</span>.vec32&nbsp;<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_float64_vec&nbsp;:&nbsp;<span class="constructor">Common</span>.vec64&nbsp;<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_float64_vec&nbsp;:&nbsp;<span class="constructor">Common</span>.vec64&nbsp;<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_float64_vec&nbsp;:&nbsp;<span class="constructor">Common</span>.vec64&nbsp;<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_vec&nbsp;:&nbsp;<span class="constructor">Common</span>.vec&nbsp;<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_vec&nbsp;:&nbsp;<span class="constructor">Common</span>.vec&nbsp;<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_vec&nbsp;:&nbsp;<span class="constructor">Common</span>.vec&nbsp;<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_float32_mat&nbsp;:&nbsp;<span class="constructor">Common</span>.mat32&nbsp;<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_float32_mat&nbsp;:&nbsp;<span class="constructor">Common</span>.mat32&nbsp;<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_float32_mat&nbsp;:&nbsp;<span class="constructor">Common</span>.mat32&nbsp;<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_float64_mat&nbsp;:&nbsp;<span class="constructor">Common</span>.mat64&nbsp;<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_float64_mat&nbsp;:&nbsp;<span class="constructor">Common</span>.mat64&nbsp;<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_float64_mat&nbsp;:&nbsp;<span class="constructor">Common</span>.mat64&nbsp;<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_mat&nbsp;:&nbsp;<span class="constructor">Common</span>.mat&nbsp;<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_mat&nbsp;:&nbsp;<span class="constructor">Common</span>.mat&nbsp;<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_mat&nbsp;:&nbsp;<span class="constructor">Common</span>.mat&nbsp;<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_bigstring&nbsp;:&nbsp;<span class="constructor">Common</span>.buf&nbsp;<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_bigstring&nbsp;:&nbsp;<span class="constructor">Common</span>.buf&nbsp;<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_bigstring&nbsp;:&nbsp;<span class="constructor">Common</span>.buf&nbsp;<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_float_array&nbsp;:&nbsp;float&nbsp;array&nbsp;<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_float_array&nbsp;:&nbsp;float&nbsp;array&nbsp;<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_float_array&nbsp;:&nbsp;float&nbsp;array&nbsp;<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_variant_tag&nbsp;:&nbsp;[&gt;&nbsp;&nbsp;]&nbsp;<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_variant_tag&nbsp;:&nbsp;[&gt;&nbsp;&nbsp;]&nbsp;<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_variant_tag&nbsp;:&nbsp;[&gt;&nbsp;&nbsp;]&nbsp;<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_int_8bit&nbsp;:&nbsp;int&nbsp;<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_int_8bit&nbsp;:&nbsp;int&nbsp;<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_int_8bit&nbsp;:&nbsp;int&nbsp;<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_int_16bit&nbsp;:&nbsp;int&nbsp;<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_int_16bit&nbsp;:&nbsp;int&nbsp;<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_int_16bit&nbsp;:&nbsp;int&nbsp;<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_int_32bit&nbsp;:&nbsp;int&nbsp;<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_int_32bit&nbsp;:&nbsp;int&nbsp;<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_int_32bit&nbsp;:&nbsp;int&nbsp;<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_int_64bit&nbsp;:&nbsp;int&nbsp;<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_int_64bit&nbsp;:&nbsp;int&nbsp;<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_int_64bit&nbsp;:&nbsp;int&nbsp;<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_int64_bits&nbsp;:&nbsp;int64&nbsp;<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_int64_bits&nbsp;:&nbsp;int64&nbsp;<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_int64_bits&nbsp;:&nbsp;int64&nbsp;<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_network16_int&nbsp;:&nbsp;int&nbsp;<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_network16_int&nbsp;:&nbsp;int&nbsp;<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_network16_int&nbsp;:&nbsp;int&nbsp;<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_network32_int&nbsp;:&nbsp;int&nbsp;<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_network32_int&nbsp;:&nbsp;int&nbsp;<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_network32_int&nbsp;:&nbsp;int&nbsp;<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_network32_int32&nbsp;:&nbsp;int32&nbsp;<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_network32_int32&nbsp;:&nbsp;int32&nbsp;<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_network32_int32&nbsp;:&nbsp;int32&nbsp;<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_network64_int&nbsp;:&nbsp;int&nbsp;<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_network64_int&nbsp;:&nbsp;int&nbsp;<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_network64_int&nbsp;:&nbsp;int&nbsp;<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_network64_int64&nbsp;:&nbsp;int64&nbsp;<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_network64_int64&nbsp;:&nbsp;int64&nbsp;<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_network64_int64&nbsp;:&nbsp;int64&nbsp;<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_array_no_length&nbsp;:&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>a&nbsp;array)&nbsp;<span class="constructor">Type_class</span>.<span class="constructor">S1</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;cnv_writer&nbsp;:&nbsp;(<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>b)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>b&nbsp;<span class="constructor">Type_class</span>.writer&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;cnv_reader&nbsp;:&nbsp;(<span class="keywordsign">'</span>b&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>b&nbsp;<span class="constructor">Type_class</span>.reader&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;cnv&nbsp;:&nbsp;(<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>b)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(<span class="keywordsign">'</span>b&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>b&nbsp;<span class="constructor">Type_class</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Type_class</span>.t<br>
+<span class="keyword">end</span></code></body></html>

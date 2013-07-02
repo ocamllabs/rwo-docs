@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="next" href="Sexp_intf.S.Cont_state.html">
+<link rel="Up" href="Sexp_intf.S.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Conv" rel="Chapter" href="Conv.html">
+<link title="Conv_error" rel="Chapter" href="Conv_error.html">
+<link title="Exn_magic" rel="Chapter" href="Exn_magic.html">
+<link title="Path" rel="Chapter" href="Path.html">
+<link title="Pre_sexp" rel="Chapter" href="Pre_sexp.html">
+<link title="Sexp" rel="Chapter" href="Sexp.html">
+<link title="Sexp_intf" rel="Chapter" href="Sexp_intf.html">
+<link title="Sexp_with_layout" rel="Chapter" href="Sexp_with_layout.html">
+<link title="Src_pos" rel="Chapter" href="Src_pos.html">
+<link title="Std" rel="Chapter" href="Std.html">
+<link title="Type" rel="Chapter" href="Type.html">
+<link title="Type_with_layout" rel="Chapter" href="Type_with_layout.html">
+<link title="Parser" rel="Chapter" href="Parser.html">
+<link title="Parser_with_layout" rel="Chapter" href="Parser_with_layout.html">
+<link title="Lexer" rel="Chapter" href="Lexer.html"><title>Sexp_intf.S.Parse_pos</title>
+</head>
+<body>
+<div class="navbar">&nbsp;<a class="up" href="Sexp_intf.S.html" title="Sexp_intf.S">Up</a>
+&nbsp;<a class="post" href="Sexp_intf.S.Cont_state.html" title="Sexp_intf.S.Cont_state">Next</a>
+</div>
+<h1>Module <a href="type_Sexp_intf.S.Parse_pos.html">Sexp_intf.S.Parse_pos</a></h1>
+<pre><span class="keyword">module</span> Parse_pos: <code class="code">sig</code> <a href="Sexp_intf.S.Parse_pos.html">..</a> <code class="code">end</code></pre><hr width="100%">
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = private <code class="type"><a href="Pre_sexp.Parse_pos.html#TYPEt">Pre_sexp.Parse_pos.t</a></code> = private {</pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span class="keyword">mutable&nbsp;</span><span id="TYPEELTt.text_line">text_line</span>&nbsp;:<code class="type">int</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Line position in parsed text</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span class="keyword">mutable&nbsp;</span><span id="TYPEELTt.text_char">text_char</span>&nbsp;:<code class="type">int</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Character position in parsed text</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span class="keyword">mutable&nbsp;</span><span id="TYPEELTt.global_offset">global_offset</span>&nbsp;:<code class="type">int</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Global/logical offset</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span class="keyword">mutable&nbsp;</span><span id="TYPEELTt.buf_pos">buf_pos</span>&nbsp;:<code class="type">int</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Read position in string buffer</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr></table>
+}
+
+<div class="info">
+Position information after complete parse<br>
+</div>
+
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?text_line:int -><br>       ?text_char:int -><br>       ?buf_pos:int -> ?global_offset:int -> unit -> <a href="Sexp_intf.S.Parse_pos.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">create ?text_line ?text_char ?buf_pos ?global_offset ()</code><br>
+<b>Returns</b> a parse position with the given parameters.<br>
+</div>
+<div class="param_info"><code class="code">text_line</code> : default = <code class="code">1</code></div>
+<div class="param_info"><code class="code">text_char</code> : default = <code class="code">0</code></div>
+<div class="param_info"><code class="code">buf_pos</code> : default = <code class="code">0</code></div>
+<div class="param_info"><code class="code">global_offset</code> : default = <code class="code">0</code></div>
+<pre><span id="VALwith_buf_pos"><span class="keyword">val</span> with_buf_pos</span> : <code class="type"><a href="Sexp_intf.S.Parse_pos.html#TYPEt">t</a> -> int -> <a href="Sexp_intf.S.Parse_pos.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">with_buf_pos t pos</code><br>
+<b>Returns</b> a copy of the parse position <code class="code">t</code> where
+        <code class="code">buf_pos</code> is set to <code class="code">pos</code>.<br>
+</div>
+</body></html>

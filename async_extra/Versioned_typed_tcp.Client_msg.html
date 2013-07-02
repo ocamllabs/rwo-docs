@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Versioned_typed_tcp.Server_msg.html">
+<link rel="next" href="Versioned_typed_tcp.Make.html">
+<link rel="Up" href="Versioned_typed_tcp.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Command" rel="Chapter" href="Command.html">
+<link title="File_tail" rel="Chapter" href="File_tail.html">
+<link title="File_writer" rel="Chapter" href="File_writer.html">
+<link title="Import" rel="Chapter" href="Import.html">
+<link title="Lock_file" rel="Chapter" href="Lock_file.html">
+<link title="Log" rel="Chapter" href="Log.html">
+<link title="Persistent_singleton" rel="Chapter" href="Persistent_singleton.html">
+<link title="Rpc" rel="Chapter" href="Rpc.html">
+<link title="Rpc_intf" rel="Chapter" href="Rpc_intf.html">
+<link title="Sequencer_table" rel="Chapter" href="Sequencer_table.html">
+<link title="Std" rel="Chapter" href="Std.html">
+<link title="Tcp" rel="Chapter" href="Tcp.html">
+<link title="Tcp_file" rel="Chapter" href="Tcp_file.html">
+<link title="Typed_tcp" rel="Chapter" href="Typed_tcp.html">
+<link title="Typed_tcp_intf" rel="Chapter" href="Typed_tcp_intf.html">
+<link title="Unpack_sequence" rel="Chapter" href="Unpack_sequence.html">
+<link title="User_and_group" rel="Chapter" href="User_and_group.html">
+<link title="Versioned_rpc" rel="Chapter" href="Versioned_rpc.html">
+<link title="Versioned_typed_tcp" rel="Chapter" href="Versioned_typed_tcp.html">
+<link title="Weak_hashtbl" rel="Chapter" href="Weak_hashtbl.html"><title>Versioned_typed_tcp.Client_msg</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Versioned_typed_tcp.Server_msg.html" title="Versioned_typed_tcp.Server_msg">Previous</a>
+&nbsp;<a class="up" href="Versioned_typed_tcp.html" title="Versioned_typed_tcp">Up</a>
+&nbsp;<a class="post" href="Versioned_typed_tcp.Make.html" title="Versioned_typed_tcp.Make">Next</a>
+</div>
+<h1>Module <a href="type_Versioned_typed_tcp.Client_msg.html">Versioned_typed_tcp.Client_msg</a></h1>
+<pre><span class="keyword">module</span> Client_msg: <code class="code">sig</code> <a href="Versioned_typed_tcp.Client_msg.html">..</a> <code class="code">end</code></pre><hr width="100%">
+<pre><span class="keyword">module</span> <a href="Versioned_typed_tcp.Client_msg.Control.html">Control</a>: <code class="code">sig</code> <a href="Versioned_typed_tcp.Client_msg.Control.html">..</a> <code class="code">end</code></pre><pre><code><span id="TYPEt"><span class="keyword">type</span> <code class="type">('name, 'data)</code> t</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Control"><span class="constructor">Control</span></span> <span class="keyword">of</span> <code class="type">'name <a href="Versioned_typed_tcp.Client_msg.Control.html#TYPEt">Control.t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.Data"><span class="constructor">Data</span></span> <span class="keyword">of</span> <code class="type">('name, 'data) <a href="Versioned_typed_tcp.Read_result.html#TYPEt">Versioned_typed_tcp.Read_result.t</a></code></code></td>
+
+</tr></table>
+
+
+<pre><span id="VAL__t_of_sexp__"><span class="keyword">val</span> __t_of_sexp__</span> : <code class="type">'name 'data.<br>         (<a href="../sexplib/Sexp.html">Sexplib.Sexp</a>.t -> 'name) -><br>         (<a href="../sexplib/Sexp.html">Sexplib.Sexp</a>.t -> 'data) -><br>         <a href="../sexplib/Sexp.html">Sexplib.Sexp</a>.t -> ('name, 'data) <a href="Versioned_typed_tcp.Client_msg.html#TYPEt">t</a></code></pre><pre><span id="VALt_of_sexp"><span class="keyword">val</span> t_of_sexp</span> : <code class="type">'name 'data.<br>         (<a href="../sexplib/Sexp.html">Sexplib.Sexp</a>.t -> 'name) -><br>         (<a href="../sexplib/Sexp.html">Sexplib.Sexp</a>.t -> 'data) -><br>         <a href="../sexplib/Sexp.html">Sexplib.Sexp</a>.t -> ('name, 'data) <a href="Versioned_typed_tcp.Client_msg.html#TYPEt">t</a></code></pre><pre><span id="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type">'name 'data.<br>         ('name -> <a href="../sexplib/Sexp.html">Sexplib.Sexp</a>.t) -><br>         ('data -> <a href="../sexplib/Sexp.html">Sexplib.Sexp</a>.t) -><br>         ('name, 'data) <a href="Versioned_typed_tcp.Client_msg.html#TYPEt">t</a> -> <a href="../sexplib/Sexp.html">Sexplib.Sexp</a>.t</code></pre><pre><span id="VALbin_size_t"><span class="keyword">val</span> bin_size_t</span> : <code class="type">('a -> int) -><br>       ('b -> int) -> ('a, 'b) <a href="Versioned_typed_tcp.Client_msg.html#TYPEt">t</a> -> int</code></pre><pre><span id="VALbin_write_t_"><span class="keyword">val</span> bin_write_t_</span> : <code class="type">(<a href="../bin_prot/Unsafe_common.html">Bin_prot.Unsafe_common</a>.sptr -><br>        Core_kernel.Std.<a href="../bin_prot/Unsafe_common.html">Bin_prot.Unsafe_common</a>.eptr -><br>        'a -> <a href="../bin_prot/Unsafe_common.html">Bin_prot.Unsafe_common</a>.sptr) -><br>       (Core_kernel.Std.<a href="../bin_prot/Unsafe_common.html">Bin_prot.Unsafe_common</a>.sptr -><br>        Core_kernel.Std.<a href="../bin_prot/Unsafe_common.html">Bin_prot.Unsafe_common</a>.eptr -><br>        'b -> <a href="../bin_prot/Unsafe_common.html">Bin_prot.Unsafe_common</a>.sptr) -><br>       <a href="../bin_prot/Unsafe_common.html">Bin_prot.Unsafe_common</a>.sptr -><br>       <a href="../bin_prot/Unsafe_common.html">Bin_prot.Unsafe_common</a>.eptr -><br>       ('a, 'b) <a href="Versioned_typed_tcp.Client_msg.html#TYPEt">t</a> -><br>       <a href="../bin_prot/Unsafe_common.html">Bin_prot.Unsafe_common</a>.sptr</code></pre><pre><span id="VALbin_write_t"><span class="keyword">val</span> bin_write_t</span> : <code class="type">(<a href="../bin_prot/Unsafe_common.html">Bin_prot.Unsafe_common</a>.sptr -><br>        Core_kernel.Std.<a href="../bin_prot/Unsafe_common.html">Bin_prot.Unsafe_common</a>.eptr -><br>        'a -> <a href="../bin_prot/Unsafe_common.html">Bin_prot.Unsafe_common</a>.sptr) -><br>       (Core_kernel.Std.<a href="../bin_prot/Unsafe_common.html">Bin_prot.Unsafe_common</a>.sptr -><br>        Core_kernel.Std.<a href="../bin_prot/Unsafe_common.html">Bin_prot.Unsafe_common</a>.eptr -><br>        'b -> <a href="../bin_prot/Unsafe_common.html">Bin_prot.Unsafe_common</a>.sptr) -><br>       <a href="../bin_prot/Common.html">Bin_prot.Common</a>.buf -><br>       pos:<a href="../bin_prot/Common.html">Bin_prot.Common</a>.pos -><br>       ('a, 'b) <a href="Versioned_typed_tcp.Client_msg.html#TYPEt">t</a> -> <a href="../bin_prot/Common.html">Bin_prot.Common</a>.pos</code></pre><pre><span id="VALbin_writer_t"><span class="keyword">val</span> bin_writer_t</span> : <code class="type">'a <a href="../bin_prot/Type_class.html">Bin_prot.Type_class</a>.writer -><br>       'b <a href="../bin_prot/Type_class.html">Bin_prot.Type_class</a>.writer -><br>       ('a, 'b) <a href="Versioned_typed_tcp.Client_msg.html#TYPEt">t</a> <a href="../bin_prot/Type_class.html">Bin_prot.Type_class</a>.writer</code></pre><pre><span id="VALbin_read_t__"><span class="keyword">val</span> bin_read_t__</span> : <code class="type">'a -> 'b -> 'c -> 'd -> 'e -> 'f</code></pre><pre><span id="VALbin_read_t_"><span class="keyword">val</span> bin_read_t_</span> : <code class="type">(Core_kernel.Std.<a href="../bin_prot/Unsafe_common.html">Bin_prot.Unsafe_common</a>.sptr_ptr -><br>        Core_kernel.Std.<a href="../bin_prot/Unsafe_common.html">Bin_prot.Unsafe_common</a>.eptr -> 'a) -><br>       (Core_kernel.Std.<a href="../bin_prot/Unsafe_common.html">Bin_prot.Unsafe_common</a>.sptr_ptr -><br>        Core_kernel.Std.<a href="../bin_prot/Unsafe_common.html">Bin_prot.Unsafe_common</a>.eptr -> 'b) -><br>       <a href="../bin_prot/Unsafe_common.html">Bin_prot.Unsafe_common</a>.sptr_ptr -><br>       <a href="../bin_prot/Unsafe_common.html">Bin_prot.Unsafe_common</a>.eptr -><br>       ('a, 'b) <a href="Versioned_typed_tcp.Client_msg.html#TYPEt">t</a></code></pre><pre><span id="VALbin_read_t"><span class="keyword">val</span> bin_read_t</span> : <code class="type">(Core_kernel.Std.<a href="../bin_prot/Unsafe_common.html">Bin_prot.Unsafe_common</a>.sptr_ptr -><br>        Core_kernel.Std.<a href="../bin_prot/Unsafe_common.html">Bin_prot.Unsafe_common</a>.eptr -> 'name) -><br>       (Core_kernel.Std.<a href="../bin_prot/Unsafe_common.html">Bin_prot.Unsafe_common</a>.sptr_ptr -><br>        Core_kernel.Std.<a href="../bin_prot/Unsafe_common.html">Bin_prot.Unsafe_common</a>.eptr -> 'data) -><br>       <a href="../bin_prot/Common.html">Bin_prot.Common</a>.buf -><br>       pos_ref:<a href="../bin_prot/Common.html">Bin_prot.Common</a>.pos Pervasives.ref -><br>       ('name, 'data) <a href="Versioned_typed_tcp.Client_msg.html#TYPEt">t</a></code></pre><pre><span id="VALbin_reader_t"><span class="keyword">val</span> bin_reader_t</span> : <code class="type">'a <a href="../bin_prot/Type_class.html">Bin_prot.Type_class</a>.reader -><br>       'b <a href="../bin_prot/Type_class.html">Bin_prot.Type_class</a>.reader -><br>       ('a, 'b) <a href="Versioned_typed_tcp.Client_msg.html#TYPEt">t</a> <a href="../bin_prot/Type_class.html">Bin_prot.Type_class</a>.reader</code></pre><pre><span id="VALbin_t"><span class="keyword">val</span> bin_t</span> : <code class="type">'a <a href="../bin_prot/Type_class.html">Bin_prot.Type_class</a>.t -><br>       'b <a href="../bin_prot/Type_class.html">Bin_prot.Type_class</a>.t -><br>       ('a, 'b) <a href="Versioned_typed_tcp.Client_msg.html#TYPEt">t</a> <a href="../bin_prot/Type_class.html">Bin_prot.Type_class</a>.t</code></pre><br>
+This module describes the type of a given direction of message
+    flow. For example it might describe the type of messages from the
+    client to the server.<br>
+<br>
+<code class="code">lookup_marshal_fun v</code> This function takes a version <code class="code">v</code>, and returns a
+      function that will downgrade (if necessary) the current version to <code class="code">v</code> and
+      then write it to a bigsubstring. It is perfectly fine if one message
+      becomes zero or more messages as a result of downgrading, this is why the
+      marshal fun returns a list. The contents of these buffers will be copied
+      immediatly, so it is safe to reuse the same bigstring for multiple
+      marshals.<br>
+<br>
+<code class="code">lookup_unmarshal_fun v</code> This function takes a version <code class="code">v</code>, and returns a
+      function that unmarshals a message and upgrades it, returning zero or more
+      messages as a result of the upgrade. The bigsubstring is only guaranteed
+      to contain valid data until the unmarshal function returns, after which it
+      may be overwritten immediatly.<br>
+<br>
+This module may be used to implement modes for clients/servers. A
+    common scheme is to have two modes, Test, and Production, and to
+    want to maintain the invariant that clients in mode Test may not
+    talk to servers in mode Production, and that clients in mode
+    Production may not talk to servers in mode Test. Versioned
+    connection will check that the mode of the client is the same as
+    the mode of the server.
+<p>
+
+    If you don't care about modes, just use Dont_care_about_mode.<br>
+</body></html>

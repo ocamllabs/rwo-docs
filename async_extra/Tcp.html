@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Std.html">
+<link rel="next" href="Tcp_file.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Command" rel="Chapter" href="Command.html">
+<link title="File_tail" rel="Chapter" href="File_tail.html">
+<link title="File_writer" rel="Chapter" href="File_writer.html">
+<link title="Import" rel="Chapter" href="Import.html">
+<link title="Lock_file" rel="Chapter" href="Lock_file.html">
+<link title="Log" rel="Chapter" href="Log.html">
+<link title="Persistent_singleton" rel="Chapter" href="Persistent_singleton.html">
+<link title="Rpc" rel="Chapter" href="Rpc.html">
+<link title="Rpc_intf" rel="Chapter" href="Rpc_intf.html">
+<link title="Sequencer_table" rel="Chapter" href="Sequencer_table.html">
+<link title="Std" rel="Chapter" href="Std.html">
+<link title="Tcp" rel="Chapter" href="Tcp.html">
+<link title="Tcp_file" rel="Chapter" href="Tcp_file.html">
+<link title="Typed_tcp" rel="Chapter" href="Typed_tcp.html">
+<link title="Typed_tcp_intf" rel="Chapter" href="Typed_tcp_intf.html">
+<link title="Unpack_sequence" rel="Chapter" href="Unpack_sequence.html">
+<link title="User_and_group" rel="Chapter" href="User_and_group.html">
+<link title="Versioned_rpc" rel="Chapter" href="Versioned_rpc.html">
+<link title="Versioned_typed_tcp" rel="Chapter" href="Versioned_typed_tcp.html">
+<link title="Weak_hashtbl" rel="Chapter" href="Weak_hashtbl.html"><title>Tcp</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Std.html" title="Std">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="Tcp_file.html" title="Tcp_file">Next</a>
+</div>
+<h1>Module <a href="type_Tcp.html">Tcp</a></h1>
+<pre><span class="keyword">module</span> Tcp: <code class="code">sig</code> <a href="Tcp.html">..</a> <code class="code">end</code></pre><div class="info">
+<code class="code">Tcp</code> supports connection to <code class="code">inet</code> sockets and <code class="code">unix</code> sockets.  These are two
+    different types.  We use <code class="code">'a where_to_connect</code> to specify a socket to connect to,
+    where the <code class="code">'a</code> identifies the type of socket.<br>
+</div>
+<hr width="100%">
+<pre><span id="TYPEwhere_to_connect"><span class="keyword">type</span> <code class="type">[< Import.Socket.Address.t ]</code> where_to_connect</span> </pre>
+<div class="info">
+<code class="code">Tcp</code> supports connection to <code class="code">inet</code> sockets and <code class="code">unix</code> sockets.  These are two
+    different types.  We use <code class="code">'a where_to_connect</code> to specify a socket to connect to,
+    where the <code class="code">'a</code> identifies the type of socket.<br>
+</div>
+
+<pre><span id="VALto_host_and_port"><span class="keyword">val</span> to_host_and_port</span> : <code class="type">string -> int -> Import.Socket.Address.Inet.t <a href="Tcp.html#TYPEwhere_to_connect">where_to_connect</a></code></pre><pre><span id="VALto_file"><span class="keyword">val</span> to_file</span> : <code class="type">string -> Import.Socket.Address.Unix.t <a href="Tcp.html#TYPEwhere_to_connect">where_to_connect</a></code></pre><pre><span id="TYPEwith_connect_options"><span class="keyword">type</span> <code class="type">'a</code> with_connect_options</span> = <code class="type">?buffer_age_limit:[ `At_most of <a href="../core/Time.Span.html">Core.Std.Time.Span</a>.t | `Unlimited ] -><br>       ?interrupt:unit Import.Deferred.t -><br>       ?reader_buffer_size:int -> ?timeout:<a href="../core/Time.Span.html">Core.Std.Time.Span</a>.t -> 'a</code> </pre>
+
+<pre><span id="VALwith_connection"><span class="keyword">val</span> with_connection</span> : <code class="type">(([< Import.Socket.Address.t ] as 'b) <a href="Tcp.html#TYPEwhere_to_connect">where_to_connect</a> -><br>        (([ `Active ], 'b) Import.Socket.t -><br>         Import.Reader.t -> Import.Writer.t -> 'a Import.Deferred.t) -><br>        'a Import.Deferred.t)<br>       <a href="Tcp.html#TYPEwith_connect_options">with_connect_options</a></code></pre><div class="info">
+<code class="code">with_connection ~host ~port f</code> looks up host from a string (using DNS as needed),
+    connects, then calls <code class="code">f</code>, passing the connected socket and a reader and writer for it.
+    When the deferred returned by <code class="code">f</code> is determined, or any exception is thrown, the
+    socket, reader and writer are closed.  The return deferred is fulfilled after f has
+    finished processing and the file descriptor for the socket is closed.  If <code class="code">interrupt</code>
+    is supplied then the connection attempt will be aborted if interrupt is fulfilled
+    before the connection has been established.  Similarly, all connection attempts have a
+    timeout (default 30s), that can be overridden with <code class="code">timeout</code>.
+<p>
+
+    It is fine for <code class="code">f</code> to ignore the supplied socket and just use the reader and writer.
+    The socket is there to make it convenient to call <code class="code">Socket</code> functions.<br>
+</div>
+<pre><span id="VALconnect_sock"><span class="keyword">val</span> connect_sock</span> : <code class="type">([< Import.Socket.Address.t ] as 'a) <a href="Tcp.html#TYPEwhere_to_connect">where_to_connect</a> -><br>       ([ `Active ], 'a) Import.Socket.t Import.Deferred.t</code></pre><div class="info">
+<code class="code">connect_sock ~host ~port</code> opens a TCP connection to the specified hostname
+    and port, returning the socket.
+<p>
+
+    Any errors in the connection will be reported to the monitor that was current
+    when connect was called.<br>
+</div>
+<pre><span id="VALconnect"><span class="keyword">val</span> connect</span> : <code class="type">(([< Import.Socket.Address.t ] as 'a) <a href="Tcp.html#TYPEwhere_to_connect">where_to_connect</a> -><br>        (([ `Active ], 'a) Import.Socket.t * Import.Reader.t * Import.Writer.t)<br>        Import.Deferred.t)<br>       <a href="Tcp.html#TYPEwith_connect_options">with_connect_options</a></code></pre><div class="info">
+<code class="code">connect ~host ~port</code> is a convenience wrapper around <code class="code">connect_sock</code> that returns the
+    socket, and a reader and writer for the socket.  The reader and writer share a file
+    descriptor, and so closing one will affect the other.  In particular, closing the
+    reader before closing the writer will cause the writer to subsequently raise an
+    exception when it attempts to flush internally-buffered bytes to the OS, due to a
+    closed fd.  You should close the <code class="code">Writer</code> first to avoid this problem.
+<p>
+
+    If possible, use <code class="code">with_connection</code>, which automatically handles closing.
+<p>
+
+    It is fine to ignore the returned socket and just use the reader and writer.  The
+    socket is there to make it convenient to call <code class="code">Socket</code> functions.<br>
+</div>
+<pre><span class="keyword">module</span> <a href="Tcp.Where_to_listen.html">Where_to_listen</a>: <code class="code">sig</code> <a href="Tcp.Where_to_listen.html">..</a> <code class="code">end</code></pre><div class="info">
+A <code class="code">Where_to_listen</code> describes the socket that a tcp server should listen on.
+</div>
+<pre><span id="VALon_port"><span class="keyword">val</span> on_port</span> : <code class="type">int -> <a href="Tcp.Where_to_listen.html#TYPEinet">Where_to_listen.inet</a></code></pre><pre><span id="VALon_port_chosen_by_os"><span class="keyword">val</span> on_port_chosen_by_os</span> : <code class="type"><a href="Tcp.Where_to_listen.html#TYPEinet">Where_to_listen.inet</a></code></pre><pre><span id="VALon_file"><span class="keyword">val</span> on_file</span> : <code class="type">string -> <a href="Tcp.Where_to_listen.html#TYPEunix">Where_to_listen.unix</a></code></pre><pre><span class="keyword">module</span> <a href="Tcp.Server.html">Server</a>: <code class="code">sig</code> <a href="Tcp.Server.html">..</a> <code class="code">end</code></pre><div class="info">
+A <code class="code">Server.t</code> represents a TCP server listening on a socket.
+</div>
+</body></html>

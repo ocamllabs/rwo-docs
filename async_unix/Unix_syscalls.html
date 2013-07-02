@@ -1,0 +1,868 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Thread_safe_pipe.html">
+<link rel="next" href="Writer.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Async_print" rel="Chapter" href="Async_print.html">
+<link title="Async_sys" rel="Chapter" href="Async_sys.html">
+<link title="Busy_pollers" rel="Chapter" href="Busy_pollers.html">
+<link title="Epoll_file_descr_watcher" rel="Chapter" href="Epoll_file_descr_watcher.html">
+<link title="Fd" rel="Chapter" href="Fd.html">
+<link title="Fd_by_descr" rel="Chapter" href="Fd_by_descr.html">
+<link title="File_descr_watcher_intf" rel="Chapter" href="File_descr_watcher_intf.html">
+<link title="Import" rel="Chapter" href="Import.html">
+<link title="Interruptor" rel="Chapter" href="Interruptor.html">
+<link title="In_thread" rel="Chapter" href="In_thread.html">
+<link title="Io_stats" rel="Chapter" href="Io_stats.html">
+<link title="Process" rel="Chapter" href="Process.html">
+<link title="Raw_fd" rel="Chapter" href="Raw_fd.html">
+<link title="Raw_scheduler" rel="Chapter" href="Raw_scheduler.html">
+<link title="Raw_signal_manager" rel="Chapter" href="Raw_signal_manager.html">
+<link title="Reader" rel="Chapter" href="Reader.html">
+<link title="Read_write" rel="Chapter" href="Read_write.html">
+<link title="Scheduler" rel="Chapter" href="Scheduler.html">
+<link title="Select_file_descr_watcher" rel="Chapter" href="Select_file_descr_watcher.html">
+<link title="Shutdown" rel="Chapter" href="Shutdown.html">
+<link title="Signal" rel="Chapter" href="Signal.html">
+<link title="Signal_manager" rel="Chapter" href="Signal_manager.html">
+<link title="Std" rel="Chapter" href="Std.html">
+<link title="Syscall" rel="Chapter" href="Syscall.html">
+<link title="Thread_pool" rel="Chapter" href="Thread_pool.html">
+<link title="Thread_safe" rel="Chapter" href="Thread_safe.html">
+<link title="Thread_safe_pipe" rel="Chapter" href="Thread_safe_pipe.html">
+<link title="Unix_syscalls" rel="Chapter" href="Unix_syscalls.html">
+<link title="Writer" rel="Chapter" href="Writer.html"><title>Unix_syscalls</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Thread_safe_pipe.html" title="Thread_safe_pipe">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="Writer.html" title="Writer">Next</a>
+</div>
+<h1>Module <a href="type_Unix_syscalls.html">Unix_syscalls</a></h1>
+<pre><span class="keyword">module</span> Unix_syscalls: <code class="code">sig</code> <a href="Unix_syscalls.html">..</a> <code class="code">end</code></pre><div class="info">
+<code class="code">Unix_syscalls</code> provides an interface to many of the functions in OCaml's standard
+    Unix module.  It uses a deferred in the return type of functions that would block.
+    The idea is that in an async program one does not use the standard Unix module, since
+    in doing so one could accidentally block the whole program.
+<p>
+
+    There are also a number of cosmetic changes (e.g. polymorphic variants) and other
+    improvements (e.g. phantom types on sockets) over the standard Unix module.<br>
+</div>
+<hr width="100%">
+<pre><span class="keyword">module</span> <a href="Unix_syscalls.Exit.html">Exit</a>: <code class="type">module type of Unix.Exit</code></pre><pre><span class="keyword">module</span> <a href="Unix_syscalls.Exit_or_signal.html">Exit_or_signal</a>: <code class="type">module type of Unix.Exit_or_signal</code></pre><pre><span class="keyword">module</span> <a href="Unix_syscalls.Exit_or_signal_or_stop.html">Exit_or_signal_or_stop</a>: <code class="type">module type of Unix.Exit_or_signal_or_stop</code></pre><pre><span id="VALsystem"><span class="keyword">val</span> system</span> : <code class="type">string -> Exit_or_signal.t Import.Deferred.t</code></pre><pre><span id="VALsystem_exn"><span class="keyword">val</span> system_exn</span> : <code class="type">string -> unit Import.Deferred.t</code></pre><pre><span id="VALgetpid"><span class="keyword">val</span> getpid</span> : <code class="type">unit -> <a href="../core/Pid.html">Core.Std.Pid</a>.t</code></pre><pre><span id="VALgetppid"><span class="keyword">val</span> getppid</span> : <code class="type">unit -> <a href="../core/Pid.html">Core.Std.Pid</a>.t option</code></pre><pre><span id="VALgetppid_exn"><span class="keyword">val</span> getppid_exn</span> : <code class="type">unit -> <a href="../core/Pid.html">Core.Std.Pid</a>.t</code></pre><pre><span id="VALthis_process_became_child_of_init"><span class="keyword">val</span> this_process_became_child_of_init</span> : <code class="type">?poll_delay:<a href="../core/Time.Span.html">Core.Std.Time.Span</a>.t -> unit -> unit Import.Deferred.t</code></pre><div class="info">
+<code class="code">this_process_became_child_of_init</code> returns a deferred that becomes determined when
+    the current process becomes a child of init(8).  This is useful to determine if one's
+    parent has died, because in that case init will becomes one's parent.
+<p>
+
+    See <code class="code">Linux_ext.pr_set_pdeathsig : Signal.t -&gt; unit</code> for related way to get information
+    about parent death.<br>
+</div>
+<pre><span id="VALnice"><span class="keyword">val</span> nice</span> : <code class="type">int -> int</code></pre><pre><span id="VALcores"><span class="keyword">val</span> cores</span> : <code class="type">(unit -> int Import.Deferred.t) <a href="../core/Or_error.html">Core.Std.Or_error</a>.t</code></pre><div class="info">
+<code class="code">cores ()</code> Returns the number of cores<br>
+</div>
+<pre><span id="TYPEopen_flag"><span class="keyword">type</span> <code class="type"></code>open_flag</span> = <code class="type">[ `Append<br>       | `Creat<br>       | `Dsync<br>       | `Excl<br>       | `Noctty<br>       | `Nonblock<br>       | `Rdonly<br>       | `Rdwr<br>       | `Rsync<br>       | `Sync<br>       | `Trunc<br>       | `Wronly ]</code> </pre>
+
+<pre><span id="TYPEfile_perm"><span class="keyword">type</span> <code class="type"></code>file_perm</span> = <code class="type">int</code> </pre>
+
+<pre><span id="VALopenfile"><span class="keyword">val</span> openfile</span> : <code class="type">?perm:<a href="Unix_syscalls.html#TYPEfile_perm">file_perm</a> -><br>       ?close_on_exec:bool -><br>       string -> mode:<a href="Unix_syscalls.html#TYPEopen_flag">open_flag</a> list -> <a href="Fd.html#TYPEt">Fd.t</a> Import.Deferred.t</code></pre><pre><span id="VALwith_file"><span class="keyword">val</span> with_file</span> : <code class="type">?exclusive:[ `Read | `Write ] -><br>       ?perm:<a href="Unix_syscalls.html#TYPEfile_perm">file_perm</a> -><br>       string -><br>       mode:<a href="Unix_syscalls.html#TYPEopen_flag">open_flag</a> list -><br>       f:(<a href="Fd.html#TYPEt">Fd.t</a> -> 'a Import.Deferred.t) -> 'a Import.Deferred.t</code></pre><div class="info">
+<code class="code">with_file file ~mode ~perm ~f ?exclusive</code> opens <code class="code">file</code>, and applies <code class="code">f</code> to the
+    resulting file descriptor.  When the result of <code class="code">f</code> becomes determined, it closes the
+    descriptor and returns the result of <code class="code">f</code>.  If <code class="code">exclusive</code> is supplied, then the file
+    descriptor is locked before calling <code class="code">f</code> and unlocked after calling <code class="code">f</code>.<br>
+</div>
+<pre><span class="keyword">module</span> <a href="Unix_syscalls.Open_flags.html">Open_flags</a>: <code class="type">module type of Unix.Open_flags</code></pre><pre><span id="VALfcntl_getfl"><span class="keyword">val</span> fcntl_getfl</span> : <code class="type"><a href="Fd.html#TYPEt">Fd.t</a> -> Open_flags.t Import.Deferred.t</code></pre><div class="info">
+<code class="code">fcntl_getfl</code> and <code class="code">fcntl_setf</code> are deferred wrappers around the corresponding
+    functions in <code class="code"><a href="../core/Unix.html">Core.Unix</a></code> for accessing the open-file-descriptor table.<br>
+</div>
+<pre><span id="VALfcntl_setfl"><span class="keyword">val</span> fcntl_setfl</span> : <code class="type"><a href="Fd.html#TYPEt">Fd.t</a> -> Open_flags.t -> unit Import.Deferred.t</code></pre><pre><span id="VALclose"><span class="keyword">val</span> close</span> : <code class="type">?should_close_file_descriptor:bool -> <a href="Fd.html#TYPEt">Fd.t</a> -> unit Import.Deferred.t</code></pre><div class="info">
+<code class="code">close fd</code> closes the file descriptor <code class="code">fd</code>, and raises an exception if <code class="code">fd</code> has
+    already been closed.
+<p>
+
+    In some situations, one may need to cause async to release an fd that it is managing
+    without closing the underlying file descriptor.  In that case, one should supply
+    <code class="code">~should_close_file_descriptor:false</code>, which will skip the underlying close() system
+    call.<br>
+</div>
+<pre><span id="VALlseek"><span class="keyword">val</span> lseek</span> : <code class="type"><a href="Fd.html#TYPEt">Fd.t</a> -> int64 -> mode:[< `Cur | `End | `Set ] -> int64 Import.Deferred.t</code></pre><pre><span id="VALtruncate"><span class="keyword">val</span> truncate</span> : <code class="type">string -> len:int64 -> unit Import.Deferred.t</code></pre><pre><span id="VALftruncate"><span class="keyword">val</span> ftruncate</span> : <code class="type"><a href="Fd.html#TYPEt">Fd.t</a> -> len:int64 -> unit Import.Deferred.t</code></pre><pre><span id="VALfsync"><span class="keyword">val</span> fsync</span> : <code class="type"><a href="Fd.html#TYPEt">Fd.t</a> -> unit Import.Deferred.t</code></pre><pre><span id="VALfdatasync"><span class="keyword">val</span> fdatasync</span> : <code class="type"><a href="Fd.html#TYPEt">Fd.t</a> -> unit Import.Deferred.t</code></pre><pre><span id="VALsync"><span class="keyword">val</span> sync</span> : <code class="type">unit -> unit Import.Deferred.t</code></pre><pre><span id="VALlockf"><span class="keyword">val</span> lockf</span> : <code class="type">?len:Core.Std.Int64.t -> <a href="Fd.html#TYPEt">Fd.t</a> -> [ `Read | `Write ] -> unit Import.Deferred.t</code></pre><div class="info">
+<code class="code">lockf fd read_or_write ?len</code> exclusively locks for reading/writing the section of the
+    open file <code class="code">fd</code> specified by the current file position and <code class="code">len</code> (see man lockf).  It
+    returns when the lock has been acquired.  It raises if <code class="code">fd</code> is closed.<br>
+</div>
+<pre><span id="VALtry_lockf"><span class="keyword">val</span> try_lockf</span> : <code class="type">?len:Core.Std.Int64.t -> <a href="Fd.html#TYPEt">Fd.t</a> -> [ `Read | `Write ] -> bool</code></pre><div class="info">
+<code class="code">try_lockf fd read_or_write ?len</code> attempts to exclusively lock for reading/writing the
+    section of the open file <code class="code">fd</code> specified by the current file position and <code class="code">len</code> (see
+    man lockf).  It returns <code class="code">true</code> if it acquired the lock.  It raises if <code class="code">fd</code> is
+    closed.<br>
+</div>
+<pre><span id="VALtest_lockf"><span class="keyword">val</span> test_lockf</span> : <code class="type">?len:Core.Std.Int64.t -> <a href="Fd.html#TYPEt">Fd.t</a> -> bool</code></pre><div class="info">
+<code class="code">lockf_is_locked fd ?len</code> checks the lock on section of the open file <code class="code">fd</code> specified
+    by the current file position and <code class="code">len</code> (see man lockf).  If the section is unlocked or
+    locked by this process, it returns true, else it returns false.  It raises if <code class="code">fd</code> is
+    closed.<br>
+</div>
+<pre><span id="VALunlockf"><span class="keyword">val</span> unlockf</span> : <code class="type">?len:Core.Std.Int64.t -> <a href="Fd.html#TYPEt">Fd.t</a> -> unit</code></pre><div class="info">
+<code class="code">unlockf fd ?len</code> unlocks the section of the open file <code class="code">fd</code> specified by the current
+    file position and <code class="code">len</code> (see man lockf).  It raises if <code class="code">fd</code> is closed.<br>
+</div>
+<pre><span class="keyword">module</span> <a href="Unix_syscalls.File_kind.html">File_kind</a>: <code class="code">sig</code> <a href="Unix_syscalls.File_kind.html">..</a> <code class="code">end</code></pre><pre><span class="keyword">module</span> <a href="Unix_syscalls.Stats.html">Stats</a>: <code class="code">sig</code> <a href="Unix_syscalls.Stats.html">..</a> <code class="code">end</code></pre><pre><span id="VALfstat"><span class="keyword">val</span> fstat</span> : <code class="type"><a href="Fd.html#TYPEt">Fd.t</a> -> <a href="Unix_syscalls.Stats.html#TYPEt">Stats.t</a> Import.Deferred.t</code></pre><pre><span id="VALstat"><span class="keyword">val</span> stat</span> : <code class="type">string -> <a href="Unix_syscalls.Stats.html#TYPEt">Stats.t</a> Import.Deferred.t</code></pre><pre><span id="VALlstat"><span class="keyword">val</span> lstat</span> : <code class="type">string -> <a href="Unix_syscalls.Stats.html#TYPEt">Stats.t</a> Import.Deferred.t</code></pre><pre><span id="VALunlink"><span class="keyword">val</span> unlink</span> : <code class="type">string -> unit Import.Deferred.t</code></pre><pre><span id="VALremove"><span class="keyword">val</span> remove</span> : <code class="type">string -> unit Import.Deferred.t</code></pre><pre><span id="VALrename"><span class="keyword">val</span> rename</span> : <code class="type">src:string -> dst:string -> unit Import.Deferred.t</code></pre><pre><span id="VALlink"><span class="keyword">val</span> link</span> : <code class="type">?force:bool -><br>       target:string -> link_name:string -> unit -> unit Import.Deferred.t</code></pre><pre><span id="VALchmod"><span class="keyword">val</span> chmod</span> : <code class="type">string -> perm:<a href="Unix_syscalls.html#TYPEfile_perm">file_perm</a> -> unit Import.Deferred.t</code></pre><pre><span id="VALfchmod"><span class="keyword">val</span> fchmod</span> : <code class="type"><a href="Fd.html#TYPEt">Fd.t</a> -> perm:<a href="Unix_syscalls.html#TYPEfile_perm">file_perm</a> -> unit Import.Deferred.t</code></pre><pre><span id="VALchown"><span class="keyword">val</span> chown</span> : <code class="type">string -> uid:int -> gid:int -> unit Import.Deferred.t</code></pre><pre><span id="VALfchown"><span class="keyword">val</span> fchown</span> : <code class="type"><a href="Fd.html#TYPEt">Fd.t</a> -> uid:int -> gid:int -> unit Import.Deferred.t</code></pre><pre><span id="VALaccess"><span class="keyword">val</span> access</span> : <code class="type">string -><br>       [ `Exec | `Exists | `Read | `Write ] list -><br>       (unit, exn) <a href="../core/Result.html">Core.Std.Result</a>.t Import.Deferred.t</code></pre><pre><span id="VALaccess_exn"><span class="keyword">val</span> access_exn</span> : <code class="type">string -> [ `Exec | `Exists | `Read | `Write ] list -> unit Import.Deferred.t</code></pre><pre><span id="VALset_close_on_exec"><span class="keyword">val</span> set_close_on_exec</span> : <code class="type"><a href="Fd.html#TYPEt">Fd.t</a> -> unit</code></pre><pre><span id="VALclear_close_on_exec"><span class="keyword">val</span> clear_close_on_exec</span> : <code class="type"><a href="Fd.html#TYPEt">Fd.t</a> -> unit</code></pre><pre><span id="VALmkdir"><span class="keyword">val</span> mkdir</span> : <code class="type">?p:unit -> ?perm:<a href="Unix_syscalls.html#TYPEfile_perm">file_perm</a> -> string -> unit Import.Deferred.t</code></pre><pre><span id="VALrmdir"><span class="keyword">val</span> rmdir</span> : <code class="type">string -> unit Import.Deferred.t</code></pre><pre><span id="VALchdir"><span class="keyword">val</span> chdir</span> : <code class="type">string -> unit Import.Deferred.t</code></pre><pre><span id="VALgetcwd"><span class="keyword">val</span> getcwd</span> : <code class="type">unit -> string Import.Deferred.t</code></pre><pre><span id="VALchroot"><span class="keyword">val</span> chroot</span> : <code class="type">string -> unit Import.Deferred.t</code></pre><pre><span id="TYPEdir_handle"><span class="keyword">type</span> <code class="type"></code>dir_handle</span> = <code class="type"><a href="../core/Unix.html">Core.Std.Unix</a>.dir_handle</code> </pre>
+
+<pre><span id="VALopendir"><span class="keyword">val</span> opendir</span> : <code class="type">string -> <a href="Unix_syscalls.html#TYPEdir_handle">dir_handle</a> Import.Deferred.t</code></pre><pre><span id="VALreaddir"><span class="keyword">val</span> readdir</span> : <code class="type"><a href="Unix_syscalls.html#TYPEdir_handle">dir_handle</a> -> string Import.Deferred.t</code></pre><pre><span id="VALrewinddir"><span class="keyword">val</span> rewinddir</span> : <code class="type"><a href="Unix_syscalls.html#TYPEdir_handle">dir_handle</a> -> unit Import.Deferred.t</code></pre><pre><span id="VALclosedir"><span class="keyword">val</span> closedir</span> : <code class="type"><a href="Unix_syscalls.html#TYPEdir_handle">dir_handle</a> -> unit Import.Deferred.t</code></pre><pre><span id="VALpipe"><span class="keyword">val</span> pipe</span> : <code class="type"><a href="../core/Info.html">Core.Std.Info</a>.t -><br>       ([ `Reader of <a href="Fd.html#TYPEt">Fd.t</a> ] * [ `Writer of <a href="Fd.html#TYPEt">Fd.t</a> ]) Import.Deferred.t</code></pre><div class="info">
+The <code class="code">info</code> supplied to pipe is debugging information that will be included in the
+    returned <code class="code">Fd</code>s.<br>
+</div>
+<pre><span id="VALmkfifo"><span class="keyword">val</span> mkfifo</span> : <code class="type">?perm:<a href="Unix_syscalls.html#TYPEfile_perm">file_perm</a> -> string -> unit Import.Deferred.t</code></pre><div class="info">
+Create a named pipe with the given permissions.<br>
+</div>
+<pre><span id="VALsymlink"><span class="keyword">val</span> symlink</span> : <code class="type">src:string -> dst:string -> unit Import.Deferred.t</code></pre><pre><span id="VALreadlink"><span class="keyword">val</span> readlink</span> : <code class="type">string -> string Import.Deferred.t</code></pre><pre><span id="VALmkstemp"><span class="keyword">val</span> mkstemp</span> : <code class="type">string -> (string * <a href="Fd.html#TYPEt">Fd.t</a>) Import.Deferred.t</code></pre><div class="info">
+<code class="code">mkstemp prefix</code> creates and opens a unique temporary file with <code class="code">prefix</code>,
+    automatically appending a suffix of six random characters to make the name unique.
+    Unlike C's <code class="code">mkstemp</code>, <code class="code">prefix</code> should not include six X's at the end.<br>
+<b>Raises</b> <code>Unix_error</code> on errors.<br>
+</div>
+<pre><span id="VALmkdtemp"><span class="keyword">val</span> mkdtemp</span> : <code class="type">string -> string Import.Deferred.t</code></pre><pre><span id="TYPEprocess_times"><span class="keyword">type</span> <code class="type"></code>process_times</span> = <code class="type"><a href="../core/Unix.html">Core.Std.Unix</a>.process_times</code> = {</pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTprocess_times.tms_utime">tms_utime</span>&nbsp;:<code class="type">float</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >User time for the process</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTprocess_times.tms_stime">tms_stime</span>&nbsp;:<code class="type">float</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >System time for the process</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTprocess_times.tms_cutime">tms_cutime</span>&nbsp;:<code class="type">float</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >User time for the children processes</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTprocess_times.tms_cstime">tms_cstime</span>&nbsp;:<code class="type">float</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >System time for the children processes</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr></table>
+}
+
+<div class="info">
+Time functions.<br>
+</div>
+
+<pre><span id="VALtimes"><span class="keyword">val</span> times</span> : <code class="type">unit -> <a href="Unix_syscalls.html#TYPEprocess_times">process_times</a></code></pre><pre><span id="TYPEtm"><span class="keyword">type</span> <code class="type"></code>tm</span> = <code class="type"><a href="../core/Unix.html">Core.Std.Unix</a>.tm</code> = {</pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTtm.tm_sec">tm_sec</span>&nbsp;:<code class="type">int</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Seconds 0..59</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTtm.tm_min">tm_min</span>&nbsp;:<code class="type">int</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Minutes 0..59</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTtm.tm_hour">tm_hour</span>&nbsp;:<code class="type">int</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Hours 0..23</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTtm.tm_mday">tm_mday</span>&nbsp;:<code class="type">int</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Day of month 1..31</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTtm.tm_mon">tm_mon</span>&nbsp;:<code class="type">int</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Month of year 0..11</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTtm.tm_year">tm_year</span>&nbsp;:<code class="type">int</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Year - 1900</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTtm.tm_wday">tm_wday</span>&nbsp;:<code class="type">int</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Day of week (Sunday is 0)</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTtm.tm_yday">tm_yday</span>&nbsp;:<code class="type">int</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Day of year 0..365</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTtm.tm_isdst">tm_isdst</span>&nbsp;:<code class="type">bool</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Daylight time savings in effect</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr></table>
+}
+
+
+<pre><span id="VALtime"><span class="keyword">val</span> time</span> : <code class="type">unit -> float</code></pre><pre><span id="VALgettimeofday"><span class="keyword">val</span> gettimeofday</span> : <code class="type">unit -> float</code></pre><pre><span id="VALgmtime"><span class="keyword">val</span> gmtime</span> : <code class="type">float -> <a href="Unix_syscalls.html#TYPEtm">tm</a></code></pre><pre><span id="VALlocaltime"><span class="keyword">val</span> localtime</span> : <code class="type">float -> <a href="Unix_syscalls.html#TYPEtm">tm</a></code></pre><pre><span id="VALmktime"><span class="keyword">val</span> mktime</span> : <code class="type"><a href="Unix_syscalls.html#TYPEtm">tm</a> -> float * <a href="Unix_syscalls.html#TYPEtm">tm</a></code></pre><pre><span id="VALutimes"><span class="keyword">val</span> utimes</span> : <code class="type">string -> access:float -> modif:float -> unit Import.Deferred.t</code></pre><pre><span id="VALenvironment"><span class="keyword">val</span> environment</span> : <code class="type">unit -> string array</code></pre><pre><span id="VALgetenv"><span class="keyword">val</span> getenv</span> : <code class="type">string -> string option</code></pre><pre><span id="VALgetenv_exn"><span class="keyword">val</span> getenv_exn</span> : <code class="type">string -> string</code></pre><pre><span id="VALputenv"><span class="keyword">val</span> putenv</span> : <code class="type">key:string -> data:string -> unit</code></pre><pre><span id="VALunsetenv"><span class="keyword">val</span> unsetenv</span> : <code class="type">string -> unit</code></pre><pre><span id="VALfork_exec"><span class="keyword">val</span> fork_exec</span> : <code class="type">prog:string -><br>       args:string list -><br>       ?use_path:bool -><br>       ?env:string list -> unit -> <a href="../core/Pid.html">Core.Std.Pid</a>.t Import.Deferred.t</code></pre><div class="info">
+<code class="code">fork_exec ~prog ~args ?path ?env</code> forks and execs <code class="code">prog</code> with <code class="code">args</code>, and returns the
+    child pid.  If <code class="code">use_path = true</code> (the default) and <code class="code">prog</code> doesn't contain a slash,
+    then <code class="code">fork_exec</code> searches the PATH environment variable for <code class="code">prog</code>.  If <code class="code">env</code> is
+    supplied, it is used as the environment when <code class="code">prog</code> is executed.<br>
+</div>
+<pre><span id="TYPEwait_on"><span class="keyword">type</span> <code class="type"></code>wait_on</span> = <code class="type">[ `Any | `Group of <a href="../core/Pid.html">Core.Std.Pid</a>.t | `My_group | `Pid of <a href="../core/Pid.html">Core.Std.Pid</a>.t ]</code> </pre>
+
+<pre><span id="VALwait"><span class="keyword">val</span> wait</span> : <code class="type"><a href="Unix_syscalls.html#TYPEwait_on">wait_on</a> -><br>       (<a href="../core/Pid.html">Core.Std.Pid</a>.t * Exit_or_signal.t) Import.Deferred.t</code></pre><pre><span id="VALwait_nohang"><span class="keyword">val</span> wait_nohang</span> : <code class="type"><a href="Unix_syscalls.html#TYPEwait_on">wait_on</a> -><br>       (<a href="../core/Pid.html">Core.Std.Pid</a>.t * Exit_or_signal.t) option</code></pre><pre><span id="VALwait_untraced"><span class="keyword">val</span> wait_untraced</span> : <code class="type"><a href="Unix_syscalls.html#TYPEwait_on">wait_on</a> -><br>       (<a href="../core/Pid.html">Core.Std.Pid</a>.t * Exit_or_signal_or_stop.t) Import.Deferred.t</code></pre><pre><span id="VALwait_nohang_untraced"><span class="keyword">val</span> wait_nohang_untraced</span> : <code class="type"><a href="Unix_syscalls.html#TYPEwait_on">wait_on</a> -><br>       (<a href="../core/Pid.html">Core.Std.Pid</a>.t * Exit_or_signal_or_stop.t) option</code></pre><pre><span id="VALwaitpid"><span class="keyword">val</span> waitpid</span> : <code class="type"><a href="../core/Pid.html">Core.Std.Pid</a>.t -> Exit_or_signal.t Import.Deferred.t</code></pre><div class="info">
+<code class="code">waitpid pid</code> returns a deferred that becomes determined with the child's exit
+    status, when the child process with process id <code class="code">pid</code> exits.  <code class="code">waitpid_exn</code> is like
+    <code class="code">waitpid</code>, except the result only becomes determined if the child exits with status
+    zero; it raises if the child terminates win any other way.<br>
+</div>
+<pre><span id="VALwaitpid_exn"><span class="keyword">val</span> waitpid_exn</span> : <code class="type"><a href="../core/Pid.html">Core.Std.Pid</a>.t -> unit Import.Deferred.t</code></pre><pre><span class="keyword">module</span> <a href="Unix_syscalls.Inet_addr.html">Inet_addr</a>: <code class="code">sig</code> <a href="Unix_syscalls.Inet_addr.html">..</a> <code class="code">end</code></pre><pre><span class="keyword">module</span> <a href="Unix_syscalls.Protocol_family.html">Protocol_family</a>: <code class="code">sig</code> <a href="Unix_syscalls.Protocol_family.html">..</a> <code class="code">end</code></pre><pre><span id="VALsocketpair"><span class="keyword">val</span> socketpair</span> : <code class="type">unit -> <a href="Fd.html#TYPEt">Fd.t</a> * <a href="Fd.html#TYPEt">Fd.t</a></code></pre><pre><span class="keyword">module</span> <a href="Unix_syscalls.Socket.html">Socket</a>: <code class="code">sig</code> <a href="Unix_syscalls.Socket.html">..</a> <code class="code">end</code></pre><pre><span class="keyword">module</span> <a href="Unix_syscalls.Host.html">Host</a>: <code class="code">sig</code> <a href="Unix_syscalls.Host.html">..</a> <code class="code">end</code></pre><pre><span id="VALgethostname"><span class="keyword">val</span> gethostname</span> : <code class="type">unit -> string</code></pre><pre><span id="VALgetuid"><span class="keyword">val</span> getuid</span> : <code class="type">unit -> int</code></pre><pre><span id="VALgeteuid"><span class="keyword">val</span> geteuid</span> : <code class="type">unit -> int</code></pre><pre><span id="VALgetgid"><span class="keyword">val</span> getgid</span> : <code class="type">unit -> int</code></pre><pre><span id="VALgetegid"><span class="keyword">val</span> getegid</span> : <code class="type">unit -> int</code></pre><pre><span id="VALsetuid"><span class="keyword">val</span> setuid</span> : <code class="type">int -> unit</code></pre><pre><span id="TYPEerror"><span class="keyword">type</span> <code class="type"></code>error</span> = <code class="type"><a href="../core/Unix.html">Core.Std.Unix</a>.error</code> = </pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.E2BIG"><span class="constructor">E2BIG</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.EACCES"><span class="constructor">EACCES</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.EAGAIN"><span class="constructor">EAGAIN</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.EBADF"><span class="constructor">EBADF</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.EBUSY"><span class="constructor">EBUSY</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.ECHILD"><span class="constructor">ECHILD</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.EDEADLK"><span class="constructor">EDEADLK</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.EDOM"><span class="constructor">EDOM</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.EEXIST"><span class="constructor">EEXIST</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.EFAULT"><span class="constructor">EFAULT</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.EFBIG"><span class="constructor">EFBIG</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.EINTR"><span class="constructor">EINTR</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.EINVAL"><span class="constructor">EINVAL</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.EIO"><span class="constructor">EIO</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.EISDIR"><span class="constructor">EISDIR</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.EMFILE"><span class="constructor">EMFILE</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.EMLINK"><span class="constructor">EMLINK</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.ENAMETOOLONG"><span class="constructor">ENAMETOOLONG</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.ENFILE"><span class="constructor">ENFILE</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.ENODEV"><span class="constructor">ENODEV</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.ENOENT"><span class="constructor">ENOENT</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.ENOEXEC"><span class="constructor">ENOEXEC</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.ENOLCK"><span class="constructor">ENOLCK</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.ENOMEM"><span class="constructor">ENOMEM</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.ENOSPC"><span class="constructor">ENOSPC</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.ENOSYS"><span class="constructor">ENOSYS</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.ENOTDIR"><span class="constructor">ENOTDIR</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.ENOTEMPTY"><span class="constructor">ENOTEMPTY</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.ENOTTY"><span class="constructor">ENOTTY</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.ENXIO"><span class="constructor">ENXIO</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.EPERM"><span class="constructor">EPERM</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.EPIPE"><span class="constructor">EPIPE</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.ERANGE"><span class="constructor">ERANGE</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.EROFS"><span class="constructor">EROFS</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.ESPIPE"><span class="constructor">ESPIPE</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.ESRCH"><span class="constructor">ESRCH</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.EXDEV"><span class="constructor">EXDEV</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.EWOULDBLOCK"><span class="constructor">EWOULDBLOCK</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.EINPROGRESS"><span class="constructor">EINPROGRESS</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.EALREADY"><span class="constructor">EALREADY</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.ENOTSOCK"><span class="constructor">ENOTSOCK</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.EDESTADDRREQ"><span class="constructor">EDESTADDRREQ</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.EMSGSIZE"><span class="constructor">EMSGSIZE</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.EPROTOTYPE"><span class="constructor">EPROTOTYPE</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.ENOPROTOOPT"><span class="constructor">ENOPROTOOPT</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.EPROTONOSUPPORT"><span class="constructor">EPROTONOSUPPORT</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.ESOCKTNOSUPPORT"><span class="constructor">ESOCKTNOSUPPORT</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.EOPNOTSUPP"><span class="constructor">EOPNOTSUPP</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.EPFNOSUPPORT"><span class="constructor">EPFNOSUPPORT</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.EAFNOSUPPORT"><span class="constructor">EAFNOSUPPORT</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.EADDRINUSE"><span class="constructor">EADDRINUSE</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.EADDRNOTAVAIL"><span class="constructor">EADDRNOTAVAIL</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.ENETDOWN"><span class="constructor">ENETDOWN</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.ENETUNREACH"><span class="constructor">ENETUNREACH</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.ENETRESET"><span class="constructor">ENETRESET</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.ECONNABORTED"><span class="constructor">ECONNABORTED</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.ECONNRESET"><span class="constructor">ECONNRESET</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.ENOBUFS"><span class="constructor">ENOBUFS</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.EISCONN"><span class="constructor">EISCONN</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.ENOTCONN"><span class="constructor">ENOTCONN</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.ESHUTDOWN"><span class="constructor">ESHUTDOWN</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.ETOOMANYREFS"><span class="constructor">ETOOMANYREFS</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.ETIMEDOUT"><span class="constructor">ETIMEDOUT</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.ECONNREFUSED"><span class="constructor">ECONNREFUSED</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.EHOSTDOWN"><span class="constructor">EHOSTDOWN</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.EHOSTUNREACH"><span class="constructor">EHOSTUNREACH</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.ELOOP"><span class="constructor">ELOOP</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.EOVERFLOW"><span class="constructor">EOVERFLOW</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTerror.EUNKNOWNERR"><span class="constructor">EUNKNOWNERR</span></span> <span class="keyword">of</span> <code class="type">int</code></code></td>
+
+</tr></table>
+
+
+<pre><span id="EXCEPTIONUnix_error"><span class="keyword">exception</span> Unix_error</span> <span class="keyword">of</span> <code class="type"><a href="Unix_syscalls.html#TYPEerror">error</a> * string * string</code></pre>
+<pre><span class="keyword">module</span> <a href="Unix_syscalls.Terminal_io.html">Terminal_io</a>: <code class="code">sig</code> <a href="Unix_syscalls.Terminal_io.html">..</a> <code class="code">end</code></pre><pre><span class="keyword">module</span> <a href="Unix_syscalls.Passwd.html">Passwd</a>: <code class="code">sig</code> <a href="Unix_syscalls.Passwd.html">..</a> <code class="code">end</code></pre><div class="info">
+Structure of entries in the <code class="code">passwd</code> database.
+</div>
+<pre><span class="keyword">module</span> <a href="Unix_syscalls.Group.html">Group</a>: <code class="code">sig</code> <a href="Unix_syscalls.Group.html">..</a> <code class="code">end</code></pre><div class="info">
+Structure of entries in the <code class="code">groups</code> database.
+</div>
+<pre><span id="VALgetlogin"><span class="keyword">val</span> getlogin</span> : <code class="type">unit -> string Import.Deferred.t</code></pre><div class="info">
+Return the login name of the user executing the process.
+<p>
+
+    This returns a deferred because the username may need to be looked up in what is
+    essentially a database elsewhere on the network (winbound user, or NIS).<br>
+</div>
+<pre><span id="VALwordexp"><span class="keyword">val</span> wordexp</span> : <code class="type">(?flags:[ `No_cmd | `Show_err | `Undef ] list -><br>        string -> string array Import.Deferred.t)<br>       <a href="../core/Or_error.html">Core.Std.Or_error</a>.t</code></pre><pre><span id="VALwait_on_of_sexp"><span class="keyword">val</span> wait_on_of_sexp</span> : <code class="type"><a href="../sexplib/Sexp.html">Sexplib.Sexp</a>.t -> <a href="Unix_syscalls.html#TYPEwait_on">wait_on</a></code></pre><pre><span id="VAL__wait_on_of_sexp__"><span class="keyword">val</span> __wait_on_of_sexp__</span> : <code class="type"><a href="../sexplib/Sexp.html">Sexplib.Sexp</a>.t -> <a href="Unix_syscalls.html#TYPEwait_on">wait_on</a></code></pre><pre><span id="VALsexp_of_wait_on"><span class="keyword">val</span> sexp_of_wait_on</span> : <code class="type"><a href="Unix_syscalls.html#TYPEwait_on">wait_on</a> -> <a href="../sexplib/Sexp.html">Sexplib.Sexp</a>.t</code></pre><br>
+<code class="code">waitpid pid</code> returns a deferred that becomes determined with the child's exit
+    status, when the child process with process id <code class="code">pid</code> exits.  <code class="code">waitpid_exn</code> is like
+    <code class="code">waitpid</code>, except the result only becomes determined if the child exits with status
+    zero; it raises if the child terminates win any other way.<br>
+<br>
+same as <code class="code"><a href="../core/Unix.html">Core.Unix</a></code><br>
+<br>
+<code class="code">127.0.0.1</code><br>
+<br>
+(<code class="code">::1</code>)<br>
+<br>
+<code class="code">of_string_or_getbyname hostname</code> does a DNS lookup of hostname and returns the
+      resulting IP address.  The implemenation sequentializes all calls so that only a
+      single call is active at a time.  The is because we've observed thread safety issues
+      with certain versions of winbind using "wins" name resolution.<br>
+<br>
+Sockets have a phantom type parameter that tracks the state of the socket
+      in order to eliminate certain errors in which socket functions are called
+      in the wrong order.  Initially, a socket is `Unconnected.  As various
+      socket functions are called, they return a socket with a new phantom state.
+      Here is a chart of the allowed state transitions.
+<p>
+
+      <pre class="verbatim">        Unconnected ---connect--&gt; Active
+        |
+        | ---bind--&gt; Bound ---listen--&gt; Passive ---accept---&gt; Active
+     </pre><br>
+<br>
+<code class="code">bind socket addr</code> sets close_on_exec for the fd of <code class="code">socket</code>.<br>
+<pre><span id="VALerror_of_sexp"><span class="keyword">val</span> error_of_sexp</span> : <code class="type"><a href="../sexplib/Sexp.html">Sexplib.Sexp</a>.t -> <a href="Unix_syscalls.html#TYPEerror">error</a></code></pre><pre><span id="VALsexp_of_error"><span class="keyword">val</span> sexp_of_error</span> : <code class="type"><a href="Unix_syscalls.html#TYPEerror">error</a> -> <a href="../sexplib/Sexp.html">Sexplib.Sexp</a>.t</code></pre><br>
+Ignore the break condition.<br>
+<br>
+Signal interrupt on break condition.<br>
+<br>
+Ignore characters with parity errors.<br>
+<br>
+Mark parity errors.<br>
+<br>
+Enable parity check on input.<br>
+<br>
+Strip 8th bit on input characters.<br>
+<br>
+Map NL to CR on input.<br>
+<br>
+Ignore CR on input.<br>
+<br>
+Map CR to NL on input.<br>
+<br>
+Recognize XON/XOFF characters on input.<br>
+<br>
+Emit XON/XOFF chars to control input flow.<br>
+<br>
+Enable output processing.<br>
+<br>
+Output baud rate (0 means close connection).<br>
+<br>
+Input baud rate.<br>
+<br>
+Number of bits per character (5-8).<br>
+<br>
+Number of stop bits (1-2).<br>
+<br>
+Reception is enabled.<br>
+<br>
+Enable parity generation and detection.<br>
+<br>
+Specify odd parity instead of even.<br>
+<br>
+Hang up on last close.<br>
+<br>
+Ignore modem status lines.<br>
+<br>
+Generate signal on INTR, QUIT, SUSP.<br>
+<br>
+Enable canonical processing
+                                 (line buffering and editing)<br>
+<br>
+Disable flush after INTR, QUIT, SUSP.<br>
+<br>
+Echo input characters.<br>
+<br>
+Echo ERASE (to erase previous character).<br>
+<br>
+Echo KILL (to erase the current line).<br>
+<br>
+Echo NL even if c_echo is not set.<br>
+<br>
+Interrupt character (usually ctrl-C).<br>
+<br>
+Quit character (usually ctrl-\).<br>
+<br>
+Erase character (usually DEL or ctrl-H).<br>
+<br>
+Kill line character (usually ctrl-U).<br>
+<br>
+End-of-file character (usually ctrl-D).<br>
+<br>
+Alternate end-of-line char. (usually none).<br>
+<br>
+Minimum number of characters to read
+                                 before the read request is satisfied.<br>
+<br>
+Maximum read wait (in 0.1s units).<br>
+<br>
+Start character (usually ctrl-Q).<br>
+<br>
+Stop character (usually ctrl-S).<br>
+<br>
+Structure of entries in the <code class="code">passwd</code> database.<br>
+<br>
+Structure of entries in the <code class="code">groups</code> database.<br>
+<br>
+Return the login name of the user executing the process.
+<p>
+
+    This returns a deferred because the username may need to be looked up in what is
+    essentially a database elsewhere on the network (winbound user, or NIS).<br>
+</body></html>

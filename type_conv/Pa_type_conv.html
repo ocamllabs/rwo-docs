@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Pa_type_conv" rel="Chapter" href="Pa_type_conv.html"><link title="Generator registration" rel="Section" href="#6_Generatorregistration">
+<link title="Generator sets registration" rel="Section" href="#6_Generatorsetsregistration">
+<link title="Utility functions" rel="Section" href="#6_Utilityfunctions">
+<link title="General purpose code generation module" rel="Section" href="#6_Generalpurposecodegenerationmodule">
+<link title="Utility functions to rewrite type definitions" rel="Section" href="#6_Utilityfunctionstorewritetypedefinitions">
+<title>Pa_type_conv</title>
+</head>
+<body>
+<div class="navbar">&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;</div>
+<h1>Module <a href="type_Pa_type_conv.html">Pa_type_conv</a></h1>
+<pre><span class="keyword">module</span> Pa_type_conv: <code class="code">sig</code> <a href="Pa_type_conv.html">..</a> <code class="code">end</code></pre><div class="info">
+Pa_type_conv: Preprocessing Module for Registering Type Conversions<br>
+</div>
+<hr width="100%">
+<br>
+<h6 id="6_Generatorregistration">Generator registration</h6><br>
+<pre><span id="VALset_conv_path_if_not_set"><span class="keyword">val</span> set_conv_path_if_not_set</span> : <code class="type">Camlp4.PreCast.Ast.Loc.t -> unit</code></pre><div class="info">
+<code class="code">set_conv_path_if_not_set loc</code> sets the path to the file/module being
+    converted for improved error messages.<br>
+</div>
+<pre><span id="VALget_conv_path"><span class="keyword">val</span> get_conv_path</span> : <code class="type">unit -> string</code></pre><div class="info">
+<code class="code">get_conv_path ()</code><br>
+<b>Returns</b> the name to module containing a type
+    as required for error messages.<br>
+</div>
+<pre><span id="VALadd_generator"><span class="keyword">val</span> add_generator</span> : <code class="type">?is_exn:bool -><br>       string -><br>       (bool -> Camlp4.PreCast.Ast.ctyp -> Camlp4.PreCast.Ast.str_item) -> unit</code></pre><div class="info">
+<code class="code">add_generator ?is_exn name gen</code> adds the code generator <code class="code">gen</code>,
+    which maps type or exception declarations to structure items, where
+    <code class="code">is_exn</code> specifies whether the declaration is an exception.  Note that
+    the original type/exception declarations get added automatically in
+    any case.<br>
+</div>
+<div class="param_info"><code class="code">is_exn</code> : = <code class="code">false</code></div>
+<pre><span id="VALadd_generator_with_arg"><span class="keyword">val</span> add_generator_with_arg</span> : <code class="type">?is_exn:bool -><br>       string -><br>       'a Camlp4.PreCast.Gram.Entry.t -><br>       ('a option -> bool -> Camlp4.PreCast.Ast.ctyp -> Camlp4.PreCast.Ast.str_item) -><br>       unit</code></pre><div class="info">
+<code class="code">add_generator_with_arg ?is_exn name entry generator</code> same as
+    <code class="code">add_generator</code>, but the generator may accept an argument, which is
+    parsed with <code class="code">entry</code>.<br>
+</div>
+<pre><span id="VALrm_generator"><span class="keyword">val</span> rm_generator</span> : <code class="type">?is_exn:bool -> string -> unit</code></pre><div class="info">
+<code class="code">rm_generator ?is_exn name</code> removes the code generator named <code class="code">name</code>
+    for types if <code class="code">is_exn</code> is <code class="code">false</code>, or exceptions otherwise.<br>
+</div>
+<div class="param_info"><code class="code">is_exn</code> : = <code class="code">false</code></div>
+<pre><span id="VALadd_sig_generator"><span class="keyword">val</span> add_sig_generator</span> : <code class="type">?delayed:bool -><br>       ?is_exn:bool -><br>       string -><br>       (bool -> Camlp4.PreCast.Ast.ctyp -> Camlp4.PreCast.Ast.sig_item) -> unit</code></pre><div class="info">
+<code class="code">add_sig_generator ?delayed ?is_exn name gen</code> adds the code generator <code class="code">gen</code>,
+    which maps type or exception declarations to signature items, where
+    <code class="code">is_exn</code> specifies whether the declaration is an exception.  Note that the
+    original type/exception declarations get added automatically in any case. If
+    <code class="code">delayed</code> is set to true, the output of this generator is appended to the
+    signature in which it's defined<br>
+</div>
+<div class="param_info"><code class="code">delayed</code> : = <code class="code">false</code></div>
+<div class="param_info"><code class="code">is_exn</code> : = <code class="code">false</code></div>
+<pre><span id="VALadd_sig_generator_with_arg"><span class="keyword">val</span> add_sig_generator_with_arg</span> : <code class="type">?delayed:bool -><br>       ?is_exn:bool -><br>       string -><br>       'a Camlp4.PreCast.Gram.Entry.t -><br>       ('a option -> bool -> Camlp4.PreCast.Ast.ctyp -> Camlp4.PreCast.Ast.sig_item) -><br>       unit</code></pre><div class="info">
+<code class="code">add_sig_generator_with_arg ?delayed ?is_exn name entry generator</code> same as
+    <code class="code">add_sig_generator</code>, but the generator may accept an argument,
+    which is parsed with <code class="code">entry</code>.<br>
+</div>
+<pre><span id="VALrm_sig_generator"><span class="keyword">val</span> rm_sig_generator</span> : <code class="type">?is_exn:bool -> string -> unit</code></pre><div class="info">
+<code class="code">rm_sig_generator ?is_exn name</code> removes the signature code generator named
+    <code class="code">name</code> for types if <code class="code">is_exn</code> is <code class="code">false</code>, or exceptions otherwise.<br>
+</div>
+<div class="param_info"><code class="code">is_exn</code> : = <code class="code">false</code></div>
+<pre><span id="TYPErecord_field_generator"><span class="keyword">type</span> <code class="type"></code>record_field_generator</span> = <code class="type">Camlp4.PreCast.Ast.ctyp -> unit</code> </pre>
+<div class="info">
+Type of record field code generators<br>
+</div>
+
+<pre><span id="VALadd_record_field_generator"><span class="keyword">val</span> add_record_field_generator</span> : <code class="type">string -> <a href="Pa_type_conv.html#TYPErecord_field_generator">record_field_generator</a> -> unit</code></pre><div class="info">
+<code class="code">add_record_field_generator gen_name gen</code> adds the record field code
+    generator <code class="code">gen</code> with name <code class="code">gen_name</code>, which acts on the location
+    identifiying the record field.<br>
+</div>
+<pre><span id="VALadd_record_field_generator_with_arg"><span class="keyword">val</span> add_record_field_generator_with_arg</span> : <code class="type">string -><br>       'a Camlp4.PreCast.Gram.Entry.t -><br>       ('a option -> <a href="Pa_type_conv.html#TYPErecord_field_generator">record_field_generator</a>) -> unit</code></pre><div class="info">
+<code class="code">add_record_field_generator_with_arg name entry generator</code> same as
+    <code class="code">add_record_field_generator</code>, but the <code class="code">generator</code> takes an argument,
+    which is parsed with <code class="code">entry</code>.  If <code class="code">None</code> is passed to the generator,
+    parsing of the argument failed, otherwise <code class="code">Some arg</code> will be passed,
+    where <code class="code">arg</code> is the successfully parsed argument.<br>
+</div>
+<pre><span id="VALrm_record_field_generator"><span class="keyword">val</span> rm_record_field_generator</span> : <code class="type">string -> unit</code></pre><div class="info">
+<code class="code">rm_record_field_generator name</code> removes the record field code generator
+    named <code class="code">name</code>.<br>
+</div>
+<br>
+<h6 id="6_Generatorsetsregistration">Generator sets registration</h6><br>
+<pre><span id="VALadd_sig_set"><span class="keyword">val</span> add_sig_set</span> : <code class="type">?is_exn:bool -> string -> set:string list -> unit</code></pre><div class="info">
+<code class="code">add_sig_set ?is_exn id ~set</code> adds the generator <code class="code">id</code> to the list
+    of generators for signatures.
+    This generator will behave as if is all the generators from <code class="code">set</code>
+    had been given instead. Any duplicate arising from repeatedly
+    expanding such generators are removed.
+    If <code class="code">is_exn</code>, then it is a generator for exception declaration, or
+    else it is a generator for type declaration.<br>
+</div>
+<pre><span id="VALadd_str_set"><span class="keyword">val</span> add_str_set</span> : <code class="type">?is_exn:bool -> string -> set:string list -> unit</code></pre><div class="info">
+<code class="code">add_str_set ?is_exn id ~set</code> behaves exactly like
+    <code class="code">add_sig_set ?is_exn id ~set</code> but for structure items instead of
+    signatures items.<br>
+</div>
+<pre><span id="VALadd_set"><span class="keyword">val</span> add_set</span> : <code class="type">kind:[ `Both | `Sig | `Str ] -><br>       is_exn:[ `Both | `No | `Yes ] -> string -> set:string list -> unit</code></pre><div class="info">
+<code class="code">add_set ~kind ~is_exn id ~set</code> is a shorthand for doing multiple
+    calls to <code class="code">add_str_set</code> and <code class="code">add_sig_set</code><br>
+</div>
+<br>
+<h6 id="6_Utilityfunctions">Utility functions</h6><br>
+<pre><span id="VALget_loc_err"><span class="keyword">val</span> get_loc_err</span> : <code class="type">Camlp4.PreCast.Ast.Loc.t -> string -> string</code></pre><div class="info">
+<code class="code">get_loc_err loc msg</code> generates a compile-time error message.<br>
+</div>
+<pre><span id="VALhash_variant"><span class="keyword">val</span> hash_variant</span> : <code class="type">string -> int</code></pre><div class="info">
+<code class="code">hash_variant str</code><br>
+<b>Returns</b> the integer encoding a variant tag with
+    name <code class="code">str</code>.<br>
+</div>
+<br>
+<h6 id="6_Generalpurposecodegenerationmodule">General purpose code generation module</h6><br>
+<pre><span class="keyword">module</span> <a href="Pa_type_conv.Gen.html">Gen</a>: <code class="code">sig</code> <a href="Pa_type_conv.Gen.html">..</a> <code class="code">end</code></pre><br>
+<h6 id="6_Utilityfunctionstorewritetypedefinitions">Utility functions to rewrite type definitions</h6><br>
+<pre><span class="keyword">module</span> <a href="Pa_type_conv.Rewrite_tds.html">Rewrite_tds</a>: <code class="code">sig</code> <a href="Pa_type_conv.Rewrite_tds.html">..</a> <code class="code">end</code></pre></body></html>

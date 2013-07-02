@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Import.html">
+<link rel="next" href="Job.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Async_condition" rel="Chapter" href="Async_condition.html">
+<link title="Async_gc" rel="Chapter" href="Async_gc.html">
+<link title="Async_or_error" rel="Chapter" href="Async_or_error.html">
+<link title="Async_stream" rel="Chapter" href="Async_stream.html">
+<link title="Backpatched" rel="Chapter" href="Backpatched.html">
+<link title="Clock" rel="Chapter" href="Clock.html">
+<link title="Config" rel="Chapter" href="Config.html">
+<link title="Debug" rel="Chapter" href="Debug.html">
+<link title="Deferred" rel="Chapter" href="Deferred.html">
+<link title="Deferred_intf" rel="Chapter" href="Deferred_intf.html">
+<link title="Deferred_std" rel="Chapter" href="Deferred_std.html">
+<link title="Execution_context" rel="Chapter" href="Execution_context.html">
+<link title="Handler" rel="Chapter" href="Handler.html">
+<link title="Import" rel="Chapter" href="Import.html">
+<link title="Ivar" rel="Chapter" href="Ivar.html">
+<link title="Job" rel="Chapter" href="Job.html">
+<link title="Jobs" rel="Chapter" href="Jobs.html">
+<link title="Kill_index" rel="Chapter" href="Kill_index.html">
+<link title="Lazy_deferred" rel="Chapter" href="Lazy_deferred.html">
+<link title="Monitor" rel="Chapter" href="Monitor.html">
+<link title="Pipe" rel="Chapter" href="Pipe.html">
+<link title="Priority" rel="Chapter" href="Priority.html">
+<link title="Raw_deferred" rel="Chapter" href="Raw_deferred.html">
+<link title="Raw_handler" rel="Chapter" href="Raw_handler.html">
+<link title="Raw_ivar" rel="Chapter" href="Raw_ivar.html">
+<link title="Raw_monitor" rel="Chapter" href="Raw_monitor.html">
+<link title="Raw_scheduler" rel="Chapter" href="Raw_scheduler.html">
+<link title="Raw_stream" rel="Chapter" href="Raw_stream.html">
+<link title="Scheduler" rel="Chapter" href="Scheduler.html">
+<link title="Std" rel="Chapter" href="Std.html">
+<link title="Tail" rel="Chapter" href="Tail.html">
+<link title="Test" rel="Chapter" href="Test.html">
+<link title="Throttle" rel="Chapter" href="Throttle.html">
+<link title="Throttle_debug" rel="Chapter" href="Throttle_debug.html">
+<link title="Throttle_unit_tests" rel="Chapter" href="Throttle_unit_tests.html">
+<link title="Unregister" rel="Chapter" href="Unregister.html"><title>Ivar</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Import.html" title="Import">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="Job.html" title="Job">Next</a>
+</div>
+<h1>Module <a href="type_Ivar.html">Ivar</a></h1>
+<pre><span class="keyword">module</span> Ivar: <code class="code">sig</code> <a href="Ivar.html">..</a> <code class="code">end</code></pre><div class="info">
+An ivar is a write-once cell that can be empty or full (i.e. hold a single value) that
+    one can <code class="code">read</code> and to obtain a deferred that becomes determined when the ivar is
+    filled.  An ivar is similar to an <code class="code">'a option ref</code>, except it is an error to fill an
+    already full ivar.<br>
+</div>
+<hr width="100%">
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> </pre>
+
+<pre><span id="TYPEivar"><span class="keyword">type</span> <code class="type">'a</code> ivar</span> = <code class="type">'a <a href="Ivar.html#TYPEt">t</a></code> </pre>
+
+<pre><span class="keyword">include</span> Invariant.S1</pre>
+<pre><span id="VALequal"><span class="keyword">val</span> equal</span> : <code class="type">'a <a href="Ivar.html#TYPEt">t</a> -> 'a <a href="Ivar.html#TYPEt">t</a> -> bool</code></pre><div class="info">
+<code class="code">equal t t'</code> is physical equality of <code class="code">t</code> and <code class="code">t'</code>.<br>
+</div>
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">unit -> 'a <a href="Ivar.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">create ()</code> returns an empty ivar.<br>
+</div>
+<pre><span id="VALfill"><span class="keyword">val</span> fill</span> : <code class="type">'a <a href="Ivar.html#TYPEt">t</a> -> 'a -> unit</code></pre><div class="info">
+<code class="code">fill t v</code> fills <code class="code">t</code> with value <code class="code">v</code> if <code class="code">t</code> was empty.  If <code class="code">t</code> was full, fill raises
+    an exception.
+<p>
+
+    It is guaranteed that immediately after calling <code class="code">fill t</code>,
+    <code class="code">is_some (Deferred.peek (read t))</code>.<br>
+</div>
+<pre><span id="VALfill_if_empty"><span class="keyword">val</span> fill_if_empty</span> : <code class="type">'a <a href="Ivar.html#TYPEt">t</a> -> 'a -> unit</code></pre><div class="info">
+<code class="code">fill_if_empty t v</code> fills <code class="code">t</code> with <code class="code">v</code> if <code class="code">t</code> is currently empty.  If <code class="code">t</code> is full,
+    then <code class="code">fill_if_empty</code> does nothing.<br>
+</div>
+<pre><span id="VALis_empty"><span class="keyword">val</span> is_empty</span> : <code class="type">'a <a href="Ivar.html#TYPEt">t</a> -> bool</code></pre><div class="info">
+<code class="code">is_empty t</code> returns true if <code class="code">t</code> is empty<br>
+</div>
+<pre><span id="VALis_full"><span class="keyword">val</span> is_full</span> : <code class="type">'a <a href="Ivar.html#TYPEt">t</a> -> bool</code></pre><div class="info">
+<code class="code">is_full t</code> returns true if <code class="code">t</code> is full<br>
+</div>
+<pre><span class="keyword">module</span> <a href="Ivar.Deferred.html">Deferred</a>: <code class="code">sig</code> <a href="Ivar.Deferred.html">..</a> <code class="code">end</code></pre><div class="info">
+The <code class="code">Deferred</code> module exposed here is for async's internal use only.
+</div>
+<pre><span id="VALread"><span class="keyword">val</span> read</span> : <code class="type">'a <a href="Ivar.html#TYPEt">t</a> -> 'a <a href="Ivar.Deferred.html#TYPEt">Deferred.t</a></code></pre><div class="info">
+<code class="code">read t</code> returns a deferred that becomes enabled with value <code class="code">v</code> after the ivar is
+    filled with <code class="code">v</code>.<br>
+</div>
+<pre><span id="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('a -> <a href="../sexplib/Sexp.html">Sexplib.Sexp</a>.t) -> 'a <a href="Ivar.html#TYPEt">t</a> -> <a href="../sexplib/Sexp.html">Sexplib.Sexp</a>.t</code></pre><pre><span id="VALbin_t"><span class="keyword">val</span> bin_t</span> : <code class="type">'a <a href="../bin_prot/Type_class.html">Bin_prot.Type_class</a>.t -> 'a <a href="Ivar.html#TYPEt">t</a> <a href="../bin_prot/Type_class.html">Bin_prot.Type_class</a>.t</code></pre><pre><span id="VALbin_read_t"><span class="keyword">val</span> bin_read_t</span> : <code class="type">'a <a href="../bin_prot/Unsafe_read_c.html">Bin_prot.Unsafe_read_c</a>.reader -><br>       'a <a href="Ivar.html#TYPEt">t</a> <a href="../bin_prot/Read_ml.html">Bin_prot.Read_ml</a>.reader</code></pre><pre><span id="VALbin_read_t_"><span class="keyword">val</span> bin_read_t_</span> : <code class="type">'a <a href="../bin_prot/Unsafe_read_c.html">Bin_prot.Unsafe_read_c</a>.reader -><br>       'a <a href="Ivar.html#TYPEt">t</a> <a href="../bin_prot/Unsafe_read_c.html">Bin_prot.Unsafe_read_c</a>.reader</code></pre><pre><span id="VALbin_read_t__"><span class="keyword">val</span> bin_read_t__</span> : <code class="type">'a <a href="../bin_prot/Unsafe_read_c.html">Bin_prot.Unsafe_read_c</a>.reader -><br>       (int -> 'a <a href="Ivar.html#TYPEt">t</a>) <a href="../bin_prot/Unsafe_read_c.html">Bin_prot.Unsafe_read_c</a>.reader</code></pre><pre><span id="VALbin_reader_t"><span class="keyword">val</span> bin_reader_t</span> : <code class="type">'a <a href="../bin_prot/Type_class.html">Bin_prot.Type_class</a>.reader -><br>       'a <a href="Ivar.html#TYPEt">t</a> <a href="../bin_prot/Type_class.html">Bin_prot.Type_class</a>.reader</code></pre><pre><span id="VALbin_size_t"><span class="keyword">val</span> bin_size_t</span> : <code class="type">'a <a href="../bin_prot/Size.html">Bin_prot.Size</a>.sizer -> 'a <a href="Ivar.html#TYPEt">t</a> <a href="../bin_prot/Size.html">Bin_prot.Size</a>.sizer</code></pre><pre><span id="VALbin_write_t"><span class="keyword">val</span> bin_write_t</span> : <code class="type">'a <a href="../bin_prot/Unsafe_write_c.html">Bin_prot.Unsafe_write_c</a>.writer -><br>       'a <a href="Ivar.html#TYPEt">t</a> <a href="../bin_prot/Write_ml.html">Bin_prot.Write_ml</a>.writer</code></pre><pre><span id="VALbin_write_t_"><span class="keyword">val</span> bin_write_t_</span> : <code class="type">'a <a href="../bin_prot/Unsafe_write_c.html">Bin_prot.Unsafe_write_c</a>.writer -><br>       'a <a href="Ivar.html#TYPEt">t</a> <a href="../bin_prot/Unsafe_write_c.html">Bin_prot.Unsafe_write_c</a>.writer</code></pre><pre><span id="VALbin_writer_t"><span class="keyword">val</span> bin_writer_t</span> : <code class="type">'a <a href="../bin_prot/Type_class.html">Bin_prot.Type_class</a>.writer -><br>       'a <a href="Ivar.html#TYPEt">t</a> <a href="../bin_prot/Type_class.html">Bin_prot.Type_class</a>.writer</code></pre><br>
+<code class="code">equal t t'</code> is physical equality of <code class="code">t</code> and <code class="code">t'</code>.<br>
+<br>
+<code class="code">create ()</code> returns an empty ivar.<br>
+<br>
+<code class="code">fill t v</code> fills <code class="code">t</code> with value <code class="code">v</code> if <code class="code">t</code> was empty.  If <code class="code">t</code> was full, fill raises
+    an exception.
+<p>
+
+    It is guaranteed that immediately after calling <code class="code">fill t</code>,
+    <code class="code">is_some (Deferred.peek (read t))</code>.<br>
+<br>
+<code class="code">fill_if_empty t v</code> fills <code class="code">t</code> with <code class="code">v</code> if <code class="code">t</code> is currently empty.  If <code class="code">t</code> is full,
+    then <code class="code">fill_if_empty</code> does nothing.<br>
+<br>
+<code class="code">is_empty t</code> returns true if <code class="code">t</code> is empty<br>
+<br>
+<code class="code">is_full t</code> returns true if <code class="code">t</code> is full<br>
+<br>
+The <code class="code">Deferred</code> module exposed here is for async's internal use only.<br>
+<br>
+<code class="code">read t</code> returns a deferred that becomes enabled with value <code class="code">v</code> after the ivar is
+    filled with <code class="code">v</code>.<br>
+</body></html>

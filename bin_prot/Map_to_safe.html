@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Type_class.html">
+<link rel="next" href="Utils.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Binable" rel="Chapter" href="Binable.html">
+<link title="Nat0" rel="Chapter" href="Nat0.html">
+<link title="Common" rel="Chapter" href="Common.html">
+<link title="Unsafe_common" rel="Chapter" href="Unsafe_common.html">
+<link title="Unsafe_write_c" rel="Chapter" href="Unsafe_write_c.html">
+<link title="Unsafe_read_c" rel="Chapter" href="Unsafe_read_c.html">
+<link title="Size" rel="Chapter" href="Size.html">
+<link title="Write_ml" rel="Chapter" href="Write_ml.html">
+<link title="Read_ml" rel="Chapter" href="Read_ml.html">
+<link title="Write_c" rel="Chapter" href="Write_c.html">
+<link title="Read_c" rel="Chapter" href="Read_c.html">
+<link title="Std" rel="Chapter" href="Std.html">
+<link title="Type_class" rel="Chapter" href="Type_class.html">
+<link title="Map_to_safe" rel="Chapter" href="Map_to_safe.html">
+<link title="Utils" rel="Chapter" href="Utils.html"><title>Map_to_safe</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Type_class.html" title="Type_class">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="Utils.html" title="Utils">Next</a>
+</div>
+<h1>Module <a href="type_Map_to_safe.html">Map_to_safe</a></h1>
+<pre><span class="keyword">module</span> Map_to_safe: <code class="code">sig</code> <a href="Map_to_safe.html">..</a> <code class="code">end</code></pre><hr width="100%">
+<pre><span id="TYPEreader"><span class="keyword">type</span> <code class="type">'a</code> reader</span> = <code class="type">'a <a href="Read_ml.html#TYPEreader">Read_ml.reader</a></code> </pre>
+
+<pre><span id="TYPEreader1"><span class="keyword">type</span> <code class="type">('a, 'b)</code> reader1</span> = <code class="type">'a <a href="Unsafe_read_c.html#TYPEreader">Unsafe_read_c.reader</a> -> 'b <a href="Read_ml.html#TYPEreader">Read_ml.reader</a></code> </pre>
+
+<pre><span id="TYPEreader2"><span class="keyword">type</span> <code class="type">('a, 'b, 'c)</code> reader2</span> = <code class="type">'a <a href="Unsafe_read_c.html#TYPEreader">Unsafe_read_c.reader</a> -> ('b, 'c) <a href="Map_to_safe.html#TYPEreader1">reader1</a></code> </pre>
+
+<pre><span id="TYPEreader3"><span class="keyword">type</span> <code class="type">('a, 'b, 'c, 'd)</code> reader3</span> = <code class="type">'a <a href="Unsafe_read_c.html#TYPEreader">Unsafe_read_c.reader</a> -> ('b, 'c, 'd) <a href="Map_to_safe.html#TYPEreader2">reader2</a></code> </pre>
+
+<pre><span id="TYPEwriter"><span class="keyword">type</span> <code class="type">'a</code> writer</span> = <code class="type">'a <a href="Write_ml.html#TYPEwriter">Write_ml.writer</a></code> </pre>
+
+<pre><span id="TYPEwriter1"><span class="keyword">type</span> <code class="type">('a, 'b)</code> writer1</span> = <code class="type">'a <a href="Unsafe_write_c.html#TYPEwriter">Unsafe_write_c.writer</a> -> 'b <a href="Write_ml.html#TYPEwriter">Write_ml.writer</a></code> </pre>
+
+<pre><span id="TYPEwriter2"><span class="keyword">type</span> <code class="type">('a, 'b, 'c)</code> writer2</span> = <code class="type">'a <a href="Unsafe_write_c.html#TYPEwriter">Unsafe_write_c.writer</a> -> ('b, 'c) <a href="Map_to_safe.html#TYPEwriter1">writer1</a></code> </pre>
+
+<pre><span id="TYPEwriter3"><span class="keyword">type</span> <code class="type">('a, 'b, 'c, 'd)</code> writer3</span> = <code class="type">'a <a href="Unsafe_write_c.html#TYPEwriter">Unsafe_write_c.writer</a> -> ('b, 'c, 'd) <a href="Map_to_safe.html#TYPEwriter2">writer2</a></code> </pre>
+
+</body></html>

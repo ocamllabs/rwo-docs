@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Std.Print.html">
+<link rel="next" href="Std.Reader.html">
+<link rel="Up" href="Std.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Async_print" rel="Chapter" href="Async_print.html">
+<link title="Async_sys" rel="Chapter" href="Async_sys.html">
+<link title="Busy_pollers" rel="Chapter" href="Busy_pollers.html">
+<link title="Epoll_file_descr_watcher" rel="Chapter" href="Epoll_file_descr_watcher.html">
+<link title="Fd" rel="Chapter" href="Fd.html">
+<link title="Fd_by_descr" rel="Chapter" href="Fd_by_descr.html">
+<link title="File_descr_watcher_intf" rel="Chapter" href="File_descr_watcher_intf.html">
+<link title="Import" rel="Chapter" href="Import.html">
+<link title="Interruptor" rel="Chapter" href="Interruptor.html">
+<link title="In_thread" rel="Chapter" href="In_thread.html">
+<link title="Io_stats" rel="Chapter" href="Io_stats.html">
+<link title="Process" rel="Chapter" href="Process.html">
+<link title="Raw_fd" rel="Chapter" href="Raw_fd.html">
+<link title="Raw_scheduler" rel="Chapter" href="Raw_scheduler.html">
+<link title="Raw_signal_manager" rel="Chapter" href="Raw_signal_manager.html">
+<link title="Reader" rel="Chapter" href="Reader.html">
+<link title="Read_write" rel="Chapter" href="Read_write.html">
+<link title="Scheduler" rel="Chapter" href="Scheduler.html">
+<link title="Select_file_descr_watcher" rel="Chapter" href="Select_file_descr_watcher.html">
+<link title="Shutdown" rel="Chapter" href="Shutdown.html">
+<link title="Signal" rel="Chapter" href="Signal.html">
+<link title="Signal_manager" rel="Chapter" href="Signal_manager.html">
+<link title="Std" rel="Chapter" href="Std.html">
+<link title="Syscall" rel="Chapter" href="Syscall.html">
+<link title="Thread_pool" rel="Chapter" href="Thread_pool.html">
+<link title="Thread_safe" rel="Chapter" href="Thread_safe.html">
+<link title="Thread_safe_pipe" rel="Chapter" href="Thread_safe_pipe.html">
+<link title="Unix_syscalls" rel="Chapter" href="Unix_syscalls.html">
+<link title="Writer" rel="Chapter" href="Writer.html"><title>Std.Process</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Std.Print.html" title="Std.Print">Previous</a>
+&nbsp;<a class="up" href="Std.html" title="Std">Up</a>
+&nbsp;<a class="post" href="Std.Reader.html" title="Std.Reader">Next</a>
+</div>
+<h1>Module <a href="type_Std.Process.html">Std.Process</a></h1>
+<pre><span class="keyword">module</span> Process: <code class="type">Process</code></pre><hr width="100%">
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
+
+<pre><span id="VALpid"><span class="keyword">val</span> pid</span> : <code class="type"><a href="Process.html#TYPEt">t</a> -> <a href="../core/Pid.html">Core.Std.Pid</a>.t</code></pre><pre><span id="VALstdin"><span class="keyword">val</span> stdin</span> : <code class="type"><a href="Process.html#TYPEt">t</a> -> <a href="Writer.html#TYPEt">Writer.t</a></code></pre><pre><span id="VALstdout"><span class="keyword">val</span> stdout</span> : <code class="type"><a href="Process.html#TYPEt">t</a> -> <a href="Reader.html#TYPEt">Reader.t</a></code></pre><pre><span id="VALstderr"><span class="keyword">val</span> stderr</span> : <code class="type"><a href="Process.html#TYPEt">t</a> -> <a href="Reader.html#TYPEt">Reader.t</a></code></pre><pre><span id="TYPEenv"><span class="keyword">type</span> <code class="type"></code>env</span> = <code class="type">[ `Extend of (string * string) list | `Replace of (string * string) list ]</code> </pre>
+<div class="info">
+<code class="code">env</code> specifies how to construct the environment that the child process will start
+    with.  With <code class="code">`Extend [ x1,v1; x2,v2; ... ]</code>, the child's environment will be the same
+    as the parent's, except for <code class="code">xi</code> will have value <code class="code">vi</code>.  With <code class="code">`Replace</code>, the only
+    variables in the child's environment will be the <code class="code">xi</code>.  In either case, the child's
+    environment is established by first clearing <code class="code">environ</code> and then repeatedly calling
+    <code class="code">putenv</code> to establish the desired environment.<br>
+</div>
+
+<pre><span id="TYPEwith_create_args"><span class="keyword">type</span> <code class="type">'a</code> with_create_args</span> = <code class="type">?working_dir:string -><br>       ?env:<a href="Process.html#TYPEenv">env</a> -> prog:string -> args:string list -> unit -> 'a</code> </pre>
+<div class="info">
+<code class="code">with_create_args</code> specifies the arguments used to create a child process.<br>
+</div>
+
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type"><a href="Process.html#TYPEt">t</a> <a href="../core/Or_error.html">Core.Std.Or_error</a>.t Import.Deferred.t <a href="Process.html#TYPEwith_create_args">with_create_args</a></code></pre><div class="info">
+<code class="code">create ~prog ~args ?working_dir ?env ()</code> uses fork+exec to create a child process
+    that runs the executable <code class="code">prog</code> with <code class="code">args</code> as arguments.  It creates pipes to
+    communicate with the child process's stdin, stdout, and stderr.
+<p>
+
+    If <code class="code">working_dir</code> is supplied, then the child process will chdir() there before calling
+    exec().
+<p>
+
+    <code class="code">env</code> specifies the environment of the child process.
+<p>
+
+    <code class="code">create</code> returns <code class="code">Error</code> if it is unable to create the child process.  This can happen
+    in any number of situations (unable to fork, unable to create the pipes, unable to
+    cd to <code class="code">working_dir</code>, unable to exec, etc.).<br>
+</div>
+<pre><span class="keyword">module</span> <a href="Process.Output.html">Output</a>: <code class="code">sig</code> <a href="Process.Output.html">..</a> <code class="code">end</code></pre><div class="info">
+<code class="code">wait t</code> closes <code class="code">stdin t</code> and then begins collecting the output produced on <code class="code">t</code>'s
+    <code class="code">stdout</code> and <code class="code">stderr</code>, continuing to collect output until <code class="code">t</code> terminates.
+</div>
+<pre><span id="VALwait"><span class="keyword">val</span> wait</span> : <code class="type"><a href="Process.html#TYPEt">t</a> -> <a href="Process.Output.html#TYPEt">Output.t</a> Import.Deferred.t</code></pre><pre><span id="VALrun"><span class="keyword">val</span> run</span> : <code class="type">string <a href="../core/Or_error.html">Core.Std.Or_error</a>.t Import.Deferred.t <a href="Process.html#TYPEwith_create_args">with_create_args</a></code></pre><div class="info">
+<code class="code">run</code> <code class="code">create</code>s a process and <code class="code">wait</code>s for it to complete.  If the process exits with
+    status zero, then <code class="code">run</code> returns its stdout.  Otherwise, <code class="code">run</code> returns an error
+    indicating what went wrong that includes stdout and stderr.  Some care is taken so
+    that an error displays nicely as a sexp -- in particular, if the child's output can
+    already be parsed as a sexp, then it will display as a sexp (rather than a sexp
+    embedded in a string).  Also, if the output isn't a sexp, it will be split on newlines
+    into a list of strings, so that it displays on multiple lines rather than a single
+    giant line with embedded "\n"'s.<br>
+</div>
+<pre><span id="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="Process.html#TYPEt">t</a> -> <a href="../sexplib/Sexp.html">Sexplib.Sexp</a>.t</code></pre><pre><span id="VALenv_of_sexp"><span class="keyword">val</span> env_of_sexp</span> : <code class="type"><a href="../sexplib/Sexp.html">Sexplib.Sexp</a>.t -> <a href="Process.html#TYPEenv">env</a></code></pre><div class="info">
+<code class="code">env</code> specifies how to construct the environment that the child process will start
+    with.  With <code class="code">`Extend [ x1,v1; x2,v2; ... ]</code>, the child's environment will be the same
+    as the parent's, except for <code class="code">xi</code> will have value <code class="code">vi</code>.  With <code class="code">`Replace</code>, the only
+    variables in the child's environment will be the <code class="code">xi</code>.  In either case, the child's
+    environment is established by first clearing <code class="code">environ</code> and then repeatedly calling
+    <code class="code">putenv</code> to establish the desired environment.<br>
+</div>
+<pre><span id="VAL__env_of_sexp__"><span class="keyword">val</span> __env_of_sexp__</span> : <code class="type"><a href="../sexplib/Sexp.html">Sexplib.Sexp</a>.t -> <a href="Process.html#TYPEenv">env</a></code></pre><pre><span id="VALsexp_of_env"><span class="keyword">val</span> sexp_of_env</span> : <code class="type"><a href="Process.html#TYPEenv">env</a> -> <a href="../sexplib/Sexp.html">Sexplib.Sexp</a>.t</code></pre><br>
+<code class="code">with_create_args</code> specifies the arguments used to create a child process.<br>
+<br>
+<code class="code">create ~prog ~args ?working_dir ?env ()</code> uses fork+exec to create a child process
+    that runs the executable <code class="code">prog</code> with <code class="code">args</code> as arguments.  It creates pipes to
+    communicate with the child process's stdin, stdout, and stderr.
+<p>
+
+    If <code class="code">working_dir</code> is supplied, then the child process will chdir() there before calling
+    exec().
+<p>
+
+    <code class="code">env</code> specifies the environment of the child process.
+<p>
+
+    <code class="code">create</code> returns <code class="code">Error</code> if it is unable to create the child process.  This can happen
+    in any number of situations (unable to fork, unable to create the pipes, unable to
+    cd to <code class="code">working_dir</code>, unable to exec, etc.).<br>
+<br>
+<code class="code">wait t</code> closes <code class="code">stdin t</code> and then begins collecting the output produced on <code class="code">t</code>'s
+    <code class="code">stdout</code> and <code class="code">stderr</code>, continuing to collect output until <code class="code">t</code> terminates.  As usual,
+    other async jobs can run before the deferred returned by <code class="code">wait</code> becomes determined.<br>
+<br>
+<code class="code">run</code> <code class="code">create</code>s a process and <code class="code">wait</code>s for it to complete.  If the process exits with
+    status zero, then <code class="code">run</code> returns its stdout.  Otherwise, <code class="code">run</code> returns an error
+    indicating what went wrong that includes stdout and stderr.  Some care is taken so
+    that an error displays nicely as a sexp -- in particular, if the child's output can
+    already be parsed as a sexp, then it will display as a sexp (rather than a sexp
+    embedded in a string).  Also, if the output isn't a sexp, it will be split on newlines
+    into a list of strings, so that it displays on multiple lines rather than a single
+    giant line with embedded "\n"'s.<br>
+</body></html>

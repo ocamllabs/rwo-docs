@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Versioned_typed_tcp.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Command" rel="Chapter" href="Command.html">
+<link title="File_tail" rel="Chapter" href="File_tail.html">
+<link title="File_writer" rel="Chapter" href="File_writer.html">
+<link title="Import" rel="Chapter" href="Import.html">
+<link title="Lock_file" rel="Chapter" href="Lock_file.html">
+<link title="Log" rel="Chapter" href="Log.html">
+<link title="Persistent_singleton" rel="Chapter" href="Persistent_singleton.html">
+<link title="Rpc" rel="Chapter" href="Rpc.html">
+<link title="Rpc_intf" rel="Chapter" href="Rpc_intf.html">
+<link title="Sequencer_table" rel="Chapter" href="Sequencer_table.html">
+<link title="Std" rel="Chapter" href="Std.html">
+<link title="Tcp" rel="Chapter" href="Tcp.html">
+<link title="Tcp_file" rel="Chapter" href="Tcp_file.html">
+<link title="Typed_tcp" rel="Chapter" href="Typed_tcp.html">
+<link title="Typed_tcp_intf" rel="Chapter" href="Typed_tcp_intf.html">
+<link title="Unpack_sequence" rel="Chapter" href="Unpack_sequence.html">
+<link title="User_and_group" rel="Chapter" href="User_and_group.html">
+<link title="Versioned_rpc" rel="Chapter" href="Versioned_rpc.html">
+<link title="Versioned_typed_tcp" rel="Chapter" href="Versioned_typed_tcp.html">
+<link title="Weak_hashtbl" rel="Chapter" href="Weak_hashtbl.html"><title>Weak_hashtbl</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Versioned_typed_tcp.html" title="Versioned_typed_tcp">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;</div>
+<h1>Module <a href="type_Weak_hashtbl.html">Weak_hashtbl</a></h1>
+<pre><span class="keyword">module</span> Weak_hashtbl: <code class="code">sig</code> <a href="Weak_hashtbl.html">..</a> <code class="code">end</code></pre><div class="info">
+A <code class="code">Weak_hashtbl.t</code> is a hashtable that will drop a key and value if the value is no
+    longer referenced (by any non-weak pointers).  <code class="code">Weak_hashtbl</code> is in Async rather than
+    Core because it relies on finalization in its implementation.  Using non-Async
+    finalizers in an async program is wrong (see Async_gc.mli for details), and having
+    <code class="code">Weak_hashtbl</code> in Async prevents users from making this mistake.  Unlike (OCaml's)
+    <code class="code">Weak.Make</code>, which also describes itself as a "weak hashtable," <code class="code">Weak_hashtbl</code> gives a
+    dictionary style structure.  In fact, OCaml's Weak.Make may better be described as a
+    weak set.
+<p>
+
+    There's a tricky type of bug one can write with this module, e.g.:
+<p>
+
+    <pre class="codepre"><code class="code">      type t =
+        { foo : string
+        ; bar : float Incr.t
+        }
+
+      let tbl = Weak_hashtbl.create ()
+      let x1 =
+        let t = Weak_hashtbl.find_or_add tbl key ~default:(fun () -&gt;
+          (... some function that computes a t...))
+        in
+        t.bar
+    </code></pre>
+<p>
+
+    At this point, the value associated with <code class="code">key</code> is unreachable (since all we did with it
+    was project out field bar), so it may disappear from the table at any time.<br>
+</div>
+<hr width="100%">
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'b)</code> t</span> </pre>
+
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">'a Core.Std.Hashtbl.Hashable.t -> ('a, 'b) <a href="Weak_hashtbl.html#TYPEt">t</a></code></pre><pre><span id="VALfind"><span class="keyword">val</span> find</span> : <code class="type">('a, 'b) <a href="Weak_hashtbl.html#TYPEt">t</a> -> 'a -> 'b <a href="../core/Heap_block.html">Core.Std.Heap_block</a>.t option</code></pre><pre><span id="VALfind_or_add"><span class="keyword">val</span> find_or_add</span> : <code class="type">('a, 'b) <a href="Weak_hashtbl.html#TYPEt">t</a> -><br>       'a -> default:(unit -> 'b <a href="../core/Heap_block.html">Core.Std.Heap_block</a>.t) -> 'b <a href="../core/Heap_block.html">Core.Std.Heap_block</a>.t</code></pre><pre><span id="VALremove"><span class="keyword">val</span> remove</span> : <code class="type">('a, 'b) <a href="Weak_hashtbl.html#TYPEt">t</a> -> 'a -> unit</code></pre><pre><span id="VALreplace"><span class="keyword">val</span> replace</span> : <code class="type">('a, 'b) <a href="Weak_hashtbl.html#TYPEt">t</a> -> key:'a -> data:'b <a href="../core/Heap_block.html">Core.Std.Heap_block</a>.t -> unit</code></pre></body></html>

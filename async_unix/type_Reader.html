@@ -1,0 +1,211 @@
+<html><head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Async_print" rel="Chapter" href="Async_print.html">
+<link title="Async_sys" rel="Chapter" href="Async_sys.html">
+<link title="Busy_pollers" rel="Chapter" href="Busy_pollers.html">
+<link title="Epoll_file_descr_watcher" rel="Chapter" href="Epoll_file_descr_watcher.html">
+<link title="Fd" rel="Chapter" href="Fd.html">
+<link title="Fd_by_descr" rel="Chapter" href="Fd_by_descr.html">
+<link title="File_descr_watcher_intf" rel="Chapter" href="File_descr_watcher_intf.html">
+<link title="Import" rel="Chapter" href="Import.html">
+<link title="Interruptor" rel="Chapter" href="Interruptor.html">
+<link title="In_thread" rel="Chapter" href="In_thread.html">
+<link title="Io_stats" rel="Chapter" href="Io_stats.html">
+<link title="Process" rel="Chapter" href="Process.html">
+<link title="Raw_fd" rel="Chapter" href="Raw_fd.html">
+<link title="Raw_scheduler" rel="Chapter" href="Raw_scheduler.html">
+<link title="Raw_signal_manager" rel="Chapter" href="Raw_signal_manager.html">
+<link title="Reader" rel="Chapter" href="Reader.html">
+<link title="Read_write" rel="Chapter" href="Read_write.html">
+<link title="Scheduler" rel="Chapter" href="Scheduler.html">
+<link title="Select_file_descr_watcher" rel="Chapter" href="Select_file_descr_watcher.html">
+<link title="Shutdown" rel="Chapter" href="Shutdown.html">
+<link title="Signal" rel="Chapter" href="Signal.html">
+<link title="Signal_manager" rel="Chapter" href="Signal_manager.html">
+<link title="Std" rel="Chapter" href="Std.html">
+<link title="Syscall" rel="Chapter" href="Syscall.html">
+<link title="Thread_pool" rel="Chapter" href="Thread_pool.html">
+<link title="Thread_safe" rel="Chapter" href="Thread_safe.html">
+<link title="Thread_safe_pipe" rel="Chapter" href="Thread_safe_pipe.html">
+<link title="Unix_syscalls" rel="Chapter" href="Unix_syscalls.html">
+<link title="Writer" rel="Chapter" href="Writer.html"><title>Reader</title>
+</head>
+<body>
+<code class="code"><span class="keyword">sig</span><br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Read_result</span>&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">sig</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;=&nbsp;[&nbsp;<span class="keywordsign">`</span><span class="constructor">Eof</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Ok</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;(&nbsp;&gt;&gt;=&nbsp;)&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>b&nbsp;t)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>b&nbsp;t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;(&nbsp;&gt;&gt;|&nbsp;)&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>b)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>b&nbsp;t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Monad_infix</span>&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">sig</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;(&nbsp;&gt;&gt;=&nbsp;)&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>b&nbsp;t)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>b&nbsp;t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;(&nbsp;&gt;&gt;|&nbsp;)&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>b)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>b&nbsp;t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bind&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>b&nbsp;t)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>b&nbsp;t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;return&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;map&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;f:(<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>b)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>b&nbsp;t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;join&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;ignore&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit&nbsp;t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;all&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;list&nbsp;t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;all_ignore&nbsp;:&nbsp;unit&nbsp;t&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit&nbsp;t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;t_of_sexp&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Reader</span>.<span class="constructor">Read_result</span>.t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__t_of_sexp__&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Reader</span>.<span class="constructor">Read_result</span>.t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;sexp_of_t&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Reader</span>.<span class="constructor">Read_result</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_t&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Core</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Reader</span>.<span class="constructor">Read_result</span>.t&nbsp;<span class="constructor">Core</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_read_t&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Core</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Unsafe_read_c</span>.reader&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Reader</span>.<span class="constructor">Read_result</span>.t&nbsp;<span class="constructor">Core</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Read_ml</span>.reader<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_read_t_&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Core</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Unsafe_read_c</span>.reader&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Reader</span>.<span class="constructor">Read_result</span>.t&nbsp;<span class="constructor">Core</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Unsafe_read_c</span>.reader<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_read_t__&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Core</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Unsafe_read_c</span>.reader&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Reader</span>.<span class="constructor">Read_result</span>.t)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Core</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Unsafe_read_c</span>.reader<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_t&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Core</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.reader&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Reader</span>.<span class="constructor">Read_result</span>.t&nbsp;<span class="constructor">Core</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_size_t&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Core</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Size</span>.sizer&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Reader</span>.<span class="constructor">Read_result</span>.t&nbsp;<span class="constructor">Core</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Size</span>.sizer<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_write_t&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Core</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Unsafe_write_c</span>.writer&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Reader</span>.<span class="constructor">Read_result</span>.t&nbsp;<span class="constructor">Core</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Write_ml</span>.writer<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_write_t_&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Core</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Unsafe_write_c</span>.writer&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Reader</span>.<span class="constructor">Read_result</span>.t&nbsp;<span class="constructor">Core</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Unsafe_write_c</span>.writer<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_t&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Core</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.writer&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Reader</span>.<span class="constructor">Read_result</span>.t&nbsp;<span class="constructor">Core</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span><br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Id</span>&nbsp;:&nbsp;<span class="constructor">Core</span>.<span class="constructor">Std</span>.<span class="constructor">Unique_id</span><br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;invariant&nbsp;:&nbsp;t&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Invariant_intf</span>.inv<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;io_stats&nbsp;:&nbsp;<span class="constructor">Io_stats</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;last_read_time&nbsp;:&nbsp;<span class="constructor">Reader</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Core</span>.<span class="constructor">Std</span>.<span class="constructor">Time</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;stdin&nbsp;:&nbsp;<span class="constructor">Reader</span>.t&nbsp;<span class="constructor">Core</span>.<span class="constructor">Std</span>.<span class="constructor">Lazy</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;open_file&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?close_on_exec:bool&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?buf_len:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Reader</span>.t&nbsp;<span class="constructor">Import</span>.<span class="constructor">Deferred</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;transfer&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Reader</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="constructor">Import</span>.<span class="constructor">Pipe</span>.<span class="constructor">Writer</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit&nbsp;<span class="constructor">Import</span>.<span class="constructor">Deferred</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;pipe&nbsp;:&nbsp;<span class="constructor">Reader</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="constructor">Import</span>.<span class="constructor">Pipe</span>.<span class="constructor">Reader</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;create&nbsp;:&nbsp;?buf_len:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Fd</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Reader</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;of_in_channel&nbsp;:&nbsp;<span class="constructor">Pervasives</span>.in_channel&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Fd</span>.<span class="constructor">Kind</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Reader</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;with_file&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?buf_len:int&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?exclusive:bool&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;f:(<span class="constructor">Reader</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Import</span>.<span class="constructor">Deferred</span>.t)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Import</span>.<span class="constructor">Deferred</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;close&nbsp;:&nbsp;<span class="constructor">Reader</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit&nbsp;<span class="constructor">Import</span>.<span class="constructor">Deferred</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;close_finished&nbsp;:&nbsp;<span class="constructor">Reader</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit&nbsp;<span class="constructor">Import</span>.<span class="constructor">Deferred</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;is_closed&nbsp;:&nbsp;<span class="constructor">Reader</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;with_close&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Reader</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;f:(unit&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Import</span>.<span class="constructor">Deferred</span>.t)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Import</span>.<span class="constructor">Deferred</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;id&nbsp;:&nbsp;<span class="constructor">Reader</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Id</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;fd&nbsp;:&nbsp;<span class="constructor">Reader</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Fd</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;read&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Reader</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?pos:int&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?len:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="constructor">Reader</span>.<span class="constructor">Read_result</span>.t&nbsp;<span class="constructor">Import</span>.<span class="constructor">Deferred</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;read_one_chunk_at_a_time_until_eof_result&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[&nbsp;<span class="keywordsign">`</span><span class="constructor">Eof</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Eof_with_unconsumed_data</span>&nbsp;<span class="keyword">of</span>&nbsp;string&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Stopped</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;]<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;read_one_chunk_at_a_time_until_eof&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Reader</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;handle_chunk:(<span class="constructor">Core</span>.<span class="constructor">Std</span>.<span class="constructor">Bigstring</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pos:int&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;len:int&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[&nbsp;<span class="keywordsign">`</span><span class="constructor">Consumed</span>&nbsp;<span class="keyword">of</span>&nbsp;int&nbsp;*&nbsp;[&nbsp;<span class="keywordsign">`</span><span class="constructor">Need</span>&nbsp;<span class="keyword">of</span>&nbsp;int&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Need_unknown</span>&nbsp;]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Continue</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Stop</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;]&nbsp;<span class="constructor">Import</span>.<span class="constructor">Deferred</span>.t)&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Reader</span>.read_one_chunk_at_a_time_until_eof_result&nbsp;<span class="constructor">Import</span>.<span class="constructor">Deferred</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;read_substring&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Reader</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Core</span>.<span class="constructor">Std</span>.<span class="constructor">Substring</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="constructor">Reader</span>.<span class="constructor">Read_result</span>.t&nbsp;<span class="constructor">Import</span>.<span class="constructor">Deferred</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;read_bigsubstring&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Reader</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Core</span>.<span class="constructor">Std</span>.<span class="constructor">Bigsubstring</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="constructor">Reader</span>.<span class="constructor">Read_result</span>.t&nbsp;<span class="constructor">Import</span>.<span class="constructor">Deferred</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;read_char&nbsp;:&nbsp;<span class="constructor">Reader</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;char&nbsp;<span class="constructor">Reader</span>.<span class="constructor">Read_result</span>.t&nbsp;<span class="constructor">Import</span>.<span class="constructor">Deferred</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;really_read&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Reader</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?pos:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;?len:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;[&nbsp;<span class="keywordsign">`</span><span class="constructor">Eof</span>&nbsp;<span class="keyword">of</span>&nbsp;int&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Ok</span>&nbsp;]&nbsp;<span class="constructor">Import</span>.<span class="constructor">Deferred</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;really_read_substring&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Reader</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Core</span>.<span class="constructor">Std</span>.<span class="constructor">Substring</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;[&nbsp;<span class="keywordsign">`</span><span class="constructor">Eof</span>&nbsp;<span class="keyword">of</span>&nbsp;int&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Ok</span>&nbsp;]&nbsp;<span class="constructor">Import</span>.<span class="constructor">Deferred</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;really_read_bigsubstring&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Reader</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Core</span>.<span class="constructor">Std</span>.<span class="constructor">Bigsubstring</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;[&nbsp;<span class="keywordsign">`</span><span class="constructor">Eof</span>&nbsp;<span class="keyword">of</span>&nbsp;int&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Ok</span>&nbsp;]&nbsp;<span class="constructor">Import</span>.<span class="constructor">Deferred</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;read_until&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Reader</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&nbsp;<span class="keywordsign">`</span><span class="constructor">Char</span>&nbsp;<span class="keyword">of</span>&nbsp;char&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Pred</span>&nbsp;<span class="keyword">of</span>&nbsp;char&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool&nbsp;]&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;keep_delim:bool&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&nbsp;<span class="keywordsign">`</span><span class="constructor">Eof</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Eof_without_delim</span>&nbsp;<span class="keyword">of</span>&nbsp;string&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Ok</span>&nbsp;<span class="keyword">of</span>&nbsp;string&nbsp;]&nbsp;<span class="constructor">Import</span>.<span class="constructor">Deferred</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;read_until_max&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Reader</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&nbsp;<span class="keywordsign">`</span><span class="constructor">Char</span>&nbsp;<span class="keyword">of</span>&nbsp;char&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Pred</span>&nbsp;<span class="keyword">of</span>&nbsp;char&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool&nbsp;]&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;keep_delim:bool&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;max:int&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&nbsp;<span class="keywordsign">`</span><span class="constructor">Eof</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Eof_without_delim</span>&nbsp;<span class="keyword">of</span>&nbsp;string<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Max_exceeded</span>&nbsp;<span class="keyword">of</span>&nbsp;string<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Ok</span>&nbsp;<span class="keyword">of</span>&nbsp;string&nbsp;]&nbsp;<span class="constructor">Import</span>.<span class="constructor">Deferred</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;read_line&nbsp;:&nbsp;<span class="constructor">Reader</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="constructor">Reader</span>.<span class="constructor">Read_result</span>.t&nbsp;<span class="constructor">Import</span>.<span class="constructor">Deferred</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;really_read_line&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;wait_time:<span class="constructor">Core</span>.<span class="constructor">Std</span>.<span class="constructor">Time</span>.<span class="constructor">Span</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Reader</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;option&nbsp;<span class="constructor">Import</span>.<span class="constructor">Deferred</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;read&nbsp;=&nbsp;?parse_pos:<span class="constructor">Core</span>.<span class="constructor">Std</span>.<span class="constructor">Sexp</span>.<span class="constructor">Parse_pos</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;read_sexp&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(<span class="constructor">Reader</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Core</span>.<span class="constructor">Std</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="constructor">Reader</span>.<span class="constructor">Read_result</span>.t&nbsp;<span class="constructor">Import</span>.<span class="constructor">Deferred</span>.t)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Reader</span>.read<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;read_sexps&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(<span class="constructor">Reader</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Core</span>.<span class="constructor">Std</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="constructor">Import</span>.<span class="constructor">Pipe</span>.<span class="constructor">Reader</span>.t)&nbsp;<span class="constructor">Reader</span>.read<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;read_bin_prot&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?max_len:int&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Reader</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Core</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.reader&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Reader</span>.<span class="constructor">Read_result</span>.t&nbsp;<span class="constructor">Import</span>.<span class="constructor">Deferred</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;read_marshal_raw&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Reader</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="constructor">Reader</span>.<span class="constructor">Read_result</span>.t&nbsp;<span class="constructor">Import</span>.<span class="constructor">Deferred</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;read_marshal&nbsp;:&nbsp;<span class="constructor">Reader</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Reader</span>.<span class="constructor">Read_result</span>.t&nbsp;<span class="constructor">Import</span>.<span class="constructor">Deferred</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;recv&nbsp;:&nbsp;<span class="constructor">Reader</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="constructor">Reader</span>.<span class="constructor">Read_result</span>.t&nbsp;<span class="constructor">Import</span>.<span class="constructor">Deferred</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;read_all&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Reader</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;(<span class="constructor">Reader</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Reader</span>.<span class="constructor">Read_result</span>.t&nbsp;<span class="constructor">Import</span>.<span class="constructor">Deferred</span>.t)&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Import</span>.<span class="constructor">Pipe</span>.<span class="constructor">Reader</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;lseek&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Reader</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int64&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;mode:[&lt;&nbsp;<span class="keywordsign">`</span><span class="constructor">End</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Set</span>&nbsp;]&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int64&nbsp;<span class="constructor">Import</span>.<span class="constructor">Deferred</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;lines&nbsp;:&nbsp;<span class="constructor">Reader</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="constructor">Import</span>.<span class="constructor">Pipe</span>.<span class="constructor">Reader</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;contents&nbsp;:&nbsp;<span class="constructor">Reader</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="constructor">Import</span>.<span class="constructor">Deferred</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;file_contents&nbsp;:&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="constructor">Import</span>.<span class="constructor">Deferred</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;file_lines&nbsp;:&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;list&nbsp;<span class="constructor">Import</span>.<span class="constructor">Deferred</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;load_sexp&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?exclusive:bool&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;(<span class="constructor">Core</span>.<span class="constructor">Std</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Core</span>.<span class="constructor">Std</span>.<span class="constructor">Or_error</span>.t&nbsp;<span class="constructor">Import</span>.<span class="constructor">Deferred</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;load_sexp_exn&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?exclusive:bool&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(<span class="constructor">Core</span>.<span class="constructor">Std</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Import</span>.<span class="constructor">Deferred</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;load_sexps&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?exclusive:bool&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;(<span class="constructor">Core</span>.<span class="constructor">Std</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;list&nbsp;<span class="constructor">Core</span>.<span class="constructor">Std</span>.<span class="constructor">Or_error</span>.t&nbsp;<span class="constructor">Import</span>.<span class="constructor">Deferred</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;load_sexps_exn&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?exclusive:bool&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(<span class="constructor">Core</span>.<span class="constructor">Std</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;list&nbsp;<span class="constructor">Import</span>.<span class="constructor">Deferred</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;sexp_of_t&nbsp;:&nbsp;<span class="constructor">Reader</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;sexp_of_read_one_chunk_at_a_time_until_eof_result&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t)&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Reader</span>.read_one_chunk_at_a_time_until_eof_result&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t<br>
+<span class="keyword">end</span></code></body></html>

@@ -1,0 +1,447 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Core_map_intf.html">
+<link rel="next" href="Core_map_unit_tests.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Array_permute" rel="Chapter" href="Array_permute.html">
+<link title="Avltree" rel="Chapter" href="Avltree.html">
+<link title="Bag" rel="Chapter" href="Bag.html">
+<link title="Bigbuffer_internal" rel="Chapter" href="Bigbuffer_internal.html">
+<link title="Bigbuffer" rel="Chapter" href="Bigbuffer.html">
+<link title="Bigstring_marshal" rel="Chapter" href="Bigstring_marshal.html">
+<link title="Bigstring" rel="Chapter" href="Bigstring.html">
+<link title="Bigsubstring" rel="Chapter" href="Bigsubstring.html">
+<link title="Binable0" rel="Chapter" href="Binable0.html">
+<link title="Binable" rel="Chapter" href="Binable.html">
+<link title="Binary_packing" rel="Chapter" href="Binary_packing.html">
+<link title="Blang" rel="Chapter" href="Blang.html">
+<link title="Blit" rel="Chapter" href="Blit.html">
+<link title="Blit_intf" rel="Chapter" href="Blit_intf.html">
+<link title="Bool" rel="Chapter" href="Bool.html">
+<link title="Bounded_int_table" rel="Chapter" href="Bounded_int_table.html">
+<link title="Bucket" rel="Chapter" href="Bucket.html">
+<link title="Byte_units" rel="Chapter" href="Byte_units.html">
+<link title="Caml" rel="Chapter" href="Caml.html">
+<link title="Common" rel="Chapter" href="Common.html">
+<link title="Commutative_group" rel="Chapter" href="Commutative_group.html">
+<link title="Comparable_intf" rel="Chapter" href="Comparable_intf.html">
+<link title="Comparable" rel="Chapter" href="Comparable.html">
+<link title="Comparator" rel="Chapter" href="Comparator.html">
+<link title="Constrained_float" rel="Chapter" href="Constrained_float.html">
+<link title="Container" rel="Chapter" href="Container.html">
+<link title="Container_unit_tests" rel="Chapter" href="Container_unit_tests.html">
+<link title="Core_arg" rel="Chapter" href="Core_arg.html">
+<link title="Core_array" rel="Chapter" href="Core_array.html">
+<link title="Core_bin_prot" rel="Chapter" href="Core_bin_prot.html">
+<link title="Core_char" rel="Chapter" href="Core_char.html">
+<link title="Core_field" rel="Chapter" href="Core_field.html">
+<link title="Core_gc" rel="Chapter" href="Core_gc.html">
+<link title="Core_hashtbl_intf" rel="Chapter" href="Core_hashtbl_intf.html">
+<link title="Core_hashtbl" rel="Chapter" href="Core_hashtbl.html">
+<link title="Core_int32" rel="Chapter" href="Core_int32.html">
+<link title="Core_int63" rel="Chapter" href="Core_int63.html">
+<link title="Core_int64" rel="Chapter" href="Core_int64.html">
+<link title="Core_int" rel="Chapter" href="Core_int.html">
+<link title="Core_lazy" rel="Chapter" href="Core_lazy.html">
+<link title="Core_list" rel="Chapter" href="Core_list.html">
+<link title="Core_map_intf" rel="Chapter" href="Core_map_intf.html">
+<link title="Core_map" rel="Chapter" href="Core_map.html">
+<link title="Core_map_unit_tests" rel="Chapter" href="Core_map_unit_tests.html">
+<link title="Core_nativeint" rel="Chapter" href="Core_nativeint.html">
+<link title="Core_printexc" rel="Chapter" href="Core_printexc.html">
+<link title="Core_printf" rel="Chapter" href="Core_printf.html">
+<link title="Core_queue" rel="Chapter" href="Core_queue.html">
+<link title="Core_random" rel="Chapter" href="Core_random.html">
+<link title="Core_set_intf" rel="Chapter" href="Core_set_intf.html">
+<link title="Core_set" rel="Chapter" href="Core_set.html">
+<link title="Core_set_unit_tests" rel="Chapter" href="Core_set_unit_tests.html">
+<link title="Core_sexp" rel="Chapter" href="Core_sexp.html">
+<link title="Core_stack" rel="Chapter" href="Core_stack.html">
+<link title="Core_string" rel="Chapter" href="Core_string.html">
+<link title="Core_weak" rel="Chapter" href="Core_weak.html">
+<link title="Day_of_week" rel="Chapter" href="Day_of_week.html">
+<link title="Dequeue" rel="Chapter" href="Dequeue.html">
+<link title="Doubly_linked" rel="Chapter" href="Doubly_linked.html">
+<link title="Equal" rel="Chapter" href="Equal.html">
+<link title="Error" rel="Chapter" href="Error.html">
+<link title="Exn" rel="Chapter" href="Exn.html">
+<link title="Flags_intf" rel="Chapter" href="Flags_intf.html">
+<link title="Flags" rel="Chapter" href="Flags.html">
+<link title="Flat_array" rel="Chapter" href="Flat_array.html">
+<link title="Flat_array_debug" rel="Chapter" href="Flat_array_debug.html">
+<link title="Flat_array_unit_tests" rel="Chapter" href="Flat_array_unit_tests.html">
+<link title="Floatable" rel="Chapter" href="Floatable.html">
+<link title="Float_intf" rel="Chapter" href="Float_intf.html">
+<link title="Float" rel="Chapter" href="Float.html">
+<link title="Float_robust_compare" rel="Chapter" href="Float_robust_compare.html">
+<link title="Fn" rel="Chapter" href="Fn.html">
+<link title="Force_once" rel="Chapter" href="Force_once.html">
+<link title="Fqueue" rel="Chapter" href="Fqueue.html">
+<link title="Hashable" rel="Chapter" href="Hashable.html">
+<link title="Hash_heap" rel="Chapter" href="Hash_heap.html">
+<link title="Hash_queue" rel="Chapter" href="Hash_queue.html">
+<link title="Hash_set_intf" rel="Chapter" href="Hash_set_intf.html">
+<link title="Hash_set" rel="Chapter" href="Hash_set.html">
+<link title="Hashtbl_unit_tests" rel="Chapter" href="Hashtbl_unit_tests.html">
+<link title="Heap_block" rel="Chapter" href="Heap_block.html">
+<link title="Heap" rel="Chapter" href="Heap.html">
+<link title="Host_and_port" rel="Chapter" href="Host_and_port.html">
+<link title="Identifiable" rel="Chapter" href="Identifiable.html">
+<link title="Import" rel="Chapter" href="Import.html">
+<link title="In_channel" rel="Chapter" href="In_channel.html">
+<link title="Info" rel="Chapter" href="Info.html">
+<link title="Intable" rel="Chapter" href="Intable.html">
+<link title="Int_conversions" rel="Chapter" href="Int_conversions.html">
+<link title="Interfaces" rel="Chapter" href="Interfaces.html">
+<link title="Interned_string" rel="Chapter" href="Interned_string.html">
+<link title="Int_intf" rel="Chapter" href="Int_intf.html">
+<link title="Int_math" rel="Chapter" href="Int_math.html">
+<link title="Int_replace_polymorphic_compare" rel="Chapter" href="Int_replace_polymorphic_compare.html">
+<link title="Int_set" rel="Chapter" href="Int_set.html">
+<link title="Invariant" rel="Chapter" href="Invariant.html">
+<link title="Invariant_intf" rel="Chapter" href="Invariant_intf.html">
+<link title="Linked_stack" rel="Chapter" href="Linked_stack.html">
+<link title="Make_substring" rel="Chapter" href="Make_substring.html">
+<link title="Memo" rel="Chapter" href="Memo.html">
+<link title="Monad" rel="Chapter" href="Monad.html">
+<link title="Month" rel="Chapter" href="Month.html">
+<link title="Never_returns" rel="Chapter" href="Never_returns.html">
+<link title="No_polymorphic_compare" rel="Chapter" href="No_polymorphic_compare.html">
+<link title="Nothing0" rel="Chapter" href="Nothing0.html">
+<link title="Nothing" rel="Chapter" href="Nothing.html">
+<link title="Obj_array" rel="Chapter" href="Obj_array.html">
+<link title="Only_in_test" rel="Chapter" href="Only_in_test.html">
+<link title="Option" rel="Chapter" href="Option.html">
+<link title="Ordered_collection_common" rel="Chapter" href="Ordered_collection_common.html">
+<link title="Ordering" rel="Chapter" href="Ordering.html">
+<link title="Or_error" rel="Chapter" href="Or_error.html">
+<link title="Out_channel" rel="Chapter" href="Out_channel.html">
+<link title="Pid" rel="Chapter" href="Pid.html">
+<link title="Polymorphic_compare_intf" rel="Chapter" href="Polymorphic_compare_intf.html">
+<link title="Polymorphic_compare" rel="Chapter" href="Polymorphic_compare.html">
+<link title="Pool" rel="Chapter" href="Pool.html">
+<link title="Pool_intf" rel="Chapter" href="Pool_intf.html">
+<link title="Pool_unit_tests" rel="Chapter" href="Pool_unit_tests.html">
+<link title="Pooled_hashtbl" rel="Chapter" href="Pooled_hashtbl.html">
+<link title="Pooled_hashtbl_unit_test" rel="Chapter" href="Pooled_hashtbl_unit_test.html">
+<link title="Pretty_printer" rel="Chapter" href="Pretty_printer.html">
+<link title="Quickcheck" rel="Chapter" href="Quickcheck.html">
+<link title="Ref" rel="Chapter" href="Ref.html">
+<link title="Result" rel="Chapter" href="Result.html">
+<link title="Robustly_comparable" rel="Chapter" href="Robustly_comparable.html">
+<link title="Set_once" rel="Chapter" href="Set_once.html">
+<link title="Sexpable" rel="Chapter" href="Sexpable.html">
+<link title="Source_code_position0" rel="Chapter" href="Source_code_position0.html">
+<link title="Source_code_position" rel="Chapter" href="Source_code_position.html">
+<link title="Stable_containers" rel="Chapter" href="Stable_containers.html">
+<link title="Stable_internal" rel="Chapter" href="Stable_internal.html">
+<link title="Stable" rel="Chapter" href="Stable.html">
+<link title="Stable_unit_test_intf" rel="Chapter" href="Stable_unit_test_intf.html">
+<link title="Stable_unit_test" rel="Chapter" href="Stable_unit_test.html">
+<link title="Stack_intf" rel="Chapter" href="Stack_intf.html">
+<link title="Stack_unit_tests" rel="Chapter" href="Stack_unit_tests.html">
+<link title="Staged" rel="Chapter" href="Staged.html">
+<link title="Std_common" rel="Chapter" href="Std_common.html">
+<link title="Std_internal" rel="Chapter" href="Std_internal.html">
+<link title="Std_kernel" rel="Chapter" href="Std_kernel.html">
+<link title="Std" rel="Chapter" href="Std.html">
+<link title="Stringable" rel="Chapter" href="Stringable.html">
+<link title="String_id" rel="Chapter" href="String_id.html">
+<link title="Substring_intf" rel="Chapter" href="Substring_intf.html">
+<link title="Substring" rel="Chapter" href="Substring.html">
+<link title="Thread_safe_queue" rel="Chapter" href="Thread_safe_queue.html">
+<link title="T" rel="Chapter" href="T.html">
+<link title="Tuple" rel="Chapter" href="Tuple.html">
+<link title="Tuple_type" rel="Chapter" href="Tuple_type.html">
+<link title="Tuple_type_intf" rel="Chapter" href="Tuple_type_intf.html">
+<link title="Type_equal" rel="Chapter" href="Type_equal.html">
+<link title="Union_find" rel="Chapter" href="Union_find.html">
+<link title="Unique_id_intf" rel="Chapter" href="Unique_id_intf.html">
+<link title="Unique_id" rel="Chapter" href="Unique_id.html">
+<link title="Unit" rel="Chapter" href="Unit.html">
+<link title="Univ_map" rel="Chapter" href="Univ_map.html">
+<link title="Univ" rel="Chapter" href="Univ.html">
+<link title="Unpack_buffer" rel="Chapter" href="Unpack_buffer.html">
+<link title="Validated_intf" rel="Chapter" href="Validated_intf.html">
+<link title="Validated" rel="Chapter" href="Validated.html">
+<link title="Validate" rel="Chapter" href="Validate.html">
+<link title="With_return" rel="Chapter" href="With_return.html">
+<link title="Word_size" rel="Chapter" href="Word_size.html"><link title="Additional operations on maps" rel="Section" href="#6_Additionaloperationsonmaps">
+<title>Core_map</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Core_map_intf.html" title="Core_map_intf">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="Core_map_unit_tests.html" title="Core_map_unit_tests">Next</a>
+</div>
+<h1>Module <a href="type_Core_map.html">Core_map</a></h1>
+<pre><span class="keyword">module</span> Core_map: <code class="code">sig</code> <a href="Core_map.html">..</a> <code class="code">end</code></pre><div class="info">
+This module defines the <code class="code">Map</code> module for <code class="code"><a href="../core/Std.html">Core.Std</a></code>.  We use "core_map" as the file
+    name rather than "map" to avoid conflicts with OCaml's standard map module.  In this
+    documentation, we use <code class="code">Map</code> to mean this module, not the OCaml standard one.
+<p>
+
+    <code class="code">Map</code> is a functional datastructure (balanced binary tree) implementing finite maps
+    over a totally-ordered domain, called a "key".  The map types and operations appear
+    in three places:
+<p>
+
+    <pre class="verbatim">    | Map      | polymorphic map operations                                      |
+    | Map.Poly | maps that use polymorphic comparison to order keys              |
+    | Key.Map  | maps with a fixed key type that use [Key.compare] to order keys |
+   </pre>
+<p>
+
+    Where <code class="code">Key</code> is any module defining values that can be used as keys of a map, like
+    <code class="code">Int</code>, <code class="code">String</code>, etc.  To add this functionality to an arbitrary module, use the
+    <code class="code">Comparable.Make</code> functor.
+<p>
+
+    One should use <code class="code">Map</code> for functions that access existing maps, like <code class="code">find</code>, <code class="code">mem</code>,
+    <code class="code">add</code>, <code class="code">fold</code>, <code class="code">iter</code>, and <code class="code">to_alist</code>.  For functions that create maps, like <code class="code">empty</code>,
+    <code class="code">singleton</code>, and <code class="code">of_alist</code>, one should strive to use the corresponding <code class="code">Key.Map</code>
+    function, which will use the comparison function specifically for <code class="code">Key</code>.  As a last
+    resort, if one does not have easy access to a comparison function for the keys in
+    one's map, use <code class="code">Map.Poly</code> to create the map.  This will use OCaml's built-in
+    polymorphic comparison to compare keys, which has all the usual performance and
+    robustness problems that entails.
+<p>
+
+    Parallel to the three kinds of map modules, there are also tree modules <code class="code">Map.Tree</code>,
+    <code class="code">Map.Poly.Tree</code>, and <code class="code">Key.Map.Tree</code>.  A tree is a bare representation of a map,
+    without the comparator.  Thus tree operations need to obtain the comparator from
+    somewhere.  For <code class="code">Map.Poly.Tree</code> and <code class="code">Key.Map.Tree</code>, the comparator is implicit in the
+    module name.  For <code class="code">Map.Tree</code>, the comparator must be passed to each operation.  The
+    main advantages of trees over maps are slightly improved space usage (there is no
+    outer container holding the comparator) and the ability to marshal trees, because a
+    tree doesn't contain a closure, unlike a map.  The main disadvantages of using trees
+    are needing to be more explicit about the comparator, and the possibility of
+    accidental use of polymorphic equality on a tree (for which maps dynamically detect
+    failure due to the presence of a closure in the data structure).
+<p>
+
+    For a detailed explanation of the interface design, read on.
+<p>
+
+    An instance of the map type is determined by the types of the map's keys and values,
+    and the comparison function used to order the keys:
+<p>
+
+    <pre class="codepre"><code class="code"> type ('key, 'value, 'cmp) Map.t </code></pre>
+<p>
+
+    <code class="code">'cmp</code> is a phantom type uniquely identifying the comparison function, as generated by
+    <code class="code">Comparator.Make</code>.
+<p>
+
+    <code class="code">Map.Poly</code> supports arbitrary key and value types, but enforces that the comparison
+    function used to order the keys is polymorphic comparison.  <code class="code">Key.Map</code> has a fixed key
+    type and comparison function, and supports arbitrary values.
+<p>
+
+    <pre class="codepre"><code class="code">      type ('key, 'value) Map.Poly.t = ('key , 'value, Comparator.Poly.t) Map.t
+      type 'value Key.Map.t          = (Key.t, 'value, Key.comparator   ) Map.t
+    </code></pre>
+<p>
+
+    The same map operations exist in <code class="code">Map</code>, <code class="code">Map.Poly</code>, and <code class="code">Key.Map</code>, albeit with
+    different types.  For example:
+<p>
+
+    <pre class="codepre"><code class="code">      val Map.length      : (_, _, _) Map.t   -&gt; int
+      val Map.Poly.length : (_, _) Map.Poly.t -&gt; int
+      val Key.Map.length  : _ Key.Map.t       -&gt; int
+    </code></pre>
+<p>
+
+    Because <code class="code">Map.Poly.t</code> and <code class="code">Key.Map.t</code> are exposed as instances of the more general
+    <code class="code">Map.t</code> type, one can use <code class="code">Map.length</code> on any map.  The same is true for all of the
+    functions that access an existing map, such as <code class="code">add</code>, <code class="code">change</code>, <code class="code">find</code>, <code class="code">fold</code>,
+    <code class="code">iter</code>, <code class="code">map</code>, <code class="code">to_alist</code>, etc.
+<p>
+
+    Depending on the number of type variables <code class="code">N</code>, the type of accessor (resp. creator)
+    functions are defined in the module type <code class="code">AccessorsN</code> (resp. <code class="code">CreatorsN</code>) in
+    <a href="Core_map_intf.html"><code class="code">Core_map_intf</code></a>.  Also for creators, when the comparison function is not fixed,
+    i.e. the <code class="code">'cmp</code> variable of <code class="code">Map.t</code> is free, we need to pass a comparator to the
+    function creating the map.  The module type is called <code class="code">Creators3_with_comparator</code>.
+    There is also a module type <code class="code">Accessors3_with_comparator</code> in addition to <code class="code">Accessors3</code>
+    which used for trees since the comparator is not known.<br>
+</div>
+<hr width="100%">
+<pre><span class="keyword">module</span> <a href="Core_map.Tree.html">Tree</a>: <code class="code">sig</code> <a href="Core_map.Tree.html">..</a> <code class="code">end</code></pre><pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('key, +'value, 'cmp)</code> t</span> </pre>
+
+<pre><span id="VALinvariants"><span class="keyword">val</span> invariants</span> : <code class="type">('a, 'b, 'c) <a href="Core_map.html#TYPEt">t</a> -> bool</code></pre><div class="info">
+Test if invariants of internal AVL search tree hold.<br>
+</div>
+<pre><span id="VALcomparator"><span class="keyword">val</span> comparator</span> : <code class="type">('a, 'b, 'cmp) <a href="Core_map.html#TYPEt">t</a> -> ('a, 'cmp) <a href="Comparator.html#TYPEt">Comparator.t</a></code></pre><pre><span id="VALempty"><span class="keyword">val</span> empty</span> : <code class="type">comparator:('a, 'cmp) <a href="Comparator.html#TYPEt">Comparator.t</a> -> ('a, 'b, 'cmp) <a href="Core_map.html#TYPEt">t</a></code></pre><div class="info">
+the empty map<br>
+</div>
+<pre><span id="VALsingleton"><span class="keyword">val</span> singleton</span> : <code class="type">comparator:('a, 'cmp) <a href="Comparator.html#TYPEt">Comparator.t</a> -> 'a -> 'b -> ('a, 'b, 'cmp) <a href="Core_map.html#TYPEt">t</a></code></pre><div class="info">
+map with one key, data pair<br>
+</div>
+<pre><span id="VALof_alist"><span class="keyword">val</span> of_alist</span> : <code class="type">comparator:('a, 'cmp) <a href="Comparator.html#TYPEt">Comparator.t</a> -><br>       ('a * 'b) list -> [ `Duplicate_key of 'a | `Ok of ('a, 'b, 'cmp) <a href="Core_map.html#TYPEt">t</a> ]</code></pre><div class="info">
+creates map from association list with unique keys<br>
+</div>
+<pre><span id="VALof_alist_exn"><span class="keyword">val</span> of_alist_exn</span> : <code class="type">comparator:('a, 'cmp) <a href="Comparator.html#TYPEt">Comparator.t</a> -><br>       ('a * 'b) list -> ('a, 'b, 'cmp) <a href="Core_map.html#TYPEt">t</a></code></pre><div class="info">
+creates map from association list with unique keys.  Raises an exception if duplicate
+    'a keys are found.<br>
+</div>
+<pre><span id="VALof_alist_multi"><span class="keyword">val</span> of_alist_multi</span> : <code class="type">comparator:('a, 'cmp) <a href="Comparator.html#TYPEt">Comparator.t</a> -><br>       ('a * 'b) list -> ('a, 'b list, 'cmp) <a href="Core_map.html#TYPEt">t</a></code></pre><div class="info">
+creates map from association list with possibly repeated keys.<br>
+</div>
+<pre><span id="VALof_alist_fold"><span class="keyword">val</span> of_alist_fold</span> : <code class="type">comparator:('a, 'cmp) <a href="Comparator.html#TYPEt">Comparator.t</a> -><br>       ('a * 'b) list -> init:'c -> f:('c -> 'b -> 'c) -> ('a, 'c, 'cmp) <a href="Core_map.html#TYPEt">t</a></code></pre><div class="info">
+combines an association list into a map, folding together bound values with common
+    keys<br>
+</div>
+<pre><span id="VALto_tree"><span class="keyword">val</span> to_tree</span> : <code class="type">('k, 'v, 'cmp) <a href="Core_map.html#TYPEt">t</a> -> ('k, 'v, 'cmp) <a href="Core_map.Tree.html#TYPEt">Tree.t</a></code></pre><pre><span id="VALof_tree"><span class="keyword">val</span> of_tree</span> : <code class="type">comparator:('k, 'cmp) <a href="Comparator.html#TYPEt">Comparator.t</a> -><br>       ('k, 'v, 'cmp) <a href="Core_map.Tree.html#TYPEt">Tree.t</a> -> ('k, 'v, 'cmp) <a href="Core_map.html#TYPEt">t</a></code></pre><pre><span id="VALof_sorted_array"><span class="keyword">val</span> of_sorted_array</span> : <code class="type">comparator:('a, 'cmp) <a href="Comparator.html#TYPEt">Comparator.t</a> -><br>       ('a * 'b) array -> ('a, 'b, 'cmp) <a href="Core_map.html#TYPEt">t</a> <a href="Or_error.html#TYPEt">Or_error.t</a></code></pre><div class="info">
+creates map from sorted array of key-data pairs. The input array must be sorted, as
+    given by the relevant comparator (either in ascending or descending order), and must
+    not contain any duplicate keys.  If either of these conditions do not hold, an error
+    is returned.<br>
+</div>
+<pre><span id="VALof_sorted_array_unchecked"><span class="keyword">val</span> of_sorted_array_unchecked</span> : <code class="type">comparator:('a, 'cmp) <a href="Comparator.html#TYPEt">Comparator.t</a> -><br>       ('a * 'b) array -> ('a, 'b, 'cmp) <a href="Core_map.html#TYPEt">t</a></code></pre><div class="info">
+Like <code class="code">of_sorted_array</code> except behavior is undefined when an <code class="code">Error</code> would have been
+    returned.<br>
+</div>
+<pre><span id="VALis_empty"><span class="keyword">val</span> is_empty</span> : <code class="type">('a, 'b, 'c) <a href="Core_map.html#TYPEt">t</a> -> bool</code></pre><div class="info">
+Test whether a map is empty or not.<br>
+</div>
+<pre><span id="VALlength"><span class="keyword">val</span> length</span> : <code class="type">('a, 'b, 'c) <a href="Core_map.html#TYPEt">t</a> -> int</code></pre><div class="info">
+<code class="code">length map</code><br>
+<b>Returns</b> number of elements in <code class="code">map</code>.<br>
+</div>
+<pre><span id="VALadd"><span class="keyword">val</span> add</span> : <code class="type">('k, 'v, 'cmp) <a href="Core_map.html#TYPEt">t</a> -> key:'k -> data:'v -> ('k, 'v, 'cmp) <a href="Core_map.html#TYPEt">t</a></code></pre><div class="info">
+returns a new map with the specified new binding;
+    if the key was already bound, its previous binding disappears.<br>
+</div>
+<pre><span id="VALadd_multi"><span class="keyword">val</span> add_multi</span> : <code class="type">('k, 'v list, 'cmp) <a href="Core_map.html#TYPEt">t</a> -><br>       key:'k -> data:'v -> ('k, 'v list, 'cmp) <a href="Core_map.html#TYPEt">t</a></code></pre><div class="info">
+if key is not present then add a singleton list, otherwise, cons data on the head of
+    the existing list.<br>
+</div>
+<pre><span id="VALchange"><span class="keyword">val</span> change</span> : <code class="type">('k, 'v, 'cmp) <a href="Core_map.html#TYPEt">t</a> -><br>       'k -> ('v option -> 'v option) -> ('k, 'v, 'cmp) <a href="Core_map.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">change map key f</code> updates the given map by changing the value stored under <code class="code">key</code>
+    according to <code class="code">f</code>.  Thus, for example, one might write:
+<p>
+
+    <pre class="codepre"><code class="code">change m k (function None -&gt; Some 0 | Some x -&gt; Some (x + 1))</code></pre>
+<p>
+
+    to produce a new map where the integer stored under key <code class="code">k</code> is incremented by one
+    (treating an unknown key as zero).<br>
+</div>
+<pre><span id="VALfind"><span class="keyword">val</span> find</span> : <code class="type">('k, 'v, 'cmp) <a href="Core_map.html#TYPEt">t</a> -> 'k -> 'v option</code></pre><div class="info">
+returns the value bound to the given key, raising <code class="code">Not_found</code> if none such exists<br>
+</div>
+<pre><span id="VALfind_exn"><span class="keyword">val</span> find_exn</span> : <code class="type">('k, 'v, 'cmp) <a href="Core_map.html#TYPEt">t</a> -> 'k -> 'v</code></pre><pre><span id="VALremove"><span class="keyword">val</span> remove</span> : <code class="type">('k, 'v, 'cmp) <a href="Core_map.html#TYPEt">t</a> -> 'k -> ('k, 'v, 'cmp) <a href="Core_map.html#TYPEt">t</a></code></pre><div class="info">
+returns a new map with any binding for the key in question removed<br>
+</div>
+<pre><span id="VALmem"><span class="keyword">val</span> mem</span> : <code class="type">('k, 'a, 'cmp) <a href="Core_map.html#TYPEt">t</a> -> 'k -> bool</code></pre><div class="info">
+<code class="code">mem map key</code> tests whether <code class="code">map</code> contains a binding for <code class="code">key</code><br>
+</div>
+<pre><span id="VALiter"><span class="keyword">val</span> iter</span> : <code class="type">('k, 'v, 'a) <a href="Core_map.html#TYPEt">t</a> -> f:(key:'k -> data:'v -> unit) -> unit</code></pre><div class="info">
+iterator for map<br>
+</div>
+<pre><span id="VALiter2"><span class="keyword">val</span> iter2</span> : <code class="type">('k, 'v1, 'cmp) <a href="Core_map.html#TYPEt">t</a> -><br>       ('k, 'v2, 'cmp) <a href="Core_map.html#TYPEt">t</a> -><br>       f:(key:'k -><br>          data:[ `Both of 'v1 * 'v2 | `Left of 'v1 | `Right of 'v2 ] -> unit) -><br>       unit</code></pre><div class="info">
+Iterate two maps side by side.  Complexity of this function is O(M+N).  If two inputs
+    are <code class="code">(0, a); (1, a)</code> and <code class="code">(1, b); (2, b)</code>, <code class="code">f</code> will be called with <code class="code">(0, `Left a); (1,
+    `Both (a, b)); (2, `Right b)</code><br>
+</div>
+<pre><span id="VALmap"><span class="keyword">val</span> map</span> : <code class="type">('k, 'v1, 'cmp) <a href="Core_map.html#TYPEt">t</a> -> f:('v1 -> 'v2) -> ('k, 'v2, 'cmp) <a href="Core_map.html#TYPEt">t</a></code></pre><div class="info">
+returns new map with bound values replaced by f applied to the bound values<br>
+</div>
+<pre><span id="VALmapi"><span class="keyword">val</span> mapi</span> : <code class="type">('k, 'v1, 'cmp) <a href="Core_map.html#TYPEt">t</a> -><br>       f:(key:'k -> data:'v1 -> 'v2) -> ('k, 'v2, 'cmp) <a href="Core_map.html#TYPEt">t</a></code></pre><div class="info">
+like <code class="code">map</code>, but function takes both key and data as arguments<br>
+</div>
+<pre><span id="VALfold"><span class="keyword">val</span> fold</span> : <code class="type">('k, 'v, 'b) <a href="Core_map.html#TYPEt">t</a> -> init:'a -> f:(key:'k -> data:'v -> 'a -> 'a) -> 'a</code></pre><div class="info">
+folds over keys and data in map in increasing order of key.<br>
+</div>
+<pre><span id="VALfold_right"><span class="keyword">val</span> fold_right</span> : <code class="type">('k, 'v, 'b) <a href="Core_map.html#TYPEt">t</a> -> init:'a -> f:(key:'k -> data:'v -> 'a -> 'a) -> 'a</code></pre><div class="info">
+folds over keys and data in map in decreasing order of key.<br>
+</div>
+<pre><span id="VALfilter"><span class="keyword">val</span> filter</span> : <code class="type">('k, 'v, 'cmp) <a href="Core_map.html#TYPEt">t</a> -><br>       f:(key:'k -> data:'v -> bool) -> ('k, 'v, 'cmp) <a href="Core_map.html#TYPEt">t</a></code></pre><pre><span id="VALfilter_map"><span class="keyword">val</span> filter_map</span> : <code class="type">('k, 'v1, 'cmp) <a href="Core_map.html#TYPEt">t</a> -><br>       f:('v1 -> 'v2 option) -> ('k, 'v2, 'cmp) <a href="Core_map.html#TYPEt">t</a></code></pre><div class="info">
+returns new map with bound values filtered by f applied to the bound values<br>
+</div>
+<pre><span id="VALfilter_mapi"><span class="keyword">val</span> filter_mapi</span> : <code class="type">('k, 'v1, 'cmp) <a href="Core_map.html#TYPEt">t</a> -><br>       f:(key:'k -> data:'v1 -> 'v2 option) -> ('k, 'v2, 'cmp) <a href="Core_map.html#TYPEt">t</a></code></pre><div class="info">
+like <code class="code">filter_map</code>, but function takes both key and data as arguments<br>
+</div>
+<pre><span id="VALcompare_direct"><span class="keyword">val</span> compare_direct</span> : <code class="type">('v -> 'v -> int) -><br>       ('k, 'v, 'cmp) <a href="Core_map.html#TYPEt">t</a> -> ('k, 'v, 'cmp) <a href="Core_map.html#TYPEt">t</a> -> int</code></pre><div class="info">
+Total ordering between maps.  The first argument is a total ordering used to compare
+    data associated with equal keys in the two maps.<br>
+</div>
+<pre><span id="VALequal"><span class="keyword">val</span> equal</span> : <code class="type">('v -> 'v -> bool) -><br>       ('k, 'v, 'cmp) <a href="Core_map.html#TYPEt">t</a> -> ('k, 'v, 'cmp) <a href="Core_map.html#TYPEt">t</a> -> bool</code></pre><div class="info">
+<code class="code">equal cmp m1 m2</code> tests whether the maps <code class="code">m1</code> and <code class="code">m2</code> are equal, that is, contain
+    equal keys and associate them with equal data.  <code class="code">cmp</code> is the equality predicate used
+    to compare the data associated with the keys.<br>
+</div>
+<pre><span id="VALkeys"><span class="keyword">val</span> keys</span> : <code class="type">('k, 'a, 'b) <a href="Core_map.html#TYPEt">t</a> -> 'k list</code></pre><div class="info">
+returns list of keys in map<br>
+</div>
+<pre><span id="VALdata"><span class="keyword">val</span> data</span> : <code class="type">('a, 'v, 'b) <a href="Core_map.html#TYPEt">t</a> -> 'v list</code></pre><div class="info">
+returns list of data in map<br>
+</div>
+<pre><span id="VALto_alist"><span class="keyword">val</span> to_alist</span> : <code class="type">('k, 'v, 'a) <a href="Core_map.html#TYPEt">t</a> -> ('k * 'v) list</code></pre><div class="info">
+creates association list from map.  No guarantee about order.<br>
+</div>
+<pre><span id="VALvalidate"><span class="keyword">val</span> validate</span> : <code class="type">name:('k -> string) -><br>       'v <a href="Validate.html#TYPEcheck">Validate.check</a> -> ('k, 'v, 'a) <a href="Core_map.html#TYPEt">t</a> <a href="Validate.html#TYPEcheck">Validate.check</a></code></pre><br>
+<h6 id="6_Additionaloperationsonmaps">Additional operations on maps</h6><br>
+<pre><span id="VALmerge"><span class="keyword">val</span> merge</span> : <code class="type">('k, 'v1, 'cmp) <a href="Core_map.html#TYPEt">t</a> -><br>       ('k, 'v2, 'cmp) <a href="Core_map.html#TYPEt">t</a> -><br>       f:(key:'k -><br>          [ `Both of 'v1 * 'v2 | `Left of 'v1 | `Right of 'v2 ] -> 'v3 option) -><br>       ('k, 'v3, 'cmp) <a href="Core_map.html#TYPEt">t</a></code></pre><div class="info">
+merges two maps<br>
+</div>
+<pre><span id="VALsymmetric_diff"><span class="keyword">val</span> symmetric_diff</span> : <code class="type">('k, 'v, 'cmp) <a href="Core_map.html#TYPEt">t</a> -><br>       ('k, 'v, 'cmp) <a href="Core_map.html#TYPEt">t</a> -><br>       data_equal:('v -> 'v -> bool) -><br>       ('k * [ `Left of 'v | `Right of 'v | `Unequal of 'v * 'v ]) list</code></pre><div class="info">
+<code class="code">symmetric_diff t1 t2 ~data_equal</code> returns a list of changes between <code class="code">t1</code> and <code class="code">t2</code>.
+    It is intended to be efficient in the case where <code class="code">t1</code> and <code class="code">t2</code> share a large amount of
+    structure.<br>
+</div>
+<pre><span id="VALmin_elt"><span class="keyword">val</span> min_elt</span> : <code class="type">('k, 'v, 'a) <a href="Core_map.html#TYPEt">t</a> -> ('k * 'v) option</code></pre><div class="info">
+<code class="code">min_elt map</code><br>
+<b>Returns</b> Some <code class="code">(key, data)</code> pair corresponding to the minimum key in
+    <code class="code">map</code>, None if empty.<br>
+</div>
+<pre><span id="VALmin_elt_exn"><span class="keyword">val</span> min_elt_exn</span> : <code class="type">('k, 'v, 'a) <a href="Core_map.html#TYPEt">t</a> -> 'k * 'v</code></pre><pre><span id="VALmax_elt"><span class="keyword">val</span> max_elt</span> : <code class="type">('k, 'v, 'a) <a href="Core_map.html#TYPEt">t</a> -> ('k * 'v) option</code></pre><div class="info">
+<code class="code">max_elt map</code><br>
+<b>Returns</b> Some <code class="code">(key, data)</code> pair corresponding to the maximum key in
+    <code class="code">map</code>, and None if <code class="code">map</code> is empty.<br>
+</div>
+<pre><span id="VALmax_elt_exn"><span class="keyword">val</span> max_elt_exn</span> : <code class="type">('k, 'v, 'a) <a href="Core_map.html#TYPEt">t</a> -> 'k * 'v</code></pre><pre><span id="VALfor_all"><span class="keyword">val</span> for_all</span> : <code class="type">('k, 'v, 'a) <a href="Core_map.html#TYPEt">t</a> -> f:('v -> bool) -> bool</code></pre><div class="info">
+same semantics as similar functions in List<br>
+</div>
+<pre><span id="VALexists"><span class="keyword">val</span> exists</span> : <code class="type">('k, 'v, 'a) <a href="Core_map.html#TYPEt">t</a> -> f:('v -> bool) -> bool</code></pre><pre><span id="VALfold_range_inclusive"><span class="keyword">val</span> fold_range_inclusive</span> : <code class="type">('k, 'v, 'cmp) <a href="Core_map.html#TYPEt">t</a> -><br>       min:'k -> max:'k -> init:'a -> f:(key:'k -> data:'v -> 'a -> 'a) -> 'a</code></pre><div class="info">
+<code class="code">fold_range_inclusive t ~min ~max ~init ~f</code>
+    folds f (with initial value ~init) over all keys (and their associated values)
+    that are in the range <code class="code">min, max</code> (inclusive).<br>
+</div>
+<pre><span id="VALrange_to_alist"><span class="keyword">val</span> range_to_alist</span> : <code class="type">('k, 'v, 'cmp) <a href="Core_map.html#TYPEt">t</a> -> min:'k -> max:'k -> ('k * 'v) list</code></pre><div class="info">
+<code class="code">range_to_alist t ~min ~max</code> returns an associative list of the elements whose
+    keys lie in <code class="code">min, max</code> (inclusive), with the smallest key being at the head of the
+    list.<br>
+</div>
+<pre><span id="VALprev_key"><span class="keyword">val</span> prev_key</span> : <code class="type">('k, 'v, 'cmp) <a href="Core_map.html#TYPEt">t</a> -> 'k -> ('k * 'v) option</code></pre><div class="info">
+<code class="code">prev_key t k</code> returns the largest (key, value) pair in t with key less than k<br>
+</div>
+<pre><span id="VALnext_key"><span class="keyword">val</span> next_key</span> : <code class="type">('k, 'v, 'cmp) <a href="Core_map.html#TYPEt">t</a> -> 'k -> ('k * 'v) option</code></pre><div class="info">
+<code class="code">next_key t k</code> returns the smallest (key, value) pair in t with key greater than k<br>
+</div>
+<pre><span id="VALrank"><span class="keyword">val</span> rank</span> : <code class="type">('k, 'v, 'cmp) <a href="Core_map.html#TYPEt">t</a> -> 'k -> int option</code></pre><div class="info">
+<code class="code">rank t k</code> if k is in t, returns the number of keys strictly less than k in t,
+    otherwise None<br>
+</div>
+<pre><span class="keyword">module</span> <a href="Core_map.Poly.html">Poly</a>: <code class="code">sig</code> <a href="Core_map.Poly.html">..</a> <code class="code">end</code><code class="type"> 
+  with type ('a, 'b, 'c) map = ('a, 'b, 'c) t</code></pre><pre><span class="keyword">module type</span> <a href="Core_map.Key.html">Key</a> = <code class="type"><a href="Core_map_intf.Key.html">Core_map_intf.Key</a></code></pre><pre><span class="keyword">module type</span> <a href="Core_map.Key_binable.html">Key_binable</a> = <code class="type"><a href="Core_map_intf.Key_binable.html">Core_map_intf.Key_binable</a></code></pre><pre><span class="keyword">module type</span> <a href="Core_map.S.html">S</a> = <code class="type">S</code><code class="type"> 
+  with type ('a, 'b, 'c) map  := ('a, 'b, 'c) t</code><code class="type"> 
+  with type ('a, 'b, 'c) tree := ('a, 'b, 'c) Tree.t</code></pre><pre><span class="keyword">module type</span> <a href="Core_map.S_binable.html">S_binable</a> = <code class="type">S_binable</code><code class="type"> 
+  with type ('a, 'b, 'c) map  := ('a, 'b, 'c) t</code><code class="type"> 
+  with type ('a, 'b, 'c) tree := ('a, 'b, 'c) Tree.t</code></pre><pre><span class="keyword">module</span> <a href="Core_map.Make.html">Make</a>: <div class="sig_block"><code class="code">functor (</code><code class="code">Key</code><code class="code"> : </code><code class="type"><a href="Core_map.Key.html">Key</a></code><code class="code">) -&gt; </code><code class="type"><a href="Core_map.S.html">S</a></code><code class="type">  with type Key.t = Key.t</code></div></pre><pre><span class="keyword">module</span> <a href="Core_map.Make_using_comparator.html">Make_using_comparator</a>: <div class="sig_block"><code class="code">functor (</code><code class="code">Key</code><code class="code"> : </code><code class="type"><a href="Comparator.S.html">Comparator.S</a></code><code class="code">) -&gt; </code><code class="type"><a href="Core_map.S.html">S</a></code><code class="type"> 
+    with type Key.t          = Key.t</code><code class="type"> 
+    with type Key.comparator = Key.comparator</code></div></pre><pre><span class="keyword">module</span> <a href="Core_map.Make_binable.html">Make_binable</a>: <div class="sig_block"><code class="code">functor (</code><code class="code">Key</code><code class="code"> : </code><code class="type"><a href="Core_map.Key_binable.html">Key_binable</a></code><code class="code">) -&gt; </code><code class="type"><a href="Core_map.S_binable.html">S_binable</a></code><code class="type">  with type Key.t = Key.t</code></div></pre><pre><span class="keyword">module</span> <a href="Core_map.Make_binable_using_comparator.html">Make_binable_using_comparator</a>: <div class="sig_block"><code class="code">functor (</code><code class="code">Key</code><code class="code"> : </code><code class="type"><a href="Comparator.S_binable.html">Comparator.S_binable</a></code><code class="code">) -&gt; </code><code class="type"><a href="Core_map.S_binable.html">S_binable</a></code><code class="type"> 
+    with type Key.t          = Key.t</code><code class="type"> 
+    with type Key.comparator = Key.comparator</code></div></pre></body></html>

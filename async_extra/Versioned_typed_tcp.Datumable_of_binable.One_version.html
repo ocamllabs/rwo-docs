@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Versioned_typed_tcp.Datumable_of_binable.Two_versions.html">
+<link rel="Up" href="Versioned_typed_tcp.Datumable_of_binable.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Command" rel="Chapter" href="Command.html">
+<link title="File_tail" rel="Chapter" href="File_tail.html">
+<link title="File_writer" rel="Chapter" href="File_writer.html">
+<link title="Import" rel="Chapter" href="Import.html">
+<link title="Lock_file" rel="Chapter" href="Lock_file.html">
+<link title="Log" rel="Chapter" href="Log.html">
+<link title="Persistent_singleton" rel="Chapter" href="Persistent_singleton.html">
+<link title="Rpc" rel="Chapter" href="Rpc.html">
+<link title="Rpc_intf" rel="Chapter" href="Rpc_intf.html">
+<link title="Sequencer_table" rel="Chapter" href="Sequencer_table.html">
+<link title="Std" rel="Chapter" href="Std.html">
+<link title="Tcp" rel="Chapter" href="Tcp.html">
+<link title="Tcp_file" rel="Chapter" href="Tcp_file.html">
+<link title="Typed_tcp" rel="Chapter" href="Typed_tcp.html">
+<link title="Typed_tcp_intf" rel="Chapter" href="Typed_tcp_intf.html">
+<link title="Unpack_sequence" rel="Chapter" href="Unpack_sequence.html">
+<link title="User_and_group" rel="Chapter" href="User_and_group.html">
+<link title="Versioned_rpc" rel="Chapter" href="Versioned_rpc.html">
+<link title="Versioned_typed_tcp" rel="Chapter" href="Versioned_typed_tcp.html">
+<link title="Weak_hashtbl" rel="Chapter" href="Weak_hashtbl.html"><title>Versioned_typed_tcp.Datumable_of_binable.One_version</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Versioned_typed_tcp.Datumable_of_binable.Two_versions.html" title="Versioned_typed_tcp.Datumable_of_binable.Two_versions">Previous</a>
+&nbsp;<a class="up" href="Versioned_typed_tcp.Datumable_of_binable.html" title="Versioned_typed_tcp.Datumable_of_binable">Up</a>
+&nbsp;</div>
+<h1>Functor <a href="type_Versioned_typed_tcp.Datumable_of_binable.One_version.html">Versioned_typed_tcp.Datumable_of_binable.One_version</a></h1>
+<pre><span class="keyword">module</span> One_version: <div class="sig_block"><code class="code">functor (</code><code class="code">Versions</code><code class="code"> : </code><code class="type"><a href="Versioned_typed_tcp.Datumable_of_binable.Pre_versions.html">Pre_versions</a></code><code class="code">) -&gt; </code><div class="sig_block"><code class="code">functor (</code><code class="code">T</code><code class="code"> : </code><code class="type"><a href="Versioned_typed_tcp.Datumable_of_binable.T.html">T</a></code><code class="code">) -&gt; </code><div class="sig_block"><code class="code">functor (</code><code class="code">V1</code><code class="code"> : </code><code class="type"><a href="Versioned_typed_tcp.Datumable_of_binable.T_bin.html">T_bin</a></code><code class="code">) -&gt; </code><div class="sig_block"><code class="code">functor (</code><code class="code">V1_cvt</code><code class="code"> : </code><code class="type">V(V1)(T).S</code><code class="code">) -&gt; </code><code class="type"><a href="Versioned_typed_tcp.Datumable_of_binable.Make_datumable5.html">Make_datumable5</a></code><code class="code">(</code><code class="code">sig</code><div class="sig_block"><pre><span class="keyword">include</span> Versions</pre>
+<pre><span id="VALtest_version"><span class="keyword">val</span> test_version</span> : <code class="type">Versioned_typed_tcp.Version.t</code></pre></div><code class="code">end</code><code class="code">)</code><code class="code">(</code><code class="type">T</code><code class="code">)</code><code class="code">(</code><code class="type">V1</code><code class="code">)</code><code class="code">(</code><code class="type">V1</code><code class="code">)</code><code class="code">(</code><code class="type">V1</code><code class="code">)</code><code class="code">(</code><code class="type">V1</code><code class="code">)</code><code class="code">(</code><code class="type">V1</code><code class="code">)</code><code class="code">(</code><code class="type">V1_cvt</code><code class="code">)</code><code class="code">(</code><code class="type">V1_cvt</code><code class="code">)</code><code class="code">(</code><code class="type">V1_cvt</code><code class="code">)</code><code class="code">(</code><code class="type">V1_cvt</code><code class="code">)</code><code class="code">(</code><code class="type">V1_cvt</code><code class="code">)</code></div></div></div></div></pre><table border="0" cellpadding="3" width="100%">
+<tr>
+<td align="left" valign="top" width="1%%"><b>Parameters: </b></td>
+<td>
+<table class="paramstable">
+<tr>
+<td align="center" valign="top" width="15%">
+<code>Versions</code></td>
+<td align="center" valign="top">:</td>
+<td><code class="type"><a href="Versioned_typed_tcp.Datumable_of_binable.Pre_versions.html">Pre_versions</a></code>
+<tr>
+<td align="center" valign="top" width="15%">
+<code>T</code></td>
+<td align="center" valign="top">:</td>
+<td><code class="type"><a href="Versioned_typed_tcp.Datumable_of_binable.T.html">T</a></code>
+<tr>
+<td align="center" valign="top" width="15%">
+<code>V1</code></td>
+<td align="center" valign="top">:</td>
+<td><code class="type"><a href="Versioned_typed_tcp.Datumable_of_binable.T_bin.html">T_bin</a></code>
+<tr>
+<td align="center" valign="top" width="15%">
+<code>V1_cvt</code></td>
+<td align="center" valign="top">:</td>
+<td><code class="type">V(V1)(T).S</code>
+</table>
+</td>
+</tr>
+</table>
+<hr width="100%">
+<pre><span id="TYPEdatum"><span class="keyword">type</span> <code class="type"></code>datum</span> = <code class="type">t</code> </pre>
+
+<pre><span class="keyword">include</span> Versions</pre>
+<pre><span id="VALlookup_marshal_fun"><span class="keyword">val</span> lookup_marshal_fun</span> : <code class="type">Versioned_typed_tcp.Version.t -><br>       (<a href="Versioned_typed_tcp.Datumable_of_binable.T.html#TYPEt">Versioned_typed_tcp.Datumable_of_binable.T.t</a> -><br>        <a href="../core/Bigsubstring.html">Core.Std.Bigsubstring</a>.t option, exn)<br>       <a href="../core/Result.html">Core.Std.Result</a>.t</code></pre><pre><span id="VALlookup_unmarshal_fun"><span class="keyword">val</span> lookup_unmarshal_fun</span> : <code class="type">Versioned_typed_tcp.Version.t -><br>       (<a href="../core/Bigsubstring.html">Core.Std.Bigsubstring</a>.t -><br>        <a href="Versioned_typed_tcp.Datumable_of_binable.T.html#TYPEt">Versioned_typed_tcp.Datumable_of_binable.T.t</a> option, exn)<br>       <a href="../core/Result.html">Core.Std.Result</a>.t</code></pre></body></html>

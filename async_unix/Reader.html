@@ -1,0 +1,442 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Raw_signal_manager.html">
+<link rel="next" href="Read_write.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Async_print" rel="Chapter" href="Async_print.html">
+<link title="Async_sys" rel="Chapter" href="Async_sys.html">
+<link title="Busy_pollers" rel="Chapter" href="Busy_pollers.html">
+<link title="Epoll_file_descr_watcher" rel="Chapter" href="Epoll_file_descr_watcher.html">
+<link title="Fd" rel="Chapter" href="Fd.html">
+<link title="Fd_by_descr" rel="Chapter" href="Fd_by_descr.html">
+<link title="File_descr_watcher_intf" rel="Chapter" href="File_descr_watcher_intf.html">
+<link title="Import" rel="Chapter" href="Import.html">
+<link title="Interruptor" rel="Chapter" href="Interruptor.html">
+<link title="In_thread" rel="Chapter" href="In_thread.html">
+<link title="Io_stats" rel="Chapter" href="Io_stats.html">
+<link title="Process" rel="Chapter" href="Process.html">
+<link title="Raw_fd" rel="Chapter" href="Raw_fd.html">
+<link title="Raw_scheduler" rel="Chapter" href="Raw_scheduler.html">
+<link title="Raw_signal_manager" rel="Chapter" href="Raw_signal_manager.html">
+<link title="Reader" rel="Chapter" href="Reader.html">
+<link title="Read_write" rel="Chapter" href="Read_write.html">
+<link title="Scheduler" rel="Chapter" href="Scheduler.html">
+<link title="Select_file_descr_watcher" rel="Chapter" href="Select_file_descr_watcher.html">
+<link title="Shutdown" rel="Chapter" href="Shutdown.html">
+<link title="Signal" rel="Chapter" href="Signal.html">
+<link title="Signal_manager" rel="Chapter" href="Signal_manager.html">
+<link title="Std" rel="Chapter" href="Std.html">
+<link title="Syscall" rel="Chapter" href="Syscall.html">
+<link title="Thread_pool" rel="Chapter" href="Thread_pool.html">
+<link title="Thread_safe" rel="Chapter" href="Thread_safe.html">
+<link title="Thread_safe_pipe" rel="Chapter" href="Thread_safe_pipe.html">
+<link title="Unix_syscalls" rel="Chapter" href="Unix_syscalls.html">
+<link title="Writer" rel="Chapter" href="Writer.html"><title>Reader</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Raw_signal_manager.html" title="Raw_signal_manager">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="Read_write.html" title="Read_write">Next</a>
+</div>
+<h1>Module <a href="type_Reader.html">Reader</a></h1>
+<pre><span class="keyword">module</span> Reader: <code class="code">sig</code> <a href="Reader.html">..</a> <code class="code">end</code></pre><div class="info">
+<code class="code">Reader</code> is Async's main API for buffered input from a file descriptor.  It is the
+    analog of <code class="code"><a href="../core/In_channel.html">Core.Std.In_channel</a></code>.
+<p>
+
+    Each reader has an internal buffer, which is filled via <code class="code">read()</code> system calls when
+    data is needed to satisfy a <code class="code">Reader.read*</code> call.
+<p>
+
+    Each of the read functions returns a deferred that will become determined when the
+    read completes.  It is an error to have two simultaneous reads.  That is, if one calls
+    a read function, one should not call another read function until the first one
+    completes.
+<p>
+
+    If the file descriptor underlying a reader is closed, the reader will return EOF
+    (after all the buffered bytes have been read).
+<p>
+
+    Any <code class="code">Reader.read*</code> call could, rather than determine its result, send an exception to
+    the monitor in effect when <code class="code">read</code> was called.  Such exceptions can be handled in the
+    usual way by using <code class="code">try_with</code>, e.g.:
+<p>
+
+    <pre class="codepre"><code class="code">      try_with (fun () -&gt; Reader.read reader ...)
+    </code></pre><br>
+</div>
+<hr width="100%">
+<pre><span class="keyword">module</span> <a href="Reader.Read_result.html">Read_result</a>: <code class="code">sig</code> <a href="Reader.Read_result.html">..</a> <code class="code">end</code></pre><pre><span class="keyword">module</span> <a href="Reader.Id.html">Id</a>: <code class="type"><a href="../core/Unique_id.html">Core.Std.Unique_id</a></code><code class="type"> </code></pre><pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
+
+<pre><span class="keyword">include</span> Invariant.S</pre>
+<pre><span id="VALio_stats"><span class="keyword">val</span> io_stats</span> : <code class="type"><a href="Io_stats.html#TYPEt">Io_stats.t</a></code></pre><div class="info">
+<code class="code">io_stats</code> Overall IO statistics for all readers<br>
+</div>
+<pre><span id="VALlast_read_time"><span class="keyword">val</span> last_read_time</span> : <code class="type"><a href="Reader.html#TYPEt">t</a> -> <a href="../core/Time.html">Core.Std.Time</a>.t</code></pre><div class="info">
+<code class="code">last_read_time t</code> returns time of the most recent <code class="code">read</code> system call that
+    returned data.<br>
+</div>
+<pre><span id="VALstdin"><span class="keyword">val</span> stdin</span> : <code class="type"><a href="Reader.html#TYPEt">t</a> Core.Std.Lazy.t</code></pre><div class="info">
+<code class="code">stdin</code> is a reader for file descriptor 0.  It is lazy because we don't want
+   to create it in all programs that happen to link with async.<br>
+</div>
+<pre><span id="VALopen_file"><span class="keyword">val</span> open_file</span> : <code class="type">?close_on_exec:bool -> ?buf_len:int -> string -> <a href="Reader.html#TYPEt">t</a> Import.Deferred.t</code></pre><div class="info">
+<code class="code">open_file file</code> opens <code class="code">file</code> for reading and returns a reader reading from it.<br>
+</div>
+<pre><span id="VALtransfer"><span class="keyword">val</span> transfer</span> : <code class="type"><a href="Reader.html#TYPEt">t</a> -> string Import.Pipe.Writer.t -> unit Import.Deferred.t</code></pre><div class="info">
+<code class="code">transfer t pipe_w</code> transfers data from <code class="code">t</code> into <code class="code">pipe_w</code> one chunk at a time
+    (whatever is read from the underlying file descriptor without post-processing).  The
+    result becomes determined after reaching EOF on <code class="code">t</code> and the final bytes have been
+    transferred.
+<p>
+
+    This function will normally not be needed (see <code class="code">pipe</code>).<br>
+</div>
+<pre><span id="VALpipe"><span class="keyword">val</span> pipe</span> : <code class="type"><a href="Reader.html#TYPEt">t</a> -> string Import.Pipe.Reader.t</code></pre><div class="info">
+<code class="code">pipe t</code> returns the reader end of a pipe that will continually be filled with chunks
+    of data from the underlying Reader.t.  When the reader reaches EOF or the pipe is
+    closed, <code class="code">pipe</code> closes the the reader, and then after the reader close is finished,
+    closes the pipe.<br>
+</div>
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?buf_len:int -> <a href="Fd.html#TYPEt">Fd.t</a> -> <a href="Reader.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">create ~buf_len fd</code> creates a new reader that is reading from <code class="code">fd</code>.<br>
+</div>
+<pre><span id="VALof_in_channel"><span class="keyword">val</span> of_in_channel</span> : <code class="type">Pervasives.in_channel -> <a href="Fd.Kind.html#TYPEt">Fd.Kind.t</a> -> <a href="Reader.html#TYPEt">t</a></code></pre><pre><span id="VALwith_file"><span class="keyword">val</span> with_file</span> : <code class="type">?buf_len:int -><br>       ?exclusive:bool -><br>       string -> f:(<a href="Reader.html#TYPEt">t</a> -> 'a Import.Deferred.t) -> 'a Import.Deferred.t</code></pre><div class="info">
+<code class="code">with_file file f</code> opens <code class="code">files</code>, creates a reader with it, and passes the reader to
+    <code class="code">f</code>.  It closes the reader when the result of <code class="code">f</code> becomes determined, and returns
+    <code class="code">f</code>'s result.
+<p>
+
+    NOTE, you need to be careful that all your IO is done when the deferred you return
+    becomes determined. If for example, you use <code class="code">with_file</code>, and call <code class="code">lines</code>, make sure
+    you return a deferred that becomes determined when the EOF is reached on the pipe,
+    not when you get the pipe (because you get it straight away).<br>
+</div>
+<pre><span id="VALclose"><span class="keyword">val</span> close</span> : <code class="type"><a href="Reader.html#TYPEt">t</a> -> unit Import.Deferred.t</code></pre><div class="info">
+<code class="code">close t</code> prevents further use of <code class="code">t</code> and closes <code class="code">t</code>'s underlying file descriptor.
+    The result of <code class="code">close</code> becomes determined once the underlying file descriptor has been
+    closed.  It is an error to call other operations on <code class="code">t</code> after <code class="code">close t</code> has been
+    called, except that calls of <code class="code">close</code> subsequent to the original call to <code class="code">close</code> will
+    return the same deferred as the original call.
+<p>
+
+    <code class="code">close_finished t</code> becomes determined after <code class="code">t</code>'s underlying file descriptor has been
+    closed, i.e. it is the same as the result of <code class="code">close</code>.  <code class="code">close_finished</code> differs from
+    <code class="code">close</code> in that it does not have the side effect of initiating a close.
+<p>
+
+    <code class="code">is_closed t</code> returns <code class="code">true</code> iff <code class="code">close t</code> has been called.
+<p>
+
+    <code class="code">with_close t ~f</code> runs <code class="code">f ()</code>, and closes <code class="code">t</code> after <code class="code">f</code> finishes or raises.<br>
+</div>
+<pre><span id="VALclose_finished"><span class="keyword">val</span> close_finished</span> : <code class="type"><a href="Reader.html#TYPEt">t</a> -> unit Import.Deferred.t</code></pre><pre><span id="VALis_closed"><span class="keyword">val</span> is_closed</span> : <code class="type"><a href="Reader.html#TYPEt">t</a> -> bool</code></pre><pre><span id="VALwith_close"><span class="keyword">val</span> with_close</span> : <code class="type"><a href="Reader.html#TYPEt">t</a> -> f:(unit -> 'a Import.Deferred.t) -> 'a Import.Deferred.t</code></pre><pre><span id="VALid"><span class="keyword">val</span> id</span> : <code class="type"><a href="Reader.html#TYPEt">t</a> -> Id.t</code></pre><div class="info">
+<code class="code">id t</code><br>
+<b>Returns</b> a name for this reader that is unique across all
+    instances of the reader module.<br>
+</div>
+<pre><span id="VALfd"><span class="keyword">val</span> fd</span> : <code class="type"><a href="Reader.html#TYPEt">t</a> -> <a href="Fd.html#TYPEt">Fd.t</a></code></pre><div class="info">
+<code class="code">fd t</code><br>
+<b>Returns</b> the Fd.t used to create this reader<br>
+</div>
+<pre><span id="VALread"><span class="keyword">val</span> read</span> : <code class="type"><a href="Reader.html#TYPEt">t</a> -><br>       ?pos:int -> ?len:int -> string -> int <a href="Reader.Read_result.html#TYPEt">Read_result.t</a> Import.Deferred.t</code></pre><div class="info">
+<code class="code">read t ?pos ?len buf</code> reads up to <code class="code">len</code> bytes into buf, blocking
+    until some data is available or end-of-input is reached.  The resulting
+    <code class="code">i</code> satisfies <code class="code">0 &lt; i &lt;= len</code>.<br>
+</div>
+<pre><span id="TYPEread_one_chunk_at_a_time_until_eof_result"><span class="keyword">type</span> <code class="type">'a</code> read_one_chunk_at_a_time_until_eof_result</span> = <code class="type">[ `Eof | `Eof_with_unconsumed_data of string | `Stopped of 'a ]</code> </pre>
+<div class="info">
+<code class="code">read_one_chunk_at_a_time_until_eof t ~handle_chunk</code> reads into <code class="code">t</code>'s internal buffer,
+    and whenever bytes are available, applies <code class="code">handle_chunk</code> to them.  It waits to read
+    again until the deferred returned by <code class="code">handle_chunk</code> becomes determined.<br>
+</div>
+
+<pre><span id="VALread_one_chunk_at_a_time_until_eof"><span class="keyword">val</span> read_one_chunk_at_a_time_until_eof</span> : <code class="type"><a href="Reader.html#TYPEt">t</a> -><br>       handle_chunk:(<a href="../core/Bigstring.html">Core.Std.Bigstring</a>.t -><br>                     pos:int -><br>                     len:int -><br>                     [ `Consumed of int * [ `Need of int | `Need_unknown ]<br>                     | `Continue<br>                     | `Stop of 'a ] Import.Deferred.t) -><br>       'a <a href="Reader.html#TYPEread_one_chunk_at_a_time_until_eof_result">read_one_chunk_at_a_time_until_eof_result</a> Import.Deferred.t</code></pre><pre><span id="VALread_substring"><span class="keyword">val</span> read_substring</span> : <code class="type"><a href="Reader.html#TYPEt">t</a> -><br>       <a href="../core/Substring.html">Core.Std.Substring</a>.t -> int <a href="Reader.Read_result.html#TYPEt">Read_result.t</a> Import.Deferred.t</code></pre><div class="info">
+<code class="code">read_substring t ss</code> reads up to <code class="code">Substring.length ss</code> bytes into <code class="code">ss</code>,
+    blocking until some data is available or Eof is reched.  The resulting <code class="code">i</code>
+    satisfies <code class="code">0 &lt; i &lt;= Substring.length ss</code>.<br>
+</div>
+<pre><span id="VALread_bigsubstring"><span class="keyword">val</span> read_bigsubstring</span> : <code class="type"><a href="Reader.html#TYPEt">t</a> -><br>       <a href="../core/Bigsubstring.html">Core.Std.Bigsubstring</a>.t -> int <a href="Reader.Read_result.html#TYPEt">Read_result.t</a> Import.Deferred.t</code></pre><pre><span id="VALread_char"><span class="keyword">val</span> read_char</span> : <code class="type"><a href="Reader.html#TYPEt">t</a> -> char <a href="Reader.Read_result.html#TYPEt">Read_result.t</a> Import.Deferred.t</code></pre><pre><span id="VALreally_read"><span class="keyword">val</span> really_read</span> : <code class="type"><a href="Reader.html#TYPEt">t</a> -><br>       ?pos:int -> ?len:int -> string -> [ `Eof of int | `Ok ] Import.Deferred.t</code></pre><div class="info">
+<code class="code">really_read t buf ?pos ?len</code> reads until it fills <code class="code">len</code> bytes of <code class="code">buf</code>
+    starting at <code class="code">pos</code> or runs out of input.  In the former case it returns `Ok.
+    In the latter, it returns <code class="code">`Eof n</code> where <code class="code">n</code> is the number of bytes that
+    were read before end of input, and <code class="code">0 &lt;= n &lt; String.length ss</code>.<br>
+</div>
+<pre><span id="VALreally_read_substring"><span class="keyword">val</span> really_read_substring</span> : <code class="type"><a href="Reader.html#TYPEt">t</a> -> <a href="../core/Substring.html">Core.Std.Substring</a>.t -> [ `Eof of int | `Ok ] Import.Deferred.t</code></pre><pre><span id="VALreally_read_bigsubstring"><span class="keyword">val</span> really_read_bigsubstring</span> : <code class="type"><a href="Reader.html#TYPEt">t</a> -><br>       <a href="../core/Bigsubstring.html">Core.Std.Bigsubstring</a>.t -> [ `Eof of int | `Ok ] Import.Deferred.t</code></pre><pre><span id="VALread_until"><span class="keyword">val</span> read_until</span> : <code class="type"><a href="Reader.html#TYPEt">t</a> -><br>       [ `Char of char | `Pred of char -> bool ] -><br>       keep_delim:bool -><br>       [ `Eof | `Eof_without_delim of string | `Ok of string ] Import.Deferred.t</code></pre><div class="info">
+<code class="code">read_until t pred ~keep_delim</code> reads until it hits a delimiter <code class="code">c</code> such that:
+<p>
+<ul>
+<li>if <code class="code">pred = `Char c'</code> then <code class="code">c = c'</code></li>
+<li>if <code class="code">pred = `Pred p</code> then <code class="code">p c</code></li>
+</ul>
+
+    <code class="code">`Char c'</code> is equivalent to <code class="code">`Pred (fun c -&gt; c = c')</code> but the underlying
+    implementation is more efficient, in particular it will not call a function on every
+    input character.
+<p>
+
+    <code class="code">read_until</code> returns a freshly-allocated string consisting of all the characters read
+    and optionally including the delimiter as per <code class="code">keep_delim</code>.<br>
+</div>
+<pre><span id="VALread_until_max"><span class="keyword">val</span> read_until_max</span> : <code class="type"><a href="Reader.html#TYPEt">t</a> -><br>       [ `Char of char | `Pred of char -> bool ] -><br>       keep_delim:bool -><br>       max:int -><br>       [ `Eof<br>       | `Eof_without_delim of string<br>       | `Max_exceeded of string<br>       | `Ok of string ] Import.Deferred.t</code></pre><div class="info">
+just like <code class="code">read_until</code>, except you have the option of specifiying a maximum number of
+    chars to read.<br>
+</div>
+<pre><span id="VALread_line"><span class="keyword">val</span> read_line</span> : <code class="type"><a href="Reader.html#TYPEt">t</a> -> string <a href="Reader.Read_result.html#TYPEt">Read_result.t</a> Import.Deferred.t</code></pre><div class="info">
+<code class="code">read_line t</code> reads up to, and including the next newline (\n) character (or \r\n) and
+    returns a freshly-allocated string containing everything up to but not including the
+    newline character.  If <code class="code">read_line</code> encounters EOF before the newline char then
+    everything read up to but not including EOF will be returned as a line.<br>
+</div>
+<pre><span id="VALreally_read_line"><span class="keyword">val</span> really_read_line</span> : <code class="type">wait_time:<a href="../core/Time.Span.html">Core.Std.Time.Span</a>.t -> <a href="Reader.html#TYPEt">t</a> -> string option Import.Deferred.t</code></pre><div class="info">
+<code class="code">really_read_line ~wait_time t</code> reads up to, and including the next newline (\n)
+    character and returns an optional, freshly-allocated string containing everything up
+    to but not including the newline character.  If <code class="code">really_read_line</code> encounters EOF
+    before the newline char, then a time span of <code class="code">wait_time</code> will be used before the input
+    operation is retried.  If the descriptor is closed, <code class="code">None</code> will be returned.<br>
+</div>
+<pre><span id="TYPEread"><span class="keyword">type</span> <code class="type">'a</code> read</span> = <code class="type">?parse_pos:Core.Std.Sexp.Parse_pos.t -> 'a</code> </pre>
+
+<pre><span id="VALread_sexp"><span class="keyword">val</span> read_sexp</span> : <code class="type">(<a href="Reader.html#TYPEt">t</a> -> Core.Std.Sexp.t <a href="Reader.Read_result.html#TYPEt">Read_result.t</a> Import.Deferred.t)<br>       <a href="Reader.html#TYPEread">read</a></code></pre><div class="info">
+<code class="code">read_sexp t</code> reads the next sexp.<br>
+</div>
+<pre><span id="VALread_sexps"><span class="keyword">val</span> read_sexps</span> : <code class="type">(<a href="Reader.html#TYPEt">t</a> -> Core.Std.Sexp.t Import.Pipe.Reader.t) <a href="Reader.html#TYPEread">read</a></code></pre><div class="info">
+<code class="code">read_sexps t</code> reads all the sexps and returns them as a pipe.  When the reader
+    reaches EOF or the pipe is closed, <code class="code">read_sexps</code> closes the the reader, and then
+    after the reader close is finished, closes the pipe.<br>
+</div>
+<pre><span id="VALread_bin_prot"><span class="keyword">val</span> read_bin_prot</span> : <code class="type">?max_len:int -><br>       <a href="Reader.html#TYPEt">t</a> -><br>       'a <a href="../bin_prot/Type_class.html">Bin_prot.Type_class</a>.reader -><br>       'a <a href="Reader.Read_result.html#TYPEt">Read_result.t</a> Import.Deferred.t</code></pre><div class="info">
+<code class="code">read_bin_prot ?max_len t bp_reader</code> reads the next binary protocol message using
+    binary protocol reader <code class="code">bp_reader</code>.  The format is the "size-prefixed binary
+    protocol", in which the length of the data is prefixed as a 64-bit integer to the
+    data.  This is the format that Writer.write_bin_prot writes.<br>
+</div>
+<pre><span id="VALread_marshal_raw"><span class="keyword">val</span> read_marshal_raw</span> : <code class="type"><a href="Reader.html#TYPEt">t</a> -> string <a href="Reader.Read_result.html#TYPEt">Read_result.t</a> Import.Deferred.t</code></pre><div class="info">
+Read and return a buffer containing one marshaled value, but don't unmarshal it. You
+    can just call Marshal.from_string on the string, and cast it to the desired type
+    (preferrably the actual type). similar to Marshal.from_channel, but suffers from the
+    String-length limitation (16MB) on 32bit platforms.<br>
+</div>
+<pre><span id="VALread_marshal"><span class="keyword">val</span> read_marshal</span> : <code class="type"><a href="Reader.html#TYPEt">t</a> -> 'a <a href="Reader.Read_result.html#TYPEt">Read_result.t</a> Import.Deferred.t</code></pre><div class="info">
+Like read_marshal_raw, but unmarshal the value after reading it<br>
+</div>
+<pre><span id="VALrecv"><span class="keyword">val</span> recv</span> : <code class="type"><a href="Reader.html#TYPEt">t</a> -> string <a href="Reader.Read_result.html#TYPEt">Read_result.t</a> Import.Deferred.t</code></pre><div class="info">
+<code class="code">recv t</code> returns a string that was written with Writer.send<br>
+</div>
+<pre><span id="VALread_all"><span class="keyword">val</span> read_all</span> : <code class="type"><a href="Reader.html#TYPEt">t</a> -><br>       (<a href="Reader.html#TYPEt">t</a> -> 'a <a href="Reader.Read_result.html#TYPEt">Read_result.t</a> Import.Deferred.t) -><br>       'a Import.Pipe.Reader.t</code></pre><div class="info">
+<code class="code">read_all t read_one</code> returns a pipe that receives all values read from <code class="code">t</code> by
+    repeatedly using <code class="code">read_one t</code>.  When the reader reaches EOF, it closes the reader,
+    and then after the reader close is finished, closes the pipe.<br>
+</div>
+<pre><span id="VALlseek"><span class="keyword">val</span> lseek</span> : <code class="type"><a href="Reader.html#TYPEt">t</a> -> int64 -> mode:[< `End | `Set ] -> int64 Import.Deferred.t</code></pre><div class="info">
+<code class="code">lseek t offset ~mode</code> clears <code class="code">t</code>'s buffer and calls <code class="code">Unix.lseek</code> on <code class="code">t</code>'s file
+    descriptor.  The <code class="code">`Cur</code> mode is not exposed because seeking relative to the current
+    position of the file descriptor is not the same as seeking to relative to the current
+    position of the reader.<br>
+</div>
+<pre><span id="VALlines"><span class="keyword">val</span> lines</span> : <code class="type"><a href="Reader.html#TYPEt">t</a> -> string Import.Pipe.Reader.t</code></pre><div class="info">
+<code class="code">lines t</code> reads all the lines from <code class="code">t</code> and puts them in the pipe, one line per pipe
+    element.  The lines do not contain the trailing newline.  When the reader reaches EOF
+    or the pipe is closed, <code class="code">lines</code> closes the the reader, and then after the reader close
+    is finished, closes the pipe.<br>
+</div>
+<pre><span id="VALcontents"><span class="keyword">val</span> contents</span> : <code class="type"><a href="Reader.html#TYPEt">t</a> -> string Import.Deferred.t</code></pre><div class="info">
+<code class="code">contents t</code> returns the string corresponding to the full contents (up to EOF) of the
+    reader.  <code class="code">contents</code> closes <code class="code">t</code> before returning the string.<br>
+</div>
+<pre><span id="VALfile_contents"><span class="keyword">val</span> file_contents</span> : <code class="type">string -> string Import.Deferred.t</code></pre><div class="info">
+<code class="code">file_contents file</code> returns the string with the full contents of the file<br>
+</div>
+<pre><span id="VALfile_lines"><span class="keyword">val</span> file_lines</span> : <code class="type">string -> string list Import.Deferred.t</code></pre><div class="info">
+<code class="code">file_lines file</code> returns a list of the lines in the file.  The lines do not contain
+    the trailing newline.<br>
+</div>
+<pre><span id="VALload_sexp"><span class="keyword">val</span> load_sexp</span> : <code class="type">?exclusive:bool -><br>       string -> (Core.Std.Sexp.t -> 'a) -> 'a <a href="../core/Or_error.html">Core.Std.Or_error</a>.t Import.Deferred.t</code></pre><div class="info">
+<code class="code">load_sexp ?exclusive file ~f</code> loads and convert the S-expression in a given <code class="code">file</code>
+    using <code class="code">f</code>, and returns the deferred conversion result as a variant of either <code class="code">Ok res</code>
+    or <code class="code">Error exn</code> otherwise.  This function provides accurate error locations for failed
+    conversions.<br>
+</div>
+<pre><span id="VALload_sexp_exn"><span class="keyword">val</span> load_sexp_exn</span> : <code class="type">?exclusive:bool -> string -> (Core.Std.Sexp.t -> 'a) -> 'a Import.Deferred.t</code></pre><pre><span id="VALload_sexps"><span class="keyword">val</span> load_sexps</span> : <code class="type">?exclusive:bool -><br>       string -><br>       (Core.Std.Sexp.t -> 'a) -> 'a list <a href="../core/Or_error.html">Core.Std.Or_error</a>.t Import.Deferred.t</code></pre><div class="info">
+<code class="code">load_sexps file ~f</code> load and convert the S-expressions in a given <code class="code">file</code> using <code class="code">f</code>,
+    and return the deferred list of conversion results as variants of either <code class="code">Ok res</code> or
+    <code class="code">Error exn</code> otherwise.  This function is as efficient as <code class="code">load_sexps</code> followed by
+    conversion if there are no errors, but provides accurate error locations for failed
+    conversions.<br>
+</div>
+<pre><span id="VALload_sexps_exn"><span class="keyword">val</span> load_sexps_exn</span> : <code class="type">?exclusive:bool -><br>       string -> (Core.Std.Sexp.t -> 'a) -> 'a list Import.Deferred.t</code></pre><pre><span id="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="Reader.html#TYPEt">t</a> -> <a href="../sexplib/Sexp.html">Sexplib.Sexp</a>.t</code></pre><br>
+<code class="code">io_stats</code> Overall IO statistics for all readers<br>
+<br>
+<code class="code">last_read_time t</code> returns time of the most recent <code class="code">read</code> system call that
+    returned data.<br>
+<br>
+<code class="code">stdin</code> is a reader for file descriptor 0.  It is lazy because we don't want
+   to create it in all programs that happen to link with async.<br>
+<br>
+<code class="code">open_file file</code> opens <code class="code">file</code> for reading and returns a reader reading from it.<br>
+<br>
+<code class="code">transfer t pipe_w</code> transfers data from <code class="code">t</code> into <code class="code">pipe_w</code> one chunk at a time
+    (whatever is read from the underlying file descriptor without post-processing).  The
+    result becomes determined after reaching EOF on <code class="code">t</code> and the final bytes have been
+    transferred.
+<p>
+
+    This function will normally not be needed (see <code class="code">pipe</code>).<br>
+<br>
+<code class="code">pipe t</code> returns the reader end of a pipe that will continually be filled with chunks
+    of data from the underlying Reader.t.  When the reader reaches EOF or the pipe is
+    closed, <code class="code">pipe</code> closes the the reader, and then after the reader close is finished,
+    closes the pipe.<br>
+<br>
+<code class="code">create ~buf_len fd</code> creates a new reader that is reading from <code class="code">fd</code>.<br>
+<br>
+<code class="code">with_file file f</code> opens <code class="code">files</code>, creates a reader with it, and passes the reader to
+    <code class="code">f</code>.  It closes the reader when the result of <code class="code">f</code> becomes determined, and returns
+    <code class="code">f</code>'s result.
+<p>
+
+    NOTE, you need to be careful that all your IO is done when the deferred you return
+    becomes determined. If for example, you use <code class="code">with_file</code>, and call <code class="code">lines</code>, make sure
+    you return a deferred that becomes determined when the EOF is reached on the pipe,
+    not when you get the pipe (because you get it straight away).<br>
+<br>
+<code class="code">close t</code> prevents further use of <code class="code">t</code> and closes <code class="code">t</code>'s underlying file descriptor.
+    The result of <code class="code">close</code> becomes determined once the underlying file descriptor has been
+    closed.  It is an error to call other operations on <code class="code">t</code> after <code class="code">close t</code> has been
+    called, except that calls of <code class="code">close</code> subsequent to the original call to <code class="code">close</code> will
+    return the same deferred as the original call.
+<p>
+
+    <code class="code">close_finished t</code> becomes determined after <code class="code">t</code>'s underlying file descriptor has been
+    closed, i.e. it is the same as the result of <code class="code">close</code>.  <code class="code">close_finished</code> differs from
+    <code class="code">close</code> in that it does not have the side effect of initiating a close.
+<p>
+
+    <code class="code">is_closed t</code> returns <code class="code">true</code> iff <code class="code">close t</code> has been called.
+<p>
+
+    <code class="code">with_close t ~f</code> runs <code class="code">f ()</code>, and closes <code class="code">t</code> after <code class="code">f</code> finishes or raises.<br>
+<br>
+<code class="code">id t</code><br>
+<br>
+<code class="code">fd t</code><br>
+<br>
+<code class="code">read t ?pos ?len buf</code> reads up to <code class="code">len</code> bytes into buf, blocking
+    until some data is available or end-of-input is reached.  The resulting
+    <code class="code">i</code> satisfies <code class="code">0 &lt; i &lt;= len</code>.<br>
+<pre><span id="VALsexp_of_read_one_chunk_at_a_time_until_eof_result"><span class="keyword">val</span> sexp_of_read_one_chunk_at_a_time_until_eof_result</span> : <code class="type">('a -> <a href="../sexplib/Sexp.html">Sexplib.Sexp</a>.t) -><br>       'a <a href="Reader.html#TYPEread_one_chunk_at_a_time_until_eof_result">read_one_chunk_at_a_time_until_eof_result</a> -> <a href="../sexplib/Sexp.html">Sexplib.Sexp</a>.t</code></pre><div class="info">
+<code class="code">read_one_chunk_at_a_time_until_eof t ~handle_chunk</code> reads into <code class="code">t</code>'s internal buffer,
+    and whenever bytes are available, applies <code class="code">handle_chunk</code> to them.  It waits to read
+    again until the deferred returned by <code class="code">handle_chunk</code> becomes determined.<br>
+</div>
+<br>
+<code class="code">`Continue</code> means that <code class="code">handle_chunk</code> has consumed all <code class="code">len</code>
+                          bytes.<br>
+<br>
+<code class="code">`Consumed (c, need)</code> means that <code class="code">c</code> bytes were consumed and
+                          <code class="code">need</code> says how many bytes are needed (including the data
+                          remaining in the buffer after the <code class="code">c</code> were already consumed).
+                          It is an error if <code class="code">c &lt; 0 || c &gt; len</code>.  For <code class="code">`Need n</code>, it is an
+                          error if <code class="code">n &lt; 0 || c + n &lt;= len</code>.<br>
+<br>
+<code class="code">read_substring t ss</code> reads up to <code class="code">Substring.length ss</code> bytes into <code class="code">ss</code>,
+    blocking until some data is available or Eof is reched.  The resulting <code class="code">i</code>
+    satisfies <code class="code">0 &lt; i &lt;= Substring.length ss</code>.<br>
+<br>
+<code class="code">really_read t buf ?pos ?len</code> reads until it fills <code class="code">len</code> bytes of <code class="code">buf</code>
+    starting at <code class="code">pos</code> or runs out of input.  In the former case it returns `Ok.
+    In the latter, it returns <code class="code">`Eof n</code> where <code class="code">n</code> is the number of bytes that
+    were read before end of input, and <code class="code">0 &lt;= n &lt; String.length ss</code>.<br>
+<br>
+<code class="code">read_until t pred ~keep_delim</code> reads until it hits a delimiter <code class="code">c</code> such that:
+<p>
+<ul>
+<li>if <code class="code">pred = `Char c'</code> then <code class="code">c = c'</code></li>
+<li>if <code class="code">pred = `Pred p</code> then <code class="code">p c</code></li>
+</ul>
+
+    <code class="code">`Char c'</code> is equivalent to <code class="code">`Pred (fun c -&gt; c = c')</code> but the underlying
+    implementation is more efficient, in particular it will not call a function on every
+    input character.
+<p>
+
+    <code class="code">read_until</code> returns a freshly-allocated string consisting of all the characters read
+    and optionally including the delimiter as per <code class="code">keep_delim</code>.<br>
+<br>
+just like <code class="code">read_until</code>, except you have the option of specifiying a maximum number of
+    chars to read.<br>
+<br>
+<code class="code">read_line t</code> reads up to, and including the next newline (\n) character (or \r\n) and
+    returns a freshly-allocated string containing everything up to but not including the
+    newline character.  If <code class="code">read_line</code> encounters EOF before the newline char then
+    everything read up to but not including EOF will be returned as a line.<br>
+<br>
+<code class="code">really_read_line ~wait_time t</code> reads up to, and including the next newline (\n)
+    character and returns an optional, freshly-allocated string containing everything up
+    to but not including the newline character.  If <code class="code">really_read_line</code> encounters EOF
+    before the newline char, then a time span of <code class="code">wait_time</code> will be used before the input
+    operation is retried.  If the descriptor is closed, <code class="code">None</code> will be returned.<br>
+<br>
+<code class="code">read_sexp t</code> reads the next sexp.<br>
+<br>
+<code class="code">read_sexps t</code> reads all the sexps and returns them as a pipe.  When the reader
+    reaches EOF or the pipe is closed, <code class="code">read_sexps</code> closes the the reader, and then
+    after the reader close is finished, closes the pipe.<br>
+<br>
+<code class="code">read_bin_prot ?max_len t bp_reader</code> reads the next binary protocol message using
+    binary protocol reader <code class="code">bp_reader</code>.  The format is the "size-prefixed binary
+    protocol", in which the length of the data is prefixed as a 64-bit integer to the
+    data.  This is the format that Writer.write_bin_prot writes.<br>
+<br>
+Read and return a buffer containing one marshaled value, but don't unmarshal it. You
+    can just call Marshal.from_string on the string, and cast it to the desired type
+    (preferrably the actual type). similar to Marshal.from_channel, but suffers from the
+    String-length limitation (16MB) on 32bit platforms.<br>
+<br>
+Like read_marshal_raw, but unmarshal the value after reading it<br>
+<br>
+<code class="code">recv t</code> returns a string that was written with Writer.send<br>
+<br>
+<code class="code">read_all t read_one</code> returns a pipe that receives all values read from <code class="code">t</code> by
+    repeatedly using <code class="code">read_one t</code>.  When the reader reaches EOF, it closes the reader,
+    and then after the reader close is finished, closes the pipe.<br>
+<br>
+<code class="code">lseek t offset ~mode</code> clears <code class="code">t</code>'s buffer and calls <code class="code">Unix.lseek</code> on <code class="code">t</code>'s file
+    descriptor.  The <code class="code">`Cur</code> mode is not exposed because seeking relative to the current
+    position of the file descriptor is not the same as seeking to relative to the current
+    position of the reader.<br>
+<br>
+<code class="code">lines t</code> reads all the lines from <code class="code">t</code> and puts them in the pipe, one line per pipe
+    element.  The lines do not contain the trailing newline.  When the reader reaches EOF
+    or the pipe is closed, <code class="code">lines</code> closes the the reader, and then after the reader close
+    is finished, closes the pipe.<br>
+<br>
+<code class="code">contents t</code> returns the string corresponding to the full contents (up to EOF) of the
+    reader.  <code class="code">contents</code> closes <code class="code">t</code> before returning the string.<br>
+<br>
+<code class="code">file_contents file</code> returns the string with the full contents of the file<br>
+<br>
+<code class="code">file_lines file</code> returns a list of the lines in the file.  The lines do not contain
+    the trailing newline.<br>
+<br>
+<code class="code">load_sexp ?exclusive file ~f</code> loads and convert the S-expression in a given <code class="code">file</code>
+    using <code class="code">f</code>, and returns the deferred conversion result as a variant of either <code class="code">Ok res</code>
+    or <code class="code">Error exn</code> otherwise.  This function provides accurate error locations for failed
+    conversions.<br>
+<br>
+<code class="code">load_sexps file ~f</code> load and convert the S-expressions in a given <code class="code">file</code> using <code class="code">f</code>,
+    and return the deferred list of conversion results as variants of either <code class="code">Ok res</code> or
+    <code class="code">Error exn</code> otherwise.  This function is as efficient as <code class="code">load_sexps</code> followed by
+    conversion if there are no errors, but provides accurate error locations for failed
+    conversions.<br>
+</body></html>

@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Async_sys.html">
+<link rel="next" href="Epoll_file_descr_watcher.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Async_print" rel="Chapter" href="Async_print.html">
+<link title="Async_sys" rel="Chapter" href="Async_sys.html">
+<link title="Busy_pollers" rel="Chapter" href="Busy_pollers.html">
+<link title="Epoll_file_descr_watcher" rel="Chapter" href="Epoll_file_descr_watcher.html">
+<link title="Fd" rel="Chapter" href="Fd.html">
+<link title="Fd_by_descr" rel="Chapter" href="Fd_by_descr.html">
+<link title="File_descr_watcher_intf" rel="Chapter" href="File_descr_watcher_intf.html">
+<link title="Import" rel="Chapter" href="Import.html">
+<link title="Interruptor" rel="Chapter" href="Interruptor.html">
+<link title="In_thread" rel="Chapter" href="In_thread.html">
+<link title="Io_stats" rel="Chapter" href="Io_stats.html">
+<link title="Process" rel="Chapter" href="Process.html">
+<link title="Raw_fd" rel="Chapter" href="Raw_fd.html">
+<link title="Raw_scheduler" rel="Chapter" href="Raw_scheduler.html">
+<link title="Raw_signal_manager" rel="Chapter" href="Raw_signal_manager.html">
+<link title="Reader" rel="Chapter" href="Reader.html">
+<link title="Read_write" rel="Chapter" href="Read_write.html">
+<link title="Scheduler" rel="Chapter" href="Scheduler.html">
+<link title="Select_file_descr_watcher" rel="Chapter" href="Select_file_descr_watcher.html">
+<link title="Shutdown" rel="Chapter" href="Shutdown.html">
+<link title="Signal" rel="Chapter" href="Signal.html">
+<link title="Signal_manager" rel="Chapter" href="Signal_manager.html">
+<link title="Std" rel="Chapter" href="Std.html">
+<link title="Syscall" rel="Chapter" href="Syscall.html">
+<link title="Thread_pool" rel="Chapter" href="Thread_pool.html">
+<link title="Thread_safe" rel="Chapter" href="Thread_safe.html">
+<link title="Thread_safe_pipe" rel="Chapter" href="Thread_safe_pipe.html">
+<link title="Unix_syscalls" rel="Chapter" href="Unix_syscalls.html">
+<link title="Writer" rel="Chapter" href="Writer.html"><title>Busy_pollers</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Async_sys.html" title="Async_sys">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="Epoll_file_descr_watcher.html" title="Epoll_file_descr_watcher">Next</a>
+</div>
+<h1>Module <a href="type_Busy_pollers.html">Busy_pollers</a></h1>
+<pre><span class="keyword">module</span> Busy_pollers: <code class="code">sig</code> <a href="Busy_pollers.html">..</a> <code class="code">end</code></pre><div class="info">
+A set of busy-poll functions.
+<p>
+
+    See <a href="Scheduler.html#VALadd_busy_poller"><code class="code">Scheduler.add_busy_poller</code></a> for the user-level interface.<br>
+</div>
+<hr width="100%">
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
+
+<pre><span class="keyword">include</span> Invariant.S</pre>
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">unit -> <a href="Busy_pollers.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">create ()</code> creates a new empty set.<br>
+</div>
+<pre><span id="VALis_empty"><span class="keyword">val</span> is_empty</span> : <code class="type"><a href="Busy_pollers.html#TYPEt">t</a> -> bool</code></pre><pre><span id="VALadd"><span class="keyword">val</span> add</span> : <code class="type"><a href="Busy_pollers.html#TYPEt">t</a> -><br>       (unit -> [ `Continue_polling | `Stop_polling of 'a ]) -> 'a Import.Deferred.t</code></pre><div class="info">
+<code class="code">add t f</code> adds function <code class="code">f</code> to the set <code class="code">t</code>.  <code class="code">f</code> will run every time <code class="code">poll</code> is called.
+    <code class="code">f</code> runs with the same execution context that was in effect when <code class="code">add</code> was called.
+    When <code class="code">poll</code> is called and <code class="code">f</code> returns <code class="code">`Stop_polling</code>, the result of <code class="code">add</code> becomes
+    determined and <code class="code">f</code> is removed from the set.  Also, if <code class="code">f</code> raises, it is removed from
+    the set and the exception is sent to the monitor in effect when <code class="code">add</code> was called,<br>
+</div>
+<pre><span id="VALpoll"><span class="keyword">val</span> poll</span> : <code class="type"><a href="Busy_pollers.html#TYPEt">t</a> -> unit</code></pre><div class="info">
+<code class="code">poll t</code> runs every function in the set <code class="code">t</code>.<br>
+</div>
+<pre><span id="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="Busy_pollers.html#TYPEt">t</a> -> <a href="../sexplib/Sexp.html">Sexplib.Sexp</a>.t</code></pre><br>
+<code class="code">create ()</code> creates a new empty set.<br>
+<br>
+<code class="code">add t f</code> adds function <code class="code">f</code> to the set <code class="code">t</code>.  <code class="code">f</code> will run every time <code class="code">poll</code> is called.
+    <code class="code">f</code> runs with the same execution context that was in effect when <code class="code">add</code> was called.
+    When <code class="code">poll</code> is called and <code class="code">f</code> returns <code class="code">`Stop_polling</code>, the result of <code class="code">add</code> becomes
+    determined and <code class="code">f</code> is removed from the set.  Also, if <code class="code">f</code> raises, it is removed from
+    the set and the exception is sent to the monitor in effect when <code class="code">add</code> was called,<br>
+<br>
+<code class="code">poll t</code> runs every function in the set <code class="code">t</code>.<br>
+</body></html>

@@ -1,0 +1,71 @@
+<html><head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Async_print" rel="Chapter" href="Async_print.html">
+<link title="Async_sys" rel="Chapter" href="Async_sys.html">
+<link title="Busy_pollers" rel="Chapter" href="Busy_pollers.html">
+<link title="Epoll_file_descr_watcher" rel="Chapter" href="Epoll_file_descr_watcher.html">
+<link title="Fd" rel="Chapter" href="Fd.html">
+<link title="Fd_by_descr" rel="Chapter" href="Fd_by_descr.html">
+<link title="File_descr_watcher_intf" rel="Chapter" href="File_descr_watcher_intf.html">
+<link title="Import" rel="Chapter" href="Import.html">
+<link title="Interruptor" rel="Chapter" href="Interruptor.html">
+<link title="In_thread" rel="Chapter" href="In_thread.html">
+<link title="Io_stats" rel="Chapter" href="Io_stats.html">
+<link title="Process" rel="Chapter" href="Process.html">
+<link title="Raw_fd" rel="Chapter" href="Raw_fd.html">
+<link title="Raw_scheduler" rel="Chapter" href="Raw_scheduler.html">
+<link title="Raw_signal_manager" rel="Chapter" href="Raw_signal_manager.html">
+<link title="Reader" rel="Chapter" href="Reader.html">
+<link title="Read_write" rel="Chapter" href="Read_write.html">
+<link title="Scheduler" rel="Chapter" href="Scheduler.html">
+<link title="Select_file_descr_watcher" rel="Chapter" href="Select_file_descr_watcher.html">
+<link title="Shutdown" rel="Chapter" href="Shutdown.html">
+<link title="Signal" rel="Chapter" href="Signal.html">
+<link title="Signal_manager" rel="Chapter" href="Signal_manager.html">
+<link title="Std" rel="Chapter" href="Std.html">
+<link title="Syscall" rel="Chapter" href="Syscall.html">
+<link title="Thread_pool" rel="Chapter" href="Thread_pool.html">
+<link title="Thread_safe" rel="Chapter" href="Thread_safe.html">
+<link title="Thread_safe_pipe" rel="Chapter" href="Thread_safe_pipe.html">
+<link title="Unix_syscalls" rel="Chapter" href="Unix_syscalls.html">
+<link title="Writer" rel="Chapter" href="Writer.html"><title>Process</title>
+</head>
+<body>
+<code class="code"><span class="keyword">sig</span><br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;pid&nbsp;:&nbsp;<span class="constructor">Process</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Core</span>.<span class="constructor">Std</span>.<span class="constructor">Pid</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;stdin&nbsp;:&nbsp;<span class="constructor">Process</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Writer</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;stdout&nbsp;:&nbsp;<span class="constructor">Process</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Reader</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;stderr&nbsp;:&nbsp;<span class="constructor">Process</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Reader</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;env&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[&nbsp;<span class="keywordsign">`</span><span class="constructor">Extend</span>&nbsp;<span class="keyword">of</span>&nbsp;(string&nbsp;*&nbsp;string)&nbsp;list<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Replace</span>&nbsp;<span class="keyword">of</span>&nbsp;(string&nbsp;*&nbsp;string)&nbsp;list&nbsp;]<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;with_create_args&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?working_dir:string&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?env:<span class="constructor">Process</span>.env&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;prog:string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;args:string&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;create&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Process</span>.t&nbsp;<span class="constructor">Core</span>.<span class="constructor">Std</span>.<span class="constructor">Or_error</span>.t&nbsp;<span class="constructor">Import</span>.<span class="constructor">Deferred</span>.t&nbsp;<span class="constructor">Process</span>.with_create_args<br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Output</span>&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">sig</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;t&nbsp;=&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stdout&nbsp;:&nbsp;string;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stderr&nbsp;:&nbsp;string;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exit_status&nbsp;:&nbsp;<span class="constructor">Core</span>.<span class="constructor">Std</span>.<span class="constructor">Unix</span>.<span class="constructor">Exit_or_signal</span>.t;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;sexp_of_t&nbsp;:&nbsp;<span class="constructor">Process</span>.<span class="constructor">Output</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span><br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;wait&nbsp;:&nbsp;<span class="constructor">Process</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Process</span>.<span class="constructor">Output</span>.t&nbsp;<span class="constructor">Import</span>.<span class="constructor">Deferred</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;run&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;<span class="constructor">Core</span>.<span class="constructor">Std</span>.<span class="constructor">Or_error</span>.t&nbsp;<span class="constructor">Import</span>.<span class="constructor">Deferred</span>.t&nbsp;<span class="constructor">Process</span>.with_create_args<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;sexp_of_t&nbsp;:&nbsp;<span class="constructor">Process</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;env_of_sexp&nbsp;:&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Process</span>.env<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__env_of_sexp__&nbsp;:&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Process</span>.env<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;sexp_of_env&nbsp;:&nbsp;<span class="constructor">Process</span>.env&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t<br>
+<span class="keyword">end</span></code></body></html>

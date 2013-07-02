@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Type_with_layout.html">
+<link rel="next" href="Parser_with_layout.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Conv" rel="Chapter" href="Conv.html">
+<link title="Conv_error" rel="Chapter" href="Conv_error.html">
+<link title="Exn_magic" rel="Chapter" href="Exn_magic.html">
+<link title="Path" rel="Chapter" href="Path.html">
+<link title="Pre_sexp" rel="Chapter" href="Pre_sexp.html">
+<link title="Sexp" rel="Chapter" href="Sexp.html">
+<link title="Sexp_intf" rel="Chapter" href="Sexp_intf.html">
+<link title="Sexp_with_layout" rel="Chapter" href="Sexp_with_layout.html">
+<link title="Src_pos" rel="Chapter" href="Src_pos.html">
+<link title="Std" rel="Chapter" href="Std.html">
+<link title="Type" rel="Chapter" href="Type.html">
+<link title="Type_with_layout" rel="Chapter" href="Type_with_layout.html">
+<link title="Parser" rel="Chapter" href="Parser.html">
+<link title="Parser_with_layout" rel="Chapter" href="Parser_with_layout.html">
+<link title="Lexer" rel="Chapter" href="Lexer.html"><title>Parser</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Type_with_layout.html" title="Type_with_layout">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="Parser_with_layout.html" title="Parser_with_layout">Next</a>
+</div>
+<h1>Module <a href="type_Parser.html">Parser</a></h1>
+<pre><span class="keyword">module</span> Parser: <code class="code">sig</code> <a href="Parser.html">..</a> <code class="code">end</code></pre><hr width="100%">
+<pre><code><span id="TYPEtoken"><span class="keyword">type</span> <code class="type"></code>token</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTtoken.STRING"><span class="constructor">STRING</span></span> <span class="keyword">of</span> <code class="type">string</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTtoken.LPAREN"><span class="constructor">LPAREN</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTtoken.RPAREN"><span class="constructor">RPAREN</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTtoken.EOF"><span class="constructor">EOF</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTtoken.HASH_SEMI"><span class="constructor">HASH_SEMI</span></span></code></td>
+
+</tr></table>
+
+
+<pre><span id="VALsexp"><span class="keyword">val</span> sexp</span> : <code class="type">(Lexing.lexbuf -> <a href="Parser.html#TYPEtoken">token</a>) -> Lexing.lexbuf -> <a href="Type.html#TYPEt">Type.t</a></code></pre><pre><span id="VALsexp_opt"><span class="keyword">val</span> sexp_opt</span> : <code class="type">(Lexing.lexbuf -> <a href="Parser.html#TYPEtoken">token</a>) -> Lexing.lexbuf -> <a href="Type.html#TYPEt">Type.t</a> option</code></pre><pre><span id="VALsexps"><span class="keyword">val</span> sexps</span> : <code class="type">(Lexing.lexbuf -> <a href="Parser.html#TYPEtoken">token</a>) -> Lexing.lexbuf -> <a href="Type.html#TYPEt">Type.t</a> list</code></pre><pre><span id="VALrev_sexps"><span class="keyword">val</span> rev_sexps</span> : <code class="type">(Lexing.lexbuf -> <a href="Parser.html#TYPEtoken">token</a>) -> Lexing.lexbuf -> <a href="Type.html#TYPEt">Type.t</a> list</code></pre></body></html>

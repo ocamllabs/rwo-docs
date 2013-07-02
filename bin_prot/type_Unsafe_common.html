@@ -1,0 +1,70 @@
+<html><head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Binable" rel="Chapter" href="Binable.html">
+<link title="Nat0" rel="Chapter" href="Nat0.html">
+<link title="Common" rel="Chapter" href="Common.html">
+<link title="Unsafe_common" rel="Chapter" href="Unsafe_common.html">
+<link title="Unsafe_write_c" rel="Chapter" href="Unsafe_write_c.html">
+<link title="Unsafe_read_c" rel="Chapter" href="Unsafe_read_c.html">
+<link title="Size" rel="Chapter" href="Size.html">
+<link title="Write_ml" rel="Chapter" href="Write_ml.html">
+<link title="Read_ml" rel="Chapter" href="Read_ml.html">
+<link title="Write_c" rel="Chapter" href="Write_c.html">
+<link title="Read_c" rel="Chapter" href="Read_c.html">
+<link title="Std" rel="Chapter" href="Std.html">
+<link title="Type_class" rel="Chapter" href="Type_class.html">
+<link title="Map_to_safe" rel="Chapter" href="Map_to_safe.html">
+<link title="Utils" rel="Chapter" href="Utils.html"><title>Unsafe_common</title>
+</head>
+<body>
+<code class="code"><span class="keyword">sig</span><br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;sptr<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;eptr<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;sptr_ptr<br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;get_sptr&nbsp;:&nbsp;<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;pos:<span class="constructor">Common</span>.pos&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Unsafe_common</span>.sptr<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"get_buf_ptr_stub"</span>&nbsp;<span class="string">"noalloc"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;get_eptr&nbsp;:&nbsp;<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;pos:<span class="constructor">Common</span>.pos&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Unsafe_common</span>.eptr<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"get_buf_ptr_stub"</span>&nbsp;<span class="string">"noalloc"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;shift_sptr&nbsp;:&nbsp;<span class="constructor">Unsafe_common</span>.sptr&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Unsafe_common</span>.sptr<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"shift_sptr_stub"</span>&nbsp;<span class="string">"noalloc"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;get_eptr_from_sptr_ptr&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Unsafe_common</span>.sptr_ptr&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;pos:<span class="constructor">Common</span>.pos&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Unsafe_common</span>.eptr<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"get_eptr_from_sptr_ptr"</span>&nbsp;<span class="string">"noalloc"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;get_buf_pos&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;start:<span class="constructor">Unsafe_common</span>.sptr&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;cur:<span class="constructor">Unsafe_common</span>.sptr&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Common</span>.pos<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"get_buf_pos_stub"</span>&nbsp;<span class="string">"noalloc"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;get_safe_buf_pos&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;start:<span class="constructor">Unsafe_common</span>.sptr&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;cur:<span class="constructor">Unsafe_common</span>.sptr&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Common</span>.pos<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"get_safe_buf_pos_stub"</span>&nbsp;<span class="string">"noalloc"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;alloc_sptr_ptr&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;pos:<span class="constructor">Common</span>.pos&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Unsafe_common</span>.sptr_ptr<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"alloc_sptr_ptr_stub"</span>&nbsp;<span class="string">"noalloc"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;dealloc_sptr_ptr&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Unsafe_common</span>.sptr_ptr&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Common</span>.pos<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"dealloc_sptr_ptr_stub"</span>&nbsp;<span class="string">"noalloc"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;get_sptr_ptr&nbsp;:&nbsp;<span class="constructor">Unsafe_common</span>.sptr_ptr&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Common</span>.pos<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"get_sptr_ptr_stub"</span>&nbsp;<span class="string">"noalloc"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;set_sptr_ptr&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Unsafe_common</span>.sptr_ptr&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;pos:<span class="constructor">Common</span>.pos&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"set_sptr_ptr_stub"</span>&nbsp;<span class="string">"noalloc"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;get_sptr_ptr_sptr&nbsp;:&nbsp;<span class="constructor">Unsafe_common</span>.sptr_ptr&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Unsafe_common</span>.sptr<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"get_sptr_ptr_sptr_stub"</span>&nbsp;<span class="string">"noalloc"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;set_sptr_ptr_sptr&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Unsafe_common</span>.sptr_ptr&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Unsafe_common</span>.sptr&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"set_sptr_ptr_sptr_stub"</span>&nbsp;<span class="string">"noalloc"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;get_ptr_string&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Unsafe_common</span>.sptr&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Unsafe_common</span>.eptr&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"get_ptr_string_stub"</span><br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;get_read_init&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;pos_ref:<span class="constructor">Common</span>.pos&nbsp;<span class="constructor">Pervasives</span>.ref&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Unsafe_common</span>.sptr_ptr&nbsp;*&nbsp;<span class="constructor">Unsafe_common</span>.eptr<br>
+<span class="keyword">end</span></code></body></html>

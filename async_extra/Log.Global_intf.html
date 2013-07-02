@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="Up" href="Log.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Command" rel="Chapter" href="Command.html">
+<link title="File_tail" rel="Chapter" href="File_tail.html">
+<link title="File_writer" rel="Chapter" href="File_writer.html">
+<link title="Import" rel="Chapter" href="Import.html">
+<link title="Lock_file" rel="Chapter" href="Lock_file.html">
+<link title="Log" rel="Chapter" href="Log.html">
+<link title="Persistent_singleton" rel="Chapter" href="Persistent_singleton.html">
+<link title="Rpc" rel="Chapter" href="Rpc.html">
+<link title="Rpc_intf" rel="Chapter" href="Rpc_intf.html">
+<link title="Sequencer_table" rel="Chapter" href="Sequencer_table.html">
+<link title="Std" rel="Chapter" href="Std.html">
+<link title="Tcp" rel="Chapter" href="Tcp.html">
+<link title="Tcp_file" rel="Chapter" href="Tcp_file.html">
+<link title="Typed_tcp" rel="Chapter" href="Typed_tcp.html">
+<link title="Typed_tcp_intf" rel="Chapter" href="Typed_tcp_intf.html">
+<link title="Unpack_sequence" rel="Chapter" href="Unpack_sequence.html">
+<link title="User_and_group" rel="Chapter" href="User_and_group.html">
+<link title="Versioned_rpc" rel="Chapter" href="Versioned_rpc.html">
+<link title="Versioned_typed_tcp" rel="Chapter" href="Versioned_typed_tcp.html">
+<link title="Weak_hashtbl" rel="Chapter" href="Weak_hashtbl.html"><title>Log.Global_intf</title>
+</head>
+<body>
+<div class="navbar">&nbsp;<a class="up" href="Log.html" title="Log">Up</a>
+&nbsp;</div>
+<h1>Module type <a href="type_Log.Global_intf.html">Log.Global_intf</a></h1>
+<pre><span class="keyword">module type</span> Global_intf = <code class="code">sig</code> <a href="Log.Global_intf.html">..</a> <code class="code">end</code></pre><hr width="100%">
+<pre><span id="VALlog"><span class="keyword">val</span> log</span> : <code class="type"><a href="Log.html#TYPEt">Log.t</a> Core.Std.Lazy.t</code></pre><pre><span id="VALset_level"><span class="keyword">val</span> set_level</span> : <code class="type"><a href="Log.Level.html#TYPEt">Log.Level.t</a> -> unit</code></pre><pre><span id="VALset_output"><span class="keyword">val</span> set_output</span> : <code class="type"><a href="Log.Output.html#TYPEt">Log.Output.t</a> list -> unit</code></pre><pre><span id="VALraw"><span class="keyword">val</span> raw</span> : <code class="type">?tags:(string * string) list -><br>       ('a, unit, string, unit) Pervasives.format4 -> 'a</code></pre><div class="info">
+logging functions as the functions that operate on a given log.  In this case they
+      operate on a single log global to the module<br>
+</div>
+<pre><span id="VALinfo"><span class="keyword">val</span> info</span> : <code class="type">?tags:(string * string) list -><br>       ('a, unit, string, unit) Pervasives.format4 -> 'a</code></pre><pre><span id="VALerror"><span class="keyword">val</span> error</span> : <code class="type">?tags:(string * string) list -><br>       ('a, unit, string, unit) Pervasives.format4 -> 'a</code></pre><pre><span id="VALdebug"><span class="keyword">val</span> debug</span> : <code class="type">?tags:(string * string) list -><br>       ('a, unit, string, unit) Pervasives.format4 -> 'a</code></pre><pre><span id="VALflushed"><span class="keyword">val</span> flushed</span> : <code class="type">unit -> unit Import.Deferred.t</code></pre><pre><span id="VALprintf"><span class="keyword">val</span> printf</span> : <code class="type">?tags:(string * string) list -><br>       ?level:<a href="Log.Level.html#TYPEt">Log.Level.t</a> -> ('a, unit, string, unit) Pervasives.format4 -> 'a</code></pre><pre><span id="VALsexp"><span class="keyword">val</span> sexp</span> : <code class="type">?tags:(string * string) list -><br>       ?level:<a href="Log.Level.html#TYPEt">Log.Level.t</a> -> 'a -> ('a -> Core.Std.Sexp.t) -> unit</code></pre><pre><span id="VALof_lazy"><span class="keyword">val</span> of_lazy</span> : <code class="type">?tags:(string * string) list -><br>       ?level:<a href="Log.Level.html#TYPEt">Log.Level.t</a> -> string Core.Std.Lazy.t -> unit</code></pre><pre><span id="VALmessage"><span class="keyword">val</span> message</span> : <code class="type"><a href="Log.Message.html#TYPEt">Log.Message.t</a> -> unit</code></pre></body></html>

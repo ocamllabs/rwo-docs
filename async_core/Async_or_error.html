@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Async_gc.html">
+<link rel="next" href="Async_stream.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Async_condition" rel="Chapter" href="Async_condition.html">
+<link title="Async_gc" rel="Chapter" href="Async_gc.html">
+<link title="Async_or_error" rel="Chapter" href="Async_or_error.html">
+<link title="Async_stream" rel="Chapter" href="Async_stream.html">
+<link title="Backpatched" rel="Chapter" href="Backpatched.html">
+<link title="Clock" rel="Chapter" href="Clock.html">
+<link title="Config" rel="Chapter" href="Config.html">
+<link title="Debug" rel="Chapter" href="Debug.html">
+<link title="Deferred" rel="Chapter" href="Deferred.html">
+<link title="Deferred_intf" rel="Chapter" href="Deferred_intf.html">
+<link title="Deferred_std" rel="Chapter" href="Deferred_std.html">
+<link title="Execution_context" rel="Chapter" href="Execution_context.html">
+<link title="Handler" rel="Chapter" href="Handler.html">
+<link title="Import" rel="Chapter" href="Import.html">
+<link title="Ivar" rel="Chapter" href="Ivar.html">
+<link title="Job" rel="Chapter" href="Job.html">
+<link title="Jobs" rel="Chapter" href="Jobs.html">
+<link title="Kill_index" rel="Chapter" href="Kill_index.html">
+<link title="Lazy_deferred" rel="Chapter" href="Lazy_deferred.html">
+<link title="Monitor" rel="Chapter" href="Monitor.html">
+<link title="Pipe" rel="Chapter" href="Pipe.html">
+<link title="Priority" rel="Chapter" href="Priority.html">
+<link title="Raw_deferred" rel="Chapter" href="Raw_deferred.html">
+<link title="Raw_handler" rel="Chapter" href="Raw_handler.html">
+<link title="Raw_ivar" rel="Chapter" href="Raw_ivar.html">
+<link title="Raw_monitor" rel="Chapter" href="Raw_monitor.html">
+<link title="Raw_scheduler" rel="Chapter" href="Raw_scheduler.html">
+<link title="Raw_stream" rel="Chapter" href="Raw_stream.html">
+<link title="Scheduler" rel="Chapter" href="Scheduler.html">
+<link title="Std" rel="Chapter" href="Std.html">
+<link title="Tail" rel="Chapter" href="Tail.html">
+<link title="Test" rel="Chapter" href="Test.html">
+<link title="Throttle" rel="Chapter" href="Throttle.html">
+<link title="Throttle_debug" rel="Chapter" href="Throttle_debug.html">
+<link title="Throttle_unit_tests" rel="Chapter" href="Throttle_unit_tests.html">
+<link title="Unregister" rel="Chapter" href="Unregister.html"><title>Async_or_error</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Async_gc.html" title="Async_gc">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="Async_stream.html" title="Async_stream">Next</a>
+</div>
+<h1>Module <a href="type_Async_or_error.html">Async_or_error</a></h1>
+<pre><span class="keyword">module</span> Async_or_error: <code class="code">sig</code> <a href="Async_or_error.html">..</a> <code class="code">end</code></pre><div class="info">
+This module is the deferred analog of <code class="code"><a href="../core/Or_error.html">Core.Or_error</a></code>. It is exposed in std.ml as
+    <code class="code">Deferred.Or_error</code>.
+<p>
+
+    The mental model for a function returning an <code class="code">'a Deferred.Or_error.t</code> is that the
+    function never raises.  All error cases are caught and expressed as an <code class="code">Error _</code>
+    result.  This module preserves that property.
+<p>
+
+    Unfortunately, there is no way to enforce this property using the type system, so it
+    is more like a convention, or idiom.  A function whose type ends with <code class="code">... -&gt; 'a
+    Deferred.Or_error.t</code> and still raises should be considered broken, and be fixed.  With
+    that property in mind, <code class="code">Deferred.Or_error.List.iter</code>, for example, does not wrap the
+    execution of the given iter function <code class="code">f</code> inside a monitor.  If one of these
+    application raises, the whole function <code class="code">Deferred.Or_error.List.iter</code> will raise as a
+    way to try to alert the developer that one the function is broken and needs attention
+    and fixing, rather than silently catching the error and converting it to
+    <code class="code">Or_error.Error</code>.
+<p>
+
+    This behavior is consistent with <code class="code"><a href="../core/Or_error.html">Core.Or_error</a></code>'s treatment of user-supplied
+    functions.
+<p>
+
+    If you have to deal with a function that does not respect this idiom, you can use
+    <code class="code">Deferred.Or_error.try_with_join</code> to wrap its execution and enforce this property.<br>
+</div>
+<hr width="100%">
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> = <code class="type">'a <a href="../core/Or_error.html">Core.Std.Or_error</a>.t <a href="Deferred.html#TYPEt">Deferred.t</a></code> </pre>
+
+<pre><span class="keyword">include</span> Monad.S</pre>
+<div class="info">
+<code class="code">return x = Deferred.return (Ok x)</code> *<br>
+</div>
+<pre><span id="VALfail"><span class="keyword">val</span> fail</span> : <code class="type"><a href="../core/Error.html">Core.Std.Error</a>.t -> 'a <a href="Async_or_error.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">fail error = Deferred.return (Error error)</code> *<br>
+</div>
+<pre><span id="VALok_exn"><span class="keyword">val</span> ok_exn</span> : <code class="type">'a <a href="Async_or_error.html#TYPEt">t</a> -> 'a <a href="Deferred.html#TYPEt">Deferred.t</a></code></pre><div class="info">
+These functions are direct analogs of the corresponding <code class="code"><a href="../core/Or_error.html">Core.Or_error</a></code> functions.<br>
+</div>
+<pre><span id="VALof_exn"><span class="keyword">val</span> of_exn</span> : <code class="type">exn -> 'a <a href="Async_or_error.html#TYPEt">t</a></code></pre><pre><span id="VALof_exn_result"><span class="keyword">val</span> of_exn_result</span> : <code class="type">('a, exn) <a href="../core/Result.html">Core.Std.Result</a>.t <a href="Deferred.html#TYPEt">Deferred.t</a> -> 'a <a href="Async_or_error.html#TYPEt">t</a></code></pre><pre><span id="VALerror"><span class="keyword">val</span> error</span> : <code class="type">string -> 'a -> ('a -> Core.Std.Sexp.t) -> 'b <a href="Async_or_error.html#TYPEt">t</a></code></pre><pre><span id="VALerror_string"><span class="keyword">val</span> error_string</span> : <code class="type">string -> 'a <a href="Async_or_error.html#TYPEt">t</a></code></pre><pre><span id="VALunimplemented"><span class="keyword">val</span> unimplemented</span> : <code class="type">string -> 'a <a href="Async_or_error.html#TYPEt">t</a></code></pre><pre><span id="VALcombine_errors"><span class="keyword">val</span> combine_errors</span> : <code class="type">'a <a href="Async_or_error.html#TYPEt">t</a> list -> 'a list <a href="Async_or_error.html#TYPEt">t</a></code></pre><pre><span id="VALcombine_errors_unit"><span class="keyword">val</span> combine_errors_unit</span> : <code class="type">unit <a href="Async_or_error.html#TYPEt">t</a> list -> unit <a href="Async_or_error.html#TYPEt">t</a></code></pre><pre><span id="VALok_unit"><span class="keyword">val</span> ok_unit</span> : <code class="type">unit <a href="Async_or_error.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">ok_unit = return ()</code><br>
+</div>
+<pre><span id="VALtry_with"><span class="keyword">val</span> try_with</span> : <code class="type">?extract_exn:bool -><br>       ?name:string -> (unit -> 'a <a href="Deferred.html#TYPEt">Deferred.t</a>) -> 'a <a href="Async_or_error.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">try_with f</code> catches exceptions thrown by <code class="code">f</code> and returns them in the Result.t as an
+    Error.t.  <code class="code">try_with_join</code> is like <code class="code">try_with</code>, except that <code class="code">f</code> can throw exceptions or
+    return an <code class="code">Error</code> directly, without ending up with a nested error; it is equivalent to
+    <code class="code">try_with f &gt;&gt;| Result.join</code>.
+<p>
+
+    The option <code class="code">extract_exn</code> is passed along to <code class="code">Monitor.try_with ?extract_exn</code> and
+    specifies whether or not the monitor exn wrapper should be skipped (<code class="code">extract_exn:true</code>
+    or kept (<code class="code">extract_exn:false</code>).<br>
+</div>
+<pre><span id="VALtry_with_join"><span class="keyword">val</span> try_with_join</span> : <code class="type">?extract_exn:bool -><br>       ?name:string -> (unit -> 'a <a href="Async_or_error.html#TYPEt">t</a>) -> 'a <a href="Async_or_error.html#TYPEt">t</a></code></pre><pre><span class="keyword">module</span> <a href="Async_or_error.List.html">List</a>: <code class="type"><a href="Deferred_intf.Monad_sequence.html">Deferred_intf.Monad_sequence</a></code><code class="type"> 
+  with type 'a monad := 'a t</code><code class="type"> 
+    with type 'a t := 'a list</code></pre></body></html>

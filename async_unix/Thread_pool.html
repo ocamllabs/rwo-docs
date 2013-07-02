@@ -1,0 +1,240 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Syscall.html">
+<link rel="next" href="Thread_safe.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Async_print" rel="Chapter" href="Async_print.html">
+<link title="Async_sys" rel="Chapter" href="Async_sys.html">
+<link title="Busy_pollers" rel="Chapter" href="Busy_pollers.html">
+<link title="Epoll_file_descr_watcher" rel="Chapter" href="Epoll_file_descr_watcher.html">
+<link title="Fd" rel="Chapter" href="Fd.html">
+<link title="Fd_by_descr" rel="Chapter" href="Fd_by_descr.html">
+<link title="File_descr_watcher_intf" rel="Chapter" href="File_descr_watcher_intf.html">
+<link title="Import" rel="Chapter" href="Import.html">
+<link title="Interruptor" rel="Chapter" href="Interruptor.html">
+<link title="In_thread" rel="Chapter" href="In_thread.html">
+<link title="Io_stats" rel="Chapter" href="Io_stats.html">
+<link title="Process" rel="Chapter" href="Process.html">
+<link title="Raw_fd" rel="Chapter" href="Raw_fd.html">
+<link title="Raw_scheduler" rel="Chapter" href="Raw_scheduler.html">
+<link title="Raw_signal_manager" rel="Chapter" href="Raw_signal_manager.html">
+<link title="Reader" rel="Chapter" href="Reader.html">
+<link title="Read_write" rel="Chapter" href="Read_write.html">
+<link title="Scheduler" rel="Chapter" href="Scheduler.html">
+<link title="Select_file_descr_watcher" rel="Chapter" href="Select_file_descr_watcher.html">
+<link title="Shutdown" rel="Chapter" href="Shutdown.html">
+<link title="Signal" rel="Chapter" href="Signal.html">
+<link title="Signal_manager" rel="Chapter" href="Signal_manager.html">
+<link title="Std" rel="Chapter" href="Std.html">
+<link title="Syscall" rel="Chapter" href="Syscall.html">
+<link title="Thread_pool" rel="Chapter" href="Thread_pool.html">
+<link title="Thread_safe" rel="Chapter" href="Thread_safe.html">
+<link title="Thread_safe_pipe" rel="Chapter" href="Thread_safe_pipe.html">
+<link title="Unix_syscalls" rel="Chapter" href="Unix_syscalls.html">
+<link title="Writer" rel="Chapter" href="Writer.html"><title>Thread_pool</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Syscall.html" title="Syscall">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="Thread_safe.html" title="Thread_safe">Next</a>
+</div>
+<h1>Module <a href="type_Thread_pool.html">Thread_pool</a></h1>
+<pre><span class="keyword">module</span> Thread_pool: <code class="code">sig</code> <a href="Thread_pool.html">..</a> <code class="code">end</code></pre><div class="info">
+A thread pool is a set of OCaml threads used to do work, where each piece of work is
+    simply a thunk.  One creates a thread pool, and then uses <code class="code">add_work</code> to submit work to
+    it.  Work is done first-come-first-served by available threads in the pool.  Any of
+    the available threads in the pool could be used to do work submitted to the pool
+    (except helper threads, see below).
+<p>
+
+    A thread pool starts with no threads.  As work is added, the thread pool creates new
+    threads to do the work, up to the maximum number of allowed threads,
+    <code class="code">max_num_threads</code>, supplied to <code class="code">create</code>.  Thread-pool threads never die.  They just
+    get created up until <code class="code">max_num_threads</code> is reached and then live forever, doing work.
+    Each thread in the pool is in a loop, waiting for a piece of work, running the thunk,
+    and then repeating.  It may be that all the threads in the pool are not doing
+    anything, but in this case, the threads still exist, and are simply blocked waiting
+    for work.
+<p>
+
+    Sometimes one wants work to run in a dedicated thread, e.g. some C libraries require
+    this.  To do this, use <code class="code">Helper_thread</code>, see below.
+<p>
+
+    All of the functions exposed by this module are thread safe; they synchronize using
+    a mutex on the thread pool.
+<p>
+
+    One can control the priority of threads in the pool (in the sense of
+    <code class="code">Linux_ext.setpriority</code>).  Work added to the pool can optionally be given a priority,
+    and the pool will set the priority of the thread that runs it for the duration of the
+    work.  Helper threads can also be given a priority, which will be used for all work
+    run by the helper thread, unless the work has an overriding priority.  The thread pool
+    has a "default" priority that will be used for all work and helper threads that have
+    no specified priority.  The default is simply the priority in effect when <code class="code">create</code> is
+    called.
+<p>
+
+    Behavior is unspecified if work calls <code class="code">setpriority</code> directly.<br>
+</div>
+<hr width="100%">
+<pre><span class="keyword">module</span> <a href="Thread_pool.Priority.html">Priority</a>: <code class="type">module type of Linux_ext.Priority</code><code class="type">  with type t = Linux_ext.Priority.t</code></pre><pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
+
+<pre><span class="keyword">include</span> Invariant.S</pre>
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">max_num_threads:int -> <a href="Thread_pool.html#TYPEt">t</a> <a href="../core/Or_error.html">Core.Std.Or_error</a>.t</code></pre><div class="info">
+<code class="code">create ~max_num_threads</code> returns a new thread pool.  It is an error if
+    <code class="code">max_num_threads &lt; 1</code>.<br>
+</div>
+<pre><span id="VALfinished_with"><span class="keyword">val</span> finished_with</span> : <code class="type"><a href="Thread_pool.html#TYPEt">t</a> -> unit</code></pre><div class="info">
+<code class="code">finished_with t</code> makes it an error to subsequently call <code class="code">add_work* t</code> or
+    <code class="code">create_helper_thread t</code>.  And, once all current work in <code class="code">t</code> is finished, destroys all
+    the threads in <code class="code">t</code>.  It is OK to call <code class="code">finished_with</code> multiple times on the same <code class="code">t</code>;
+    subsequent calls will have no effect.<br>
+</div>
+<pre><span id="VALmax_num_threads"><span class="keyword">val</span> max_num_threads</span> : <code class="type"><a href="Thread_pool.html#TYPEt">t</a> -> int</code></pre><div class="info">
+<code class="code">max_num_threads t</code> returns the maximum number of threads that <code class="code">t</code> is allowed to
+    create.<br>
+</div>
+<pre><span id="VALnum_threads"><span class="keyword">val</span> num_threads</span> : <code class="type"><a href="Thread_pool.html#TYPEt">t</a> -> int</code></pre><div class="info">
+<code class="code">num_threads t</code> returns the number of threads that the pool <code class="code">t</code> has created.<br>
+</div>
+<pre><span id="VALdefault_priority"><span class="keyword">val</span> default_priority</span> : <code class="type"><a href="Thread_pool.html#TYPEt">t</a> -> Priority.t</code></pre><div class="info">
+<code class="code">default_priority t</code> returns the priority that will be used for work performed by
+    <code class="code">t</code>, unless that work is added with an overriding priority.<br>
+</div>
+<pre><span id="VALadd_work"><span class="keyword">val</span> add_work</span> : <code class="type">?priority:Priority.t -><br>       ?name:string -> <a href="Thread_pool.html#TYPEt">t</a> -> (unit -> unit) -> unit <a href="../core/Or_error.html">Core.Std.Or_error</a>.t</code></pre><div class="info">
+<code class="code">add_work ?priority ?name t f</code> enqueues <code class="code">f</code> to be done by some thread in the pool.
+<p>
+
+    Exceptions raised by <code class="code">f</code> are silently ignored.
+<p>
+
+    While the work is run, the name of the thread running the work will be set (via
+    <code class="code">Linux_ext.pr_set_name</code>) to <code class="code">name</code> and the priority of the thread will be set
+    to <code class="code">priority</code>.
+<p>
+
+    It is an error to call <code class="code">add_work t</code> after <code class="code">finished_with t</code>.<br>
+</div>
+<pre><span class="keyword">module</span> <a href="Thread_pool.Helper_thread.html">Helper_thread</a>: <code class="code">sig</code> <a href="Thread_pool.Helper_thread.html">..</a> <code class="code">end</code></pre><pre><span id="VALcreate_helper_thread"><span class="keyword">val</span> create_helper_thread</span> : <code class="type">?priority:Priority.t -><br>       ?name:string -><br>       <a href="Thread_pool.html#TYPEt">t</a> -> <a href="Thread_pool.Helper_thread.html#TYPEt">Helper_thread.t</a> <a href="../core/Or_error.html">Core.Std.Or_error</a>.t</code></pre><div class="info">
+<code class="code">create_helper_thread ?priority ?name t</code> creates a new helper thread.
+<p>
+
+    The thread pool does not internally refer to the <code class="code">Helper_thread.t</code> it returns.  So, it
+    is OK for client code to use a finalizer to detect it becoming unused.
+<p>
+
+    It is an error if no threads are available.  It is an error to call
+    <code class="code">create_helper_thread t</code> after <code class="code">finished_with t</code>.
+<p>
+
+    When the helper thread runs work, it will be at the helper thread's name and priority,
+    except for work that is added with an overriding priority or name.<br>
+</div>
+<pre><span id="VALadd_work_for_helper_thread"><span class="keyword">val</span> add_work_for_helper_thread</span> : <code class="type">?priority:Priority.t -><br>       ?name:string -><br>       <a href="Thread_pool.html#TYPEt">t</a> -><br>       <a href="Thread_pool.Helper_thread.html#TYPEt">Helper_thread.t</a> -> (unit -> unit) -> unit <a href="../core/Or_error.html">Core.Std.Or_error</a>.t</code></pre><div class="info">
+<code class="code">add_work_for_helper_thread ?priority ?name t helper_thread f</code> enqueues <code class="code">f</code> on
+    <code class="code">helper_thread</code>'s work queue.
+<p>
+
+    Exceptions raised by <code class="code">f</code> are silently ignored.
+<p>
+
+    It is an error to call <code class="code">add_work_for_helper_thread t</code> after
+    <code class="code">finished_with_helper_thread t</code>.
+<p>
+
+    When the helper thread runs <code class="code">f</code>, it will be at the helper thread's name and priority,
+    unless overriden by <code class="code">name</code> or <code class="code">priority</code>.<br>
+</div>
+<pre><span id="VALfinished_with_helper_thread"><span class="keyword">val</span> finished_with_helper_thread</span> : <code class="type"><a href="Thread_pool.html#TYPEt">t</a> -> <a href="Thread_pool.Helper_thread.html#TYPEt">Helper_thread.t</a> -> unit</code></pre><div class="info">
+<code class="code">finished_with_helper_thread t helper_thread</code> informs thread pool <code class="code">t</code> that no future
+    work will be added for <code class="code">helper_thread</code>, and makes it an error to in the future add
+    work for <code class="code">helper_thread</code>.  Furthermore, once <code class="code">helper_thread</code> finishes with its last
+    piece of work, it will revert to a general thread-pool thread.  It is OK to call
+    <code class="code">finished_with_helper_thread</code> multiple times on the same <code class="code">helper_thread</code>; subsequent
+    calls will have no effect.<br>
+</div>
+<pre><span id="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="Thread_pool.html#TYPEt">t</a> -> <a href="../sexplib/Sexp.html">Sexplib.Sexp</a>.t</code></pre><br>
+<code class="code">create ~max_num_threads</code> returns a new thread pool.  It is an error if
+    <code class="code">max_num_threads &lt; 1</code>.<br>
+<br>
+<code class="code">finished_with t</code> makes it an error to subsequently call <code class="code">add_work* t</code> or
+    <code class="code">create_helper_thread t</code>.  And, once all current work in <code class="code">t</code> is finished, destroys all
+    the threads in <code class="code">t</code>.  It is OK to call <code class="code">finished_with</code> multiple times on the same <code class="code">t</code>;
+    subsequent calls will have no effect.<br>
+<br>
+<code class="code">max_num_threads t</code> returns the maximum number of threads that <code class="code">t</code> is allowed to
+    create.<br>
+<br>
+<code class="code">num_threads t</code> returns the number of threads that the pool <code class="code">t</code> has created.<br>
+<br>
+<code class="code">default_priority t</code> returns the priority that will be used for work performed by
+    <code class="code">t</code>, unless that work is added with an overriding priority.<br>
+<br>
+<code class="code">add_work ?priority ?name t f</code> enqueues <code class="code">f</code> to be done by some thread in the pool.
+<p>
+
+    Exceptions raised by <code class="code">f</code> are silently ignored.
+<p>
+
+    While the work is run, the name of the thread running the work will be set (via
+    <code class="code">Linux_ext.pr_set_name</code>) to <code class="code">name</code> and the priority of the thread will be set
+    to <code class="code">priority</code>.
+<p>
+
+    It is an error to call <code class="code">add_work t</code> after <code class="code">finished_with t</code>.<br>
+<br>
+A helper thread is a thread with its own dedicated work queue.  Work added for the
+      helper thread is guaranteed to be run by that thread.  The helper thread only runs
+      work explicitly supplied to it.<br>
+<br>
+<code class="code">default_name t</code> returns the name that will be used for work performed by <code class="code">t</code>,
+      unless that work is added with an overriding name<br>
+<br>
+<code class="code">default_priority t</code> returns the priority that will be used for work performed by
+      <code class="code">t</code>, unless that work is added with an overriding priority.<br>
+<br>
+<code class="code">create_helper_thread ?priority ?name t</code> creates a new helper thread.
+<p>
+
+    The thread pool does not internally refer to the <code class="code">Helper_thread.t</code> it returns.  So, it
+    is OK for client code to use a finalizer to detect it becoming unused.
+<p>
+
+    It is an error if no threads are available.  It is an error to call
+    <code class="code">create_helper_thread t</code> after <code class="code">finished_with t</code>.
+<p>
+
+    When the helper thread runs work, it will be at the helper thread's name and priority,
+    except for work that is added with an overriding priority or name.<br>
+<br>
+<code class="code">add_work_for_helper_thread ?priority ?name t helper_thread f</code> enqueues <code class="code">f</code> on
+    <code class="code">helper_thread</code>'s work queue.
+<p>
+
+    Exceptions raised by <code class="code">f</code> are silently ignored.
+<p>
+
+    It is an error to call <code class="code">add_work_for_helper_thread t</code> after
+    <code class="code">finished_with_helper_thread t</code>.
+<p>
+
+    When the helper thread runs <code class="code">f</code>, it will be at the helper thread's name and priority,
+    unless overriden by <code class="code">name</code> or <code class="code">priority</code>.<br>
+<br>
+<code class="code">finished_with_helper_thread t helper_thread</code> informs thread pool <code class="code">t</code> that no future
+    work will be added for <code class="code">helper_thread</code>, and makes it an error to in the future add
+    work for <code class="code">helper_thread</code>.  Furthermore, once <code class="code">helper_thread</code> finishes with its last
+    piece of work, it will revert to a general thread-pool thread.  It is OK to call
+    <code class="code">finished_with_helper_thread</code> multiple times on the same <code class="code">helper_thread</code>; subsequent
+    calls will have no effect.<br>
+</body></html>

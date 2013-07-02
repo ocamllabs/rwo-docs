@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Pipe.Flushed_result.html">
+<link rel="Up" href="Pipe.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Async_condition" rel="Chapter" href="Async_condition.html">
+<link title="Async_gc" rel="Chapter" href="Async_gc.html">
+<link title="Async_or_error" rel="Chapter" href="Async_or_error.html">
+<link title="Async_stream" rel="Chapter" href="Async_stream.html">
+<link title="Backpatched" rel="Chapter" href="Backpatched.html">
+<link title="Clock" rel="Chapter" href="Clock.html">
+<link title="Config" rel="Chapter" href="Config.html">
+<link title="Debug" rel="Chapter" href="Debug.html">
+<link title="Deferred" rel="Chapter" href="Deferred.html">
+<link title="Deferred_intf" rel="Chapter" href="Deferred_intf.html">
+<link title="Deferred_std" rel="Chapter" href="Deferred_std.html">
+<link title="Execution_context" rel="Chapter" href="Execution_context.html">
+<link title="Handler" rel="Chapter" href="Handler.html">
+<link title="Import" rel="Chapter" href="Import.html">
+<link title="Ivar" rel="Chapter" href="Ivar.html">
+<link title="Job" rel="Chapter" href="Job.html">
+<link title="Jobs" rel="Chapter" href="Jobs.html">
+<link title="Kill_index" rel="Chapter" href="Kill_index.html">
+<link title="Lazy_deferred" rel="Chapter" href="Lazy_deferred.html">
+<link title="Monitor" rel="Chapter" href="Monitor.html">
+<link title="Pipe" rel="Chapter" href="Pipe.html">
+<link title="Priority" rel="Chapter" href="Priority.html">
+<link title="Raw_deferred" rel="Chapter" href="Raw_deferred.html">
+<link title="Raw_handler" rel="Chapter" href="Raw_handler.html">
+<link title="Raw_ivar" rel="Chapter" href="Raw_ivar.html">
+<link title="Raw_monitor" rel="Chapter" href="Raw_monitor.html">
+<link title="Raw_scheduler" rel="Chapter" href="Raw_scheduler.html">
+<link title="Raw_stream" rel="Chapter" href="Raw_stream.html">
+<link title="Scheduler" rel="Chapter" href="Scheduler.html">
+<link title="Std" rel="Chapter" href="Std.html">
+<link title="Tail" rel="Chapter" href="Tail.html">
+<link title="Test" rel="Chapter" href="Test.html">
+<link title="Throttle" rel="Chapter" href="Throttle.html">
+<link title="Throttle_debug" rel="Chapter" href="Throttle_debug.html">
+<link title="Throttle_unit_tests" rel="Chapter" href="Throttle_unit_tests.html">
+<link title="Unregister" rel="Chapter" href="Unregister.html"><title>Pipe.Consumer</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Pipe.Flushed_result.html" title="Pipe.Flushed_result">Previous</a>
+&nbsp;<a class="up" href="Pipe.html" title="Pipe">Up</a>
+&nbsp;</div>
+<h1>Module <a href="type_Pipe.Consumer.html">Pipe.Consumer</a></h1>
+<pre><span class="keyword">module</span> Consumer: <code class="code">sig</code> <a href="Pipe.Consumer.html">..</a> <code class="code">end</code></pre><hr width="100%">
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
+<div class="info">
+A <code class="code">Consumer</code> is used to augment our notion of flushing (<code class="code">Pipe.flushed</code>) to include
+      the time spent processing an element once it has been removed from the pipe.  It can
+      be thought of as sitting at the end of a pipe, or between two pipes, and it provides
+      more detailed feedback on the time an element spends outside of the pipe proper.
+      So we have the following two cases:
+<p>
+
+      <pre class="verbatim">        Pipe --&gt; Consumer
+        Pipe --&gt; Consumer --&gt; Pipe --&gt; ...
+     </pre>
+<p>
+
+      The time outside of the pipe can be broken down into two parts: a part (probably
+      short lived) during which the consumer processes the elements in some way, and a
+      downstream portion where the consumer acts as a sentinal to report when the element
+      has been fully processed.
+<p>
+
+      For instance, consider the simple case of a pipe attached to an <code class="code"><a href="../async_unix/Writer.html">Async.Std.Writer</a></code>
+      that is writing elements to disk.  Part one would be whatever transform the consumer
+      applies to the elements in the pipe before it hands them off to the writer, and part
+      two would be waiting for the writer to finish writing the transformed element to
+      disk.  A more complex case is chaining two pipes together (maybe with a transform
+      like <code class="code">map</code>).  Part one in this case is the transform and the write to the downstream
+      pipe, and part two is waiting for that pipe (and any further pipes in the chain) to
+      flush.
+<p>
+
+      In each case the consumer is responsible for indicating when:
+<p>
+<ul>
+<li>it has finished any local work (by attaching itself to elements via the ~consumer
+      argument to <code class="code">read</code> and <code class="code">read'</code>) and calling <code class="code">values_sent_downstream</code> when it has
+      sent the values downstream.</li>
+</ul>
+<ul>
+<li>when any further processing has been completed (by providing an appropriate
+      function to <code class="code">~downstream_flushed</code> when <code class="code">add_consumer</code> is called).</li>
+</ul>
+
+      If a reader does not use a consumer to do the reading then an element is considered
+      flushed the moment it leaves the pipe.  This may lead to odd results as entire
+      queues of elements are removed by a call to <code class="code">read'</code> but are processed over a long
+      period.<br>
+</div>
+
+<pre><span id="VALvalues_sent_downstream"><span class="keyword">val</span> values_sent_downstream</span> : <code class="type"><a href="Pipe.Consumer.html#TYPEt">t</a> -> unit</code></pre></body></html>

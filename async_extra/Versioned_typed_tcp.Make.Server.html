@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="next" href="Versioned_typed_tcp.Make.Client.html">
+<link rel="Up" href="Versioned_typed_tcp.Make.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Command" rel="Chapter" href="Command.html">
+<link title="File_tail" rel="Chapter" href="File_tail.html">
+<link title="File_writer" rel="Chapter" href="File_writer.html">
+<link title="Import" rel="Chapter" href="Import.html">
+<link title="Lock_file" rel="Chapter" href="Lock_file.html">
+<link title="Log" rel="Chapter" href="Log.html">
+<link title="Persistent_singleton" rel="Chapter" href="Persistent_singleton.html">
+<link title="Rpc" rel="Chapter" href="Rpc.html">
+<link title="Rpc_intf" rel="Chapter" href="Rpc_intf.html">
+<link title="Sequencer_table" rel="Chapter" href="Sequencer_table.html">
+<link title="Std" rel="Chapter" href="Std.html">
+<link title="Tcp" rel="Chapter" href="Tcp.html">
+<link title="Tcp_file" rel="Chapter" href="Tcp_file.html">
+<link title="Typed_tcp" rel="Chapter" href="Typed_tcp.html">
+<link title="Typed_tcp_intf" rel="Chapter" href="Typed_tcp_intf.html">
+<link title="Unpack_sequence" rel="Chapter" href="Unpack_sequence.html">
+<link title="User_and_group" rel="Chapter" href="User_and_group.html">
+<link title="Versioned_rpc" rel="Chapter" href="Versioned_rpc.html">
+<link title="Versioned_typed_tcp" rel="Chapter" href="Versioned_typed_tcp.html">
+<link title="Weak_hashtbl" rel="Chapter" href="Weak_hashtbl.html"><title>Versioned_typed_tcp.Make.Server</title>
+</head>
+<body>
+<div class="navbar">&nbsp;<a class="up" href="Versioned_typed_tcp.Make.html" title="Versioned_typed_tcp.Make">Up</a>
+&nbsp;<a class="post" href="Versioned_typed_tcp.Make.Client.html" title="Versioned_typed_tcp.Make.Client">Next</a>
+</div>
+<h1>Module <a href="type_Versioned_typed_tcp.Make.Server.html">Versioned_typed_tcp.Make.Server</a></h1>
+<pre><span class="keyword">module</span> Server: <code class="code">sig</code> <a href="Versioned_typed_tcp.Make.Server.html">..</a> <code class="code">end</code></pre><hr width="100%">
+<pre><code><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = {</code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.tail">tail</span>&nbsp;:<code class="type">(Remote_name.t, Recv.t) <a href="Versioned_typed_tcp.Server_msg.html#TYPEt">Versioned_typed_tcp.Server_msg.t</a> Import.Tail.t</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.logfun">logfun</span>&nbsp;:<code class="type"><a href="Versioned_typed_tcp.Make.html#TYPElogfun">Versioned_typed_tcp.Make.logfun</a> option</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.connections">connections</span>&nbsp;:<code class="type">Connections.t</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span class="keyword">mutable&nbsp;</span><span id="TYPEELTt.am_listening">am_listening</span>&nbsp;:<code class="type">bool</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.socket">socket</span>&nbsp;:<code class="type">([ `Bound ], Import.Socket.Address.Inet.t) Import.Socket.t</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.warn_free_connections_pct">warn_free_connections_pct</span>&nbsp;:<code class="type">float</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span class="keyword">mutable&nbsp;</span><span id="TYPEELTt.free_connections">free_connections</span>&nbsp;:<code class="type">int</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span class="keyword">mutable&nbsp;</span><span id="TYPEELTt.when_free">when_free</span>&nbsp;:<code class="type">unit Import.Ivar.t option</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.max_clients">max_clients</span>&nbsp;:<code class="type">int</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.is_client_ip_authorized">is_client_ip_authorized</span>&nbsp;:<code class="type">string -> bool</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.my_name">my_name</span>&nbsp;:<code class="type">My_name.t</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.enforce_unique_remote_name">enforce_unique_remote_name</span>&nbsp;:<code class="type">bool</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.now">now</span>&nbsp;:<code class="type">unit -> <a href="../core/Time.html">Core.Std.Time</a>.t</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span class="keyword">mutable&nbsp;</span><span id="TYPEELTt.num_accepts">num_accepts</span>&nbsp;:<code class="type">Core.Std.Int63.t</code>;</code></td>
+
+</tr></table>
+}
+
+
+<pre><span id="VALinvariant"><span class="keyword">val</span> invariant</span> : <code class="type"><a href="Versioned_typed_tcp.Make.Server.html#TYPEt">t</a> -> unit</code></pre><pre><span id="VALflushed"><span class="keyword">val</span> flushed</span> : <code class="type"><a href="Versioned_typed_tcp.Make.Server.html#TYPEt">t</a> -><br>       cutoff:unit <a href="../async_core/Deferred.html">Async_core.Deferred</a>.t -><br>       ([> `Flushed of Remote_name.t Core.Std.List.t ] *<br>        [> `Not_flushed of Remote_name.t Core.Std.List.t ])<br>       <a href="../async_core/Deferred.html">Async_core.Deferred</a>.t</code></pre><pre><span id="VALshutdown"><span class="keyword">val</span> shutdown</span> : <code class="type"><a href="Versioned_typed_tcp.Make.Server.html#TYPEt">t</a> -> unit Async_unix.Import.Deferred.t</code></pre><pre><span id="VALsend"><span class="keyword">val</span> send</span> : <code class="type"><a href="Versioned_typed_tcp.Make.Server.html#TYPEt">t</a> -><br>       Remote_name.t -><br>       Send.t -> [> `Dropped | `Sent of <a href="../core/Time.html">Core.Std.Time</a>.t ] <a href="../async_core/Deferred.html">Async_core.Deferred</a>.t</code></pre><pre><span id="VALsend_ignore_errors"><span class="keyword">val</span> send_ignore_errors</span> : <code class="type"><a href="Versioned_typed_tcp.Make.Server.html#TYPEt">t</a> -> Remote_name.t -> Send.t -> unit</code></pre><pre><span id="VALsend_to_all"><span class="keyword">val</span> send_to_all</span> : <code class="type"><a href="Versioned_typed_tcp.Make.Server.html#TYPEt">t</a> -><br>       Send.t -> [ `Dropped | `Partial_success | `Sent ] Import.Deferred.t</code></pre><pre><span id="VALsend_to_all_ignore_errors"><span class="keyword">val</span> send_to_all_ignore_errors</span> : <code class="type"><a href="Versioned_typed_tcp.Make.Server.html#TYPEt">t</a> -> Send.t -> unit</code></pre><pre><span id="VALsend_to_some"><span class="keyword">val</span> send_to_some</span> : <code class="type"><a href="Versioned_typed_tcp.Make.Server.html#TYPEt">t</a> -><br>       Send.t -><br>       Remote_name.t list -><br>       [ `Dropped | `Partial_success | `Sent ] Import.Deferred.t</code></pre><pre><span id="VALsend_to_some_ignore_errors"><span class="keyword">val</span> send_to_some_ignore_errors</span> : <code class="type"><a href="Versioned_typed_tcp.Make.Server.html#TYPEt">t</a> -> Send.t -> Remote_name.t list -> unit</code></pre><pre><span id="VALclose"><span class="keyword">val</span> close</span> : <code class="type"><a href="Versioned_typed_tcp.Make.Server.html#TYPEt">t</a> -> Remote_name.t -> unit</code></pre><pre><span id="VALlisten"><span class="keyword">val</span> listen</span> : <code class="type"><a href="Versioned_typed_tcp.Make.Server.html#TYPEt">t</a> -><br>       (Remote_name.t, Recv.t) <a href="Versioned_typed_tcp.Server_msg.html#TYPEt">Versioned_typed_tcp.Server_msg.t</a> Import.Tail.Stream.t</code></pre><pre><span id="VALlisten_ignore_errors"><span class="keyword">val</span> listen_ignore_errors</span> : <code class="type">?stop:unit Import.Deferred.t -><br>       <a href="Versioned_typed_tcp.Make.Server.html#TYPEt">t</a> -> Recv.t Import.Stream.t</code></pre><pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?logfun:<a href="Versioned_typed_tcp.Make.html#TYPElogfun">Versioned_typed_tcp.Make.logfun</a> -><br>       ?now:(unit -> <a href="../core/Time.html">Core.Std.Time</a>.t) -><br>       ?enforce_unique_remote_name:bool -><br>       ?is_client_ip_authorized:(string -> bool) -><br>       ?warn_when_free_connections_lte_pct:float -><br>       ?max_clients:int -><br>       listen_port:int -><br>       My_name.t -> <a href="Versioned_typed_tcp.Make.Server.html#TYPEt">t</a> Import.Deferred.t</code></pre><pre><span id="VALport"><span class="keyword">val</span> port</span> : <code class="type"><a href="Versioned_typed_tcp.Make.Server.html#TYPEt">t</a> -> int</code></pre><pre><span id="VALclient_send_version"><span class="keyword">val</span> client_send_version</span> : <code class="type"><a href="Versioned_typed_tcp.Make.Server.html#TYPEt">t</a> -><br>       Remote_name.t -> Versioned_typed_tcp.Version.t option</code></pre></body></html>

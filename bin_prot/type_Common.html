@@ -1,0 +1,106 @@
+<html><head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Binable" rel="Chapter" href="Binable.html">
+<link title="Nat0" rel="Chapter" href="Nat0.html">
+<link title="Common" rel="Chapter" href="Common.html">
+<link title="Unsafe_common" rel="Chapter" href="Unsafe_common.html">
+<link title="Unsafe_write_c" rel="Chapter" href="Unsafe_write_c.html">
+<link title="Unsafe_read_c" rel="Chapter" href="Unsafe_read_c.html">
+<link title="Size" rel="Chapter" href="Size.html">
+<link title="Write_ml" rel="Chapter" href="Write_ml.html">
+<link title="Read_ml" rel="Chapter" href="Read_ml.html">
+<link title="Write_c" rel="Chapter" href="Write_c.html">
+<link title="Read_c" rel="Chapter" href="Read_c.html">
+<link title="Std" rel="Chapter" href="Std.html">
+<link title="Type_class" rel="Chapter" href="Type_class.html">
+<link title="Map_to_safe" rel="Chapter" href="Map_to_safe.html">
+<link title="Utils" rel="Chapter" href="Utils.html"><title>Common</title>
+</head>
+<body>
+<code class="code"><span class="keyword">sig</span><br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;pos&nbsp;=&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;pos_ref&nbsp;=&nbsp;<span class="constructor">Common</span>.pos&nbsp;<span class="constructor">Pervasives</span>.ref<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;buf&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(char,&nbsp;<span class="constructor">Bigarray</span>.int8_unsigned_elt,&nbsp;<span class="constructor">Bigarray</span>.c_layout)&nbsp;<span class="constructor">Bigarray</span>.<span class="constructor">Array1</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;create_buf&nbsp;:&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Common</span>.buf<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;check_pos&nbsp;:&nbsp;<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Common</span>.pos&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;check_next&nbsp;:&nbsp;<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Common</span>.pos&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;safe_get_pos&nbsp;:&nbsp;<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Common</span>.pos_ref&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Common</span>.pos<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;blit_string_buf&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?src_pos:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;?dst_pos:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;len:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;blit_buf_string&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?src_pos:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;?dst_pos:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;len:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;blit_buf&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?src_pos:int&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;src:<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;?dst_pos:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;dst:<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;<span class="keyword">exception</span>&nbsp;<span class="constructor">Buffer_short</span><br>
+&nbsp;&nbsp;<span class="keyword">exception</span>&nbsp;<span class="constructor">No_variant_match</span><br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">ReadError</span>&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">sig</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;t&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Neg_int8</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Int_code</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Int_overflow</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Nat0_code</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Nat0_overflow</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Int32_code</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Int64_code</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Nativeint_code</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Unit_code</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Bool_code</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Option_code</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">String_too_long</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Variant_tag</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Array_too_long</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Hashtbl_too_long</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Sum_tag</span>&nbsp;<span class="keyword">of</span>&nbsp;string<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Variant</span>&nbsp;<span class="keyword">of</span>&nbsp;string<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Poly_rec_bound</span>&nbsp;<span class="keyword">of</span>&nbsp;string<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Variant_wrong_type</span>&nbsp;<span class="keyword">of</span>&nbsp;string<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Silly_type</span>&nbsp;<span class="keyword">of</span>&nbsp;string<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Empty_type</span>&nbsp;<span class="keyword">of</span>&nbsp;string<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;to_string&nbsp;:&nbsp;<span class="constructor">Common</span>.<span class="constructor">ReadError</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span><br>
+&nbsp;&nbsp;<span class="keyword">exception</span>&nbsp;<span class="constructor">Read_error</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="constructor">Common</span>.<span class="constructor">ReadError</span>.t&nbsp;*&nbsp;<span class="constructor">Common</span>.pos<br>
+&nbsp;&nbsp;<span class="keyword">exception</span>&nbsp;<span class="constructor">Read_exc</span>&nbsp;<span class="keyword">of</span>&nbsp;exn&nbsp;*&nbsp;<span class="constructor">Common</span>.pos<br>
+&nbsp;&nbsp;<span class="keyword">exception</span>&nbsp;<span class="constructor">Poly_rec_write</span>&nbsp;<span class="keyword">of</span>&nbsp;string<br>
+&nbsp;&nbsp;<span class="keyword">exception</span>&nbsp;<span class="constructor">Empty_type</span>&nbsp;<span class="keyword">of</span>&nbsp;string<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;raise_read_error&nbsp;:&nbsp;<span class="constructor">Common</span>.<span class="constructor">ReadError</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Common</span>.pos&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;raise_read_exc&nbsp;:&nbsp;exn&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Common</span>.pos&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;raise_concurrent_modification&nbsp;:&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;array_bound_error&nbsp;:&nbsp;unit&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;vec32&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(float,&nbsp;<span class="constructor">Bigarray</span>.float32_elt,&nbsp;<span class="constructor">Bigarray</span>.fortran_layout)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bigarray</span>.<span class="constructor">Array1</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;vec64&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(float,&nbsp;<span class="constructor">Bigarray</span>.float64_elt,&nbsp;<span class="constructor">Bigarray</span>.fortran_layout)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bigarray</span>.<span class="constructor">Array1</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;vec&nbsp;=&nbsp;<span class="constructor">Common</span>.vec64<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;mat32&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(float,&nbsp;<span class="constructor">Bigarray</span>.float32_elt,&nbsp;<span class="constructor">Bigarray</span>.fortran_layout)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bigarray</span>.<span class="constructor">Array2</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;mat64&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(float,&nbsp;<span class="constructor">Bigarray</span>.float64_elt,&nbsp;<span class="constructor">Bigarray</span>.fortran_layout)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bigarray</span>.<span class="constructor">Array2</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;mat&nbsp;=&nbsp;<span class="constructor">Common</span>.mat64<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;copy_htbl_list&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>b)&nbsp;<span class="constructor">Hashtbl</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(<span class="keywordsign">'</span>a&nbsp;*&nbsp;<span class="keywordsign">'</span>b)&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>b)&nbsp;<span class="constructor">Hashtbl</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;variant_of_int&nbsp;:&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;[&gt;&nbsp;&nbsp;]&nbsp;=&nbsp;<span class="string">"%identity"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;unsafe_blit_buf&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;src_pos:int&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;src:<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;dst_pos:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;dst:<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;len:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"bin_prot_blit_buf_stub"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;unsafe_blit_string_buf&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;src_pos:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;dst_pos:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;len:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"bin_prot_blit_string_buf_stub"</span>&nbsp;<span class="string">"noalloc"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;unsafe_blit_buf_string&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;src_pos:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;dst_pos:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;len:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"bin_prot_blit_buf_string_stub"</span>&nbsp;<span class="string">"noalloc"</span><br>
+<span class="keyword">end</span></code></body></html>

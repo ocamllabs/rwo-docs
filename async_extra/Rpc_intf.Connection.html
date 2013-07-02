@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="Up" href="Rpc_intf.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Command" rel="Chapter" href="Command.html">
+<link title="File_tail" rel="Chapter" href="File_tail.html">
+<link title="File_writer" rel="Chapter" href="File_writer.html">
+<link title="Import" rel="Chapter" href="Import.html">
+<link title="Lock_file" rel="Chapter" href="Lock_file.html">
+<link title="Log" rel="Chapter" href="Log.html">
+<link title="Persistent_singleton" rel="Chapter" href="Persistent_singleton.html">
+<link title="Rpc" rel="Chapter" href="Rpc.html">
+<link title="Rpc_intf" rel="Chapter" href="Rpc_intf.html">
+<link title="Sequencer_table" rel="Chapter" href="Sequencer_table.html">
+<link title="Std" rel="Chapter" href="Std.html">
+<link title="Tcp" rel="Chapter" href="Tcp.html">
+<link title="Tcp_file" rel="Chapter" href="Tcp_file.html">
+<link title="Typed_tcp" rel="Chapter" href="Typed_tcp.html">
+<link title="Typed_tcp_intf" rel="Chapter" href="Typed_tcp_intf.html">
+<link title="Unpack_sequence" rel="Chapter" href="Unpack_sequence.html">
+<link title="User_and_group" rel="Chapter" href="User_and_group.html">
+<link title="Versioned_rpc" rel="Chapter" href="Versioned_rpc.html">
+<link title="Versioned_typed_tcp" rel="Chapter" href="Versioned_typed_tcp.html">
+<link title="Weak_hashtbl" rel="Chapter" href="Weak_hashtbl.html"><title>Rpc_intf.Connection</title>
+</head>
+<body>
+<div class="navbar">&nbsp;<a class="up" href="Rpc_intf.html" title="Rpc_intf">Up</a>
+&nbsp;</div>
+<h1>Module type <a href="type_Rpc_intf.Connection.html">Rpc_intf.Connection</a></h1>
+<pre><span class="keyword">module type</span> Connection = <code class="code">sig</code> <a href="Rpc_intf.Connection.html">..</a> <code class="code">end</code></pre><hr width="100%">
+<pre><span class="keyword">module</span> <a href="Rpc_intf.Connection.Implementations.html">Implementations</a>: <code class="code">sig</code> <a href="Rpc_intf.Connection.Implementations.html">..</a> <code class="code">end</code></pre><pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
+
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?implementations:'s <a href="Rpc_intf.Connection.Implementations.html#TYPEt">Implementations.t</a> -><br>       connection_state:'s -><br>       ?max_message_size:int -><br>       Import.Reader.t -><br>       Import.Writer.t -><br>       (<a href="Rpc_intf.Connection.html#TYPEt">t</a>, <a href="../core/Exn.html">Core.Std.Exn</a>.t) <a href="../core/Result.html">Core.Std.Result</a>.t Import.Deferred.t</code></pre><div class="info">
+Initiate an Rpc connection on the given reader/writer pair.  <code class="code">server</code> should be the
+      bag of implementations that the calling side implements; it defaults to
+      <code class="code">Implementations.null</code> (i.e., "I implement no RPCs").<br>
+</div>
+<pre><span id="VALclose"><span class="keyword">val</span> close</span> : <code class="type"><a href="Rpc_intf.Connection.html#TYPEt">t</a> -> unit Import.Deferred.t</code></pre><pre><span id="VALclose_finished"><span class="keyword">val</span> close_finished</span> : <code class="type"><a href="Rpc_intf.Connection.html#TYPEt">t</a> -> unit Import.Deferred.t</code></pre><pre><span id="VALis_closed"><span class="keyword">val</span> is_closed</span> : <code class="type"><a href="Rpc_intf.Connection.html#TYPEt">t</a> -> bool</code></pre><pre><span id="VALbytes_to_write"><span class="keyword">val</span> bytes_to_write</span> : <code class="type"><a href="Rpc_intf.Connection.html#TYPEt">t</a> -> int</code></pre><pre><span id="VALwith_close"><span class="keyword">val</span> with_close</span> : <code class="type">?implementations:'s <a href="Rpc_intf.Connection.Implementations.html#TYPEt">Implementations.t</a> -><br>       connection_state:'s -><br>       Import.Reader.t -><br>       Import.Writer.t -><br>       dispatch_queries:(<a href="Rpc_intf.Connection.html#TYPEt">t</a> -> 'a Import.Deferred.t) -><br>       on_handshake_error:[ `Call of <a href="../core/Exn.html">Core.Std.Exn</a>.t -> 'a Import.Deferred.t | `Raise ] -><br>       'a Import.Deferred.t</code></pre><div class="info">
+<code class="code">with_close</code> tries to create a <code class="code">t</code> using the given reader and writer.  If a
+      handshake error is the result, it calls <code class="code">on_handshake_error</code>, for which the default
+      behavior is to raise an exception.  If no error results, <code class="code">dispatch_queries</code> is
+      called on <code class="code">t</code>.
+<p>
+
+      After <code class="code">dispatch_queries</code> returns, if <code class="code">server</code> is None, the <code class="code">t</code> will be closed and
+      the deferred returned by <code class="code">dispatch_queries</code> wil be determined immediately.
+      Otherwise, we'll wait until the other side closes the connection and then close <code class="code">t</code>
+      and determine the deferred returned by <code class="code">dispatch_queries</code>.
+<p>
+
+      When the deferred returned by <code class="code">with_close</code> becomes determined, both <code class="code">Reader.close</code>
+      and <code class="code">Writer.close</code> have finished.<br>
+</div>
+<pre><span id="VALserver_with_close"><span class="keyword">val</span> server_with_close</span> : <code class="type">Import.Reader.t -><br>       Import.Writer.t -><br>       implementations:'s <a href="Rpc_intf.Connection.Implementations.html#TYPEt">Implementations.t</a> -><br>       connection_state:'s -><br>       on_handshake_error:[ `Call of <a href="../core/Exn.html">Core.Std.Exn</a>.t -> unit Import.Deferred.t<br>                          | `Ignore<br>                          | `Raise ] -><br>       unit Import.Deferred.t</code></pre><pre><span id="VALserve"><span class="keyword">val</span> serve</span> : <code class="type">implementations:'s <a href="Rpc_intf.Connection.Implementations.html#TYPEt">Implementations.t</a> -><br>       initial_connection_state:(([< Import.Socket.Address.t ] as 'a) -> 's) -><br>       where_to_listen:('a, 'listening_on) <a href="Tcp.Where_to_listen.html#TYPEt">Tcp.Where_to_listen.t</a> -><br>       ?auth:('a -> bool) -><br>       ?on_handshake_error:[ `Call of <a href="../core/Exn.html">Core.Std.Exn</a>.t -> unit | `Ignore | `Raise ] -><br>       unit -> ('a, 'listening_on) <a href="Tcp.Server.html#TYPEt">Tcp.Server.t</a> Import.Deferred.t</code></pre><div class="info">
+<code class="code">serve implementations ~port ?on_handshake_error ()</code> starts a server with the given
+      implementation on <code class="code">port</code>.  The optional auth function will be called on all incoming
+      connections with the address info of the client and will disconnect the client
+      immediately if it returns false.  This auth mechanism is generic and does nothing
+      other than disconnect the client - any logging or record of the reasons is the
+      responsibility of the auth function itself.<br>
+</div>
+<pre><span class="keyword">module</span> <a href="Rpc_intf.Connection.Client_implementations.html">Client_implementations</a>: <code class="code">sig</code> <a href="Rpc_intf.Connection.Client_implementations.html">..</a> <code class="code">end</code></pre><pre><span id="VALclient"><span class="keyword">val</span> client</span> : <code class="type">host:string -><br>       port:int -><br>       ?implementations:'a <a href="Rpc_intf.Connection.Client_implementations.html#TYPEt">Client_implementations.t</a> -><br>       unit -><br>       (<a href="Rpc_intf.Connection.html#TYPEt">t</a>, <a href="../core/Exn.html">Core.Std.Exn</a>.t) <a href="../core/Result.html">Core.Std.Result</a>.t Import.Deferred.t</code></pre><div class="info">
+<code class="code">client ~host ~port ()</code> connects to the server at (<code class="code">host</code>,<code class="code">port</code>) and returns the
+      connection or an Error if a connection could not be made.  It is the responsibility
+      of the caller to eventually call close.<br>
+</div>
+<pre><span id="VALwith_client"><span class="keyword">val</span> with_client</span> : <code class="type">host:string -><br>       port:int -><br>       ?implementations:'b <a href="Rpc_intf.Connection.Client_implementations.html#TYPEt">Client_implementations.t</a> -><br>       (<a href="Rpc_intf.Connection.html#TYPEt">t</a> -> 'a Import.Deferred.t) -><br>       ('a, <a href="../core/Exn.html">Core.Std.Exn</a>.t) <a href="../core/Result.html">Core.Std.Result</a>.t Import.Deferred.t</code></pre><div class="info">
+<code class="code">with_client ~host ~port f</code> connects to the server at (<code class="code">host</code>,<code class="code">port</code>) and runs f
+      until an exception is thrown or until the returned Deferred is fulfilled.<br>
+</div>
+</body></html>

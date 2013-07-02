@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="User_and_group.html">
+<link rel="next" href="Versioned_typed_tcp.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Command" rel="Chapter" href="Command.html">
+<link title="File_tail" rel="Chapter" href="File_tail.html">
+<link title="File_writer" rel="Chapter" href="File_writer.html">
+<link title="Import" rel="Chapter" href="Import.html">
+<link title="Lock_file" rel="Chapter" href="Lock_file.html">
+<link title="Log" rel="Chapter" href="Log.html">
+<link title="Persistent_singleton" rel="Chapter" href="Persistent_singleton.html">
+<link title="Rpc" rel="Chapter" href="Rpc.html">
+<link title="Rpc_intf" rel="Chapter" href="Rpc_intf.html">
+<link title="Sequencer_table" rel="Chapter" href="Sequencer_table.html">
+<link title="Std" rel="Chapter" href="Std.html">
+<link title="Tcp" rel="Chapter" href="Tcp.html">
+<link title="Tcp_file" rel="Chapter" href="Tcp_file.html">
+<link title="Typed_tcp" rel="Chapter" href="Typed_tcp.html">
+<link title="Typed_tcp_intf" rel="Chapter" href="Typed_tcp_intf.html">
+<link title="Unpack_sequence" rel="Chapter" href="Unpack_sequence.html">
+<link title="User_and_group" rel="Chapter" href="User_and_group.html">
+<link title="Versioned_rpc" rel="Chapter" href="Versioned_rpc.html">
+<link title="Versioned_typed_tcp" rel="Chapter" href="Versioned_typed_tcp.html">
+<link title="Weak_hashtbl" rel="Chapter" href="Weak_hashtbl.html"><title>Versioned_rpc</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="User_and_group.html" title="User_and_group">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="Versioned_typed_tcp.html" title="Versioned_typed_tcp">Next</a>
+</div>
+<h1>Module <a href="type_Versioned_rpc.html">Versioned_rpc</a></h1>
+<pre><span class="keyword">module</span> Versioned_rpc: <code class="code">sig</code> <a href="Versioned_rpc.html">..</a> <code class="code">end</code></pre><div class="info">
+Infrastructure code for managing RPCs which evolve over time to use
+    different types at different versions<br>
+</div>
+<hr width="100%">
+<br>
+This module contains infrastructure code for managing RPCs which evolve
+  over time to use different types at different versions.  Three scenarios
+  are supported
+    <ul>
+<li>The <i>caller</i> is responsible for managing versions and
+          dispatches to callees that are written in a version-oblivious
+          way.
+<p>
+
+          The proto-typical example of this scenario is a commander that
+          needs to call out to many assistants for that same system.
+          In this scenario, the assistants each implement a single
+          version of the rpc and the commander has to take this into
+          account.
+      </li>
+<li>The <i>callee</i> is responsible for managing versions and
+          callers need not bother themselves with any versions.
+<p>
+
+          The proto-typical example of this scenario is an assistant
+          from one system calling out the commander of another system
+          In this scenario, the assistants each know a single version
+          of the rpc to call and the commander has to implement them
+          all.
+      </li>
+<li>Both <i>caller</i> and <i>callee</i> cooperate to decide which version to use, each
+          one being able to use some subset of all possible versions.
+<p>
+
+          The proto-typical example of this scenario is when two systems developed
+          independently with their rpc types defined in some shared library which has yet
+          another independent rollout schedule.  In this case one may roll out a new rpc
+          version (V) in the shared library (L) and then the caller and callee systems can
+          each upgrade to the new version of L supporting version V at their own pace,
+          with version V only being exercised once both caller and callee have upgraded.
+      </li>
+</ul>
+
+<p>
+
+  In each scenario, it is desirable that the party responsible for
+  managing versions be coded largely in terms of a single "master"
+  version of the types involved, with all necessary type conversions
+  relegated to a single module.  <code class="code">Versioned_rpc</code> is intended for
+  implementing such a module.
+<p>
+
+  Type coercions into and out of the model go in the directions indicated
+  by the following diagram:
+  <pre class="verbatim">
+       Caller converts                 Callee converts
+       ===============                 ===============
+
+           caller                        callee
+           |       callee                |      callee
+           |       |       caller        |      |       callee
+           |       |       |             |      |       |
+        ,--&gt;-- Q1 --&gt; R1 --&gt;-.      Q1 --&gt;-.    |    ,--&gt;-- R1
+       /                      \             \   |   /
+      Q ---&gt;-- Q2 --&gt; R2 --&gt;-- R    Q2 --&gt;-- Q --&gt; R ---&gt;-- R2
+       \                      /             /       \
+        `--&gt;-- Q3 --&gt; R3 --&gt;-'      Q3 --&gt;-'         `--&gt;-- R3
+ </pre><br>
+<pre><span class="keyword">module</span> <a href="Versioned_rpc.Menu.html">Menu</a>: <code class="code">sig</code> <a href="Versioned_rpc.Menu.html">..</a> <code class="code">end</code></pre><pre><span class="keyword">module</span> <a href="Versioned_rpc.Connection_with_menu.html">Connection_with_menu</a>: <code class="code">sig</code> <a href="Versioned_rpc.Connection_with_menu.html">..</a> <code class="code">end</code></pre><pre><span class="keyword">module</span> <a href="Versioned_rpc.Caller_converts.html">Caller_converts</a>: <code class="code">sig</code> <a href="Versioned_rpc.Caller_converts.html">..</a> <code class="code">end</code></pre><pre><span class="keyword">module</span> <a href="Versioned_rpc.Callee_converts.html">Callee_converts</a>: <code class="code">sig</code> <a href="Versioned_rpc.Callee_converts.html">..</a> <code class="code">end</code></pre><pre><span class="keyword">module</span> <a href="Versioned_rpc.Both_convert.html">Both_convert</a>: <code class="code">sig</code> <a href="Versioned_rpc.Both_convert.html">..</a> <code class="code">end</code></pre></body></html>

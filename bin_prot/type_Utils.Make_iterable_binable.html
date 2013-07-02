@@ -1,0 +1,38 @@
+<html><head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Binable" rel="Chapter" href="Binable.html">
+<link title="Nat0" rel="Chapter" href="Nat0.html">
+<link title="Common" rel="Chapter" href="Common.html">
+<link title="Unsafe_common" rel="Chapter" href="Unsafe_common.html">
+<link title="Unsafe_write_c" rel="Chapter" href="Unsafe_write_c.html">
+<link title="Unsafe_read_c" rel="Chapter" href="Unsafe_read_c.html">
+<link title="Size" rel="Chapter" href="Size.html">
+<link title="Write_ml" rel="Chapter" href="Write_ml.html">
+<link title="Read_ml" rel="Chapter" href="Read_ml.html">
+<link title="Write_c" rel="Chapter" href="Write_c.html">
+<link title="Read_c" rel="Chapter" href="Read_c.html">
+<link title="Std" rel="Chapter" href="Std.html">
+<link title="Type_class" rel="Chapter" href="Type_class.html">
+<link title="Map_to_safe" rel="Chapter" href="Map_to_safe.html">
+<link title="Utils" rel="Chapter" href="Utils.html"><title>Utils.Make_iterable_binable</title>
+</head>
+<body>
+<code class="code"><span class="keyword">functor</span>&nbsp;(<span class="constructor">Iterable_spec</span>&nbsp;:&nbsp;<span class="constructor">Make_iterable_binable_spec</span>)&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;<span class="keyword">sig</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_size_t&nbsp;:&nbsp;<span class="constructor">Iterable_spec</span>.t&nbsp;<span class="constructor">Size</span>.sizer<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_write_t&nbsp;:&nbsp;<span class="constructor">Iterable_spec</span>.t&nbsp;<span class="constructor">Map_to_safe</span>.writer<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_write_t_&nbsp;:&nbsp;<span class="constructor">Iterable_spec</span>.t&nbsp;<span class="constructor">Unsafe_write_c</span>.writer<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_read_t&nbsp;:&nbsp;<span class="constructor">Iterable_spec</span>.t&nbsp;<span class="constructor">Read_ml</span>.reader<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_read_t_&nbsp;:&nbsp;<span class="constructor">Iterable_spec</span>.t&nbsp;<span class="constructor">Unsafe_read_c</span>.reader<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_read_t__&nbsp;:&nbsp;(int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Iterable_spec</span>.t)&nbsp;<span class="constructor">Unsafe_read_c</span>.reader<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_t&nbsp;:&nbsp;<span class="constructor">Iterable_spec</span>.t&nbsp;<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_t&nbsp;:&nbsp;<span class="constructor">Iterable_spec</span>.t&nbsp;<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_t&nbsp;:&nbsp;<span class="constructor">Iterable_spec</span>.t&nbsp;<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">end</span></code></body></html>

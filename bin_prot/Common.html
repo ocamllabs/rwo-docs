@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Nat0.html">
+<link rel="next" href="Unsafe_common.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Binable" rel="Chapter" href="Binable.html">
+<link title="Nat0" rel="Chapter" href="Nat0.html">
+<link title="Common" rel="Chapter" href="Common.html">
+<link title="Unsafe_common" rel="Chapter" href="Unsafe_common.html">
+<link title="Unsafe_write_c" rel="Chapter" href="Unsafe_write_c.html">
+<link title="Unsafe_read_c" rel="Chapter" href="Unsafe_read_c.html">
+<link title="Size" rel="Chapter" href="Size.html">
+<link title="Write_ml" rel="Chapter" href="Write_ml.html">
+<link title="Read_ml" rel="Chapter" href="Read_ml.html">
+<link title="Write_c" rel="Chapter" href="Write_c.html">
+<link title="Read_c" rel="Chapter" href="Read_c.html">
+<link title="Std" rel="Chapter" href="Std.html">
+<link title="Type_class" rel="Chapter" href="Type_class.html">
+<link title="Map_to_safe" rel="Chapter" href="Map_to_safe.html">
+<link title="Utils" rel="Chapter" href="Utils.html"><link title="Buffers" rel="Section" href="#2_Buffers">
+<link title="Errors and exceptions" rel="Section" href="#2_Errorsandexceptions">
+<link title="Bigarrays" rel="Section" href="#2_Bigarrays">
+<link title="Miscellaneous" rel="Section" href="#2_Miscellaneous">
+<link title="NOTE: unsafe functions!!!" rel="Section" href="#2_NOTEunsafefunctions">
+<title>Common</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Nat0.html" title="Nat0">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="Unsafe_common.html" title="Unsafe_common">Next</a>
+</div>
+<h1>Module <a href="type_Common.html">Common</a></h1>
+<pre><span class="keyword">module</span> Common: <code class="code">sig</code> <a href="Common.html">..</a> <code class="code">end</code></pre><div class="info">
+Common definitions used by binary protocol converters<br>
+</div>
+<hr width="100%">
+<br>
+<h2 id="2_Buffers">Buffers</h2><br>
+<pre><span id="TYPEpos"><span class="keyword">type</span> <code class="type"></code>pos</span> = <code class="type">int</code> </pre>
+<div class="info">
+Position within buffers<br>
+</div>
+
+<pre><span id="TYPEpos_ref"><span class="keyword">type</span> <code class="type"></code>pos_ref</span> = <code class="type"><a href="Common.html#TYPEpos">pos</a> Pervasives.ref</code> </pre>
+<div class="info">
+Reference to a position within buffers<br>
+</div>
+
+<pre><span id="TYPEbuf"><span class="keyword">type</span> <code class="type"></code>buf</span> = <code class="type">(char, Bigarray.int8_unsigned_elt, Bigarray.c_layout) Bigarray.Array1.t</code> </pre>
+<div class="info">
+Buffers<br>
+</div>
+
+<pre><span id="VALcreate_buf"><span class="keyword">val</span> create_buf</span> : <code class="type">int -> <a href="Common.html#TYPEbuf">buf</a></code></pre><div class="info">
+<code class="code">create_buf n</code> creates a buffer of size <code class="code">n</code>.<br>
+</div>
+<pre><span id="VALcheck_pos"><span class="keyword">val</span> check_pos</span> : <code class="type"><a href="Common.html#TYPEbuf">buf</a> -> <a href="Common.html#TYPEpos">pos</a> -> unit</code></pre><div class="info">
+<code class="code">check_pos buf pos</code><br>
+<b>Raises</b> <code>Buffer_short</code> if position <code class="code">pos</code> exceeds
+    the length of buffer <code class="code">buf</code>.<br>
+</div>
+<pre><span id="VALcheck_next"><span class="keyword">val</span> check_next</span> : <code class="type"><a href="Common.html#TYPEbuf">buf</a> -> <a href="Common.html#TYPEpos">pos</a> -> unit</code></pre><div class="info">
+<code class="code">check_next buf pos</code><br>
+<b>Raises</b> <code>Buffer_short</code> if the next position after
+    <code class="code">pos</code> exceeds the length of buffer <code class="code">buf</code>.<br>
+</div>
+<pre><span id="VALsafe_get_pos"><span class="keyword">val</span> safe_get_pos</span> : <code class="type"><a href="Common.html#TYPEbuf">buf</a> -> <a href="Common.html#TYPEpos_ref">pos_ref</a> -> <a href="Common.html#TYPEpos">pos</a></code></pre><div class="info">
+<code class="code">safe_get_pos buf pos_ref</code><br>
+<b>Raises</b> <code>Buffer_short</code> if the position
+    exceeds the length of the buffer.<br>
+<b>Returns</b> the position referenced by
+    <code class="code">pos_ref</code> within buffer <code class="code">buf</code>.<br>
+</div>
+<pre><span id="VALblit_string_buf"><span class="keyword">val</span> blit_string_buf</span> : <code class="type">?src_pos:int -> string -> ?dst_pos:int -> <a href="Common.html#TYPEbuf">buf</a> -> len:int -> unit</code></pre><div class="info">
+<code class="code">blit_string_buf ?src_pos src ?dst_pos dst ~len</code> blits <code class="code">len</code>
+    bytes of the source string <code class="code">src</code> starting at position <code class="code">src_pos</code>
+    to buffer <code class="code">dst</code> starting at position <code class="code">dst_pos</code>.<br>
+<b>Raises</b> <code>Invalid_argument</code> if the designated ranges are invalid.<br>
+</div>
+<pre><span id="VALblit_buf_string"><span class="keyword">val</span> blit_buf_string</span> : <code class="type">?src_pos:int -> <a href="Common.html#TYPEbuf">buf</a> -> ?dst_pos:int -> string -> len:int -> unit</code></pre><div class="info">
+<code class="code">blit_buf_string ?src_pos src ?dst_pos dst ~len</code> blits <code class="code">len</code>
+    bytes of the source buffer <code class="code">src</code> starting at position <code class="code">src_pos</code>
+    to string <code class="code">dst</code> starting at position <code class="code">dst_pos</code>.<br>
+<b>Raises</b> <code>Invalid_argument</code> if the designated ranges are invalid.<br>
+</div>
+<pre><span id="VALblit_buf"><span class="keyword">val</span> blit_buf</span> : <code class="type">?src_pos:int -><br>       src:<a href="Common.html#TYPEbuf">buf</a> -> ?dst_pos:int -> dst:<a href="Common.html#TYPEbuf">buf</a> -> int -> unit</code></pre><div class="info">
+<code class="code">blit_buf ?src_pos ~src ?dst_pos ~dst len</code> blits <code class="code">len</code> bytes of the
+    source buffer <code class="code">src</code> starting at position <code class="code">src_pos</code> to destination
+    buffer <code class="code">dst</code> starting at position <code class="code">dst_pos</code>.<br>
+<b>Raises</b> <code>Invalid_argument</code> if the designated ranges are invalid.<br>
+</div>
+<br>
+<h2 id="2_Errorsandexceptions">Errors and exceptions</h2><br>
+<pre><span id="EXCEPTIONBuffer_short"><span class="keyword">exception</span> Buffer_short</span></pre>
+<div class="info">
+Buffer too short for read/write operation<br>
+</div>
+<pre><span id="EXCEPTIONNo_variant_match"><span class="keyword">exception</span> No_variant_match</span></pre>
+<div class="info">
+Used internally for backtracking<br>
+</div>
+<pre><span class="keyword">module</span> <a href="Common.ReadError.html">ReadError</a>: <code class="code">sig</code> <a href="Common.ReadError.html">..</a> <code class="code">end</code></pre><pre><span id="EXCEPTIONRead_error"><span class="keyword">exception</span> Read_error</span> <span class="keyword">of</span> <code class="type"><a href="Common.ReadError.html#TYPEt">ReadError.t</a> * <a href="Common.html#TYPEpos">pos</a></code></pre>
+<div class="info">
+<code class="code">ReadError (err, err_pos)</code><br>
+</div>
+<pre><span id="EXCEPTIONRead_exc"><span class="keyword">exception</span> Read_exc</span> <span class="keyword">of</span> <code class="type">exn * <a href="Common.html#TYPEpos">pos</a></code></pre>
+<div class="info">
+<code class="code">ReadExc (exn, err_pos)</code><br>
+</div>
+<pre><span id="EXCEPTIONPoly_rec_write"><span class="keyword">exception</span> Poly_rec_write</span> <span class="keyword">of</span> <code class="type">string</code></pre>
+<div class="info">
+<code class="code">PolyRecWrite type</code> gets raised when the user attempts to write or
+    estimate the size of a value of a type that is bound through a
+    polymorphic record field in type definition <code class="code">type</code>.<br>
+</div>
+<pre><span id="EXCEPTIONEmpty_type"><span class="keyword">exception</span> Empty_type</span> <span class="keyword">of</span> <code class="type">string</code></pre>
+<div class="info">
+<code class="code">EmptyType</code> gets raised when the user attempts to write or estimate
+    the size of a value of an empty type, which would not make sense.<br>
+</div>
+<pre><span id="VALraise_read_error"><span class="keyword">val</span> raise_read_error</span> : <code class="type"><a href="Common.ReadError.html#TYPEt">ReadError.t</a> -> <a href="Common.html#TYPEpos">pos</a> -> 'a</code></pre><div class="info">
+<code class="code">raise_read_error err pos</code><br>
+</div>
+<pre><span id="VALraise_read_exc"><span class="keyword">val</span> raise_read_exc</span> : <code class="type">exn -> <a href="Common.html#TYPEpos">pos</a> -> 'a</code></pre><div class="info">
+<code class="code">raise_read_exc exc pos</code><br>
+</div>
+<pre><span id="VALraise_concurrent_modification"><span class="keyword">val</span> raise_concurrent_modification</span> : <code class="type">string -> 'a</code></pre><div class="info">
+<code class="code">raise_concurrent_modification loc</code><br>
+<b>Raises</b> <code>Failure</code> if a binary writer
+    detects a concurrent change to the underlying data structure.<br>
+</div>
+<pre><span id="VALarray_bound_error"><span class="keyword">val</span> array_bound_error</span> : <code class="type">unit -> 'a</code></pre><div class="info">
+<code class="code">array_bound_error ()</code><br>
+</div>
+<br>
+<h2 id="2_Bigarrays">Bigarrays</h2><br>
+<pre><span id="TYPEvec32"><span class="keyword">type</span> <code class="type"></code>vec32</span> = <code class="type">(float, Bigarray.float32_elt, Bigarray.fortran_layout) Bigarray.Array1.t</code> </pre>
+
+<pre><span id="TYPEvec64"><span class="keyword">type</span> <code class="type"></code>vec64</span> = <code class="type">(float, Bigarray.float64_elt, Bigarray.fortran_layout) Bigarray.Array1.t</code> </pre>
+
+<pre><span id="TYPEvec"><span class="keyword">type</span> <code class="type"></code>vec</span> = <code class="type"><a href="Common.html#TYPEvec64">vec64</a></code> </pre>
+
+<pre><span id="TYPEmat32"><span class="keyword">type</span> <code class="type"></code>mat32</span> = <code class="type">(float, Bigarray.float32_elt, Bigarray.fortran_layout) Bigarray.Array2.t</code> </pre>
+
+<pre><span id="TYPEmat64"><span class="keyword">type</span> <code class="type"></code>mat64</span> = <code class="type">(float, Bigarray.float64_elt, Bigarray.fortran_layout) Bigarray.Array2.t</code> </pre>
+
+<pre><span id="TYPEmat"><span class="keyword">type</span> <code class="type"></code>mat</span> = <code class="type"><a href="Common.html#TYPEmat64">mat64</a></code> </pre>
+
+<br>
+<h2 id="2_Miscellaneous">Miscellaneous</h2><br>
+<pre><span id="VALcopy_htbl_list"><span class="keyword">val</span> copy_htbl_list</span> : <code class="type">('a, 'b) Hashtbl.t -> ('a * 'b) list -> ('a, 'b) Hashtbl.t</code></pre><div class="info">
+<code class="code">copy_htbl_list htbl lst</code> adds all <code class="code">(key, value)</code> pairs in <code class="code">lst</code>
+    to hash table <code class="code">htbl</code>.<br>
+</div>
+<pre><span id="VALvariant_of_int"><span class="keyword">val</span> variant_of_int</span> : <code class="type">int -> [>  ]</code></pre><br>
+<h2 id="2_NOTEunsafefunctions">NOTE: unsafe functions!!!</h2><br>
+<pre><span id="VALunsafe_blit_buf"><span class="keyword">val</span> unsafe_blit_buf</span> : <code class="type">src_pos:int -><br>       src:<a href="Common.html#TYPEbuf">buf</a> -> dst_pos:int -> dst:<a href="Common.html#TYPEbuf">buf</a> -> len:int -> unit</code></pre><pre><span id="VALunsafe_blit_string_buf"><span class="keyword">val</span> unsafe_blit_string_buf</span> : <code class="type">src_pos:int -> string -> dst_pos:int -> <a href="Common.html#TYPEbuf">buf</a> -> len:int -> unit</code></pre><pre><span id="VALunsafe_blit_buf_string"><span class="keyword">val</span> unsafe_blit_buf_string</span> : <code class="type">src_pos:int -> <a href="Common.html#TYPEbuf">buf</a> -> dst_pos:int -> string -> len:int -> unit</code></pre></body></html>

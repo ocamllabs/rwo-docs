@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Sexp_with_layout.Render.Rel_pos.html">
+<link rel="Up" href="Sexp_with_layout.Render.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Conv" rel="Chapter" href="Conv.html">
+<link title="Conv_error" rel="Chapter" href="Conv_error.html">
+<link title="Exn_magic" rel="Chapter" href="Exn_magic.html">
+<link title="Path" rel="Chapter" href="Path.html">
+<link title="Pre_sexp" rel="Chapter" href="Pre_sexp.html">
+<link title="Sexp" rel="Chapter" href="Sexp.html">
+<link title="Sexp_intf" rel="Chapter" href="Sexp_intf.html">
+<link title="Sexp_with_layout" rel="Chapter" href="Sexp_with_layout.html">
+<link title="Src_pos" rel="Chapter" href="Src_pos.html">
+<link title="Std" rel="Chapter" href="Std.html">
+<link title="Type" rel="Chapter" href="Type.html">
+<link title="Type_with_layout" rel="Chapter" href="Type_with_layout.html">
+<link title="Parser" rel="Chapter" href="Parser.html">
+<link title="Parser_with_layout" rel="Chapter" href="Parser_with_layout.html">
+<link title="Lexer" rel="Chapter" href="Lexer.html"><title>Sexp_with_layout.Render.Abs_pos</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Sexp_with_layout.Render.Rel_pos.html" title="Sexp_with_layout.Render.Rel_pos">Previous</a>
+&nbsp;<a class="up" href="Sexp_with_layout.Render.html" title="Sexp_with_layout.Render">Up</a>
+&nbsp;</div>
+<h1>Module <a href="type_Sexp_with_layout.Render.Abs_pos.html">Sexp_with_layout.Render.Abs_pos</a></h1>
+<pre><span class="keyword">module</span> Abs_pos: <code class="type"><a href="Src_pos.Absolute.html">Src_pos.Absolute</a></code></pre><hr width="100%">
+<pre><code><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = {</code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.row">row</span>&nbsp;:<code class="type">int</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.col">col</span>&nbsp;:<code class="type">int</code>;</code></td>
+
+</tr></table>
+}
+
+
+<pre><span id="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="Src_pos.Absolute.html#TYPEt">t</a> -> <a href="Type.html#TYPEt">Type.t</a></code></pre><pre><span id="VALorigin"><span class="keyword">val</span> origin</span> : <code class="type"><a href="Src_pos.Absolute.html#TYPEt">t</a></code></pre><pre><span id="VALof_lexing"><span class="keyword">val</span> of_lexing</span> : <code class="type">Lexing.position -> <a href="Src_pos.Absolute.html#TYPEt">t</a></code></pre><pre><span id="VALdiff"><span class="keyword">val</span> diff</span> : <code class="type"><a href="Src_pos.Absolute.html#TYPEt">t</a> -> <a href="Src_pos.Absolute.html#TYPEt">t</a> -> <a href="Src_pos.Relative.html#TYPEt">Src_pos.Relative.t</a></code></pre><pre><span id="VALadd"><span class="keyword">val</span> add</span> : <code class="type"><a href="Src_pos.Absolute.html#TYPEt">t</a> -> <a href="Src_pos.Relative.html#TYPEt">Src_pos.Relative.t</a> -> <a href="Src_pos.Absolute.html#TYPEt">t</a></code></pre><pre><span id="VALsub"><span class="keyword">val</span> sub</span> : <code class="type"><a href="Src_pos.Absolute.html#TYPEt">t</a> -> <a href="Src_pos.Relative.html#TYPEt">Src_pos.Relative.t</a> -> <a href="Src_pos.Absolute.html#TYPEt">t</a></code></pre><pre><span id="VALgeq"><span class="keyword">val</span> geq</span> : <code class="type"><a href="Src_pos.Absolute.html#TYPEt">t</a> -> <a href="Src_pos.Absolute.html#TYPEt">t</a> -> bool</code></pre></body></html>

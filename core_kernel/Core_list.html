@@ -1,0 +1,760 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Core_lazy.html">
+<link rel="next" href="Core_map_intf.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Array_permute" rel="Chapter" href="Array_permute.html">
+<link title="Avltree" rel="Chapter" href="Avltree.html">
+<link title="Bag" rel="Chapter" href="Bag.html">
+<link title="Bigbuffer_internal" rel="Chapter" href="Bigbuffer_internal.html">
+<link title="Bigbuffer" rel="Chapter" href="Bigbuffer.html">
+<link title="Bigstring_marshal" rel="Chapter" href="Bigstring_marshal.html">
+<link title="Bigstring" rel="Chapter" href="Bigstring.html">
+<link title="Bigsubstring" rel="Chapter" href="Bigsubstring.html">
+<link title="Binable0" rel="Chapter" href="Binable0.html">
+<link title="Binable" rel="Chapter" href="Binable.html">
+<link title="Binary_packing" rel="Chapter" href="Binary_packing.html">
+<link title="Blang" rel="Chapter" href="Blang.html">
+<link title="Blit" rel="Chapter" href="Blit.html">
+<link title="Blit_intf" rel="Chapter" href="Blit_intf.html">
+<link title="Bool" rel="Chapter" href="Bool.html">
+<link title="Bounded_int_table" rel="Chapter" href="Bounded_int_table.html">
+<link title="Bucket" rel="Chapter" href="Bucket.html">
+<link title="Byte_units" rel="Chapter" href="Byte_units.html">
+<link title="Caml" rel="Chapter" href="Caml.html">
+<link title="Common" rel="Chapter" href="Common.html">
+<link title="Commutative_group" rel="Chapter" href="Commutative_group.html">
+<link title="Comparable_intf" rel="Chapter" href="Comparable_intf.html">
+<link title="Comparable" rel="Chapter" href="Comparable.html">
+<link title="Comparator" rel="Chapter" href="Comparator.html">
+<link title="Constrained_float" rel="Chapter" href="Constrained_float.html">
+<link title="Container" rel="Chapter" href="Container.html">
+<link title="Container_unit_tests" rel="Chapter" href="Container_unit_tests.html">
+<link title="Core_arg" rel="Chapter" href="Core_arg.html">
+<link title="Core_array" rel="Chapter" href="Core_array.html">
+<link title="Core_bin_prot" rel="Chapter" href="Core_bin_prot.html">
+<link title="Core_char" rel="Chapter" href="Core_char.html">
+<link title="Core_field" rel="Chapter" href="Core_field.html">
+<link title="Core_gc" rel="Chapter" href="Core_gc.html">
+<link title="Core_hashtbl_intf" rel="Chapter" href="Core_hashtbl_intf.html">
+<link title="Core_hashtbl" rel="Chapter" href="Core_hashtbl.html">
+<link title="Core_int32" rel="Chapter" href="Core_int32.html">
+<link title="Core_int63" rel="Chapter" href="Core_int63.html">
+<link title="Core_int64" rel="Chapter" href="Core_int64.html">
+<link title="Core_int" rel="Chapter" href="Core_int.html">
+<link title="Core_lazy" rel="Chapter" href="Core_lazy.html">
+<link title="Core_list" rel="Chapter" href="Core_list.html">
+<link title="Core_map_intf" rel="Chapter" href="Core_map_intf.html">
+<link title="Core_map" rel="Chapter" href="Core_map.html">
+<link title="Core_map_unit_tests" rel="Chapter" href="Core_map_unit_tests.html">
+<link title="Core_nativeint" rel="Chapter" href="Core_nativeint.html">
+<link title="Core_printexc" rel="Chapter" href="Core_printexc.html">
+<link title="Core_printf" rel="Chapter" href="Core_printf.html">
+<link title="Core_queue" rel="Chapter" href="Core_queue.html">
+<link title="Core_random" rel="Chapter" href="Core_random.html">
+<link title="Core_set_intf" rel="Chapter" href="Core_set_intf.html">
+<link title="Core_set" rel="Chapter" href="Core_set.html">
+<link title="Core_set_unit_tests" rel="Chapter" href="Core_set_unit_tests.html">
+<link title="Core_sexp" rel="Chapter" href="Core_sexp.html">
+<link title="Core_stack" rel="Chapter" href="Core_stack.html">
+<link title="Core_string" rel="Chapter" href="Core_string.html">
+<link title="Core_weak" rel="Chapter" href="Core_weak.html">
+<link title="Day_of_week" rel="Chapter" href="Day_of_week.html">
+<link title="Dequeue" rel="Chapter" href="Dequeue.html">
+<link title="Doubly_linked" rel="Chapter" href="Doubly_linked.html">
+<link title="Equal" rel="Chapter" href="Equal.html">
+<link title="Error" rel="Chapter" href="Error.html">
+<link title="Exn" rel="Chapter" href="Exn.html">
+<link title="Flags_intf" rel="Chapter" href="Flags_intf.html">
+<link title="Flags" rel="Chapter" href="Flags.html">
+<link title="Flat_array" rel="Chapter" href="Flat_array.html">
+<link title="Flat_array_debug" rel="Chapter" href="Flat_array_debug.html">
+<link title="Flat_array_unit_tests" rel="Chapter" href="Flat_array_unit_tests.html">
+<link title="Floatable" rel="Chapter" href="Floatable.html">
+<link title="Float_intf" rel="Chapter" href="Float_intf.html">
+<link title="Float" rel="Chapter" href="Float.html">
+<link title="Float_robust_compare" rel="Chapter" href="Float_robust_compare.html">
+<link title="Fn" rel="Chapter" href="Fn.html">
+<link title="Force_once" rel="Chapter" href="Force_once.html">
+<link title="Fqueue" rel="Chapter" href="Fqueue.html">
+<link title="Hashable" rel="Chapter" href="Hashable.html">
+<link title="Hash_heap" rel="Chapter" href="Hash_heap.html">
+<link title="Hash_queue" rel="Chapter" href="Hash_queue.html">
+<link title="Hash_set_intf" rel="Chapter" href="Hash_set_intf.html">
+<link title="Hash_set" rel="Chapter" href="Hash_set.html">
+<link title="Hashtbl_unit_tests" rel="Chapter" href="Hashtbl_unit_tests.html">
+<link title="Heap_block" rel="Chapter" href="Heap_block.html">
+<link title="Heap" rel="Chapter" href="Heap.html">
+<link title="Host_and_port" rel="Chapter" href="Host_and_port.html">
+<link title="Identifiable" rel="Chapter" href="Identifiable.html">
+<link title="Import" rel="Chapter" href="Import.html">
+<link title="In_channel" rel="Chapter" href="In_channel.html">
+<link title="Info" rel="Chapter" href="Info.html">
+<link title="Intable" rel="Chapter" href="Intable.html">
+<link title="Int_conversions" rel="Chapter" href="Int_conversions.html">
+<link title="Interfaces" rel="Chapter" href="Interfaces.html">
+<link title="Interned_string" rel="Chapter" href="Interned_string.html">
+<link title="Int_intf" rel="Chapter" href="Int_intf.html">
+<link title="Int_math" rel="Chapter" href="Int_math.html">
+<link title="Int_replace_polymorphic_compare" rel="Chapter" href="Int_replace_polymorphic_compare.html">
+<link title="Int_set" rel="Chapter" href="Int_set.html">
+<link title="Invariant" rel="Chapter" href="Invariant.html">
+<link title="Invariant_intf" rel="Chapter" href="Invariant_intf.html">
+<link title="Linked_stack" rel="Chapter" href="Linked_stack.html">
+<link title="Make_substring" rel="Chapter" href="Make_substring.html">
+<link title="Memo" rel="Chapter" href="Memo.html">
+<link title="Monad" rel="Chapter" href="Monad.html">
+<link title="Month" rel="Chapter" href="Month.html">
+<link title="Never_returns" rel="Chapter" href="Never_returns.html">
+<link title="No_polymorphic_compare" rel="Chapter" href="No_polymorphic_compare.html">
+<link title="Nothing0" rel="Chapter" href="Nothing0.html">
+<link title="Nothing" rel="Chapter" href="Nothing.html">
+<link title="Obj_array" rel="Chapter" href="Obj_array.html">
+<link title="Only_in_test" rel="Chapter" href="Only_in_test.html">
+<link title="Option" rel="Chapter" href="Option.html">
+<link title="Ordered_collection_common" rel="Chapter" href="Ordered_collection_common.html">
+<link title="Ordering" rel="Chapter" href="Ordering.html">
+<link title="Or_error" rel="Chapter" href="Or_error.html">
+<link title="Out_channel" rel="Chapter" href="Out_channel.html">
+<link title="Pid" rel="Chapter" href="Pid.html">
+<link title="Polymorphic_compare_intf" rel="Chapter" href="Polymorphic_compare_intf.html">
+<link title="Polymorphic_compare" rel="Chapter" href="Polymorphic_compare.html">
+<link title="Pool" rel="Chapter" href="Pool.html">
+<link title="Pool_intf" rel="Chapter" href="Pool_intf.html">
+<link title="Pool_unit_tests" rel="Chapter" href="Pool_unit_tests.html">
+<link title="Pooled_hashtbl" rel="Chapter" href="Pooled_hashtbl.html">
+<link title="Pooled_hashtbl_unit_test" rel="Chapter" href="Pooled_hashtbl_unit_test.html">
+<link title="Pretty_printer" rel="Chapter" href="Pretty_printer.html">
+<link title="Quickcheck" rel="Chapter" href="Quickcheck.html">
+<link title="Ref" rel="Chapter" href="Ref.html">
+<link title="Result" rel="Chapter" href="Result.html">
+<link title="Robustly_comparable" rel="Chapter" href="Robustly_comparable.html">
+<link title="Set_once" rel="Chapter" href="Set_once.html">
+<link title="Sexpable" rel="Chapter" href="Sexpable.html">
+<link title="Source_code_position0" rel="Chapter" href="Source_code_position0.html">
+<link title="Source_code_position" rel="Chapter" href="Source_code_position.html">
+<link title="Stable_containers" rel="Chapter" href="Stable_containers.html">
+<link title="Stable_internal" rel="Chapter" href="Stable_internal.html">
+<link title="Stable" rel="Chapter" href="Stable.html">
+<link title="Stable_unit_test_intf" rel="Chapter" href="Stable_unit_test_intf.html">
+<link title="Stable_unit_test" rel="Chapter" href="Stable_unit_test.html">
+<link title="Stack_intf" rel="Chapter" href="Stack_intf.html">
+<link title="Stack_unit_tests" rel="Chapter" href="Stack_unit_tests.html">
+<link title="Staged" rel="Chapter" href="Staged.html">
+<link title="Std_common" rel="Chapter" href="Std_common.html">
+<link title="Std_internal" rel="Chapter" href="Std_internal.html">
+<link title="Std_kernel" rel="Chapter" href="Std_kernel.html">
+<link title="Std" rel="Chapter" href="Std.html">
+<link title="Stringable" rel="Chapter" href="Stringable.html">
+<link title="String_id" rel="Chapter" href="String_id.html">
+<link title="Substring_intf" rel="Chapter" href="Substring_intf.html">
+<link title="Substring" rel="Chapter" href="Substring.html">
+<link title="Thread_safe_queue" rel="Chapter" href="Thread_safe_queue.html">
+<link title="T" rel="Chapter" href="T.html">
+<link title="Tuple" rel="Chapter" href="Tuple.html">
+<link title="Tuple_type" rel="Chapter" href="Tuple_type.html">
+<link title="Tuple_type_intf" rel="Chapter" href="Tuple_type_intf.html">
+<link title="Type_equal" rel="Chapter" href="Type_equal.html">
+<link title="Union_find" rel="Chapter" href="Union_find.html">
+<link title="Unique_id_intf" rel="Chapter" href="Unique_id_intf.html">
+<link title="Unique_id" rel="Chapter" href="Unique_id.html">
+<link title="Unit" rel="Chapter" href="Unit.html">
+<link title="Univ_map" rel="Chapter" href="Univ_map.html">
+<link title="Univ" rel="Chapter" href="Univ.html">
+<link title="Unpack_buffer" rel="Chapter" href="Unpack_buffer.html">
+<link title="Validated_intf" rel="Chapter" href="Validated_intf.html">
+<link title="Validated" rel="Chapter" href="Validated.html">
+<link title="Validate" rel="Chapter" href="Validate.html">
+<link title="With_return" rel="Chapter" href="With_return.html">
+<link title="Word_size" rel="Chapter" href="Word_size.html"><link title="Tail-recursive implementations of standard List operations" rel="Section" href="#6_TailrecursiveimplementationsofstandardListoperations">
+<link title="Tail-recursive implementations of standard List operations" rel="Section" href="#6_TailrecursiveimplementationsofstandardListoperations">
+<title>Core_list</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Core_lazy.html" title="Core_lazy">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="Core_map_intf.html" title="Core_map_intf">Next</a>
+</div>
+<h1>Module <a href="type_Core_list.html">Core_list</a></h1>
+<pre><span class="keyword">module</span> Core_list: <code class="code">sig</code> <a href="Core_list.html">..</a> <code class="code">end</code></pre><div class="info">
+Tail recursive version of standard List functions, plus additional operations.<br>
+</div>
+<hr width="100%">
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> = <code class="type">'a list</code> </pre>
+
+<pre><span class="keyword">include</span> <a href="Container.S1.html">Container.S1</a></pre>
+<pre><span class="keyword">include</span> <a href="Monad.S.html">Monad.S</a></pre>
+<pre><span id="VALof_list"><span class="keyword">val</span> of_list</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> 'a <a href="Core_list.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">of_list</code> is the identity function.  It is useful so that the <code class="code">List</code> module matches
+    the same signature that other container modules do, namely:
+<p>
+
+    <pre class="codepre"><code class="code">      val of_list : 'a List.t -&gt; 'a t
+    </code></pre><br>
+</div>
+<pre><span id="VALnth"><span class="keyword">val</span> nth</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> int -> 'a option</code></pre><pre><span id="VALnth_exn"><span class="keyword">val</span> nth_exn</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> int -> 'a</code></pre><div class="info">
+Return the <code class="code">n</code>-th element of the given list.
+    The first element (head of the list) is at position 0.
+    Raise <code class="code">Failure "nth"</code> if the list is too short.
+    Raise <code class="code">Invalid_argument "List.nth"</code> if <code class="code">n</code> is negative.<br>
+</div>
+<pre><span id="VALrev"><span class="keyword">val</span> rev</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> 'a <a href="Core_list.html#TYPEt">t</a></code></pre><div class="info">
+List reversal.<br>
+</div>
+<pre><span id="VALrev_append"><span class="keyword">val</span> rev_append</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> 'a <a href="Core_list.html#TYPEt">t</a> -> 'a <a href="Core_list.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">List.rev_append l1 l2</code> reverses <code class="code">l1</code> and concatenates it to <code class="code">l2</code>.  This is equivalent
+    to <code class="code">(</code><code class="code">List.rev</code><code class="code"> l1) @ l2</code>, but <code class="code">rev_append</code> is more efficient.<br>
+</div>
+<pre><span id="VALunordered_append"><span class="keyword">val</span> unordered_append</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> 'a <a href="Core_list.html#TYPEt">t</a> -> 'a <a href="Core_list.html#TYPEt">t</a></code></pre><pre><span id="VALrev_map"><span class="keyword">val</span> rev_map</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> f:('a -> 'b) -> 'b <a href="Core_list.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">List.rev_map f l</code> gives the same result as
+   <code class="code">List.rev</code><code class="code"> (</code><code class="code">ListLabels.map</code><code class="code"> f l)</code>, but is more efficient.<br>
+</div>
+<pre><span id="VALfold_left"><span class="keyword">val</span> fold_left</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> init:'b -> f:('b -> 'a -> 'b) -> 'b</code></pre><pre><span id="VALiter2_exn"><span class="keyword">val</span> iter2_exn</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> 'b <a href="Core_list.html#TYPEt">t</a> -> f:('a -> 'b -> unit) -> unit</code></pre><div class="info">
+<code class="code">List.iter2_exn f [a1; ...; an] [b1; ...; bn]</code> calls in turn
+    <code class="code">f a1 b1; ...; f an bn</code>.
+    Raise <code class="code">Invalid_argument</code> if the two lists have
+    different lengths.<br>
+</div>
+<pre><span id="VALrev_map2_exn"><span class="keyword">val</span> rev_map2_exn</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> 'b <a href="Core_list.html#TYPEt">t</a> -> f:('a -> 'b -> 'c) -> 'c <a href="Core_list.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">List.rev_map2_exn f l1 l2</code> gives the same result as
+   <code class="code">List.rev</code><code class="code"> (</code><code class="code">List.map2_exn</code><code class="code"> f l1 l2)</code>, but is more efficient.<br>
+</div>
+<pre><span id="VALfold2_exn"><span class="keyword">val</span> fold2_exn</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> 'b <a href="Core_list.html#TYPEt">t</a> -> init:'c -> f:('c -> 'a -> 'b -> 'c) -> 'c</code></pre><div class="info">
+<code class="code">List.fold2_exn f a [b1; ...; bn] [c1; ...; cn]</code> is
+   <code class="code">f (... (f (f a b1 c1) b2 c2) ...) bn cn</code>.
+   Raise <code class="code">Invalid_argument</code> if the two lists have
+   different lengths.<br>
+</div>
+<pre><span id="VALfor_all2_exn"><span class="keyword">val</span> for_all2_exn</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> 'b <a href="Core_list.html#TYPEt">t</a> -> f:('a -> 'b -> bool) -> bool</code></pre><div class="info">
+Same as <code class="code">List.for_all</code>, but for a two-argument predicate.
+   Raise <code class="code">Invalid_argument</code> if the two lists have
+   different lengths.<br>
+</div>
+<pre><span id="VALexists2_exn"><span class="keyword">val</span> exists2_exn</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> 'b <a href="Core_list.html#TYPEt">t</a> -> f:('a -> 'b -> bool) -> bool</code></pre><div class="info">
+Same as <code class="code">List.exists</code>, but for a two-argument predicate.  Raise
+    <code class="code">Invalid_argument</code> if the end of one list is reached before the end of the
+    other.<br>
+</div>
+<pre><span id="VALfilter"><span class="keyword">val</span> filter</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> f:('a -> bool) -> 'a <a href="Core_list.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">filter p l</code> returns all the elements of the list <code class="code">l</code> that satisfy the predicate <code class="code">p</code>.
+    The order of the elements in the input list is preserved.<br>
+</div>
+<pre><span id="VALrev_filter"><span class="keyword">val</span> rev_filter</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> f:('a -> bool) -> 'a <a href="Core_list.html#TYPEt">t</a></code></pre><div class="info">
+Like <code class="code">filter</code>, but reverses the order of the input list<br>
+</div>
+<pre><span id="VALfilteri"><span class="keyword">val</span> filteri</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> f:(int -> 'a -> bool) -> 'a <a href="Core_list.html#TYPEt">t</a></code></pre><pre><span id="VALpartition_map"><span class="keyword">val</span> partition_map</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -><br>       f:('a -> [ `Fst of 'b | `Snd of 'c ]) -> 'b <a href="Core_list.html#TYPEt">t</a> * 'c <a href="Core_list.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">partition_map t ~f</code> partitions <code class="code">t</code> according to <code class="code">f</code>.<br>
+</div>
+<pre><span id="VALpartition_tf"><span class="keyword">val</span> partition_tf</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> f:('a -> bool) -> 'a <a href="Core_list.html#TYPEt">t</a> * 'a <a href="Core_list.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">partition_tf p l</code> returns a pair of lists <code class="code">(l1, l2)</code>, where <code class="code">l1</code> is the list of all the
+    elements of <code class="code">l</code> that satisfy the predicate <code class="code">p</code>, and <code class="code">l2</code> is the list of all the
+    elements of <code class="code">l</code> that do not satisfy <code class="code">p</code>.  The order of the elements in the input list
+    is preserved.  The "tf" suffix is mnemonic to remind readers at a call that the result
+    is (trues, falses).<br>
+</div>
+<pre><span id="VALsplit_n"><span class="keyword">val</span> split_n</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> int -> 'a <a href="Core_list.html#TYPEt">t</a> * 'a <a href="Core_list.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">split_n n [e1; ...; em]</code> is <code class="code">([e1; ...; en], [en+1; ...; em])</code>.  If <code class="code">n &gt; m</code>,
+    <code class="code">([e1; ...; em], [])</code> is returned.  If <code class="code">n &lt; 0</code>, <code class="code">([], [e1; ...; em])</code> is
+    returned.<br>
+</div>
+<pre><span id="VALsort"><span class="keyword">val</span> sort</span> : <code class="type">cmp:('a -> 'a -> int) -> 'a <a href="Core_list.html#TYPEt">t</a> -> 'a <a href="Core_list.html#TYPEt">t</a></code></pre><div class="info">
+Sort a list in increasing order according to a comparison function.  The comparison
+    function must return 0 if its arguments compare as equal, a positive integer if the
+    first is greater, and a negative integer if the first is smaller (see Array.sort for a
+    complete specification).  For example, <code class="code">Pervasives.compare</code> is a suitable comparison
+    function.
+<p>
+
+    The current implementation uses Merge Sort. It runs in constant heap space and
+    logarithmic stack space.
+<p>
+
+    Presently, the sort is stable, meaning that two equal elements in the input will be in
+    the same order in the output.<br>
+</div>
+<pre><span id="VALstable_sort"><span class="keyword">val</span> stable_sort</span> : <code class="type">cmp:('a -> 'a -> int) -> 'a <a href="Core_list.html#TYPEt">t</a> -> 'a <a href="Core_list.html#TYPEt">t</a></code></pre><div class="info">
+Same as sort, but guaranteed to be stable<br>
+</div>
+<pre><span id="VALmerge"><span class="keyword">val</span> merge</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> 'a <a href="Core_list.html#TYPEt">t</a> -> cmp:('a -> 'a -> int) -> 'a <a href="Core_list.html#TYPEt">t</a></code></pre><div class="info">
+Merge two lists: assuming that <code class="code">l1</code> and <code class="code">l2</code> are sorted according to the comparison
+    function <code class="code">cmp</code>, <code class="code">merge cmp l1 l2</code> will return a sorted list containting all the
+    elements of <code class="code">l1</code> and <code class="code">l2</code>.  If several elements compare equal, the elements of <code class="code">l1</code>
+    will be before the elements of <code class="code">l2</code>.<br>
+</div>
+<pre><span id="VALhd"><span class="keyword">val</span> hd</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> 'a option</code></pre><pre><span id="VALtl"><span class="keyword">val</span> tl</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> 'a <a href="Core_list.html#TYPEt">t</a> option</code></pre><pre><span id="VALhd_exn"><span class="keyword">val</span> hd_exn</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> 'a</code></pre><div class="info">
+Return the first element of the given list. Raise
+    <code class="code">Failure "hd"</code> if the list is empty.<br>
+</div>
+<pre><span id="VALtl_exn"><span class="keyword">val</span> tl_exn</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> 'a <a href="Core_list.html#TYPEt">t</a></code></pre><div class="info">
+Return the given list without its first element. Raise <code class="code">Failure "tl"</code> if the list is
+    empty.<br>
+</div>
+<pre><span id="VALfindi"><span class="keyword">val</span> findi</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> f:(int -> 'a -> bool) -> (int * 'a) option</code></pre><pre><span id="VALfind_exn"><span class="keyword">val</span> find_exn</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> f:('a -> bool) -> 'a</code></pre><div class="info">
+<code class="code">find_exn t ~f</code> returns the first element of <code class="code">t</code> that satisfies <code class="code">f</code>.  It raises
+    <code class="code">Not_found</code> if there is no such element.<br>
+</div>
+<br>
+<h6 id="6_TailrecursiveimplementationsofstandardListoperations">Tail-recursive implementations of standard List operations</h6><br>
+<pre><span id="VALappend"><span class="keyword">val</span> append</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> 'a <a href="Core_list.html#TYPEt">t</a> -> 'a <a href="Core_list.html#TYPEt">t</a></code></pre><div class="info">
+E.g. <code class="code">append [1; 2] [3; 4; 5]</code> is <code class="code">[1; 2; 3; 4; 5]</code><br>
+</div>
+<pre><span id="VALmap"><span class="keyword">val</span> map</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> f:('a -> 'b) -> 'b <a href="Core_list.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">List.map f [a1; ...; an]</code> applies function <code class="code">f</code> to <code class="code">a1, ..., an</code>, and builds the list
+    <code class="code">[f a1; ...; f an]</code> with the results returned by <code class="code">f</code>.<br>
+</div>
+<pre><span id="VALconcat_map"><span class="keyword">val</span> concat_map</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> f:('a -> 'b <a href="Core_list.html#TYPEt">t</a>) -> 'b <a href="Core_list.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">concat_map t ~f</code> is <code class="code">concat (map t ~f)</code>, except that there is no guarantee about the
+    order in which <code class="code">f</code> is applied to the elements of <code class="code">t</code>.<br>
+</div>
+<pre><span id="VALconcat_mapi"><span class="keyword">val</span> concat_mapi</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> f:(int -> 'a -> 'b <a href="Core_list.html#TYPEt">t</a>) -> 'b <a href="Core_list.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">concat_mapi t ~f</code> is like concat_map, but passes the index as an argument<br>
+</div>
+<pre><span id="VALmap2_exn"><span class="keyword">val</span> map2_exn</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> 'b <a href="Core_list.html#TYPEt">t</a> -> f:('a -> 'b -> 'c) -> 'c <a href="Core_list.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">List.map2_exn f [a1; ...; an] [b1; ...; bn]</code> is <code class="code">[f a1 b1; ...; f an bn]</code>.  Raise
+    <code class="code">Invalid_argument</code> if the two lists have different lengths.<br>
+</div>
+<pre><span id="VALrev_map3_exn"><span class="keyword">val</span> rev_map3_exn</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -><br>       'b <a href="Core_list.html#TYPEt">t</a> -><br>       'c <a href="Core_list.html#TYPEt">t</a> -> f:('a -> 'b -> 'c -> 'd) -> 'd <a href="Core_list.html#TYPEt">t</a></code></pre><pre><span id="VALmap3_exn"><span class="keyword">val</span> map3_exn</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -><br>       'b <a href="Core_list.html#TYPEt">t</a> -><br>       'c <a href="Core_list.html#TYPEt">t</a> -> f:('a -> 'b -> 'c -> 'd) -> 'd <a href="Core_list.html#TYPEt">t</a></code></pre><pre><span id="VALrev_map_append"><span class="keyword">val</span> rev_map_append</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> 'b <a href="Core_list.html#TYPEt">t</a> -> f:('a -> 'b) -> 'b <a href="Core_list.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">rev_map_append ~f l1 l2</code> reverses <code class="code">l1</code> mapping <code class="code">f</code> over each
+    element, and appends the result to the front of <code class="code">l2</code>.<br>
+</div>
+<pre><span id="VALfold_right"><span class="keyword">val</span> fold_right</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> f:('a -> 'b -> 'b) -> init:'b -> 'b</code></pre><div class="info">
+<code class="code">List.fold_right f [a1; ...; an] b</code> is
+    <code class="code">f a1 (f a2 (... (f an b) ...))</code>.<br>
+</div>
+<pre><span id="VALunzip"><span class="keyword">val</span> unzip</span> : <code class="type">('a * 'b) <a href="Core_list.html#TYPEt">t</a> -> 'a <a href="Core_list.html#TYPEt">t</a> * 'b <a href="Core_list.html#TYPEt">t</a></code></pre><div class="info">
+Transform a list of pairs into a pair of lists:
+    <code class="code">unzip [(a1,b1); ...; (an,bn)]</code> is <code class="code">([a1; ...; an], [b1; ...; bn])</code>.<br>
+</div>
+<pre><span id="VALzip"><span class="keyword">val</span> zip</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> 'b <a href="Core_list.html#TYPEt">t</a> -> ('a * 'b) <a href="Core_list.html#TYPEt">t</a> option</code></pre><div class="info">
+Transform a pair of lists into an (optional) list of pairs:
+    <code class="code">zip [a1; ...; an] [b1; ...; bn]</code> is <code class="code">[(a1,b1); ...; (an,bn)]</code>.
+    Returns None if the two lists have different lengths.<br>
+</div>
+<pre><span id="VALzip_exn"><span class="keyword">val</span> zip_exn</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> 'b <a href="Core_list.html#TYPEt">t</a> -> ('a * 'b) <a href="Core_list.html#TYPEt">t</a></code></pre><pre><span id="VALmapi"><span class="keyword">val</span> mapi</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> f:(int -> 'a -> 'b) -> 'b <a href="Core_list.html#TYPEt">t</a></code></pre><div class="info">
+mapi is just like map, but it also passes in the index of each
+    element as the first argument to the mapped function. Tail-recursive.<br>
+</div>
+<pre><span id="VALrev_mapi"><span class="keyword">val</span> rev_mapi</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> f:(int -> 'a -> 'b) -> 'b <a href="Core_list.html#TYPEt">t</a></code></pre><pre><span id="VALiteri"><span class="keyword">val</span> iteri</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> f:(int -> 'a -> unit) -> unit</code></pre><div class="info">
+iteri is just like iter, but it also passes in the index of each
+    element as the first argument to the iter'd function. Tail-recursive.<br>
+</div>
+<pre><span id="VALfoldi"><span class="keyword">val</span> foldi</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> f:(int -> 'b -> 'a -> 'b) -> init:'b -> 'b</code></pre><div class="info">
+foldi is just like fold, but it also passes in the index of each
+    element as the first argument to the folded function.  Tail-recursive.<br>
+</div>
+<pre><span id="VALreduce_exn"><span class="keyword">val</span> reduce_exn</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> f:('a -> 'a -> 'a) -> 'a</code></pre><div class="info">
+<code class="code">reduce_exn f [a1; ...; an]</code> is <code class="code">f (... (f (f a1 a2) a3) ...) an</code>.
+    It fails on the empty list.  Tail recursive.<br>
+</div>
+<pre><span id="VALreduce"><span class="keyword">val</span> reduce</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> f:('a -> 'a -> 'a) -> 'a option</code></pre><pre><span id="VALgroup"><span class="keyword">val</span> group</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> break:('a -> 'a -> bool) -> 'a <a href="Core_list.html#TYPEt">t</a> <a href="Core_list.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">group l ~break</code> returns a list of lists (i.e., groups) whose concatenation is
+    equal to the original list.  Each group is broken where break returns true on
+    a pair of successive elements.
+<p>
+
+    Example
+<p>
+
+    group ~break:(&lt;&gt;) <code class="code">'M';'i';'s';'s';'i';'s';'s';'i';'p';'p';'i'</code> -&gt;
+<p>
+
+    <code class="code">['M'];['i'];['s';'s'];['i'];['s';'s'];['i'];['p';'p'];['i']</code><br>
+</div>
+<pre><span id="VALgroupi"><span class="keyword">val</span> groupi</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -><br>       break:(int -> 'a -> 'a -> bool) -> 'a <a href="Core_list.html#TYPEt">t</a> <a href="Core_list.html#TYPEt">t</a></code></pre><div class="info">
+This is just like group, except that you get the index in the original list of the
+    current element along with the two elements.
+<p>
+
+    Example, group the chars of Mississippi into triples
+<p>
+
+    groupi ~break:(fun i _ _ -&gt; i mod 3 = 0)
+    <code class="code">'M';'i';'s';'s';'i';'s';'s';'i';'p';'p';'i'</code> -&gt;
+<p>
+
+    <code class="code">['M'; 'i'; 's']; ['s'; 'i'; 's']; ['s'; 'i'; 'p']; ['p'; 'i']</code><br>
+</div>
+<pre><span id="VALlast"><span class="keyword">val</span> last</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> 'a option</code></pre><div class="info">
+The final element of a list.  The _exn version raises Invalid_argument on the empty
+    list.<br>
+</div>
+<pre><span id="VALlast_exn"><span class="keyword">val</span> last_exn</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> 'a</code></pre><pre><span id="VALremove_consecutive_duplicates"><span class="keyword">val</span> remove_consecutive_duplicates</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> equal:('a -> 'a -> bool) -> 'a <a href="Core_list.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">remove_consecutive_duplicates</code>. The same list with consecutive duplicates removed.
+    The relative order of the other elements is unaffected.<br>
+</div>
+<pre><span id="VALdedup"><span class="keyword">val</span> dedup</span> : <code class="type">?compare:('a -> 'a -> int) -> 'a <a href="Core_list.html#TYPEt">t</a> -> 'a <a href="Core_list.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">dedup</code> (de-duplicate).  The same list with duplicates removed, but the
+    order is not guaranteed.<br>
+</div>
+<pre><span id="VALcontains_dup"><span class="keyword">val</span> contains_dup</span> : <code class="type">?compare:('a -> 'a -> int) -> 'a <a href="Core_list.html#TYPEt">t</a> -> bool</code></pre><div class="info">
+<code class="code">contains_dup</code> True if there are any two elements in the list which are the same.<br>
+</div>
+<pre><span id="VALfind_a_dup"><span class="keyword">val</span> find_a_dup</span> : <code class="type">?compare:('a -> 'a -> int) -> 'a <a href="Core_list.html#TYPEt">t</a> -> 'a option</code></pre><div class="info">
+<code class="code">find_a_dup</code> returns a duplicate from the list (no guarantees about which
+    duplicate you get), or None if there are no dups.<br>
+</div>
+<pre><span id="EXCEPTIONDuplicate_found"><span class="keyword">exception</span> Duplicate_found</span> <span class="keyword">of</span> <code class="type">(unit -> <a href="../sexplib/Sexp.html">Sexplib.Sexp</a>.t) * string</code></pre>
+<pre><span id="VALexn_if_dup"><span class="keyword">val</span> exn_if_dup</span> : <code class="type">?compare:('a -> 'a -> int) -><br>       ?context:string -> 'a <a href="Core_list.html#TYPEt">t</a> -> to_sexp:('a -> <a href="../sexplib/Sexp.html">Sexplib.Sexp</a>.t) -> unit</code></pre><div class="info">
+<code class="code">exn_if_dup ?compare ?context t ~to_sexp</code> will run <code class="code">find_a_dup</code> on <code class="code">t</code>, and raise
+    <code class="code">Duplicate_found</code> if a duplicate is found.  The <code class="code">context</code> is the second argument of
+    the exception<br>
+</div>
+<pre><span id="VALcount"><span class="keyword">val</span> count</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> f:('a -> bool) -> int</code></pre><div class="info">
+<code class="code">count f l</code> is the number of elements in <code class="code">l</code> that satisfy the
+    predicate <code class="code">f</code>.<br>
+</div>
+<pre><span id="VALrange"><span class="keyword">val</span> range</span> : <code class="type">?stride:int -><br>       ?start:[ `exclusive | `inclusive ] -><br>       ?stop:[ `exclusive | `inclusive ] -> int -> int -> int <a href="Core_list.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">range ?stride ?start ?stop start_i stop_i</code> is the list of integers from <code class="code">start_i</code> to
+    <code class="code">stop_i</code>, stepping by <code class="code">stride</code>.  If <code class="code">stride</code> &lt; 0 then we need <code class="code">start_i</code> &gt; <code class="code">stop_i</code> for
+    the result to be nonempty (or <code class="code">start_i</code> = <code class="code">stop_i</code> in the case where both bounds are
+    inclusive).<br>
+</div>
+<pre><span id="VALinit"><span class="keyword">val</span> init</span> : <code class="type">int -> f:(int -> 'a) -> 'a <a href="Core_list.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">init f n</code> is <code class="code">[(f 0); (f 1); ...; (f (n-1))]</code>. It is an error if <code class="code">n &lt; 0</code>.<br>
+</div>
+<pre><span id="VALrev_filter_map"><span class="keyword">val</span> rev_filter_map</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> f:('a -> 'b option) -> 'b <a href="Core_list.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">rev_filter_map f l</code> is the reversed sublist of <code class="code">l</code> containing
+    only elements for which <code class="code">f</code> returns <code class="code">Some e</code>.<br>
+</div>
+<pre><span id="VALrev_filter_mapi"><span class="keyword">val</span> rev_filter_mapi</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> f:(int -> 'a -> 'b option) -> 'b <a href="Core_list.html#TYPEt">t</a></code></pre><div class="info">
+rev_filter_mapi is just like rev_filter_map, but it also passes in the index of each
+    element as the first argument to the mapped function. Tail-recursive.<br>
+</div>
+<pre><span id="VALfilter_map"><span class="keyword">val</span> filter_map</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> f:('a -> 'b option) -> 'b <a href="Core_list.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">filter_map f l</code> is the sublist of <code class="code">l</code> containing only elements
+    for which <code class="code">f</code> returns <code class="code">Some e</code>.<br>
+</div>
+<pre><span id="VALfilter_mapi"><span class="keyword">val</span> filter_mapi</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> f:(int -> 'a -> 'b option) -> 'b <a href="Core_list.html#TYPEt">t</a></code></pre><div class="info">
+filter_mapi is just like filter_map, but it also passes in the index of each
+    element as the first argument to the mapped function. Tail-recursive.<br>
+</div>
+<pre><span id="VALfilter_opt"><span class="keyword">val</span> filter_opt</span> : <code class="type">'a option <a href="Core_list.html#TYPEt">t</a> -> 'a <a href="Core_list.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">filter_opt l</code> is the sublist of <code class="code">l</code> containing only elements
+    which are <code class="code">Some e</code>.  In other words, <code class="code">filter_opt l</code> = <code class="code">filter_map ~f:ident l</code>.<br>
+</div>
+<pre><span class="keyword">module</span> <a href="Core_list.Assoc.html">Assoc</a>: <code class="code">sig</code> <a href="Core_list.Assoc.html">..</a> <code class="code">end</code></pre><br>
+Note that <code class="code">sub</code>, unlike <code class="code">slice</code>, doesn't use python-style indices!<br>
+<pre><span id="VALsub"><span class="keyword">val</span> sub</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> pos:int -> len:int -> 'a <a href="Core_list.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">sub pos len l</code> is the <code class="code">len</code>-element sublist of <code class="code">l</code>, starting at <code class="code">pos</code>.<br>
+</div>
+<pre><span id="VALslice"><span class="keyword">val</span> slice</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> int -> int -> 'a <a href="Core_list.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">slice l start stop</code> returns a new list including elements <code class="code">l.(start)</code> through
+    <code class="code">l.(stop-1)</code>, normalized python-style.<br>
+</div>
+<pre><span id="VALtake"><span class="keyword">val</span> take</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> int -> 'a <a href="Core_list.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">take l n</code> is <code class="code">fst (split_n n l)</code>.
+    <code class="code">drop l n</code> is <code class="code">snd (split_n n l)</code>.<br>
+</div>
+<pre><span id="VALdrop"><span class="keyword">val</span> drop</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> int -> 'a <a href="Core_list.html#TYPEt">t</a></code></pre><pre><span id="VALtake_while"><span class="keyword">val</span> take_while</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> f:('a -> bool) -> 'a <a href="Core_list.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">take_while l ~f</code> returns the longest prefix of <code class="code">l</code> for which <code class="code">f</code> is <code class="code">true</code>.<br>
+</div>
+<pre><span id="VALdrop_while"><span class="keyword">val</span> drop_while</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> f:('a -> bool) -> 'a <a href="Core_list.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">drop_while l ~f</code> drops the longest prefix of <code class="code">l</code> for which <code class="code">f</code> is <code class="code">true</code>.<br>
+</div>
+<pre><span id="VALsplit_while"><span class="keyword">val</span> split_while</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> f:('a -> bool) -> 'a <a href="Core_list.html#TYPEt">t</a> * 'a <a href="Core_list.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">split_while xs ~f = (take_while xs ~f, drop_while xs ~f)</code><br>
+</div>
+<pre><span id="VALconcat"><span class="keyword">val</span> concat</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> <a href="Core_list.html#TYPEt">t</a> -> 'a <a href="Core_list.html#TYPEt">t</a></code></pre><div class="info">
+Concatenate a list of lists.  The elements of the argument are all concatenated
+    together (in the same order) to give the result.  Tail recursive over outer and inner
+    lists.<br>
+</div>
+<pre><span id="VALconcat_no_order"><span class="keyword">val</span> concat_no_order</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> <a href="Core_list.html#TYPEt">t</a> -> 'a <a href="Core_list.html#TYPEt">t</a></code></pre><div class="info">
+Same as <code class="code">concat</code> but faster and without preserving any ordering (ie for lists that are
+    essentially viewed as multi-sets.<br>
+</div>
+<pre><span id="VALcons"><span class="keyword">val</span> cons</span> : <code class="type">'a -> 'a <a href="Core_list.html#TYPEt">t</a> -> 'a <a href="Core_list.html#TYPEt">t</a></code></pre><pre><span id="VALcartesian_product"><span class="keyword">val</span> cartesian_product</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> 'b <a href="Core_list.html#TYPEt">t</a> -> ('a * 'b) <a href="Core_list.html#TYPEt">t</a></code></pre><pre><span id="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type">f:('a -> string) -> 'a <a href="Core_list.html#TYPEt">t</a> -> string</code></pre><pre><span id="VALpermute"><span class="keyword">val</span> permute</span> : <code class="type">?random_state:<a href="Core_random.State.html#TYPEt">Core_random.State.t</a> -> 'a <a href="Core_list.html#TYPEt">t</a> -> 'a <a href="Core_list.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">permute ?random_state t</code> returns a permutation of <code class="code">t</code>.
+<p>
+
+    <code class="code">permute</code> side affects <code class="code">random_state</code> by repeated calls to <code class="code">Random.State.int</code>.
+    If <code class="code">random_state</code> is not supplied, <code class="code">permute</code> uses <code class="code">Random.State.default</code>.<br>
+</div>
+<pre><span id="VALis_sorted"><span class="keyword">val</span> is_sorted</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> compare:('a -> 'a -> int) -> bool</code></pre><pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> 'a <a href="Core_list.html#TYPEt">t</a> -> cmp:('a -> 'a -> int) -> int</code></pre><div class="info">
+lexicographic<br>
+</div>
+<pre><span id="VALequal"><span class="keyword">val</span> equal</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> -> 'a <a href="Core_list.html#TYPEt">t</a> -> equal:('a -> 'a -> bool) -> bool</code></pre><pre><span class="keyword">module</span> <a href="Core_list.Infix.html">Infix</a>: <code class="code">sig</code> <a href="Core_list.Infix.html">..</a> <code class="code">end</code></pre><pre><span id="VALtranspose"><span class="keyword">val</span> transpose</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> <a href="Core_list.html#TYPEt">t</a> -> 'a <a href="Core_list.html#TYPEt">t</a> <a href="Core_list.html#TYPEt">t</a> option</code></pre><div class="info">
+<code class="code">transpose m</code> transposes the rows and columns of the matrix <code class="code">m</code>,
+    considered as either a row of column lists or (dually) a column of row lists.
+<p>
+
+    Example,
+<p>
+
+    transpose <code class="code">[1;2;3];[4;5;6]</code> = <code class="code">[1;4];[2;5];[3;6]</code>
+<p>
+
+    On non-empty rectangular matrices, <code class="code">transpose</code> is an involution
+    (i.e., <code class="code">transpose (transpose m) = m</code>).  Transpose returns None when called
+    on lists of lists with non-uniform lengths.
+*<br>
+</div>
+<pre><span id="VALtranspose_exn"><span class="keyword">val</span> transpose_exn</span> : <code class="type">'a <a href="Core_list.html#TYPEt">t</a> <a href="Core_list.html#TYPEt">t</a> -> 'a <a href="Core_list.html#TYPEt">t</a> <a href="Core_list.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">transpose_exn</code> transposes the rows and columns of its argument, throwing exception if
+    the list is not rectangular.
+*<br>
+</div>
+<pre><span id="VALintersperse"><span class="keyword">val</span> intersperse</span> : <code class="type">'a list -> sep:'a -> 'a list</code></pre><div class="info">
+<code class="code">intersperse xs ~sep</code> places <code class="code">sep</code> between adjacent elements of <code class="code">xs</code>.
+    e.g. <code class="code">intersperse [1;2;3] ~sep:0 = [1;0;2;0;3]</code><br>
+</div>
+<pre><span id="VALt_of_sexp"><span class="keyword">val</span> t_of_sexp</span> : <code class="type">(<a href="../sexplib/Sexp.html">Sexplib.Sexp</a>.t -> 'a) -> <a href="../sexplib/Sexp.html">Sexplib.Sexp</a>.t -> 'a <a href="Core_list.html#TYPEt">t</a></code></pre><pre><span id="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('a -> <a href="../sexplib/Sexp.html">Sexplib.Sexp</a>.t) -> 'a <a href="Core_list.html#TYPEt">t</a> -> <a href="../sexplib/Sexp.html">Sexplib.Sexp</a>.t</code></pre><pre><span id="VALbin_t"><span class="keyword">val</span> bin_t</span> : <code class="type">'a <a href="../bin_prot/Type_class.html">Bin_prot.Type_class</a>.t -> 'a <a href="Core_list.html#TYPEt">t</a> <a href="../bin_prot/Type_class.html">Bin_prot.Type_class</a>.t</code></pre><pre><span id="VALbin_read_t"><span class="keyword">val</span> bin_read_t</span> : <code class="type">'a <a href="../bin_prot/Unsafe_read_c.html">Bin_prot.Unsafe_read_c</a>.reader -> 'a <a href="Core_list.html#TYPEt">t</a> <a href="../bin_prot/Read_ml.html">Bin_prot.Read_ml</a>.reader</code></pre><pre><span id="VALbin_read_t_"><span class="keyword">val</span> bin_read_t_</span> : <code class="type">'a <a href="../bin_prot/Unsafe_read_c.html">Bin_prot.Unsafe_read_c</a>.reader -><br>       'a <a href="Core_list.html#TYPEt">t</a> <a href="../bin_prot/Unsafe_read_c.html">Bin_prot.Unsafe_read_c</a>.reader</code></pre><pre><span id="VALbin_read_t__"><span class="keyword">val</span> bin_read_t__</span> : <code class="type">'a <a href="../bin_prot/Unsafe_read_c.html">Bin_prot.Unsafe_read_c</a>.reader -><br>       (int -> 'a <a href="Core_list.html#TYPEt">t</a>) <a href="../bin_prot/Unsafe_read_c.html">Bin_prot.Unsafe_read_c</a>.reader</code></pre><pre><span id="VALbin_reader_t"><span class="keyword">val</span> bin_reader_t</span> : <code class="type">'a <a href="../bin_prot/Type_class.html">Bin_prot.Type_class</a>.reader -> 'a <a href="Core_list.html#TYPEt">t</a> <a href="../bin_prot/Type_class.html">Bin_prot.Type_class</a>.reader</code></pre><pre><span id="VALbin_size_t"><span class="keyword">val</span> bin_size_t</span> : <code class="type">'a <a href="../bin_prot/Size.html">Bin_prot.Size</a>.sizer -> 'a <a href="Core_list.html#TYPEt">t</a> <a href="../bin_prot/Size.html">Bin_prot.Size</a>.sizer</code></pre><pre><span id="VALbin_write_t"><span class="keyword">val</span> bin_write_t</span> : <code class="type">'a <a href="../bin_prot/Unsafe_write_c.html">Bin_prot.Unsafe_write_c</a>.writer -> 'a <a href="Core_list.html#TYPEt">t</a> <a href="../bin_prot/Write_ml.html">Bin_prot.Write_ml</a>.writer</code></pre><pre><span id="VALbin_write_t_"><span class="keyword">val</span> bin_write_t_</span> : <code class="type">'a <a href="../bin_prot/Unsafe_write_c.html">Bin_prot.Unsafe_write_c</a>.writer -><br>       'a <a href="Core_list.html#TYPEt">t</a> <a href="../bin_prot/Unsafe_write_c.html">Bin_prot.Unsafe_write_c</a>.writer</code></pre><pre><span id="VALbin_writer_t"><span class="keyword">val</span> bin_writer_t</span> : <code class="type">'a <a href="../bin_prot/Type_class.html">Bin_prot.Type_class</a>.writer -> 'a <a href="Core_list.html#TYPEt">t</a> <a href="../bin_prot/Type_class.html">Bin_prot.Type_class</a>.writer</code></pre><br>
+<code class="code">of_list</code> is the identity function.  It is useful so that the <code class="code">List</code> module matches
+    the same signature that other container modules do, namely:
+<p>
+
+    <pre class="codepre"><code class="code">      val of_list : 'a List.t -&gt; 'a t
+    </code></pre><br>
+<br>
+Return the <code class="code">n</code>-th element of the given list.
+    The first element (head of the list) is at position 0.
+    Raise <code class="code">Failure "nth"</code> if the list is too short.
+    Raise <code class="code">Invalid_argument "List.nth"</code> if <code class="code">n</code> is negative.<br>
+<br>
+List reversal.<br>
+<br>
+<code class="code">List.rev_append l1 l2</code> reverses <code class="code">l1</code> and concatenates it to <code class="code">l2</code>.  This is equivalent
+    to <code class="code">(</code><code class="code">List.rev</code><code class="code"> l1) @ l2</code>, but <code class="code">rev_append</code> is more efficient.<br>
+<br>
+<code class="code">List.rev_map f l</code> gives the same result as
+   <code class="code">List.rev</code><code class="code"> (</code><code class="code">ListLabels.map</code><code class="code"> f l)</code>, but is more efficient.<br>
+<br>
+<code class="code">List.iter2_exn f [a1; ...; an] [b1; ...; bn]</code> calls in turn
+    <code class="code">f a1 b1; ...; f an bn</code>.
+    Raise <code class="code">Invalid_argument</code> if the two lists have
+    different lengths.<br>
+<br>
+<code class="code">List.rev_map2_exn f l1 l2</code> gives the same result as
+   <code class="code">List.rev</code><code class="code"> (</code><code class="code">List.map2_exn</code><code class="code"> f l1 l2)</code>, but is more efficient.<br>
+<br>
+<code class="code">List.fold2_exn f a [b1; ...; bn] [c1; ...; cn]</code> is
+   <code class="code">f (... (f (f a b1 c1) b2 c2) ...) bn cn</code>.
+   Raise <code class="code">Invalid_argument</code> if the two lists have
+   different lengths.<br>
+<br>
+Same as <code class="code">List.for_all</code>, but for a two-argument predicate.
+   Raise <code class="code">Invalid_argument</code> if the two lists have
+   different lengths.<br>
+<br>
+Same as <code class="code">List.exists</code>, but for a two-argument predicate.  Raise
+    <code class="code">Invalid_argument</code> if the end of one list is reached before the end of the
+    other.<br>
+<br>
+<code class="code">filter p l</code> returns all the elements of the list <code class="code">l</code> that satisfy the predicate <code class="code">p</code>.
+    The order of the elements in the input list is preserved.<br>
+<br>
+Like <code class="code">filter</code>, but reverses the order of the input list<br>
+<br>
+<code class="code">partition_map t ~f</code> partitions <code class="code">t</code> according to <code class="code">f</code>.<br>
+<br>
+<code class="code">partition_tf p l</code> returns a pair of lists <code class="code">(l1, l2)</code>, where <code class="code">l1</code> is the list of all the
+    elements of <code class="code">l</code> that satisfy the predicate <code class="code">p</code>, and <code class="code">l2</code> is the list of all the
+    elements of <code class="code">l</code> that do not satisfy <code class="code">p</code>.  The order of the elements in the input list
+    is preserved.  The "tf" suffix is mnemonic to remind readers at a call that the result
+    is (trues, falses).<br>
+<br>
+<code class="code">split_n n [e1; ...; em]</code> is <code class="code">([e1; ...; en], [en+1; ...; em])</code>.  If <code class="code">n &gt; m</code>,
+    <code class="code">([e1; ...; em], [])</code> is returned.  If <code class="code">n &lt; 0</code>, <code class="code">([], [e1; ...; em])</code> is
+    returned.<br>
+<br>
+Sort a list in increasing order according to a comparison function.  The comparison
+    function must return 0 if its arguments compare as equal, a positive integer if the
+    first is greater, and a negative integer if the first is smaller (see Array.sort for a
+    complete specification).  For example, <code class="code">Pervasives.compare</code> is a suitable comparison
+    function.
+<p>
+
+    The current implementation uses Merge Sort. It runs in constant heap space and
+    logarithmic stack space.
+<p>
+
+    Presently, the sort is stable, meaning that two equal elements in the input will be in
+    the same order in the output.<br>
+<br>
+Same as sort, but guaranteed to be stable<br>
+<br>
+Merge two lists: assuming that <code class="code">l1</code> and <code class="code">l2</code> are sorted according to the comparison
+    function <code class="code">cmp</code>, <code class="code">merge cmp l1 l2</code> will return a sorted list containting all the
+    elements of <code class="code">l1</code> and <code class="code">l2</code>.  If several elements compare equal, the elements of <code class="code">l1</code>
+    will be before the elements of <code class="code">l2</code>.<br>
+<br>
+Return the first element of the given list. Raise
+    <code class="code">Failure "hd"</code> if the list is empty.<br>
+<br>
+Return the given list without its first element. Raise <code class="code">Failure "tl"</code> if the list is
+    empty.<br>
+<br>
+<code class="code">find_exn t ~f</code> returns the first element of <code class="code">t</code> that satisfies <code class="code">f</code>.  It raises
+    <code class="code">Not_found</code> if there is no such element.<br>
+<br>
+<h6 id="6_TailrecursiveimplementationsofstandardListoperations">Tail-recursive implementations of standard List operations</h6><br>
+<br>
+E.g. <code class="code">append [1; 2] [3; 4; 5]</code> is <code class="code">[1; 2; 3; 4; 5]</code><br>
+<br>
+<code class="code">List.map f [a1; ...; an]</code> applies function <code class="code">f</code> to <code class="code">a1, ..., an</code>, and builds the list
+    <code class="code">[f a1; ...; f an]</code> with the results returned by <code class="code">f</code>.<br>
+<br>
+<code class="code">concat_map t ~f</code> is <code class="code">concat (map t ~f)</code>, except that there is no guarantee about the
+    order in which <code class="code">f</code> is applied to the elements of <code class="code">t</code>.<br>
+<br>
+<code class="code">concat_mapi t ~f</code> is like concat_map, but passes the index as an argument<br>
+<br>
+<code class="code">List.map2_exn f [a1; ...; an] [b1; ...; bn]</code> is <code class="code">[f a1 b1; ...; f an bn]</code>.  Raise
+    <code class="code">Invalid_argument</code> if the two lists have different lengths.<br>
+<br>
+<code class="code">rev_map_append ~f l1 l2</code> reverses <code class="code">l1</code> mapping <code class="code">f</code> over each
+    element, and appends the result to the front of <code class="code">l2</code>.<br>
+<br>
+<code class="code">List.fold_right f [a1; ...; an] b</code> is
+    <code class="code">f a1 (f a2 (... (f an b) ...))</code>.<br>
+<br>
+Transform a list of pairs into a pair of lists:
+    <code class="code">unzip [(a1,b1); ...; (an,bn)]</code> is <code class="code">([a1; ...; an], [b1; ...; bn])</code>.<br>
+<br>
+Transform a pair of lists into an (optional) list of pairs:
+    <code class="code">zip [a1; ...; an] [b1; ...; bn]</code> is <code class="code">[(a1,b1); ...; (an,bn)]</code>.
+    Returns None if the two lists have different lengths.<br>
+<br>
+mapi is just like map, but it also passes in the index of each
+    element as the first argument to the mapped function. Tail-recursive.<br>
+<br>
+iteri is just like iter, but it also passes in the index of each
+    element as the first argument to the iter'd function. Tail-recursive.<br>
+<br>
+foldi is just like fold, but it also passes in the index of each
+    element as the first argument to the folded function.  Tail-recursive.<br>
+<br>
+<code class="code">reduce_exn f [a1; ...; an]</code> is <code class="code">f (... (f (f a1 a2) a3) ...) an</code>.
+    It fails on the empty list.  Tail recursive.<br>
+<br>
+<code class="code">group l ~break</code> returns a list of lists (i.e., groups) whose concatenation is
+    equal to the original list.  Each group is broken where break returns true on
+    a pair of successive elements.
+<p>
+
+    Example
+<p>
+
+    group ~break:(&lt;&gt;) <code class="code">'M';'i';'s';'s';'i';'s';'s';'i';'p';'p';'i'</code> -&gt;
+<p>
+
+    <code class="code">['M'];['i'];['s';'s'];['i'];['s';'s'];['i'];['p';'p'];['i']</code><br>
+<br>
+This is just like group, except that you get the index in the original list of the
+    current element along with the two elements.
+<p>
+
+    Example, group the chars of Mississippi into triples
+<p>
+
+    groupi ~break:(fun i _ _ -&gt; i mod 3 = 0)
+    <code class="code">'M';'i';'s';'s';'i';'s';'s';'i';'p';'p';'i'</code> -&gt;
+<p>
+
+    <code class="code">['M'; 'i'; 's']; ['s'; 'i'; 's']; ['s'; 'i'; 'p']; ['p'; 'i']</code><br>
+<br>
+The final element of a list.  The _exn version raises Invalid_argument on the empty
+    list.<br>
+<br>
+<code class="code">remove_consecutive_duplicates</code>. The same list with consecutive duplicates removed.
+    The relative order of the other elements is unaffected.<br>
+<br>
+<code class="code">dedup</code> (de-duplicate).  The same list with duplicates removed, but the
+    order is not guaranteed.<br>
+<br>
+<code class="code">contains_dup</code> True if there are any two elements in the list which are the same.<br>
+<br>
+<code class="code">find_a_dup</code> returns a duplicate from the list (no guarantees about which
+    duplicate you get), or None if there are no dups.<br>
+<br>
+<code class="code">exn_if_dup ?compare ?context t ~to_sexp</code> will run <code class="code">find_a_dup</code> on <code class="code">t</code>, and raise
+    <code class="code">Duplicate_found</code> if a duplicate is found.  The <code class="code">context</code> is the second argument of
+    the exception<br>
+<br>
+<code class="code">count f l</code> is the number of elements in <code class="code">l</code> that satisfy the
+    predicate <code class="code">f</code>.<br>
+<br>
+<code class="code">range ?stride ?start ?stop start_i stop_i</code> is the list of integers from <code class="code">start_i</code> to
+    <code class="code">stop_i</code>, stepping by <code class="code">stride</code>.  If <code class="code">stride</code> &lt; 0 then we need <code class="code">start_i</code> &gt; <code class="code">stop_i</code> for
+    the result to be nonempty (or <code class="code">start_i</code> = <code class="code">stop_i</code> in the case where both bounds are
+    inclusive).<br>
+<br>
+<code class="code">init f n</code> is <code class="code">[(f 0); (f 1); ...; (f (n-1))]</code>. It is an error if <code class="code">n &lt; 0</code>.<br>
+<br>
+<code class="code">rev_filter_map f l</code> is the reversed sublist of <code class="code">l</code> containing
+    only elements for which <code class="code">f</code> returns <code class="code">Some e</code>.<br>
+<br>
+rev_filter_mapi is just like rev_filter_map, but it also passes in the index of each
+    element as the first argument to the mapped function. Tail-recursive.<br>
+<br>
+<code class="code">filter_map f l</code> is the sublist of <code class="code">l</code> containing only elements
+    for which <code class="code">f</code> returns <code class="code">Some e</code>.<br>
+<br>
+filter_mapi is just like filter_map, but it also passes in the index of each
+    element as the first argument to the mapped function. Tail-recursive.<br>
+<br>
+<code class="code">filter_opt l</code> is the sublist of <code class="code">l</code> containing only elements
+    which are <code class="code">Some e</code>.  In other words, <code class="code">filter_opt l</code> = <code class="code">filter_map ~f:ident l</code>.<br>
+<br>
+Note that <code class="code">sub</code>, unlike <code class="code">slice</code>, doesn't use python-style indices!<br>
+<br>
+<code class="code">sub pos len l</code> is the <code class="code">len</code>-element sublist of <code class="code">l</code>, starting at <code class="code">pos</code>.<br>
+<br>
+<code class="code">slice l start stop</code> returns a new list including elements <code class="code">l.(start)</code> through
+    <code class="code">l.(stop-1)</code>, normalized python-style.<br>
+<br>
+<code class="code">take l n</code> is <code class="code">fst (split_n n l)</code>.
+    <code class="code">drop l n</code> is <code class="code">snd (split_n n l)</code>.<br>
+<br>
+<code class="code">take_while l ~f</code> returns the longest prefix of <code class="code">l</code> for which <code class="code">f</code> is <code class="code">true</code>.<br>
+<br>
+<code class="code">drop_while l ~f</code> drops the longest prefix of <code class="code">l</code> for which <code class="code">f</code> is <code class="code">true</code>.<br>
+<br>
+<code class="code">split_while xs ~f = (take_while xs ~f, drop_while xs ~f)</code><br>
+<br>
+Concatenate a list of lists.  The elements of the argument are all concatenated
+    together (in the same order) to give the result.  Tail recursive over outer and inner
+    lists.<br>
+<br>
+Same as <code class="code">concat</code> but faster and without preserving any ordering (ie for lists that are
+    essentially viewed as multi-sets.<br>
+<br>
+<code class="code">permute ?random_state t</code> returns a permutation of <code class="code">t</code>.
+<p>
+
+    <code class="code">permute</code> side affects <code class="code">random_state</code> by repeated calls to <code class="code">Random.State.int</code>.
+    If <code class="code">random_state</code> is not supplied, <code class="code">permute</code> uses <code class="code">Random.State.default</code>.<br>
+<br>
+lexicographic<br>
+<br>
+<code class="code">transpose m</code> transposes the rows and columns of the matrix <code class="code">m</code>,
+    considered as either a row of column lists or (dually) a column of row lists.
+<p>
+
+    Example,
+<p>
+
+    transpose <code class="code">[1;2;3];[4;5;6]</code> = <code class="code">[1;4];[2;5];[3;6]</code>
+<p>
+
+    On non-empty rectangular matrices, <code class="code">transpose</code> is an involution
+    (i.e., <code class="code">transpose (transpose m) = m</code>).  Transpose returns None when called
+    on lists of lists with non-uniform lengths.
+*<br>
+<br>
+<code class="code">transpose_exn</code> transposes the rows and columns of its argument, throwing exception if
+    the list is not rectangular.
+*<br>
+<br>
+<code class="code">intersperse xs ~sep</code> places <code class="code">sep</code> between adjacent elements of <code class="code">xs</code>.
+    e.g. <code class="code">intersperse [1;2;3] ~sep:0 = [1;0;2;0;3]</code><br>
+</body></html>

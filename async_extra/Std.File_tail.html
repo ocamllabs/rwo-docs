@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Std.Command.html">
+<link rel="next" href="Std.File_writer.html">
+<link rel="Up" href="Std.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Command" rel="Chapter" href="Command.html">
+<link title="File_tail" rel="Chapter" href="File_tail.html">
+<link title="File_writer" rel="Chapter" href="File_writer.html">
+<link title="Import" rel="Chapter" href="Import.html">
+<link title="Lock_file" rel="Chapter" href="Lock_file.html">
+<link title="Log" rel="Chapter" href="Log.html">
+<link title="Persistent_singleton" rel="Chapter" href="Persistent_singleton.html">
+<link title="Rpc" rel="Chapter" href="Rpc.html">
+<link title="Rpc_intf" rel="Chapter" href="Rpc_intf.html">
+<link title="Sequencer_table" rel="Chapter" href="Sequencer_table.html">
+<link title="Std" rel="Chapter" href="Std.html">
+<link title="Tcp" rel="Chapter" href="Tcp.html">
+<link title="Tcp_file" rel="Chapter" href="Tcp_file.html">
+<link title="Typed_tcp" rel="Chapter" href="Typed_tcp.html">
+<link title="Typed_tcp_intf" rel="Chapter" href="Typed_tcp_intf.html">
+<link title="Unpack_sequence" rel="Chapter" href="Unpack_sequence.html">
+<link title="User_and_group" rel="Chapter" href="User_and_group.html">
+<link title="Versioned_rpc" rel="Chapter" href="Versioned_rpc.html">
+<link title="Versioned_typed_tcp" rel="Chapter" href="Versioned_typed_tcp.html">
+<link title="Weak_hashtbl" rel="Chapter" href="Weak_hashtbl.html"><title>Std.File_tail</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Std.Command.html" title="Std.Command">Previous</a>
+&nbsp;<a class="up" href="Std.html" title="Std">Up</a>
+&nbsp;<a class="post" href="Std.File_writer.html" title="Std.File_writer">Next</a>
+</div>
+<h1>Module <a href="type_Std.File_tail.html">Std.File_tail</a></h1>
+<pre><span class="keyword">module</span> File_tail: <code class="type">File_tail</code></pre><hr width="100%">
+<pre><span class="keyword">module</span> <a href="File_tail.Error.html">Error</a>: <code class="code">sig</code> <a href="File_tail.Error.html">..</a> <code class="code">end</code></pre><pre><span class="keyword">module</span> <a href="File_tail.Warning.html">Warning</a>: <code class="code">sig</code> <a href="File_tail.Warning.html">..</a> <code class="code">end</code></pre><pre><span class="keyword">module</span> <a href="File_tail.Update.html">Update</a>: <code class="code">sig</code> <a href="File_tail.Update.html">..</a> <code class="code">end</code></pre><pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?read_buf_len:int -><br>       ?read_delay:<a href="../core/Time.Span.html">Core.Std.Time.Span</a>.t -><br>       ?retry_null_reads:bool -><br>       ?break_on_lines:bool -><br>       ?ignore_inode_change:bool -><br>       ?start_at:[ `Beginning | `End | `Pos of Core.Std.Int64.t ] -><br>       ?eof_latency_tolerance:<a href="../core/Time.Span.html">Core.Std.Time.Span</a>.t -><br>       ?null_read_tolerance:<a href="../core/Time.Span.html">Core.Std.Time.Span</a>.t -><br>       string -> <a href="File_tail.Update.html#TYPEt">Update.t</a> Import.Pipe.Reader.t</code></pre><div class="info">
+<code class="code">create file</code> creates a <code class="code">File_tail.t</code> that will immediately begin reading <code class="code">file</code>, and
+    then will start the stat-read loop.
+<p>
+
+    <code class="code">read_buf_len</code> sets the size of the internal buffer used for making read system calls.
+<p>
+
+    <code class="code">read_delay</code> sets how long the stat-read loop waits each time after it reaches eof
+    before stat'ing again.  Setting <code class="code">read_delay</code> too low could cause unecessary load.
+<p>
+
+    If <code class="code">retry_null_reads = true</code>, then reads that return data with null ('\000')
+    characters are ignored and cause the system to delay 0.2s and attempt the read again.
+    If <code class="code">retry_null_reads = false</code>, then the file tail will process data with nulls just as
+    it would any other data.
+<p>
+
+    If <code class="code">break_on_lines = true</code>, the file tail will break data into lines on '\n'.  If not,
+    the fill tail will return chunks of data from the end of the file as they are
+    available.
+<p>
+
+    If <code class="code">ignore_inode_change = true</code>, the file tail will silently press on when the
+    <code class="code">file</code>'s inode changes.  If not, an inode change will cause the file tail to report an
+    error and stop.  CIFS changes inodes of mounted files few times a day and we need
+    <code class="code">ignore_inode_change = true</code> option to keep tailers watching files on it alive.
+<p>
+
+    <code class="code">start_at</code> determines the file position at which the file tail starts.
+<p>
+
+    <code class="code">eof_latency_tolerance</code> affects the <code class="code">Did_not_reach_eof_for</code> warning.
+<p>
+
+    <code class="code">null_read_tolerance</code> determines how long the tailing must observe null reads
+    before it will report a <code class="code">Delayed_due_to_null_reads_for</code> warning.<br>
+</div>
+</body></html>

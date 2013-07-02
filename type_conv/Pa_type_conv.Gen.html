@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="next" href="Pa_type_conv.Rewrite_tds.html">
+<link rel="Up" href="Pa_type_conv.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Pa_type_conv" rel="Chapter" href="Pa_type_conv.html"><title>Pa_type_conv.Gen</title>
+</head>
+<body>
+<div class="navbar">&nbsp;<a class="up" href="Pa_type_conv.html" title="Pa_type_conv">Up</a>
+&nbsp;<a class="post" href="Pa_type_conv.Rewrite_tds.html" title="Pa_type_conv.Rewrite_tds">Next</a>
+</div>
+<h1>Module <a href="type_Pa_type_conv.Gen.html">Pa_type_conv.Gen</a></h1>
+<pre><span class="keyword">module</span> Gen: <code class="code">sig</code> <a href="Pa_type_conv.Gen.html">..</a> <code class="code">end</code></pre><hr width="100%">
+<pre><span id="VALexApp_of_list"><span class="keyword">val</span> exApp_of_list</span> : <code class="type">Camlp4.PreCast.Ast.expr list -> Camlp4.PreCast.Ast.expr</code></pre><div class="info">
+<code class="code">expr_app_of_list l</code> takes list <code class="code">l</code> of expressions <code class="code">e1; e2; e3; ...</code>
+      and returns the expression <code class="code">e1 e2 e3</code>.  C.f.: <code class="code">Ast.exSem_of_list</code>.<br>
+</div>
+<pre><span id="VALtyArr_of_list"><span class="keyword">val</span> tyArr_of_list</span> : <code class="type">Camlp4.PreCast.Ast.ctyp list -> Camlp4.PreCast.Ast.ctyp</code></pre><div class="info">
+<code class="code">tyArr_of_list l</code> takes list <code class="code">l</code> of types <code class="code">e1; e2; e3; ...</code> and
+      returns the type <code class="code">e1 e2 e3</code>.  C.f.: <code class="code">Ast.exSem_of_list</code>.<br>
+</div>
+<pre><span id="VALpaOr_of_list"><span class="keyword">val</span> paOr_of_list</span> : <code class="type">Camlp4.PreCast.Ast.patt list -> Camlp4.PreCast.Ast.patt</code></pre><div class="info">
+<code class="code">paOr_of_list l</code> takes list <code class="code">l</code> of patterns <code class="code">p1; p2; p3; ...</code> and returns
+      the pattern <code class="code">p1 | p2 | p3 | ...</code><br>
+</div>
+<pre><span id="VALgensym"><span class="keyword">val</span> gensym</span> : <code class="type">?prefix:string -> unit -> string</code></pre><div class="info">
+<code class="code">gensym ?prefix ()</code> generates a fresh variable name with <code class="code">prefix</code>.
+      When used with the default parameters, it will return: <code class="code">_x__001</code>,
+      <code class="code">_x__002</code>, <code class="code">_x__003</code>, ...<br>
+</div>
+<div class="param_info"><code class="code">prefix</code> : default = "_x"</div>
+<pre><span id="VALerror"><span class="keyword">val</span> error</span> : <code class="type">Camlp4.PreCast.Ast.ctyp -> fn:string -> msg:string -> 'a</code></pre><div class="info">
+<code class="code">error tp ~fn ~msg</code> raises an error with <code class="code">msg</code> on type <code class="code">tp</code> occuring
+      in function <code class="code">fn</code>.<br>
+</div>
+<pre><span id="VALunknown_type"><span class="keyword">val</span> unknown_type</span> : <code class="type">Camlp4.PreCast.Ast.ctyp -> string -> 'a</code></pre><div class="info">
+<code class="code">unknown_type tp fn</code> type <code class="code">tp</code> cannot be handled by function <code class="code">fn</code>.<br>
+</div>
+<pre><span id="VALty_var_list_of_ctyp"><span class="keyword">val</span> ty_var_list_of_ctyp</span> : <code class="type">Camlp4.PreCast.Ast.ctyp -> string list -> string list</code></pre><div class="info">
+<code class="code">ty_var_list_of_ctyp tp acc</code> accumulates a list of type parameters
+      contained in <code class="code">tp</code> into <code class="code">acc</code> as strings.<br>
+</div>
+<pre><span id="VALget_rev_id_path"><span class="keyword">val</span> get_rev_id_path</span> : <code class="type">Camlp4.PreCast.Ast.ident -> string list -> string list</code></pre><div class="info">
+<code class="code">get_rev_id_path id acc</code> takes an identifier.<br>
+<b>Returns</b> a reversed
+      module path (list of strings) denoting this identifier, appending
+      it to <code class="code">acc</code>.<br>
+</div>
+<pre><span id="VALident_of_rev_path"><span class="keyword">val</span> ident_of_rev_path</span> : <code class="type">Camlp4.PreCast.Ast.Loc.t -> string list -> Camlp4.PreCast.Ast.ident</code></pre><div class="info">
+<code class="code">ident_of_rev_path loc path</code> takes a location <code class="code">loc</code> and a reversed path
+      <code class="code">rev_path</code> to an identifier.<br>
+<b>Returns</b> identifier denoting the
+      bound value.<br>
+</div>
+<pre><span id="VALget_appl_path"><span class="keyword">val</span> get_appl_path</span> : <code class="type">Camlp4.PreCast.Ast.Loc.t -><br>       Camlp4.PreCast.Ast.ctyp -> Camlp4.PreCast.Ast.ident</code></pre><div class="info">
+<code class="code">get_appl_path loc tp</code><br>
+<b>Returns</b> the identifier path associated with
+      a polymorphic type.<br>
+</div>
+<pre><span id="VALabstract"><span class="keyword">val</span> abstract</span> : <code class="type">Camlp4.PreCast.Ast.Loc.t -><br>       Camlp4.PreCast.Ast.patt list -><br>       Camlp4.PreCast.Ast.expr -> Camlp4.PreCast.Ast.expr</code></pre><div class="info">
+<code class="code">abstract loc patts body</code> takes a location <code class="code">loc</code>, a pattern list
+      <code class="code">patts</code>, and an expression <code class="code">body</code>.<br>
+<b>Returns</b> a function expression
+      that takes the patterns as arguments, and binds them in <code class="code">body</code>.<br>
+</div>
+<pre><span id="VALapply"><span class="keyword">val</span> apply</span> : <code class="type">Camlp4.PreCast.Ast.Loc.t -><br>       Camlp4.PreCast.Ast.expr -><br>       Camlp4.PreCast.Ast.expr list -> Camlp4.PreCast.Ast.expr</code></pre><div class="info">
+<code class="code">apply loc f_expr arg_exprs</code> takes a location <code class="code">loc</code>, an expression
+      <code class="code">f_expr</code> representing a function, and a list of argument expressions
+      <code class="code">arg_exprs</code>.<br>
+<b>Returns</b> an expression in which the function is
+      applied to its arguments.<br>
+</div>
+<pre><span id="VALswitch_tp_def"><span class="keyword">val</span> switch_tp_def</span> : <code class="type">alias:(Camlp4.PreCast.Ast.Loc.t -> Camlp4.PreCast.Ast.ctyp -> 'a) -><br>       sum:(Camlp4.PreCast.Ast.Loc.t -> Camlp4.PreCast.Ast.ctyp -> 'a) -><br>       record:(Camlp4.PreCast.Ast.Loc.t -> Camlp4.PreCast.Ast.ctyp -> 'a) -><br>       variants:(Camlp4.PreCast.Ast.Loc.t -> Camlp4.PreCast.Ast.ctyp -> 'a) -><br>       mani:(Camlp4.PreCast.Ast.Loc.t -><br>             Camlp4.PreCast.Ast.ctyp -> Camlp4.PreCast.Ast.ctyp -> 'a) -><br>       nil:(Camlp4.PreCast.Ast.Loc.t -> 'a) -> Camlp4.PreCast.Ast.ctyp -> 'a</code></pre><div class="info">
+<code class="code">switch_tp_def ~alias ~sum ~record ~variants ~mani tp_def</code>
+      takes a handler function for each kind of type definition and
+      applies the appropriate handler when <code class="code">tp_def</code> matches.<br>
+</div>
+<pre><span id="VALmk_expr_lst"><span class="keyword">val</span> mk_expr_lst</span> : <code class="type">Camlp4.PreCast.Ast.Loc.t -><br>       Camlp4.PreCast.Ast.expr list -> Camlp4.PreCast.Ast.expr</code></pre><div class="info">
+<code class="code">mk_expr_lst loc expr_list</code> takes a list of expressions.<br>
+<b>Returns</b> an expression representing a list of expressions.<br>
+</div>
+<pre><span id="VALmk_patt_lst"><span class="keyword">val</span> mk_patt_lst</span> : <code class="type">Camlp4.PreCast.Ast.Loc.t -><br>       Camlp4.PreCast.Ast.patt list -> Camlp4.PreCast.Ast.patt</code></pre><div class="info">
+<code class="code">mk_patt_lst _loc patt_list</code> takes a list of patterns.<br>
+<b>Returns</b> a pattern representing a list of patterns.<br>
+</div>
+<pre><span id="VALget_tparam_id"><span class="keyword">val</span> get_tparam_id</span> : <code class="type">Camlp4.PreCast.Ast.ctyp -> string</code></pre><div class="info">
+<code class="code">get_tparam_id tp</code><br>
+<b>Raises</b> <code>Failure</code> otherwise.<br>
+<b>Returns</b> the string identifier associated with
+      <code class="code">tp</code> if it is a type parameter.<br>
+</div>
+<pre><span id="VALtype_is_recursive"><span class="keyword">val</span> type_is_recursive</span> : <code class="type">?stop_on_functions:bool -><br>       ?short_circuit:(Camlp4.PreCast.Ast.ctyp -> bool option) -><br>       string -> Camlp4.PreCast.Ast.ctyp -> bool</code></pre><div class="info">
+<code class="code">type_is_recursive ?short_circuit id tp</code><br>
+<b>Returns</b> whether the type <code class="code">tp</code> with name <code class="code">id</code>
+      refers to itself, assuming that it is not mutually recursive with
+      another type.<br>
+</div>
+<div class="param_info"><code class="code">stop_on_functions</code> : allows to disregard the recursive occurences appearing in
+      arrow types. The default is to disregard them.</div>
+<div class="param_info"><code class="code">short_circuit</code> : allows you to override the search for certain
+      type expressions.</div>
+<pre><span id="VALdrop_variance_annotations"><span class="keyword">val</span> drop_variance_annotations</span> : <code class="type">Camlp4.PreCast.Ast.ctyp -> Camlp4.PreCast.Ast.ctyp</code></pre><div class="info">
+<code class="code">drop_variance_annotations tp</code><br>
+<b>Returns</b> the type resulting from dropping
+      all variance annotations in <code class="code">tp</code>.<br>
+</div>
+<pre><span id="VALfind_record_default"><span class="keyword">val</span> find_record_default</span> : <code class="type">Camlp4.PreCast.Ast.Loc.t -> Camlp4.PreCast.Ast.expr option</code></pre><div class="info">
+<code class="code">find_record_default loc</code><br>
+<b>Returns</b> the optional default expression
+      associated with the record field at source location <code class="code">loc</code> if defined.<br>
+</div>
+<pre><span id="VALdelay_sig_item"><span class="keyword">val</span> delay_sig_item</span> : <code class="type">Camlp4.PreCast.Ast.sig_item -> unit</code></pre><div class="info">
+<code class="code">delay_sig_item item</code> places <code class="code">item</code> at the end of the current signature<br>
+</div>
+</body></html>

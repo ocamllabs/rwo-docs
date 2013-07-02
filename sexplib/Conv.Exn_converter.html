@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="Up" href="Conv.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Conv" rel="Chapter" href="Conv.html">
+<link title="Conv_error" rel="Chapter" href="Conv_error.html">
+<link title="Exn_magic" rel="Chapter" href="Exn_magic.html">
+<link title="Path" rel="Chapter" href="Path.html">
+<link title="Pre_sexp" rel="Chapter" href="Pre_sexp.html">
+<link title="Sexp" rel="Chapter" href="Sexp.html">
+<link title="Sexp_intf" rel="Chapter" href="Sexp_intf.html">
+<link title="Sexp_with_layout" rel="Chapter" href="Sexp_with_layout.html">
+<link title="Src_pos" rel="Chapter" href="Src_pos.html">
+<link title="Std" rel="Chapter" href="Std.html">
+<link title="Type" rel="Chapter" href="Type.html">
+<link title="Type_with_layout" rel="Chapter" href="Type_with_layout.html">
+<link title="Parser" rel="Chapter" href="Parser.html">
+<link title="Parser_with_layout" rel="Chapter" href="Parser_with_layout.html">
+<link title="Lexer" rel="Chapter" href="Lexer.html"><title>Conv.Exn_converter</title>
+</head>
+<body>
+<div class="navbar">&nbsp;<a class="up" href="Conv.html" title="Conv">Up</a>
+&nbsp;</div>
+<h1>Module <a href="type_Conv.Exn_converter.html">Conv.Exn_converter</a></h1>
+<pre><span class="keyword">module</span> Exn_converter: <code class="code">sig</code> <a href="Conv.Exn_converter.html">..</a> <code class="code">end</code></pre><hr width="100%">
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
+<div class="info">
+Type of handles for exception S-expression converters<br>
+</div>
+
+<pre><span id="VALset_max_exn_tags"><span class="keyword">val</span> set_max_exn_tags</span> : <code class="type">int -> unit</code></pre><div class="info">
+<code class="code">set_max_exn_tags n</code> sets the maximum number of converters for exceptions
+      with the same template to <code class="code">n</code>.  If already existing handlers exceed
+      this number, they will remain at their current number until this number
+      is reduced due to garbage collection.  New handlers will not be added
+      until <code class="code">n</code> will not be exceeded.<br>
+</div>
+<pre><span id="VALget_max_exn_tags"><span class="keyword">val</span> get_max_exn_tags</span> : <code class="type">unit -> int</code></pre><div class="info">
+<code class="code">set_max_exn_tags ()</code> return the maximum number of converters for
+      exceptions with the same template.<br>
+</div>
+<pre><span id="VALadd_auto"><span class="keyword">val</span> add_auto</span> : <code class="type">?finalise:bool -> exn -> (exn -> Sexp.t) -> unit</code></pre><div class="info">
+<code class="code">add_auto ?finalise templ sexp_of_exn</code> registers exception S-expression
+      converter <code class="code">sexp_of_exn</code> for exceptions having same constructor as
+      template <code class="code">templ</code>, unless the number of stored handlers for the given
+      template exceeds <code class="code">get_max_exn_tags ()</code>, in which case the handler will
+      never be called.  When <code class="code">sexp_of_exn</code> is called, the passed exception
+      is guaranteed to match the template.
+<p>
+
+      NOTE: if the exception belongs to a transient module, e.g. local modules
+      (including functor instantiations), first-class modules, etc., a manually
+      written <code class="code">sexp_of_exn</code> must use <code class="code">Obj.magic</code> internally to avoid matching
+      or creating the exception, otherwise the handler can never be reclaimed
+      once the exception ceases to exist.  If <code class="code">finalise</code> is <code class="code">true</code>, then
+      the exception will be automatically registered for removal with the GC
+      (default).  Finalisation will not work with exceptions that have been
+      allocated outside the heap, which is the case for some standard ones
+      e.g. <code class="code">Sys_error</code>.
+<p>
+
+      NOTE: Use with great caution, this function is primarily intended for
+      automated use!  If unsure, use <code class="code">add_slow</code> instead.<br>
+</div>
+<div class="param_info"><code class="code">finalise</code> : default = <code class="code">true</code></div>
+<pre><span id="VALadd_slow"><span class="keyword">val</span> add_slow</span> : <code class="type">(exn -> Sexp.t option) -> <a href="Conv.Exn_converter.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">add_slow sexp_of_exn</code> registers exception S-expression converter
+      <code class="code">sexp_of_exn</code> and returns a handle.  Exception converters registered this
+      way are much slower than with <code class="code">add</code>, but this function does not require
+      an exception template.  NOTE: if you call this function explicitly,
+      or the "sexp"-macro for exceptions from within local modules, you will
+      eventually have to unregister it manually with <code class="code">del</code>, otherwise there
+      is a space leak!<br>
+</div>
+<pre><span id="VALdel_slow"><span class="keyword">val</span> del_slow</span> : <code class="type"><a href="Conv.Exn_converter.html#TYPEt">t</a> -> unit</code></pre><div class="info">
+<code class="code">del_slow handle</code> unregisters exception S-expression converter with
+      handle <code class="code">handle</code>.  In multi-threaded contexts it is not guaranteed
+      that the unregistered converter will not be called after this function
+      returns.<br>
+</div>
+</body></html>
