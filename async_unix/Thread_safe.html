@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<title>Thread_safe</title>
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
+<script type="text/javascript" src="doc_loader.js"> </script>
+</head>
+<body>
+
+<h1>Module Thread_safe</h1>
+<pre><span class="keyword">module</span> Thread_safe</pre><div class="info">The <code class="code">Thread_safe</code> module has functions that are safe to call from threads outside
+    async.<br/>    All the <code class="code">Thread_safe.block*</code> and <code class="code">Thread_safe.run*</code> functions wake up the async
+    scheduler to ensure that it continues in a timely manned with whatever jobs got
+    started.  Some functions take an optional <code class="code">?wakeup_scheduler:bool</code> argument, which
+    defaults to <code class="code">true</code>.  One can cause the scheduler to not be woken up by supplying
+    <code class="code">~wakeup_scheduler:false</code>, which can reduce CPU use, but increase latency, because the
+    scheduler may not wake up for a while to process jobs.</div>
+<hr/>
+<div file="Thread_safe.html.contents" class="content_to_load"> </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t </span>= <code class="type">'a Ivar.t</code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> equal : <code class="type">'a <a href="Raw_ivar.Scheduler_dependent.html#TYPEt">t</a> -&gt; 'a <a href="Raw_ivar.Scheduler_dependent.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">unit -&gt; 'a <a href="Raw_ivar.Scheduler_dependent.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create_full : <code class="type">'a -&gt; 'a <a href="Raw_ivar.Scheduler_dependent.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> peek : <code class="type">'a <a href="Raw_ivar.Scheduler_dependent.html#TYPEt">t</a> -&gt; 'a option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_empty : <code class="type">'a <a href="Raw_ivar.Scheduler_dependent.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_full : <code class="type">'a <a href="Raw_ivar.Scheduler_dependent.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> connect : <code class="type">bind_result:'a <a href="Raw_ivar.Scheduler_dependent.html#TYPEt">t</a> -&gt; bind_rhs:'a <a href="Raw_ivar.Scheduler_dependent.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fill : <code class="type">'a <a href="Raw_ivar.Scheduler_dependent.html#TYPEt">t</a> -&gt; 'a -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> install_removable_handler : <code class="type">'a <a href="Raw_ivar.Scheduler_dependent.html#TYPEt">t</a> -&gt; ('a, Scheduler.Execution_context.t) <a href="Raw_handler.html#TYPEt">Raw_handler.t</a> -&gt; <a href="Unregister.html#TYPEt">Unregister.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> upon : <code class="type">'a <a href="Raw_ivar.Scheduler_dependent.html#TYPEt">t</a> -&gt; ('a -&gt; unit) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> upon' : <code class="type">'a <a href="Raw_ivar.Scheduler_dependent.html#TYPEt">t</a> -&gt; ('a -&gt; unit) -&gt; <a href="Unregister.html#TYPEt">Unregister.t</a></code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Import.Raw.html">Import.Raw</a></code> with type execution_context = Scheduler.Execution_context.t with type raw = ('a, 'execution_context) <a href="Raw_ivar.html#TYPEivar">ivar</a> with type t = 'a <a href="Raw_ivar.Scheduler_dependent.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="Import.Raw.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type">('a -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a>) -&gt; 'a <a href="Raw_ivar.Scheduler_dependent.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    

@@ -1,0 +1,69 @@
+<pre><code><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'unique_id) </code>t </span>= {<span class="keyword">private</span></code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.compare">compare</span> :<code class="type">'a -&gt; 'a -&gt; int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.sexp_of_t">sexp_of_t</span> :<code class="type">'a -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code>;</code></td>
+	  </tr></table>}
+      
+    
+<pre><span id="TYPEt_"><span class="keyword">type</span> <code class="type">('a, 'unique_id) </code>t_ </span>= <code class="type">('a, 'unique_id) <a href="Comparator.html#TYPEt">t</a></code> </pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Comparator.Pre.html">Pre</a> = <code class="type"><code class="code">sig</code> <a href="Comparator.Pre.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Comparator.Pre.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Comparator.Pre_binable.html">Pre_binable</a> = <code class="type"><code class="code">sig</code> <a href="Comparator.Pre_binable.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Comparator.Pre_binable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Comparator.S.html">S</a> = <code class="type"><code class="code">sig</code> <a href="Comparator.S.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Comparator.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Comparator.S_binable.html">S_binable</a> = <code class="type"><code class="code">sig</code> <a href="Comparator.S_binable.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Comparator.S_binable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Comparator.Make.html">Make</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="type"><a href="Comparator.Pre.html">Pre</a></code><code class="code">) -&gt; </code><code class="code"><a href="Comparator.S.html">S</a></code> with type t = M.t</div></pre>
+	<div class="content" style="display:none">
+	<div file="Comparator.Make.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Comparator.Make_binable.html">Make_binable</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="type"><a href="Comparator.Pre_binable.html">Pre_binable</a></code><code class="code">) -&gt; </code><code class="code"><a href="Comparator.S_binable.html">S_binable</a></code> with type t = M.t</div></pre>
+	<div class="content" style="display:none">
+	<div file="Comparator.Make_binable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Comparator.S1.html">S1</a> = <code class="type"><code class="code">sig</code> <a href="Comparator.S1.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Comparator.S1.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Comparator.Poly.html">Poly</a> : <code class="code"><a href="Comparator.S1.html">S1</a></code> with type <a href="Comparator.S1.html#TYPEt">t</a> = 'a</pre>
+	<div class="content" style="display:none">
+	<div file="Comparator.Poly.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Comparator.S_to_S1.html">S_to_S1</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">S</code><code class="code"> : </code><code class="type"><a href="Comparator.S.html">S</a></code><code class="code">) -&gt; </code><code class="code"><a href="Comparator.S1.html">S1</a></code> with type <a href="Comparator.S1.html#TYPEt">t</a> = S.t with type comparator = S.comparator</div></pre>
+	<div class="content" style="display:none">
+	<div file="Comparator.S_to_S1.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Comparator.Make1.html">Make1</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="code">sig</code> <a href="Comparator.Make1.Anon_17.html">..</a> <code class="code">end</code><code class="code">) -&gt; </code><code class="code"><a href="Comparator.S1.html">S1</a></code> with type <a href="Comparator.S1.html#TYPEt">t</a> = 'a M.t</div></pre>
+	<div class="content" style="display:none">
+	<div file="Comparator.Make1.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

@@ -1,0 +1,226 @@
+<br/><br/><h1 id="1_TITLE">command parameters</h1><br/> <br/>
+	  
+<pre><span id="TYPEparam"><span class="keyword">type</span> <code class="type">'a </code>param </span></pre>
+      <div class="info">specification of an individual parameter to the command's main function</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> const : <code class="type">'a -&gt; 'a <a href="Command.Spec.html#TYPEparam">param</a></code></span></pre>
+      <div class="info">a hard-coded parameter</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> map : <code class="type">'a <a href="Command.Spec.html#TYPEparam">param</a> -&gt; f:('a -&gt; 'b) -&gt; 'b <a href="Command.Spec.html#TYPEparam">param</a></code></span></pre>
+      <div class="info">parameter transformation</div>
+    
+<br/><br/><h2 id="2_TITLE">various internal values</h2><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> help : <code class="type">string <a href="../core_kernel/Std.Lazy.html#TYPEt">Core_kernel.Std.Lazy.t</a> <a href="Command.Spec.html#TYPEparam">param</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> path : <code class="type">string list <a href="Command.Spec.html#TYPEparam">param</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> args : <code class="type">string list <a href="Command.Spec.html#TYPEparam">param</a></code></span></pre>
+      
+    
+<br/><br/><h1 id="1_TITLE">command specifications</h1><br/> <br/>
+	  
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('main_in, 'main_out) </code>t </span></pre>
+      <div class="info">composable command-line specifications</div>
+    
+<br/><code class="code">spec1 ++ spec2 ++ ... ++ specN</code> composes spec1 through specN.<br/>      For example, if <code class="code">spec_a</code> and <code class="code">spec_b</code> have types:<br/>      <pre class="codepre"><code class="code">
+        spec_a: (a1 -&gt; ... -&gt; aN -&gt; 'ra, 'ra) Spec.t
+        spec_b: (b1 -&gt; ... -&gt; bM -&gt; 'rb, 'rb) Spec.t
+      </code></pre><br/>      then <code class="code">spec_a ++ spec_b</code> has the following type:<br/>      <pre class="codepre"><code class="code">
+        (a1 -&gt; ... -&gt; aN -&gt; b1 -&gt; ... -&gt; bM -&gt; 'rb, 'rb) Spec.t
+      </code></pre><br/>      So, <code class="code">spec_a ++ spec_b</code> transforms a main function it by first supplying <code class="code">spec_a</code>'s
+      arguments of type <code class="code">a1</code>, ..., <code class="code">aN</code>, and then supplying <code class="code">spec_b</code>'s arguments of type
+      <code class="code">b1</code>, ..., <code class="code">bm</code>.<br/>      One can understand <code class="code">++</code> as function composition by thinking of the type of specs
+      as concrete function types, representing the transformation of a main function:<br/>      <pre class="codepre"><code class="code">
+        spec_a: \/ra. (a1 -&gt; ... -&gt; aN -&gt; 'ra) -&gt; 'ra
+        spec_b: \/rb. (b1 -&gt; ... -&gt; bM -&gt; 'rb) -&gt; 'rb
+      </code></pre><br/>      Under this interpretation, the composition of <code class="code">spec_a</code> and <code class="code">spec_b</code> has type:<br/>      <pre class="codepre"><code class="code">
+        spec_a ++ spec_b : \/rc. (a1 -&gt; ... -&gt; aN -&gt; b1 -&gt; ... -&gt; bM -&gt; 'rc) -&gt; 'rc
+      </code></pre><br/>      And the implementation is just function composition:<br/>      <pre class="codepre"><code class="code">
+        sa ++ sb = fun main -&gt; sb (sa main)
+      </code></pre>
+<br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> empty : <code class="type">('m, 'm) <a href="Command.Spec.html#TYPEt">t</a></code></span></pre>
+      <div class="info">the empty command-line spec</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> ++ : <code class="type">('m1, 'm2) <a href="Command.Spec.html#TYPEt">t</a> -&gt; ('m2, 'm3) <a href="Command.Spec.html#TYPEt">t</a> -&gt; ('m1, 'm3) <a href="Command.Spec.html#TYPEt">t</a></code></span></pre>
+      <div class="info">command-line spec composition</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> +&gt; : <code class="type">('m1, 'a -&gt; 'm2) <a href="Command.Spec.html#TYPEt">t</a> -&gt; 'a <a href="Command.Spec.html#TYPEparam">param</a> -&gt; ('m1, 'm2) <a href="Command.Spec.html#TYPEt">t</a></code></span></pre>
+      <div class="info">add a rightmost parameter onto the type of main</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> +&lt; : <code class="type">('m1, 'm2) <a href="Command.Spec.html#TYPEt">t</a> -&gt; 'a <a href="Command.Spec.html#TYPEparam">param</a> -&gt; ('a -&gt; 'm1, 'm2) <a href="Command.Spec.html#TYPEt">t</a></code></span></pre>
+      <div class="info">add a leftmost parameter onto the type of main</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> step : <code class="type">('m1 -&gt; 'm2) -&gt; ('m1, 'm2) <a href="Command.Spec.html#TYPEt">t</a></code></span></pre>
+      <div class="info">combinator for patching up how parameters are obtained or presented</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> wrap : <code class="type">(run:('m1 -&gt; 'r1) -&gt; main:'m2 -&gt; 'r2) -&gt; ('m1, 'r1) <a href="Command.Spec.html#TYPEt">t</a> -&gt; ('m2, 'r2) <a href="Command.Spec.html#TYPEt">t</a></code></span></pre>
+      <div class="info">combinator for defining a class of commands with common behavior</div>
+    
+<br/><br/><h1 id="1_TITLE">argument types</h1><br/> <br/>
+	  
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Command.Spec.Arg_type.html">Arg_type</a> : <code class="code">sig</code> <a href="Command.Spec.Arg_type.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Command.Spec.Arg_type.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> string : <code class="type">string <a href="Command.Spec.Arg_type.html#TYPEt">Arg_type.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> int : <code class="type">int <a href="Command.Spec.Arg_type.html#TYPEt">Arg_type.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> float : <code class="type">float <a href="Command.Spec.Arg_type.html#TYPEt">Arg_type.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bool : <code class="type">bool <a href="Command.Spec.Arg_type.html#TYPEt">Arg_type.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> date : <code class="type"><a href="Date.html#TYPEt">Date.t</a> <a href="Command.Spec.Arg_type.html#TYPEt">Arg_type.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> time_span : <code class="type"><a href="Span.html#TYPEt">Span.t</a> <a href="Command.Spec.Arg_type.html#TYPEt">Arg_type.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> file : <code class="type">string <a href="Command.Spec.Arg_type.html#TYPEt">Arg_type.t</a></code></span></pre>
+      
+    
+<br/><br/><h1 id="1_TITLE">flag specifications</h1><br/> <br/>
+	  
+<pre><span id="TYPEflag"><span class="keyword">type</span> <code class="type">'a </code>flag </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> flag : <code class="type">?aliases:string list -&gt; string -&gt; 'a <a href="Command.Spec.html#TYPEflag">flag</a> -&gt; doc:string -&gt; 'a <a href="Command.Spec.html#TYPEparam">param</a></code></span></pre>
+      <div class="info"><code class="code">flag name spec ~doc</code> specifies a command that, among other things, takes a flag
+      named <code class="code">name</code> on its command line.  <code class="code">doc</code> indicates the meaning of the flag.<br/>      NOTE: the <code class="code">doc</code> for a flag which takes an argument should be of the form <code class="code">arg_name ^
+      &quot; &quot; ^ description</code> where <code class="code">arg_name</code> describes the argument and <code class="code">description</code>
+      describes the meaning of the flag.<br/>      NOTE: flag names (including aliases) containing underscores will
+            be rejected.  Use dashes instead.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> required : <code class="type">'a <a href="Command.Spec.Arg_type.html#TYPEt">Arg_type.t</a> -&gt; 'a <a href="Command.Spec.html#TYPEflag">flag</a></code></span></pre>
+      <div class="info">required flags must be passed exactly once</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> optional : <code class="type">'a <a href="Command.Spec.Arg_type.html#TYPEt">Arg_type.t</a> -&gt; 'a option <a href="Command.Spec.html#TYPEflag">flag</a></code></span></pre>
+      <div class="info">optional flags may be passed at most once</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> optional_with_default : <code class="type">'a -&gt; 'a <a href="Command.Spec.Arg_type.html#TYPEt">Arg_type.t</a> -&gt; 'a <a href="Command.Spec.html#TYPEflag">flag</a></code></span></pre>
+      <div class="info"><code class="code">optional_with_default</code> flags may be passed at most once, and
+      default to a given value</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> listed : <code class="type">'a <a href="Command.Spec.Arg_type.html#TYPEt">Arg_type.t</a> -&gt; 'a list <a href="Command.Spec.html#TYPEflag">flag</a></code></span></pre>
+      <div class="info"><code class="code">listed</code> flags may be passed zero or more times</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> no_arg : <code class="type">bool <a href="Command.Spec.html#TYPEflag">flag</a></code></span></pre>
+      <div class="info"><code class="code">no_arg</code> flags may be passed at most once.  The boolean returned
+      is true iff the flag is passed on the command line</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> no_arg_register : <code class="type">key:'a <a href="../core_kernel/Std.Univ_map.With_default.Key.html#TYPEt">Core_kernel.Std.Univ_map.With_default.Key.t</a> -&gt; value:'a -&gt; bool <a href="Command.Spec.html#TYPEflag">flag</a></code></span></pre>
+      <div class="info"><code class="code">no_arg_register ~key ~value</code> is like <code class="code">no_arg</code>, but associates <code class="code">value</code>
+      with <code class="code">key</code> in the in the auto-completion environment</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> no_arg_abort : <code class="type">exit:(unit -&gt; <a href="../core_kernel/Std.html#TYPEnever_returns">Core_kernel.Std.never_returns</a>) -&gt; unit <a href="Command.Spec.html#TYPEflag">flag</a></code></span></pre>
+      <div class="info"><code class="code">no_arg_abort ~exit</code> is like <code class="code">no_arg</code>, but aborts command-line parsing
+      by calling <code class="code">exit</code>.  This flag type is useful for &quot;help&quot;-style flags that
+      just print something and exit.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> escape : <code class="type">string list option <a href="Command.Spec.html#TYPEflag">flag</a></code></span></pre>
+      <div class="info"><code class="code">escape</code> flags may be passed at most once.  They cause the command
+      line parser to abort and pass through all remaining command line
+      arguments as the value of the flag.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> flags_of_args_exn : <code class="type"><a href="../core_kernel/Std.Arg.html#TYPEt">Core_kernel.Std.Arg.t</a> list -&gt; ('a, 'a) <a href="Command.Spec.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">flags_of_args_exn args</code> creates a spec from <code class="code">Arg.t</code>s, for compatibility with
+      ocaml's base libraries.  Fails if it encounters an arg that cannot be converted.<br/>      NOTE: There is a difference in side effect ordering between <code class="code">Arg</code> and <code class="code">Command</code>.  In
+      the <code class="code">Arg</code> module, flag handling functions embedded in <code class="code">Arg.t</code> values will be run in
+      the order that flags are passed on the command line.  In the <code class="code">Command</code> module, using
+      <code class="code">flags_of_args_exn flags</code>, they are evaluated in the order that the <code class="code">Arg.t</code> values
+      appear in <code class="code">flags</code>.</div>
+    
+<br/><br/><h1 id="1_TITLE">anonymous argument specifications</h1><br/> <br/>
+	  
+<pre><span id="TYPEanons"><span class="keyword">type</span> <code class="type">'a </code>anons </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> anon : <code class="type">'a <a href="Command.Spec.html#TYPEanons">anons</a> -&gt; 'a <a href="Command.Spec.html#TYPEparam">param</a></code></span></pre>
+      <div class="info"><code class="code">anon spec</code> specifies a command that, among other things, takes
+      the anonymous arguments specified by <code class="code">spec</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> %: : <code class="type">string -&gt; 'a <a href="Command.Spec.Arg_type.html#TYPEt">Arg_type.t</a> -&gt; 'a <a href="Command.Spec.html#TYPEanons">anons</a></code></span></pre>
+      <div class="info"><code class="code">(name %: typ)</code> specifies a required anonymous argument of type <code class="code">typ</code>.
+      The <code class="code">name</code> is mentioned in the generated help for the command.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> sequence : <code class="type">'a <a href="Command.Spec.html#TYPEanons">anons</a> -&gt; 'a list <a href="Command.Spec.html#TYPEanons">anons</a></code></span></pre>
+      <div class="info"><code class="code">sequence anons</code> specifies a sequence of anonymous arguments.  An exception
+      will be raised if <code class="code">anons</code> matches anything other than a fixed number of
+      anonymous arguments</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> maybe : <code class="type">'a <a href="Command.Spec.html#TYPEanons">anons</a> -&gt; 'a option <a href="Command.Spec.html#TYPEanons">anons</a></code></span></pre>
+      <div class="info"><code class="code">(maybe anons)</code> indicates that some anonymous arguments are optional</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> maybe_with_default : <code class="type">'a -&gt; 'a <a href="Command.Spec.html#TYPEanons">anons</a> -&gt; 'a <a href="Command.Spec.html#TYPEanons">anons</a></code></span></pre>
+      <div class="info"><code class="code">(maybe_with_default default anons)</code> indicates an optional anonymous
+      argument with a default value</div>
+    
+<br/><code class="code">t2</code>, <code class="code">t3</code>, and <code class="code">t4</code> each concatenate multiple anonymous argument
+      specs into a single one. The purpose of these combinators is to allow
+      for optional sequences of anonymous arguments.  Consider a command with
+      usage:<br/>      <span class="verbatim">        main.exe FOO [BAR BAZ]
+       </span><br/>      where the second and third anonymous arguments must either both
+      be there or both not be there.  This can be expressed as:<br/>      <pre class="codepre"><code class="code">
+        t2 (&quot;FOO&quot; %: foo) (maybe (t2 (&quot;BAR&quot; %: bar) (&quot;BAZ&quot; %: baz)))]
+       </code></pre><br/>      Sequences of 5 or more anonymous arguments can be built up using
+      nested tuples:<br/>      <pre class="codepre"><code class="code">
+        maybe (t3 a b (t3 c d e))
+      </code></pre>
+<br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> t2 : <code class="type">'a <a href="Command.Spec.html#TYPEanons">anons</a> -&gt; 'b <a href="Command.Spec.html#TYPEanons">anons</a> -&gt; ('a * 'b) <a href="Command.Spec.html#TYPEanons">anons</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t3 : <code class="type">'a <a href="Command.Spec.html#TYPEanons">anons</a> -&gt; 'b <a href="Command.Spec.html#TYPEanons">anons</a> -&gt; 'c <a href="Command.Spec.html#TYPEanons">anons</a> -&gt; ('a * 'b * 'c) <a href="Command.Spec.html#TYPEanons">anons</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t4 : <code class="type">'a <a href="Command.Spec.html#TYPEanons">anons</a> -&gt; 'b <a href="Command.Spec.html#TYPEanons">anons</a> -&gt; 'c <a href="Command.Spec.html#TYPEanons">anons</a> -&gt; 'd <a href="Command.Spec.html#TYPEanons">anons</a> -&gt; ('a * 'b * 'c * 'd) <a href="Command.Spec.html#TYPEanons">anons</a></code></span></pre>
+      
+    

@@ -1,0 +1,33 @@
+ 
+      <pre><span><span class="keyword">val</span> __pa_ounit_275876e34cf609db118f3d84b799a790 : <code class="type">string</code></span></pre>
+      
+    
+
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Deferred_intf.Deferred.html">Deferred</a> : <code class="code">sig</code> <a href="Deferred_intf.Deferred.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Deferred_intf.Deferred.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<pre><span id="TYPEhow"><span class="keyword">type</span> how </span>= <code class="type">[ `Parallel | `Sequential ]</code> </pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_how : <code class="type">[&lt; `Parallel | `Sequential ] -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Deferred_intf.Monad_sequence.html">Monad_sequence</a> = <code class="type"><code class="code">sig</code> <a href="Deferred_intf.Monad_sequence.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Deferred_intf.Monad_sequence.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Deferred_intf.Deferred_map.html">Deferred_map</a> = <code class="type"><code class="code">sig</code> <a href="Deferred_intf.Deferred_map.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Deferred_intf.Deferred_map.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+

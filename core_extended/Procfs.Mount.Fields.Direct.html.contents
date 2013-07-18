@@ -1,0 +1,22 @@
+ 
+      <pre><span><span class="keyword">val</span> iter : <code class="type"><a href="Procfs.Mount.html#TYPEt">t</a> -&gt;
+spec:((<a href="Procfs.Mount.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Mount.html#TYPEt">t</a> -&gt; string -&gt; unit) -&gt;
+file:((<a href="Procfs.Mount.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Mount.html#TYPEt">t</a> -&gt; string -&gt; unit) -&gt;
+vfstype:((<a href="Procfs.Mount.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Mount.html#TYPEt">t</a> -&gt; string -&gt; unit) -&gt;
+mntops:((<a href="Procfs.Mount.html#TYPEt">t</a>, string list) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Mount.html#TYPEt">t</a> -&gt; string list -&gt; unit) -&gt;
+freq:((<a href="Procfs.Mount.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Mount.html#TYPEt">t</a> -&gt; int -&gt; unit) -&gt;
+passno:((<a href="Procfs.Mount.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Mount.html#TYPEt">t</a> -&gt; int -&gt; unit) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold : <code class="type"><a href="Procfs.Mount.html#TYPEt">t</a> -&gt;
+init:'acc__ -&gt;
+spec:('acc__ -&gt; (<a href="Procfs.Mount.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Mount.html#TYPEt">t</a> -&gt; string -&gt; 'acc__) -&gt;
+file:('acc__ -&gt; (<a href="Procfs.Mount.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Mount.html#TYPEt">t</a> -&gt; string -&gt; 'acc__) -&gt;
+vfstype:('acc__ -&gt; (<a href="Procfs.Mount.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Mount.html#TYPEt">t</a> -&gt; string -&gt; 'acc__) -&gt;
+mntops:('acc__ -&gt;
+        (<a href="Procfs.Mount.html#TYPEt">t</a>, string list) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Mount.html#TYPEt">t</a> -&gt; string list -&gt; 'acc__) -&gt;
+freq:('acc__ -&gt; (<a href="Procfs.Mount.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Mount.html#TYPEt">t</a> -&gt; int -&gt; 'acc__) -&gt;
+passno:('acc__ -&gt; (<a href="Procfs.Mount.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Mount.html#TYPEt">t</a> -&gt; int -&gt; 'acc__) -&gt; 'acc__</code></span></pre>
+      
+    

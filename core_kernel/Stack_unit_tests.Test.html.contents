@@ -1,0 +1,121 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code">sig</code> <a href="Stack_unit_tests.Test.html">..</a> <code class="code">end</code></pre>
+	<div class="content">
+	<div file="FIXME.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t : <code class="type">'a <a href="../bin_prot/Size.html#TYPEsizer">Bin_prot.Size.sizer</a> -&gt; 'a Stack.t -&gt; int</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_ : <code class="type">'a <a href="../bin_prot/Unsafe_write_c.html#TYPEwriter">Bin_prot.Unsafe_write_c.writer</a> -&gt;
+<a href="../bin_prot/Unsafe_common.html#TYPEsptr">Bin_prot.Unsafe_common.sptr</a> -&gt;
+<a href="../bin_prot/Unsafe_common.html#TYPEeptr">Bin_prot.Unsafe_common.eptr</a> -&gt; 'a Stack.t -&gt; <a href="../bin_prot/Unsafe_common.html#TYPEsptr">Bin_prot.Unsafe_common.sptr</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t : <code class="type">'a <a href="../bin_prot/Unsafe_write_c.html#TYPEwriter">Bin_prot.Unsafe_write_c.writer</a> -&gt;
+<a href="../bin_prot/Common.html#TYPEbuf">Bin_prot.Common.buf</a> -&gt;
+pos:<a href="../bin_prot/Common.html#TYPEpos">Bin_prot.Common.pos</a> -&gt; 'a Stack.t -&gt; <a href="../bin_prot/Common.html#TYPEpos">Bin_prot.Common.pos</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t : <code class="type">'a <a href="../bin_prot/Type_class.html#TYPEwriter">Bin_prot.Type_class.writer</a> -&gt; 'a Stack.t <a href="../bin_prot/Type_class.html#TYPEwriter">Bin_prot.Type_class.writer</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t__ : <code class="type">'a <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+<a href="../bin_prot/Unsafe_common.html#TYPEsptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt;
+<a href="../bin_prot/Unsafe_common.html#TYPEeptr">Bin_prot.Unsafe_common.eptr</a> -&gt; int -&gt; 'a Stack.t</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t_ : <code class="type">'a <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+<a href="../bin_prot/Unsafe_common.html#TYPEsptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt; <a href="../bin_prot/Unsafe_common.html#TYPEeptr">Bin_prot.Unsafe_common.eptr</a> -&gt; 'a Stack.t</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t : <code class="type">'a <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+<a href="../bin_prot/Common.html#TYPEbuf">Bin_prot.Common.buf</a> -&gt; pos_ref:<a href="../bin_prot/Common.html#TYPEpos">Bin_prot.Common.pos</a> <a href="../stdlib/Pervasives.html#TYPEref">ref</a> -&gt; 'a t</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t : <code class="type">'a <a href="../bin_prot/Type_class.html#TYPEreader">Bin_prot.Type_class.reader</a> -&gt; 'a t <a href="../bin_prot/Type_class.html#TYPEreader">Bin_prot.Type_class.reader</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_t : <code class="type">'a <a href="../bin_prot/Type_class.html#TYPEt">Bin_prot.Type_class.t</a> -&gt; 'a t <a href="../bin_prot/Type_class.html#TYPEt">Bin_prot.Type_class.t</a></code></span></pre>
+      
+    
+
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Container_unit_tests.Test_S1.html">Container_unit_tests.Test_S1</a></code>(<code class="code">Stack</code>)</pre>
+	<div class="content">
+	<div file="Container_unit_tests.Test_S1.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> invariant : <code class="type">'a <a href="Invariant.html#TYPEinv">Invariant.inv</a> -&gt; 'a Stack.t <a href="Invariant.html#TYPEinv">Invariant.inv</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">unit -&gt; 'a Stack.t</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_empty : <code class="type">'a Stack.t -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> top_exn : <code class="type">'a Stack.t -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pop_exn : <code class="type">'a Stack.t -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pop : <code class="type">'a Stack.t -&gt; 'a option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> top : <code class="type">'a Stack.t -&gt; 'a option</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> push : <code class="type">'a Stack.t -&gt; 'a -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> copy : <code class="type">'a Stack.t -&gt; 'a Stack.t</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> until_empty : <code class="type">'a Stack.t -&gt; ('a -&gt; unit) -&gt; unit</code></span></pre>
+      
+    
+
+
+ 
+      <pre><span><span class="keyword">val</span> of_list : <code class="type">'a list -&gt; 'a Stack.t</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> clear : <code class="type">'a Stack.t -&gt; unit</code></span></pre>
+      
+    
+

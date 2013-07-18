@@ -1,0 +1,61 @@
+<pre><code><span id="TYPEt"><span class="keyword">type</span> <code class="type">('k, 'v) </code>t </span>= </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Empty"><span class="constructor">Empty</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Node"><span class="constructor">Node</span></span> <span class="keyword">of</span> <code class="type">('k, 'v) <a href="Avltree.html#TYPEt">t</a> * 'k * 'v * int * ('k, 'v) <a href="Avltree.html#TYPEt">t</a></code></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Leaf"><span class="constructor">Leaf</span></span> <span class="keyword">of</span> <code class="type">'k * 'v</code></code></td>
+	   </tr></table>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> empty : <code class="type">('k, 'v) <a href="Avltree.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> invariant : <code class="type">('k, 'v) <a href="Avltree.html#TYPEt">t</a> -&gt; compare:('k -&gt; 'k -&gt; int) -&gt; unit</code></span></pre>
+      <div class="info">check invariants, raise an exception if any invariants fail</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> add : <code class="type">?replace:bool -&gt;
+('k, 'v) <a href="Avltree.html#TYPEt">t</a> -&gt;
+compare:('k -&gt; 'k -&gt; int) -&gt;
+added:bool <a href="../stdlib/Pervasives.html#TYPEref">ref</a> -&gt; key:'k -&gt; data:'v -&gt; ('k, 'v) <a href="Avltree.html#TYPEt">t</a></code></span></pre>
+      <div class="info">adds the specified key and data to the tree destructively (previous t's are no longer
+    valid) using the specified comparison function. O(log(N)) time, O(1) space. The
+    returned t is the new root node of the tree, and should be used on all further calls
+    to any other function in this module. The bool ref, added, will be set to true if a
+    new node is added to the tree, or false if an existing node is replaced (in the case
+    that the key already exists). If <code class="code">replace</code> (default true) is true then add will
+    overwrite any existing mapping for <code class="code">key</code>. If <code class="code">replace</code> is false, and there is an
+    existing mapping for key then add has no effect.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> first : <code class="type">('k, 'v) <a href="Avltree.html#TYPEt">t</a> -&gt; ('k * 'v) option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> last : <code class="type">('k, 'v) <a href="Avltree.html#TYPEt">t</a> -&gt; ('k * 'v) option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find : <code class="type">('k, 'v) <a href="Avltree.html#TYPEt">t</a> -&gt; compare:('k -&gt; 'k -&gt; int) -&gt; 'k -&gt; 'v option</code></span></pre>
+      <div class="info">if the specified key exists in the tree, return the corresponding value.
+    O(log(N)) time and O(1) space.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> mem : <code class="type">('k, 'v) <a href="Avltree.html#TYPEt">t</a> -&gt; compare:('k -&gt; 'k -&gt; int) -&gt; 'k -&gt; bool</code></span></pre>
+      <div class="info">return true if key is present in the tree, otherwise return false.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> remove : <code class="type">('k, 'v) <a href="Avltree.html#TYPEt">t</a> -&gt;
+removed:bool <a href="../stdlib/Pervasives.html#TYPEref">ref</a> -&gt; compare:('k -&gt; 'k -&gt; int) -&gt; 'k -&gt; ('k, 'v) <a href="Avltree.html#TYPEt">t</a></code></span></pre>
+      <div class="info">remove key destructively from the tree if it exists, return the new root node.
+    Previous root nodes are not usable anymore, do so at your peril. the removed ref will
+    be set to true if a node was actually removed, or false otherwise.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> fold : <code class="type">('k, 'v) <a href="Avltree.html#TYPEt">t</a> -&gt; init:'a -&gt; f:(key:'k -&gt; data:'v -&gt; 'a -&gt; 'a) -&gt; 'a</code></span></pre>
+      <div class="info">fold over the tree</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> iter : <code class="type">('k, 'v) <a href="Avltree.html#TYPEt">t</a> -&gt; f:(key:'k -&gt; data:'v -&gt; unit) -&gt; unit</code></span></pre>
+      <div class="info">iterate over the tree</div>
+    

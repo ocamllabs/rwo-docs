@@ -1,0 +1,354 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+<pre><span id="TYPEouter"><span class="keyword">type</span> outer </span>= <code class="type"><a href="Float_intf.S.html#TYPEt">t</a></code> </pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Floatable.S.html">Floatable.S</a></code> with type t = <a href="Float_intf.S.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="Floatable.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Stringable.S.html">Stringable.S</a></code> with type t = <a href="Float_intf.S.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="Stringable.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Hashable.S_binable.html">Hashable.S_binable</a></code> with type t = <a href="Float_intf.S.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="Hashable.S_binable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Comparable.S_binable.html">Comparable.S_binable</a></code> with type t = <a href="Float_intf.S.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="Comparable.S_binable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Comparable.With_zero.html">Comparable.With_zero</a></code> with type t = <a href="Float_intf.S.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="Comparable.With_zero.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Robustly_comparable.S.html">Robustly_comparable.S</a></code> with type t = <a href="Float_intf.S.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="Robustly_comparable.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> validate_ordinary : <code class="type"><a href="Float_intf.S.html#TYPEt">t</a> <a href="Validate.html#TYPEcheck">Validate.check</a></code></span></pre>
+      <div class="info"><code class="code">validate_ordinary</code> fails if class is <code class="code">Nan</code> or <code class="code">Infinite</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> nan : <code class="type"><a href="Float_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> infinity : <code class="type"><a href="Float_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> neg_infinity : <code class="type"><a href="Float_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> max_value : <code class="type"><a href="Float_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> min_value : <code class="type"><a href="Float_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> zero : <code class="type"><a href="Float_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> epsilon : <code class="type"><a href="Float_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> epsilon_float : <code class="type"><a href="Float_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> max_finite_value : <code class="type"><a href="Float_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> min_positive_value : <code class="type"><a href="Float_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_int : <code class="type">int -&gt; <a href="Float_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_int : <code class="type"><a href="Float_intf.S.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_int64 : <code class="type">int64 -&gt; <a href="Float_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_int64 : <code class="type"><a href="Float_intf.S.html#TYPEt">t</a> -&gt; int64</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> round : <code class="type">?dir:[ `Down | `Nearest | `Up | `Zero ] -&gt; <a href="Float_intf.S.html#TYPEt">t</a> -&gt; <a href="Float_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iround : <code class="type">?dir:[ `Down | `Nearest | `Up | `Zero ] -&gt; <a href="Float_intf.S.html#TYPEt">t</a> -&gt; int option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iround_exn : <code class="type">?dir:[ `Down | `Nearest | `Up | `Zero ] -&gt; <a href="Float_intf.S.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> round_towards_zero : <code class="type"><a href="Float_intf.S.html#TYPEt">t</a> -&gt; <a href="Float_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> round_down : <code class="type"><a href="Float_intf.S.html#TYPEt">t</a> -&gt; <a href="Float_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> round_up : <code class="type"><a href="Float_intf.S.html#TYPEt">t</a> -&gt; <a href="Float_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> round_nearest : <code class="type"><a href="Float_intf.S.html#TYPEt">t</a> -&gt; <a href="Float_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iround_towards_zero : <code class="type"><a href="Float_intf.S.html#TYPEt">t</a> -&gt; int option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iround_down : <code class="type"><a href="Float_intf.S.html#TYPEt">t</a> -&gt; int option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iround_up : <code class="type"><a href="Float_intf.S.html#TYPEt">t</a> -&gt; int option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iround_nearest : <code class="type"><a href="Float_intf.S.html#TYPEt">t</a> -&gt; int option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iround_towards_zero_exn : <code class="type"><a href="Float_intf.S.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iround_down_exn : <code class="type"><a href="Float_intf.S.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iround_up_exn : <code class="type"><a href="Float_intf.S.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iround_nearest_exn : <code class="type"><a href="Float_intf.S.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_nan : <code class="type"><a href="Float_intf.S.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_inf : <code class="type"><a href="Float_intf.S.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      <div class="info">includes positive and negative Float.infinity</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> min_inan : <code class="type"><a href="Float_intf.S.html#TYPEt">t</a> -&gt; <a href="Float_intf.S.html#TYPEt">t</a> -&gt; <a href="Float_intf.S.html#TYPEt">t</a></code></span></pre>
+      <div class="info">min and max that return the other value if one of the values is a <code class="code">nan</code>. Returns
+      <code class="code">nan</code> if both arguments are <code class="code">nan</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> max_inan : <code class="type"><a href="Float_intf.S.html#TYPEt">t</a> -&gt; <a href="Float_intf.S.html#TYPEt">t</a> -&gt; <a href="Float_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> + : <code class="type"><a href="Float_intf.S.html#TYPEt">t</a> -&gt; <a href="Float_intf.S.html#TYPEt">t</a> -&gt; <a href="Float_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> - : <code class="type"><a href="Float_intf.S.html#TYPEt">t</a> -&gt; <a href="Float_intf.S.html#TYPEt">t</a> -&gt; <a href="Float_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> * : <code class="type"><a href="Float_intf.S.html#TYPEt">t</a> -&gt; <a href="Float_intf.S.html#TYPEt">t</a> -&gt; <a href="Float_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> / : <code class="type"><a href="Float_intf.S.html#TYPEt">t</a> -&gt; <a href="Float_intf.S.html#TYPEt">t</a> -&gt; <a href="Float_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Float_intf.S.Parts.html">Parts</a> : <code class="code">sig</code> <a href="Float_intf.S.Parts.html">..</a> <code class="code">end</code></pre><div class="info">Returns the fractional part and the whole (i.e. integer) part.  For example, <code class="code">modf
+      (-3.14)</code> returns <code class="code">{ fractional = -0.14; integral = -3.; }</code>!</div>
+	<div class="content" style="display:none">
+	<div file="Float_intf.S.Parts.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> modf : <code class="type"><a href="Float_intf.S.html#TYPEt">t</a> -&gt; <a href="Float_intf.S.Parts.html#TYPEt">Parts.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mod_float : <code class="type"><a href="Float_intf.S.html#TYPEt">t</a> -&gt; <a href="Float_intf.S.html#TYPEt">t</a> -&gt; <a href="Float_intf.S.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">mod_float x y</code> returns a result with the same sign as <code class="code">x</code>.  It returns <code class="code">nan</code> if <code class="code">y</code>
+      is <code class="code">0</code>.  It is basically
+      <code class="code">let mod_float x y = x -. float(truncate(x/.y)) *. y</code>
+      not
+      <code class="code">let mod_float x y = x -. floor(x/.y) *. y</code>
+      and therefore resembles <code class="code">mod</code> on integers more than <code class="code">%</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> add : <code class="type"><a href="Float_intf.S.html#TYPEt">t</a> -&gt; <a href="Float_intf.S.html#TYPEt">t</a> -&gt; <a href="Float_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sub : <code class="type"><a href="Float_intf.S.html#TYPEt">t</a> -&gt; <a href="Float_intf.S.html#TYPEt">t</a> -&gt; <a href="Float_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> neg : <code class="type"><a href="Float_intf.S.html#TYPEt">t</a> -&gt; <a href="Float_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> scale : <code class="type"><a href="Float_intf.S.html#TYPEt">t</a> -&gt; <a href="Float_intf.S.html#TYPEt">t</a> -&gt; <a href="Float_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> abs : <code class="type"><a href="Float_intf.S.html#TYPEt">t</a> -&gt; <a href="Float_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_string_hum : <code class="type">?delimiter:char -&gt; ?decimals:int -&gt; ?strip_zero:bool -&gt; float -&gt; string</code></span></pre>
+      <div class="info">Pretty print float, for example <code class="code">to_string_hum ~decimals:3 1234.1999 = &quot;1_234.200&quot;</code>
+      <code class="code">to_string_hum ~decimals:3 ~strip_zero:true 1234.1999 = &quot;1_234.2&quot; </code>. No delimiters
+      are inserted to the right of the decimal.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> ldexp : <code class="type"><a href="Float_intf.S.html#TYPEt">t</a> -&gt; int -&gt; <a href="Float_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> frexp : <code class="type"><a href="Float_intf.S.html#TYPEt">t</a> -&gt; <a href="Float_intf.S.html#TYPEt">t</a> * int</code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Float_intf.S.Class.html">Class</a> : <code class="code">sig</code> <a href="Float_intf.S.Class.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Float_intf.S.Class.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> classify : <code class="type"><a href="Float_intf.S.html#TYPEt">t</a> -&gt; <a href="Float_intf.S.Class.html#TYPEt">Class.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_finite : <code class="type"><a href="Float_intf.S.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Float_intf.S.Sign.html">Sign</a> : <code class="code">sig</code> <a href="Float_intf.S.Sign.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Float_intf.S.Sign.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> sign : <code class="type"><a href="Float_intf.S.html#TYPEt">t</a> -&gt; <a href="Float_intf.S.Sign.html#TYPEt">Sign.t</a></code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Float_intf.S.Terse.html">Terse</a> : <code class="code">sig</code> <a href="Float_intf.S.Terse.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Float_intf.S.Terse.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> outer_of_sexp : <code class="type"><a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; <a href="Float_intf.S.html#TYPEouter">outer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_outer : <code class="type"><a href="Float_intf.S.html#TYPEouter">outer</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_outer : <code class="type"><a href="Float_intf.S.html#TYPEouter">outer</a> <a href="../bin_prot/Type_class.html#TYPEt">Bin_prot.Type_class.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_outer : <code class="type"><a href="Float_intf.S.html#TYPEouter">outer</a> <a href="../bin_prot/Read_ml.html#TYPEreader">Bin_prot.Read_ml.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_outer_ : <code class="type"><a href="Float_intf.S.html#TYPEouter">outer</a> <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_outer__ : <code class="type">(int -&gt; <a href="Float_intf.S.html#TYPEouter">outer</a>) <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_outer : <code class="type"><a href="Float_intf.S.html#TYPEouter">outer</a> <a href="../bin_prot/Type_class.html#TYPEreader">Bin_prot.Type_class.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_outer : <code class="type"><a href="Float_intf.S.html#TYPEouter">outer</a> <a href="../bin_prot/Size.html#TYPEsizer">Bin_prot.Size.sizer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_outer : <code class="type"><a href="Float_intf.S.html#TYPEouter">outer</a> <a href="../bin_prot/Write_ml.html#TYPEwriter">Bin_prot.Write_ml.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_outer_ : <code class="type"><a href="Float_intf.S.html#TYPEouter">outer</a> <a href="../bin_prot/Unsafe_write_c.html#TYPEwriter">Bin_prot.Unsafe_write_c.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_outer : <code class="type"><a href="Float_intf.S.html#TYPEouter">outer</a> <a href="../bin_prot/Type_class.html#TYPEwriter">Bin_prot.Type_class.writer</a></code></span></pre>
+      
+    
+<br/><code class="code">max</code> and <code class="code">min</code> will return nan if either argument is nan.<br/>      The <code class="code">validate_*</code> functions always fail if class is <code class="code">Nan</code> or <code class="code">Infinite</code>.<br/>
+	  
+<br/>The results of robust comparisons on <code class="code">nan</code> should be considered undefined.<br/>
+	  
+<br/><code class="code">validate_ordinary</code> fails if class is <code class="code">Nan</code> or <code class="code">Infinite</code>.<br/>
+	  
+<br/>includes positive and negative Float.infinity<br/>
+	  
+<br/>min and max that return the other value if one of the values is a <code class="code">nan</code>. Returns
+      <code class="code">nan</code> if both arguments are <code class="code">nan</code>.<br/>
+	  
+<br/>Returns the fractional part and the whole (i.e. integer) part.  For example, <code class="code">modf
+      (-3.14)</code> returns <code class="code">{ fractional = -0.14; integral = -3.; }</code>!<br/>
+	  
+<br/><code class="code">mod_float x y</code> returns a result with the same sign as <code class="code">x</code>.  It returns <code class="code">nan</code> if <code class="code">y</code>
+      is <code class="code">0</code>.  It is basically
+      <code class="code">let mod_float x y = x -. float(truncate(x/.y)) *. y</code>
+      not
+      <code class="code">let mod_float x y = x -. floor(x/.y) *. y</code>
+      and therefore resembles <code class="code">mod</code> on integers more than <code class="code">%</code>.<br/>
+	  
+<br/>Pretty print float, for example <code class="code">to_string_hum ~decimals:3 1234.1999 = &quot;1_234.200&quot;</code>
+      <code class="code">to_string_hum ~decimals:3 ~strip_zero:true 1234.1999 = &quot;1_234.2&quot; </code>. No delimiters
+      are inserted to the right of the decimal.<br/>
+	  

@@ -1,0 +1,63 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Container.Generic.html">Container.Generic</a></code></pre>
+	<div class="content">
+	<div file="Container.Generic.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> mem : <code class="type">'a t -&gt; 'a -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> copy : <code class="type">'a t -&gt; 'a t</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add : <code class="type">'a t -&gt; 'a -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> strict_add : <code class="type">'a t -&gt; 'a -&gt; unit <a href="Or_error.html#TYPEt">Or_error.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> strict_add_exn : <code class="type">'a t -&gt; 'a -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove : <code class="type">'a t -&gt; 'a -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> strict_remove : <code class="type">'a t -&gt; 'a -&gt; unit <a href="Or_error.html#TYPEt">Or_error.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> strict_remove_exn : <code class="type">'a t -&gt; 'a -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> clear : <code class="type">'a t -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> equal : <code class="type">'a t -&gt; 'a t -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> filter : <code class="type">'a t -&gt; f:('a -&gt; bool) -&gt; 'a t</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> diff : <code class="type">'a t -&gt; 'a t -&gt; 'a t</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_hashtbl_keys : <code class="type">('a, 'b) <a href="Core_hashtbl.html#TYPEt">Core_hashtbl.t</a> -&gt; 'a t</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> filter_inplace : <code class="type">'a t -&gt; f:('a -&gt; bool) -&gt; unit</code></span></pre>
+      
+    

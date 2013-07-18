@@ -1,0 +1,93 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t </span></pre>
+      
+    
+<pre><span id="EXCEPTIONFailure"><span class="keyword">exception</span> Failure</span></pre>
+<pre><span id="EXCEPTIONError"><span class="keyword">exception</span> Error</span> <span class="keyword">of</span> <code class="type">string</code></pre>
+<br/><br/><h6 id="6_TITLE">Stream builders</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> from : <code class="type">(int -&gt; 'a option) -&gt; 'a <a href="Stream.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_list : <code class="type">'a list -&gt; 'a <a href="Stream.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_string : <code class="type">string -&gt; char <a href="Stream.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_channel : <code class="type"><a href="Pervasives.html#TYPEin_channel">in_channel</a> -&gt; char <a href="Stream.html#TYPEt">t</a></code></span></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Stream iterator</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> iter : <code class="type">('a -&gt; unit) -&gt; 'a <a href="Stream.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Predefined parsers</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> next : <code class="type">'a <a href="Stream.html#TYPEt">t</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> empty : <code class="type">'a <a href="Stream.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Useful functions</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> peek : <code class="type">'a <a href="Stream.html#TYPEt">t</a> -&gt; 'a option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> junk : <code class="type">'a <a href="Stream.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> count : <code class="type">'a <a href="Stream.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> npeek : <code class="type">int -&gt; 'a <a href="Stream.html#TYPEt">t</a> -&gt; 'a list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iapp : <code class="type">'a <a href="Stream.html#TYPEt">t</a> -&gt; 'a <a href="Stream.html#TYPEt">t</a> -&gt; 'a <a href="Stream.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> icons : <code class="type">'a -&gt; 'a <a href="Stream.html#TYPEt">t</a> -&gt; 'a <a href="Stream.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ising : <code class="type">'a -&gt; 'a <a href="Stream.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> lapp : <code class="type">(unit -&gt; 'a <a href="Stream.html#TYPEt">t</a>) -&gt; 'a <a href="Stream.html#TYPEt">t</a> -&gt; 'a <a href="Stream.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> lcons : <code class="type">(unit -&gt; 'a) -&gt; 'a <a href="Stream.html#TYPEt">t</a> -&gt; 'a <a href="Stream.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> lsing : <code class="type">(unit -&gt; 'a) -&gt; 'a <a href="Stream.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sempty : <code class="type">'a <a href="Stream.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> slazy : <code class="type">(unit -&gt; 'a <a href="Stream.html#TYPEt">t</a>) -&gt; 'a <a href="Stream.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> dump : <code class="type">('a -&gt; unit) -&gt; 'a <a href="Stream.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    

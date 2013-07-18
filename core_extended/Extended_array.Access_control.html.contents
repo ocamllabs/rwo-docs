@@ -1,0 +1,193 @@
+<pre><span id="TYPEany"><span class="keyword">type</span> <code class="type">('a, +'z) </code>any </span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Extended_array.Access_control.Immutable.html">Immutable</a> : <code class="code">sig</code> <a href="Extended_array.Access_control.Immutable.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Extended_array.Access_control.Immutable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Extended_array.Access_control.Read_only.html">Read_only</a> : <code class="code">sig</code> <a href="Extended_array.Access_control.Read_only.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Extended_array.Access_control.Read_only.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Extended_array.Access_control.Read_write.html">Read_write</a> : <code class="code">sig</code> <a href="Extended_array.Access_control.Read_write.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Extended_array.Access_control.Read_write.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t </span>= <code class="type">'a <a href="Extended_array.Access_control.Immutable.html#TYPEt">Immutable.t</a></code> </pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core/Std.Sexpable.S1.html">Core.Std.Sexpable.S1</a></code> with type t = 'a <a href="Extended_array.Access_control.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="../core/Std.Sexpable.S1.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core/Std.Binable.S1.html">Core.Std.Binable.S1</a></code> with type t = 'a <a href="Extended_array.Access_control.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="../core/Std.Binable.S1.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">len:int -&gt; 'a -&gt; ('a, 'b) <a href="Extended_array.Access_control.html#TYPEany">any</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> init : <code class="type">int -&gt; f:(int -&gt; 'a) -&gt; ('a, 'b) <a href="Extended_array.Access_control.html#TYPEany">any</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_array : <code class="type">'a array -&gt; 'a <a href="Extended_array.Access_control.Read_write.html#TYPEt">Read_write.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_array_copy : <code class="type">'a array -&gt; ('a, 'b) <a href="Extended_array.Access_control.html#TYPEany">any</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_array_copy : <code class="type">('a, 'b) <a href="Extended_array.Access_control.html#TYPEany">any</a> -&gt; 'a array</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get : <code class="type">('a, 'b) <a href="Extended_array.Access_control.html#TYPEany">any</a> -&gt; int -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set : <code class="type">'a <a href="Extended_array.Access_control.Read_write.html#TYPEt">Read_write.t</a> -&gt; int -&gt; 'a -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> append : <code class="type">('a, 'b) <a href="Extended_array.Access_control.html#TYPEany">any</a> -&gt; ('a, 'c) <a href="Extended_array.Access_control.html#TYPEany">any</a> -&gt; ('a, 'd) <a href="Extended_array.Access_control.html#TYPEany">any</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> copy : <code class="type">('a, 'b) <a href="Extended_array.Access_control.html#TYPEany">any</a> -&gt; ('a, 'c) <a href="Extended_array.Access_control.html#TYPEany">any</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map : <code class="type">f:('a -&gt; 'b) -&gt; ('a, 'c) <a href="Extended_array.Access_control.html#TYPEany">any</a> -&gt; ('b, 'd) <a href="Extended_array.Access_control.html#TYPEany">any</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mapi : <code class="type">f:(int -&gt; 'a -&gt; 'b) -&gt; ('a, 'c) <a href="Extended_array.Access_control.html#TYPEany">any</a> -&gt; ('b, 'd) <a href="Extended_array.Access_control.html#TYPEany">any</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iteri : <code class="type">f:(int -&gt; 'a -&gt; unit) -&gt; ('a, 'b) <a href="Extended_array.Access_control.html#TYPEany">any</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> filter_opt : <code class="type">('a option, 'b) <a href="Extended_array.Access_control.html#TYPEany">any</a> -&gt; ('a, 'c) <a href="Extended_array.Access_control.html#TYPEany">any</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> filter_map : <code class="type">('a, 'c) <a href="Extended_array.Access_control.html#TYPEany">any</a> -&gt; f:('a -&gt; 'b option) -&gt; ('b, 'd) <a href="Extended_array.Access_control.html#TYPEany">any</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> filter_mapi : <code class="type">('a, 'c) <a href="Extended_array.Access_control.html#TYPEany">any</a> -&gt; f:(int -&gt; 'a -&gt; 'b option) -&gt; ('b, 'd) <a href="Extended_array.Access_control.html#TYPEany">any</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map2_exn : <code class="type">('a, 'd) <a href="Extended_array.Access_control.html#TYPEany">any</a> -&gt; ('b, 'e) <a href="Extended_array.Access_control.html#TYPEany">any</a> -&gt; f:('a -&gt; 'b -&gt; 'c) -&gt; ('c, 'f) <a href="Extended_array.Access_control.html#TYPEany">any</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> findi : <code class="type">('a, 'b) <a href="Extended_array.Access_control.html#TYPEany">any</a> -&gt; f:(int -&gt; 'a -&gt; bool) -&gt; (int * 'a) option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> blit : <code class="type">src:('a, 'b) <a href="Extended_array.Access_control.html#TYPEany">any</a> -&gt;
+src_pos:int -&gt; dst:'a <a href="Extended_array.Access_control.Read_write.html#TYPEt">Read_write.t</a> -&gt; dst_pos:int -&gt; len:int -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> permute : <code class="type">?random_state:<a href="../core/Std.Random.State.html#TYPEt">Core.Std.Random.State.t</a> -&gt; 'a <a href="Extended_array.Access_control.Read_write.html#TYPEt">Read_write.t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fill : <code class="type">'a <a href="Extended_array.Access_control.Read_write.html#TYPEt">Read_write.t</a> -&gt; pos:int -&gt; len:int -&gt; 'a -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_list : <code class="type">'a list -&gt; ('a, 'b) <a href="Extended_array.Access_control.html#TYPEany">any</a></code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core/Std.Container.S1_phantom.html">Core.Std.Container.S1_phantom</a></code> with type t = ('a, 'phantom) <a href="Extended_array.Access_control.html#TYPEany">any</a></pre>
+	<div class="content">
+	<div file="../core/Std.Container.S1_phantom.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> bin_any : <code class="type">'a <a href="../core/Std.Bin_prot.Type_class.html#TYPEt">Core.Std.Bin_prot.Type_class.t</a> -&gt;
+'z <a href="../core/Std.Bin_prot.Type_class.html#TYPEt">Core.Std.Bin_prot.Type_class.t</a> -&gt;
+('a, 'z) <a href="Extended_array.Access_control.html#TYPEany">any</a> <a href="../core/Std.Bin_prot.Type_class.html#TYPEt">Core.Std.Bin_prot.Type_class.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_any : <code class="type">'a <a href="../core/Std.Bin_prot.Unsafe_read_c.html#TYPEreader">Core.Std.Bin_prot.Unsafe_read_c.reader</a> -&gt;
+'z <a href="../core/Std.Bin_prot.Unsafe_read_c.html#TYPEreader">Core.Std.Bin_prot.Unsafe_read_c.reader</a> -&gt;
+('a, 'z) <a href="Extended_array.Access_control.html#TYPEany">any</a> <a href="../core/Std.Bin_prot.Read_ml.html#TYPEreader">Core.Std.Bin_prot.Read_ml.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_any_ : <code class="type">'a <a href="../core/Std.Bin_prot.Unsafe_read_c.html#TYPEreader">Core.Std.Bin_prot.Unsafe_read_c.reader</a> -&gt;
+'z <a href="../core/Std.Bin_prot.Unsafe_read_c.html#TYPEreader">Core.Std.Bin_prot.Unsafe_read_c.reader</a> -&gt;
+('a, 'z) <a href="Extended_array.Access_control.html#TYPEany">any</a> <a href="../core/Std.Bin_prot.Unsafe_read_c.html#TYPEreader">Core.Std.Bin_prot.Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_any__ : <code class="type">'a <a href="../core/Std.Bin_prot.Unsafe_read_c.html#TYPEreader">Core.Std.Bin_prot.Unsafe_read_c.reader</a> -&gt;
+'z <a href="../core/Std.Bin_prot.Unsafe_read_c.html#TYPEreader">Core.Std.Bin_prot.Unsafe_read_c.reader</a> -&gt;
+(int -&gt; ('a, 'z) <a href="Extended_array.Access_control.html#TYPEany">any</a>) <a href="../core/Std.Bin_prot.Unsafe_read_c.html#TYPEreader">Core.Std.Bin_prot.Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_any : <code class="type">'a <a href="../core/Std.Bin_prot.Type_class.html#TYPEreader">Core.Std.Bin_prot.Type_class.reader</a> -&gt;
+'z <a href="../core/Std.Bin_prot.Type_class.html#TYPEreader">Core.Std.Bin_prot.Type_class.reader</a> -&gt;
+('a, 'z) <a href="Extended_array.Access_control.html#TYPEany">any</a> <a href="../core/Std.Bin_prot.Type_class.html#TYPEreader">Core.Std.Bin_prot.Type_class.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_any : <code class="type">'a <a href="../core/Std.Bin_prot.Size.html#TYPEsizer">Core.Std.Bin_prot.Size.sizer</a> -&gt;
+'z <a href="../core/Std.Bin_prot.Size.html#TYPEsizer">Core.Std.Bin_prot.Size.sizer</a> -&gt; ('a, 'z) <a href="Extended_array.Access_control.html#TYPEany">any</a> <a href="../core/Std.Bin_prot.Size.html#TYPEsizer">Core.Std.Bin_prot.Size.sizer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_any : <code class="type">'a <a href="../core/Std.Bin_prot.Unsafe_write_c.html#TYPEwriter">Core.Std.Bin_prot.Unsafe_write_c.writer</a> -&gt;
+'z <a href="../core/Std.Bin_prot.Unsafe_write_c.html#TYPEwriter">Core.Std.Bin_prot.Unsafe_write_c.writer</a> -&gt;
+('a, 'z) <a href="Extended_array.Access_control.html#TYPEany">any</a> <a href="../core/Std.Bin_prot.Write_ml.html#TYPEwriter">Core.Std.Bin_prot.Write_ml.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_any_ : <code class="type">'a <a href="../core/Std.Bin_prot.Unsafe_write_c.html#TYPEwriter">Core.Std.Bin_prot.Unsafe_write_c.writer</a> -&gt;
+'z <a href="../core/Std.Bin_prot.Unsafe_write_c.html#TYPEwriter">Core.Std.Bin_prot.Unsafe_write_c.writer</a> -&gt;
+('a, 'z) <a href="Extended_array.Access_control.html#TYPEany">any</a> <a href="../core/Std.Bin_prot.Unsafe_write_c.html#TYPEwriter">Core.Std.Bin_prot.Unsafe_write_c.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_any : <code class="type">'a <a href="../core/Std.Bin_prot.Type_class.html#TYPEwriter">Core.Std.Bin_prot.Type_class.writer</a> -&gt;
+'z <a href="../core/Std.Bin_prot.Type_class.html#TYPEwriter">Core.Std.Bin_prot.Type_class.writer</a> -&gt;
+('a, 'z) <a href="Extended_array.Access_control.html#TYPEany">any</a> <a href="../core/Std.Bin_prot.Type_class.html#TYPEwriter">Core.Std.Bin_prot.Type_class.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> any_of_sexp : <code class="type">(<a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; 'a) -&gt;
+(<a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; 'z) -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; ('a, 'z) <a href="Extended_array.Access_control.html#TYPEany">any</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_any : <code class="type">('a -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a>) -&gt;
+('z -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a>) -&gt; ('a, 'z) <a href="Extended_array.Access_control.html#TYPEany">any</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    

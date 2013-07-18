@@ -1,0 +1,6 @@
+<pre><code><span id="TYPEt"><span class="keyword">type</span> t </span>= </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Atom"><span class="constructor">Atom</span></span> <span class="keyword">of</span> <code class="type">string</code></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.List"><span class="constructor">List</span></span> <span class="keyword">of</span> <code class="type"><a href="Type.html#TYPEt">t</a> list</code></code></td>
+	   </tr></table>
+      
+    

@@ -1,0 +1,67 @@
+ 
+      <pre><span><span class="keyword">val</span> memoize : <code class="type">?destruct:('b -&gt; unit) -&gt;
+?expire:[ `Keep_all | `Keep_one | `Lru of int ] -&gt; ('a -&gt; 'b) -&gt; 'a -&gt; 'b</code></span></pre>
+      <div class="info"><code class="code">memoize ~destruct ~expire f</code>
+    memoizes the results of <code class="code">f</code>.<br/> <div class="parameters"><div class="param_info"><code class="code">expire</code> : Strategy used to prune out values from the cache<ul><li><code class="code">`Keep_one</code>: only keeps the last result around</li><li><code class="code">`Keep_all</code>: (the default value) never delete any values from the cache</li><li><code class="code">`Lru n</code>: keep <code class="code">n</code> values in the cache and them removes the least recently
+    used</li></ul> </div><div class="param_info"><code class="code">destruct</code> : function called on every value we remove from the cache</div></div></div>
+    
+ 
+      <pre><span><span class="keyword">val</span> unit : <code class="type">(unit -&gt; 'a) -&gt; unit -&gt; 'a</code></span></pre>
+      <div class="info">Returns memoized version of any function with argument unit. In effect this
+    builds a lazy value.</div>
+    
+<br/><br/><h1 id="1_TITLE">Exposed cache </h1><br/><br/>    These modules implement memoization and give you access to the cache. This,
+    for instance, enables you to flush it.<br/>
+	  
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Cache.Lru.html">Lru</a> : <code class="code">sig</code> <a href="Cache.Lru.html">..</a> <code class="code">end</code></pre><div class="info">Least recently used caching</div>
+	<div class="content" style="display:none">
+	<div file="Cache.Lru.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Cache.Keep_all.html">Keep_all</a> : <code class="code">sig</code> <a href="Cache.Keep_all.html">..</a> <code class="code">end</code></pre><div class="info">Full caching (never flushes out values automatically )</div>
+	<div class="content" style="display:none">
+	<div file="Cache.Keep_all.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<br/><br/><h1 id="1_TITLE"> Generic caching</h1><br/><br/>    This enables you to implement your own caching strategy and store.<br/>    Generic caching is based on separating the replacement policie and the
+    store and tying them together with <code class="code">Make</code>.<br/>
+	  
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Cache.Strategy.html">Strategy</a> = <code class="type"><code class="code">sig</code> <a href="Cache.Strategy.html">..</a> <code class="code">end</code></code></pre><div class="info">Replacement policy<br/>    This dictates when elements will droped from the cache.</div>
+	<div class="content" style="display:none">
+	<div file="Cache.Strategy.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Cache.Store.html">Store</a> = <code class="type"><code class="code">sig</code> <a href="Cache.Store.html">..</a> <code class="code">end</code></code></pre><div class="info">Caching store<br/>    A <code class="code">Store</code> is the backend used to store the values in a cache. A store is
+    a key/value associative table.</div>
+	<div class="content" style="display:none">
+	<div file="Cache.Store.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Cache.S.html">S</a> = <code class="type"><code class="code">sig</code> <a href="Cache.S.html">..</a> <code class="code">end</code></code></pre><div class="info">The output signature of the functor TODO reference : Cache.Make </div>
+	<div class="content" style="display:none">
+	<div file="Cache.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Cache.Strategy.html">Strategy</a> : <code class="code">sig</code> <a href="Cache.Strategy.html">..</a> <code class="code">end</code></pre><div class="info">Predefined strategies</div>
+	<div class="content" style="display:none">
+	<div file="Cache.Strategy.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Cache.Store.html">Store</a> : <code class="code">sig</code> <a href="Cache.Store.html">..</a> <code class="code">end</code></pre><div class="info">Predefined stores</div>
+	<div class="content" style="display:none">
+	<div file="Cache.Store.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Cache.Make.html">Make</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">Strat</code><code class="code"> : </code><code class="type"><a href="Cache.Strategy.html">Strategy</a></code><code class="code">) -&gt; </code><div class="sig_block"><code class="code">functor (</code><code class="code">Store</code><code class="code"> : </code><code class="type"><a href="Cache.Store.html">Store</a></code><code class="code">) -&gt; </code><code class="code"><a href="Cache.S.html">S</a></code> with type <a href="Cache.S.html#TYPEwith_init_args">with_init_args</a> = 'a Store.with_init_args Strat.with_init_args</div></div></pre>
+	<div class="content" style="display:none">
+	<div file="Cache.Make.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

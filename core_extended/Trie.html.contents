@@ -1,0 +1,24 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Trie.Key.html">Key</a> = <code class="type"><code class="code">sig</code> <a href="Trie.Key.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Trie.Key.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Trie.S.html">S</a> = <code class="type"><code class="code">sig</code> <a href="Trie.S.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Trie.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Trie.Make.html">Make</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">T</code><code class="code"> : </code><code class="type"><a href="Trie.Key.html">Key</a></code><code class="code">) -&gt; </code><code class="code"><a href="Trie.S.html">S</a></code> with type <a href="Trie.S.Key.html#TYPEt">Key.t</a> = T.t with type Part.t = T.Part.t</div></pre>
+	<div class="content" style="display:none">
+	<div file="Trie.Make.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Trie.String_trie.html">String_trie</a> : <code class="code"><a href="Trie.S.html">S</a></code> with type <a href="Trie.S.Key.html#TYPEt">Key.t</a> = <a href="../core/Std.String.html#TYPEt">Core.Std.String.t</a> with type Part.t = <a href="../core/Std.Char.html#TYPEt">Core.Std.Char.t</a></pre>
+	<div class="content" style="display:none">
+	<div file="Trie.String_trie.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

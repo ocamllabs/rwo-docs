@@ -1,0 +1,57 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t </span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Type_equal.Id.Uid.html">Uid</a> : <code class="code"><a href="Unique_id_intf.Id.html">Unique_id_intf.Id</a></code></pre><div class="info">Every <code class="code">Id.t</code> contains a unique id that is distinct from the <code class="code">Uid.t</code> in any other
+      <code class="code">Id.t</code>.</div>
+	<div class="content" style="display:none">
+	<div file="Type_equal.Id.Uid.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> uid : <code class="type">'a <a href="Type_equal.Id.html#TYPEt">t</a> -&gt; <a href="Type_equal.Id.Uid.html#TYPEt">Uid.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">name:string -&gt; 'a <a href="Type_equal.Id.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">create ~name</code> defines a new type identity.  Two calls to <code class="code">create</code> will result in
+      two distinct identifiers, even for the same arguments with the same type.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> hash : <code class="type">'a <a href="Type_equal.Id.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      <div class="info">accessors</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> name : <code class="type">'a <a href="Type_equal.Id.html#TYPEt">t</a> -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> same : <code class="type">'a <a href="Type_equal.Id.html#TYPEt">t</a> -&gt; 'b <a href="Type_equal.Id.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      <div class="info"><code class="code">same_witness t1 t2</code> and <code class="code">same_witness_exn t1 t2</code> return a type equality proof iff
+      the two identifiers are physically equal.  This is a useful way to achieve a sort of
+      dynamic typing.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> same_witness : <code class="type">'a <a href="Type_equal.Id.html#TYPEt">t</a> -&gt; 'b <a href="Type_equal.Id.html#TYPEt">t</a> -&gt; ('a, 'b) <a href="Type_equal.html#TYPEequal">equal</a> <a href="Or_error.html#TYPEt">Or_error.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> same_witness_exn : <code class="type">'a <a href="Type_equal.Id.html#TYPEt">t</a> -&gt; 'b <a href="Type_equal.Id.html#TYPEt">t</a> -&gt; ('a, 'b) <a href="Type_equal.html#TYPEequal">equal</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type">('a -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a>) -&gt; 'a <a href="Type_equal.Id.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+<br/>Every <code class="code">Id.t</code> contains a unique id that is distinct from the <code class="code">Uid.t</code> in any other
+      <code class="code">Id.t</code>.<br/>
+	  
+<br/><code class="code">create ~name</code> defines a new type identity.  Two calls to <code class="code">create</code> will result in
+      two distinct identifiers, even for the same arguments with the same type.<br/>
+	  
+<br/>accessors<br/>
+	  
+<br/><code class="code">same_witness t1 t2</code> and <code class="code">same_witness_exn t1 t2</code> return a type equality proof iff
+      the two identifiers are physically equal.  This is a useful way to achieve a sort of
+      dynamic typing.<br/>
+	  

@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<title>Lock_file.Nfs</title>
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
+<script type="text/javascript" src="doc_loader.js"> </script>
+</head>
+<body>
+
+<h1>Module Lock_file.Nfs</h1>
+<pre><span class="keyword">module</span> <a href="Lock_file.Nfs.html">Nfs</a> : <code class="code">sig</code> <a href="Lock_file.Nfs.html">..</a> <code class="code">end</code></pre><div class="info">An implementation neutral NFS lock file scheme that relies on the atomicity of link
+    over NFS (see NFS Illustrated, atomicity for more information).  Rather than relying
+    on a working traditional advisory lock system over NFS we create a hard link between
+    the file given to the create call and a new file &lt;filename&gt;.nfs_lock.  This link call
+    is atomic (in that it succeeds or fails) across all systems that have the same
+    filesystem mounted.  The link file must be cleaned up on program exit (normally
+    accomplished by an at_exit handler, but see caveats below).<br/>    There are a few caveats compared to local file locks:<br/>    - These calls require the locker to have write access to the directory containing the
+      file being locked.<br/>    - Unlike a normal flock call the lock may not be removed when the calling program
+      exits (in particular if it is killed with SIGKILL).</div>
+<hr/>
+<div file="Lock_file.Nfs.html.contents" class="content_to_load"> </div>
+</body>
+</html>

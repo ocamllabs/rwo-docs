@@ -1,0 +1,106 @@
+<pre><code><span id="TYPEt"><span class="keyword">type</span> t </span>= {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.file_descr">file_descr</span> :<code class="type"><a href="Raw_fd.File_descr.html#TYPEt">File_descr.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.info">info</span> :<code class="type"><a href="../core/Std.Info.html#TYPEt">Core.Std.Info.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.kind">kind</span> :<code class="type"><a href="Raw_fd.Kind.html#TYPEt">Kind.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.supports_nonblock">supports_nonblock</span> :<code class="type">bool</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.have_set_nonblock">have_set_nonblock</span> :<code class="type">bool</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.state">state</span> :<code class="type"><a href="Raw_fd.State.html#TYPEt">State.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.watching">watching</span> :<code class="type"><a href="Raw_fd.Watching.html#TYPEt">Watching.t</a> <a href="Read_write.Mutable.html#TYPEt">Read_write.Mutable.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.watching_has_changed">watching_has_changed</span> :<code class="type">bool</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.num_active_syscalls">num_active_syscalls</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.close_finished">close_finished</span> :<code class="type">unit <a href="Import.Ivar.html#TYPEt">Import.Ivar.t</a></code>;</code></td>
+	  </tr></table>}
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type"><a href="Raw_fd.T.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> close_finished : <code class="type"><a href="Raw_fd.T.html#TYPEt">t</a> -&gt; unit <a href="Import.Ivar.html#TYPEt">Import.Ivar.t</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> num_active_syscalls : <code class="type"><a href="Raw_fd.T.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> set_num_active_syscalls : <code class="type"><a href="Raw_fd.T.html#TYPEt">t</a> -&gt; int -&gt; unit</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> watching_has_changed : <code class="type"><a href="Raw_fd.T.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> set_watching_has_changed : <code class="type"><a href="Raw_fd.T.html#TYPEt">t</a> -&gt; bool -&gt; unit</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> watching : <code class="type"><a href="Raw_fd.T.html#TYPEt">t</a> -&gt; <a href="Raw_fd.Watching.html#TYPEt">Watching.t</a> <a href="Read_write.Mutable.html#TYPEt">Read_write.Mutable.t</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> state : <code class="type"><a href="Raw_fd.T.html#TYPEt">t</a> -&gt; <a href="Raw_fd.State.html#TYPEt">State.t</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> set_state : <code class="type"><a href="Raw_fd.T.html#TYPEt">t</a> -&gt; <a href="Raw_fd.State.html#TYPEt">State.t</a> -&gt; unit</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> have_set_nonblock : <code class="type"><a href="Raw_fd.T.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> set_have_set_nonblock : <code class="type"><a href="Raw_fd.T.html#TYPEt">t</a> -&gt; bool -&gt; unit</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> supports_nonblock : <code class="type"><a href="Raw_fd.T.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> kind : <code class="type"><a href="Raw_fd.T.html#TYPEt">t</a> -&gt; <a href="Raw_fd.Kind.html#TYPEt">Kind.t</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> set_kind : <code class="type"><a href="Raw_fd.T.html#TYPEt">t</a> -&gt; <a href="Raw_fd.Kind.html#TYPEt">Kind.t</a> -&gt; unit</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> info : <code class="type"><a href="Raw_fd.T.html#TYPEt">t</a> -&gt; <a href="../core/Std.Info.html#TYPEt">Core.Std.Info.t</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> set_info : <code class="type"><a href="Raw_fd.T.html#TYPEt">t</a> -&gt; <a href="../core/Std.Info.html#TYPEt">Core.Std.Info.t</a> -&gt; unit</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> file_descr : <code class="type"><a href="Raw_fd.T.html#TYPEt">t</a> -&gt; <a href="Raw_fd.File_descr.html#TYPEt">File_descr.t</a></code></span></pre>
+      
+    
+
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Raw_fd.T.Fields.html">Fields</a> : <code class="code">sig</code> <a href="Raw_fd.T.Fields.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Raw_fd.T.Fields.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

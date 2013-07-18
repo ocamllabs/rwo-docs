@@ -1,0 +1,21 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Hash_queue.Make.Key_value.T.html">T</a> : <code class="code">sig</code> <a href="Hash_queue.Make.Key_value.T.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Hash_queue.Make.Key_value.T.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Hash_queue.Make.Key_value.T.html">T</a></code></pre>
+	<div class="content">
+	<div file="Hash_queue.Make.Key_value.T.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> key : <code class="type">'a t -&gt; <a href="Hash_queue.Make.Key.html#TYPEt">Key.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> value : <code class="type">'a t -&gt; 'a</code></span></pre>
+      
+    

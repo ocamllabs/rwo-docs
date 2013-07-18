@@ -1,0 +1,42 @@
+<br/>For a list of hashtable functions see <code class="code">Hashtbl_intf.S</code>.<br/>
+	  
+<br/>To create a hashtable with string keys use String.Table.
+   <pre class="codepre"><code class="code">
+    let table = String.Table.create () ~size:4 in
+    List.iter ~f:(fun (key, data) -&gt; Hashtbl.set table ~key ~data)
+      [ (&quot;A&quot;, 1); (&quot;B&quot;, 2); (&quot;C&quot;, 3); ];
+    Hashtbl.find table &quot;C&quot; </code></pre>
+    Here 4 need only be a guess at the hashtable's future size.
+    There are other similar pre-made hashtables, eg
+      Int63.Table or Symbol.Reuters.Table.<br/>
+	  
+<br/>To create a hashtable with a custom key type use Hashable.
+      <pre class="codepre"><code class="code">
+        module Key = struct
+          module T = struct
+            type t = String.t * Int63.t with sexp
+            let compare = compare
+            let hash = Hashtbl.hash
+          end
+          include T
+          include Hashable.Make (T)
+        end
+        let table = Key.Table.create () ~size:4 in
+        List.iter ~f:(fun (key, data) -&gt; Hashtbl.set table ~key ~data)
+          [ ((&quot;pi&quot;, Int63.zero), 3.14159);
+            ((&quot;e&quot;, Int63.minus_one), 2.71828);
+            ((&quot;Euler&quot;, Int63.one), 0.577215);
+          ];
+        Hashtbl.find table (&quot;pi&quot;, Int63.zero)</code></pre>
+      Performance <i>may</i> improve if you define <code class="code">equal</code> and <code class="code">hash</code> explicitly, eg:
+      <pre class="codepre"><code class="code">
+        let equal (x, y) (x', y') = String.(=) x x' &amp;&amp; Int63.(=) y y'
+        let hash (x, y) = String.hash x + Int63.hash y * 65599 </code></pre> <br/>
+	  
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Core_hashtbl_intf.Hashtbl.html">Core_hashtbl_intf.Hashtbl</a></code></pre>
+	<div class="content">
+	<div file="Core_hashtbl_intf.Hashtbl.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

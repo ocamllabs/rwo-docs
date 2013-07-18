@@ -1,0 +1,7 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> equal : <code class="type"><a href="Equal.S.html#TYPEt">t</a> <a href="Equal.html#TYPEequal">equal</a></code></span></pre>
+      
+    

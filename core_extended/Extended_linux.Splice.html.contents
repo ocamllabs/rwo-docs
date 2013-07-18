@@ -1,0 +1,106 @@
+<br/><br/><h6 id="6_TITLE">Splice flags</h6><br/> <br/>
+	  
+<pre><code><span id="TYPEflag"><span class="keyword">type</span> flag </span>= </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTflag.MOVE"><span class="constructor">MOVE</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTflag.NONBLOCK"><span class="constructor">NONBLOCK</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTflag.MORE"><span class="constructor">MORE</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTflag.GIFT"><span class="constructor">GIFT</span></span></code></td>
+	   </tr></table>
+      <div class="info">Type of Splice event flag</div>
+    
+<pre><span id="TYPEflags"><span class="keyword">type</span> flags </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> make_flags : <code class="type"><a href="Extended_linux.Splice.html#TYPEflag">flag</a> array -&gt; <a href="Extended_linux.Splice.html#TYPEflags">flags</a></code></span></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Splice functions</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> splice : <code class="type">(?assume_fd_is_nonblocking:bool -&gt;
+ fd_in:<a href="../core/Std.Unix.File_descr.html#TYPEt">Core.Std.Unix.File_descr.t</a> -&gt;
+ ?off_in:int -&gt;
+ fd_out:<a href="../core/Std.Unix.File_descr.html#TYPEt">Core.Std.Unix.File_descr.t</a> -&gt;
+ ?off_out:int -&gt; len:int -&gt; <a href="Extended_linux.Splice.html#TYPEflags">flags</a> -&gt; int * int * int)
+<a href="../core/Std.Or_error.html#TYPEt">Core.Std.Or_error.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> tee : <code class="type">(?assume_fd_is_nonblocking:bool -&gt;
+ fd_in:<a href="../core/Std.Unix.File_descr.html#TYPEt">Core.Std.Unix.File_descr.t</a> -&gt;
+ fd_out:<a href="../core/Std.Unix.File_descr.html#TYPEt">Core.Std.Unix.File_descr.t</a> -&gt; int -&gt; <a href="Extended_linux.Splice.html#TYPEflags">flags</a> -&gt; int)
+<a href="../core/Std.Or_error.html#TYPEt">Core.Std.Or_error.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> vmsplice : <code class="type">(?assume_fd_is_nonblocking:bool -&gt;
+ <a href="../core/Std.Unix.File_descr.html#TYPEt">Core.Std.Unix.File_descr.t</a> -&gt;
+ <a href="../core/Std.Bigstring.html#TYPEt">Core.Std.Bigstring.t</a> <a href="../core/Std.Unix.IOVec.html#TYPEt">Core.Std.Unix.IOVec.t</a> array -&gt;
+ ?count:int -&gt; <a href="Extended_linux.Splice.html#TYPEflags">flags</a> -&gt; int)
+<a href="../core/Std.Or_error.html#TYPEt">Core.Std.Or_error.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_flag : <code class="type"><a href="Extended_linux.Splice.html#TYPEflag">flag</a> <a href="../core/Std.Bin_prot.Type_class.html#TYPEt">Core.Std.Bin_prot.Type_class.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_flag : <code class="type"><a href="Extended_linux.Splice.html#TYPEflag">flag</a> <a href="../core/Std.Bin_prot.Read_ml.html#TYPEreader">Core.Std.Bin_prot.Read_ml.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_flag_ : <code class="type"><a href="Extended_linux.Splice.html#TYPEflag">flag</a> <a href="../core/Std.Bin_prot.Unsafe_read_c.html#TYPEreader">Core.Std.Bin_prot.Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_flag__ : <code class="type">(int -&gt; <a href="Extended_linux.Splice.html#TYPEflag">flag</a>) <a href="../core/Std.Bin_prot.Unsafe_read_c.html#TYPEreader">Core.Std.Bin_prot.Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_flag : <code class="type"><a href="Extended_linux.Splice.html#TYPEflag">flag</a> <a href="../core/Std.Bin_prot.Type_class.html#TYPEreader">Core.Std.Bin_prot.Type_class.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_flag : <code class="type"><a href="Extended_linux.Splice.html#TYPEflag">flag</a> <a href="../core/Std.Bin_prot.Size.html#TYPEsizer">Core.Std.Bin_prot.Size.sizer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_flag : <code class="type"><a href="Extended_linux.Splice.html#TYPEflag">flag</a> <a href="../core/Std.Bin_prot.Write_ml.html#TYPEwriter">Core.Std.Bin_prot.Write_ml.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_flag_ : <code class="type"><a href="Extended_linux.Splice.html#TYPEflag">flag</a> <a href="../core/Std.Bin_prot.Unsafe_write_c.html#TYPEwriter">Core.Std.Bin_prot.Unsafe_write_c.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_flag : <code class="type"><a href="Extended_linux.Splice.html#TYPEflag">flag</a> <a href="../core/Std.Bin_prot.Type_class.html#TYPEwriter">Core.Std.Bin_prot.Type_class.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> flag_of_sexp : <code class="type"><a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; <a href="Extended_linux.Splice.html#TYPEflag">flag</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_flag : <code class="type"><a href="Extended_linux.Splice.html#TYPEflag">flag</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+<br/>Type of Splice event flags<br/>
+	  
+<br/><code class="code">make_flags ar</code> <b>Returns</b> flags constructed from the array of flags <code class="code">ar</code>.<br/>
+	  
+<br/><br/><h6 id="6_TITLE">Splice functions</h6><br/> <br/>
+	  
+<br/><code class="code">splice ?assume_fd_is_nonblocking ~fd_in ?off_in ~fd_out ?off_out
+      ~len flags</code> see man-page for details.<div class="parameters"><div class="param_info"><code class="code">assume_fd_is_nonblocking</code> : default = false</div><div class="param_info"><code class="code">off_in</code> : default = 0</div><div class="param_info"><code class="code">off_out</code> : default = 0</div></div><b>Raises</b> <code>Unix_error</code> on Unix-errors.<br/><code>Invalid_argument</code> if the offsets or length are invalid<br/> <br/><b>Returns</b> the triple <code class="code">(ret,
+      ret_off_in, ret_off_out)</code>, where <code class="code">ret</code> corresponds to the return
+      value of the system call, <code class="code">ret_off_in</code> to the final input offset,
+      and <code class="code">ret_off_out</code> to the final output offset.<br/> <br/>
+	  
+<br/><code class="code">tee ?assume_fd_is_nonblocking ~fd_in ~fd_out len flags</code> see man-page
+      for details.<br/> <div class="parameters"><div class="param_info"><code class="code">assume_fd_is_nonblocking</code> : default = false</div></div><b>Raises</b> <code>Unix_error</code> on Unix-errors.<br/><code>Invalid_argument</code> if the length is invalid<br/> <br/><br/>
+	  
+<br/><code class="code">vmsplice ?assume_fd_is_nonblocking fd iovecs ?count flags</code>
+      see man-page for details.<br/> <div class="parameters"><div class="param_info"><code class="code">assume_fd_is_nonblocking</code> : default = false</div><div class="param_info"><code class="code">count</code> : default = <code class="code">Array.length iovecs</code>
+</div></div><b>Raises</b> <code>Unix_error</code> on Unix-errors.<br/><code>Invalid_argument</code> if the count is invalid<br/> <br/><br/>
+	  

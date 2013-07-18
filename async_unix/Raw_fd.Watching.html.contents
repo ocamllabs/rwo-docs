@@ -1,0 +1,17 @@
+<pre><code><span id="TYPEt"><span class="keyword">type</span> t </span>= </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Not_watching"><span class="constructor">Not_watching</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Watching"><span class="constructor">Watching</span></span> <span class="keyword">of</span> <code class="type"><a href="Raw_fd.html#TYPEready_to_result">ready_to_result</a> <a href="Import.Ivar.html#TYPEt">Import.Ivar.t</a></code></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Stop_requested"><span class="constructor">Stop_requested</span></span></code></td>
+	   </tr></table>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type"><a href="Raw_fd.Watching.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> invariant : <code class="type"><a href="Raw_fd.Watching.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    

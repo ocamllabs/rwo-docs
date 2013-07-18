@@ -1,0 +1,171 @@
+ 
+      <pre><span><span class="keyword">val</span> __pa_ounit_275876e34cf609db118f3d84b799a790 : <code class="type">string</code></span></pre>
+      
+    
+
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Std.Async_config.html">Async_config</a> : <code class="code"><a href="Config.html">Config</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Std.Async_config.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Std.Backpatched.html">Backpatched</a> : <code class="code"><a href="Backpatched.html">Backpatched</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Std.Backpatched.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Std.Clock.html">Clock</a> : <code class="code"><a href="Clock.html">Clock</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Std.Clock.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Std.Condition.html">Condition</a> : <code class="code"><a href="Async_condition.html">Async_condition</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Std.Condition.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Std.Deferred.html">Deferred</a> : <code class="code">sig</code> <a href="Std.Deferred.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Std.Deferred.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Std.Execution_context.html">Execution_context</a> : <code class="code"><a href="Execution_context.html">Execution_context</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Std.Execution_context.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Std.Gc.html">Gc</a> : <code class="code"><a href="Async_gc.html">Async_gc</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Std.Gc.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Std.Handler.html">Handler</a> : <code class="code"><a href="Handler.html">Handler</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Std.Handler.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Std.Ivar.html">Ivar</a> : <code class="code"><a href="Ivar.html">Ivar</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Std.Ivar.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Std.Lazy_deferred.html">Lazy_deferred</a> : <code class="code"><a href="Lazy_deferred.html">Lazy_deferred</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Std.Lazy_deferred.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Std.Monitor.html">Monitor</a> : <code class="code"><a href="Monitor.html">Monitor</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Std.Monitor.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Std.Pipe.html">Pipe</a> : <code class="code"><a href="Pipe.html">Pipe</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Std.Pipe.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Std.Priority.html">Priority</a> : <code class="code"><a href="Priority.html">Priority</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Std.Priority.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Std.Sequencer.html">Sequencer</a> : <code class="code"><a href="Throttle.Sequencer.html">Throttle.Sequencer</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Std.Sequencer.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Std.Stream.html">Stream</a> : <code class="code"><a href="Async_stream.html">Async_stream</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Std.Stream.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Std.Tail.html">Tail</a> : <code class="code"><a href="Tail.html">Tail</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Std.Tail.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Std.Throttle.html">Throttle</a> : <code class="code"><a href="Throttle.html">Throttle</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Std.Throttle.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Deferred_std.html">Deferred_std</a></code></pre>
+	<div class="content">
+	<div file="Deferred_std.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> after : <code class="type"><a href="../core/Std.Time.Span.html#TYPEt">Core.Std.Time.Span.t</a> -&gt; unit <a href="Deferred.html#TYPEt">Deferred.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> at : <code class="type"><a href="../core/Std.Time.html#TYPEt">Core.Std.Time.t</a> -&gt; unit <a href="Deferred.html#TYPEt">Deferred.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> catch : <code class="type">((unit -&gt; unit) -&gt; exn <a href="Deferred.html#TYPEt">Deferred.t</a>) <a href="Std.Monitor.html#TYPEwith_optional_monitor_name">Monitor.with_optional_monitor_name</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> every : <code class="type">?start:unit <a href="Deferred.html#TYPEt">Deferred.t</a> -&gt;
+?stop:unit <a href="Deferred.html#TYPEt">Deferred.t</a> -&gt;
+?continue_on_error:bool -&gt; <a href="../core/Std.Time.Span.html#TYPEt">Core.Std.Time.Span.t</a> -&gt; (unit -&gt; unit) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> schedule : <code class="type">((unit -&gt; unit) -&gt; unit) <a href="Scheduler.html#TYPEwith_options">Scheduler.with_options</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> schedule' : <code class="type">((unit -&gt; 'a <a href="Deferred.html#TYPEt">Deferred.t</a>) -&gt; 'a <a href="Deferred.html#TYPEt">Deferred.t</a>) <a href="Scheduler.html#TYPEwith_options">Scheduler.with_options</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> try_with : <code class="type">(?extract_exn:bool -&gt;
+ ?run:[ `Now | `Schedule ] -&gt;
+ ?rest:[ `Ignore | `Raise ] -&gt;
+ (unit -&gt; 'a <a href="Deferred.html#TYPEt">Deferred.t</a>) -&gt; ('a, exn) <a href="../core/Std.Result.html#TYPEt">Core.Std.Result.t</a> <a href="Deferred.html#TYPEt">Deferred.t</a>)
+<a href="Std.Monitor.html#TYPEwith_optional_monitor_name">Monitor.with_optional_monitor_name</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> with_timeout : <code class="type"><a href="../core/Std.Time.Span.html#TYPEt">Core.Std.Time.Span.t</a> -&gt;
+'a <a href="Deferred.html#TYPEt">Deferred.t</a> -&gt; [ `Result of 'a | `Timeout ] <a href="Deferred.html#TYPEt">Deferred.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> within : <code class="type">((unit -&gt; unit) -&gt; unit) <a href="Scheduler.html#TYPEwith_options">Scheduler.with_options</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> within' : <code class="type">((unit -&gt; 'a <a href="Deferred.html#TYPEt">Deferred.t</a>) -&gt; 'a <a href="Deferred.html#TYPEt">Deferred.t</a>) <a href="Scheduler.html#TYPEwith_options">Scheduler.with_options</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> &gt;&gt;=? : <code class="type">('a, 'b) <a href="Std.Deferred.Result.html#TYPEt">Deferred.Result.t</a> -&gt;
+('a -&gt; ('c, 'b) <a href="Std.Deferred.Result.html#TYPEt">Deferred.Result.t</a>) -&gt; ('c, 'b) <a href="Std.Deferred.Result.html#TYPEt">Deferred.Result.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> &gt;&gt;|? : <code class="type">('a, 'b) <a href="Std.Deferred.Result.html#TYPEt">Deferred.Result.t</a> -&gt; ('a -&gt; 'c) -&gt; ('c, 'b) <a href="Std.Deferred.Result.html#TYPEt">Deferred.Result.t</a></code></span></pre>
+      
+    
+

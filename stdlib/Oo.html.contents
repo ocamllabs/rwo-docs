@@ -1,0 +1,16 @@
+ 
+      <pre><span><span class="keyword">val</span> copy : <code class="type">(&lt; .. &gt; as 'a) -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> id : <code class="type">&lt; .. &gt; -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> new_method : <code class="type">string -&gt; <a href="CamlinternalOO.html#TYPEtag">CamlinternalOO.tag</a></code></span></pre>
+      <div class="info">For internal use (CamlIDL)</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> public_method_label : <code class="type">string -&gt; <a href="CamlinternalOO.html#TYPEtag">CamlinternalOO.tag</a></code></span></pre>
+      
+    

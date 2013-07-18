@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<title>Thread_pool</title>
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
+<script type="text/javascript" src="doc_loader.js"> </script>
+</head>
+<body>
+
+<h1>Module Thread_pool</h1>
+<pre><span class="keyword">module</span> Thread_pool</pre><div class="info">A thread pool is a set of OCaml threads used to do work, where each piece of work is
+    simply a thunk.  One creates a thread pool, and then uses <code class="code">add_work</code> to submit work to
+    it.  Work is done first-come-first-served by available threads in the pool.  Any of
+    the available threads in the pool could be used to do work submitted to the pool
+    (except helper threads, see below).<br/>    A thread pool starts with no threads.  As work is added, the thread pool creates new
+    threads to do the work, up to the maximum number of allowed threads,
+    <code class="code">max_num_threads</code>, supplied to <code class="code">create</code>.  Thread-pool threads never die.  They just
+    get created up until <code class="code">max_num_threads</code> is reached and then live forever, doing work.
+    Each thread in the pool is in a loop, waiting for a piece of work, running the thunk,
+    and then repeating.  It may be that all the threads in the pool are not doing
+    anything, but in this case, the threads still exist, and are simply blocked waiting
+    for work.<br/>    Sometimes one wants work to run in a dedicated thread, e.g. some C libraries require
+    this.  To do this, use <code class="code">Helper_thread</code>, see below.<br/>    All of the functions exposed by this module are thread safe; they synchronize using
+    a mutex on the thread pool.<br/>    One can control the priority of threads in the pool (in the sense of
+    <code class="code">Linux_ext.setpriority</code>).  Work added to the pool can optionally be given a priority,
+    and the pool will set the priority of the thread that runs it for the duration of the
+    work.  Helper threads can also be given a priority, which will be used for all work
+    run by the helper thread, unless the work has an overriding priority.  The thread pool
+    has a &quot;default&quot; priority that will be used for all work and helper threads that have
+    no specified priority.  The default is simply the priority in effect when <code class="code">create</code> is
+    called.<br/>    Behavior is unspecified if work calls <code class="code">setpriority</code> directly.</div>
+<hr/>
+<div file="Thread_pool.html.contents" class="content_to_load"> </div>
+</body>
+</html>

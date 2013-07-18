@@ -1,0 +1,69 @@
+ 
+      <pre><span><span class="keyword">val</span> current_dir_name : <code class="type">string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> parent_dir_name : <code class="type">string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> dir_sep : <code class="type">string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> concat : <code class="type">string -&gt; string -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_relative : <code class="type">string -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_implicit : <code class="type">string -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> check_suffix : <code class="type">string -&gt; string -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> chop_suffix : <code class="type">string -&gt; string -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> chop_extension : <code class="type">string -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> basename : <code class="type">string -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> dirname : <code class="type">string -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> temp_file : <code class="type">?temp_dir:string -&gt; string -&gt; string -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> open_temp_file : <code class="type">?mode:<a href="Pervasives.html#TYPEopen_flag">open_flag</a> list -&gt;
+?temp_dir:string -&gt; string -&gt; string -&gt; string * <a href="Pervasives.html#TYPEout_channel">out_channel</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get_temp_dir_name : <code class="type">unit -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set_temp_dir_name : <code class="type">string -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> temp_dir_name : <code class="type">string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> quote : <code class="type">string -&gt; string</code></span></pre>
+      
+    

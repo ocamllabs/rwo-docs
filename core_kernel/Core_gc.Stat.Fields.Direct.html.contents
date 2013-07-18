@@ -1,0 +1,43 @@
+ 
+      <pre><span><span class="keyword">val</span> iter : <code class="type"><a href="Core_gc.Stat.html#TYPEt">t</a> -&gt;
+minor_words:((<a href="Core_gc.Stat.html#TYPEt">t</a>, float) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_gc.Stat.html#TYPEt">t</a> -&gt; float -&gt; unit) -&gt;
+promoted_words:((<a href="Core_gc.Stat.html#TYPEt">t</a>, float) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_gc.Stat.html#TYPEt">t</a> -&gt; float -&gt; unit) -&gt;
+major_words:((<a href="Core_gc.Stat.html#TYPEt">t</a>, float) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_gc.Stat.html#TYPEt">t</a> -&gt; float -&gt; unit) -&gt;
+minor_collections:((<a href="Core_gc.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_gc.Stat.html#TYPEt">t</a> -&gt; int -&gt; unit) -&gt;
+major_collections:((<a href="Core_gc.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_gc.Stat.html#TYPEt">t</a> -&gt; int -&gt; unit) -&gt;
+heap_words:((<a href="Core_gc.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_gc.Stat.html#TYPEt">t</a> -&gt; int -&gt; unit) -&gt;
+heap_chunks:((<a href="Core_gc.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_gc.Stat.html#TYPEt">t</a> -&gt; int -&gt; unit) -&gt;
+live_words:((<a href="Core_gc.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_gc.Stat.html#TYPEt">t</a> -&gt; int -&gt; unit) -&gt;
+live_blocks:((<a href="Core_gc.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_gc.Stat.html#TYPEt">t</a> -&gt; int -&gt; unit) -&gt;
+free_words:((<a href="Core_gc.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_gc.Stat.html#TYPEt">t</a> -&gt; int -&gt; unit) -&gt;
+free_blocks:((<a href="Core_gc.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_gc.Stat.html#TYPEt">t</a> -&gt; int -&gt; unit) -&gt;
+largest_free:((<a href="Core_gc.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_gc.Stat.html#TYPEt">t</a> -&gt; int -&gt; unit) -&gt;
+fragments:((<a href="Core_gc.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_gc.Stat.html#TYPEt">t</a> -&gt; int -&gt; unit) -&gt;
+compactions:((<a href="Core_gc.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_gc.Stat.html#TYPEt">t</a> -&gt; int -&gt; unit) -&gt;
+top_heap_words:((<a href="Core_gc.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_gc.Stat.html#TYPEt">t</a> -&gt; int -&gt; unit) -&gt;
+stack_size:((<a href="Core_gc.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_gc.Stat.html#TYPEt">t</a> -&gt; int -&gt; unit) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold : <code class="type"><a href="Core_gc.Stat.html#TYPEt">t</a> -&gt;
+init:'acc__ -&gt;
+minor_words:('acc__ -&gt; (<a href="Core_gc.Stat.html#TYPEt">t</a>, float) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_gc.Stat.html#TYPEt">t</a> -&gt; float -&gt; 'acc__) -&gt;
+promoted_words:('acc__ -&gt;
+                (<a href="Core_gc.Stat.html#TYPEt">t</a>, float) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_gc.Stat.html#TYPEt">t</a> -&gt; float -&gt; 'acc__) -&gt;
+major_words:('acc__ -&gt; (<a href="Core_gc.Stat.html#TYPEt">t</a>, float) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_gc.Stat.html#TYPEt">t</a> -&gt; float -&gt; 'acc__) -&gt;
+minor_collections:('acc__ -&gt; (<a href="Core_gc.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_gc.Stat.html#TYPEt">t</a> -&gt; int -&gt; 'acc__) -&gt;
+major_collections:('acc__ -&gt; (<a href="Core_gc.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_gc.Stat.html#TYPEt">t</a> -&gt; int -&gt; 'acc__) -&gt;
+heap_words:('acc__ -&gt; (<a href="Core_gc.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_gc.Stat.html#TYPEt">t</a> -&gt; int -&gt; 'acc__) -&gt;
+heap_chunks:('acc__ -&gt; (<a href="Core_gc.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_gc.Stat.html#TYPEt">t</a> -&gt; int -&gt; 'acc__) -&gt;
+live_words:('acc__ -&gt; (<a href="Core_gc.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_gc.Stat.html#TYPEt">t</a> -&gt; int -&gt; 'acc__) -&gt;
+live_blocks:('acc__ -&gt; (<a href="Core_gc.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_gc.Stat.html#TYPEt">t</a> -&gt; int -&gt; 'acc__) -&gt;
+free_words:('acc__ -&gt; (<a href="Core_gc.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_gc.Stat.html#TYPEt">t</a> -&gt; int -&gt; 'acc__) -&gt;
+free_blocks:('acc__ -&gt; (<a href="Core_gc.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_gc.Stat.html#TYPEt">t</a> -&gt; int -&gt; 'acc__) -&gt;
+largest_free:('acc__ -&gt; (<a href="Core_gc.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_gc.Stat.html#TYPEt">t</a> -&gt; int -&gt; 'acc__) -&gt;
+fragments:('acc__ -&gt; (<a href="Core_gc.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_gc.Stat.html#TYPEt">t</a> -&gt; int -&gt; 'acc__) -&gt;
+compactions:('acc__ -&gt; (<a href="Core_gc.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_gc.Stat.html#TYPEt">t</a> -&gt; int -&gt; 'acc__) -&gt;
+top_heap_words:('acc__ -&gt; (<a href="Core_gc.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_gc.Stat.html#TYPEt">t</a> -&gt; int -&gt; 'acc__) -&gt;
+stack_size:('acc__ -&gt; (<a href="Core_gc.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_gc.Stat.html#TYPEt">t</a> -&gt; int -&gt; 'acc__) -&gt;
+'acc__</code></span></pre>
+      
+    

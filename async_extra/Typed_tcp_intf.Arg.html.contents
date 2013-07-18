@@ -1,0 +1,18 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Typed_tcp_intf.Arg.Client_message.html">Client_message</a> : <code class="code">sig</code> <a href="Typed_tcp_intf.Arg.Client_message.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Typed_tcp_intf.Arg.Client_message.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Typed_tcp_intf.Arg.Server_message.html">Server_message</a> : <code class="code">sig</code> <a href="Typed_tcp_intf.Arg.Server_message.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Typed_tcp_intf.Arg.Server_message.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Typed_tcp_intf.Arg.Transport.html">Transport</a> : <code class="code">sig</code> <a href="Typed_tcp_intf.Arg.Transport.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Typed_tcp_intf.Arg.Transport.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

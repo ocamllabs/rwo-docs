@@ -1,0 +1,15 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../otherlibs/Num.html">Num</a></code></pre>
+	<div class="content">
+	<div file="../otherlibs/Num.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_num : <code class="type"><a href="../otherlibs/Num.html#TYPEnum">Num.num</a> -&gt; <a href="Sexp.html#TYPEt">Sexp.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> num_of_sexp : <code class="type"><a href="Sexp.html#TYPEt">Sexp.t</a> -&gt; <a href="../otherlibs/Num.html#TYPEnum">Num.num</a></code></span></pre>
+      
+    

@@ -1,0 +1,14 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Fold_map.S.html">S</a></code></pre>
+	<div class="content">
+	<div file="Fold_map.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core/Std.Sexpable.S1.html">Core.Std.Sexpable.S1</a></code> with type t = 'key t</pre>
+	<div class="content">
+	<div file="../core/Std.Sexpable.S1.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

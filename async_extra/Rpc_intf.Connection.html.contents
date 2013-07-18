@@ -1,0 +1,101 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Rpc_intf.Connection.Implementations.html">Implementations</a> : <code class="code">sig</code> <a href="Rpc_intf.Connection.Implementations.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Rpc_intf.Connection.Implementations.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">?implementations:'s <a href="Rpc_intf.Connection.Implementations.html#TYPEt">Implementations.t</a> -&gt;
+connection_state:'s -&gt;
+?max_message_size:int -&gt;
+<a href="Import.Reader.html#TYPEt">Import.Reader.t</a> -&gt;
+<a href="Import.Writer.html#TYPEt">Import.Writer.t</a> -&gt; (<a href="Rpc_intf.Connection.html#TYPEt">t</a>, <a href="../core/Std.Exn.html#TYPEt">Core.Std.Exn.t</a>) <a href="../core/Std.Result.html#TYPEt">Core.Std.Result.t</a> <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a></code></span></pre>
+      <div class="info">Initiate an Rpc connection on the given reader/writer pair.  <code class="code">server</code> should be the
+      bag of implementations that the calling side implements; it defaults to
+      <code class="code">Implementations.null</code> (i.e., &quot;I implement no RPCs&quot;).</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> close : <code class="type"><a href="Rpc_intf.Connection.html#TYPEt">t</a> -&gt; unit <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> close_finished : <code class="type"><a href="Rpc_intf.Connection.html#TYPEt">t</a> -&gt; unit <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_closed : <code class="type"><a href="Rpc_intf.Connection.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bytes_to_write : <code class="type"><a href="Rpc_intf.Connection.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> with_close : <code class="type">?implementations:'s <a href="Rpc_intf.Connection.Implementations.html#TYPEt">Implementations.t</a> -&gt;
+connection_state:'s -&gt;
+<a href="Import.Reader.html#TYPEt">Import.Reader.t</a> -&gt;
+<a href="Import.Writer.html#TYPEt">Import.Writer.t</a> -&gt;
+dispatch_queries:(<a href="Rpc_intf.Connection.html#TYPEt">t</a> -&gt; 'a <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a>) -&gt;
+on_handshake_error:[ `Call of <a href="../core/Std.Exn.html#TYPEt">Core.Std.Exn.t</a> -&gt; 'a <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a> | `Raise ] -&gt;
+'a <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a></code></span></pre>
+      <div class="info"><code class="code">with_close</code> tries to create a <code class="code">t</code> using the given reader and writer.  If a
+      handshake error is the result, it calls <code class="code">on_handshake_error</code>, for which the default
+      behavior is to raise an exception.  If no error results, <code class="code">dispatch_queries</code> is
+      called on <code class="code">t</code>.<br/>      After <code class="code">dispatch_queries</code> returns, if <code class="code">server</code> is None, the <code class="code">t</code> will be closed and
+      the deferred returned by <code class="code">dispatch_queries</code> wil be determined immediately.
+      Otherwise, we'll wait until the other side closes the connection and then close <code class="code">t</code>
+      and determine the deferred returned by <code class="code">dispatch_queries</code>.<br/>      When the deferred returned by <code class="code">with_close</code> becomes determined, both <code class="code">Reader.close</code>
+      and <code class="code">Writer.close</code> have finished.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> server_with_close : <code class="type"><a href="Import.Reader.html#TYPEt">Import.Reader.t</a> -&gt;
+<a href="Import.Writer.html#TYPEt">Import.Writer.t</a> -&gt;
+implementations:'s <a href="Rpc_intf.Connection.Implementations.html#TYPEt">Implementations.t</a> -&gt;
+connection_state:'s -&gt;
+on_handshake_error:[ `Call of <a href="../core/Std.Exn.html#TYPEt">Core.Std.Exn.t</a> -&gt; unit <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a>
+                   | `Ignore
+                   | `Raise ] -&gt;
+unit <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> serve : <code class="type">implementations:'s <a href="Rpc_intf.Connection.Implementations.html#TYPEt">Implementations.t</a> -&gt;
+initial_connection_state:(([&lt; <a href="Import.Socket.Address.html#TYPEt">Import.Socket.Address.t</a> ] as 'a) -&gt; 's) -&gt;
+where_to_listen:('a, 'listening_on) <a href="Tcp.Where_to_listen.html#TYPEt">Tcp.Where_to_listen.t</a> -&gt;
+?auth:('a -&gt; bool) -&gt;
+?on_handshake_error:[ `Call of <a href="../core/Std.Exn.html#TYPEt">Core.Std.Exn.t</a> -&gt; unit | `Ignore | `Raise ] -&gt;
+unit -&gt; ('a, 'listening_on) <a href="Tcp.Server.html#TYPEt">Tcp.Server.t</a> <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a></code></span></pre>
+      <div class="info"><code class="code">serve implementations ~port ?on_handshake_error ()</code> starts a server with the given
+      implementation on <code class="code">port</code>.  The optional auth function will be called on all incoming
+      connections with the address info of the client and will disconnect the client
+      immediately if it returns false.  This auth mechanism is generic and does nothing
+      other than disconnect the client - any logging or record of the reasons is the
+      responsibility of the auth function itself.</div>
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Rpc_intf.Connection.Client_implementations.html">Client_implementations</a> : <code class="code">sig</code> <a href="Rpc_intf.Connection.Client_implementations.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Rpc_intf.Connection.Client_implementations.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> client : <code class="type">host:string -&gt;
+port:int -&gt;
+?implementations:'a <a href="Rpc_intf.Connection.Client_implementations.html#TYPEt">Client_implementations.t</a> -&gt;
+unit -&gt; (<a href="Rpc_intf.Connection.html#TYPEt">t</a>, <a href="../core/Std.Exn.html#TYPEt">Core.Std.Exn.t</a>) <a href="../core/Std.Result.html#TYPEt">Core.Std.Result.t</a> <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a></code></span></pre>
+      <div class="info"><code class="code">client ~host ~port ()</code> connects to the server at (<code class="code">host</code>,<code class="code">port</code>) and returns the
+      connection or an Error if a connection could not be made.  It is the responsibility
+      of the caller to eventually call close.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> with_client : <code class="type">host:string -&gt;
+port:int -&gt;
+?implementations:'b <a href="Rpc_intf.Connection.Client_implementations.html#TYPEt">Client_implementations.t</a> -&gt;
+(<a href="Rpc_intf.Connection.html#TYPEt">t</a> -&gt; 'a <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a>) -&gt;
+('a, <a href="../core/Std.Exn.html#TYPEt">Core.Std.Exn.t</a>) <a href="../core/Std.Result.html#TYPEt">Core.Std.Result.t</a> <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a></code></span></pre>
+      <div class="info"><code class="code">with_client ~host ~port f</code> connects to the server at (<code class="code">host</code>,<code class="code">port</code>) and runs f
+      until an exception is thrown or until the returned Deferred is fulfilled.</div>
+    

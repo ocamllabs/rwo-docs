@@ -1,0 +1,7 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type"><a href="Import.Basic_scheduler.Execution_context.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    

@@ -1,0 +1,105 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Linux_ext.Timerfd.Clock.html">Clock</a> : <code class="code">sig</code> <a href="Linux_ext.Timerfd.Clock.html">..</a> <code class="code">end</code></pre><div class="info">Clock used to mark the progress of a timer.</div>
+	<div class="content" style="display:none">
+	<div file="Linux_ext.Timerfd.Clock.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Linux_ext.Timerfd.Flags.html">Flags</a> : <code class="code">sig</code> <a href="Linux_ext.Timerfd.Flags.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Linux_ext.Timerfd.Flags.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span>= <code class="type"><a href="Core_unix.File_descr.html#TYPEt">Core_unix.File_descr.t</a></code> <span class="keyword">private</span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">(?flags:<a href="Linux_ext.Timerfd.Flags.html#TYPEt">Flags.t</a> -&gt; <a href="Linux_ext.Timerfd.Clock.html#TYPEt">Clock.t</a> -&gt; <a href="Linux_ext.Timerfd.html#TYPEt">t</a>) <a href="../core_kernel/Std.Or_error.html#TYPEt">Core_kernel.Std.Or_error.t</a></code></span></pre>
+      <div class="info"><code class="code">create ?flags clock</code> creates a new timer file descriptor.  With Linux 2.6.26 or
+      earlier <code class="code">flags</code> must be empty.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> set : <code class="type"><a href="Linux_ext.Timerfd.html#TYPEt">t</a> -&gt; [ `After of <a href="Span.html#TYPEt">Span.t</a> | `At of <a href="Time.html#TYPEt">Time.t</a> ] -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">set t when</code> sets <code class="code">t</code> to fire once, at the time specified by <code class="code">when</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> set_repeating : <code class="type">?initial:[ `After of <a href="Span.html#TYPEt">Span.t</a> | `At of <a href="Time.html#TYPEt">Time.t</a> ] -&gt; <a href="Linux_ext.Timerfd.html#TYPEt">t</a> -&gt; <a href="Span.html#TYPEt">Span.t</a> -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">set_repeating ?initial t interval</code> sets <code class="code">t</code> to fire every <code class="code">interval</code> starting at
+      <code class="code">when</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> clear : <code class="type"><a href="Linux_ext.Timerfd.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">clear t</code> causes <code class="code">t</code> to not fire any more.</div>
+    
+<pre><code><span id="TYPErepeat"><span class="keyword">type</span> repeat </span>= {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTrepeat.fire_after">fire_after</span> :<code class="type"><a href="Span.html#TYPEt">Span.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTrepeat.interval">interval</span> :<code class="type"><a href="Span.html#TYPEt">Span.t</a></code>;</code></td>
+	  </tr></table>}
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get : <code class="type"><a href="Linux_ext.Timerfd.html#TYPEt">t</a> -&gt; [ `Fire_after of <a href="Span.html#TYPEt">Span.t</a> | `Not_armed | `Repeat of <a href="Linux_ext.Timerfd.html#TYPErepeat">repeat</a> ]</code></span></pre>
+      <div class="info"><code class="code">get t</code> returns the current state of the timer <code class="code">t</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp : <code class="type"><a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; <a href="Linux_ext.Timerfd.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type"><a href="Linux_ext.Timerfd.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> compare : <code class="type"><a href="Linux_ext.Timerfd.html#TYPEt">t</a> -&gt; <a href="Linux_ext.Timerfd.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_t : <code class="type"><a href="Linux_ext.Timerfd.html#TYPEt">t</a> <a href="../core_kernel/Std.Bin_prot.Type_class.html#TYPEt">Core_kernel.Std.Bin_prot.Type_class.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t : <code class="type"><a href="Linux_ext.Timerfd.html#TYPEt">t</a> <a href="../core_kernel/Std.Bin_prot.Read_ml.html#TYPEreader">Core_kernel.Std.Bin_prot.Read_ml.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t_ : <code class="type"><a href="Linux_ext.Timerfd.html#TYPEt">t</a> <a href="../core_kernel/Std.Bin_prot.Unsafe_read_c.html#TYPEreader">Core_kernel.Std.Bin_prot.Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t__ : <code class="type">(int -&gt; <a href="Linux_ext.Timerfd.html#TYPEt">t</a>) <a href="../core_kernel/Std.Bin_prot.Unsafe_read_c.html#TYPEreader">Core_kernel.Std.Bin_prot.Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t : <code class="type"><a href="Linux_ext.Timerfd.html#TYPEt">t</a> <a href="../core_kernel/Std.Bin_prot.Type_class.html#TYPEreader">Core_kernel.Std.Bin_prot.Type_class.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t : <code class="type"><a href="Linux_ext.Timerfd.html#TYPEt">t</a> <a href="../core_kernel/Std.Bin_prot.Size.html#TYPEsizer">Core_kernel.Std.Bin_prot.Size.sizer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t : <code class="type"><a href="Linux_ext.Timerfd.html#TYPEt">t</a> <a href="../core_kernel/Std.Bin_prot.Write_ml.html#TYPEwriter">Core_kernel.Std.Bin_prot.Write_ml.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_ : <code class="type"><a href="Linux_ext.Timerfd.html#TYPEt">t</a> <a href="../core_kernel/Std.Bin_prot.Unsafe_write_c.html#TYPEwriter">Core_kernel.Std.Bin_prot.Unsafe_write_c.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t : <code class="type"><a href="Linux_ext.Timerfd.html#TYPEt">t</a> <a href="../core_kernel/Std.Bin_prot.Type_class.html#TYPEwriter">Core_kernel.Std.Bin_prot.Type_class.writer</a></code></span></pre>
+      
+    
+<br/><code class="code">create ?flags clock</code> creates a new timer file descriptor.  With Linux 2.6.26 or
+      earlier <code class="code">flags</code> must be empty.<br/>
+	  
+<br/><code class="code">set t when</code> sets <code class="code">t</code> to fire once, at the time specified by <code class="code">when</code>.<br/>
+	  
+<br/><code class="code">set_repeating ?initial t interval</code> sets <code class="code">t</code> to fire every <code class="code">interval</code> starting at
+      <code class="code">when</code>.<br/>
+	  
+<br/>default is <code class="code">`After interval</code> <br/>
+	  
+<br/><code class="code">clear t</code> causes <code class="code">t</code> to not fire any more.<br/>
+	  
+<br/><code class="code">get t</code> returns the current state of the timer <code class="code">t</code>.<br/>
+	  

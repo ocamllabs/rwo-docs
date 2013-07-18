@@ -1,0 +1,55 @@
+<pre><code><span id="TYPEcase"><span class="keyword">type</span> <code class="type">('input, 'output) </code>case </span>= {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTcase.pattern">pattern</span> :<code class="type">'input list</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTcase.documentation">documentation</span> :<code class="type">string</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTcase.value">value</span> :<code class="type">'output</code>;</code></td>
+	  </tr></table>}
+      
+    
+<pre><code><span id="TYPEt"><span class="keyword">type</span> <code class="type">('input, 'output) </code>t </span>= {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.specific_cases">specific_cases</span> :<code class="type">('input, unit -&gt; 'output) <a href="Documented_match_statement.html#TYPEcase">case</a> list</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.catchall_case">catchall_case</span> :<code class="type">[ `Unused of unit -&gt; 'output
+| `Used of ([ `Catchall ], 'input -&gt; 'output) <a href="Documented_match_statement.html#TYPEcase">case</a> ]</code>;</code></td>
+	  </tr></table>}
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map : <code class="type">('input, 'output1) <a href="Documented_match_statement.html#TYPEt">t</a> -&gt; f:('output1 -&gt; 'output2) -&gt; ('input, 'output2) <a href="Documented_match_statement.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map_case : <code class="type">('input, unit -&gt; 'output1) <a href="Documented_match_statement.html#TYPEcase">case</a> -&gt;
+f:('output1 -&gt; 'output2) -&gt; ('input, unit -&gt; 'output2) <a href="Documented_match_statement.html#TYPEcase">case</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map_cases : <code class="type">('input, unit -&gt; 'output1) <a href="Documented_match_statement.html#TYPEcase">case</a> list -&gt;
+f:('output1 -&gt; 'output2) -&gt; ('input, unit -&gt; 'output2) <a href="Documented_match_statement.html#TYPEcase">case</a> list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map_pattern : <code class="type">('input1, 'output) <a href="Documented_match_statement.html#TYPEt">t</a> -&gt;
+f1:('input1 -&gt; 'input2) -&gt; f2:('input2 -&gt; 'input1) -&gt; ('input2, 'output) <a href="Documented_match_statement.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> prepend : <code class="type">specific_cases:('input, unit -&gt; 'output) <a href="Documented_match_statement.html#TYPEcase">case</a> list -&gt;
+('input, 'output) <a href="Documented_match_statement.html#TYPEt">t</a> -&gt; ('input, 'output) <a href="Documented_match_statement.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">prepend ~specific_cases t</code> matches on <code class="code">specific_cases</code> before moving on to <code class="code">t</code>.<br/>    A common situation is representing
+    let f t x =
+    match x with
+    | `A -&gt; ...
+    | `B -&gt; ...
+    | _ -&gt; TODO custom<br/>    which can be done by combining <code class="code">prepend</code> and <code class="code">map</code>:
+    let f' =
+    prepend ~specific_cases:<code class="code">{pattern = `A;...};{pattern = `B;...}</code>
+    (map g' ~f:(fun h t -&gt; TODO custom))</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> match_ : <code class="type">('input, 'output) <a href="Documented_match_statement.html#TYPEt">t</a> -&gt; 'input -&gt; 'output</code></span></pre>
+      <div class="info"><code class="code">match_ t</code> pulls out the underlying function of <code class="code">t</code> </div>
+    
+ 
+      <pre><span><span class="keyword">val</span> documentation : <code class="type">('input, 'output) <a href="Documented_match_statement.html#TYPEt">t</a> -&gt;
+input_to_string:('input -&gt; string) -&gt; title:string -&gt; string list</code></span></pre>
+      
+    

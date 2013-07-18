@@ -1,0 +1,11 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Piecewise_linear_intf.S.html">S</a></code></pre>
+	<div class="content">
+	<div file="Piecewise_linear_intf.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> get_inverse : <code class="type">t -&gt; value -&gt; key</code></span></pre>
+      <div class="info"><code class="code">get_inverse t value</code> is the inverse operation of <code class="code">get t key</code>.</div>
+    

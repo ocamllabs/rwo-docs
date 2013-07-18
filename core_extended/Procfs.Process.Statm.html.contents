@@ -1,0 +1,57 @@
+<pre><code><span id="TYPEt"><span class="keyword">type</span> t </span>= {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.size">size</span> :<code class="type"><a href="Procfs.html#TYPEbigint">bigint</a></code>;</code></td><td class="typefieldcomment" align="left">total program size</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.resident">resident</span> :<code class="type"><a href="Procfs.html#TYPEbigint">bigint</a></code>;</code></td><td class="typefieldcomment" align="left">resident set size</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.share">share</span> :<code class="type"><a href="Procfs.html#TYPEbigint">bigint</a></code>;</code></td><td class="typefieldcomment" align="left">shared pages</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.text">text</span> :<code class="type"><a href="Procfs.html#TYPEbigint">bigint</a></code>;</code></td><td class="typefieldcomment" align="left">text (code)</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.lib">lib</span> :<code class="type"><a href="Procfs.html#TYPEbigint">bigint</a></code>;</code></td><td class="typefieldcomment" align="left">library</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.data">data</span> :<code class="type"><a href="Procfs.html#TYPEbigint">bigint</a></code>;</code></td><td class="typefieldcomment" align="left">data/stack</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.dt">dt</span> :<code class="type"><a href="Procfs.html#TYPEbigint">bigint</a></code>;</code></td><td class="typefieldcomment" align="left">dirty pages (unused)</td>
+	  </tr></table>}
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> dt : <code class="type"><a href="Procfs.Process.Statm.html#TYPEt">t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> data : <code class="type"><a href="Procfs.Process.Statm.html#TYPEt">t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> lib : <code class="type"><a href="Procfs.Process.Statm.html#TYPEt">t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> text : <code class="type"><a href="Procfs.Process.Statm.html#TYPEt">t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> share : <code class="type"><a href="Procfs.Process.Statm.html#TYPEt">t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> resident : <code class="type"><a href="Procfs.Process.Statm.html#TYPEt">t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> size : <code class="type"><a href="Procfs.Process.Statm.html#TYPEt">t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a></code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Procfs.Process.Statm.Fields.html">Fields</a> : <code class="code">sig</code> <a href="Procfs.Process.Statm.Fields.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Procfs.Process.Statm.Fields.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> of_string : <code class="type">string -&gt; <a href="Procfs.Process.Statm.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp : <code class="type"><a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; <a href="Procfs.Process.Statm.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type"><a href="Procfs.Process.Statm.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    

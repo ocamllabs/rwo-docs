@@ -1,0 +1,8 @@
+ 
+      <pre><span><span class="keyword">val</span> ceil_pow2 : <code class="type">int -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> floor_pow2 : <code class="type">int -&gt; int</code></span></pre>
+      
+    

@@ -1,0 +1,27 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Unique_id.Id.html">Id</a> = <code class="type"><code class="code"><a href="Unique_id_intf.Id.html">Unique_id_intf.Id</a></code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Unique_id.Id.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Unique_id.Int.html">Int</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">Z</code><code class="code"> : </code><code class="type"><a href="Std_internal.Unit.html">Std_internal.Unit</a></code><code class="code">) -&gt; </code><code class="code"><a href="Unique_id.Id.html">Id</a></code> with type t = int</div></pre><div class="info">An abstract unique identifier based on ordinary OCaml integers. Be careful, this may
+    easily overflow on 32bit platforms! Int63 is a safer choice for portability.<br/>   <code class="code">Int</code> is useful when one is passing unique ids to C and needs a guarantee as to their
+   representation. <code class="code">Int</code> is always represented as an integer, while <code class="code">Int63</code> is either an
+   integer (on 64-bit machines) or a pointer (on 32-bit machines).<br/>   The generated ids will therefore be fast to generate and not use much memory. If you
+   do not have very stringent requirements on the size, speed, and ordering of your IDs
+   then you should use the UUIDM library instead, which will give you a truly unique id,
+   even amongst different runs and different machines.<br/>   If you do the following:<br/>   module Id1 = Int (Unit)
+   module Id2 = Int (Unit)<br/>   then the types Id1.t and Id2.t are equivalent.  On the other hand, if you do<br/>   module Id1 : Id = Int (Unit)
+   module Id2 : Id = Int (Unit)<br/>   then the types Id1.t and Id2.t are distinct.  Thus, you should use the latter
+   form.</div>
+	<div class="content" style="display:none">
+	<div file="Unique_id.Int.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Unique_id.Int63.html">Int63</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">Z</code><code class="code"> : </code><code class="type"><a href="Std_internal.Unit.html">Std_internal.Unit</a></code><code class="code">) -&gt; </code><code class="code"><a href="Unique_id.Id.html">Id</a></code> with type t = <a href="Core_int63.html#TYPEt">Core_int63.t</a></div></pre>
+	<div class="content" style="display:none">
+	<div file="Unique_id.Int63.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

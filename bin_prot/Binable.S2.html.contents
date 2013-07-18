@@ -1,0 +1,39 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'b) </code>t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t : <code class="type">('a, 'b, ('a, 'b) <a href="Binable.S2.html#TYPEt">t</a>) <a href="Size.html#TYPEsizer2">Size.sizer2</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t : <code class="type">('a, 'b, ('a, 'b) <a href="Binable.S2.html#TYPEt">t</a>) <a href="Map_to_safe.html#TYPEwriter2">Map_to_safe.writer2</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_ : <code class="type">('a, 'b, ('a, 'b) <a href="Binable.S2.html#TYPEt">t</a>) <a href="Unsafe_write_c.html#TYPEwriter2">Unsafe_write_c.writer2</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t : <code class="type">('a, 'b, ('a, 'b) <a href="Binable.S2.html#TYPEt">t</a>) <a href="Map_to_safe.html#TYPEreader2">Map_to_safe.reader2</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t_ : <code class="type">('a, 'b, ('a, 'b) <a href="Binable.S2.html#TYPEt">t</a>) <a href="Unsafe_read_c.html#TYPEreader2">Unsafe_read_c.reader2</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t__ : <code class="type">('a, 'b, int -&gt; ('a, 'b) <a href="Binable.S2.html#TYPEt">t</a>) <a href="Unsafe_read_c.html#TYPEreader2">Unsafe_read_c.reader2</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t : <code class="type">('a, 'b, ('a, 'b) <a href="Binable.S2.html#TYPEt">t</a>) <a href="Type_class.S2.html#TYPEwriter">Type_class.S2.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t : <code class="type">('a, 'b, ('a, 'b) <a href="Binable.S2.html#TYPEt">t</a>) <a href="Type_class.S2.html#TYPEreader">Type_class.S2.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_t : <code class="type">('a, 'b, ('a, 'b) <a href="Binable.S2.html#TYPEt">t</a>) <a href="Type_class.S2.html#TYPEt">Type_class.S2.t</a></code></span></pre>
+      
+    

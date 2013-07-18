@@ -1,0 +1,86 @@
+<pre><span id="TYPEbase"><span class="keyword">type</span> base </span></pre>
+      
+    
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> base : <code class="type"><a href="Substring_intf.S.html#TYPEt">t</a> -&gt; <a href="Substring_intf.S.html#TYPEbase">base</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pos : <code class="type"><a href="Substring_intf.S.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> length : <code class="type"><a href="Substring_intf.S.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">?pos:int -&gt; ?len:int -&gt; <a href="Substring_intf.S.html#TYPEbase">base</a> -&gt; <a href="Substring_intf.S.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">create ?pos ?len base</code> creates a substring of the base sequence of
+ length <code class="code">len</code> starting at position <code class="code">pos</code>, i.e.<br/>   base.<code class="code">pos</code>, base.<code class="code">pos + 1</code>, ... base.<code class="code">pos + len - 1</code><br/> It is required that:
+   0 &lt;= pos
+   0 &lt;= len
+   pos + len &lt;= length base<br/> It does not copy the characters.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> blit_to_string : <code class="type"><a href="Substring_intf.S.html#TYPEt">t</a> -&gt; dst:string -&gt; dst_pos:int -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> blit_to_bigstring : <code class="type"><a href="Substring_intf.S.html#TYPEt">t</a> -&gt; dst:<a href="Bigstring.html#TYPEt">Bigstring.t</a> -&gt; dst_pos:int -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> blit_from_string : <code class="type"><a href="Substring_intf.S.html#TYPEt">t</a> -&gt; src:string -&gt; src_pos:int -&gt; len:int -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> blit_from_bigstring : <code class="type"><a href="Substring_intf.S.html#TYPEt">t</a> -&gt; src:<a href="Bigstring.html#TYPEt">Bigstring.t</a> -&gt; src_pos:int -&gt; len:int -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> concat : <code class="type"><a href="Substring_intf.S.html#TYPEt">t</a> list -&gt; <a href="Substring_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> concat_string : <code class="type"><a href="Substring_intf.S.html#TYPEt">t</a> list -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> concat_bigstring : <code class="type"><a href="Substring_intf.S.html#TYPEt">t</a> list -&gt; <a href="Bigstring.html#TYPEt">Bigstring.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_bigstring : <code class="type"><a href="Bigstring.html#TYPEt">Bigstring.t</a> -&gt; <a href="Substring_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_string : <code class="type">string -&gt; <a href="Substring_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_bigstring : <code class="type"><a href="Substring_intf.S.html#TYPEt">t</a> -&gt; <a href="Bigstring.html#TYPEt">Bigstring.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_string : <code class="type"><a href="Substring_intf.S.html#TYPEt">t</a> -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> drop_prefix : <code class="type"><a href="Substring_intf.S.html#TYPEt">t</a> -&gt; int -&gt; <a href="Substring_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> drop_suffix : <code class="type"><a href="Substring_intf.S.html#TYPEt">t</a> -&gt; int -&gt; <a href="Substring_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> prefix : <code class="type"><a href="Substring_intf.S.html#TYPEt">t</a> -&gt; int -&gt; <a href="Substring_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> suffix : <code class="type"><a href="Substring_intf.S.html#TYPEt">t</a> -&gt; int -&gt; <a href="Substring_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    

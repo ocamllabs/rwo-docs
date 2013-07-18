@@ -1,0 +1,8 @@
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp : <code class="type"><a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; M.t</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type">M.t -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    

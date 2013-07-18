@@ -1,0 +1,16 @@
+<br/><code class="code">with_conn</code> opens a connection to the TCP service on <code class="code">host</code> <code class="code">port</code> and
+  if successful calls <code class="code">f</code> with In_channel.t and Out_channel.t as arguments.
+  The return value of <code class="code">f</code> will be returned by <code class="code">with_conn</code>.<br/>  <code class="code">with_conn</code> raises Connect_timeout if the connection attempt times out.
+  Unix_error will be raised if there are any other connect errors.
+  Any exceptions raised by <code class="code">f</code> will be re-raised, which may include
+  Unix_errors raised by underlying channel read/write calls.<br/>  The <code class="code">In_channel.t</code>, <code class="code">Out_channel.t</code>, and underlying socket
+  will be closed by with_conn before it returns.<br/>
+	  
+<pre><span id="EXCEPTIONConnect_timeout"><span class="keyword">exception</span> Connect_timeout</span></pre>
+ 
+      <pre><span><span class="keyword">val</span> with_connection : <code class="type">?timeout:<a href="../core/Std.Time.Span.html#TYPEt">Core.Std.Time.Span.t</a> -&gt;
+host:string -&gt;
+port:int -&gt;
+f:(<a href="../core/Std.In_channel.html#TYPEt">Core.Std.In_channel.t</a> -&gt; <a href="../core/Std.Out_channel.html#TYPEt">Core.Std.Out_channel.t</a> -&gt; 'a) -&gt; unit -&gt; 'a</code></span></pre>
+      
+    

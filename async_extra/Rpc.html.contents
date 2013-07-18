@@ -1,0 +1,58 @@
+<br/>A library for building asynchronous RPC-style protocols.<br/>    The approach here is to have a separate representation of the server-side
+    implementation of an RPC (An <code class="code">Implementation.t</code>) and the interface that it exports
+    (either an <code class="code">Rpc.t</code>, a <code class="code">State_rpc.t</code> or a <code class="code">Pipe_rpc.t</code>, but we'll refer to them
+    generically as RPC interfaces).  A server builds the <code class="code">Implementation.t</code> out of an RPC
+    interface and a function for implementing the RPC, while the client dispatches a
+    request using the same RPC interface.<br/>    The <code class="code">Implementation.t</code> hides the type of the query and the response, whereas the
+    <code class="code">Rpc.t</code> is polymorphic in the query and response type.  This allows you to build a
+    <code class="code">Implementations.t</code> out of a list of <code class="code">Implementation.t</code>s.<br/>    Each RPC also comes with a version number.  This is meant to allow support of multiple
+    different versions of what is essentially the same RPC.  You can think of it as an
+    extension to the name of the RPC, and in fact, each RPC is uniquely identified by its
+    (name, version) pair.  RPCs with the same name but different versions should implement
+    similar functionality.<br/>
+	  
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Rpc.Implementation.html">Implementation</a> : <code class="code">sig</code> <a href="Rpc.Implementation.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Rpc.Implementation.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Rpc.Implementations.html">Implementations</a> : <code class="code">sig</code> <a href="Rpc.Implementations.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Rpc.Implementations.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Rpc.Connection.html">Connection</a> = <code class="type"><code class="code"><a href="Rpc_intf.Connection.html">Rpc_intf.Connection</a></code> with module Implementations = <a href="Rpc.Implementations.html">Implementations</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Rpc.Connection.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Rpc.Connection.html">Connection</a> : <code class="code"><a href="Rpc.Connection.html">Connection</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Rpc.Connection.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Rpc.Rpc.html">Rpc</a> : <code class="code">sig</code> <a href="Rpc.Rpc.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Rpc.Rpc.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Rpc.Pipe_rpc.html">Pipe_rpc</a> : <code class="code">sig</code> <a href="Rpc.Pipe_rpc.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Rpc.Pipe_rpc.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Rpc.State_rpc.html">State_rpc</a> : <code class="code">sig</code> <a href="Rpc.State_rpc.html">..</a> <code class="code">end</code></pre><div class="info">A state rpc is an easy way for two processes to synchronize a data structure by
+    sending updates over the wire.  It's basically a pipe rpc that sends/receives an
+    initial state of the data structure, and then updates, and applies the updates under
+    the covers.</div>
+	<div class="content" style="display:none">
+	<div file="Rpc.State_rpc.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

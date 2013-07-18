@@ -1,0 +1,66 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> nil : <code class="type"><a href="Text_block.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fill : <code class="type">char -&gt; width:int -&gt; height:int -&gt; <a href="Text_block.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> space : <code class="type">width:int -&gt; height:int -&gt; <a href="Text_block.html#TYPEt">t</a></code></span></pre>
+      
+    
+<pre><span id="TYPEvalign"><span class="keyword">type</span> valign </span>= <code class="type">[ `Bottom | `Center | `Top ]</code> </pre>
+      
+    
+<pre><span id="TYPEhalign"><span class="keyword">type</span> halign </span>= <code class="type">[ `Center | `Left | `Right ]</code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> text : <code class="type">?align:<a href="Text_block.html#TYPEhalign">halign</a> -&gt; string -&gt; <a href="Text_block.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> vcat : <code class="type">?align:<a href="Text_block.html#TYPEhalign">halign</a> -&gt; ?sep:<a href="Text_block.html#TYPEt">t</a> -&gt; <a href="Text_block.html#TYPEt">t</a> list -&gt; <a href="Text_block.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> hcat : <code class="type">?align:<a href="Text_block.html#TYPEvalign">valign</a> -&gt; ?sep:<a href="Text_block.html#TYPEt">t</a> -&gt; <a href="Text_block.html#TYPEt">t</a> list -&gt; <a href="Text_block.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> width : <code class="type"><a href="Text_block.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> height : <code class="type"><a href="Text_block.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> valign : <code class="type"><a href="Text_block.html#TYPEvalign">valign</a> -&gt; <a href="Text_block.html#TYPEt">t</a> list -&gt; <a href="Text_block.html#TYPEt">t</a> list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> halign : <code class="type"><a href="Text_block.html#TYPEhalign">halign</a> -&gt; <a href="Text_block.html#TYPEt">t</a> list -&gt; <a href="Text_block.html#TYPEt">t</a> list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> hstrut : <code class="type">int -&gt; <a href="Text_block.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> vstrut : <code class="type">int -&gt; <a href="Text_block.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> render : <code class="type"><a href="Text_block.html#TYPEt">t</a> -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> compress_table_header : <code class="type">[ `Cols of (<a href="Text_block.html#TYPEt">t</a> * <a href="Text_block.html#TYPEt">t</a> list * <a href="Text_block.html#TYPEhalign">halign</a>) list ] -&gt;
+[ `Header of <a href="Text_block.html#TYPEt">t</a> ] * [ `Rows of <a href="Text_block.html#TYPEt">t</a> list ]</code></span></pre>
+      
+    

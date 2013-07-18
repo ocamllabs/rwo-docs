@@ -1,0 +1,19 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> print : <code class="type">?oc:<a href="../stdlib/Pervasives.html#TYPEout_channel">out_channel</a> -&gt; <a href="Extended_sexp.Diff.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_buffer : <code class="type"><a href="Extended_sexp.Diff.html#TYPEt">t</a> -&gt; <a href="../stdlib/Buffer.html#TYPEt">Buffer.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_string : <code class="type"><a href="Extended_sexp.Diff.html#TYPEt">t</a> -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_sexps : <code class="type"><a href="../core/Std.Sexp.html#TYPEt">Core.Std.Sexp.t</a> -&gt; <a href="../core/Std.Sexp.html#TYPEt">Core.Std.Sexp.t</a> -&gt; <a href="Extended_sexp.Diff.html#TYPEt">t</a> option</code></span></pre>
+      
+    

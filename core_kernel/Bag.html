@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<title>Bag</title>
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
+<script type="text/javascript" src="doc_loader.js"> </script>
+</head>
+<body>
+
+<h1>Module Bag</h1>
+<pre><span class="keyword">module</span> Bag</pre><div class="info">Imperative set-like data structure.<br/>    Primary differences from a simple set:<br/>    - It doesn't require anything (hashable, comparable) of elements in the bag.<ul><li>Duplicates are allowed.</li><li>Addition and removal are constant time.</li></ul>    It is an error to modify a bag (<code class="code">add</code>, <code class="code">remove</code>, <code class="code">remove_one</code>, ...) during iteration
+    (<code class="code">fold</code>, <code class="code">iter</code>, ...).</div>
+<hr/>
+<div file="Bag.html.contents" class="content_to_load"> </div>
+</body>
+</html>

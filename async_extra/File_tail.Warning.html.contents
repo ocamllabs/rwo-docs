@@ -1,0 +1,23 @@
+<pre><code><span id="TYPEt"><span class="keyword">type</span> t </span>= </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Did_not_reach_eof_for"><span class="constructor">Did_not_reach_eof_for</span></span> <span class="keyword">of</span> <code class="type"><a href="../core/Std.Time.Span.html#TYPEt">Core.Std.Time.Span.t</a></code></code></td><td class="typefieldcomment" align="left"><code class="code">Reached_eof</code> occurs whenever the file tail reaches the end of file, irrespective of
+      whether there has previously been a <code class="code">Did_not_reach_eof_for</code> warning.</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Reached_eof"><span class="constructor">Reached_eof</span></span></code></td><td class="typefieldcomment" align="left"><code class="code">Delayed_due_to_null_reads_for span</code> occurs when the file tail is unable to get data
+      from the file, because the data being read has null ('\000') characters.  The span
+      is how long it has been attempting to read and been getting nulls.  This warning
+      will only occur if <code class="code">retry_null_reads = true</code>.  This warning will be repeated until
+      the null reads stop.</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Delayed_due_to_null_reads_for"><span class="constructor">Delayed_due_to_null_reads_for</span></span> <span class="keyword">of</span> <code class="type"><a href="../core/Std.Time.Span.html#TYPEt">Core.Std.Time.Span.t</a></code></code></td><td class="typefieldcomment" align="left"><code class="code">No_longer_delayed_due_to_null_reads</code> occurs after a nonempty sequence of
+      <code class="code">Delayed_due_to_null_reads_for</code> warnings, once the file tail gets a read that does
+      not contain null reads.</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.No_longer_delayed_due_to_null_reads"><span class="constructor">No_longer_delayed_due_to_null_reads</span></span></code></td>
+	   </tr></table>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_string_hum : <code class="type"><a href="File_tail.Warning.html#TYPEt">t</a> -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type"><a href="File_tail.Warning.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    

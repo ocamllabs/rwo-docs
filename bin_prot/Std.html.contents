@@ -1,0 +1,743 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Size.html">Size</a></code></pre>
+	<div class="content">
+	<div file="Size.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> bin_unit : <code class="type">unit <a href="Type_class.html#TYPEt">Type_class.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_unit : <code class="type">unit <a href="Type_class.html#TYPEwriter">Type_class.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_unit_ : <code class="type">unit <a href="Unsafe_write_c.html#TYPEwriter">Unsafe_write_c.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_unit : <code class="type">unit <a href="Write_ml.html#TYPEwriter">Write_ml.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_unit : <code class="type">unit <a href="Type_class.html#TYPEreader">Type_class.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_unit : <code class="type">unit <a href="Read_ml.html#TYPEreader">Read_ml.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_unit_ : <code class="type">unit <a href="Unsafe_read_c.html#TYPEreader">Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_unit__ : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_bool : <code class="type">bool <a href="Type_class.html#TYPEt">Type_class.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_bool : <code class="type">bool <a href="Type_class.html#TYPEwriter">Type_class.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_bool_ : <code class="type">bool <a href="Unsafe_write_c.html#TYPEwriter">Unsafe_write_c.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_bool : <code class="type">bool <a href="Write_ml.html#TYPEwriter">Write_ml.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_bool : <code class="type">bool <a href="Type_class.html#TYPEreader">Type_class.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_bool : <code class="type">bool <a href="Read_ml.html#TYPEreader">Read_ml.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_bool_ : <code class="type">bool <a href="Unsafe_read_c.html#TYPEreader">Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_bool__ : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_string : <code class="type">string <a href="Type_class.html#TYPEt">Type_class.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_string : <code class="type">string <a href="Type_class.html#TYPEwriter">Type_class.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_string_ : <code class="type">string <a href="Unsafe_write_c.html#TYPEwriter">Unsafe_write_c.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_string : <code class="type">string <a href="Write_ml.html#TYPEwriter">Write_ml.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_string : <code class="type">string <a href="Type_class.html#TYPEreader">Type_class.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_string : <code class="type">string <a href="Read_ml.html#TYPEreader">Read_ml.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_string_ : <code class="type">string <a href="Unsafe_read_c.html#TYPEreader">Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_string__ : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_char : <code class="type">char <a href="Type_class.html#TYPEt">Type_class.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_char : <code class="type">char <a href="Type_class.html#TYPEwriter">Type_class.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_char_ : <code class="type">char <a href="Unsafe_write_c.html#TYPEwriter">Unsafe_write_c.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_char : <code class="type">char <a href="Write_ml.html#TYPEwriter">Write_ml.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_char : <code class="type">char <a href="Type_class.html#TYPEreader">Type_class.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_char : <code class="type">char <a href="Read_ml.html#TYPEreader">Read_ml.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_char_ : <code class="type">char <a href="Unsafe_read_c.html#TYPEreader">Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_char__ : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_int : <code class="type">int <a href="Type_class.html#TYPEt">Type_class.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_int : <code class="type">int <a href="Type_class.html#TYPEwriter">Type_class.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_int_ : <code class="type">int <a href="Unsafe_write_c.html#TYPEwriter">Unsafe_write_c.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_int : <code class="type">int <a href="Write_ml.html#TYPEwriter">Write_ml.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_int : <code class="type">int <a href="Type_class.html#TYPEreader">Type_class.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_int : <code class="type">int <a href="Read_ml.html#TYPEreader">Read_ml.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_int_ : <code class="type">int <a href="Unsafe_read_c.html#TYPEreader">Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_int__ : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_float : <code class="type">float <a href="Type_class.html#TYPEt">Type_class.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_float : <code class="type">float <a href="Type_class.html#TYPEwriter">Type_class.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_float_ : <code class="type">float <a href="Unsafe_write_c.html#TYPEwriter">Unsafe_write_c.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_float : <code class="type">float <a href="Write_ml.html#TYPEwriter">Write_ml.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_float : <code class="type">float <a href="Type_class.html#TYPEreader">Type_class.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_float : <code class="type">float <a href="Read_ml.html#TYPEreader">Read_ml.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_float_ : <code class="type">float <a href="Unsafe_read_c.html#TYPEreader">Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_float__ : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_int32 : <code class="type">int32 <a href="Type_class.html#TYPEt">Type_class.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_int32 : <code class="type">int32 <a href="Type_class.html#TYPEwriter">Type_class.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_int32_ : <code class="type">int32 <a href="Unsafe_write_c.html#TYPEwriter">Unsafe_write_c.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_int32 : <code class="type">int32 <a href="Write_ml.html#TYPEwriter">Write_ml.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_int32 : <code class="type">int32 <a href="Type_class.html#TYPEreader">Type_class.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_int32 : <code class="type">int32 <a href="Read_ml.html#TYPEreader">Read_ml.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_int32_ : <code class="type">int32 <a href="Unsafe_read_c.html#TYPEreader">Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_int32__ : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_int64 : <code class="type">int64 <a href="Type_class.html#TYPEt">Type_class.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_int64 : <code class="type">int64 <a href="Type_class.html#TYPEwriter">Type_class.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_int64_ : <code class="type">int64 <a href="Unsafe_write_c.html#TYPEwriter">Unsafe_write_c.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_int64 : <code class="type">int64 <a href="Write_ml.html#TYPEwriter">Write_ml.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_int64 : <code class="type">int64 <a href="Type_class.html#TYPEreader">Type_class.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_int64 : <code class="type">int64 <a href="Read_ml.html#TYPEreader">Read_ml.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_int64_ : <code class="type">int64 <a href="Unsafe_read_c.html#TYPEreader">Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_int64__ : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_nativeint : <code class="type">nativeint <a href="Type_class.html#TYPEt">Type_class.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_nativeint : <code class="type">nativeint <a href="Type_class.html#TYPEwriter">Type_class.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_nativeint_ : <code class="type">nativeint <a href="Unsafe_write_c.html#TYPEwriter">Unsafe_write_c.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_nativeint : <code class="type">nativeint <a href="Write_ml.html#TYPEwriter">Write_ml.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_nativeint : <code class="type">nativeint <a href="Type_class.html#TYPEreader">Type_class.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_nativeint : <code class="type">nativeint <a href="Read_ml.html#TYPEreader">Read_ml.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_nativeint_ : <code class="type">nativeint <a href="Unsafe_read_c.html#TYPEreader">Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_nativeint__ : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_ref : <code class="type">('a, 'a <a href="../stdlib/Pervasives.html#TYPEref">ref</a>) <a href="Type_class.S1.html#TYPEt">Type_class.S1.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_ref : <code class="type">('a, 'a <a href="../stdlib/Pervasives.html#TYPEref">ref</a>) <a href="Type_class.S1.html#TYPEwriter">Type_class.S1.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_ref_ : <code class="type">('a, 'a <a href="../stdlib/Pervasives.html#TYPEref">ref</a>) <a href="Unsafe_write_c.html#TYPEwriter1">Unsafe_write_c.writer1</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_ref : <code class="type">('a, 'a <a href="../stdlib/Pervasives.html#TYPEref">ref</a>) <a href="Write_ml.html#TYPEwriter1">Write_ml.writer1</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_ref : <code class="type">('a, 'a <a href="../stdlib/Pervasives.html#TYPEref">ref</a>) <a href="Type_class.S1.html#TYPEreader">Type_class.S1.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_ref : <code class="type">('a, 'a <a href="../stdlib/Pervasives.html#TYPEref">ref</a>) <a href="Read_ml.html#TYPEreader1">Read_ml.reader1</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_ref_ : <code class="type">('a, 'a <a href="../stdlib/Pervasives.html#TYPEref">ref</a>) <a href="Unsafe_read_c.html#TYPEreader1">Unsafe_read_c.reader1</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_ref__ : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd -&gt; 'e</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_lazy_t : <code class="type">('a, 'a lazy_t) <a href="Type_class.S1.html#TYPEt">Type_class.S1.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_lazy_t : <code class="type">('a, 'a lazy_t) <a href="Type_class.S1.html#TYPEwriter">Type_class.S1.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_lazy_t_ : <code class="type">('a, 'a lazy_t) <a href="Unsafe_write_c.html#TYPEwriter1">Unsafe_write_c.writer1</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_lazy_t : <code class="type">('a, 'a lazy_t) <a href="Write_ml.html#TYPEwriter1">Write_ml.writer1</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_lazy_t : <code class="type">('a, 'a lazy_t) <a href="Type_class.S1.html#TYPEreader">Type_class.S1.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_lazy_t : <code class="type">('a, 'a lazy_t) <a href="Read_ml.html#TYPEreader1">Read_ml.reader1</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_lazy_t_ : <code class="type">('a, 'a lazy_t) <a href="Unsafe_read_c.html#TYPEreader1">Unsafe_read_c.reader1</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_lazy_t__ : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd -&gt; 'e</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_lazy : <code class="type">('a, 'a lazy_t) <a href="Type_class.S1.html#TYPEt">Type_class.S1.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_lazy : <code class="type">('a, 'a lazy_t) <a href="Type_class.S1.html#TYPEwriter">Type_class.S1.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_lazy_ : <code class="type">('a, 'a lazy_t) <a href="Unsafe_write_c.html#TYPEwriter1">Unsafe_write_c.writer1</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_lazy : <code class="type">('a, 'a lazy_t) <a href="Write_ml.html#TYPEwriter1">Write_ml.writer1</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_lazy : <code class="type">('a, 'a lazy_t) <a href="Type_class.S1.html#TYPEreader">Type_class.S1.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_lazy : <code class="type">('a, 'a lazy_t) <a href="Read_ml.html#TYPEreader1">Read_ml.reader1</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_lazy_ : <code class="type">('a, 'a lazy_t) <a href="Unsafe_read_c.html#TYPEreader1">Unsafe_read_c.reader1</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_lazy__ : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd -&gt; 'e</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_option : <code class="type">('a, 'a option) <a href="Type_class.S1.html#TYPEt">Type_class.S1.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_option : <code class="type">('a, 'a option) <a href="Type_class.S1.html#TYPEwriter">Type_class.S1.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_option_ : <code class="type">('a, 'a option) <a href="Unsafe_write_c.html#TYPEwriter1">Unsafe_write_c.writer1</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_option : <code class="type">('a, 'a option) <a href="Write_ml.html#TYPEwriter1">Write_ml.writer1</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_option : <code class="type">('a, 'a option) <a href="Type_class.S1.html#TYPEreader">Type_class.S1.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_option : <code class="type">('a, 'a option) <a href="Read_ml.html#TYPEreader1">Read_ml.reader1</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_option_ : <code class="type">('a, 'a option) <a href="Unsafe_read_c.html#TYPEreader1">Unsafe_read_c.reader1</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_option__ : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd -&gt; 'e</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_list : <code class="type">('a, 'a list) <a href="Type_class.S1.html#TYPEt">Type_class.S1.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_list : <code class="type">('a, 'a list) <a href="Type_class.S1.html#TYPEwriter">Type_class.S1.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_list_ : <code class="type">('a, 'a list) <a href="Unsafe_write_c.html#TYPEwriter1">Unsafe_write_c.writer1</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_list : <code class="type">('a, 'a list) <a href="Write_ml.html#TYPEwriter1">Write_ml.writer1</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_list : <code class="type">('a, 'a list) <a href="Type_class.S1.html#TYPEreader">Type_class.S1.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_list : <code class="type">('a, 'a list) <a href="Read_ml.html#TYPEreader1">Read_ml.reader1</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_list_ : <code class="type">('a, 'a list) <a href="Unsafe_read_c.html#TYPEreader1">Unsafe_read_c.reader1</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_list__ : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd -&gt; 'e</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_array : <code class="type">('a, 'a array) <a href="Type_class.S1.html#TYPEt">Type_class.S1.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_array : <code class="type">('a, 'a array) <a href="Type_class.S1.html#TYPEwriter">Type_class.S1.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_array_ : <code class="type">('a, 'a array) <a href="Unsafe_write_c.html#TYPEwriter1">Unsafe_write_c.writer1</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_array : <code class="type">('a, 'a array) <a href="Write_ml.html#TYPEwriter1">Write_ml.writer1</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_array : <code class="type">('a, 'a array) <a href="Type_class.S1.html#TYPEreader">Type_class.S1.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_array : <code class="type">('a, 'a array) <a href="Read_ml.html#TYPEreader1">Read_ml.reader1</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_array_ : <code class="type">('a, 'a array) <a href="Unsafe_read_c.html#TYPEreader1">Unsafe_read_c.reader1</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_array__ : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd -&gt; 'e</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_hashtbl : <code class="type">('a, 'b, ('a, 'b) <a href="../stdlib/Hashtbl.html#TYPEt">Hashtbl.t</a>) <a href="Type_class.S2.html#TYPEt">Type_class.S2.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_hashtbl : <code class="type">('a, 'b, ('a, 'b) <a href="../stdlib/Hashtbl.html#TYPEt">Hashtbl.t</a>) <a href="Type_class.S2.html#TYPEwriter">Type_class.S2.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_hashtbl_ : <code class="type">('a, 'b, ('a, 'b) <a href="../stdlib/Hashtbl.html#TYPEt">Hashtbl.t</a>) <a href="Unsafe_write_c.html#TYPEwriter2">Unsafe_write_c.writer2</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_hashtbl : <code class="type">('a, 'b, ('a, 'b) <a href="../stdlib/Hashtbl.html#TYPEt">Hashtbl.t</a>) <a href="Write_ml.html#TYPEwriter2">Write_ml.writer2</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_hashtbl : <code class="type">('a, 'b, ('a, 'b) <a href="../stdlib/Hashtbl.html#TYPEt">Hashtbl.t</a>) <a href="Type_class.S2.html#TYPEreader">Type_class.S2.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_hashtbl : <code class="type">('a, 'b, ('a, 'b) <a href="../stdlib/Hashtbl.html#TYPEt">Hashtbl.t</a>) <a href="Read_ml.html#TYPEreader2">Read_ml.reader2</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_hashtbl_ : <code class="type">('a, 'b, ('a, 'b) <a href="../stdlib/Hashtbl.html#TYPEt">Hashtbl.t</a>) <a href="Unsafe_read_c.html#TYPEreader2">Unsafe_read_c.reader2</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_hashtbl__ : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd -&gt; 'e -&gt; 'f</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_bigstring : <code class="type"><a href="Common.html#TYPEbuf">Common.buf</a> <a href="Type_class.html#TYPEt">Type_class.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_bigstring : <code class="type"><a href="Common.html#TYPEbuf">Common.buf</a> <a href="Type_class.html#TYPEwriter">Type_class.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_bigstring_ : <code class="type"><a href="Common.html#TYPEbuf">Common.buf</a> <a href="Unsafe_write_c.html#TYPEwriter">Unsafe_write_c.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_bigstring : <code class="type"><a href="Common.html#TYPEbuf">Common.buf</a> <a href="Write_ml.html#TYPEwriter">Write_ml.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_bigstring : <code class="type"><a href="Common.html#TYPEbuf">Common.buf</a> <a href="Type_class.html#TYPEreader">Type_class.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_bigstring : <code class="type"><a href="Common.html#TYPEbuf">Common.buf</a> <a href="Read_ml.html#TYPEreader">Read_ml.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_bigstring_ : <code class="type"><a href="Common.html#TYPEbuf">Common.buf</a> <a href="Unsafe_read_c.html#TYPEreader">Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_bigstring__ : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_mat : <code class="type"><a href="Common.html#TYPEmat">Common.mat</a> <a href="Type_class.html#TYPEt">Type_class.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_mat : <code class="type"><a href="Common.html#TYPEmat">Common.mat</a> <a href="Type_class.html#TYPEwriter">Type_class.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_mat_ : <code class="type"><a href="Common.html#TYPEmat">Common.mat</a> <a href="Unsafe_write_c.html#TYPEwriter">Unsafe_write_c.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_mat : <code class="type"><a href="Common.html#TYPEmat">Common.mat</a> <a href="Write_ml.html#TYPEwriter">Write_ml.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_mat : <code class="type"><a href="Common.html#TYPEmat">Common.mat</a> <a href="Type_class.html#TYPEreader">Type_class.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_mat : <code class="type"><a href="Common.html#TYPEmat">Common.mat</a> <a href="Read_ml.html#TYPEreader">Read_ml.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_mat_ : <code class="type"><a href="Common.html#TYPEmat">Common.mat</a> <a href="Unsafe_read_c.html#TYPEreader">Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_mat__ : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_float32_mat : <code class="type"><a href="Common.html#TYPEmat32">Common.mat32</a> <a href="Type_class.html#TYPEt">Type_class.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_float32_mat : <code class="type"><a href="Common.html#TYPEmat32">Common.mat32</a> <a href="Type_class.html#TYPEwriter">Type_class.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_float32_mat_ : <code class="type"><a href="Common.html#TYPEmat32">Common.mat32</a> <a href="Unsafe_write_c.html#TYPEwriter">Unsafe_write_c.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_float32_mat : <code class="type"><a href="Common.html#TYPEmat32">Common.mat32</a> <a href="Write_ml.html#TYPEwriter">Write_ml.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_float32_mat : <code class="type"><a href="Common.html#TYPEmat32">Common.mat32</a> <a href="Type_class.html#TYPEreader">Type_class.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_float32_mat : <code class="type"><a href="Common.html#TYPEmat32">Common.mat32</a> <a href="Read_ml.html#TYPEreader">Read_ml.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_float32_mat_ : <code class="type"><a href="Common.html#TYPEmat32">Common.mat32</a> <a href="Unsafe_read_c.html#TYPEreader">Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_float32_mat__ : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_float64_mat : <code class="type"><a href="Common.html#TYPEmat64">Common.mat64</a> <a href="Type_class.html#TYPEt">Type_class.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_float64_mat : <code class="type"><a href="Common.html#TYPEmat64">Common.mat64</a> <a href="Type_class.html#TYPEwriter">Type_class.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_float64_mat_ : <code class="type"><a href="Common.html#TYPEmat64">Common.mat64</a> <a href="Unsafe_write_c.html#TYPEwriter">Unsafe_write_c.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_float64_mat : <code class="type"><a href="Common.html#TYPEmat64">Common.mat64</a> <a href="Write_ml.html#TYPEwriter">Write_ml.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_float64_mat : <code class="type"><a href="Common.html#TYPEmat64">Common.mat64</a> <a href="Type_class.html#TYPEreader">Type_class.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_float64_mat : <code class="type"><a href="Common.html#TYPEmat64">Common.mat64</a> <a href="Read_ml.html#TYPEreader">Read_ml.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_float64_mat_ : <code class="type"><a href="Common.html#TYPEmat64">Common.mat64</a> <a href="Unsafe_read_c.html#TYPEreader">Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_float64_mat__ : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_vec : <code class="type"><a href="Common.html#TYPEvec">Common.vec</a> <a href="Type_class.html#TYPEt">Type_class.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_vec : <code class="type"><a href="Common.html#TYPEvec">Common.vec</a> <a href="Type_class.html#TYPEwriter">Type_class.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_vec_ : <code class="type"><a href="Common.html#TYPEvec">Common.vec</a> <a href="Unsafe_write_c.html#TYPEwriter">Unsafe_write_c.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_vec : <code class="type"><a href="Common.html#TYPEvec">Common.vec</a> <a href="Write_ml.html#TYPEwriter">Write_ml.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_vec : <code class="type"><a href="Common.html#TYPEvec">Common.vec</a> <a href="Type_class.html#TYPEreader">Type_class.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_vec : <code class="type"><a href="Common.html#TYPEvec">Common.vec</a> <a href="Read_ml.html#TYPEreader">Read_ml.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_vec_ : <code class="type"><a href="Common.html#TYPEvec">Common.vec</a> <a href="Unsafe_read_c.html#TYPEreader">Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_vec__ : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_float32_vec : <code class="type"><a href="Common.html#TYPEvec32">Common.vec32</a> <a href="Type_class.html#TYPEt">Type_class.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_float32_vec : <code class="type"><a href="Common.html#TYPEvec32">Common.vec32</a> <a href="Type_class.html#TYPEwriter">Type_class.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_float32_vec_ : <code class="type"><a href="Common.html#TYPEvec32">Common.vec32</a> <a href="Unsafe_write_c.html#TYPEwriter">Unsafe_write_c.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_float32_vec : <code class="type"><a href="Common.html#TYPEvec32">Common.vec32</a> <a href="Write_ml.html#TYPEwriter">Write_ml.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_float32_vec : <code class="type"><a href="Common.html#TYPEvec32">Common.vec32</a> <a href="Type_class.html#TYPEreader">Type_class.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_float32_vec : <code class="type"><a href="Common.html#TYPEvec32">Common.vec32</a> <a href="Read_ml.html#TYPEreader">Read_ml.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_float32_vec_ : <code class="type"><a href="Common.html#TYPEvec32">Common.vec32</a> <a href="Unsafe_read_c.html#TYPEreader">Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_float32_vec__ : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_float64_vec : <code class="type"><a href="Common.html#TYPEvec64">Common.vec64</a> <a href="Type_class.html#TYPEt">Type_class.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_float64_vec : <code class="type"><a href="Common.html#TYPEvec64">Common.vec64</a> <a href="Type_class.html#TYPEwriter">Type_class.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_float64_vec_ : <code class="type"><a href="Common.html#TYPEvec64">Common.vec64</a> <a href="Unsafe_write_c.html#TYPEwriter">Unsafe_write_c.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_float64_vec : <code class="type"><a href="Common.html#TYPEvec64">Common.vec64</a> <a href="Write_ml.html#TYPEwriter">Write_ml.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_float64_vec : <code class="type"><a href="Common.html#TYPEvec64">Common.vec64</a> <a href="Type_class.html#TYPEreader">Type_class.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_float64_vec : <code class="type"><a href="Common.html#TYPEvec64">Common.vec64</a> <a href="Read_ml.html#TYPEreader">Read_ml.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_float64_vec_ : <code class="type"><a href="Common.html#TYPEvec64">Common.vec64</a> <a href="Unsafe_read_c.html#TYPEreader">Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_float64_vec__ : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd</code></span></pre>
+      
+    

@@ -1,0 +1,99 @@
+<pre><code><span id="TYPEt"><span class="keyword">type</span> t </span>= {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.remote_ip">remote_ip</span> :<code class="type"><a href="Import.Unix.Inet_addr.html#TYPEt">Import.Unix.Inet_addr.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.remote_port">remote_port</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.expected_remote_name">expected_remote_name</span> :<code class="type">Remote_name.t</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.check_remote_name">check_remote_name</span> :<code class="type">bool</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.logfun">logfun</span> :<code class="type"><a href="Versioned_typed_tcp.Make.html#TYPElogfun">logfun</a> option</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.my_name">my_name</span> :<code class="type">My_name.t</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.messages">messages</span> :<code class="type">(Remote_name.t, Recv.t) <a href="Versioned_typed_tcp.Client_msg.html#TYPEt">Client_msg.t</a> <a href="Import.Tail.html#TYPEt">Import.Tail.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.queue">queue</span> :<code class="type">(Send.t * [ `Dropped | `Sent of <a href="../core/Std.Time.html#TYPEt">Core.Std.Time.t</a> ] <a href="Import.Ivar.html#TYPEt">Import.Ivar.t</a>)
+<a href="../core/Std.Queue.html#TYPEt">Core.Std.Queue.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.con">con</span> :<code class="type">[ `Connected of <a href="Versioned_typed_tcp.Make.Connection.html#TYPEt">Connection.t</a> | `Connecting of unit -&gt; unit | `Disconnected ]</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.trying_to_connect">trying_to_connect</span> :<code class="type">[ `No | `Yes of unit <a href="Import.Ivar.html#TYPEt">Import.Ivar.t</a> ]</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.connect_complete">connect_complete</span> :<code class="type">unit <a href="Import.Ivar.html#TYPEt">Import.Ivar.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.ok_to_connect">ok_to_connect</span> :<code class="type">unit <a href="Import.Ivar.html#TYPEt">Import.Ivar.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.now">now</span> :<code class="type">unit -&gt; <a href="../core/Std.Time.html#TYPEt">Core.Std.Time.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.last_connect_error">last_connect_error</span> :<code class="type">exn option</code>;</code></td>
+	  </tr></table>}
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> raise_after_timeout : <code class="type"><a href="../core/Std.Time.Span.html#TYPEt">Core.Std.Time.Span.t</a> -&gt;
+(unit -&gt; 'a <a href="../async_core/Deferred.html#TYPEt">Async_core.Deferred.t</a>) -&gt; 'a <a href="../async_core/Deferred.html#TYPEt">Async_core.Deferred.t</a></code></span></pre>
+      
+    
+<pre><span id="EXCEPTIONHello_name_is_not_expected_remote_name"><span class="keyword">exception</span> Hello_name_is_not_expected_remote_name</span> <span class="keyword">of</span> <code class="type">string * string</code></pre>
+
+<pre><span id="EXCEPTIONDisconnected"><span class="keyword">exception</span> Disconnected</span></pre>
+
+<pre><span id="EXCEPTIONWrite_error"><span class="keyword">exception</span> Write_error</span> <span class="keyword">of</span> <code class="type">exn</code></pre>
+
+ 
+      <pre><span><span class="keyword">val</span> connect : <code class="type"><a href="Versioned_typed_tcp.Make.Client.html#TYPEt">t</a> -&gt; (unit, <a href="../core/Std.Exn.html#TYPEt">Core.Std.Exn.t</a>) <a href="../core/Std.html#TYPE_result">Core.Std._result</a> <a href="../async_core/Deferred.html#TYPEt">Async_core.Deferred.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> flushed : <code class="type"><a href="Versioned_typed_tcp.Make.Client.html#TYPEt">t</a> -&gt; [&gt; `Flushed | `Pending of <a href="../core/Std.Time.html#TYPEt">Core.Std.Time.t</a> <a href="../async_unix/Import.Deferred.html#TYPEt">Async_unix.Import.Deferred.t</a> ]</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> listen : <code class="type"><a href="Versioned_typed_tcp.Make.Client.html#TYPEt">t</a> -&gt; (Remote_name.t, Recv.t) <a href="Versioned_typed_tcp.Client_msg.html#TYPEt">Client_msg.t</a> <a href="Import.Tail.Stream.html#TYPEt">Import.Tail.Stream.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> listen_ignore_errors : <code class="type">?stop:unit <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a> -&gt; <a href="Versioned_typed_tcp.Make.Client.html#TYPEt">t</a> -&gt; Recv.t <a href="Import.Stream.html#TYPEt">Import.Stream.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> internal_send : <code class="type"><a href="Versioned_typed_tcp.Make.Client.html#TYPEt">t</a> -&gt; Send.t -&gt; [&gt; `Dropped | `Sent of <a href="../core/Std.Time.html#TYPEt">Core.Std.Time.t</a> ] <a href="../async_core/Deferred.html#TYPEt">Async_core.Deferred.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> send_q : <code class="type"><a href="Versioned_typed_tcp.Make.Client.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_connected : <code class="type"><a href="Versioned_typed_tcp.Make.Client.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> purge_queue : <code class="type"><a href="Versioned_typed_tcp.Make.Client.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> try_connect : <code class="type"><a href="Versioned_typed_tcp.Make.Client.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> send : <code class="type"><a href="Versioned_typed_tcp.Make.Client.html#TYPEt">t</a> -&gt; Send.t -&gt; [ `Dropped | `Sent of <a href="../core/Std.Time.html#TYPEt">Core.Std.Time.t</a> ] <a href="Import.Ivar.Deferred.html#TYPEt">Import.Ivar.Deferred.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> close_connection : <code class="type"><a href="Versioned_typed_tcp.Make.Client.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> connect : <code class="type"><a href="Versioned_typed_tcp.Make.Client.html#TYPEt">t</a> -&gt; unit <a href="Import.Ivar.Deferred.html#TYPEt">Import.Ivar.Deferred.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> send_ignore_errors : <code class="type"><a href="Versioned_typed_tcp.Make.Client.html#TYPEt">t</a> -&gt; Send.t -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> state : <code class="type"><a href="Versioned_typed_tcp.Make.Client.html#TYPEt">t</a> -&gt; [&gt; `Connected | `Connecting | `Disconnected ]</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">?logfun:<a href="Versioned_typed_tcp.Make.html#TYPElogfun">logfun</a> -&gt;
+?now:(unit -&gt; <a href="../core/Std.Time.html#TYPEt">Core.Std.Time.t</a>) -&gt;
+?check_remote_name:bool -&gt;
+ip:string -&gt;
+port:int -&gt;
+expected_remote_name:Remote_name.t -&gt; My_name.t -&gt; <a href="Versioned_typed_tcp.Make.Client.html#TYPEt">t</a> <a href="../async_core/Deferred.html#TYPEt">Async_core.Deferred.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> last_connect_error : <code class="type"><a href="Versioned_typed_tcp.Make.Client.html#TYPEt">t</a> -&gt; exn option</code></span></pre>
+      
+    

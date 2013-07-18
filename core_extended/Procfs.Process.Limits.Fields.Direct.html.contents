@@ -1,0 +1,56 @@
+ 
+      <pre><span><span class="keyword">val</span> iter : <code class="type"><a href="Procfs.Process.Limits.html#TYPEt">t</a> -&gt;
+cpu_time:((<a href="Procfs.Process.Limits.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Limits.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a> -&gt; unit) -&gt;
+file_size:((<a href="Procfs.Process.Limits.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Limits.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a> -&gt; unit) -&gt;
+data_size:((<a href="Procfs.Process.Limits.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Limits.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a> -&gt; unit) -&gt;
+stack_size:((<a href="Procfs.Process.Limits.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Limits.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a> -&gt; unit) -&gt;
+core_file_size:((<a href="Procfs.Process.Limits.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Limits.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a> -&gt; unit) -&gt;
+resident_set:((<a href="Procfs.Process.Limits.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Limits.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a> -&gt; unit) -&gt;
+processes:((<a href="Procfs.Process.Limits.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Limits.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a> -&gt; unit) -&gt;
+open_files:((<a href="Procfs.Process.Limits.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Limits.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a> -&gt; unit) -&gt;
+locked_memory:((<a href="Procfs.Process.Limits.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Limits.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a> -&gt; unit) -&gt;
+address_space:((<a href="Procfs.Process.Limits.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Limits.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a> -&gt; unit) -&gt;
+file_locks:((<a href="Procfs.Process.Limits.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Limits.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a> -&gt; unit) -&gt;
+pending_signals:((<a href="Procfs.Process.Limits.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Limits.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a> -&gt; unit) -&gt;
+msgqueue_size:((<a href="Procfs.Process.Limits.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Limits.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a> -&gt; unit) -&gt;
+nice_priority:((<a href="Procfs.Process.Limits.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Limits.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a> -&gt; unit) -&gt;
+realtime_priority:((<a href="Procfs.Process.Limits.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Limits.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a> -&gt; unit) -&gt;
+unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold : <code class="type"><a href="Procfs.Process.Limits.html#TYPEt">t</a> -&gt;
+init:'acc__ -&gt;
+cpu_time:('acc__ -&gt;
+          (<a href="Procfs.Process.Limits.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Limits.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a> -&gt; 'acc__) -&gt;
+file_size:('acc__ -&gt;
+           (<a href="Procfs.Process.Limits.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Limits.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a> -&gt; 'acc__) -&gt;
+data_size:('acc__ -&gt;
+           (<a href="Procfs.Process.Limits.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Limits.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a> -&gt; 'acc__) -&gt;
+stack_size:('acc__ -&gt;
+            (<a href="Procfs.Process.Limits.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Limits.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a> -&gt; 'acc__) -&gt;
+core_file_size:('acc__ -&gt;
+                (<a href="Procfs.Process.Limits.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Limits.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a> -&gt; 'acc__) -&gt;
+resident_set:('acc__ -&gt;
+              (<a href="Procfs.Process.Limits.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Limits.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a> -&gt; 'acc__) -&gt;
+processes:('acc__ -&gt;
+           (<a href="Procfs.Process.Limits.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Limits.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a> -&gt; 'acc__) -&gt;
+open_files:('acc__ -&gt;
+            (<a href="Procfs.Process.Limits.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Limits.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a> -&gt; 'acc__) -&gt;
+locked_memory:('acc__ -&gt;
+               (<a href="Procfs.Process.Limits.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Limits.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a> -&gt; 'acc__) -&gt;
+address_space:('acc__ -&gt;
+               (<a href="Procfs.Process.Limits.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Limits.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a> -&gt; 'acc__) -&gt;
+file_locks:('acc__ -&gt;
+            (<a href="Procfs.Process.Limits.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Limits.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a> -&gt; 'acc__) -&gt;
+pending_signals:('acc__ -&gt;
+                 (<a href="Procfs.Process.Limits.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Limits.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a> -&gt; 'acc__) -&gt;
+msgqueue_size:('acc__ -&gt;
+               (<a href="Procfs.Process.Limits.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Limits.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a> -&gt; 'acc__) -&gt;
+nice_priority:('acc__ -&gt;
+               (<a href="Procfs.Process.Limits.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Limits.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a> -&gt; 'acc__) -&gt;
+realtime_priority:('acc__ -&gt;
+                   (<a href="Procfs.Process.Limits.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Limits.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a> -&gt; 'acc__) -&gt;
+'acc__</code></span></pre>
+      
+    

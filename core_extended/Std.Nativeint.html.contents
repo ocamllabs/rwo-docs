@@ -1,0 +1,14 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core/Std.Nativeint.html">Core.Std.Nativeint</a></code></pre>
+	<div class="content">
+	<div file="../core/Std.Nativeint.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Extended_nativeint.html">Extended_nativeint</a></code></pre>
+	<div class="content">
+	<div file="Extended_nativeint.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

@@ -1,0 +1,14 @@
+<pre><span id="TYPEphantom"><span class="keyword">type</span> phantom </span></pre>
+      
+    
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t </span>= <code class="type">('a, <a href="Pipe.Reader.html#TYPEphantom">phantom</a>) <a href="Pipe.html#TYPEpipe">pipe</a></code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> invariant : <code class="type">'a <a href="Pipe.Reader.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type">('a -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a>) -&gt; 'a <a href="Pipe.Reader.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    

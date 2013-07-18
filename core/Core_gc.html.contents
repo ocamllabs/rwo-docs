@@ -1,0 +1,43 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> module type of <a href="../core_kernel/Std.Gc.html">Core_kernel.Std.Gc</a> with module Stat = <a href="../core_kernel/Std.Gc.Stat.html">Core_kernel.Std.Gc.Stat</a> with module Control = <a href="../core_kernel/Std.Gc.Control.html">Core_kernel.Std.Gc.Control</a> with type alarm = <a href="../core_kernel/Std.Gc.html#TYPEalarm">Core_kernel.Std.Gc.alarm</a></pre>
+	<div class="content">
+	<div file="../core_kernel/Std.Gc.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> add_finalizer : <code class="type">'a <a href="../core_kernel/Std.Heap_block.html#TYPEt">Core_kernel.Std.Heap_block.t</a> -&gt;
+('a <a href="../core_kernel/Std.Heap_block.html#TYPEt">Core_kernel.Std.Heap_block.t</a> -&gt; unit) -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">add_finalizer b f</code> ensures that <code class="code">f</code> runs after <code class="code">b</code> becomes unreachable.  The
+    OCaml runtime only supports finalizers on heap blocks, hence <code class="code">add_finalizer</code> requires
+    <code class="code">b : _ Heap_block.t</code>.  The runtime essentially maintains a set of finalizer pairs:<br/>      'a Heap_block.t * ('a Heap_block.t -&gt; unit)<br/>    Each call to <code class="code">add_finalizer</code> adds a new pair to the set.  It is allowed for many
+    pairs to have the same heap block, the same function, or both.  Each pair is a
+    distinct element of the set.<br/>    After a garbage collection determines that a heap block <code class="code">b</code> is unreachable, it removes
+    from the set of finalizers all finalizer pairs <code class="code">(b, f)</code> whose block is <code class="code">b</code>, and then
+    and runs <code class="code">f b</code> for all such pairs.  Thus, a finalizer registered with <code class="code">add_finalizer</code>
+    will run at most once.<br/>    The GC will call the finalisation functions in the order of deallocation.  When
+    several values become unreachable at the same time (i.e. during the same GC cycle),
+    the finalisation functions will be called in the reverse order of the corresponding
+    calls to <code class="code">add_finalizer</code>.  If <code class="code">add_finalizer</code> is called in the same order as the
+    values are allocated, that means each value is finalised before the values it depends
+    upon.  Of course, this becomes false if additional dependencies are introduced by
+    assignments.<br/>    In a finalizer pair <code class="code">(b, f)</code>, it is a mistake for the closure of <code class="code">f</code> to reference
+    (directly or indirectly) <code class="code">b</code> -- <code class="code">f</code> should only access <code class="code">b</code> via its argument.
+    Referring to <code class="code">b</code> in any other way will cause <code class="code">b</code> to be kept alive forever, since <code class="code">f</code>
+    itself is a root of garbage collection, and can itself only be collected after the
+    pair <code class="code">(b, f)</code> is removed from the set of finalizers.<br/>    The <code class="code">f</code> function can use all features of O'Caml, including assignments that make the
+    value reachable again.  It can also loop forever (in this case, the other finalisation
+    functions will be called during the execution of f).  It can call <code class="code">add_finalizer</code> on
+    <code class="code">v</code> or other values to register other functions or even itself.  It can raise an
+    exception; in this case the exception will interrupt whatever the program was doing
+    when the function was called.<br/>    <code class="code">add_finalizer_exn b f</code> is like <code class="code">add_finalizer</code>, but will raise if <code class="code">b</code> is not a
+    heap block.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> add_finalizer_exn : <code class="type">'a -&gt; ('a -&gt; unit) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> finalise_release : <code class="type">unit -&gt; unit</code></span></pre>
+      
+    

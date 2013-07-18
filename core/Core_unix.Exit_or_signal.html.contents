@@ -1,0 +1,38 @@
+<pre><span id="TYPEerror"><span class="keyword">type</span> error </span>= <code class="type">[ `Exit_non_zero of int | `Signal of <a href="Signal.html#TYPEt">Signal.t</a> ]</code> </pre>
+      
+    
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span>= <code class="type">(unit, <a href="Core_unix.Exit_or_signal.html#TYPEerror">error</a>) <a href="../core_kernel/Std.Result.html#TYPEt">Core_kernel.Std.Result.t</a></code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_unix : <code class="type"><a href="../otherlibs/Unix.html#TYPEprocess_status">Unix.process_status</a> -&gt; <a href="Core_unix.Exit_or_signal.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">of_unix</code> assumes that any signal numbers in the incoming value are O'Caml internal
+      signal numbers.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> to_string_hum : <code class="type"><a href="Core_unix.Exit_or_signal.html#TYPEt">t</a> -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> error_of_sexp : <code class="type"><a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; <a href="Core_unix.Exit_or_signal.html#TYPEerror">error</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> __error_of_sexp__ : <code class="type"><a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; <a href="Core_unix.Exit_or_signal.html#TYPEerror">error</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_error : <code class="type"><a href="Core_unix.Exit_or_signal.html#TYPEerror">error</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp : <code class="type"><a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; <a href="Core_unix.Exit_or_signal.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type"><a href="Core_unix.Exit_or_signal.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+<br/><code class="code">of_unix</code> assumes that any signal numbers in the incoming value are O'Caml internal
+      signal numbers.<br/>
+	  

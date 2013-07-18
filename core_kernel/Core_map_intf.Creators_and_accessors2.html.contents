@@ -1,0 +1,14 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Core_map_intf.Creators2.html">Creators2</a></code></pre>
+	<div class="content">
+	<div file="Core_map_intf.Creators2.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Core_map_intf.Accessors2.html">Accessors2</a></code> with type <a href="Core_map_intf.Accessors2.html#TYPEt">t</a> = ('a, 'b) t with type tree = ('a, 'b) tree</pre>
+	<div class="content">
+	<div file="Core_map_intf.Accessors2.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

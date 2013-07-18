@@ -1,0 +1,13 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Versioned_rpc.Both_convert.Plain.Make.Register.html">Register</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">Version</code><code class="code"> : </code><code class="code">sig</code> <a href="Versioned_rpc.Both_convert.Plain.Make.Register.Anon_9.html">..</a> <code class="code">end</code><code class="code">) -&gt; </code><code class="code">sig</code> <a href="Versioned_rpc.Both_convert.Plain.Make.Register.html">..</a> <code class="code">end</code></div></pre>
+	<div class="content" style="display:none">
+	<div file="Versioned_rpc.Both_convert.Plain.Make.Register.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Versioned_rpc.Both_convert.Plain.S.html">S</a></code> with type callee_response = Model.Callee.response and type callee_query = Model.Callee.query and type caller_response = Model.Caller.response and type <a href="Versioned_rpc.Both_convert.Plain.S.html#TYPEcaller_query">caller_query</a> = Model.Caller.query</pre>
+	<div class="content">
+	<div file="Versioned_rpc.Both_convert.Plain.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

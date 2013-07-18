@@ -1,0 +1,17 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t </span></pre>
+      
+    
+<pre><span id="TYPEelt"><span class="keyword">type</span> <code class="type">'a </code>elt </span></pre>
+      
+    
+<pre><span id="TYPEcreate_options"><span class="keyword">type</span> <code class="type">('a, 'z) </code>create_options </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">('a, unit -&gt; 'a <a href="Hash_set_intf.Creators.html#TYPEt">t</a>) <a href="Hash_set_intf.Creators.html#TYPEcreate_options">create_options</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_list : <code class="type">('a, 'a <a href="Hash_set_intf.Creators.html#TYPEelt">elt</a> list -&gt; 'a <a href="Hash_set_intf.Creators.html#TYPEt">t</a>) <a href="Hash_set_intf.Creators.html#TYPEcreate_options">create_options</a></code></span></pre>
+      
+    

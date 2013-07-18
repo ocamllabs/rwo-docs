@@ -1,0 +1,28 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span>= {<code class="type"><a href="../core/Std.Unix.Host.html#TYPEt">Core.Std.Unix.Host.t</a></code> </pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.name">name</span> :<code class="type">string</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.aliases">aliases</span> :<code class="type">string array</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.family">family</span> :<code class="type"><a href="Unix_syscalls.Protocol_family.html#TYPEt">Protocol_family.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.addresses">addresses</span> :<code class="type"><a href="Unix_syscalls.Inet_addr.html#TYPEt">Inet_addr.t</a> array</code>;</code></td>
+	  </tr></table>}
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> getbyname : <code class="type">string -&gt; <a href="Unix_syscalls.Host.html#TYPEt">t</a> option <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> getbyname_exn : <code class="type">string -&gt; <a href="Unix_syscalls.Host.html#TYPEt">t</a> <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> getbyaddr : <code class="type"><a href="Unix_syscalls.Inet_addr.html#TYPEt">Inet_addr.t</a> -&gt; <a href="Unix_syscalls.Host.html#TYPEt">t</a> option <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> getbyaddr_exn : <code class="type"><a href="Unix_syscalls.Inet_addr.html#TYPEt">Inet_addr.t</a> -&gt; <a href="Unix_syscalls.Host.html#TYPEt">t</a> <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> have_address_in_common : <code class="type"><a href="Unix_syscalls.Host.html#TYPEt">t</a> -&gt; <a href="Unix_syscalls.Host.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    

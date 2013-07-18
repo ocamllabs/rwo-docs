@@ -1,0 +1,355 @@
+<pre><span id="TYPEno_seek"><span class="keyword">type</span> no_seek </span></pre>
+      <div class="info"><code class="code">no_seek</code> and <code class="code">seek</code> are defined and used in a similar manner to
+    <code class="code">read_only</code> and <code class="code">read_write</code>.</div>
+    
+<pre><span id="TYPEseek"><span class="keyword">type</span> seek </span>= <code class="type"><a href="Iobuf.html#TYPEno_seek">no_seek</a></code> <span class="keyword">private</span></pre>
+      
+    
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">(+'data_perm_read_write, +'seek_permission) </code>t </span></pre>
+      <div class="info">The first type parameter controls whether the iobuf can be written to.
+    The second type parameter controls whether the window and limits can be changed.<br/>    To allow <code class="code">read_write</code> or <code class="code">read_only</code> access, a function's type uses <code class="code">_</code> rather than
+    <code class="code">read_only</code> as the type argument to <code class="code">t</code>.  Analogously, to allow <code class="code">no_seek</code> or <code class="code">seek</code>
+    access, a function's type uses <code class="code">_</code> rather than <code class="code">no_seek</code> as the type argument to <code class="code">t</code>.
+    Using <code class="code">_</code> allows the function to be directly applied to either permission.  Using
+    a specific permission would require code to use coercion <code class="code">:&gt;</code>.</div>
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Invariant.S2.html">Invariant.S2</a></code> with type t = ('a, 'b) <a href="Iobuf.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="Invariant.S2.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<br/><br/><h1 id="1_TITLE">Creation</h1><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">len:int -&gt; ('a, 'b) <a href="Iobuf.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">create ~len</code> creates a new iobuf, backed by a bigstring of length <code class="code">len</code>,
+    with the limits and window set to the entire bigstring.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> of_bigstring : <code class="type">?pos:int -&gt; ?len:int -&gt; <a href="Bigstring.html#TYPEt">Bigstring.t</a> -&gt; ('a, 'b) <a href="Iobuf.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">of_bigstring bigstring ~pos ~len</code> returns an iobuf backed by <code class="code">bigstring</code>, with the
+    window and limits specified starting at <code class="code">pos</code> and of length <code class="code">len</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> of_string : <code class="type">string -&gt; ('a, 'b) <a href="Iobuf.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">of_string s</code> returns a new iobuf whose contents are <code class="code">s</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> sub : <code class="type">?pos:int -&gt; ?len:int -&gt; ('d, 'a) <a href="Iobuf.html#TYPEt">t</a> -&gt; ('d, 'b) <a href="Iobuf.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">sub t ~pos ~len</code> returns a new iobuf with limits and window set to the subrange of
+    <code class="code">t</code> specified by <code class="code">pos</code> and <code class="code">len</code>.  <code class="code">sub</code> preserves data permissions, but allows
+    arbitrary seek permissions on the resulting iobuf.</div>
+    
+<br/><br/><h1 id="1_TITLE">Accessors</h1><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> capacity : <code class="type">('a, 'b) <a href="Iobuf.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      <div class="info"><code class="code">capacity t</code> returns the size of <code class="code">t</code>'s limits subrange.  The capacity of an iobuf can
+    be reduced via <code class="code">narrow</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> length : <code class="type">('a, 'b) <a href="Iobuf.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      <div class="info"><code class="code">length t</code> returns the size of <code class="code">t</code>'s window.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> is_empty : <code class="type">('a, 'b) <a href="Iobuf.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      <div class="info"><code class="code">is_empty t</code> is <code class="code">length t = 0</code>.</div>
+    
+<br/><br/><h1 id="1_TITLE">Changing the limits</h1><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> narrow : <code class="type">('a, <a href="Iobuf.html#TYPEseek">seek</a>) <a href="Iobuf.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">narrow t</code> sets <code class="code">t</code>'s limits to the current window.</div>
+    
+<br/><br/><h1 id="1_TITLE">Changing the window</h1><br/> <br/>
+	  
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Iobuf.Snapshot.html">Snapshot</a> : <code class="code">sig</code> <a href="Iobuf.Snapshot.html">..</a> <code class="code">end</code> with type <a href="Iobuf.Snapshot.html#TYPEiobuf">iobuf</a> = ('d, 'w) <a href="Iobuf.html#TYPEt">t</a></pre><div class="info">One can call <code class="code">snapshot t</code> to get a snapshot of the front of the window, and then later
+    restore that snapshot.  This is useful for speculatively parsing, and then rewinding
+    when there isn't enough data to finish.<br/>    Using a snapshot with a different iobuf, even a sub iobuf of the snapshotted one, has
+    unspecified results.  An exception may be raised, or a silent error may occur.
+    However, the safety guarantees of the iobuf will not be violated, i.e., the attempt
+    will not enlarge the limits of the subject iobuf.</div>
+	<div class="content" style="display:none">
+	<div file="Iobuf.Snapshot.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> snapshot : <code class="type">('a, <a href="Iobuf.html#TYPEseek">seek</a>) <a href="Iobuf.html#TYPEt">t</a> -&gt; <a href="Iobuf.Snapshot.html#TYPEt">Snapshot.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> advance : <code class="type">('a, <a href="Iobuf.html#TYPEseek">seek</a>) <a href="Iobuf.html#TYPEt">t</a> -&gt; int -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">advance t amount</code> advances the front of the window by <code class="code">amount</code>.  It is an error to
+    advance past the back of the window or the lower limit.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> resize : <code class="type">('a, <a href="Iobuf.html#TYPEseek">seek</a>) <a href="Iobuf.html#TYPEt">t</a> -&gt; len:int -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">resize t</code> sets the length of <code class="code">t</code>'s window, provided it does not exceed limits.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> rewind : <code class="type">('a, <a href="Iobuf.html#TYPEseek">seek</a>) <a href="Iobuf.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">rewind t</code> sets the front of the window to the lower limit.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> reset : <code class="type">('a, <a href="Iobuf.html#TYPEseek">seek</a>) <a href="Iobuf.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">reset t</code> sets the window to the limits.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> flip : <code class="type">('a, <a href="Iobuf.html#TYPEseek">seek</a>) <a href="Iobuf.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">flip t</code> sets the window to range from the lower limit to the front of the old window.
+    This is typically called after a series of <code class="code">Fill</code>s, to reposition the window in
+    preparation to <code class="code">Consume</code> the newly written data.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> compact : <code class="type">(<a href="Common.html#TYPEread_write">Common.read_write</a>, <a href="Iobuf.html#TYPEseek">seek</a>) <a href="Iobuf.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">compact t</code> copies data from the window to the lower limit of the iobuf and sets the
+    window to range from the end of the copied data to the upper limit.  This is typically
+    called after a series of <code class="code">Consume</code>s to save unread data and prepare for the next
+    series of <code class="code">Fill</code>s and <code class="code">flip</code>.</div>
+    
+<br/><br/><h1 id="1_TITLE">Getting and setting data</h1><br/> <br/>
+	  
+<br/>&quot;consume&quot; and &quot;fill&quot; functions access data at the front of the window and advance the
+    front of the window.  &quot;peek&quot; and &quot;poke&quot; functions access data but do not advance the
+    window.<br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> to_string : <code class="type">?len:int -&gt; ('a, 'b) <a href="Iobuf.html#TYPEt">t</a> -&gt; string</code></span></pre>
+      <div class="info"><code class="code">to_string t</code> returns the bytes in <code class="code">t</code> as a string.  It does not alter the window.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> consume_into_string : <code class="type">?pos:int -&gt; ?len:int -&gt; ('a, <a href="Iobuf.html#TYPEseek">seek</a>) <a href="Iobuf.html#TYPEt">t</a> -&gt; string -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">consume_into_string t s ~pos ~len</code> reads <code class="code">len</code> bytes from <code class="code">t</code>, advancing <code class="code">t</code>'s window
+    accordingly, and writes them into <code class="code">s</code> starting at <code class="code">pos</code>.  By default <code class="code">pos = 0</code> and
+    <code class="code">len = String.length s - pos</code>.  It is an error if <code class="code">pos</code> and <code class="code">len</code> don't specify a
+    valid region of <code class="code">s</code> or <code class="code">len &gt; length t</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> consume_into_bigstring : <code class="type">?pos:int -&gt; ?len:int -&gt; ('a, <a href="Iobuf.html#TYPEseek">seek</a>) <a href="Iobuf.html#TYPEt">t</a> -&gt; <a href="Bigstring.html#TYPEt">Bigstring.t</a> -&gt; unit</code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Iobuf.Consume.html">Consume</a> : <code class="code"><a href="Iobuf_intf.Accessors.html">Iobuf_intf.Accessors</a></code> with type t = ('d, <a href="Iobuf.html#TYPEseek">seek</a>) <a href="Iobuf.html#TYPEt">t</a> -&gt; 'a</pre><div class="info"><code class="code">Consume.string t ~len</code> reads <code class="code">len</code> characters (all, by default) from <code class="code">t</code> into a new
+    string and advances the front of the window accordingly.</div>
+	<div class="content" style="display:none">
+	<div file="Iobuf.Consume.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Iobuf.Fill.html">Fill</a> : <code class="code"><a href="Iobuf_intf.Accessors.html">Iobuf_intf.Accessors</a></code> with type t = (<a href="Common.html#TYPEread_write">Common.read_write</a>, <a href="Iobuf.html#TYPEseek">seek</a>) <a href="Iobuf.html#TYPEt">t</a> -&gt; 'a -&gt; unit</pre>
+	<div class="content" style="display:none">
+	<div file="Iobuf.Fill.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Iobuf.Peek.html">Peek</a> : <code class="code"><a href="Iobuf_intf.Accessors.html">Iobuf_intf.Accessors</a></code> with type t = ('d, 'w) <a href="Iobuf.html#TYPEt">t</a> -&gt; pos:int -&gt; 'a</pre>
+	<div class="content" style="display:none">
+	<div file="Iobuf.Peek.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Iobuf.Poke.html">Poke</a> : <code class="code"><a href="Iobuf_intf.Accessors.html">Iobuf_intf.Accessors</a></code> with type t = (<a href="Common.html#TYPEread_write">Common.read_write</a>, 'w) <a href="Iobuf.html#TYPEt">t</a> -&gt; pos:int -&gt; 'a -&gt; unit</pre>
+	<div class="content" style="display:none">
+	<div file="Iobuf.Poke.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Iobuf.Unsafe.html">Unsafe</a> : <code class="code">sig</code> <a href="Iobuf.Unsafe.html">..</a> <code class="code">end</code></pre><div class="info"><code class="code">Unsafe</code> has submodules that are like their corresponding module, except with no range
+    checks.  Hence, mistaken uses can cause segfaults.  Be careful!</div>
+	<div class="content" style="display:none">
+	<div file="Iobuf.Unsafe.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> fill_bin_prot : <code class="type">(<a href="Common.html#TYPEread_write">Common.read_write</a>, <a href="Iobuf.html#TYPEseek">seek</a>) <a href="Iobuf.html#TYPEt">t</a> -&gt;
+'a <a href="../bin_prot/Type_class.html#TYPEwriter">Bin_prot.Type_class.writer</a> -&gt; 'a -&gt; unit <a href="Or_error.html#TYPEt">Or_error.t</a></code></span></pre>
+      <div class="info"><code class="code">fill_bin_prot</code> writes a bin-prot value to the front of the window, prefixed by its
+    length, and advances the front of the window by the amount written.  <code class="code">fill_bin_prot</code>
+    returns an error if the window is too small to write the value.<br/>    <code class="code">consume_bin_prot t reader</code> reads a bin-prot value from the front of the window, which
+    should have been written using <code class="code">fill_bin_prot</code>, and advances the window by the amount
+    read.  <code class="code">consume_bin_prot</code> returns an error if there is not a complete message in the
+    window and in that case the window is left unchanged.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> consume_bin_prot : <code class="type">('b, <a href="Iobuf.html#TYPEseek">seek</a>) <a href="Iobuf.html#TYPEt">t</a> -&gt; 'a <a href="../bin_prot/Type_class.html#TYPEreader">Bin_prot.Type_class.reader</a> -&gt; 'a <a href="Or_error.html#TYPEt">Or_error.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> transfer : <code class="type">?len:int -&gt; src:('a, <a href="Iobuf.html#TYPEseek">seek</a>) <a href="Iobuf.html#TYPEt">t</a> -&gt; dst:(<a href="Common.html#TYPEread_write">Common.read_write</a>, <a href="Iobuf.html#TYPEseek">seek</a>) <a href="Iobuf.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">transfer</code> blits <code class="code">len</code> bytes from the front of <code class="code">src</code> to the front of <code class="code">dst</code>, advancing
+    both.  It is an error if <code class="code">len &gt; length src || len &gt; length dst || phys_equal src
+    dst</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> memmove : <code class="type">(<a href="Common.html#TYPEread_write">Common.read_write</a>, 'a) <a href="Iobuf.html#TYPEt">t</a> -&gt; src_pos:int -&gt; dst_pos:int -&gt; len:int -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">memmove</code> blits <code class="code">len</code> bytes from <code class="code">src_pos</code> to <code class="code">dst_pos</code> in an iobuf, both relative to
+    the front of the window.  The window is not advanced.</div>
+    
+<br/><br/><h1 id="1_TITLE">I/O</h1><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> read_assume_fd_is_nonblocking : <code class="type">(<a href="Common.html#TYPEread_write">Common.read_write</a>, <a href="Iobuf.html#TYPEseek">seek</a>) <a href="Iobuf.html#TYPEt">t</a> -&gt; <a href="Iobuf_intf.Unix.File_descr.html#TYPEt">Iobuf_intf.Unix.File_descr.t</a> -&gt; int</code></span></pre>
+      <div class="info"><code class="code">Iobuf</code> has analogs of various <code class="code">Bigstring</code> functions.  These analogs advance by the
+    amount written/read.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> pread_assume_fd_is_nonblocking : <code class="type">(<a href="Common.html#TYPEread_write">Common.read_write</a>, <a href="Iobuf.html#TYPEseek">seek</a>) <a href="Iobuf.html#TYPEt">t</a> -&gt;
+<a href="Iobuf_intf.Unix.File_descr.html#TYPEt">Iobuf_intf.Unix.File_descr.t</a> -&gt; offset:int -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> recvfrom_assume_fd_is_nonblocking : <code class="type">(<a href="Common.html#TYPEread_write">Common.read_write</a>, <a href="Iobuf.html#TYPEseek">seek</a>) <a href="Iobuf.html#TYPEt">t</a> -&gt;
+<a href="Iobuf_intf.Unix.File_descr.html#TYPEt">Iobuf_intf.Unix.File_descr.t</a> -&gt; int * <a href="Iobuf_intf.Unix.html#TYPEsockaddr">Iobuf_intf.Unix.sockaddr</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> recvmmsg_assume_fd_is_nonblocking : <code class="type">(<a href="Iobuf_intf.Unix.File_descr.html#TYPEt">Iobuf_intf.Unix.File_descr.t</a> -&gt;
+ ?count:int -&gt;
+ ?srcs:<a href="Iobuf_intf.Unix.html#TYPEsockaddr">Iobuf_intf.Unix.sockaddr</a> array -&gt;
+ (<a href="Common.html#TYPEread_write">Common.read_write</a>, <a href="Iobuf.html#TYPEseek">seek</a>) <a href="Iobuf.html#TYPEt">t</a> array -&gt; int)
+<a href="Or_error.html#TYPEt">Or_error.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> send_nonblocking_no_sigpipe : <code class="type">unit -&gt;
+(('a, <a href="Iobuf.html#TYPEseek">seek</a>) <a href="Iobuf.html#TYPEt">t</a> -&gt; <a href="Iobuf_intf.Unix.File_descr.html#TYPEt">Iobuf_intf.Unix.File_descr.t</a> -&gt; int option) <a href="Or_error.html#TYPEt">Or_error.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sendto_nonblocking_no_sigpipe : <code class="type">unit -&gt;
+(('a, <a href="Iobuf.html#TYPEseek">seek</a>) <a href="Iobuf.html#TYPEt">t</a> -&gt;
+ <a href="Iobuf_intf.Unix.File_descr.html#TYPEt">Iobuf_intf.Unix.File_descr.t</a> -&gt; <a href="Iobuf_intf.Unix.html#TYPEsockaddr">Iobuf_intf.Unix.sockaddr</a> -&gt; int option)
+<a href="Or_error.html#TYPEt">Or_error.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> write_assume_fd_is_nonblocking : <code class="type">('a, <a href="Iobuf.html#TYPEseek">seek</a>) <a href="Iobuf.html#TYPEt">t</a> -&gt; <a href="Iobuf_intf.Unix.File_descr.html#TYPEt">Iobuf_intf.Unix.File_descr.t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pwrite_assume_fd_is_nonblocking : <code class="type">('a, <a href="Iobuf.html#TYPEseek">seek</a>) <a href="Iobuf.html#TYPEt">t</a> -&gt; <a href="Iobuf_intf.Unix.File_descr.html#TYPEt">Iobuf_intf.Unix.File_descr.t</a> -&gt; offset:int -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_no_seek : <code class="type"><a href="Iobuf.html#TYPEno_seek">no_seek</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_seek : <code class="type"><a href="Iobuf.html#TYPEseek">seek</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type">('data_perm_read_write -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a>) -&gt;
+('seek_permission -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a>) -&gt;
+('data_perm_read_write, 'seek_permission) <a href="Iobuf.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      <div class="info">The first type parameter controls whether the iobuf can be written to.
+    The second type parameter controls whether the window and limits can be changed.<br/>    To allow <code class="code">read_write</code> or <code class="code">read_only</code> access, a function's type uses <code class="code">_</code> rather than
+    <code class="code">read_only</code> as the type argument to <code class="code">t</code>.  Analogously, to allow <code class="code">no_seek</code> or <code class="code">seek</code>
+    access, a function's type uses <code class="code">_</code> rather than <code class="code">no_seek</code> as the type argument to <code class="code">t</code>.
+    Using <code class="code">_</code> allows the function to be directly applied to either permission.  Using
+    a specific permission would require code to use coercion <code class="code">:&gt;</code>.</div>
+    
+<br/><br/><h1 id="1_TITLE">Creation</h1><br/> <br/>
+	  
+<br/><code class="code">create ~len</code> creates a new iobuf, backed by a bigstring of length <code class="code">len</code>,
+    with the limits and window set to the entire bigstring.<br/>
+	  
+<br/><code class="code">of_bigstring bigstring ~pos ~len</code> returns an iobuf backed by <code class="code">bigstring</code>, with the
+    window and limits specified starting at <code class="code">pos</code> and of length <code class="code">len</code>.<br/>
+	  
+<br/>default is <code class="code">0</code> <br/>
+	  
+<br/>default is <code class="code">Bigstring.length bigstring - pos</code> <br/>
+	  
+<br/><code class="code">of_string s</code> returns a new iobuf whose contents are <code class="code">s</code>.<br/>
+	  
+<br/><code class="code">sub t ~pos ~len</code> returns a new iobuf with limits and window set to the subrange of
+    <code class="code">t</code> specified by <code class="code">pos</code> and <code class="code">len</code>.  <code class="code">sub</code> preserves data permissions, but allows
+    arbitrary seek permissions on the resulting iobuf.<br/>
+	  
+<br/><br/><h1 id="1_TITLE">Accessors</h1><br/> <br/>
+	  
+<br/><code class="code">capacity t</code> returns the size of <code class="code">t</code>'s limits subrange.  The capacity of an iobuf can
+    be reduced via <code class="code">narrow</code>.<br/>
+	  
+<br/><code class="code">length t</code> returns the size of <code class="code">t</code>'s window.<br/>
+	  
+<br/><code class="code">is_empty t</code> is <code class="code">length t = 0</code>.<br/>
+	  
+<br/><br/><h1 id="1_TITLE">Changing the limits</h1><br/> <br/>
+	  
+<br/><code class="code">narrow t</code> sets <code class="code">t</code>'s limits to the current window.<br/>
+	  
+<br/><br/><h1 id="1_TITLE">Changing the window</h1><br/> <br/>
+	  
+<br/>One can call <code class="code">snapshot t</code> to get a snapshot of the front of the window, and then later
+    restore that snapshot.  This is useful for speculatively parsing, and then rewinding
+    when there isn't enough data to finish.<br/>    Using a snapshot with a different iobuf, even a sub iobuf of the snapshotted one, has
+    unspecified results.  An exception may be raised, or a silent error may occur.
+    However, the safety guarantees of the iobuf will not be violated, i.e., the attempt
+    will not enlarge the limits of the subject iobuf.<br/>
+	  
+<br/><code class="code">advance t amount</code> advances the front of the window by <code class="code">amount</code>.  It is an error to
+    advance past the back of the window or the lower limit.<br/>
+	  
+<br/><code class="code">resize t</code> sets the length of <code class="code">t</code>'s window, provided it does not exceed limits.<br/>
+	  
+<br/><code class="code">rewind t</code> sets the front of the window to the lower limit.<br/>
+	  
+<br/><code class="code">reset t</code> sets the window to the limits.<br/>
+	  
+<br/><code class="code">flip t</code> sets the window to range from the lower limit to the front of the old window.
+    This is typically called after a series of <code class="code">Fill</code>s, to reposition the window in
+    preparation to <code class="code">Consume</code> the newly written data.<br/>
+	  
+<br/><code class="code">compact t</code> copies data from the window to the lower limit of the iobuf and sets the
+    window to range from the end of the copied data to the upper limit.  This is typically
+    called after a series of <code class="code">Consume</code>s to save unread data and prepare for the next
+    series of <code class="code">Fill</code>s and <code class="code">flip</code>.<br/>
+	  
+<br/><br/><h1 id="1_TITLE">Getting and setting data</h1><br/> <br/>
+	  
+<br/>&quot;consume&quot; and &quot;fill&quot; functions access data at the front of the window and advance the
+    front of the window.  &quot;peek&quot; and &quot;poke&quot; functions access data but do not advance the
+    window.<br/>
+	  
+<br/><code class="code">to_string t</code> returns the bytes in <code class="code">t</code> as a string.  It does not alter the window.<br/>
+	  
+<br/><code class="code">consume_into_string t s ~pos ~len</code> reads <code class="code">len</code> bytes from <code class="code">t</code>, advancing <code class="code">t</code>'s window
+    accordingly, and writes them into <code class="code">s</code> starting at <code class="code">pos</code>.  By default <code class="code">pos = 0</code> and
+    <code class="code">len = String.length s - pos</code>.  It is an error if <code class="code">pos</code> and <code class="code">len</code> don't specify a
+    valid region of <code class="code">s</code> or <code class="code">len &gt; length t</code>.<br/>
+	  
+<br/><code class="code">Consume.string t ~len</code> reads <code class="code">len</code> characters (all, by default) from <code class="code">t</code> into a new
+    string and advances the front of the window accordingly.<br/>
+	  
+<br/><code class="code">Peek</code> and <code class="code">Poke</code> functions access a value at <code class="code">pos</code> from the front of the window
+    and do not advance.<br/>
+	  
+<br/><code class="code">Unsafe</code> has submodules that are like their corresponding module, except with no range
+    checks.  Hence, mistaken uses can cause segfaults.  Be careful!<br/>
+	  
+<br/><code class="code">fill_bin_prot</code> writes a bin-prot value to the front of the window, prefixed by its
+    length, and advances the front of the window by the amount written.  <code class="code">fill_bin_prot</code>
+    returns an error if the window is too small to write the value.<br/>    <code class="code">consume_bin_prot t reader</code> reads a bin-prot value from the front of the window, which
+    should have been written using <code class="code">fill_bin_prot</code>, and advances the window by the amount
+    read.  <code class="code">consume_bin_prot</code> returns an error if there is not a complete message in the
+    window and in that case the window is left unchanged.<br/>
+	  
+<br/><code class="code">transfer</code> blits <code class="code">len</code> bytes from the front of <code class="code">src</code> to the front of <code class="code">dst</code>, advancing
+    both.  It is an error if <code class="code">len &gt; length src || len &gt; length dst || phys_equal src
+    dst</code>.<br/>
+	  
+<br/>default is <code class="code">min (length src) (length dst)</code> <br/>
+	  
+<br/><code class="code">memmove</code> blits <code class="code">len</code> bytes from <code class="code">src_pos</code> to <code class="code">dst_pos</code> in an iobuf, both relative to
+    the front of the window.  The window is not advanced.<br/>
+	  
+<br/><br/><h1 id="1_TITLE">I/O</h1><br/> <br/>
+	  
+<br/><code class="code">Iobuf</code> has analogs of various <code class="code">Bigstring</code> functions.  These analogs advance by the
+    amount written/read.<br/>
+	  

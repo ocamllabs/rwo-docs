@@ -1,0 +1,208 @@
+<br/>There is a fundamental problem with a data structure (like doubly-linked lists) that
+    is both mutable and provides iteration function that call back to user-supplied
+    functions.  If those user-supplied functions modify the data structure, what is the
+    semantics of the remainder of the iteration?  This module sidesteps this issue by
+    detecting attempts by user-supplied functions to modify a doubly-linked list while in
+    the middle of iterating over it.<br/>    Modification functions include: insert_*, remove*, transfer
+    Iteration functions include: exists, fold*, for_all, find<br/>    Calls to modification functions detect if the list is being iterated over, and if so
+    raise an exception rather than modify the list.  For example, a use like the following
+    would raise.<br/>    iter t ~f:(fun _ -&gt; ... remove t e ...)<br/>
+	  
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Doubly_linked.Elt.html">Elt</a> : <code class="code">sig</code> <a href="Doubly_linked.Elt.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Doubly_linked.Elt.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t </span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Container.S1.html">Container.S1</a></code> with type t = 'a <a href="Doubly_linked.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="Container.S1.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> invariant : <code class="type">'a <a href="Doubly_linked.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">unit -&gt; 'a <a href="Doubly_linked.html#TYPEt">t</a></code></span></pre>
+      <div class="info">creating doubly-linked lists</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> of_list : <code class="type">'a list -&gt; 'a <a href="Doubly_linked.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">of_list l</code> returns a doubly-linked list <code class="code">t</code> with the same elements as <code class="code">l</code> and in the
+    same order (i.e. the first element of <code class="code">l</code> is the first element of <code class="code">t</code>).  It is always
+    the case that <code class="code">l = to_list (of_list l)</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> equal : <code class="type">'a <a href="Doubly_linked.html#TYPEt">t</a> -&gt; 'a <a href="Doubly_linked.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      <div class="info">predicates</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> is_first : <code class="type">'a <a href="Doubly_linked.html#TYPEt">t</a> -&gt; 'a <a href="Doubly_linked.Elt.html#TYPEt">Elt.t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_last : <code class="type">'a <a href="Doubly_linked.html#TYPEt">t</a> -&gt; 'a <a href="Doubly_linked.Elt.html#TYPEt">Elt.t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> first_elt : <code class="type">'a <a href="Doubly_linked.html#TYPEt">t</a> -&gt; 'a <a href="Doubly_linked.Elt.html#TYPEt">Elt.t</a> option</code></span></pre>
+      <div class="info">constant-time extraction of first and last elements.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> last_elt : <code class="type">'a <a href="Doubly_linked.html#TYPEt">t</a> -&gt; 'a <a href="Doubly_linked.Elt.html#TYPEt">Elt.t</a> option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> first : <code class="type">'a <a href="Doubly_linked.html#TYPEt">t</a> -&gt; 'a option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> last : <code class="type">'a <a href="Doubly_linked.html#TYPEt">t</a> -&gt; 'a option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> next : <code class="type">'a <a href="Doubly_linked.html#TYPEt">t</a> -&gt; 'a <a href="Doubly_linked.Elt.html#TYPEt">Elt.t</a> -&gt; 'a <a href="Doubly_linked.Elt.html#TYPEt">Elt.t</a> option</code></span></pre>
+      <div class="info">constant-time move to next or previous element.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> prev : <code class="type">'a <a href="Doubly_linked.html#TYPEt">t</a> -&gt; 'a <a href="Doubly_linked.Elt.html#TYPEt">Elt.t</a> -&gt; 'a <a href="Doubly_linked.Elt.html#TYPEt">Elt.t</a> option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> insert_before : <code class="type">'a <a href="Doubly_linked.html#TYPEt">t</a> -&gt; 'a <a href="Doubly_linked.Elt.html#TYPEt">Elt.t</a> -&gt; 'a -&gt; 'a <a href="Doubly_linked.Elt.html#TYPEt">Elt.t</a></code></span></pre>
+      <div class="info">constant-time insertion of a new element.  It is an error to call <code class="code">insert_before t e
+    a</code> or <code class="code">insert_after t e a</code> if <code class="code">e</code> is not an element in <code class="code">t</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> insert_after : <code class="type">'a <a href="Doubly_linked.html#TYPEt">t</a> -&gt; 'a <a href="Doubly_linked.Elt.html#TYPEt">Elt.t</a> -&gt; 'a -&gt; 'a <a href="Doubly_linked.Elt.html#TYPEt">Elt.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> insert_first : <code class="type">'a <a href="Doubly_linked.html#TYPEt">t</a> -&gt; 'a -&gt; 'a <a href="Doubly_linked.Elt.html#TYPEt">Elt.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> insert_last : <code class="type">'a <a href="Doubly_linked.html#TYPEt">t</a> -&gt; 'a -&gt; 'a <a href="Doubly_linked.Elt.html#TYPEt">Elt.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove : <code class="type">'a <a href="Doubly_linked.html#TYPEt">t</a> -&gt; 'a <a href="Doubly_linked.Elt.html#TYPEt">Elt.t</a> -&gt; unit</code></span></pre>
+      <div class="info">constant-time removal of an element.  It is an error to call <code class="code">remove t e</code> when <code class="code">e</code> is
+    not in <code class="code">t</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> remove_first : <code class="type">'a <a href="Doubly_linked.html#TYPEt">t</a> -&gt; 'a option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove_last : <code class="type">'a <a href="Doubly_linked.html#TYPEt">t</a> -&gt; 'a option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold_elt : <code class="type">'a <a href="Doubly_linked.html#TYPEt">t</a> -&gt; init:'b -&gt; f:('b -&gt; 'a <a href="Doubly_linked.Elt.html#TYPEt">Elt.t</a> -&gt; 'b) -&gt; 'b</code></span></pre>
+      <div class="info"><code class="code">fold_elt t ~init ~f</code> is the same as fold, except <code class="code">f</code> is called with the <code class="code">'a Elt.t</code>'s
+    from the list instead of the contained <code class="code">'a</code> values.<br/>    Note that like other iteration functions, it is an error to mutate <code class="code">t</code> inside the
+    fold. If you'd like to call <code class="code">remove</code> on any of the <code class="code">'a Elt.t</code>'s, accumulate them here
+    and do so after <code class="code">fold_elt</code> returns.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> iter_elt : <code class="type">'a <a href="Doubly_linked.html#TYPEt">t</a> -&gt; f:('a <a href="Doubly_linked.Elt.html#TYPEt">Elt.t</a> -&gt; unit) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold_right : <code class="type">'a <a href="Doubly_linked.html#TYPEt">t</a> -&gt; init:'b -&gt; f:('a -&gt; 'b -&gt; 'b) -&gt; 'b</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_elt : <code class="type">'a <a href="Doubly_linked.html#TYPEt">t</a> -&gt; f:('a -&gt; bool) -&gt; 'a <a href="Doubly_linked.Elt.html#TYPEt">Elt.t</a> option</code></span></pre>
+      <div class="info"><code class="code">find_elt t ~f</code> finds the first element in <code class="code">t</code> that satisfies <code class="code">f</code>, by testing each of
+    element of <code class="code">t</code> in turn until <code class="code">f</code> succeeds.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> clear : <code class="type">'a <a href="Doubly_linked.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">clear t</code> removes all elements from the list in constant time.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> copy : <code class="type">'a <a href="Doubly_linked.html#TYPEt">t</a> -&gt; 'a <a href="Doubly_linked.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">copy t</code> returns a copy of <code class="code">t</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> transfer : <code class="type">src:'a <a href="Doubly_linked.html#TYPEt">t</a> -&gt; dst:'a <a href="Doubly_linked.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">transfer ~src ~dst</code> has the same behavior as
+    <code class="code">iter src ~f:(insert_last dst); clear src</code>
+    except that it runs in constant time.<br/>    If <code class="code">s = to_list src</code> and <code class="code">d = to_list dst</code>, then after <code class="code">transfer ~src ~dst</code>:
+      <code class="code">to_list src = []</code>
+      <code class="code">to_list dst = d @ s</code> </div>
+    
+ 
+      <pre><span><span class="keyword">val</span> filter_inplace : <code class="type">'a <a href="Doubly_linked.html#TYPEt">t</a> -&gt; f:('a -&gt; bool) -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">filter_inplace t ~f</code> removes all elements of <code class="code">t</code> that don't satisfy <code class="code">f</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> unchecked_iter : <code class="type">'a <a href="Doubly_linked.html#TYPEt">t</a> -&gt; f:('a -&gt; unit) -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">unchecked_iter t ~f</code> behaves like <code class="code">iter t ~f</code> except that <code class="code">f</code> is allowed to modify
+    <code class="code">t</code>.  Adding or removing elements before the element currently being visited has no
+    effect on the traversal.  Elements added after the element currently being visited
+    will be traversed.  Elements deleted after the element currently being visited will
+    not be traversed.  Deleting the element currently visited is an error that is not
+    detected (presumably leading to an infinite loop) .</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp : <code class="type">(<a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; 'a) -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; 'a <a href="Doubly_linked.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type">('a -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a>) -&gt; 'a <a href="Doubly_linked.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+<br/>creating doubly-linked lists<br/>
+	  
+<br/><code class="code">of_list l</code> returns a doubly-linked list <code class="code">t</code> with the same elements as <code class="code">l</code> and in the
+    same order (i.e. the first element of <code class="code">l</code> is the first element of <code class="code">t</code>).  It is always
+    the case that <code class="code">l = to_list (of_list l)</code>.<br/>
+	  
+<br/>predicates<br/>
+	  
+<br/>constant-time extraction of first and last elements.<br/>
+	  
+<br/>constant-time move to next or previous element.<br/>
+	  
+<br/>constant-time insertion of a new element.  It is an error to call <code class="code">insert_before t e
+    a</code> or <code class="code">insert_after t e a</code> if <code class="code">e</code> is not an element in <code class="code">t</code>.<br/>
+	  
+<br/>constant-time removal of an element.  It is an error to call <code class="code">remove t e</code> when <code class="code">e</code> is
+    not in <code class="code">t</code>.<br/>
+	  
+<br/><code class="code">fold_elt t ~init ~f</code> is the same as fold, except <code class="code">f</code> is called with the <code class="code">'a Elt.t</code>'s
+    from the list instead of the contained <code class="code">'a</code> values.<br/>    Note that like other iteration functions, it is an error to mutate <code class="code">t</code> inside the
+    fold. If you'd like to call <code class="code">remove</code> on any of the <code class="code">'a Elt.t</code>'s, accumulate them here
+    and do so after <code class="code">fold_elt</code> returns.<br/>
+	  
+<br/><code class="code">find_elt t ~f</code> finds the first element in <code class="code">t</code> that satisfies <code class="code">f</code>, by testing each of
+    element of <code class="code">t</code> in turn until <code class="code">f</code> succeeds.<br/>
+	  
+<br/><code class="code">clear t</code> removes all elements from the list in constant time.<br/>
+	  
+<br/><code class="code">copy t</code> returns a copy of <code class="code">t</code>.<br/>
+	  
+<br/><code class="code">transfer ~src ~dst</code> has the same behavior as
+    <code class="code">iter src ~f:(insert_last dst); clear src</code>
+    except that it runs in constant time.<br/>    If <code class="code">s = to_list src</code> and <code class="code">d = to_list dst</code>, then after <code class="code">transfer ~src ~dst</code>:
+      <code class="code">to_list src = []</code>
+      <code class="code">to_list dst = d @ s</code> <br/>
+	  
+<br/><code class="code">filter_inplace t ~f</code> removes all elements of <code class="code">t</code> that don't satisfy <code class="code">f</code>.<br/>
+	  
+<br/><code class="code">unchecked_iter t ~f</code> behaves like <code class="code">iter t ~f</code> except that <code class="code">f</code> is allowed to modify
+    <code class="code">t</code>.  Adding or removing elements before the element currently being visited has no
+    effect on the traversal.  Elements added after the element currently being visited
+    will be traversed.  Elements deleted after the element currently being visited will
+    not be traversed.  Deleting the element currently visited is an error that is not
+    detected (presumably leading to an infinite loop) .<br/>
+	  

@@ -1,0 +1,7 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> compare : <code class="type"><a href="Map.OrderedType.html#TYPEt">t</a> -&gt; <a href="Map.OrderedType.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    

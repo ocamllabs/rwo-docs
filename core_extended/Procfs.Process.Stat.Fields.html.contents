@@ -1,0 +1,557 @@
+ 
+      <pre><span><span class="keyword">val</span> names : <code class="type">string list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> policy : <code class="type">(<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rt_priority : <code class="type">(<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> processor : <code class="type">(<a href="Procfs.Process.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> exit_signal : <code class="type">(<a href="Procfs.Process.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> cnswap : <code class="type">(<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> nswap : <code class="type">(<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> wchan : <code class="type">(<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sigcatch : <code class="type">(<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sigignore : <code class="type">(<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> blocked : <code class="type">(<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> signal : <code class="type">(<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> kstkeip : <code class="type">(<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> kstkesp : <code class="type">(<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> startstack : <code class="type">(<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> endcode : <code class="type">(<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> startcode : <code class="type">(<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rlim : <code class="type">(<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rss : <code class="type">(<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> vsize : <code class="type">(<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> starttime : <code class="type">(<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> itrealvalue : <code class="type">(<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unused : <code class="type">(<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> nice : <code class="type">(<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> priority : <code class="type">(<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> cstime : <code class="type">(<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> cutime : <code class="type">(<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stime : <code class="type">(<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> utime : <code class="type">(<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> cmajflt : <code class="type">(<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> majflt : <code class="type">(<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> cminflt : <code class="type">(<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> minflt : <code class="type">(<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> flags : <code class="type">(<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> tpgid : <code class="type">(<a href="Procfs.Process.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> tty_nr : <code class="type">(<a href="Procfs.Process.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> session : <code class="type">(<a href="Procfs.Process.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pgrp : <code class="type">(<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="../core/Std.Pid.html#TYPEt">Core.Std.Pid.t</a> option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ppid : <code class="type">(<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="../core/Std.Pid.html#TYPEt">Core.Std.Pid.t</a> option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> state : <code class="type">(<a href="Procfs.Process.Stat.html#TYPEt">t</a>, char) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> comm : <code class="type">(<a href="Procfs.Process.Stat.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold : <code class="type">init:'acc__ -&gt;
+comm:('acc__ -&gt; (<a href="Procfs.Process.Stat.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+state:('acc__ -&gt; (<a href="Procfs.Process.Stat.html#TYPEt">t</a>, char) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+ppid:('acc__ -&gt; (<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="../core/Std.Pid.html#TYPEt">Core.Std.Pid.t</a> option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+pgrp:('acc__ -&gt; (<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="../core/Std.Pid.html#TYPEt">Core.Std.Pid.t</a> option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+session:('acc__ -&gt; (<a href="Procfs.Process.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+tty_nr:('acc__ -&gt; (<a href="Procfs.Process.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+tpgid:('acc__ -&gt; (<a href="Procfs.Process.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+flags:('acc__ -&gt; (<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+minflt:('acc__ -&gt; (<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+cminflt:('acc__ -&gt; (<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+majflt:('acc__ -&gt; (<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+cmajflt:('acc__ -&gt; (<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+utime:('acc__ -&gt; (<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+stime:('acc__ -&gt; (<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+cutime:('acc__ -&gt; (<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+cstime:('acc__ -&gt; (<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+priority:('acc__ -&gt; (<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+nice:('acc__ -&gt; (<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+unused:('acc__ -&gt; (<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+itrealvalue:('acc__ -&gt; (<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+starttime:('acc__ -&gt; (<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+vsize:('acc__ -&gt; (<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+rss:('acc__ -&gt; (<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+rlim:('acc__ -&gt; (<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+startcode:('acc__ -&gt; (<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+endcode:('acc__ -&gt; (<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+startstack:('acc__ -&gt; (<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+kstkesp:('acc__ -&gt; (<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+kstkeip:('acc__ -&gt; (<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+signal:('acc__ -&gt; (<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+blocked:('acc__ -&gt; (<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+sigignore:('acc__ -&gt; (<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+sigcatch:('acc__ -&gt; (<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+wchan:('acc__ -&gt; (<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+nswap:('acc__ -&gt; (<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+cnswap:('acc__ -&gt; (<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+exit_signal:('acc__ -&gt; (<a href="Procfs.Process.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+processor:('acc__ -&gt; (<a href="Procfs.Process.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+rt_priority:('acc__ -&gt; (<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+policy:('acc__ -&gt; (<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt; 'acc__</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> make_creator : <code class="type">comm:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+      'compile_acc__ -&gt; ('input__ -&gt; string) * 'compile_acc__) -&gt;
+state:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, char) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+       'compile_acc__ -&gt; ('input__ -&gt; char) * 'compile_acc__) -&gt;
+ppid:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="../core/Std.Pid.html#TYPEt">Core.Std.Pid.t</a> option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+      'compile_acc__ -&gt; ('input__ -&gt; <a href="../core/Std.Pid.html#TYPEt">Core.Std.Pid.t</a> option) * 'compile_acc__) -&gt;
+pgrp:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="../core/Std.Pid.html#TYPEt">Core.Std.Pid.t</a> option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+      'compile_acc__ -&gt; ('input__ -&gt; <a href="../core/Std.Pid.html#TYPEt">Core.Std.Pid.t</a> option) * 'compile_acc__) -&gt;
+session:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+         'compile_acc__ -&gt; ('input__ -&gt; int) * 'compile_acc__) -&gt;
+tty_nr:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+        'compile_acc__ -&gt; ('input__ -&gt; int) * 'compile_acc__) -&gt;
+tpgid:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+       'compile_acc__ -&gt; ('input__ -&gt; int) * 'compile_acc__) -&gt;
+flags:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+       'compile_acc__ -&gt; ('input__ -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) * 'compile_acc__) -&gt;
+minflt:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+        'compile_acc__ -&gt; ('input__ -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) * 'compile_acc__) -&gt;
+cminflt:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+         'compile_acc__ -&gt; ('input__ -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) * 'compile_acc__) -&gt;
+majflt:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+        'compile_acc__ -&gt; ('input__ -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) * 'compile_acc__) -&gt;
+cmajflt:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+         'compile_acc__ -&gt; ('input__ -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) * 'compile_acc__) -&gt;
+utime:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+       'compile_acc__ -&gt; ('input__ -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) * 'compile_acc__) -&gt;
+stime:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+       'compile_acc__ -&gt; ('input__ -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) * 'compile_acc__) -&gt;
+cutime:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+        'compile_acc__ -&gt; ('input__ -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) * 'compile_acc__) -&gt;
+cstime:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+        'compile_acc__ -&gt; ('input__ -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) * 'compile_acc__) -&gt;
+priority:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+          'compile_acc__ -&gt; ('input__ -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) * 'compile_acc__) -&gt;
+nice:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+      'compile_acc__ -&gt; ('input__ -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) * 'compile_acc__) -&gt;
+unused:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+        'compile_acc__ -&gt; ('input__ -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) * 'compile_acc__) -&gt;
+itrealvalue:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+             'compile_acc__ -&gt; ('input__ -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) * 'compile_acc__) -&gt;
+starttime:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+           'compile_acc__ -&gt; ('input__ -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) * 'compile_acc__) -&gt;
+vsize:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+       'compile_acc__ -&gt; ('input__ -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) * 'compile_acc__) -&gt;
+rss:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+     'compile_acc__ -&gt; ('input__ -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) * 'compile_acc__) -&gt;
+rlim:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+      'compile_acc__ -&gt; ('input__ -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) * 'compile_acc__) -&gt;
+startcode:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+           'compile_acc__ -&gt; ('input__ -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) * 'compile_acc__) -&gt;
+endcode:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+         'compile_acc__ -&gt; ('input__ -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) * 'compile_acc__) -&gt;
+startstack:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+            'compile_acc__ -&gt; ('input__ -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) * 'compile_acc__) -&gt;
+kstkesp:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+         'compile_acc__ -&gt; ('input__ -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) * 'compile_acc__) -&gt;
+kstkeip:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+         'compile_acc__ -&gt; ('input__ -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) * 'compile_acc__) -&gt;
+signal:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+        'compile_acc__ -&gt; ('input__ -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) * 'compile_acc__) -&gt;
+blocked:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+         'compile_acc__ -&gt; ('input__ -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) * 'compile_acc__) -&gt;
+sigignore:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+           'compile_acc__ -&gt; ('input__ -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) * 'compile_acc__) -&gt;
+sigcatch:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+          'compile_acc__ -&gt; ('input__ -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) * 'compile_acc__) -&gt;
+wchan:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+       'compile_acc__ -&gt; ('input__ -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) * 'compile_acc__) -&gt;
+nswap:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+       'compile_acc__ -&gt; ('input__ -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) * 'compile_acc__) -&gt;
+cnswap:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+        'compile_acc__ -&gt; ('input__ -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) * 'compile_acc__) -&gt;
+exit_signal:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+             'compile_acc__ -&gt; ('input__ -&gt; int) * 'compile_acc__) -&gt;
+processor:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+           'compile_acc__ -&gt; ('input__ -&gt; int) * 'compile_acc__) -&gt;
+rt_priority:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+             'compile_acc__ -&gt; ('input__ -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) * 'compile_acc__) -&gt;
+policy:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+        'compile_acc__ -&gt; ('input__ -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) * 'compile_acc__) -&gt;
+'compile_acc__ -&gt; ('input__ -&gt; <a href="Procfs.Process.Stat.html#TYPEt">t</a>) * 'compile_acc__</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">comm:string -&gt;
+state:char -&gt;
+ppid:<a href="../core/Std.Pid.html#TYPEt">Core.Std.Pid.t</a> option -&gt;
+pgrp:<a href="../core/Std.Pid.html#TYPEt">Core.Std.Pid.t</a> option -&gt;
+session:int -&gt;
+tty_nr:int -&gt;
+tpgid:int -&gt;
+flags:<a href="Procfs.html#TYPEbigint">bigint</a> -&gt;
+minflt:<a href="Procfs.html#TYPEbigint">bigint</a> -&gt;
+cminflt:<a href="Procfs.html#TYPEbigint">bigint</a> -&gt;
+majflt:<a href="Procfs.html#TYPEbigint">bigint</a> -&gt;
+cmajflt:<a href="Procfs.html#TYPEbigint">bigint</a> -&gt;
+utime:<a href="Procfs.html#TYPEbigint">bigint</a> -&gt;
+stime:<a href="Procfs.html#TYPEbigint">bigint</a> -&gt;
+cutime:<a href="Procfs.html#TYPEbigint">bigint</a> -&gt;
+cstime:<a href="Procfs.html#TYPEbigint">bigint</a> -&gt;
+priority:<a href="Procfs.html#TYPEbigint">bigint</a> -&gt;
+nice:<a href="Procfs.html#TYPEbigint">bigint</a> -&gt;
+unused:<a href="Procfs.html#TYPEbigint">bigint</a> -&gt;
+itrealvalue:<a href="Procfs.html#TYPEbigint">bigint</a> -&gt;
+starttime:<a href="Procfs.html#TYPEbigint">bigint</a> -&gt;
+vsize:<a href="Procfs.html#TYPEbigint">bigint</a> -&gt;
+rss:<a href="Procfs.html#TYPEbigint">bigint</a> -&gt;
+rlim:<a href="Procfs.html#TYPEbigint">bigint</a> -&gt;
+startcode:<a href="Procfs.html#TYPEbigint">bigint</a> -&gt;
+endcode:<a href="Procfs.html#TYPEbigint">bigint</a> -&gt;
+startstack:<a href="Procfs.html#TYPEbigint">bigint</a> -&gt;
+kstkesp:<a href="Procfs.html#TYPEbigint">bigint</a> -&gt;
+kstkeip:<a href="Procfs.html#TYPEbigint">bigint</a> -&gt;
+signal:<a href="Procfs.html#TYPEbigint">bigint</a> -&gt;
+blocked:<a href="Procfs.html#TYPEbigint">bigint</a> -&gt;
+sigignore:<a href="Procfs.html#TYPEbigint">bigint</a> -&gt;
+sigcatch:<a href="Procfs.html#TYPEbigint">bigint</a> -&gt;
+wchan:<a href="Procfs.html#TYPEbigint">bigint</a> -&gt;
+nswap:<a href="Procfs.html#TYPEbigint">bigint</a> -&gt;
+cnswap:<a href="Procfs.html#TYPEbigint">bigint</a> -&gt;
+exit_signal:int -&gt; processor:int -&gt; rt_priority:<a href="Procfs.html#TYPEbigint">bigint</a> -&gt; policy:<a href="Procfs.html#TYPEbigint">bigint</a> -&gt; <a href="Procfs.Process.Stat.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map : <code class="type">comm:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; string) -&gt;
+state:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, char) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; char) -&gt;
+ppid:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="../core/Std.Pid.html#TYPEt">Core.Std.Pid.t</a> option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="../core/Std.Pid.html#TYPEt">Core.Std.Pid.t</a> option) -&gt;
+pgrp:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="../core/Std.Pid.html#TYPEt">Core.Std.Pid.t</a> option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="../core/Std.Pid.html#TYPEt">Core.Std.Pid.t</a> option) -&gt;
+session:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; int) -&gt;
+tty_nr:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; int) -&gt;
+tpgid:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; int) -&gt;
+flags:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) -&gt;
+minflt:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) -&gt;
+cminflt:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) -&gt;
+majflt:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) -&gt;
+cmajflt:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) -&gt;
+utime:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) -&gt;
+stime:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) -&gt;
+cutime:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) -&gt;
+cstime:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) -&gt;
+priority:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) -&gt;
+nice:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) -&gt;
+unused:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) -&gt;
+itrealvalue:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) -&gt;
+starttime:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) -&gt;
+vsize:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) -&gt;
+rss:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) -&gt;
+rlim:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) -&gt;
+startcode:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) -&gt;
+endcode:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) -&gt;
+startstack:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) -&gt;
+kstkesp:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) -&gt;
+kstkeip:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) -&gt;
+signal:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) -&gt;
+blocked:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) -&gt;
+sigignore:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) -&gt;
+sigcatch:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) -&gt;
+wchan:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) -&gt;
+nswap:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) -&gt;
+cnswap:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) -&gt;
+exit_signal:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; int) -&gt;
+processor:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; int) -&gt;
+rt_priority:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) -&gt;
+policy:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a>) -&gt; <a href="Procfs.Process.Stat.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter : <code class="type">comm:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+state:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, char) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+ppid:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="../core/Std.Pid.html#TYPEt">Core.Std.Pid.t</a> option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+pgrp:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="../core/Std.Pid.html#TYPEt">Core.Std.Pid.t</a> option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+session:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+tty_nr:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+tpgid:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+flags:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+minflt:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+cminflt:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+majflt:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+cmajflt:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+utime:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+stime:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+cutime:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+cstime:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+priority:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+nice:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+unused:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+itrealvalue:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+starttime:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+vsize:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+rss:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+rlim:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+startcode:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+endcode:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+startstack:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+kstkesp:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+kstkeip:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+signal:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+blocked:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+sigignore:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+sigcatch:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+wchan:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+nswap:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+cnswap:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+exit_signal:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+processor:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+rt_priority:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+policy:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> for_all : <code class="type">comm:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+state:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, char) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+ppid:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="../core/Std.Pid.html#TYPEt">Core.Std.Pid.t</a> option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+pgrp:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="../core/Std.Pid.html#TYPEt">Core.Std.Pid.t</a> option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+session:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+tty_nr:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+tpgid:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+flags:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+minflt:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+cminflt:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+majflt:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+cmajflt:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+utime:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+stime:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+cutime:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+cstime:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+priority:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+nice:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+unused:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+itrealvalue:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+starttime:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+vsize:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+rss:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+rlim:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+startcode:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+endcode:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+startstack:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+kstkesp:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+kstkeip:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+signal:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+blocked:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+sigignore:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+sigcatch:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+wchan:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+nswap:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+cnswap:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+exit_signal:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+processor:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+rt_priority:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+policy:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> exists : <code class="type">comm:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+state:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, char) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+ppid:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="../core/Std.Pid.html#TYPEt">Core.Std.Pid.t</a> option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+pgrp:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="../core/Std.Pid.html#TYPEt">Core.Std.Pid.t</a> option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+session:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+tty_nr:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+tpgid:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+flags:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+minflt:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+cminflt:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+majflt:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+cmajflt:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+utime:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+stime:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+cutime:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+cstime:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+priority:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+nice:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+unused:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+itrealvalue:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+starttime:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+vsize:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+rss:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+rlim:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+startcode:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+endcode:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+startstack:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+kstkesp:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+kstkeip:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+signal:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+blocked:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+sigignore:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+sigcatch:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+wchan:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+nswap:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+cnswap:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+exit_signal:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+processor:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+rt_priority:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+policy:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_list : <code class="type">comm:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+state:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, char) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+ppid:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="../core/Std.Pid.html#TYPEt">Core.Std.Pid.t</a> option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+pgrp:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="../core/Std.Pid.html#TYPEt">Core.Std.Pid.t</a> option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+session:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+tty_nr:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+tpgid:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+flags:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+minflt:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+cminflt:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+majflt:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+cmajflt:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+utime:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+stime:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+cutime:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+cstime:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+priority:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+nice:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+unused:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+itrealvalue:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+starttime:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+vsize:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+rss:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+rlim:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+startcode:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+endcode:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+startstack:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+kstkesp:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+kstkeip:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+signal:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+blocked:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+sigignore:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+sigcatch:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+wchan:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+nswap:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+cnswap:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+exit_signal:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+processor:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+rt_priority:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+policy:((<a href="Procfs.Process.Stat.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt; 'elem__ list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map_poly : <code class="type">([&lt; `Read | `Set_and_create ], <a href="Procfs.Process.Stat.html#TYPEt">t</a>, 'x0) <a href="../fieldslib/Field.html#TYPEuser">Fieldslib.Field.user</a> -&gt; 'x0 list</code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Procfs.Process.Stat.Fields.Direct.html">Direct</a> : <code class="code">sig</code> <a href="Procfs.Process.Stat.Fields.Direct.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Procfs.Process.Stat.Fields.Direct.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

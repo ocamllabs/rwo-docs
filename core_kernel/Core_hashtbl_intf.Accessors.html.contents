@@ -1,0 +1,212 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'b) </code>t </span></pre>
+      
+    
+<pre><span id="TYPEkey"><span class="keyword">type</span> <code class="type">'a </code>key </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_key : <code class="type">('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> -&gt; 'a <a href="Core_hashtbl_intf.Accessors.html#TYPEkey">key</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> clear : <code class="type">('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> copy : <code class="type">('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> -&gt; ('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> invariant : <code class="type">('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold : <code class="type">('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> -&gt; init:'c -&gt; f:(key:'a <a href="Core_hashtbl_intf.Accessors.html#TYPEkey">key</a> -&gt; data:'b -&gt; 'c -&gt; 'c) -&gt; 'c</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter : <code class="type">('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> -&gt; f:(key:'a <a href="Core_hashtbl_intf.Accessors.html#TYPEkey">key</a> -&gt; data:'b -&gt; unit) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> existsi : <code class="type">('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> -&gt; f:(key:'a <a href="Core_hashtbl_intf.Accessors.html#TYPEkey">key</a> -&gt; data:'b -&gt; bool) -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> exists : <code class="type">('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> -&gt; f:('b -&gt; bool) -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> length : <code class="type">('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_empty : <code class="type">('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem : <code class="type">('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> -&gt; 'a <a href="Core_hashtbl_intf.Accessors.html#TYPEkey">key</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove : <code class="type">('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> -&gt; 'a <a href="Core_hashtbl_intf.Accessors.html#TYPEkey">key</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove_one : <code class="type">('a, 'b list) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> -&gt; 'a <a href="Core_hashtbl_intf.Accessors.html#TYPEkey">key</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> replace : <code class="type">('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> -&gt; key:'a <a href="Core_hashtbl_intf.Accessors.html#TYPEkey">key</a> -&gt; data:'b -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set : <code class="type">('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> -&gt; key:'a <a href="Core_hashtbl_intf.Accessors.html#TYPEkey">key</a> -&gt; data:'b -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add : <code class="type">('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> -&gt; key:'a <a href="Core_hashtbl_intf.Accessors.html#TYPEkey">key</a> -&gt; data:'b -&gt; [ `Duplicate | `Ok ]</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add_exn : <code class="type">('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> -&gt; key:'a <a href="Core_hashtbl_intf.Accessors.html#TYPEkey">key</a> -&gt; data:'b -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> change : <code class="type">('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> -&gt; 'a <a href="Core_hashtbl_intf.Accessors.html#TYPEkey">key</a> -&gt; ('b option -&gt; 'b option) -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">change t key f</code> updates the given table by changing the value stored under <code class="code">key</code>
+      according to <code class="code">f</code>, just like <code class="code">Map.change</code> (see that for example).</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> add_multi : <code class="type">('a, 'b list) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> -&gt; key:'a <a href="Core_hashtbl_intf.Accessors.html#TYPEkey">key</a> -&gt; data:'b -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">add_multi t ~key ~data</code> if <code class="code">key</code> is present in the table then cons
+     <code class="code">data</code> on the list, otherwise add <code class="code">key</code> with a single element list.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> remove_multi : <code class="type">('a, 'b list) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> -&gt; 'a <a href="Core_hashtbl_intf.Accessors.html#TYPEkey">key</a> -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">remove_multi t key</code> updates the table, removing the head of the list bound to
+      <code class="code">key</code>. If the list has only one element (or is empty) then the binding is
+      removed.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> map : <code class="type">('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> -&gt; f:('b -&gt; 'c) -&gt; ('a, 'c) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">map t f</code> returns new table with bound values replaced by
+      <code class="code">f</code> applied to the bound values</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> mapi : <code class="type">('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> -&gt; f:(key:'a <a href="Core_hashtbl_intf.Accessors.html#TYPEkey">key</a> -&gt; data:'b -&gt; 'c) -&gt; ('a, 'c) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a></code></span></pre>
+      <div class="info">like <code class="code">map</code>, but function takes both key and data as arguments</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> filter_map : <code class="type">('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> -&gt; f:('b -&gt; 'c option) -&gt; ('a, 'c) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a></code></span></pre>
+      <div class="info">returns new map with bound values filtered by f applied to the bound
+      values</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> filter_mapi : <code class="type">('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> -&gt; f:(key:'a <a href="Core_hashtbl_intf.Accessors.html#TYPEkey">key</a> -&gt; data:'b -&gt; 'c option) -&gt; ('a, 'c) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a></code></span></pre>
+      <div class="info">like <code class="code">filter_map</code>, but function takes both key and data as arguments</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> filter : <code class="type">('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> -&gt; f:('b -&gt; bool) -&gt; ('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> filteri : <code class="type">('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> -&gt; f:(key:'a <a href="Core_hashtbl_intf.Accessors.html#TYPEkey">key</a> -&gt; data:'b -&gt; bool) -&gt; ('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> partition_map : <code class="type">('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> -&gt;
+f:('b -&gt; [ `Fst of 'c | `Snd of 'd ]) -&gt; ('a, 'c) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> * ('a, 'd) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a></code></span></pre>
+      <div class="info">returns new maps with bound values partitioned by f applied to the bound values</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> partition_mapi : <code class="type">('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> -&gt;
+f:(key:'a <a href="Core_hashtbl_intf.Accessors.html#TYPEkey">key</a> -&gt; data:'b -&gt; [ `Fst of 'c | `Snd of 'd ]) -&gt;
+('a, 'c) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> * ('a, 'd) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a></code></span></pre>
+      <div class="info">like <code class="code">partition_map</code>, but function takes both key and data as arguments</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> partition_tf : <code class="type">('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> -&gt; f:('b -&gt; bool) -&gt; ('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> * ('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> partitioni_tf : <code class="type">('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> -&gt; f:(key:'a <a href="Core_hashtbl_intf.Accessors.html#TYPEkey">key</a> -&gt; data:'b -&gt; bool) -&gt; ('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> * ('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_or_add : <code class="type">('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> -&gt; 'a <a href="Core_hashtbl_intf.Accessors.html#TYPEkey">key</a> -&gt; default:(unit -&gt; 'b) -&gt; 'b</code></span></pre>
+      <div class="info"><code class="code">find_or_add t k ~default</code> returns the data associated with key k if it
+      is in the table t, otherwise it lets d = default() and adds it to the
+      table.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> find : <code class="type">('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> -&gt; 'a <a href="Core_hashtbl_intf.Accessors.html#TYPEkey">key</a> -&gt; 'b option</code></span></pre>
+      <div class="info"><code class="code">find t k</code> returns Some (the current binding) of k in t, or None if no
+      such binding exists</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> find_exn : <code class="type">('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> -&gt; 'a <a href="Core_hashtbl_intf.Accessors.html#TYPEkey">key</a> -&gt; 'b</code></span></pre>
+      <div class="info"><code class="code">find_exn t k</code> returns the current binding of k in t, or raises Not_found
+      if no such binding exists.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> find_and_remove : <code class="type">('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> -&gt; 'a <a href="Core_hashtbl_intf.Accessors.html#TYPEkey">key</a> -&gt; 'b option</code></span></pre>
+      <div class="info"><code class="code">find_and_remove t k</code> returns Some (the current binding) of k in t and removes
+      it, or None is no such binding exists</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> iter_vals : <code class="type">('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> -&gt; f:('b -&gt; unit) -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">iter_vals t ~f</code> is like iter, except it only supplies the value to f,
+      not the key.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> merge : <code class="type">('k, 'a) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> -&gt;
+('k, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> -&gt;
+f:(key:'k <a href="Core_hashtbl_intf.Accessors.html#TYPEkey">key</a> -&gt;
+   [ `Both of 'a * 'b | `Left of 'a | `Right of 'b ] -&gt; 'c option) -&gt;
+('k, 'c) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a></code></span></pre>
+      <div class="info">Merge two hashtables.<br/>      The result of <code class="code">merge f h1 h2</code> has as keys the set of all <code class="code">k</code> in the
+      union of the sets of keys of <code class="code">h1</code> and <code class="code">h2</code> for which <code class="code">d(k)</code> is not
+      None, where:<br/>      d(k) =<ul><li>f ~key:k (Some d1) None
+      if <code class="code">k</code> in <code class="code">h1</code> is to d1, and <code class="code">h2</code> does not map <code class="code">k</code>;</li></ul>      - f ~key:k None (Some d2)
+      if <code class="code">k</code> in <code class="code">h2</code> is to d2, and <code class="code">h1</code> does not map <code class="code">k</code>;<br/>      - f ~key:k (Some d1) (Some d2)
+      otherwise, where <code class="code">k</code> in <code class="code">h1</code> is to <code class="code">d1</code> and <code class="code">k</code> in <code class="code">h2</code> is to <code class="code">d2</code>.<br/>      Each key <code class="code">k</code> is mapped to a single piece of data x, where <code class="code">d(k)</code> = Some x.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> merge_into : <code class="type">f:(key:'a <a href="Core_hashtbl_intf.Accessors.html#TYPEkey">key</a> -&gt; 'b -&gt; 'b option -&gt; 'b option) -&gt;
+src:('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> -&gt; dst:('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      <div class="info">Merge one hashtable into another.<br/>      After <code class="code">merge_into f src dst</code>, for every <code class="code">key</code> in <code class="code">src</code>, <code class="code">key</code> will be
+      re-mapped in <code class="code">dst</code> to <code class="code">v</code> if <code class="code">f ~key d1 (find dst key) = Some v</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> keys : <code class="type">('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> -&gt; 'a <a href="Core_hashtbl_intf.Accessors.html#TYPEkey">key</a> list</code></span></pre>
+      <div class="info">Returns the list of all keys for given hashtable.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> data : <code class="type">('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> -&gt; 'b list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> filter_inplace : <code class="type">('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> -&gt; f:('b -&gt; bool) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> filteri_inplace : <code class="type">('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> -&gt; f:('a <a href="Core_hashtbl_intf.Accessors.html#TYPEkey">key</a> -&gt; 'b -&gt; bool) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> equal : <code class="type">('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> -&gt; ('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> -&gt; ('b -&gt; 'b -&gt; bool) -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_alist : <code class="type">('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> -&gt; ('a <a href="Core_hashtbl_intf.Accessors.html#TYPEkey">key</a> * 'b) list</code></span></pre>
+      <div class="info">Returns the list of all (key,data) pairs for given hashtable.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> validate : <code class="type">name:('a <a href="Core_hashtbl_intf.Accessors.html#TYPEkey">key</a> -&gt; string) -&gt; 'b <a href="Validate.html#TYPEcheck">Validate.check</a> -&gt; ('a, 'b) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> <a href="Validate.html#TYPEcheck">Validate.check</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> incr : <code class="type">?by:int -&gt; ('a, int) <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> -&gt; 'a <a href="Core_hashtbl_intf.Accessors.html#TYPEkey">key</a> -&gt; unit</code></span></pre>
+      
+    

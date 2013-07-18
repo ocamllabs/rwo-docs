@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<title>Heap_block</title>
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
+<script type="text/javascript" src="doc_loader.js"> </script>
+</head>
+<body>
+
+<h1>Module Heap_block</h1>
+<pre><span class="keyword">module</span> Heap_block</pre><div class="info">A heap block is a value that is guaranteed to live on the OCaml heap, and is hence
+    guaranteed to be usable with finalization or in a weak pointer.  It is an abstract
+    type so we can use the type system to guarantee that the values we put in weak
+    pointers and use with finalizers are heap blocks.<br/>    Some examples of values that are not heap-allocated are integers, constant
+    constructors, booleans, the empty array, the empty list, the unit value.  The exact
+    list of what is heap-allocated or not is implementation-dependent.  Some constant
+    values can be heap-allocated but never deallocated during the lifetime of the program,
+    for example a list of integer constants; this is also implementation-dependent.  You
+    should also be aware that compiler optimizations may duplicate some immutable values,
+    for example floating-point numbers when stored into arrays; thus they can be finalized
+    and collected while another copy is still in use by the program.<br/>    The results of calling TODO reference : String.make, TODO reference : String.create, TODO reference : Array.make, and
+    TODO reference : Pervasives.ref are guaranteed to be heap-allocated and non-constant except when the
+    length argument is <code class="code">0</code>.</div>
+<hr/>
+<div file="Heap_block.html.contents" class="content_to_load"> </div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+ 
+      <pre><span><span class="keyword">val</span> __pa_ounit_275876e34cf609db118f3d84b799a790 : <code class="type">string</code></span></pre>
+      
+    
+
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Execution_context.Monitor.html">Monitor</a> : <code class="code"><a href="Raw_monitor.html">Raw_monitor</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Execution_context.Monitor.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<pre><code><span id="TYPEt"><span class="keyword">type</span> t </span>= {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.monitor">monitor</span> :<code class="type"><a href="Execution_context.html#TYPEt">t</a> <a href="Execution_context.Monitor.html#TYPEt_">Monitor.t_</a> <a href="Backpatched.html#TYPEt">Backpatched.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.priority">priority</span> :<code class="type"><a href="Priority.html#TYPEt">Priority.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.backtrace_history">backtrace_history</span> :<code class="type"><a href="../core/Std.Backtrace.html#TYPEt">Core.Std.Backtrace.t</a> list</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.kill_index">kill_index</span> :<code class="type"><a href="Kill_index.html#TYPEt">Kill_index.t</a></code>;</code></td>
+	  </tr></table>}
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type"><a href="Execution_context.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> kill_index : <code class="type"><a href="Execution_context.html#TYPEt">t</a> -&gt; <a href="Kill_index.html#TYPEt">Kill_index.t</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> set_kill_index : <code class="type"><a href="Execution_context.html#TYPEt">t</a> -&gt; <a href="Kill_index.html#TYPEt">Kill_index.t</a> -&gt; unit</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> backtrace_history : <code class="type"><a href="Execution_context.html#TYPEt">t</a> -&gt; <a href="../core/Std.Backtrace.html#TYPEt">Core.Std.Backtrace.t</a> list</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> priority : <code class="type"><a href="Execution_context.html#TYPEt">t</a> -&gt; <a href="Priority.html#TYPEt">Priority.t</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> monitor : <code class="type"><a href="Execution_context.html#TYPEt">t</a> -&gt; <a href="Execution_context.html#TYPEt">t</a> <a href="Execution_context.Monitor.html#TYPEt_">Monitor.t_</a> <a href="Backpatched.html#TYPEt">Backpatched.t</a></code></span></pre>
+      
+    
+
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Execution_context.Fields.html">Fields</a> : <code class="code">sig</code> <a href="Execution_context.Fields.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Execution_context.Fields.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> invariant : <code class="type"><a href="Execution_context.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> main_monitor_hole : <code class="type"><a href="Execution_context.html#TYPEt">t</a> <a href="Execution_context.Monitor.html#TYPEt_">Monitor.t_</a> <a href="Backpatched.Hole.html#TYPEt">Backpatched.Hole.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> main : <code class="type"><a href="Execution_context.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> monitor : <code class="type"><a href="Execution_context.html#TYPEt">t</a> -&gt; <a href="Execution_context.html#TYPEt">t</a> <a href="Execution_context.Monitor.html#TYPEt_">Monitor.t_</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create_like : <code class="type">?monitor:<a href="Execution_context.html#TYPEt">t</a> <a href="Execution_context.Monitor.html#TYPEt_">Monitor.t_</a> -&gt; ?priority:<a href="Priority.html#TYPEt">Priority.t</a> -&gt; <a href="Execution_context.html#TYPEt">t</a> -&gt; <a href="Execution_context.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> record_backtrace : <code class="type"><a href="Execution_context.html#TYPEt">t</a> -&gt; <a href="Execution_context.html#TYPEt">t</a></code></span></pre>
+      
+    
+

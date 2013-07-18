@@ -1,0 +1,11 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Number.S.html">S</a></code></pre>
+	<div class="content">
+	<div file="Number.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> zero : <code class="type">t</code></span></pre>
+      
+    

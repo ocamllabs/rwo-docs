@@ -1,0 +1,18 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t </span>= <code class="type">('a, exn) <a href="../core/Std.Result.html#TYPEt">Core.Std.Result.t</a></code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type">('a -&gt; <a href="../core/Std.Sexp.html#TYPEt">Core.Std.Sexp.t</a>) -&gt; 'a <a href="Extended_result.Exn.html#TYPEt">t</a> -&gt; <a href="../core/Std.Sexp.html#TYPEt">Core.Std.Sexp.t</a></code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core/Std.Monad.S.html">Core.Std.Monad.S</a></code> with type t = 'a <a href="Extended_result.Exn.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="../core/Std.Monad.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> ok : <code class="type">'a <a href="Extended_result.Exn.html#TYPEt">t</a> -&gt; 'a</code></span></pre>
+      <div class="info"><code class="code">ok t</code> returns <code class="code">x</code> if <code class="code">t = Ok x</code>, or raises <code class="code">e</code> if <code class="code">t = Error e</code>.</div>
+    

@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<title>Versioned_typed_tcp.Mode</title>
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
+<script type="text/javascript" src="doc_loader.js"> </script>
+</head>
+<body>
+
+<h1>Module Versioned_typed_tcp.Mode</h1>
+<pre><span class="keyword">module type</span> <a href="Versioned_typed_tcp.Mode.html">Mode</a> = <code class="type"><code class="code">sig</code> <a href="Versioned_typed_tcp.Mode.html">..</a> <code class="code">end</code></code></pre><div class="info">This module may be used to implement modes for clients/servers. A
+    common scheme is to have two modes, Test, and Production, and to
+    want to maintain the invariant that clients in mode Test may not
+    talk to servers in mode Production, and that clients in mode
+    Production may not talk to servers in mode Test. Versioned
+    connection will check that the mode of the client is the same as
+    the mode of the server.<br/>    If you don't care about modes, just use Dont_care_about_mode.</div>
+<hr/>
+<div file="Versioned_typed_tcp.Mode.html.contents" class="content_to_load"> </div>
+</body>
+</html>

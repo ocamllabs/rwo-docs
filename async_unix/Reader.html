@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<title>Reader</title>
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
+<script type="text/javascript" src="doc_loader.js"> </script>
+</head>
+<body>
+
+<h1>Module Reader</h1>
+<pre><span class="keyword">module</span> Reader</pre><div class="info"><code class="code">Reader</code> is Async's main API for buffered input from a file descriptor.  It is the
+    analog of <code class="code">Core.Std.In_channel</code>.<br/>    Each reader has an internal buffer, which is filled via <code class="code">read()</code> system calls when
+    data is needed to satisfy a <code class="code">Reader.read*</code> call.<br/>    Each of the read functions returns a deferred that will become determined when the
+    read completes.  It is an error to have two simultaneous reads.  That is, if one calls
+    a read function, one should not call another read function until the first one
+    completes.<br/>    If the file descriptor underlying a reader is closed, the reader will return EOF
+    (after all the buffered bytes have been read).<br/>    Any <code class="code">Reader.read*</code> call could, rather than determine its result, send an exception to
+    the monitor in effect when <code class="code">read</code> was called.  Such exceptions can be handled in the
+    usual way by using <code class="code">try_with</code>, e.g.:<br/>    <pre class="codepre"><code class="code">
+      try_with (fun () -&gt; Reader.read reader ...)
+    </code></pre>
+</div>
+<hr/>
+<div file="Reader.html.contents" class="content_to_load"> </div>
+</body>
+</html>

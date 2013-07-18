@@ -1,0 +1,113 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, +'perm) </code>t </span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Container.S1_phantom.html">Container.S1_phantom</a></code> with type t = ('a, 'perm) <a href="Ref.Permissioned.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="Container.S1_phantom.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">'a -&gt; ('a, 'b) <a href="Ref.Permissioned.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> read_only : <code class="type">('a, 'b) <a href="Ref.Permissioned.html#TYPEt">t</a> -&gt; ('a, <a href="Common.html#TYPEread_only">Common.read_only</a>) <a href="Ref.Permissioned.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ! : <code class="type">('a, 'b) <a href="Ref.Permissioned.html#TYPEt">t</a> -&gt; 'a</code></span></pre>
+      <div class="info"><code class="code">get</code> and <code class="code">(!)</code> are two names for the same function.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> get : <code class="type">('a, 'b) <a href="Ref.Permissioned.html#TYPEt">t</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set : <code class="type">('a, <a href="Common.html#TYPEread_write">Common.read_write</a>) <a href="Ref.Permissioned.html#TYPEt">t</a> -&gt; 'a -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">set</code> and <code class="code">(:=)</code> are two names for the same function.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> := : <code class="type">('a, <a href="Common.html#TYPEread_write">Common.read_write</a>) <a href="Ref.Permissioned.html#TYPEt">t</a> -&gt; 'a -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_ref : <code class="type">'a <a href="../stdlib/Pervasives.html#TYPEref">ref</a> -&gt; ('a, <a href="Common.html#TYPEread_write">Common.read_write</a>) <a href="Ref.Permissioned.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_ref : <code class="type">('a, <a href="Common.html#TYPEread_write">Common.read_write</a>) <a href="Ref.Permissioned.html#TYPEt">t</a> -&gt; 'a <a href="../stdlib/Pervasives.html#TYPEref">ref</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> swap : <code class="type">('a, <a href="Common.html#TYPEread_write">Common.read_write</a>) <a href="Ref.Permissioned.html#TYPEt">t</a> -&gt; ('a, <a href="Common.html#TYPEread_write">Common.read_write</a>) <a href="Ref.Permissioned.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> replace : <code class="type">('a, <a href="Common.html#TYPEread_write">Common.read_write</a>) <a href="Ref.Permissioned.html#TYPEt">t</a> -&gt; ('a -&gt; 'a) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp : <code class="type">(<a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; 'a) -&gt;
+(<a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; 'perm) -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; ('a, 'perm) <a href="Ref.Permissioned.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type">('a -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a>) -&gt;
+('perm -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a>) -&gt; ('a, 'perm) <a href="Ref.Permissioned.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_t : <code class="type">'a <a href="../bin_prot/Type_class.html#TYPEt">Bin_prot.Type_class.t</a> -&gt;
+'perm <a href="../bin_prot/Type_class.html#TYPEt">Bin_prot.Type_class.t</a> -&gt; ('a, 'perm) <a href="Ref.Permissioned.html#TYPEt">t</a> <a href="../bin_prot/Type_class.html#TYPEt">Bin_prot.Type_class.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t : <code class="type">'a <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+'perm <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a> -&gt; ('a, 'perm) <a href="Ref.Permissioned.html#TYPEt">t</a> <a href="../bin_prot/Read_ml.html#TYPEreader">Bin_prot.Read_ml.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t_ : <code class="type">'a <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+'perm <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+('a, 'perm) <a href="Ref.Permissioned.html#TYPEt">t</a> <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t__ : <code class="type">'a <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+'perm <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+(int -&gt; ('a, 'perm) <a href="Ref.Permissioned.html#TYPEt">t</a>) <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t : <code class="type">'a <a href="../bin_prot/Type_class.html#TYPEreader">Bin_prot.Type_class.reader</a> -&gt;
+'perm <a href="../bin_prot/Type_class.html#TYPEreader">Bin_prot.Type_class.reader</a> -&gt; ('a, 'perm) <a href="Ref.Permissioned.html#TYPEt">t</a> <a href="../bin_prot/Type_class.html#TYPEreader">Bin_prot.Type_class.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t : <code class="type">'a <a href="../bin_prot/Size.html#TYPEsizer">Bin_prot.Size.sizer</a> -&gt;
+'perm <a href="../bin_prot/Size.html#TYPEsizer">Bin_prot.Size.sizer</a> -&gt; ('a, 'perm) <a href="Ref.Permissioned.html#TYPEt">t</a> <a href="../bin_prot/Size.html#TYPEsizer">Bin_prot.Size.sizer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t : <code class="type">'a <a href="../bin_prot/Unsafe_write_c.html#TYPEwriter">Bin_prot.Unsafe_write_c.writer</a> -&gt;
+'perm <a href="../bin_prot/Unsafe_write_c.html#TYPEwriter">Bin_prot.Unsafe_write_c.writer</a> -&gt;
+('a, 'perm) <a href="Ref.Permissioned.html#TYPEt">t</a> <a href="../bin_prot/Write_ml.html#TYPEwriter">Bin_prot.Write_ml.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_ : <code class="type">'a <a href="../bin_prot/Unsafe_write_c.html#TYPEwriter">Bin_prot.Unsafe_write_c.writer</a> -&gt;
+'perm <a href="../bin_prot/Unsafe_write_c.html#TYPEwriter">Bin_prot.Unsafe_write_c.writer</a> -&gt;
+('a, 'perm) <a href="Ref.Permissioned.html#TYPEt">t</a> <a href="../bin_prot/Unsafe_write_c.html#TYPEwriter">Bin_prot.Unsafe_write_c.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t : <code class="type">'a <a href="../bin_prot/Type_class.html#TYPEwriter">Bin_prot.Type_class.writer</a> -&gt;
+'perm <a href="../bin_prot/Type_class.html#TYPEwriter">Bin_prot.Type_class.writer</a> -&gt; ('a, 'perm) <a href="Ref.Permissioned.html#TYPEt">t</a> <a href="../bin_prot/Type_class.html#TYPEwriter">Bin_prot.Type_class.writer</a></code></span></pre>
+      
+    
+<br/><code class="code">get</code> and <code class="code">(!)</code> are two names for the same function.<br/>
+	  
+<br/><code class="code">set</code> and <code class="code">(:=)</code> are two names for the same function.<br/>
+	  

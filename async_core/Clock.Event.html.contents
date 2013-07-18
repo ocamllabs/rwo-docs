@@ -1,0 +1,30 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core/Std.Invariant.S.html">Core.Std.Invariant.S</a></code> with type t = <a href="Clock.Event.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="../core/Std.Invariant.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> status : <code class="type"><a href="Clock.Event.html#TYPEt">t</a> -&gt; [ `Aborted | `Happened | `Waiting ]</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> abort : <code class="type"><a href="Clock.Event.html#TYPEt">t</a> -&gt; [ `Ok | `Previously_aborted | `Previously_happened ]</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> at : <code class="type"><a href="../core/Std.Time.html#TYPEt">Core.Std.Time.t</a> -&gt; <a href="Clock.Event.html#TYPEt">t</a> * [ `Aborted | `Happened ] <a href="Deferred.html#TYPEt">Deferred.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> after : <code class="type"><a href="../core/Std.Time.Span.html#TYPEt">Core.Std.Time.Span.t</a> -&gt; <a href="Clock.Event.html#TYPEt">t</a> * [ `Aborted | `Happened ] <a href="Deferred.html#TYPEt">Deferred.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type"><a href="Clock.Event.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    

@@ -1,0 +1,78 @@
+<pre><span id="TYPEwhere_to_connect"><span class="keyword">type</span> <code class="type">'a </code>where_to_connect </span></pre>
+      <div class="info"><code class="code">Tcp</code> supports connection to <code class="code">inet</code> sockets and <code class="code">unix</code> sockets.  These are two
+    different types.  We use <code class="code">'a where_to_connect</code> to specify a socket to connect to,
+    where the <code class="code">'a</code> identifies the type of socket.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> to_host_and_port : <code class="type">string -&gt; int -&gt; <a href="Import.Socket.Address.Inet.html#TYPEt">Import.Socket.Address.Inet.t</a> <a href="Tcp.html#TYPEwhere_to_connect">where_to_connect</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_file : <code class="type">string -&gt; <a href="Import.Socket.Address.Unix.html#TYPEt">Import.Socket.Address.Unix.t</a> <a href="Tcp.html#TYPEwhere_to_connect">where_to_connect</a></code></span></pre>
+      
+    
+<pre><span id="TYPEwith_connect_options"><span class="keyword">type</span> <code class="type">'a </code>with_connect_options </span>= <code class="type">?buffer_age_limit:[ `At_most of <a href="../core/Std.Time.Span.html#TYPEt">Core.Std.Time.Span.t</a> | `Unlimited ] -&gt;
+?interrupt:unit <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a> -&gt;
+?reader_buffer_size:int -&gt; ?timeout:<a href="../core/Std.Time.Span.html#TYPEt">Core.Std.Time.Span.t</a> -&gt; 'a</code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> with_connection : <code class="type">(([&lt; <a href="Import.Socket.Address.html#TYPEt">Import.Socket.Address.t</a> ] as 'b) <a href="Tcp.html#TYPEwhere_to_connect">where_to_connect</a> -&gt;
+ (([ `Active ], 'b) <a href="Import.Socket.html#TYPEt">Import.Socket.t</a> -&gt;
+  <a href="Import.Reader.html#TYPEt">Import.Reader.t</a> -&gt; <a href="Import.Writer.html#TYPEt">Import.Writer.t</a> -&gt; 'a <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a>) -&gt;
+ 'a <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a>)
+<a href="Tcp.html#TYPEwith_connect_options">with_connect_options</a></code></span></pre>
+      <div class="info"><code class="code">with_connection ~host ~port f</code> looks up host from a string (using DNS as needed),
+    connects, then calls <code class="code">f</code>, passing the connected socket and a reader and writer for it.
+    When the deferred returned by <code class="code">f</code> is determined, or any exception is thrown, the
+    socket, reader and writer are closed.  The return deferred is fulfilled after f has
+    finished processing and the file descriptor for the socket is closed.  If <code class="code">interrupt</code>
+    is supplied then the connection attempt will be aborted if interrupt is fulfilled
+    before the connection has been established.  Similarly, all connection attempts have a
+    timeout (default 30s), that can be overridden with <code class="code">timeout</code>.<br/>    It is fine for <code class="code">f</code> to ignore the supplied socket and just use the reader and writer.
+    The socket is there to make it convenient to call <code class="code">Socket</code> functions.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> connect_sock : <code class="type">([&lt; <a href="Import.Socket.Address.html#TYPEt">Import.Socket.Address.t</a> ] as 'a) <a href="Tcp.html#TYPEwhere_to_connect">where_to_connect</a> -&gt;
+([ `Active ], 'a) <a href="Import.Socket.html#TYPEt">Import.Socket.t</a> <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a></code></span></pre>
+      <div class="info"><code class="code">connect_sock ~host ~port</code> opens a TCP connection to the specified hostname
+    and port, returning the socket.<br/>    Any errors in the connection will be reported to the monitor that was current
+    when connect was called.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> connect : <code class="type">(([&lt; <a href="Import.Socket.Address.html#TYPEt">Import.Socket.Address.t</a> ] as 'a) <a href="Tcp.html#TYPEwhere_to_connect">where_to_connect</a> -&gt;
+ (([ `Active ], 'a) <a href="Import.Socket.html#TYPEt">Import.Socket.t</a> * <a href="Import.Reader.html#TYPEt">Import.Reader.t</a> * <a href="Import.Writer.html#TYPEt">Import.Writer.t</a>)
+ <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a>)
+<a href="Tcp.html#TYPEwith_connect_options">with_connect_options</a></code></span></pre>
+      <div class="info"><code class="code">connect ~host ~port</code> is a convenience wrapper around <code class="code">connect_sock</code> that returns the
+    socket, and a reader and writer for the socket.  The reader and writer share a file
+    descriptor, and so closing one will affect the other.  In particular, closing the
+    reader before closing the writer will cause the writer to subsequently raise an
+    exception when it attempts to flush internally-buffered bytes to the OS, due to a
+    closed fd.  You should close the <code class="code">Writer</code> first to avoid this problem.<br/>    If possible, use <code class="code">with_connection</code>, which automatically handles closing.<br/>    It is fine to ignore the returned socket and just use the reader and writer.  The
+    socket is there to make it convenient to call <code class="code">Socket</code> functions.</div>
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Tcp.Where_to_listen.html">Where_to_listen</a> : <code class="code">sig</code> <a href="Tcp.Where_to_listen.html">..</a> <code class="code">end</code></pre><div class="info">A <code class="code">Where_to_listen</code> describes the socket that a tcp server should listen on.</div>
+	<div class="content" style="display:none">
+	<div file="Tcp.Where_to_listen.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> on_port : <code class="type">int -&gt; <a href="Tcp.Where_to_listen.html#TYPEinet">Where_to_listen.inet</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> on_port_chosen_by_os : <code class="type"><a href="Tcp.Where_to_listen.html#TYPEinet">Where_to_listen.inet</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> on_file : <code class="type">string -&gt; <a href="Tcp.Where_to_listen.html#TYPEunix">Where_to_listen.unix</a></code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Tcp.Server.html">Server</a> : <code class="code">sig</code> <a href="Tcp.Server.html">..</a> <code class="code">end</code></pre><div class="info">A <code class="code">Server.t</code> represents a TCP server listening on a socket.</div>
+	<div class="content" style="display:none">
+	<div file="Tcp.Server.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

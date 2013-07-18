@@ -1,0 +1,103 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Procfs.Process.Limits.Rlimit.html">Rlimit</a> : <code class="code">sig</code> <a href="Procfs.Process.Limits.Rlimit.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Procfs.Process.Limits.Rlimit.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<pre><code><span id="TYPEt"><span class="keyword">type</span> t </span>= {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.cpu_time">cpu_time</span> :<code class="type"><a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.file_size">file_size</span> :<code class="type"><a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.data_size">data_size</span> :<code class="type"><a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.stack_size">stack_size</span> :<code class="type"><a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.core_file_size">core_file_size</span> :<code class="type"><a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.resident_set">resident_set</span> :<code class="type"><a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.processes">processes</span> :<code class="type"><a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.open_files">open_files</span> :<code class="type"><a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.locked_memory">locked_memory</span> :<code class="type"><a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.address_space">address_space</span> :<code class="type"><a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.file_locks">file_locks</span> :<code class="type"><a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.pending_signals">pending_signals</span> :<code class="type"><a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.msgqueue_size">msgqueue_size</span> :<code class="type"><a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.nice_priority">nice_priority</span> :<code class="type"><a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.realtime_priority">realtime_priority</span> :<code class="type"><a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a></code>;</code></td>
+	  </tr></table>}
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> realtime_priority : <code class="type"><a href="Procfs.Process.Limits.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> nice_priority : <code class="type"><a href="Procfs.Process.Limits.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> msgqueue_size : <code class="type"><a href="Procfs.Process.Limits.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pending_signals : <code class="type"><a href="Procfs.Process.Limits.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> file_locks : <code class="type"><a href="Procfs.Process.Limits.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> address_space : <code class="type"><a href="Procfs.Process.Limits.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> locked_memory : <code class="type"><a href="Procfs.Process.Limits.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> open_files : <code class="type"><a href="Procfs.Process.Limits.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> processes : <code class="type"><a href="Procfs.Process.Limits.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> resident_set : <code class="type"><a href="Procfs.Process.Limits.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> core_file_size : <code class="type"><a href="Procfs.Process.Limits.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stack_size : <code class="type"><a href="Procfs.Process.Limits.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> data_size : <code class="type"><a href="Procfs.Process.Limits.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> file_size : <code class="type"><a href="Procfs.Process.Limits.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> cpu_time : <code class="type"><a href="Procfs.Process.Limits.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">Rlimit.t</a></code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Procfs.Process.Limits.Fields.html">Fields</a> : <code class="code">sig</code> <a href="Procfs.Process.Limits.Fields.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Procfs.Process.Limits.Fields.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> of_string : <code class="type">string -&gt; <a href="Procfs.Process.Limits.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp : <code class="type"><a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; <a href="Procfs.Process.Limits.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type"><a href="Procfs.Process.Limits.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    

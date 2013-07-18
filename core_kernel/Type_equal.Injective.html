@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<title>Type_equal.Injective</title>
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
+<script type="text/javascript" src="doc_loader.js"> </script>
+</head>
+<body>
+
+<h1>Module Type_equal.Injective</h1>
+<pre><span class="keyword">module type</span> <a href="Type_equal.Injective.html">Injective</a> = <code class="type"><code class="code">sig</code> <a href="Type_equal.Injective.html">..</a> <code class="code">end</code></code></pre><div class="info"><code class="code">Injective</code> is an interface that states that a type is injective, where the type is
+    viewed as a function from types to other types.  The typical usage is:<br/>    <pre class="codepre"><code class="code">
+      type 'a t
+      include Injective with type 'a t := 'a t
+    </code></pre><br/>    For example, <code class="code">'a list</code> is an injective type, because whenever <code class="code">'a list = 'b list</code>, we
+    know that <code class="code">'a</code> = <code class="code">'b</code>.  On the other hand, if we define:<br/>    <pre class="codepre"><code class="code">
+      type 'a t = unit
+    </code></pre><br/>    then clearly <code class="code">t</code> isn't injective, because, e.g. <code class="code">int t = bool t</code>, but <code class="code">int &lt;&gt; bool</code>.<br/>    If <code class="code">module M : Injective</code>, then <code class="code">M.strip</code> provides a way to get a proof that two types
+    are equal from a proof that both types transformed by <code class="code">M.t</code> are equal.<br/>    OCaml has no built-in language feature to state that a type is injective, which is why
+    we have <code class="code">module type Injective</code>.  However, OCaml can infer that a type is injective,
+    and we can use this to match <code class="code">Injective</code>.  A typical implementation will look like
+    this:<br/>    <pre class="codepre"><code class="code">
+      let strip (type a) (type b)
+          (Type_equal.T : (a t, b t) Type_equal.t) : (a, b) Type_equal.t =
+        Type_equal.T
+    </code></pre><br/>    This will not type check for all type constructors (certainly not for non-injective
+    ones!), but it's always safe to try the above implementation if you are unsure.  If
+    OCaml accepts this definition, then the type is injective.  On the other hand, if
+    OCaml doesn't, then type type may or may not be injective.  For example, if the
+    definition of the type depends on abstract types that match <code class="code">Injective</code>, OCaml will
+    not automatically use their injectivity, and one will have to write a more complicated
+    definition of <code class="code">strip</code> that causes OCaml to use that fact.  For example:<br/>    <pre class="codepre"><code class="code">
+      module F (M : Type_equal.Injective) : Type_equal.Injective = struct
+        type 'a t = 'a M.t * int
+
+        let strip (type a) (type b)
+            (e : (a t, b t) Type_equal.t) : (a, b) Type_equal.t =
+          let e1, _ = Type_equal.detuple2 e in
+          M.strip e1
+        ;;
+      end
+    </code></pre><br/>    If in the definition of <code class="code">F</code> we had written the simpler implementation of <code class="code">strip</code> that
+    didn't use <code class="code">M.strip</code>, then OCaml would have reported a type error.</div>
+<hr/>
+<div file="Type_equal.Injective.html.contents" class="content_to_load"> </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Int_intf.S.html">Int_intf.S</a></code> with type t = int64</pre>
+	<div class="content">
+	<div file="Int_intf.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> of_int : <code class="type">int -&gt; t</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_int : <code class="type">t -&gt; int option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_float : <code class="type">float -&gt; t</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_float : <code class="type">t -&gt; float</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_int32 : <code class="type">int32 -&gt; t</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_nativeint : <code class="type">nativeint -&gt; t</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bits_of_float : <code class="type">float -&gt; t</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> float_of_bits : <code class="type">t -&gt; float</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_int32 : <code class="type">t -&gt; int32 option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_nativeint : <code class="type">t -&gt; nativeint option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_int64 : <code class="type">t -&gt; t</code></span></pre>
+      
+    

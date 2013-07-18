@@ -1,0 +1,110 @@
+ 
+      <pre><span><span class="keyword">val</span> __pa_ounit_275876e34cf609db118f3d84b799a790 : <code class="type">string</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> debug : <code class="type">bool</code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Raw_fd.File_descr.html">File_descr</a> : <code class="code"><a href="../core/Std.Unix.File_descr.html">Core.Std.Unix.File_descr</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Raw_fd.File_descr.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Raw_fd.Kind.html">Kind</a> : <code class="code">sig</code> <a href="Raw_fd.Kind.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Raw_fd.Kind.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Raw_fd.State.html">State</a> : <code class="code">sig</code> <a href="Raw_fd.State.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Raw_fd.State.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<pre><span id="TYPEready_to_result"><span class="keyword">type</span> ready_to_result </span>= <code class="type">[ `Bad_fd | `Closed | `Interrupted | `Ready ]</code> </pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_ready_to_result : <code class="type">[&lt; `Bad_fd | `Closed | `Interrupted | `Ready ] -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Raw_fd.Watching.html">Watching</a> : <code class="code">sig</code> <a href="Raw_fd.Watching.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Raw_fd.Watching.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Raw_fd.T.html">T</a> : <code class="code">sig</code> <a href="Raw_fd.T.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Raw_fd.T.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Raw_fd.T.html">T</a></code></pre>
+	<div class="content">
+	<div file="Raw_fd.T.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> equal : <code class="type">t -&gt; t -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> invariant : <code class="type">t -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_int : <code class="type">t -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type"><a href="Raw_fd.Kind.html#TYPEt">Kind.t</a> -&gt; <a href="../core/Std.Unix.File_descr.html#TYPEt">Core.Std.Unix.File_descr.t</a> -&gt; <a href="../core/Std.Info.html#TYPEt">Core.Std.Info.t</a> -&gt; t</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> inc_num_active_syscalls : <code class="type">t -&gt; [&gt; `Already_closed | `Ok ]</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set_state : <code class="type">t -&gt; <a href="Raw_fd.State.html#TYPEt">State.t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_open : <code class="type">t -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_closed : <code class="type">t -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set_nonblock_if_necessary : <code class="type">t -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> with_file_descr : <code class="type">?nonblocking:bool -&gt;
+t -&gt; (<a href="Raw_fd.File_descr.html#TYPEt">File_descr.t</a> -&gt; 'a) -&gt; [&gt; `Already_closed | `Error of exn | `Ok of 'a ]</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> with_file_descr_exn : <code class="type">?nonblocking:bool -&gt; t -&gt; (<a href="Raw_fd.File_descr.html#TYPEt">File_descr.t</a> -&gt; 'a) -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> syscall : <code class="type">?nonblocking:bool -&gt;
+t -&gt; (<a href="Raw_fd.File_descr.html#TYPEt">File_descr.t</a> -&gt; 'a) -&gt; [&gt; `Already_closed | `Error of exn | `Ok of 'a ]</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> syscall_exn : <code class="type">?nonblocking:bool -&gt; t -&gt; (<a href="Raw_fd.File_descr.html#TYPEt">File_descr.t</a> -&gt; 'a) -&gt; 'a</code></span></pre>
+      
+    
+

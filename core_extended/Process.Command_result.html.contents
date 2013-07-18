@@ -1,0 +1,7 @@
+<pre><code><span id="TYPEt"><span class="keyword">type</span> t </span>= {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.status">status</span> :<code class="type"><a href="Process.Status.html#TYPEt">Status.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.stdout_tail">stdout_tail</span> :<code class="type">string</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.stderr_tail">stderr_tail</span> :<code class="type">string</code>;</code></td>
+	  </tr></table>}
+      
+    

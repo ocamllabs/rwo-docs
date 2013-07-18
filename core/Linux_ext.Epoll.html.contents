@@ -1,0 +1,91 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Linux_ext.Epoll.Flags.html">Flags</a> : <code class="code">sig</code> <a href="Linux_ext.Epoll.Flags.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Linux_ext.Epoll.Flags.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      <div class="info">An <code class="code">Epoll.t</code> maintains a map from <code class="code">File_descr.t</code> to <code class="code">Flags.t</code>, where the domain is
+      the set of file descriptors that one is interested in, and the flags associated with
+      each file descriptor specify the types of events one is interested in being notified
+      about for that file descriptor.  Our implementation maintains a user-level table
+      equivalent to the kernel epoll set, so that <code class="code">sexp_of_t</code> produces useful
+      human-readable information, and so that we can present our standard table
+      interface.<br/>      An <code class="code">Epoll.t</code> also has a buffer that is used to store the set of ready fds returned
+      by calling <code class="code">wait</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> invariant : <code class="type"><a href="Linux_ext.Epoll.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">(num_file_descrs:int -&gt; max_ready_events:int -&gt; <a href="Linux_ext.Epoll.html#TYPEt">t</a>) <a href="../core_kernel/Std.Or_error.html#TYPEt">Core_kernel.Std.Or_error.t</a></code></span></pre>
+      <div class="info"><code class="code">create ~num_file_descrs</code> creates a new epoll set able to watch file descriptors in
+      [0, num_file_descrs).  Additionally, the set allocates space for reading the ready
+      events when <code class="code">wait</code> returns, allowing for up to <code class="code">max_ready_events</code> to be returned in
+      a single call to <code class="code">wait</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> find : <code class="type"><a href="Linux_ext.Epoll.html#TYPEt">t</a> -&gt; <a href="Core_unix.File_descr.html#TYPEt">Core_unix.File_descr.t</a> -&gt; <a href="Linux_ext.Epoll.Flags.html#TYPEt">Flags.t</a> option</code></span></pre>
+      <div class="info">map operations</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> find_exn : <code class="type"><a href="Linux_ext.Epoll.html#TYPEt">t</a> -&gt; <a href="Core_unix.File_descr.html#TYPEt">Core_unix.File_descr.t</a> -&gt; <a href="Linux_ext.Epoll.Flags.html#TYPEt">Flags.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set : <code class="type"><a href="Linux_ext.Epoll.html#TYPEt">t</a> -&gt; <a href="Core_unix.File_descr.html#TYPEt">Core_unix.File_descr.t</a> -&gt; <a href="Linux_ext.Epoll.Flags.html#TYPEt">Flags.t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove : <code class="type"><a href="Linux_ext.Epoll.html#TYPEt">t</a> -&gt; <a href="Core_unix.File_descr.html#TYPEt">Core_unix.File_descr.t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter : <code class="type"><a href="Linux_ext.Epoll.html#TYPEt">t</a> -&gt; f:(<a href="Core_unix.File_descr.html#TYPEt">Core_unix.File_descr.t</a> -&gt; <a href="Linux_ext.Epoll.Flags.html#TYPEt">Flags.t</a> -&gt; unit) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> wait : <code class="type"><a href="Linux_ext.Epoll.html#TYPEt">t</a> -&gt;
+timeout:[ `After of <a href="Span.html#TYPEt">Span.t</a> | `Immediately | `Never ] -&gt; [ `Ok | `Timeout ]</code></span></pre>
+      <div class="info"><code class="code">wait t ~timeout</code> blocks until at least one file descriptor in <code class="code">t</code> is ready for one
+      of the events it is being watched for, or <code class="code">timeout</code> passes.  <code class="code">wait</code> side effects <code class="code">t</code>
+      by storing the ready set in it.  One can subsequently access the ready set by
+      calling <code class="code">iter_ready</code> or <code class="code">fold_ready</code>.<br/>      The <code class="code">timeout</code> has a granularity of one millisecond.  <code class="code">wait</code> rounds up the <code class="code">timeout</code>
+      to the next millisecond.  E.g. a <code class="code">timeout</code> of one microsecond will be rounded up
+      to one millisecond.<br/>      Note that this method should not be considered thread safe.  There is mutable state
+      in t that will be changed by invocations to wait that cannot be prevented by mutexes
+      around <code class="code">wait</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> iter_ready : <code class="type"><a href="Linux_ext.Epoll.html#TYPEt">t</a> -&gt; f:(<a href="Core_unix.File_descr.html#TYPEt">Core_unix.File_descr.t</a> -&gt; <a href="Linux_ext.Epoll.Flags.html#TYPEt">Flags.t</a> -&gt; unit) -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">iter_ready</code> and <code class="code">fold_ready</code> iterate over the ready set computed by the last
+      call to <code class="code">wait</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> fold_ready : <code class="type"><a href="Linux_ext.Epoll.html#TYPEt">t</a> -&gt; init:'a -&gt; f:('a -&gt; <a href="Core_unix.File_descr.html#TYPEt">Core_unix.File_descr.t</a> -&gt; <a href="Linux_ext.Epoll.Flags.html#TYPEt">Flags.t</a> -&gt; 'a) -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type"><a href="Linux_ext.Epoll.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+<br/><code class="code">create ~num_file_descrs</code> creates a new epoll set able to watch file descriptors in
+      [0, num_file_descrs).  Additionally, the set allocates space for reading the ready
+      events when <code class="code">wait</code> returns, allowing for up to <code class="code">max_ready_events</code> to be returned in
+      a single call to <code class="code">wait</code>.<br/>
+	  
+<br/>map operations<br/>
+	  
+<br/><code class="code">wait t ~timeout</code> blocks until at least one file descriptor in <code class="code">t</code> is ready for one
+      of the events it is being watched for, or <code class="code">timeout</code> passes.  <code class="code">wait</code> side effects <code class="code">t</code>
+      by storing the ready set in it.  One can subsequently access the ready set by
+      calling <code class="code">iter_ready</code> or <code class="code">fold_ready</code>.<br/>      The <code class="code">timeout</code> has a granularity of one millisecond.  <code class="code">wait</code> rounds up the <code class="code">timeout</code>
+      to the next millisecond.  E.g. a <code class="code">timeout</code> of one microsecond will be rounded up
+      to one millisecond.<br/>      Note that this method should not be considered thread safe.  There is mutable state
+      in t that will be changed by invocations to wait that cannot be prevented by mutexes
+      around <code class="code">wait</code>.<br/>
+	  
+<br/><code class="code">iter_ready</code> and <code class="code">fold_ready</code> iterate over the ready set computed by the last
+      call to <code class="code">wait</code>.<br/>
+	  

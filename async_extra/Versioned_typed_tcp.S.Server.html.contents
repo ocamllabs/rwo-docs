@@ -1,0 +1,100 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core/Std.Invariant.S.html">Core.Std.Invariant.S</a></code> with type t = <a href="Versioned_typed_tcp.S.Server.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="../core/Std.Invariant.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">?logfun:<a href="Versioned_typed_tcp.S.html#TYPElogfun">logfun</a> -&gt;
+?now:(unit -&gt; <a href="../core/Std.Time.html#TYPEt">Core.Std.Time.t</a>) -&gt;
+?enforce_unique_remote_name:bool -&gt;
+?is_client_ip_authorized:(string -&gt; bool) -&gt;
+?warn_when_free_connections_lte_pct:float -&gt;
+?max_clients:int -&gt; listen_port:int -&gt; My_name.t -&gt; <a href="Versioned_typed_tcp.S.Server.html#TYPEt">t</a> <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a></code></span></pre>
+      <div class="info">create a new server, and start listening</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> port : <code class="type"><a href="Versioned_typed_tcp.S.Server.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      <div class="info">get the port that the server is listening on</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> close : <code class="type"><a href="Versioned_typed_tcp.S.Server.html#TYPEt">t</a> -&gt; Remote_name.t -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">close t client</code> close connection to <code class="code">client</code> if it
+        exists. This does not prevent the same client from connecting
+        again later.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> listen : <code class="type"><a href="Versioned_typed_tcp.S.Server.html#TYPEt">t</a> -&gt; (Remote_name.t, Recv.t) <a href="Versioned_typed_tcp.Server_msg.html#TYPEt">Server_msg.t</a> <a href="Import.Stream.html#TYPEt">Import.Stream.t</a></code></span></pre>
+      <div class="info"><code class="code">listen t</code> listen to the stream of messages and errors coming from clients</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> listen_ignore_errors : <code class="type">?stop:unit <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a> -&gt; <a href="Versioned_typed_tcp.S.Server.html#TYPEt">t</a> -&gt; Recv.t <a href="Import.Stream.html#TYPEt">Import.Stream.t</a></code></span></pre>
+      <div class="info"><code class="code">listen_ignore_errors t</code> like listen, but omit error conditions and
+        metadata. When listen_ignore_errors is called it installs a filter on
+        the stream that never goes away (unless t is destroyed, or you
+        provide a <code class="code">stop</code>).</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> send : <code class="type"><a href="Versioned_typed_tcp.S.Server.html#TYPEt">t</a> -&gt;
+Remote_name.t -&gt;
+Send.t -&gt; [ `Dropped | `Sent of <a href="../core/Std.Time.html#TYPEt">Core.Std.Time.t</a> ] <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a></code></span></pre>
+      <div class="info"><code class="code">send t client msg</code> send <code class="code">msg</code> to <code class="code">client</code>.<b>Returns</b> a
+        deferred that will become determined when the message has been
+        sent.  In the case of an error, the message will be dropped,
+        and the deferred will be filled with <code class="code">`Dropped</code> (meaning the
+        message was never handed to the OS), otherwise it will be
+        filled with with <code class="code">`Sent tm</code> where tm is the time (according to
+        Time.now) that the message was handed to the operating
+        system.  It is possible that the deferred will never become
+        determined, for example in the case that the other side hangs,
+        but does not drop the connection.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> send_ignore_errors : <code class="type"><a href="Versioned_typed_tcp.S.Server.html#TYPEt">t</a> -&gt; Remote_name.t -&gt; Send.t -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">send_ignore_errors t client msg</code> Just like send, but does not report
+        results. Your message will probably be sent successfully
+        sometime after you call this function. If you receive a
+        <code class="code">Disconnect</code> error on the listen channel in close time
+        proximity to making this call then your message was likely
+        dropped.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> send_to_all : <code class="type"><a href="Versioned_typed_tcp.S.Server.html#TYPEt">t</a> -&gt; Send.t -&gt; [ `Dropped | `Partial_success | `Sent ] <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a></code></span></pre>
+      <div class="info"><code class="code">send_to_all t msg</code> send the same message to all connected clients.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> send_to_all_ignore_errors : <code class="type"><a href="Versioned_typed_tcp.S.Server.html#TYPEt">t</a> -&gt; Send.t -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">send_to_all_ignore_errors t msg</code> Just like <code class="code">send_to_all</code> but with no error
+        reporting.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> send_to_some : <code class="type"><a href="Versioned_typed_tcp.S.Server.html#TYPEt">t</a> -&gt;
+Send.t -&gt;
+Remote_name.t list -&gt;
+[ `Dropped | `Partial_success | `Sent ] <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a></code></span></pre>
+      <div class="info"><code class="code">send_to_some t msg names</code> send the same message to multiple connected clients.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> send_to_some_ignore_errors : <code class="type"><a href="Versioned_typed_tcp.S.Server.html#TYPEt">t</a> -&gt; Send.t -&gt; Remote_name.t list -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">send_to_some_ignore_errors t msg</code> Just like <code class="code">send_to_some</code> but with no error
+        reporting.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> client_send_version : <code class="type"><a href="Versioned_typed_tcp.S.Server.html#TYPEt">t</a> -&gt; Remote_name.t -&gt; <a href="Versioned_typed_tcp.Version.html#TYPEt">Version.t</a> option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> flushed : <code class="type"><a href="Versioned_typed_tcp.S.Server.html#TYPEt">t</a> -&gt;
+cutoff:unit <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a> -&gt;
+([ `Flushed of Remote_name.t list ] * [ `Not_flushed of Remote_name.t list ])
+<a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> shutdown : <code class="type"><a href="Versioned_typed_tcp.S.Server.html#TYPEt">t</a> -&gt; unit <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a></code></span></pre>
+      
+    

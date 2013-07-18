@@ -1,0 +1,14 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core/Std.Result.html">Core.Std.Result</a></code></pre>
+	<div class="content">
+	<div file="../core/Std.Result.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Extended_result.html">Extended_result</a></code></pre>
+	<div class="content">
+	<div file="Extended_result.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

@@ -1,0 +1,10 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Core_unix.Scheduler.Policy.html">Policy</a> : <code class="code">sig</code> <a href="Core_unix.Scheduler.Policy.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Core_unix.Scheduler.Policy.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> set : <code class="type">pid:<a href="../core_kernel/Std.Pid.html#TYPEt">Core_kernel.Std.Pid.t</a> option -&gt; policy:<a href="Core_unix.Scheduler.Policy.html#TYPEt">Policy.t</a> -&gt; priority:int -&gt; unit</code></span></pre>
+      
+    

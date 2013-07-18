@@ -1,0 +1,7 @@
+<pre><span id="TYPE_date"><span class="keyword">type</span> _date </span>= {<code class="type"><a href="Date.html#TYPEt">t</a></code> <span class="keyword">private</span></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELT_date.y">y</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELT_date.m">m</span> :<code class="type"><a href="../core_kernel/Std.Month.html#TYPEt">Core_kernel.Std.Month.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELT_date.d">d</span> :<code class="type">int</code>;</code></td>
+	  </tr></table>}
+      
+    

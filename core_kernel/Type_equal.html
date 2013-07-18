@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<title>Type_equal</title>
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
+<script type="text/javascript" src="doc_loader.js"> </script>
+</head>
+<body>
+
+<h1>Module Type_equal</h1>
+<pre><span class="keyword">module</span> Type_equal</pre><div class="info">For representing type equalities otherwise not known by the type-checker.<br/>    The purpose of <code class="code">Type_equal</code> is to represent type equalities that the type checker
+    otherwise would not know, perhaps because the type equality depends on dynamic data,
+    or perhaps because the type system isn't powerful enough.<br/>    A value of type <code class="code">(a, b) Type_equal.t</code> represents that types <code class="code">a</code> and <code class="code">b</code> are equal.
+    One can think of such a value as a proof of type equality.  The <code class="code">Type_equal</code> module
+    has operations for constructing and manipulating such proofs.  For example, the
+    functions <code class="code">refl</code>, <code class="code">sym</code>, and <code class="code">trans</code> express the usual properties of reflexivity,
+    symmetry, and transitivity of equality.<br/>    If one has a value <code class="code">t : (a, b) Type_equal.t</code> that proves types <code class="code">a</code> and <code class="code">b</code> are equal,
+    there are two ways to use <code class="code">t</code> to safely convert a value of type <code class="code">a</code> to a value of type
+    <code class="code">b</code>: <code class="code">Type_equal.conv</code> or pattern matching on <code class="code">Type_equal.T</code>:<br/>    <pre class="codepre"><code class="code">
+      let f (type a) (type b) (t : (a, b) Type_equal.t) (a : a) : b =
+        Type_equal.conv t a
+
+      let f (type a) (type b) (t : (a, b) Type_equal.t) (a : a) : b =
+        let Type_equal.T = t in a
+    </code></pre><br/>    At runtime, conversion by either means is just the identity -- nothing is changing
+    about the value.  Consistent with this, a value of type <code class="code">Type_equal.t</code> is always just
+    a constructor <code class="code">Type_equal.T</code>; the value has no interesting semantic content.
+    <code class="code">Type_equal</code> gets its power from the ability to, in a type-safe way, prove to the type
+    checker that two types are equal.  The <code class="code">Type_equal.t</code> value that is passed is
+    necessary for the type-checker's rules to be correct, but the compiler, could, in
+    principle, not pass around values of type <code class="code">Type_equal.t</code> at run time.</div>
+<hr/>
+<div file="Type_equal.html.contents" class="content_to_load"> </div>
+</body>
+</html>

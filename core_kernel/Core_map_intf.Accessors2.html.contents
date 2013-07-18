@@ -1,0 +1,172 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'b) </code>t </span></pre>
+      
+    
+<pre><span id="TYPEtree"><span class="keyword">type</span> <code class="type">('a, 'b) </code>tree </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> invariants : <code class="type">('a, 'b) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_empty : <code class="type">('a, 'b) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> length : <code class="type">('a, 'b) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add : <code class="type">('a, 'b) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a> -&gt; key:'a -&gt; data:'b -&gt; ('a, 'b) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add_multi : <code class="type">('a, 'b list) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a> -&gt; key:'a -&gt; data:'b -&gt; ('a, 'b list) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> change : <code class="type">('a, 'b) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a> -&gt; 'a -&gt; ('b option -&gt; 'b option) -&gt; ('a, 'b) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find : <code class="type">('a, 'b) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a> -&gt; 'a -&gt; 'b option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_exn : <code class="type">('a, 'b) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a> -&gt; 'a -&gt; 'b</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove : <code class="type">('a, 'b) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a> -&gt; 'a -&gt; ('a, 'b) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem : <code class="type">('a, 'b) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a> -&gt; 'a -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter : <code class="type">('a, 'b) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a> -&gt; f:(key:'a -&gt; data:'b -&gt; unit) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter2 : <code class="type">('a, 'b) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a> -&gt;
+('a, 'c) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a> -&gt;
+f:(key:'a -&gt; data:[ `Both of 'b * 'c | `Left of 'b | `Right of 'c ] -&gt; unit) -&gt;
+unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map : <code class="type">('a, 'b) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a> -&gt; f:('b -&gt; 'c) -&gt; ('a, 'c) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mapi : <code class="type">('a, 'b) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a> -&gt; f:(key:'a -&gt; data:'b -&gt; 'c) -&gt; ('a, 'c) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold : <code class="type">('a, 'b) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a> -&gt; init:'c -&gt; f:(key:'a -&gt; data:'b -&gt; 'c -&gt; 'c) -&gt; 'c</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold_right : <code class="type">('a, 'b) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a> -&gt; init:'c -&gt; f:(key:'a -&gt; data:'b -&gt; 'c -&gt; 'c) -&gt; 'c</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> filter : <code class="type">('a, 'b) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a> -&gt; f:(key:'a -&gt; data:'b -&gt; bool) -&gt; ('a, 'b) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> filter_map : <code class="type">('a, 'b) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a> -&gt; f:('b -&gt; 'c option) -&gt; ('a, 'c) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> filter_mapi : <code class="type">('a, 'b) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a> -&gt; f:(key:'a -&gt; data:'b -&gt; 'c option) -&gt; ('a, 'c) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> compare_direct : <code class="type">('b -&gt; 'b -&gt; int) -&gt; ('a, 'b) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a> -&gt; ('a, 'b) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> equal : <code class="type">('b -&gt; 'b -&gt; bool) -&gt; ('a, 'b) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a> -&gt; ('a, 'b) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> keys : <code class="type">('a, 'b) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a> -&gt; 'a list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> data : <code class="type">('a, 'b) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a> -&gt; 'b list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_alist : <code class="type">('a, 'b) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a> -&gt; ('a * 'b) list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> validate : <code class="type">name:('a -&gt; string) -&gt; 'b <a href="Validate.html#TYPEcheck">Validate.check</a> -&gt; ('a, 'b) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a> <a href="Validate.html#TYPEcheck">Validate.check</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> merge : <code class="type">('a, 'b) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a> -&gt;
+('a, 'c) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a> -&gt;
+f:(key:'a -&gt; [ `Both of 'b * 'c | `Left of 'b | `Right of 'c ] -&gt; 'd option) -&gt;
+('a, 'd) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> symmetric_diff : <code class="type">('a, 'b) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a> -&gt;
+('a, 'b) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a> -&gt;
+data_equal:('b -&gt; 'b -&gt; bool) -&gt;
+('a * [ `Left of 'b | `Right of 'b | `Unequal of 'b * 'b ]) list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> min_elt : <code class="type">('a, 'b) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a> -&gt; ('a * 'b) option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> min_elt_exn : <code class="type">('a, 'b) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a> -&gt; 'a * 'b</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> max_elt : <code class="type">('a, 'b) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a> -&gt; ('a * 'b) option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> max_elt_exn : <code class="type">('a, 'b) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a> -&gt; 'a * 'b</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> for_all : <code class="type">('a, 'b) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a> -&gt; f:('b -&gt; bool) -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> exists : <code class="type">('a, 'b) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a> -&gt; f:('b -&gt; bool) -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold_range_inclusive : <code class="type">('a, 'b) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a> -&gt;
+min:'a -&gt; max:'a -&gt; init:'c -&gt; f:(key:'a -&gt; data:'b -&gt; 'c -&gt; 'c) -&gt; 'c</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> range_to_alist : <code class="type">('a, 'b) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a> -&gt; min:'a -&gt; max:'a -&gt; ('a * 'b) list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> prev_key : <code class="type">('a, 'b) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a> -&gt; 'a -&gt; ('a * 'b) option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> next_key : <code class="type">('a, 'b) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a> -&gt; 'a -&gt; ('a * 'b) option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rank : <code class="type">('a, 'b) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a> -&gt; 'a -&gt; int option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_tree : <code class="type">('a, 'b) <a href="Core_map_intf.Accessors2.html#TYPEt">t</a> -&gt; ('a, 'b) <a href="Core_map_intf.Accessors2.html#TYPEtree">tree</a></code></span></pre>
+      
+    

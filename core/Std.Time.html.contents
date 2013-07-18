@@ -1,0 +1,31 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Std.Time.Zone.html">Zone</a> : <code class="code"><a href="Zone.html">Zone</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Std.Time.Zone.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Std.Time.Span.html">Span</a> : <code class="code"><a href="Span.html">Span</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Std.Time.Span.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Std.Time.Ofday.html">Ofday</a> : <code class="code">sig</code> <a href="Std.Time.Ofday.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Std.Time.Ofday.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Std.Time.Date.html">Date</a> : <code class="code">sig</code> <a href="Std.Time.Date.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Std.Time.Date.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Time.html">Time</a></code></pre>
+	<div class="content">
+	<div file="Time.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

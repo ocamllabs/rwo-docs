@@ -1,0 +1,12 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Stack_intf.S.html">Stack_intf.S</a></code></pre>
+	<div class="content">
+	<div file="Stack_intf.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> set_auto_shrink : <code class="type">'a t -&gt; bool -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">set_auto_shrink t</code> controls whether <code class="code">t</code>'s array will automatically shrink when the
+    number of elements on the stack falls below 1/4 of the array size.</div>
+    

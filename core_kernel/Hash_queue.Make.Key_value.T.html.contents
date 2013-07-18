@@ -1,0 +1,6 @@
+<pre><code><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t </span>= {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.key">key</span> :<code class="type"><a href="Hash_queue.Make.Key.html#TYPEt">Key.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.value">value</span> :<code class="type">'a</code>;</code></td>
+	  </tr></table>}
+      
+    

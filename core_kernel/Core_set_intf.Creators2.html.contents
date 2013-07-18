@@ -1,0 +1,53 @@
+<pre><span id="TYPEset"><span class="keyword">type</span> <code class="type">('a, 'cmp) </code>set </span></pre>
+      
+    
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'cmp) </code>t </span></pre>
+      
+    
+<pre><span id="TYPEtree"><span class="keyword">type</span> <code class="type">('a, 'cmp) </code>tree </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> empty : <code class="type">('a, 'cmp) <a href="Core_set_intf.Creators2.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> singleton : <code class="type">'a -&gt; ('a, 'cmp) <a href="Core_set_intf.Creators2.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> union_list : <code class="type">('a, 'cmp) <a href="Core_set_intf.Creators2.html#TYPEt">t</a> list -&gt; ('a, 'cmp) <a href="Core_set_intf.Creators2.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_list : <code class="type">'a list -&gt; ('a, 'cmp) <a href="Core_set_intf.Creators2.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_array : <code class="type">'a array -&gt; ('a, 'cmp) <a href="Core_set_intf.Creators2.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_sorted_array : <code class="type">'a array -&gt; ('a, 'cmp) <a href="Core_set_intf.Creators2.html#TYPEt">t</a> <a href="Or_error.html#TYPEt">Or_error.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_sorted_array_unchecked : <code class="type">'a array -&gt; ('a, 'cmp) <a href="Core_set_intf.Creators2.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stable_dedup_list : <code class="type">'a list -&gt; 'a list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map : <code class="type">('a, 'c) <a href="Core_set_intf.Creators2.html#TYPEset">set</a> -&gt; f:('a -&gt; 'b) -&gt; ('b, 'cmp) <a href="Core_set_intf.Creators2.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> filter_map : <code class="type">('a, 'c) <a href="Core_set_intf.Creators2.html#TYPEset">set</a> -&gt; f:('a -&gt; 'b option) -&gt; ('b, 'cmp) <a href="Core_set_intf.Creators2.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_tree : <code class="type">('a, 'cmp) <a href="Core_set_intf.Creators2.html#TYPEtree">tree</a> -&gt; ('a, 'cmp) <a href="Core_set_intf.Creators2.html#TYPEt">t</a></code></span></pre>
+      
+    

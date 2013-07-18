@@ -1,0 +1,35 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_int : <code class="type">int -&gt; <a href="Extended_unix.Inet_port.html#TYPEt">t</a> option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_int_exn : <code class="type">int -&gt; <a href="Extended_unix.Inet_port.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_string : <code class="type">string -&gt; <a href="Extended_unix.Inet_port.html#TYPEt">t</a> option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_string_exn : <code class="type">string -&gt; <a href="Extended_unix.Inet_port.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_int : <code class="type"><a href="Extended_unix.Inet_port.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_string : <code class="type"><a href="Extended_unix.Inet_port.html#TYPEt">t</a> -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp : <code class="type"><a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; <a href="Extended_unix.Inet_port.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type"><a href="Extended_unix.Inet_port.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    

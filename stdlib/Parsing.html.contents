@@ -1,0 +1,86 @@
+ 
+      <pre><span><span class="keyword">val</span> symbol_start : <code class="type">unit -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> symbol_end : <code class="type">unit -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rhs_start : <code class="type">int -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rhs_end : <code class="type">int -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> symbol_start_pos : <code class="type">unit -&gt; <a href="Lexing.html#TYPEposition">Lexing.position</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> symbol_end_pos : <code class="type">unit -&gt; <a href="Lexing.html#TYPEposition">Lexing.position</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rhs_start_pos : <code class="type">int -&gt; <a href="Lexing.html#TYPEposition">Lexing.position</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rhs_end_pos : <code class="type">int -&gt; <a href="Lexing.html#TYPEposition">Lexing.position</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> clear_parser : <code class="type">unit -&gt; unit</code></span></pre>
+      
+    
+<pre><span id="EXCEPTIONParse_error"><span class="keyword">exception</span> Parse_error</span></pre>
+ 
+      <pre><span><span class="keyword">val</span> set_trace : <code class="type">bool -&gt; bool</code></span></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE"> </h6><br/> <br/>
+	  
+<br/>The following definitions are used by the generated parsers only.
+   They are not intended to be used directly by user programs.<br/>
+	  
+<pre><span id="TYPEparser_env"><span class="keyword">type</span> parser_env </span></pre>
+      
+    
+<pre><code><span id="TYPEparse_tables"><span class="keyword">type</span> parse_tables </span>= {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTparse_tables.actions">actions</span> :<code class="type">(<a href="Parsing.html#TYPEparser_env">parser_env</a> -&gt; <a href="Obj.html#TYPEt">Obj.t</a>) array</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTparse_tables.transl_const">transl_const</span> :<code class="type">int array</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTparse_tables.transl_block">transl_block</span> :<code class="type">int array</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTparse_tables.lhs">lhs</span> :<code class="type">string</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTparse_tables.len">len</span> :<code class="type">string</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTparse_tables.defred">defred</span> :<code class="type">string</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTparse_tables.dgoto">dgoto</span> :<code class="type">string</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTparse_tables.sindex">sindex</span> :<code class="type">string</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTparse_tables.rindex">rindex</span> :<code class="type">string</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTparse_tables.gindex">gindex</span> :<code class="type">string</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTparse_tables.tablesize">tablesize</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTparse_tables.table">table</span> :<code class="type">string</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTparse_tables.check">check</span> :<code class="type">string</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTparse_tables.error_function">error_function</span> :<code class="type">string -&gt; unit</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTparse_tables.names_const">names_const</span> :<code class="type">string</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTparse_tables.names_block">names_block</span> :<code class="type">string</code>;</code></td>
+	  </tr></table>}
+      
+    
+<pre><span id="EXCEPTIONYYexit"><span class="keyword">exception</span> YYexit</span> <span class="keyword">of</span> <code class="type"><a href="Obj.html#TYPEt">Obj.t</a></code></pre>
+ 
+      <pre><span><span class="keyword">val</span> yyparse : <code class="type"><a href="Parsing.html#TYPEparse_tables">parse_tables</a> -&gt; int -&gt; (<a href="Lexing.html#TYPElexbuf">Lexing.lexbuf</a> -&gt; 'a) -&gt; <a href="Lexing.html#TYPElexbuf">Lexing.lexbuf</a> -&gt; 'b</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> peek_val : <code class="type"><a href="Parsing.html#TYPEparser_env">parser_env</a> -&gt; int -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_current_lookahead : <code class="type">'a -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> parse_error : <code class="type">string -&gt; unit</code></span></pre>
+      
+    

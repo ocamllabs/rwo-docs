@@ -1,0 +1,21 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('src, 'dst) </code>t </span>= <code class="type">('src, 'dst) <a href="Bigstring.html#TYPEblit">Bigstring.blit</a></code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> string_string : <code class="type">src:<a href="Std_internal.String.html#TYPEt">Std_internal.String.t</a> -&gt;
+?src_pos:int -&gt;
+?src_len:int -&gt; dst:<a href="Core_string.html#TYPEt">Core_string.t</a> -&gt; ?dst_pos:int -&gt; unit -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> string_bigstring : <code class="type">(string, <a href="Bigstring.html#TYPEt">Bigstring.t</a>) <a href="Bigstring.html#TYPEblit">Bigstring.blit</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bigstring_bigstring : <code class="type">(<a href="Bigstring.html#TYPEt">Bigstring.t</a>, <a href="Bigstring.html#TYPEt">Bigstring.t</a>) <a href="Bigstring.html#TYPEblit">Bigstring.blit</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bigstring_string : <code class="type">(<a href="Bigstring.html#TYPEt">Bigstring.t</a>, string) <a href="Bigstring.html#TYPEblit">Bigstring.blit</a></code></span></pre>
+      
+    

@@ -1,0 +1,26 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core_kernel/Std.Flags.S.html">Core_kernel.Std.Flags.S</a></code> with type t = <a href="Linux_ext.Timerfd.Flags.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="../core_kernel/Std.Flags.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> nonblock : <code class="type"><a href="Linux_ext.Timerfd.Flags.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> cloexec : <code class="type"><a href="Linux_ext.Timerfd.Flags.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type"><a href="Linux_ext.Timerfd.Flags.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+<br/><code class="code">TFD_NONBLOCK</code> <br/>
+	  
+<br/><code class="code">TFD_CLOEXEC</code> <br/>
+	  

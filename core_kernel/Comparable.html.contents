@@ -1,0 +1,107 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Comparable.Infix.html">Infix</a> = <code class="type"><code class="code"><a href="Comparable_intf.Infix.html">Comparable_intf.Infix</a></code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Comparable.Infix.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Comparable.Map_and_set_binable.html">Map_and_set_binable</a> = <code class="type"><code class="code"><a href="Comparable_intf.Map_and_set_binable.html">Comparable_intf.Map_and_set_binable</a></code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Comparable.Map_and_set_binable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Comparable.S.html">S</a> = <code class="type"><code class="code"><a href="Comparable_intf.S.html">Comparable_intf.S</a></code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Comparable.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Comparable.S_binable.html">S_binable</a> = <code class="type"><code class="code"><a href="Comparable_intf.S_binable.html">Comparable_intf.S_binable</a></code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Comparable.S_binable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Comparable.S_common.html">S_common</a> = <code class="type"><code class="code"><a href="Comparable_intf.S_common.html">Comparable_intf.S_common</a></code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Comparable.S_common.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Comparable.Validate.html">Validate</a> = <code class="type"><code class="code"><a href="Comparable_intf.Validate.html">Comparable_intf.Validate</a></code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Comparable.Validate.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Comparable.With_zero.html">With_zero</a> = <code class="type"><code class="code"><a href="Comparable_intf.With_zero.html">Comparable_intf.With_zero</a></code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Comparable.With_zero.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<pre><span id="TYPEbound"><span class="keyword">type</span> <code class="type">'a </code>bound </span>= <code class="type">'a <a href="Comparable_intf.html#TYPEbound">Comparable_intf.bound</a></code> </pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTbound.Incl"><span class="constructor">Incl</span></span> <span class="keyword">of</span> <code class="type">'a</code></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTbound.Excl"><span class="constructor">Excl</span></span> <span class="keyword">of</span> <code class="type">'a</code></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTbound.Unbounded"><span class="constructor">Unbounded</span></span></code></td>
+	   </tr></table>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> lexicographic : <code class="type">('a -&gt; 'a -&gt; int) list -&gt; 'a -&gt; 'a -&gt; int</code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Comparable.Inherit.html">Inherit</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">C</code><code class="code"> : </code><code class="code">sig</code> <a href="Comparable.Inherit.Anon_8.html">..</a> <code class="code">end</code><code class="code">) -&gt; </code><div class="sig_block"><code class="code">functor (</code><code class="code">T</code><code class="code"> : </code><code class="code">sig</code> <a href="Comparable.Inherit.Anon_9.html">..</a> <code class="code">end</code><code class="code">) -&gt; </code><code class="code"><a href="Comparable.S.html">S</a></code> with type t = T.t</div></div></pre><div class="info">Inherit comparability from a component.</div>
+	<div class="content" style="display:none">
+	<div file="Comparable.Inherit.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Comparable.Make.html">Make</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">T</code><code class="code"> : </code><code class="code">sig</code> <a href="Comparable.Make.Anon_10.html">..</a> <code class="code">end</code><code class="code">) -&gt; </code><code class="code"><a href="Comparable.S.html">S</a></code> with type t = T.t</div></pre>
+	<div class="content" style="display:none">
+	<div file="Comparable.Make.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Comparable.Make_binable.html">Make_binable</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">T</code><code class="code"> : </code><code class="code">sig</code> <a href="Comparable.Make_binable.Anon_11.html">..</a> <code class="code">end</code><code class="code">) -&gt; </code><code class="code"><a href="Comparable.S_binable.html">S_binable</a></code> with type t = T.t</div></pre>
+	<div class="content" style="display:none">
+	<div file="Comparable.Make_binable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Comparable.Map_and_set_binable.html">Map_and_set_binable</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">T</code><code class="code"> : </code><code class="type"><a href="Comparator.Pre_binable.html">Comparator.Pre_binable</a></code><code class="code">) -&gt; </code><code class="code"><a href="Comparable.Map_and_set_binable.html">Map_and_set_binable</a></code> with type t = T.t</div></pre>
+	<div class="content" style="display:none">
+	<div file="Comparable.Map_and_set_binable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Comparable.Poly.html">Poly</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">T</code><code class="code"> : </code><code class="code">sig</code> <a href="Comparable.Poly.Anon_12.html">..</a> <code class="code">end</code><code class="code">) -&gt; </code><code class="code"><a href="Comparable.S.html">S</a></code> with type t = T.t</div></pre>
+	<div class="content" style="display:none">
+	<div file="Comparable.Poly.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Comparable.Validate.html">Validate</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">T</code><code class="code"> : </code><code class="code">sig</code> <a href="Comparable.Validate.Anon_13.html">..</a> <code class="code">end</code><code class="code">) -&gt; </code><code class="code"><a href="Comparable.Validate.html">Validate</a></code> with type t = T.t</div></pre>
+	<div class="content" style="display:none">
+	<div file="Comparable.Validate.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Comparable.With_zero.html">With_zero</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">T</code><code class="code"> : </code><code class="code">sig</code> <a href="Comparable.With_zero.Anon_14.html">..</a> <code class="code">end</code><code class="code">) -&gt; </code><code class="code"><a href="Comparable.With_zero.html">With_zero</a></code> with type t = T.t</div></pre>
+	<div class="content" style="display:none">
+	<div file="Comparable.With_zero.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Comparable.Validate_with_zero.html">Validate_with_zero</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">T</code><code class="code"> : </code><code class="code">sig</code> <a href="Comparable.Validate_with_zero.Anon_15.html">..</a> <code class="code">end</code><code class="code">) -&gt; </code><code class="code">sig</code> <a href="Comparable.Validate_with_zero.html">..</a> <code class="code">end</code></div></pre>
+	<div class="content" style="display:none">
+	<div file="Comparable.Validate_with_zero.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Comparable.Check_sexp_conversion.html">Check_sexp_conversion</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="code">sig</code> <a href="Comparable.Check_sexp_conversion.Anon_16.html">..</a> <code class="code">end</code><code class="code">) -&gt; </code><code class="code">sig</code> <a href="Comparable.Check_sexp_conversion.html">..</a> <code class="code">end</code></div></pre>
+	<div class="content" style="display:none">
+	<div file="Comparable.Check_sexp_conversion.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

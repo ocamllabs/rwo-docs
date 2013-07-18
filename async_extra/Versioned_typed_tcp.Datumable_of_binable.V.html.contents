@@ -1,0 +1,6 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Versioned_typed_tcp.Datumable_of_binable.V.S.html">S</a> = <code class="type"><code class="code">sig</code> <a href="Versioned_typed_tcp.Datumable_of_binable.V.S.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Versioned_typed_tcp.Datumable_of_binable.V.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

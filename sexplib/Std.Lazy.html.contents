@@ -1,0 +1,15 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../stdlib/Lazy.html">Lazy</a></code></pre>
+	<div class="content">
+	<div file="../stdlib/Lazy.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp : <code class="type">(<a href="Sexp.html#TYPEt">Sexp.t</a> -&gt; 'a) -&gt; <a href="Sexp.html#TYPEt">Sexp.t</a> -&gt; 'a lazy_t</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type">('a -&gt; <a href="Sexp.html#TYPEt">Sexp.t</a>) -&gt; 'a lazy_t -&gt; <a href="Sexp.html#TYPEt">Sexp.t</a></code></span></pre>
+      
+    

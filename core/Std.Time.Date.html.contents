@@ -1,0 +1,19 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Date.html">Date</a></code></pre>
+	<div class="content">
+	<div file="Date.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> of_time : <code class="type"><a href="Time.html#TYPEt">Time.t</a> -&gt; <a href="Date.html#TYPEt">Date.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> today : <code class="type">unit -&gt; <a href="Date.html#TYPEt">Date.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> format : <code class="type"><a href="Date.html#TYPEt">Date.t</a> -&gt; string -&gt; string</code></span></pre>
+      
+    

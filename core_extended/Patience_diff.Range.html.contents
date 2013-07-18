@@ -1,0 +1,37 @@
+<pre><code><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t </span>= </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Same"><span class="constructor">Same</span></span> <span class="keyword">of</span> <code class="type">('a * 'a) array</code></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Old"><span class="constructor">Old</span></span> <span class="keyword">of</span> <code class="type">'a array</code></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.New"><span class="constructor">New</span></span> <span class="keyword">of</span> <code class="type">'a array</code></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Replace"><span class="constructor">Replace</span></span> <span class="keyword">of</span> <code class="type">'a array * 'a array</code></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Unified"><span class="constructor">Unified</span></span> <span class="keyword">of</span> <code class="type">'a array</code></code></td><td class="typefieldcomment" align="left"><code class="code">ranges_all_same ranges</code> returns true if all <code class="code">ranges</code> are Same</td>
+	   </tr></table>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> all_same : <code class="type">'a <a href="Patience_diff.Range.html#TYPEt">t</a> list -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> old_only : <code class="type">'a <a href="Patience_diff.Range.html#TYPEt">t</a> list -&gt; 'a <a href="Patience_diff.Range.html#TYPEt">t</a> list</code></span></pre>
+      <div class="info"><code class="code">old_only hunks</code> drops all New ranges and converts all Replace
+      ranges to Old ranges.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> new_only : <code class="type">'a <a href="Patience_diff.Range.html#TYPEt">t</a> list -&gt; 'a <a href="Patience_diff.Range.html#TYPEt">t</a> list</code></span></pre>
+      <div class="info"><code class="code">new_only hunks</code> drops all Old ranges and converts all Replace
+    ranges to New ranges.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp : <code class="type">(<a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; 'a) -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; 'a <a href="Patience_diff.Range.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type">('a -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a>) -&gt; 'a <a href="Patience_diff.Range.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+<br/><code class="code">old_only hunks</code> drops all New ranges and converts all Replace
+      ranges to Old ranges.<br/>
+	  
+<br/><code class="code">new_only hunks</code> drops all Old ranges and converts all Replace
+    ranges to New ranges.<br/>
+	  

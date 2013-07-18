@@ -1,0 +1,24 @@
+<pre><span id="TYPEtoken"><span class="keyword">type</span> token </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp : <code class="type">(<a href="../stdlib/Lexing.html#TYPElexbuf">Lexing.lexbuf</a> -&gt; <a href="Sexp_intf.S.With_layout.Parser.html#TYPEtoken">token</a>) -&gt; <a href="../stdlib/Lexing.html#TYPElexbuf">Lexing.lexbuf</a> -&gt; <a href="Sexp_intf.S.With_layout.html#TYPEt_or_comment">t_or_comment</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_opt : <code class="type">(<a href="../stdlib/Lexing.html#TYPElexbuf">Lexing.lexbuf</a> -&gt; <a href="Sexp_intf.S.With_layout.Parser.html#TYPEtoken">token</a>) -&gt; <a href="../stdlib/Lexing.html#TYPElexbuf">Lexing.lexbuf</a> -&gt; <a href="Sexp_intf.S.With_layout.html#TYPEt_or_comment">t_or_comment</a> option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexps : <code class="type">(<a href="../stdlib/Lexing.html#TYPElexbuf">Lexing.lexbuf</a> -&gt; <a href="Sexp_intf.S.With_layout.Parser.html#TYPEtoken">token</a>) -&gt; <a href="../stdlib/Lexing.html#TYPElexbuf">Lexing.lexbuf</a> -&gt; <a href="Sexp_intf.S.With_layout.html#TYPEt_or_comment">t_or_comment</a> list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rev_sexps : <code class="type">(<a href="../stdlib/Lexing.html#TYPElexbuf">Lexing.lexbuf</a> -&gt; <a href="Sexp_intf.S.With_layout.Parser.html#TYPEtoken">token</a>) -&gt; <a href="../stdlib/Lexing.html#TYPElexbuf">Lexing.lexbuf</a> -&gt; <a href="Sexp_intf.S.With_layout.html#TYPEt_or_comment">t_or_comment</a> list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexps_abs : <code class="type">(<a href="../stdlib/Lexing.html#TYPElexbuf">Lexing.lexbuf</a> -&gt; <a href="Sexp_intf.S.With_layout.Parser.html#TYPEtoken">token</a>) -&gt;
+<a href="../stdlib/Lexing.html#TYPElexbuf">Lexing.lexbuf</a> -&gt; <a href="Type_with_layout.Parsed.html#TYPEt_or_comment">Type_with_layout.Parsed.t_or_comment</a> list</code></span></pre>
+      
+    

@@ -1,0 +1,54 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t </span></pre>
+      
+    
+<pre><span id="TYPEkey"><span class="keyword">type</span> key </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> empty : <code class="type">'a <a href="Splay_tree.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_empty : <code class="type">'a <a href="Splay_tree.S.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> concat : <code class="type">'a <a href="Splay_tree.S.html#TYPEt">t</a> -&gt; 'a <a href="Splay_tree.S.html#TYPEt">t</a> -&gt; 'a <a href="Splay_tree.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sandwich : <code class="type">'a <a href="Splay_tree.S.html#TYPEt">t</a> -&gt; <a href="Splay_tree.S.html#TYPEkey">key</a> -&gt; 'a -&gt; 'a <a href="Splay_tree.S.html#TYPEt">t</a> -&gt; 'a <a href="Splay_tree.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> splay : <code class="type">'a <a href="Splay_tree.S.html#TYPEt">t</a> -&gt; <a href="Splay_tree.S.html#TYPEkey">key</a> -&gt; 'a <a href="Splay_tree.S.html#TYPEt">t</a> * 'a option * 'a <a href="Splay_tree.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> splay' : <code class="type">'a <a href="Splay_tree.S.html#TYPEt">t</a> -&gt; <a href="Splay_tree.S.html#TYPEkey">key</a> -&gt; 'a <a href="Splay_tree.S.html#TYPEt">t</a> * (<a href="Splay_tree.S.html#TYPEkey">key</a> * 'a) option * 'a <a href="Splay_tree.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> delete_min : <code class="type">'a <a href="Splay_tree.S.html#TYPEt">t</a> -&gt; (<a href="Splay_tree.S.html#TYPEkey">key</a> * 'a * 'a <a href="Splay_tree.S.html#TYPEt">t</a>) option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> delete_max : <code class="type">'a <a href="Splay_tree.S.html#TYPEt">t</a> -&gt; (<a href="Splay_tree.S.html#TYPEkey">key</a> * 'a * 'a <a href="Splay_tree.S.html#TYPEt">t</a>) option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem : <code class="type">'a <a href="Splay_tree.S.html#TYPEt">t</a> -&gt; <a href="Splay_tree.S.html#TYPEkey">key</a> -&gt; 'a <a href="Splay_tree.S.html#TYPEt">t</a> * bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find : <code class="type">'a <a href="Splay_tree.S.html#TYPEt">t</a> -&gt; <a href="Splay_tree.S.html#TYPEkey">key</a> -&gt; 'a <a href="Splay_tree.S.html#TYPEt">t</a> * 'a option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set : <code class="type">'a <a href="Splay_tree.S.html#TYPEt">t</a> -&gt; <a href="Splay_tree.S.html#TYPEkey">key</a> -&gt; 'a -&gt; 'a <a href="Splay_tree.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> delete : <code class="type">'a <a href="Splay_tree.S.html#TYPEt">t</a> -&gt; <a href="Splay_tree.S.html#TYPEkey">key</a> -&gt; 'a <a href="Splay_tree.S.html#TYPEt">t</a></code></span></pre>
+      
+    

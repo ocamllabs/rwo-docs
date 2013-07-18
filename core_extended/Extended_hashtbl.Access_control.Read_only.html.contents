@@ -1,0 +1,17 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('key, 'data) </code>t </span>= <code class="type">('key, 'data, <a href="../core/Std.html#TYPEread_only">Core.Std.read_only</a>) <a href="Extended_hashtbl.Access_control.html#TYPEany">any</a></code> </pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core/Std.Sexpable.S2.html">Core.Std.Sexpable.S2</a></code> with type t = ('key, 'data) <a href="Extended_hashtbl.Access_control.Read_only.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="../core/Std.Sexpable.S2.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core/Std.Binable.S2.html">Core.Std.Binable.S2</a></code> with type t = ('key, 'data) <a href="Extended_hashtbl.Access_control.Read_only.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="../core/Std.Binable.S2.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

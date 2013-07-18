@@ -1,0 +1,83 @@
+<br/><br/><h2 id="2_TITLE">Types</h2><br/> <br/>
+	  
+<br/><br/><h3 id="3_TITLE">Real types</h3><br/> <br/>
+	  
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'pref </code>t </span></pre>
+      <div class="info">Type of r/w mutexes</div>
+    
+<br/><br/><h3 id="3_TITLE">Phantom types</h3><br/> <br/>
+	  
+<pre><span id="TYPEpref"><span class="keyword">type</span> pref </span>= <code class="type">[ `NoPref | `Readers | `Writers ]</code> </pre>
+      <div class="info">Preference for readers, writers, or no preference</div>
+    
+<pre><span id="TYPEkind"><span class="keyword">type</span> <code class="type">'pref </code>kind </span></pre>
+      <div class="info">Preference kind of read/write mutexes</div>
+    
+<br/><br/><h2 id="2_TITLE">Phantom values</h2><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> r_pref : <code class="type">[ `Readers ] <a href="Rw_mutex.html#TYPEkind">kind</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> w_pref : <code class="type">[ `Writers ] <a href="Rw_mutex.html#TYPEkind">kind</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> np_pref : <code class="type">[ `NoPref ] <a href="Rw_mutex.html#TYPEkind">kind</a></code></span></pre>
+      
+    
+<br/><br/><h2 id="2_TITLE">Mutex operations</h2><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">'pref <a href="Rw_mutex.html#TYPEkind">kind</a> -&gt; 'pref <a href="Rw_mutex.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> r_lock : <code class="type">[&lt; <a href="Rw_mutex.html#TYPEpref">pref</a> ] <a href="Rw_mutex.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> r_unlock : <code class="type">[&lt; <a href="Rw_mutex.html#TYPEpref">pref</a> ] <a href="Rw_mutex.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> w_lock : <code class="type">[&lt; <a href="Rw_mutex.html#TYPEpref">pref</a> ] <a href="Rw_mutex.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> w_unlock : <code class="type">[&lt; <a href="Rw_mutex.html#TYPEpref">pref</a> ] <a href="Rw_mutex.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> try_r_lock : <code class="type">[&lt; <a href="Rw_mutex.html#TYPEpref">pref</a> ] <a href="Rw_mutex.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> try_w_lock : <code class="type">[&lt; <a href="Rw_mutex.html#TYPEpref">pref</a> ] <a href="Rw_mutex.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> wrap_r_lock : <code class="type">[&lt; <a href="Rw_mutex.html#TYPEpref">pref</a> ] <a href="Rw_mutex.html#TYPEt">t</a> -&gt; (unit -&gt; 'a) -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> try_wrap_r_lock : <code class="type">[&lt; <a href="Rw_mutex.html#TYPEpref">pref</a> ] <a href="Rw_mutex.html#TYPEt">t</a> -&gt; (unit -&gt; 'a) -&gt; 'a option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> btry_wrap_r_lock : <code class="type">[&lt; <a href="Rw_mutex.html#TYPEpref">pref</a> ] <a href="Rw_mutex.html#TYPEt">t</a> -&gt; (unit -&gt; unit) -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> wrap_w_lock : <code class="type">[&lt; <a href="Rw_mutex.html#TYPEpref">pref</a> ] <a href="Rw_mutex.html#TYPEt">t</a> -&gt; (unit -&gt; 'a) -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> try_wrap_w_lock : <code class="type">[&lt; <a href="Rw_mutex.html#TYPEpref">pref</a> ] <a href="Rw_mutex.html#TYPEt">t</a> -&gt; (unit -&gt; 'a) -&gt; 'a option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> btry_wrap_w_lock : <code class="type">[&lt; <a href="Rw_mutex.html#TYPEpref">pref</a> ] <a href="Rw_mutex.html#TYPEt">t</a> -&gt; (unit -&gt; unit) -&gt; bool</code></span></pre>
+      
+    

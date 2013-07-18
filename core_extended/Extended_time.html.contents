@@ -1,0 +1,12 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Extended_time.Extended_date.html">Extended_date</a> : <code class="code">sig</code> <a href="Extended_time.Extended_date.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Extended_time.Extended_date.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Extended_time.Extended_span.html">Extended_span</a> : <code class="code">sig</code> <a href="Extended_time.Extended_span.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Extended_time.Extended_span.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

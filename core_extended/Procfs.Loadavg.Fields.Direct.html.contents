@@ -1,0 +1,16 @@
+ 
+      <pre><span><span class="keyword">val</span> iter : <code class="type"><a href="Procfs.Loadavg.html#TYPEt">t</a> -&gt;
+one:((<a href="Procfs.Loadavg.html#TYPEt">t</a>, float) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Loadavg.html#TYPEt">t</a> -&gt; float -&gt; unit) -&gt;
+ten:((<a href="Procfs.Loadavg.html#TYPEt">t</a>, float) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Loadavg.html#TYPEt">t</a> -&gt; float -&gt; unit) -&gt;
+fifteen:((<a href="Procfs.Loadavg.html#TYPEt">t</a>, float) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Loadavg.html#TYPEt">t</a> -&gt; float -&gt; unit) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold : <code class="type"><a href="Procfs.Loadavg.html#TYPEt">t</a> -&gt;
+init:'acc__ -&gt;
+one:('acc__ -&gt; (<a href="Procfs.Loadavg.html#TYPEt">t</a>, float) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Loadavg.html#TYPEt">t</a> -&gt; float -&gt; 'acc__) -&gt;
+ten:('acc__ -&gt; (<a href="Procfs.Loadavg.html#TYPEt">t</a>, float) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Loadavg.html#TYPEt">t</a> -&gt; float -&gt; 'acc__) -&gt;
+fifteen:('acc__ -&gt; (<a href="Procfs.Loadavg.html#TYPEt">t</a>, float) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Loadavg.html#TYPEt">t</a> -&gt; float -&gt; 'acc__) -&gt;
+'acc__</code></span></pre>
+      
+    

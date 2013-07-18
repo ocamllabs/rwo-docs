@@ -1,0 +1,199 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Interfaces.Floatable.html">Interfaces.Floatable</a></code> with type t = <a href="Int_intf.S.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="Interfaces.Floatable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Interfaces.Intable.html">Interfaces.Intable</a></code> with type t = <a href="Int_intf.S.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="Interfaces.Intable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Interfaces.Identifiable.html">Interfaces.Identifiable</a></code> with type t = <a href="Int_intf.S.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="Interfaces.Identifiable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Comparable.With_zero.html">Comparable.With_zero</a></code> with type t = <a href="Int_intf.S.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="Comparable.With_zero.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> to_string_hum : <code class="type">?delimiter:char -&gt; <a href="Int_intf.S.html#TYPEt">t</a> -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> num_bits : <code class="type">int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> zero : <code class="type"><a href="Int_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> one : <code class="type"><a href="Int_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> minus_one : <code class="type"><a href="Int_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> + : <code class="type"><a href="Int_intf.S.html#TYPEt">t</a> -&gt; <a href="Int_intf.S.html#TYPEt">t</a> -&gt; <a href="Int_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> - : <code class="type"><a href="Int_intf.S.html#TYPEt">t</a> -&gt; <a href="Int_intf.S.html#TYPEt">t</a> -&gt; <a href="Int_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> * : <code class="type"><a href="Int_intf.S.html#TYPEt">t</a> -&gt; <a href="Int_intf.S.html#TYPEt">t</a> -&gt; <a href="Int_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> / : <code class="type"><a href="Int_intf.S.html#TYPEt">t</a> -&gt; <a href="Int_intf.S.html#TYPEt">t</a> -&gt; <a href="Int_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> neg : <code class="type"><a href="Int_intf.S.html#TYPEt">t</a> -&gt; <a href="Int_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> succ : <code class="type"><a href="Int_intf.S.html#TYPEt">t</a> -&gt; <a href="Int_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pred : <code class="type"><a href="Int_intf.S.html#TYPEt">t</a> -&gt; <a href="Int_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> abs : <code class="type"><a href="Int_intf.S.html#TYPEt">t</a> -&gt; <a href="Int_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rem : <code class="type"><a href="Int_intf.S.html#TYPEt">t</a> -&gt; <a href="Int_intf.S.html#TYPEt">t</a> -&gt; <a href="Int_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> max_value : <code class="type"><a href="Int_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> min_value : <code class="type"><a href="Int_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bit_and : <code class="type"><a href="Int_intf.S.html#TYPEt">t</a> -&gt; <a href="Int_intf.S.html#TYPEt">t</a> -&gt; <a href="Int_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bit_or : <code class="type"><a href="Int_intf.S.html#TYPEt">t</a> -&gt; <a href="Int_intf.S.html#TYPEt">t</a> -&gt; <a href="Int_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bit_xor : <code class="type"><a href="Int_intf.S.html#TYPEt">t</a> -&gt; <a href="Int_intf.S.html#TYPEt">t</a> -&gt; <a href="Int_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bit_not : <code class="type"><a href="Int_intf.S.html#TYPEt">t</a> -&gt; <a href="Int_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> decr : <code class="type"><a href="Int_intf.S.html#TYPEt">t</a> <a href="../stdlib/Pervasives.html#TYPEref">ref</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> incr : <code class="type"><a href="Int_intf.S.html#TYPEt">t</a> <a href="../stdlib/Pervasives.html#TYPEref">ref</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> shift_left : <code class="type"><a href="Int_intf.S.html#TYPEt">t</a> -&gt; int -&gt; <a href="Int_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> shift_right : <code class="type"><a href="Int_intf.S.html#TYPEt">t</a> -&gt; int -&gt; <a href="Int_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> shift_right_logical : <code class="type"><a href="Int_intf.S.html#TYPEt">t</a> -&gt; int -&gt; <a href="Int_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_int32_exn : <code class="type">int32 -&gt; <a href="Int_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_int32_exn : <code class="type"><a href="Int_intf.S.html#TYPEt">t</a> -&gt; int32</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_int64_exn : <code class="type">int64 -&gt; <a href="Int_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_int64 : <code class="type"><a href="Int_intf.S.html#TYPEt">t</a> -&gt; int64</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_nativeint_exn : <code class="type">nativeint -&gt; <a href="Int_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_nativeint_exn : <code class="type"><a href="Int_intf.S.html#TYPEt">t</a> -&gt; nativeint</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp : <code class="type"><a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; <a href="Int_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type"><a href="Int_intf.S.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_t : <code class="type"><a href="Int_intf.S.html#TYPEt">t</a> <a href="../bin_prot/Type_class.html#TYPEt">Bin_prot.Type_class.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t : <code class="type"><a href="Int_intf.S.html#TYPEt">t</a> <a href="../bin_prot/Read_ml.html#TYPEreader">Bin_prot.Read_ml.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t_ : <code class="type"><a href="Int_intf.S.html#TYPEt">t</a> <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t__ : <code class="type">(int -&gt; <a href="Int_intf.S.html#TYPEt">t</a>) <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t : <code class="type"><a href="Int_intf.S.html#TYPEt">t</a> <a href="../bin_prot/Type_class.html#TYPEreader">Bin_prot.Type_class.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t : <code class="type"><a href="Int_intf.S.html#TYPEt">t</a> <a href="../bin_prot/Size.html#TYPEsizer">Bin_prot.Size.sizer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t : <code class="type"><a href="Int_intf.S.html#TYPEt">t</a> <a href="../bin_prot/Write_ml.html#TYPEwriter">Bin_prot.Write_ml.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_ : <code class="type"><a href="Int_intf.S.html#TYPEt">t</a> <a href="../bin_prot/Unsafe_write_c.html#TYPEwriter">Bin_prot.Unsafe_write_c.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t : <code class="type"><a href="Int_intf.S.html#TYPEt">t</a> <a href="../bin_prot/Type_class.html#TYPEwriter">Bin_prot.Type_class.writer</a></code></span></pre>
+      
+    

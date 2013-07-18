@@ -1,0 +1,7 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Float_intf.S.html">Float_intf.S</a></code> with type t = float</pre>
+	<div class="content">
+	<div file="Float_intf.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

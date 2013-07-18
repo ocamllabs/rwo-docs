@@ -1,0 +1,27 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">unit -&gt; <a href="Io_stats.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> update : <code class="type"><a href="Io_stats.html#TYPEt">t</a> -&gt; kind:<a href="Fd.Kind.html#TYPEt">Fd.Kind.t</a> -&gt; bytes:<a href="../core/Std.Int63.html#TYPEt">Core.Std.Int63.t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> total : <code class="type"><a href="Io_stats.html#TYPEt">t</a> -&gt; <a href="../core/Std.Int63.html#TYPEt">Core.Std.Int63.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get : <code class="type"><a href="Io_stats.html#TYPEt">t</a> -&gt; kind:<a href="Fd.Kind.html#TYPEt">Fd.Kind.t</a> -&gt; <a href="../core/Std.Int63.html#TYPEt">Core.Std.Int63.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp : <code class="type"><a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; <a href="Io_stats.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type"><a href="Io_stats.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    

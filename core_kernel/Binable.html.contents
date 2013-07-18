@@ -1,0 +1,46 @@
+<pre><span id="TYPEbigstring"><span class="keyword">type</span> bigstring </span>= <code class="type">(char, <a href="../otherlibs/Bigarray.html#TYPEint8_unsigned_elt">Bigarray.int8_unsigned_elt</a>, <a href="../otherlibs/Bigarray.html#TYPEc_layout">Bigarray.c_layout</a>) <a href="../otherlibs/Bigarray.Array1.html#TYPEt">Bigarray.Array1.t</a></code> </pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Binable.S.html">S</a> = <code class="type"><code class="code"><a href="../bin_prot/Binable.S.html">Bin_prot.Binable.S</a></code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Binable.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Binable.S1.html">S1</a> = <code class="type"><code class="code"><a href="../bin_prot/Binable.S1.html">Bin_prot.Binable.S1</a></code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Binable.S1.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Binable.S2.html">S2</a> = <code class="type"><code class="code"><a href="../bin_prot/Binable.S2.html">Bin_prot.Binable.S2</a></code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Binable.S2.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Binable.Of_stringable.html">Of_stringable</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="type"><a href="Stringable.S.html">Stringable.S</a></code><code class="code">) -&gt; </code><code class="code"><a href="Binable.S.html">S</a></code> with type t = M.t</div></pre>
+	<div class="content" style="display:none">
+	<div file="Binable.Of_stringable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<pre><span id="TYPEm"><span class="keyword">type</span> <code class="type">'a </code>m </span>= <code class="type">(module S with type t = 'a)</code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_bigstring : <code class="type">'a <a href="Binable.html#TYPEm">m</a> -&gt; <a href="Binable.html#TYPEbigstring">bigstring</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_bigstring : <code class="type">?prefix_with_length:bool -&gt; 'a <a href="Binable.html#TYPEm">m</a> -&gt; 'a -&gt; <a href="Binable.html#TYPEbigstring">bigstring</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_string : <code class="type">'a <a href="Binable.html#TYPEm">m</a> -&gt; string -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_string : <code class="type">'a <a href="Binable.html#TYPEm">m</a> -&gt; 'a -&gt; string</code></span></pre>
+      
+    

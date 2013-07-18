@@ -1,0 +1,71 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Unix_syscalls.Socket.Address.Unix.html">Unix</a> : <code class="code">sig</code> <a href="Unix_syscalls.Socket.Address.Unix.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Unix_syscalls.Socket.Address.Unix.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Unix_syscalls.Socket.Address.Inet.html">Inet</a> : <code class="code">sig</code> <a href="Unix_syscalls.Socket.Address.Inet.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Unix_syscalls.Socket.Address.Inet.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span>= <code class="type">[ `Inet of <a href="Unix_syscalls.Inet_addr.html#TYPEt">Inet_addr.t</a> * int | `Unix of string ]</code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_string : <code class="type">[&lt; <a href="Unix_syscalls.Socket.Address.html#TYPEt">t</a> ] -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_sockaddr : <code class="type">[&lt; <a href="Unix_syscalls.Socket.Address.html#TYPEt">t</a> ] -&gt; <a href="../core/Std.Unix.html#TYPEsockaddr">Core.Std.Unix.sockaddr</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp : <code class="type"><a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; <a href="Unix_syscalls.Socket.Address.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> __t_of_sexp__ : <code class="type"><a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; <a href="Unix_syscalls.Socket.Address.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type"><a href="Unix_syscalls.Socket.Address.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_t : <code class="type"><a href="Unix_syscalls.Socket.Address.html#TYPEt">t</a> <a href="../core/Std.Bin_prot.Type_class.html#TYPEt">Core.Std.Bin_prot.Type_class.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t : <code class="type"><a href="Unix_syscalls.Socket.Address.html#TYPEt">t</a> <a href="../core/Std.Bin_prot.Read_ml.html#TYPEreader">Core.Std.Bin_prot.Read_ml.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t_ : <code class="type"><a href="Unix_syscalls.Socket.Address.html#TYPEt">t</a> <a href="../core/Std.Bin_prot.Unsafe_read_c.html#TYPEreader">Core.Std.Bin_prot.Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t__ : <code class="type">(int -&gt; <a href="Unix_syscalls.Socket.Address.html#TYPEt">t</a>) <a href="../core/Std.Bin_prot.Unsafe_read_c.html#TYPEreader">Core.Std.Bin_prot.Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t : <code class="type"><a href="Unix_syscalls.Socket.Address.html#TYPEt">t</a> <a href="../core/Std.Bin_prot.Type_class.html#TYPEreader">Core.Std.Bin_prot.Type_class.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t : <code class="type"><a href="Unix_syscalls.Socket.Address.html#TYPEt">t</a> <a href="../core/Std.Bin_prot.Size.html#TYPEsizer">Core.Std.Bin_prot.Size.sizer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t : <code class="type"><a href="Unix_syscalls.Socket.Address.html#TYPEt">t</a> <a href="../core/Std.Bin_prot.Write_ml.html#TYPEwriter">Core.Std.Bin_prot.Write_ml.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_ : <code class="type"><a href="Unix_syscalls.Socket.Address.html#TYPEt">t</a> <a href="../core/Std.Bin_prot.Unsafe_write_c.html#TYPEwriter">Core.Std.Bin_prot.Unsafe_write_c.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t : <code class="type"><a href="Unix_syscalls.Socket.Address.html#TYPEt">t</a> <a href="../core/Std.Bin_prot.Type_class.html#TYPEwriter">Core.Std.Bin_prot.Type_class.writer</a></code></span></pre>
+      
+    

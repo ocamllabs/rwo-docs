@@ -1,0 +1,37 @@
+<pre><code><span id="TYPEslot"><span class="keyword">type</span> slot </span>= {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTslot.lock_file">lock_file</span> :<code class="type">string</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTslot.name">name</span> :<code class="type">string</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTslot.redirect_stdout">redirect_stdout</span> :<code class="type"><a href="../core/Std.Daemon.Fd_redirection.html#TYPEt">Core.Std.Daemon.Fd_redirection.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTslot.redirect_stderr">redirect_stderr</span> :<code class="type"><a href="../core/Std.Daemon.Fd_redirection.html#TYPEt">Core.Std.Daemon.Fd_redirection.t</a></code>;</code></td>
+	  </tr></table>}
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Service_command.T.html">T</a> = <code class="type"><code class="code">sig</code> <a href="Service_command.T.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Service_command.T.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span>= <code class="type">(module T)</code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> start : <code class="type"><a href="Service_command.html#TYPEt">t</a> -&gt; <a href="../core/Std.Command.html#TYPEt">Core.Std.Command.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stop : <code class="type"><a href="Service_command.html#TYPEt">t</a> -&gt; <a href="../core/Std.Command.html#TYPEt">Core.Std.Command.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> status : <code class="type"><a href="Service_command.html#TYPEt">t</a> -&gt; <a href="../core/Std.Command.html#TYPEt">Core.Std.Command.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> restart : <code class="type"><a href="Service_command.html#TYPEt">t</a> -&gt; <a href="../core/Std.Command.html#TYPEt">Core.Std.Command.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> group : <code class="type"><a href="Service_command.html#TYPEt">t</a> -&gt; summary:string -&gt; <a href="../core/Std.Command.html#TYPEt">Core.Std.Command.t</a></code></span></pre>
+      
+    

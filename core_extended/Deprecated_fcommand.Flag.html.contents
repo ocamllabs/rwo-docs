@@ -1,0 +1,7 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map : <code class="type">f:('a -&gt; 'b) -&gt; 'a <a href="Deprecated_fcommand.Flag.html#TYPEt">t</a> -&gt; 'b <a href="Deprecated_fcommand.Flag.html#TYPEt">t</a></code></span></pre>
+      
+    

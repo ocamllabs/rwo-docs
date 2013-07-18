@@ -1,0 +1,77 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Tuple.T2.html">T2</a> : <code class="code">sig</code> <a href="Tuple.T2.html">..</a> <code class="code">end</code></pre><div class="info">Signature for a 2-tuple module</div>
+	<div class="content" style="display:none">
+	<div file="Tuple.T2.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Tuple.T3.html">T3</a> : <code class="code">sig</code> <a href="Tuple.T3.html">..</a> <code class="code">end</code></pre><div class="info">Signature for a 3-tuple module</div>
+	<div class="content" style="display:none">
+	<div file="Tuple.T3.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<br/>These functors allow users to write:
+  <pre class="codepre"><code class="code">
+   module Foo = struct
+     include Tuple.Make       (String) (Int)
+     include Tuple.Comparable (String) (Int)
+     include Tuple.Hashable   (String) (Int)
+   end
+  </code></pre>
+<br/>
+	  
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Tuple.Make.html">Make</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">T1</code><code class="code"> : </code><code class="code">sig</code> <a href="Tuple.Make.Anon_21.html">..</a> <code class="code">end</code><code class="code">) -&gt; </code><div class="sig_block"><code class="code">functor (</code><code class="code">T2</code><code class="code"> : </code><code class="code">sig</code> <a href="Tuple.Make.Anon_22.html">..</a> <code class="code">end</code><code class="code">) -&gt; </code><code class="code">sig</code> <a href="Tuple.Make.html">..</a> <code class="code">end</code></div></div></pre>
+	<div class="content" style="display:none">
+	<div file="Tuple.Make.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Tuple.Comparable_sexpable.html">Comparable_sexpable</a> = <code class="type"><code class="code">sig</code> <a href="Tuple.Comparable_sexpable.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Tuple.Comparable_sexpable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Tuple.Comparable.html">Comparable</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">S1</code><code class="code"> : </code><code class="type"><a href="Tuple.Comparable_sexpable.html">Comparable_sexpable</a></code><code class="code">) -&gt; </code><div class="sig_block"><code class="code">functor (</code><code class="code">S2</code><code class="code"> : </code><code class="type"><a href="Tuple.Comparable_sexpable.html">Comparable_sexpable</a></code><code class="code">) -&gt; </code><code class="code"><a href="Tuple.Comparable_sexpable.html">Comparable_sexpable</a></code> with type <a href="Tuple.Comparable_sexpable.html#TYPEt">t</a> = S2(S2)</div></div></pre>
+	<div class="content" style="display:none">
+	<div file="Tuple.Comparable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Tuple.Hashable_sexpable.html">Hashable_sexpable</a> = <code class="type"><code class="code">sig</code> <a href="Tuple.Hashable_sexpable.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Tuple.Hashable_sexpable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Tuple.Hashable.html">Hashable</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">S1</code><code class="code"> : </code><code class="type"><a href="Tuple.Hashable_sexpable.html">Hashable_sexpable</a></code><code class="code">) -&gt; </code><div class="sig_block"><code class="code">functor (</code><code class="code">S2</code><code class="code"> : </code><code class="type"><a href="Tuple.Hashable_sexpable.html">Hashable_sexpable</a></code><code class="code">) -&gt; </code><code class="code"><a href="Tuple.Hashable_sexpable.html">Hashable_sexpable</a></code> with type <a href="Tuple.Hashable_sexpable.html#TYPEt">t</a> = S2(S2)</div></div></pre><div class="info">The difference between <code class="code">Hashable</code> and <code class="code">Hashable_t</code> functors is that the former's
+    result type doesn't contain type <code class="code">t</code> and the latter does. Therefore, <code class="code">Hashable</code> can't
+    be used to combine two pairs into 4-tuple. but <code class="code">Hashable_t</code> can. On the other hand
+    result of <code class="code">Hashable_t</code> cannot be combined with <code class="code">Comparable</code>.<br/>    example:
+    module Four_ints = Tuple.Hashable_t (Tuple.Hashable_t (Int)(Int))
+                                        (Tuple.Hashable_t (Int)(Int))<br/>    If instead we used <code class="code">Hashable</code> compiler would complain that the input to outer functor
+    doesn't have type <code class="code">t</code>.<br/>    On the other hand:
+    module Foo = struct
+      type t = String.t * Int.t
+      include Tuple.Comparable (String.t) (Int)
+      include Tuple.Hashable (String.t) (Int)
+    end<br/>    If we used <code class="code">Hashable_t</code> above, compiler would compile that we have two types <code class="code">t</code>
+    defined.<br/>    Unfortunately, it is not possible to define just one functor that could be used in
+    both cases.</div>
+	<div class="content" style="display:none">
+	<div file="Tuple.Hashable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Tuple.Hashable_t.html">Hashable_t</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">S1</code><code class="code"> : </code><code class="type"><a href="Tuple.Hashable_sexpable.html">Hashable_sexpable</a></code><code class="code">) -&gt; </code><div class="sig_block"><code class="code">functor (</code><code class="code">S2</code><code class="code"> : </code><code class="type"><a href="Tuple.Hashable_sexpable.html">Hashable_sexpable</a></code><code class="code">) -&gt; </code><code class="code"><a href="Tuple.Hashable_sexpable.html">Hashable_sexpable</a></code> with type <a href="Tuple.Hashable_sexpable.html#TYPEt">t</a> = S2(S2)</div></div></pre>
+	<div class="content" style="display:none">
+	<div file="Tuple.Hashable_t.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Tuple.Sexpable.html">Sexpable</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">S1</code><code class="code"> : </code><code class="type"><a href="Sexpable.S.html">Sexpable.S</a></code><code class="code">) -&gt; </code><div class="sig_block"><code class="code">functor (</code><code class="code">S2</code><code class="code"> : </code><code class="type"><a href="Sexpable.S.html">Sexpable.S</a></code><code class="code">) -&gt; </code><code class="code"><a href="Sexpable.S.html">Sexpable.S</a></code> with type t = S2(S2)</div></div></pre>
+	<div class="content" style="display:none">
+	<div file="Tuple.Sexpable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

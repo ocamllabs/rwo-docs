@@ -1,0 +1,21 @@
+ 
+      <pre><span><span class="keyword">val</span> known : <code class="type">(<a href="Flags_intf.Int63.html#TYPEt">Int63.t</a> * string) list</code></span></pre>
+      <div class="info">An entry <code class="code">flag, name</code> in <code class="code">known</code> means that the bit(s) in <code class="code">flag</code> is (are) called
+      <code class="code">name</code>; i.e. if <code class="code">bit_and flags flag = flag</code>, then the bit(s) is (are) set and <code class="code">name</code>
+      will appear in <code class="code">sexp_of_t flags</code>.  <code class="code">known</code> is only used to make <code class="code">sexp_of_t</code>'s output
+      human readable.<br/>      The flags in the output of <code class="code">sexp_of_t</code> will occur in the same order as they appear
+      in <code class="code">known</code>.<br/>      It is allowed to have a single flag with multiple bits set.<br/>      It is an error if different flags intersect, and <code class="code">allow_intersecting = false</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> allow_intersecting : <code class="type">bool</code></span></pre>
+      <div class="info"><code class="code">allow_intersecting</code> says whether to allow intersecting <code class="code">known</code> flags.  It is
+      common to do <code class="code">allow_intersecting = false</code>, however in some situations, e.g.
+      Unix open flags, the flags intersect.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> should_print_error : <code class="type">bool</code></span></pre>
+      <div class="info"><code class="code">should_print_error</code> says whether to print an error message if there is an error in
+      the known flags.  It is typical to use <code class="code">should_print_error = true</code> because
+      <code class="code">Flags.Make</code> is applied at the module level, where the exception raised isn't
+      displayed nicely.</div>
+    

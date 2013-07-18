@@ -1,0 +1,130 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t </span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core/Std.Invariant.S1.html">Core.Std.Invariant.S1</a></code> with type t = 'a <a href="Ivar.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="../core/Std.Invariant.S1.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> equal : <code class="type">'a <a href="Ivar.html#TYPEt">t</a> -&gt; 'a <a href="Ivar.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      <div class="info"><code class="code">equal t t'</code> is physical equality of <code class="code">t</code> and <code class="code">t'</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">unit -&gt; 'a <a href="Ivar.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">create ()</code> returns an empty ivar.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> fill : <code class="type">'a <a href="Ivar.html#TYPEt">t</a> -&gt; 'a -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">fill t v</code> fills <code class="code">t</code> with value <code class="code">v</code> if <code class="code">t</code> was empty.  If <code class="code">t</code> was full, fill raises
+    an exception.<br/>    It is guaranteed that immediately after calling <code class="code">fill t</code>,
+    <code class="code">is_some (Deferred.peek (read t))</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> fill_if_empty : <code class="type">'a <a href="Ivar.html#TYPEt">t</a> -&gt; 'a -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">fill_if_empty t v</code> fills <code class="code">t</code> with <code class="code">v</code> if <code class="code">t</code> is currently empty.  If <code class="code">t</code> is full,
+    then <code class="code">fill_if_empty</code> does nothing.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> is_empty : <code class="type">'a <a href="Ivar.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      <div class="info"><code class="code">is_empty t</code> returns true if <code class="code">t</code> is empty</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> is_full : <code class="type">'a <a href="Ivar.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      <div class="info"><code class="code">is_full t</code> returns true if <code class="code">t</code> is full</div>
+    
+<br/>The <code class="code">Raw</code> interface and <code class="code">Deferred</code> module exposed here are for async's internal use
+    only.  They must be exported here because we want the <code class="code">Deferred.t</code> and <code class="code">Ivar.t</code> types
+    to be fully abstract, so that they show up nicely in type errors, yet other async
+    code defined later needs to deal with the raw types.<br/>
+	  
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Import.Raw.html">Import.Raw</a></code> with type execution_context = <a href="Execution_context.html#TYPEt">Execution_context.t</a> with type raw = ('a, 'b) <a href="Raw_ivar.html#TYPEt">Raw_ivar.t</a> with type t = 'a <a href="Ivar.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="Import.Raw.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Ivar.Deferred.html">Deferred</a> : <code class="code">sig</code> <a href="Ivar.Deferred.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Ivar.Deferred.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> read : <code class="type">'a <a href="Ivar.html#TYPEt">t</a> -&gt; 'a <a href="Ivar.Deferred.html#TYPEt">Deferred.t</a></code></span></pre>
+      <div class="info"><code class="code">read t</code> returns a deferred that becomes enabled with value <code class="code">v</code> after the ivar is
+    filled with <code class="code">v</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type">('a -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a>) -&gt; 'a <a href="Ivar.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_t : <code class="type">'a <a href="../core/Std.Bin_prot.Type_class.html#TYPEt">Core.Std.Bin_prot.Type_class.t</a> -&gt; 'a <a href="Ivar.html#TYPEt">t</a> <a href="../core/Std.Bin_prot.Type_class.html#TYPEt">Core.Std.Bin_prot.Type_class.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t : <code class="type">'a <a href="../core/Std.Bin_prot.Unsafe_read_c.html#TYPEreader">Core.Std.Bin_prot.Unsafe_read_c.reader</a> -&gt;
+'a <a href="Ivar.html#TYPEt">t</a> <a href="../core/Std.Bin_prot.Read_ml.html#TYPEreader">Core.Std.Bin_prot.Read_ml.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t_ : <code class="type">'a <a href="../core/Std.Bin_prot.Unsafe_read_c.html#TYPEreader">Core.Std.Bin_prot.Unsafe_read_c.reader</a> -&gt;
+'a <a href="Ivar.html#TYPEt">t</a> <a href="../core/Std.Bin_prot.Unsafe_read_c.html#TYPEreader">Core.Std.Bin_prot.Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t__ : <code class="type">'a <a href="../core/Std.Bin_prot.Unsafe_read_c.html#TYPEreader">Core.Std.Bin_prot.Unsafe_read_c.reader</a> -&gt;
+(int -&gt; 'a <a href="Ivar.html#TYPEt">t</a>) <a href="../core/Std.Bin_prot.Unsafe_read_c.html#TYPEreader">Core.Std.Bin_prot.Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t : <code class="type">'a <a href="../core/Std.Bin_prot.Type_class.html#TYPEreader">Core.Std.Bin_prot.Type_class.reader</a> -&gt;
+'a <a href="Ivar.html#TYPEt">t</a> <a href="../core/Std.Bin_prot.Type_class.html#TYPEreader">Core.Std.Bin_prot.Type_class.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t : <code class="type">'a <a href="../core/Std.Bin_prot.Size.html#TYPEsizer">Core.Std.Bin_prot.Size.sizer</a> -&gt; 'a <a href="Ivar.html#TYPEt">t</a> <a href="../core/Std.Bin_prot.Size.html#TYPEsizer">Core.Std.Bin_prot.Size.sizer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t : <code class="type">'a <a href="../core/Std.Bin_prot.Unsafe_write_c.html#TYPEwriter">Core.Std.Bin_prot.Unsafe_write_c.writer</a> -&gt;
+'a <a href="Ivar.html#TYPEt">t</a> <a href="../core/Std.Bin_prot.Write_ml.html#TYPEwriter">Core.Std.Bin_prot.Write_ml.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_ : <code class="type">'a <a href="../core/Std.Bin_prot.Unsafe_write_c.html#TYPEwriter">Core.Std.Bin_prot.Unsafe_write_c.writer</a> -&gt;
+'a <a href="Ivar.html#TYPEt">t</a> <a href="../core/Std.Bin_prot.Unsafe_write_c.html#TYPEwriter">Core.Std.Bin_prot.Unsafe_write_c.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t : <code class="type">'a <a href="../core/Std.Bin_prot.Type_class.html#TYPEwriter">Core.Std.Bin_prot.Type_class.writer</a> -&gt;
+'a <a href="Ivar.html#TYPEt">t</a> <a href="../core/Std.Bin_prot.Type_class.html#TYPEwriter">Core.Std.Bin_prot.Type_class.writer</a></code></span></pre>
+      
+    
+<br/><code class="code">equal t t'</code> is physical equality of <code class="code">t</code> and <code class="code">t'</code>.<br/>
+	  
+<br/><code class="code">create ()</code> returns an empty ivar.<br/>
+	  
+<br/><code class="code">fill t v</code> fills <code class="code">t</code> with value <code class="code">v</code> if <code class="code">t</code> was empty.  If <code class="code">t</code> was full, fill raises
+    an exception.<br/>    It is guaranteed that immediately after calling <code class="code">fill t</code>,
+    <code class="code">is_some (Deferred.peek (read t))</code>.<br/>
+	  
+<br/><code class="code">fill_if_empty t v</code> fills <code class="code">t</code> with <code class="code">v</code> if <code class="code">t</code> is currently empty.  If <code class="code">t</code> is full,
+    then <code class="code">fill_if_empty</code> does nothing.<br/>
+	  
+<br/><code class="code">is_empty t</code> returns true if <code class="code">t</code> is empty<br/>
+	  
+<br/><code class="code">is_full t</code> returns true if <code class="code">t</code> is full<br/>
+	  
+<br/>The <code class="code">Raw</code> interface and <code class="code">Deferred</code> module exposed here are for async's internal use
+    only.  They must be exported here because we want the <code class="code">Deferred.t</code> and <code class="code">Ivar.t</code> types
+    to be fully abstract, so that they show up nicely in type errors, yet other async
+    code defined later needs to deal with the raw types.<br/>
+	  
+<br/><code class="code">read t</code> returns a deferred that becomes enabled with value <code class="code">v</code> after the ivar is
+    filled with <code class="code">v</code>.<br/>
+	  

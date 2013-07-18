@@ -1,0 +1,51 @@
+ 
+      <pre><span><span class="keyword">val</span> __pa_ounit_275876e34cf609db118f3d84b799a790 : <code class="type">string</code></span></pre>
+      
+    
+
+<br/>For making an abstract version of a type that ensures a validation check has passed.<br/>    Suppose one wants to have a type of positive integers:<br/>    <pre class="codepre"><code class="code">
+      module Positive_int = Validated.Make (struct
+        type t = int
+        let here = _here_
+        let validate = Int.validate_positive
+      end)
+    </code></pre><br/>    With this, one is certain that any value of type <code class="code">Positive_int.t</code> has passed
+    <code class="code">Int.validate_positive</code>.<br/>    One can call <code class="code">Positive_int.create_exn n</code> to create a new positive int from an <code class="code">n</code>,
+    which will of course raise if <code class="code">n &lt;= 0</code>.  One can call <code class="code">Positive_int.raw positive_int</code>
+    to get the <code class="code">int</code> from a <code class="code">Positive_int.t</code>.<br/>
+	  
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Validated_intf.Raw.html">Raw</a> = <code class="type"><code class="code">sig</code> <a href="Validated_intf.Raw.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Validated_intf.Raw.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Validated_intf.Raw_binable.html">Raw_binable</a> = <code class="type"><code class="code">sig</code> <a href="Validated_intf.Raw_binable.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Validated_intf.Raw_binable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Validated_intf.Validated.html">Validated</a> = <code class="type"><code class="code">sig</code> <a href="Validated_intf.Validated.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Validated_intf.Validated.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Validated_intf.Validated_binable.html">Validated_binable</a> = <code class="type"><code class="code">sig</code> <a href="Validated_intf.Validated_binable.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Validated_intf.Validated_binable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Validated_intf.S.html">S</a> = <code class="type"><code class="code">sig</code> <a href="Validated_intf.S.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Validated_intf.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+

@@ -1,0 +1,27 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> null : <code class="type"><a href="Readline.History.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> default : <code class="type"><a href="Readline.History.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">int -&gt; <a href="Readline.History.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> flush : <code class="type"><a href="Readline.History.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_list : <code class="type"><a href="Readline.History.html#TYPEt">t</a> -&gt; string list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_list : <code class="type">?size:int -&gt; string list -&gt; <a href="Readline.History.html#TYPEt">t</a></code></span></pre>
+      
+    

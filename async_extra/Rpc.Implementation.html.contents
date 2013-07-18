@@ -1,0 +1,23 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'connection_state </code>t </span></pre>
+      <div class="info">A <code class="code">'connection_state t</code> is something which knows how to respond to one query, given
+      a <code class="code">'connection_state</code>.  That is, you can create a <code class="code">'connection_state t</code> by providing
+      a function which takes a query *and* a <code class="code">'connection_state</code> and provides a response.<br/>      The reason for this is that rpcs often do something like look something up in a
+      master structure.  This way, <code class="code">Implementation.t</code>'s can be created without having the
+      master structure in your hands.</div>
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Rpc.Implementation.Description.html">Description</a> : <code class="code">sig</code> <a href="Rpc.Implementation.Description.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Rpc.Implementation.Description.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> description : <code class="type">'a <a href="Rpc.Implementation.html#TYPEt">t</a> -&gt; <a href="Rpc.Implementation.Description.html#TYPEt">Description.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> lift : <code class="type">'a <a href="Rpc.Implementation.html#TYPEt">t</a> -&gt; f:('b -&gt; 'a) -&gt; 'b <a href="Rpc.Implementation.html#TYPEt">t</a></code></span></pre>
+      <div class="info">We may want to use an <code class="code">'a t</code> implementation (perhaps provided by someone else) in a
+      <code class="code">'b t</code> context. We can do this as long as we can map our state into the state
+      expected by the original implementer.</div>
+    

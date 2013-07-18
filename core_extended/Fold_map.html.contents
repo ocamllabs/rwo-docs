@@ -1,0 +1,100 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Fold_map.Foldable.html">Foldable</a> = <code class="type"><code class="code">sig</code> <a href="Fold_map.Foldable.html">..</a> <code class="code">end</code></code></pre><div class="info">Input signature of the functor TODO reference : Make </div>
+	<div class="content" style="display:none">
+	<div file="Fold_map.Foldable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Fold_map.S.html">S</a> = <code class="type"><code class="code">sig</code> <a href="Fold_map.S.html">..</a> <code class="code">end</code></code></pre><div class="info">Output signature of the functor TODO reference : Make</div>
+	<div class="content" style="display:none">
+	<div file="Fold_map.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Fold_map.Make.html">Make</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">Fold</code><code class="code"> : </code><code class="type"><a href="Fold_map.Foldable.html">Foldable</a></code><code class="code">) -&gt; </code><code class="code"><a href="Fold_map.S.html">S</a></code> with type <a href="Fold_map.S.html#TYPEout_value">out_value</a> = Fold.t and type <a href="Fold_map.S.html#TYPEin_value">in_value</a> = Fold.data</div></pre><div class="info">Builds a <code class="code">fold_map</code> </div>
+	<div class="content" style="display:none">
+	<div file="Fold_map.Make.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<br/><br/><h6 id="6_TITLE">Sexpable interface</h6><br/>
+    Same as above but builds the <code class="code">sexp_of</code> and <code class="code">of_sexp</code> functions. Requires the
+    passed in types to be sexpable.<br/>
+	  
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Fold_map.S_sexpable.html">S_sexpable</a> = <code class="type"><code class="code">sig</code> <a href="Fold_map.S_sexpable.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Fold_map.S_sexpable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Fold_map.Foldable_sexpable.html">Foldable_sexpable</a> = <code class="type"><code class="code">sig</code> <a href="Fold_map.Foldable_sexpable.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Fold_map.Foldable_sexpable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Fold_map.Make_sexpable.html">Make_sexpable</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">Fold</code><code class="code"> : </code><code class="type"><a href="Fold_map.Foldable_sexpable.html">Foldable_sexpable</a></code><code class="code">) -&gt; </code><code class="code"><a href="Fold_map.S_sexpable.html">S_sexpable</a></code> with type out_value = Fold.t and type in_value = Fold.data</div></pre>
+	<div class="content" style="display:none">
+	<div file="Fold_map.Make_sexpable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<br/><br/><h3 id="3_TITLE">Polymorphic folds</h3><br/><br/>    Polymorphic fold take a<br/>
+	  
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Fold_map.Foldable2.html">Foldable2</a> = <code class="type"><code class="code">sig</code> <a href="Fold_map.Foldable2.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Fold_map.Foldable2.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Fold_map.S2.html">S2</a> = <code class="type"><code class="code">sig</code> <a href="Fold_map.S2.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Fold_map.S2.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Fold_map.Make2.html">Make2</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">Fold</code><code class="code"> : </code><code class="type"><a href="Fold_map.Foldable2.html">Foldable2</a></code><code class="code">) -&gt; </code><code class="code"><a href="Fold_map.S2.html">S2</a></code> with type <a href="Fold_map.S2.html#TYPEout_value">out_value</a> = 'a Fold.t</div></pre>
+	<div class="content" style="display:none">
+	<div file="Fold_map.Make2.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<br/><br/><h6 id="6_TITLE">Sexpable interface</h6><br/> <br/>
+	  
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Fold_map.Foldable2_sexpable.html">Foldable2_sexpable</a> = <code class="type"><code class="code">sig</code> <a href="Fold_map.Foldable2_sexpable.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Fold_map.Foldable2_sexpable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Fold_map.S2_sexpable.html">S2_sexpable</a> = <code class="type"><code class="code">sig</code> <a href="Fold_map.S2_sexpable.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Fold_map.S2_sexpable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Fold_map.Make2_sexpable.html">Make2_sexpable</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">Fold</code><code class="code"> : </code><code class="type"><a href="Fold_map.Foldable2_sexpable.html">Foldable2_sexpable</a></code><code class="code">) -&gt; </code><code class="code"><a href="Fold_map.S2_sexpable.html">S2_sexpable</a></code> with type out_value = 'a Fold.t</div></pre>
+	<div class="content" style="display:none">
+	<div file="Fold_map.Make2_sexpable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<br/><br/><h3 id="3_TITLE">Predefined modules </h3><br/> <br/>
+	  
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Fold_map.Cons.html">Cons</a> : <code class="code"><a href="Fold_map.S2_sexpable.html">S2_sexpable</a></code> with type out_value = 'a list</pre>
+	<div class="content" style="display:none">
+	<div file="Fold_map.Cons.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Fold_map.Add.html">Add</a> : <code class="code"><a href="Fold_map.S_sexpable.html">S_sexpable</a></code> with type out_value = int and type in_value = int</pre><div class="info">A fold for adding. e.g. symbol positions</div>
+	<div class="content" style="display:none">
+	<div file="Fold_map.Add.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Fold_map.Multiply.html">Multiply</a> : <code class="code"><a href="Fold_map.S_sexpable.html">S_sexpable</a></code> with type out_value = int and type in_value = int</pre>
+	<div class="content" style="display:none">
+	<div file="Fold_map.Multiply.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

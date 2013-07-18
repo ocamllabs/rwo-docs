@@ -1,0 +1,258 @@
+ 
+      <pre><span><span class="keyword">val</span> names : <code class="type">string list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> tx_compressed : <code class="type">(<a href="Procfs.Net.Dev.html#TYPEt">t</a>, bool) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> tx_carrier : <code class="type">(<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> tx_colls : <code class="type">(<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> tx_fifo : <code class="type">(<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> tx_drop : <code class="type">(<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> tx_errs : <code class="type">(<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> tx_packets : <code class="type">(<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> tx_bytes : <code class="type">(<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rx_multicast : <code class="type">(<a href="Procfs.Net.Dev.html#TYPEt">t</a>, bool) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rx_compressed : <code class="type">(<a href="Procfs.Net.Dev.html#TYPEt">t</a>, bool) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rx_frame : <code class="type">(<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rx_fifo : <code class="type">(<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rx_drop : <code class="type">(<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rx_errs : <code class="type">(<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rx_packets : <code class="type">(<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rx_bytes : <code class="type">(<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iface : <code class="type">(<a href="Procfs.Net.Dev.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold : <code class="type">init:'acc__ -&gt;
+iface:('acc__ -&gt; (<a href="Procfs.Net.Dev.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+rx_bytes:('acc__ -&gt; (<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+rx_packets:('acc__ -&gt; (<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+rx_errs:('acc__ -&gt; (<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+rx_drop:('acc__ -&gt; (<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+rx_fifo:('acc__ -&gt; (<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+rx_frame:('acc__ -&gt; (<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+rx_compressed:('acc__ -&gt; (<a href="Procfs.Net.Dev.html#TYPEt">t</a>, bool) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+rx_multicast:('acc__ -&gt; (<a href="Procfs.Net.Dev.html#TYPEt">t</a>, bool) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+tx_bytes:('acc__ -&gt; (<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+tx_packets:('acc__ -&gt; (<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+tx_errs:('acc__ -&gt; (<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+tx_drop:('acc__ -&gt; (<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+tx_fifo:('acc__ -&gt; (<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+tx_colls:('acc__ -&gt; (<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+tx_carrier:('acc__ -&gt; (<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+tx_compressed:('acc__ -&gt; (<a href="Procfs.Net.Dev.html#TYPEt">t</a>, bool) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt; 'acc__</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> make_creator : <code class="type">iface:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+       'compile_acc__ -&gt; ('input__ -&gt; string) * 'compile_acc__) -&gt;
+rx_bytes:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+          'compile_acc__ -&gt; ('input__ -&gt; int) * 'compile_acc__) -&gt;
+rx_packets:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+            'compile_acc__ -&gt; ('input__ -&gt; int) * 'compile_acc__) -&gt;
+rx_errs:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+         'compile_acc__ -&gt; ('input__ -&gt; int) * 'compile_acc__) -&gt;
+rx_drop:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+         'compile_acc__ -&gt; ('input__ -&gt; int) * 'compile_acc__) -&gt;
+rx_fifo:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+         'compile_acc__ -&gt; ('input__ -&gt; int) * 'compile_acc__) -&gt;
+rx_frame:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+          'compile_acc__ -&gt; ('input__ -&gt; int) * 'compile_acc__) -&gt;
+rx_compressed:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, bool) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+               'compile_acc__ -&gt; ('input__ -&gt; bool) * 'compile_acc__) -&gt;
+rx_multicast:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, bool) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+              'compile_acc__ -&gt; ('input__ -&gt; bool) * 'compile_acc__) -&gt;
+tx_bytes:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+          'compile_acc__ -&gt; ('input__ -&gt; int) * 'compile_acc__) -&gt;
+tx_packets:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+            'compile_acc__ -&gt; ('input__ -&gt; int) * 'compile_acc__) -&gt;
+tx_errs:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+         'compile_acc__ -&gt; ('input__ -&gt; int) * 'compile_acc__) -&gt;
+tx_drop:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+         'compile_acc__ -&gt; ('input__ -&gt; int) * 'compile_acc__) -&gt;
+tx_fifo:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+         'compile_acc__ -&gt; ('input__ -&gt; int) * 'compile_acc__) -&gt;
+tx_colls:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+          'compile_acc__ -&gt; ('input__ -&gt; int) * 'compile_acc__) -&gt;
+tx_carrier:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+            'compile_acc__ -&gt; ('input__ -&gt; int) * 'compile_acc__) -&gt;
+tx_compressed:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, bool) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+               'compile_acc__ -&gt; ('input__ -&gt; bool) * 'compile_acc__) -&gt;
+'compile_acc__ -&gt; ('input__ -&gt; <a href="Procfs.Net.Dev.html#TYPEt">t</a>) * 'compile_acc__</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">iface:string -&gt;
+rx_bytes:int -&gt;
+rx_packets:int -&gt;
+rx_errs:int -&gt;
+rx_drop:int -&gt;
+rx_fifo:int -&gt;
+rx_frame:int -&gt;
+rx_compressed:bool -&gt;
+rx_multicast:bool -&gt;
+tx_bytes:int -&gt;
+tx_packets:int -&gt;
+tx_errs:int -&gt;
+tx_drop:int -&gt;
+tx_fifo:int -&gt; tx_colls:int -&gt; tx_carrier:int -&gt; tx_compressed:bool -&gt; <a href="Procfs.Net.Dev.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map : <code class="type">iface:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; string) -&gt;
+rx_bytes:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; int) -&gt;
+rx_packets:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; int) -&gt;
+rx_errs:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; int) -&gt;
+rx_drop:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; int) -&gt;
+rx_fifo:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; int) -&gt;
+rx_frame:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; int) -&gt;
+rx_compressed:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, bool) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+rx_multicast:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, bool) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+tx_bytes:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; int) -&gt;
+tx_packets:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; int) -&gt;
+tx_errs:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; int) -&gt;
+tx_drop:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; int) -&gt;
+tx_fifo:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; int) -&gt;
+tx_colls:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; int) -&gt;
+tx_carrier:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; int) -&gt;
+tx_compressed:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, bool) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt; <a href="Procfs.Net.Dev.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter : <code class="type">iface:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+rx_bytes:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+rx_packets:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+rx_errs:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+rx_drop:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+rx_fifo:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+rx_frame:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+rx_compressed:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, bool) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+rx_multicast:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, bool) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+tx_bytes:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+tx_packets:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+tx_errs:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+tx_drop:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+tx_fifo:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+tx_colls:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+tx_carrier:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+tx_compressed:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, bool) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> for_all : <code class="type">iface:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+rx_bytes:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+rx_packets:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+rx_errs:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+rx_drop:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+rx_fifo:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+rx_frame:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+rx_compressed:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, bool) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+rx_multicast:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, bool) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+tx_bytes:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+tx_packets:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+tx_errs:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+tx_drop:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+tx_fifo:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+tx_colls:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+tx_carrier:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+tx_compressed:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, bool) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> exists : <code class="type">iface:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+rx_bytes:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+rx_packets:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+rx_errs:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+rx_drop:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+rx_fifo:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+rx_frame:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+rx_compressed:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, bool) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+rx_multicast:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, bool) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+tx_bytes:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+tx_packets:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+tx_errs:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+tx_drop:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+tx_fifo:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+tx_colls:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+tx_carrier:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+tx_compressed:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, bool) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_list : <code class="type">iface:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+rx_bytes:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+rx_packets:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+rx_errs:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+rx_drop:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+rx_fifo:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+rx_frame:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+rx_compressed:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, bool) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+rx_multicast:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, bool) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+tx_bytes:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+tx_packets:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+tx_errs:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+tx_drop:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+tx_fifo:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+tx_colls:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+tx_carrier:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+tx_compressed:((<a href="Procfs.Net.Dev.html#TYPEt">t</a>, bool) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt; 'elem__ list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map_poly : <code class="type">([&lt; `Read | `Set_and_create ], <a href="Procfs.Net.Dev.html#TYPEt">t</a>, 'x0) <a href="../fieldslib/Field.html#TYPEuser">Fieldslib.Field.user</a> -&gt; 'x0 list</code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Procfs.Net.Dev.Fields.Direct.html">Direct</a> : <code class="code">sig</code> <a href="Procfs.Net.Dev.Fields.Direct.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Procfs.Net.Dev.Fields.Direct.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

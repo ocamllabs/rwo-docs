@@ -1,0 +1,25 @@
+ 
+      <pre><span><span class="keyword">val</span> iter : <code class="type"><a href="Procfs.Process.Status.html#TYPEt">t</a> -&gt;
+uid:((<a href="Procfs.Process.Status.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Status.html#TYPEt">t</a> -&gt; int -&gt; unit) -&gt;
+euid:((<a href="Procfs.Process.Status.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Status.html#TYPEt">t</a> -&gt; int -&gt; unit) -&gt;
+suid:((<a href="Procfs.Process.Status.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Status.html#TYPEt">t</a> -&gt; int -&gt; unit) -&gt;
+fsuid:((<a href="Procfs.Process.Status.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Status.html#TYPEt">t</a> -&gt; int -&gt; unit) -&gt;
+gid:((<a href="Procfs.Process.Status.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Status.html#TYPEt">t</a> -&gt; int -&gt; unit) -&gt;
+egid:((<a href="Procfs.Process.Status.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Status.html#TYPEt">t</a> -&gt; int -&gt; unit) -&gt;
+sgid:((<a href="Procfs.Process.Status.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Status.html#TYPEt">t</a> -&gt; int -&gt; unit) -&gt;
+fsgid:((<a href="Procfs.Process.Status.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Status.html#TYPEt">t</a> -&gt; int -&gt; unit) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold : <code class="type"><a href="Procfs.Process.Status.html#TYPEt">t</a> -&gt;
+init:'acc__ -&gt;
+uid:('acc__ -&gt; (<a href="Procfs.Process.Status.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Status.html#TYPEt">t</a> -&gt; int -&gt; 'acc__) -&gt;
+euid:('acc__ -&gt; (<a href="Procfs.Process.Status.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Status.html#TYPEt">t</a> -&gt; int -&gt; 'acc__) -&gt;
+suid:('acc__ -&gt; (<a href="Procfs.Process.Status.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Status.html#TYPEt">t</a> -&gt; int -&gt; 'acc__) -&gt;
+fsuid:('acc__ -&gt; (<a href="Procfs.Process.Status.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Status.html#TYPEt">t</a> -&gt; int -&gt; 'acc__) -&gt;
+gid:('acc__ -&gt; (<a href="Procfs.Process.Status.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Status.html#TYPEt">t</a> -&gt; int -&gt; 'acc__) -&gt;
+egid:('acc__ -&gt; (<a href="Procfs.Process.Status.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Status.html#TYPEt">t</a> -&gt; int -&gt; 'acc__) -&gt;
+sgid:('acc__ -&gt; (<a href="Procfs.Process.Status.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Status.html#TYPEt">t</a> -&gt; int -&gt; 'acc__) -&gt;
+fsgid:('acc__ -&gt; (<a href="Procfs.Process.Status.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Status.html#TYPEt">t</a> -&gt; int -&gt; 'acc__) -&gt; 'acc__</code></span></pre>
+      
+    

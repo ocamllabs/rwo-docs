@@ -1,0 +1,103 @@
+<pre><code><span id="TYPEt"><span class="keyword">type</span> t </span>= {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.iface">iface</span> :<code class="type">string</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.rx_bytes">rx_bytes</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.rx_packets">rx_packets</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.rx_errs">rx_errs</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.rx_drop">rx_drop</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.rx_fifo">rx_fifo</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.rx_frame">rx_frame</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.rx_compressed">rx_compressed</span> :<code class="type">bool</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.rx_multicast">rx_multicast</span> :<code class="type">bool</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.tx_bytes">tx_bytes</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.tx_packets">tx_packets</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.tx_errs">tx_errs</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.tx_drop">tx_drop</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.tx_fifo">tx_fifo</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.tx_colls">tx_colls</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.tx_carrier">tx_carrier</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.tx_compressed">tx_compressed</span> :<code class="type">bool</code>;</code></td>
+	  </tr></table>}
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> tx_compressed : <code class="type"><a href="Procfs.Net.Dev.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> tx_carrier : <code class="type"><a href="Procfs.Net.Dev.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> tx_colls : <code class="type"><a href="Procfs.Net.Dev.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> tx_fifo : <code class="type"><a href="Procfs.Net.Dev.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> tx_drop : <code class="type"><a href="Procfs.Net.Dev.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> tx_errs : <code class="type"><a href="Procfs.Net.Dev.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> tx_packets : <code class="type"><a href="Procfs.Net.Dev.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> tx_bytes : <code class="type"><a href="Procfs.Net.Dev.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rx_multicast : <code class="type"><a href="Procfs.Net.Dev.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rx_compressed : <code class="type"><a href="Procfs.Net.Dev.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rx_frame : <code class="type"><a href="Procfs.Net.Dev.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rx_fifo : <code class="type"><a href="Procfs.Net.Dev.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rx_drop : <code class="type"><a href="Procfs.Net.Dev.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rx_errs : <code class="type"><a href="Procfs.Net.Dev.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rx_packets : <code class="type"><a href="Procfs.Net.Dev.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rx_bytes : <code class="type"><a href="Procfs.Net.Dev.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iface : <code class="type"><a href="Procfs.Net.Dev.html#TYPEt">t</a> -&gt; string</code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Procfs.Net.Dev.Fields.html">Fields</a> : <code class="code">sig</code> <a href="Procfs.Net.Dev.Fields.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Procfs.Net.Dev.Fields.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> interfaces : <code class="type">unit -&gt; string list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_string : <code class="type">string -&gt; <a href="Procfs.Net.Dev.html#TYPEt">t</a> option</code></span></pre>
+      
+    

@@ -1,0 +1,371 @@
+<br/>Interface to Linux-specific system calls<br/>
+	  
+<br/><br/><h2 id="2_TITLE">sysinfo</h2><br/> <br/>
+	  
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Linux_ext.Sysinfo.html">Sysinfo</a> : <code class="code">sig</code> <a href="Linux_ext.Sysinfo.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Linux_ext.Sysinfo.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<br/><br/><h2 id="2_TITLE">Filesystem functions</h2><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> sendfile : <code class="type">(?pos:int -&gt;
+ ?len:int -&gt; fd:<a href="Core_unix.File_descr.html#TYPEt">Core_unix.File_descr.t</a> -&gt; <a href="Core_unix.File_descr.html#TYPEt">Core_unix.File_descr.t</a> -&gt; int)
+<a href="../core_kernel/Std.Or_error.html#TYPEt">Core_kernel.Std.Or_error.t</a></code></span></pre>
+      <div class="info"><code class="code">sendfile ?pos ?len ~fd sock</code> sends mmap-able data from file
+    descriptor <code class="code">fd</code> to socket <code class="code">sock</code> using offset <code class="code">pos</code> and length <code class="code">len</code>.<div class="parameters"><div class="param_info"><code class="code">default</code> : pos = 0</div><div class="param_info"><code class="code">default</code> : len = length of data (file) associated with descriptor <code class="code">fd</code>
+</div></div><b>Raises</b> <code>Unix_error</code> on Unix-errors.<br/> <br/><b>Returns</b> the number of characters actually written.<br/>    NOTE: if the returned value is unequal to what was requested (=
+    the initial size of the data by default), the system call may have
+    been interrupted by a signal, the source file may have been truncated
+    during operation, or a timeout occurred on the socket during sending.
+    It is currently impossible to find out which of the events above
+    happened.  Calling TODO reference : sendfile several times on the same descriptor
+    that only partially accepted data due to a timeout will eventually
+    lead to the unix error <code class="code">EAGAIN</code>.<br/> </div>
+    
+<br/><br/><h2 id="2_TITLE">Non-portable TCP-functionality</h2><br/> <br/>
+	  
+<pre><code><span id="TYPEtcp_bool_option"><span class="keyword">type</span> tcp_bool_option </span>= </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTtcp_bool_option.TCP_CORK"><span class="constructor">TCP_CORK</span></span></code></td>
+	   </tr></table>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> gettcpopt_bool : <code class="type">(<a href="Core_unix.File_descr.html#TYPEt">Core_unix.File_descr.t</a> -&gt; <a href="Linux_ext.html#TYPEtcp_bool_option">tcp_bool_option</a> -&gt; bool)
+<a href="../core_kernel/Std.Or_error.html#TYPEt">Core_kernel.Std.Or_error.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> settcpopt_bool : <code class="type">(<a href="Core_unix.File_descr.html#TYPEt">Core_unix.File_descr.t</a> -&gt; <a href="Linux_ext.html#TYPEtcp_bool_option">tcp_bool_option</a> -&gt; bool -&gt; unit)
+<a href="../core_kernel/Std.Or_error.html#TYPEt">Core_kernel.Std.Or_error.t</a></code></span></pre>
+      <div class="info"><code class="code">settcpopt_bool sock opt v</code> sets the current value of the boolean
+    TCP socket option <code class="code">opt</code> for socket <code class="code">sock</code> to value <code class="code">v</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> send_nonblocking_no_sigpipe : <code class="type">(<a href="Core_unix.File_descr.html#TYPEt">Core_unix.File_descr.t</a> -&gt; ?pos:int -&gt; ?len:int -&gt; string -&gt; int option)
+<a href="../core_kernel/Std.Or_error.html#TYPEt">Core_kernel.Std.Or_error.t</a></code></span></pre>
+      <div class="info"><code class="code">send_nonblocking_no_sigpipe sock ?pos ?len buf</code> tries to do a
+    nonblocking send on socket <code class="code">sock</code> given buffer <code class="code">buf</code>, offset <code class="code">pos</code>
+    and length <code class="code">len</code>.  Prevents <code class="code">SIGPIPE</code>, i.e. raise a Unix-error
+    in that case immediately.<div class="parameters"><div class="param_info"><code class="code">pos</code> : default = 0</div><div class="param_info"><code class="code">len</code> : default = <code class="code">String.length buf - pos</code><br/> </div></div><b>Raises</b> <code>Invalid_argument</code> if the designated buffer range is invalid.<br/><code>Unix_error</code> on Unix-errors.<br/><b>Returns</b> <code class="code">Some bytes_written</code> or <code class="code">None</code>
+    if the operation would have blocked.<br/> </div>
+    
+ 
+      <pre><span><span class="keyword">val</span> send_no_sigpipe : <code class="type">(<a href="Core_unix.File_descr.html#TYPEt">Core_unix.File_descr.t</a> -&gt; ?pos:int -&gt; ?len:int -&gt; string -&gt; int)
+<a href="../core_kernel/Std.Or_error.html#TYPEt">Core_kernel.Std.Or_error.t</a></code></span></pre>
+      <div class="info"><code class="code">send_no_sigpipe sock ?pos ?len buf</code> tries to do a
+    blocking send on socket <code class="code">sock</code> given buffer <code class="code">buf</code>, offset <code class="code">pos</code>
+    and length <code class="code">len</code>.  Prevents <code class="code">SIGPIPE</code>, i.e. raise a Unix-error in
+    that case immediately.<div class="parameters"><div class="param_info"><code class="code">pos</code> : default = 0</div><div class="param_info"><code class="code">len</code> : default = <code class="code">String.length buf - pos</code><br/> </div></div><b>Raises</b> <code>Invalid_argument</code> if the designated buffer range is invalid.<br/><code>Unix_error</code> on Unix-errors.<br/><b>Returns</b> the number of bytes written.<br/> </div>
+    
+ 
+      <pre><span><span class="keyword">val</span> sendmsg_nonblocking_no_sigpipe : <code class="type">(<a href="Core_unix.File_descr.html#TYPEt">Core_unix.File_descr.t</a> -&gt;
+ ?count:int -&gt; string <a href="Core_unix.IOVec.html#TYPEt">Core_unix.IOVec.t</a> array -&gt; int option)
+<a href="../core_kernel/Std.Or_error.html#TYPEt">Core_kernel.Std.Or_error.t</a></code></span></pre>
+      <div class="info"><code class="code">sendmsg_nonblocking_no_sigpipe sock ?count iovecs</code> tries to do
+    a nonblocking send on socket <code class="code">sock</code> using <code class="code">count</code> I/O-vectors
+    <code class="code">iovecs</code>.  Prevents <code class="code">SIGPIPE</code>, i.e. raises a Unix-error in that
+    case immediately.<b>Raises</b> <code>Invalid_argument</code> if the designated ranges are invalid.<br/><code>Unix_error</code> on Unix-errors.<br/><b>Returns</b> <code class="code">Some bytes_written</code> or <code class="code">None</code> if the
+    operation would have blocked.<br/> </div>
+    
+<br/><br/><h2 id="2_TITLE">Clock functions</h2><br/> <br/>
+	  
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Linux_ext.Clock.html">Clock</a> : <code class="code">sig</code> <a href="Linux_ext.Clock.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Linux_ext.Clock.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<br/><br/><h2 id="2_TITLE">Timerfd functions</h2><br/> <br/>
+	  
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Linux_ext.Timerfd.html">Timerfd</a> : <code class="code">sig</code> <a href="Linux_ext.Timerfd.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Linux_ext.Timerfd.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<br/><br/><h2 id="2_TITLE">Parent death notifications</h2><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> pr_set_pdeathsig : <code class="type">(<a href="Signal.html#TYPEt">Signal.t</a> -&gt; unit) <a href="../core_kernel/Std.Or_error.html#TYPEt">Core_kernel.Std.Or_error.t</a></code></span></pre>
+      <div class="info"><code class="code">pr_set_pdeathsig s</code> sets the signal <code class="code">s</code> to be sent to the executing
+    process when its parent dies.  NOTE: the parent may have died
+    before or while executing this system call.  To make sure that you
+    do not miss this event, you should call TODO reference : getppid to get
+    the parent process id after this system call.  If the parent has
+    died, the returned parent PID will be 1, i.e. the init process will
+    have adopted the child.  You should then either send the signal to
+    yourself using Unix.kill, or execute an appropriate handler.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> pr_get_pdeathsig : <code class="type">(unit -&gt; <a href="Signal.html#TYPEt">Signal.t</a>) <a href="../core_kernel/Std.Or_error.html#TYPEt">Core_kernel.Std.Or_error.t</a></code></span></pre>
+      <div class="info"><code class="code">pr_get_pdeathsig ()</code> get the signal that will be sent to the
+    currently executing process when its parent dies.</div>
+    
+<br/><br/><h2 id="2_TITLE">Task name</h2><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> pr_set_name_first16 : <code class="type">(string -&gt; unit) <a href="../core_kernel/Std.Or_error.html#TYPEt">Core_kernel.Std.Or_error.t</a></code></span></pre>
+      <div class="info"><code class="code">pr_set_name_first16 name</code> sets the name of the executing thread to <code class="code">name</code>.  Only
+    the first 16 bytes in <code class="code">name</code> will be used, the rest is ignored.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> pr_get_name : <code class="type">(unit -&gt; string) <a href="../core_kernel/Std.Or_error.html#TYPEt">Core_kernel.Std.Or_error.t</a></code></span></pre>
+      <div class="info"><code class="code">pr_get_name ()</code> gets the name of the executing thread.  The name is
+    at most 16 bytes long.</div>
+    
+<br/><br/><h2 id="2_TITLE">Pathname resolution</h2><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> file_descr_realpath : <code class="type">(<a href="Core_unix.File_descr.html#TYPEt">Core_unix.File_descr.t</a> -&gt; string) <a href="../core_kernel/Std.Or_error.html#TYPEt">Core_kernel.Std.Or_error.t</a></code></span></pre>
+      <div class="info"><code class="code">file_descr_realpath fd</code> <b>Raises</b> <code>Unix_error</code> on errors.<br/><b>Returns</b> the canonicalized absolute
+    pathname of the file associated with file descriptor <code class="code">fd</code>.<br/> </div>
+    
+ 
+      <pre><span><span class="keyword">val</span> out_channel_realpath : <code class="type">(<a href="../stdlib/Pervasives.html#TYPEout_channel">out_channel</a> -&gt; string) <a href="../core_kernel/Std.Or_error.html#TYPEt">Core_kernel.Std.Or_error.t</a></code></span></pre>
+      <div class="info"><code class="code">out_channel_realpath oc</code> <b>Raises</b> <code>Unix_error</code> on errors.<br/><b>Returns</b> the canonicalized absolute
+    pathname of the file associated with output channel <code class="code">oc</code>.<br/> </div>
+    
+ 
+      <pre><span><span class="keyword">val</span> in_channel_realpath : <code class="type">(<a href="../stdlib/Pervasives.html#TYPEin_channel">in_channel</a> -&gt; string) <a href="../core_kernel/Std.Or_error.html#TYPEt">Core_kernel.Std.Or_error.t</a></code></span></pre>
+      <div class="info"><code class="code">in_channel_realpath ic</code> <b>Raises</b> <code>Unix_error</code> on errors.<br/><b>Returns</b> the canonicalized absolute
+    pathname of the file associated with input channel <code class="code">ic</code>.<br/> </div>
+    
+<br/><br/><h2 id="2_TITLE">Affinity</h2><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> sched_setaffinity : <code class="type">(?pid:<a href="../core_kernel/Std.Pid.html#TYPEt">Core_kernel.Std.Pid.t</a> -&gt; cpuset:int list -&gt; unit -&gt; unit)
+<a href="../core_kernel/Std.Or_error.html#TYPEt">Core_kernel.Std.Or_error.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sched_setaffinity_this_thread : <code class="type">(cpuset:int list -&gt; unit) <a href="../core_kernel/Std.Or_error.html#TYPEt">Core_kernel.Std.Or_error.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> cores : <code class="type">(unit -&gt; int) <a href="../core_kernel/Std.Or_error.html#TYPEt">Core_kernel.Std.Or_error.t</a></code></span></pre>
+      <div class="info"><code class="code">cores ()</code> <b>Returns</b> the number of cores on the machine</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> get_terminal_size : <code class="type">(unit -&gt; int * int) <a href="../core_kernel/Std.Or_error.html#TYPEt">Core_kernel.Std.Or_error.t</a></code></span></pre>
+      <div class="info"><code class="code">get_terminal_size ()</code> <b>Returns</b> <code class="code">(rows, cols)</code>, the number of rows and
+    columns of the terminal.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> gettid : <code class="type">(unit -&gt; int) <a href="../core_kernel/Std.Or_error.html#TYPEt">Core_kernel.Std.Or_error.t</a></code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Linux_ext.Priority.html">Priority</a> : <code class="code">sig</code> <a href="Linux_ext.Priority.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Linux_ext.Priority.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> setpriority : <code class="type">(<a href="Linux_ext.Priority.html#TYPEt">Priority.t</a> -&gt; unit) <a href="../core_kernel/Std.Or_error.html#TYPEt">Core_kernel.Std.Or_error.t</a></code></span></pre>
+      <div class="info">Set the calling thread's priority in the linux scheduler</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> getpriority : <code class="type">(unit -&gt; <a href="Linux_ext.Priority.html#TYPEt">Priority.t</a>) <a href="../core_kernel/Std.Or_error.html#TYPEt">Core_kernel.Std.Or_error.t</a></code></span></pre>
+      <div class="info">Get the calling thread's priority in the linux scheduler</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> get_ipv4_address_for_interface : <code class="type">(string -&gt; string) <a href="../core_kernel/Std.Or_error.html#TYPEt">Core_kernel.Std.Or_error.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bind_to_interface : <code class="type">(<a href="Core_unix.File_descr.html#TYPEt">Core_unix.File_descr.t</a> -&gt; [ `Any | `Interface_name of string ] -&gt; unit)
+<a href="../core_kernel/Std.Or_error.html#TYPEt">Core_kernel.Std.Or_error.t</a></code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Linux_ext.Epoll.html">Epoll</a> : <code class="code">sig</code> <a href="Linux_ext.Epoll.html">..</a> <code class="code">end</code></pre><div class="info">epoll() - a linux I/O multiplexer of the same family as select() or poll().  Its main
+    differences are support for Edge or Level triggered notifications (We're using
+    Level-triggered to emulate select) and much better scaling with the number of file
+    descriptors.<br/>    See the man pages for a full description of the epoll facility.</div>
+	<div class="content" style="display:none">
+	<div file="Linux_ext.Epoll.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> bin_tcp_bool_option : <code class="type"><a href="Linux_ext.html#TYPEtcp_bool_option">tcp_bool_option</a> <a href="../core_kernel/Std.Bin_prot.Type_class.html#TYPEt">Core_kernel.Std.Bin_prot.Type_class.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_tcp_bool_option : <code class="type"><a href="Linux_ext.html#TYPEtcp_bool_option">tcp_bool_option</a> <a href="../core_kernel/Std.Bin_prot.Read_ml.html#TYPEreader">Core_kernel.Std.Bin_prot.Read_ml.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_tcp_bool_option_ : <code class="type"><a href="Linux_ext.html#TYPEtcp_bool_option">tcp_bool_option</a> <a href="../core_kernel/Std.Bin_prot.Unsafe_read_c.html#TYPEreader">Core_kernel.Std.Bin_prot.Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_tcp_bool_option__ : <code class="type">(int -&gt; <a href="Linux_ext.html#TYPEtcp_bool_option">tcp_bool_option</a>) <a href="../core_kernel/Std.Bin_prot.Unsafe_read_c.html#TYPEreader">Core_kernel.Std.Bin_prot.Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_tcp_bool_option : <code class="type"><a href="Linux_ext.html#TYPEtcp_bool_option">tcp_bool_option</a> <a href="../core_kernel/Std.Bin_prot.Type_class.html#TYPEreader">Core_kernel.Std.Bin_prot.Type_class.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_tcp_bool_option : <code class="type"><a href="Linux_ext.html#TYPEtcp_bool_option">tcp_bool_option</a> <a href="../core_kernel/Std.Bin_prot.Size.html#TYPEsizer">Core_kernel.Std.Bin_prot.Size.sizer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_tcp_bool_option : <code class="type"><a href="Linux_ext.html#TYPEtcp_bool_option">tcp_bool_option</a> <a href="../core_kernel/Std.Bin_prot.Write_ml.html#TYPEwriter">Core_kernel.Std.Bin_prot.Write_ml.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_tcp_bool_option_ : <code class="type"><a href="Linux_ext.html#TYPEtcp_bool_option">tcp_bool_option</a> <a href="../core_kernel/Std.Bin_prot.Unsafe_write_c.html#TYPEwriter">Core_kernel.Std.Bin_prot.Unsafe_write_c.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_tcp_bool_option : <code class="type"><a href="Linux_ext.html#TYPEtcp_bool_option">tcp_bool_option</a> <a href="../core_kernel/Std.Bin_prot.Type_class.html#TYPEwriter">Core_kernel.Std.Bin_prot.Type_class.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> tcp_bool_option_of_sexp : <code class="type"><a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; <a href="Linux_ext.html#TYPEtcp_bool_option">tcp_bool_option</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_tcp_bool_option : <code class="type"><a href="Linux_ext.html#TYPEtcp_bool_option">tcp_bool_option</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+<br/><code class="code">gettcpopt_bool sock opt</code> <b>Returns</b> the current value of the boolean
+    TCP socket option <code class="code">opt</code> for socket <code class="code">sock</code>.<br/>
+	  
+<br/><code class="code">settcpopt_bool sock opt v</code> sets the current value of the boolean
+    TCP socket option <code class="code">opt</code> for socket <code class="code">sock</code> to value <code class="code">v</code>.<br/>
+	  
+<br/><code class="code">send_nonblocking_no_sigpipe sock ?pos ?len buf</code> tries to do a
+    nonblocking send on socket <code class="code">sock</code> given buffer <code class="code">buf</code>, offset <code class="code">pos</code>
+    and length <code class="code">len</code>.  Prevents <code class="code">SIGPIPE</code>, i.e. raise a Unix-error
+    in that case immediately.<div class="parameters"><div class="param_info"><code class="code">pos</code> : default = 0</div><div class="param_info"><code class="code">len</code> : default = <code class="code">String.length buf - pos</code><br/> </div></div><b>Raises</b> <code>Invalid_argument</code> if the designated buffer range is invalid.<br/><code>Unix_error</code> on Unix-errors.<br/><b>Returns</b> <code class="code">Some bytes_written</code> or <code class="code">None</code>
+    if the operation would have blocked.<br/> <br/>
+	  
+<br/><code class="code">send_no_sigpipe sock ?pos ?len buf</code> tries to do a
+    blocking send on socket <code class="code">sock</code> given buffer <code class="code">buf</code>, offset <code class="code">pos</code>
+    and length <code class="code">len</code>.  Prevents <code class="code">SIGPIPE</code>, i.e. raise a Unix-error in
+    that case immediately.<div class="parameters"><div class="param_info"><code class="code">pos</code> : default = 0</div><div class="param_info"><code class="code">len</code> : default = <code class="code">String.length buf - pos</code><br/> </div></div><b>Raises</b> <code>Invalid_argument</code> if the designated buffer range is invalid.<br/><code>Unix_error</code> on Unix-errors.<br/><b>Returns</b> the number of bytes written.<br/> <br/>
+	  
+<br/><code class="code">sendmsg_nonblocking_no_sigpipe sock ?count iovecs</code> tries to do
+    a nonblocking send on socket <code class="code">sock</code> using <code class="code">count</code> I/O-vectors
+    <code class="code">iovecs</code>.  Prevents <code class="code">SIGPIPE</code>, i.e. raises a Unix-error in that
+    case immediately.<b>Raises</b> <code>Invalid_argument</code> if the designated ranges are invalid.<br/><code>Unix_error</code> on Unix-errors.<br/><b>Returns</b> <code class="code">Some bytes_written</code> or <code class="code">None</code> if the
+    operation would have blocked.<br/> <br/>
+	  
+<br/><br/><h2 id="2_TITLE">Clock functions</h2><br/> <br/>
+	  
+<br/><code class="code">get_process_clock</code> the clock measuring the CPU-time of a process.<br/>
+	  
+<br/><code class="code">get_thread_clock</code> the clock measuring the CPU-time of the current thread.<br/>
+	  
+<br/><br/><h2 id="2_TITLE">Timerfd functions</h2><br/> <br/>
+	  
+<br/>Clock used to mark the progress of a timer.<br/>
+	  
+<br/>Settable system-wide clock.<br/>
+	  
+<br/>Nonsettable clock.  It is not affected by manual changes to the system time.<br/>
+	  
+<br/><code class="code">TFD_NONBLOCK</code> <br/>
+	  
+<br/><code class="code">TFD_CLOEXEC</code> <br/>
+	  
+<br/><code class="code">create ?flags clock</code> creates a new timer file descriptor.  With Linux 2.6.26 or
+      earlier <code class="code">flags</code> must be empty.<br/>
+	  
+<br/><code class="code">set t when</code> sets <code class="code">t</code> to fire once, at the time specified by <code class="code">when</code>.<br/>
+	  
+<br/><code class="code">set_repeating ?initial t interval</code> sets <code class="code">t</code> to fire every <code class="code">interval</code> starting at
+      <code class="code">when</code>.<br/>
+	  
+<br/>default is <code class="code">`After interval</code> <br/>
+	  
+<br/><code class="code">clear t</code> causes <code class="code">t</code> to not fire any more.<br/>
+	  
+<br/><code class="code">get t</code> returns the current state of the timer <code class="code">t</code>.<br/>
+	  
+<br/><br/><h2 id="2_TITLE">Parent death notifications</h2><br/> <br/>
+	  
+<br/><code class="code">pr_set_pdeathsig s</code> sets the signal <code class="code">s</code> to be sent to the executing
+    process when its parent dies.  NOTE: the parent may have died
+    before or while executing this system call.  To make sure that you
+    do not miss this event, you should call TODO reference : getppid to get
+    the parent process id after this system call.  If the parent has
+    died, the returned parent PID will be 1, i.e. the init process will
+    have adopted the child.  You should then either send the signal to
+    yourself using Unix.kill, or execute an appropriate handler.<br/>
+	  
+<br/><code class="code">pr_get_pdeathsig ()</code> get the signal that will be sent to the
+    currently executing process when its parent dies.<br/>
+	  
+<br/><br/><h2 id="2_TITLE">Task name</h2><br/> <br/>
+	  
+<br/><code class="code">pr_set_name_first16 name</code> sets the name of the executing thread to <code class="code">name</code>.  Only
+    the first 16 bytes in <code class="code">name</code> will be used, the rest is ignored.<br/>
+	  
+<br/><code class="code">pr_get_name ()</code> gets the name of the executing thread.  The name is
+    at most 16 bytes long.<br/>
+	  
+<br/><br/><h2 id="2_TITLE">Pathname resolution</h2><br/> <br/>
+	  
+<br/><code class="code">file_descr_realpath fd</code> <b>Raises</b> <code>Unix_error</code> on errors.<br/><b>Returns</b> the canonicalized absolute
+    pathname of the file associated with file descriptor <code class="code">fd</code>.<br/> <br/>
+	  
+<br/><code class="code">out_channel_realpath oc</code> <b>Raises</b> <code>Unix_error</code> on errors.<br/><b>Returns</b> the canonicalized absolute
+    pathname of the file associated with output channel <code class="code">oc</code>.<br/> <br/>
+	  
+<br/><code class="code">in_channel_realpath ic</code> <b>Raises</b> <code>Unix_error</code> on errors.<br/><b>Returns</b> the canonicalized absolute
+    pathname of the file associated with input channel <code class="code">ic</code>.<br/> <br/>
+	  
+<br/><br/><h2 id="2_TITLE">Affinity</h2><br/> <br/>
+	  
+<br/><code class="code">cores ()</code> <b>Returns</b> the number of cores on the machine<br/>
+	  
+<br/><code class="code">get_terminal_size ()</code> <b>Returns</b> <code class="code">(rows, cols)</code>, the number of rows and
+    columns of the terminal.<br/>
+	  
+<br/>Set the calling thread's priority in the linux scheduler<br/>
+	  
+<br/>Get the calling thread's priority in the linux scheduler<br/>
+	  
+<br/>epoll() - a linux I/O multiplexer of the same family as select() or poll().  Its main
+    differences are support for Edge or Level triggered notifications (We're using
+    Level-triggered to emulate select) and much better scaling with the number of file
+    descriptors.<br/>    See the man pages for a full description of the epoll facility.<br/>
+	  
+<br/>An <code class="code">Epoll.Flags.t</code> is an immutable set of flags for which one can register
+        interest for a file descriptor.  It is implemented as a bitmask, and so all
+        operations (+, -, etc.) are constant time with no allocation.<br/>        <code class="code">sexp_of_t</code> produces a human-readable list of bits, e.g. &quot;(in out)&quot;.<br/>
+	  
+<br/>An <code class="code">Epoll.t</code> maintains a map from <code class="code">File_descr.t</code> to <code class="code">Flags.t</code>, where the domain is
+      the set of file descriptors that one is interested in, and the flags associated with
+      each file descriptor specify the types of events one is interested in being notified
+      about for that file descriptor.  Our implementation maintains a user-level table
+      equivalent to the kernel epoll set, so that <code class="code">sexp_of_t</code> produces useful
+      human-readable information, and so that we can present our standard table
+      interface.<br/>      An <code class="code">Epoll.t</code> also has a buffer that is used to store the set of ready fds returned
+      by calling <code class="code">wait</code>.<br/>
+	  
+<br/><code class="code">create ~num_file_descrs</code> creates a new epoll set able to watch file descriptors in
+      [0, num_file_descrs).  Additionally, the set allocates space for reading the ready
+      events when <code class="code">wait</code> returns, allowing for up to <code class="code">max_ready_events</code> to be returned in
+      a single call to <code class="code">wait</code>.<br/>
+	  
+<br/>map operations<br/>
+	  
+<br/><code class="code">wait t ~timeout</code> blocks until at least one file descriptor in <code class="code">t</code> is ready for one
+      of the events it is being watched for, or <code class="code">timeout</code> passes.  <code class="code">wait</code> side effects <code class="code">t</code>
+      by storing the ready set in it.  One can subsequently access the ready set by
+      calling <code class="code">iter_ready</code> or <code class="code">fold_ready</code>.<br/>      The <code class="code">timeout</code> has a granularity of one millisecond.  <code class="code">wait</code> rounds up the <code class="code">timeout</code>
+      to the next millisecond.  E.g. a <code class="code">timeout</code> of one microsecond will be rounded up
+      to one millisecond.<br/>      Note that this method should not be considered thread safe.  There is mutable state
+      in t that will be changed by invocations to wait that cannot be prevented by mutexes
+      around <code class="code">wait</code>.<br/>
+	  
+<br/><code class="code">iter_ready</code> and <code class="code">fold_ready</code> iterate over the ready set computed by the last
+      call to <code class="code">wait</code>.<br/>
+	  

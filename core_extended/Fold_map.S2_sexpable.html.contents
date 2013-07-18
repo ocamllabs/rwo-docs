@@ -1,0 +1,14 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Fold_map.S2.html">S2</a></code></pre>
+	<div class="content">
+	<div file="Fold_map.S2.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core/Std.Sexpable.S2.html">Core.Std.Sexpable.S2</a></code> with type t = ('a, 'b) t</pre>
+	<div class="content">
+	<div file="../core/Std.Sexpable.S2.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

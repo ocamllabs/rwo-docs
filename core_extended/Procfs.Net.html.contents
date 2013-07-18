@@ -1,0 +1,24 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Procfs.Net.Dev.html">Dev</a> : <code class="code">sig</code> <a href="Procfs.Net.Dev.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Procfs.Net.Dev.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Procfs.Net.Route.html">Route</a> : <code class="code">sig</code> <a href="Procfs.Net.Route.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Procfs.Net.Route.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Procfs.Net.Tcp_state.html">Tcp_state</a> : <code class="code">sig</code> <a href="Procfs.Net.Tcp_state.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Procfs.Net.Tcp_state.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Procfs.Net.Tcp.html">Tcp</a> : <code class="code">sig</code> <a href="Procfs.Net.Tcp.html">..</a> <code class="code">end</code></pre><div class="info">/proc/net/tcp, or what netstat or lsof -i parses.</div>
+	<div class="content" style="display:none">
+	<div file="Procfs.Net.Tcp.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

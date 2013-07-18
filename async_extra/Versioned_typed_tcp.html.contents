@@ -1,0 +1,126 @@
+ 
+      <pre><span><span class="keyword">val</span> __pa_ounit_275876e34cf609db118f3d84b799a790 : <code class="type">string</code></span></pre>
+      
+    
+
+<pre><span id="EXCEPTIONBigsubstring_allocator_got_invalid_requested_size"><span class="keyword">exception</span> Bigsubstring_allocator_got_invalid_requested_size</span> <span class="keyword">of</span> <code class="type">int</code></pre>
+
+ 
+      <pre><span><span class="keyword">val</span> bigsubstring_allocator : <code class="type">?initial_size:int -&gt; unit -&gt; <a href="../core/Std.Int.html#TYPEt">Core.Std.Int.t</a> -&gt; <a href="../core/Std.Bigsubstring.html#TYPEt">Core.Std.Bigsubstring.t</a></code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Versioned_typed_tcp.Name.html">Name</a> = <code class="type"><code class="code">sig</code> <a href="Versioned_typed_tcp.Name.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Versioned_typed_tcp.Name.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<pre><span id="TYPEmarshal_fun"><span class="keyword">type</span> <code class="type">'a </code>marshal_fun </span>= <code class="type">'a -&gt; <a href="../core/Std.Bigsubstring.html#TYPEt">Core.Std.Bigsubstring.t</a> option</code> </pre>
+      
+    
+<pre><span id="TYPEunmarshal_fun"><span class="keyword">type</span> <code class="type">'a </code>unmarshal_fun </span>= <code class="type"><a href="../core/Std.Bigsubstring.html#TYPEt">Core.Std.Bigsubstring.t</a> -&gt; 'a option</code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> protocol_version : <code class="type">[ `Prod | `Test ] <a href="../stdlib/Pervasives.html#TYPEref">ref</a></code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Versioned_typed_tcp.Version.html">Version</a> : <code class="code">sig</code> <a href="Versioned_typed_tcp.Version.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Versioned_typed_tcp.Version.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Versioned_typed_tcp.Versions.html">Versions</a> = <code class="type"><code class="code">sig</code> <a href="Versioned_typed_tcp.Versions.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Versioned_typed_tcp.Versions.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Versioned_typed_tcp.Datumable.html">Datumable</a> = <code class="type"><code class="code">sig</code> <a href="Versioned_typed_tcp.Datumable.html">..</a> <code class="code">end</code></code></pre><div class="info">This module describes the type of a given direction of message
+    flow. For example it might describe the type of messages from the
+    client to the server.</div>
+	<div class="content" style="display:none">
+	<div file="Versioned_typed_tcp.Datumable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Versioned_typed_tcp.Datum.html">Datum</a> = <code class="type"><code class="code">sig</code> <a href="Versioned_typed_tcp.Datum.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Versioned_typed_tcp.Datum.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Versioned_typed_tcp.Mode.html">Mode</a> = <code class="type"><code class="code">sig</code> <a href="Versioned_typed_tcp.Mode.html">..</a> <code class="code">end</code></code></pre><div class="info">This module may be used to implement modes for clients/servers. A
+    common scheme is to have two modes, Test, and Production, and to
+    want to maintain the invariant that clients in mode Test may not
+    talk to servers in mode Production, and that clients in mode
+    Production may not talk to servers in mode Test. Versioned
+    connection will check that the mode of the client is the same as
+    the mode of the server.<br/>    If you don't care about modes, just use Dont_care_about_mode.</div>
+	<div class="content" style="display:none">
+	<div file="Versioned_typed_tcp.Mode.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Versioned_typed_tcp.Dont_care_about_mode.html">Dont_care_about_mode</a> : <code class="code">sig</code> <a href="Versioned_typed_tcp.Dont_care_about_mode.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Versioned_typed_tcp.Dont_care_about_mode.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Versioned_typed_tcp.Read_result.html">Read_result</a> : <code class="code">sig</code> <a href="Versioned_typed_tcp.Read_result.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Versioned_typed_tcp.Read_result.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Versioned_typed_tcp.Server_msg.html">Server_msg</a> : <code class="code">sig</code> <a href="Versioned_typed_tcp.Server_msg.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Versioned_typed_tcp.Server_msg.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Versioned_typed_tcp.Client_msg.html">Client_msg</a> : <code class="code">sig</code> <a href="Versioned_typed_tcp.Client_msg.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Versioned_typed_tcp.Client_msg.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Versioned_typed_tcp.Arg.html">Arg</a> = <code class="type"><code class="code">sig</code> <a href="Versioned_typed_tcp.Arg.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Versioned_typed_tcp.Arg.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Versioned_typed_tcp.S.html">S</a> = <code class="type"><code class="code">sig</code> <a href="Versioned_typed_tcp.S.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Versioned_typed_tcp.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Versioned_typed_tcp.Make.html">Make</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">Z</code><code class="code"> : </code><code class="type"><a href="Versioned_typed_tcp.Arg.html">Arg</a></code><code class="code">) -&gt; </code><code class="code">sig</code> <a href="Versioned_typed_tcp.Make.html">..</a> <code class="code">end</code></div></pre>
+	<div class="content" style="display:none">
+	<div file="Versioned_typed_tcp.Make.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Versioned_typed_tcp.Datumable_of_binable.html">Datumable_of_binable</a> : <code class="code">sig</code> <a href="Versioned_typed_tcp.Datumable_of_binable.html">..</a> <code class="code">end</code></pre><div class="info">Helpers to make your types Datumable if they are binable. Works with up
+    to 5 versions (easily extensible to more)</div>
+	<div class="content" style="display:none">
+	<div file="Versioned_typed_tcp.Datumable_of_binable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+

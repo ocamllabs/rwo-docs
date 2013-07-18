@@ -1,0 +1,130 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Bag.Elt.html">Elt</a> : <code class="code">sig</code> <a href="Bag.Elt.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Bag.Elt.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t </span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Container.S1.html">Container.S1</a></code> with type t = 'a <a href="Bag.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="Container.S1.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> invariant : <code class="type">'a <a href="Bag.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">unit -&gt; 'a <a href="Bag.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">create ()</code> returns an empty bag.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> add : <code class="type">'a <a href="Bag.html#TYPEt">t</a> -&gt; 'a -&gt; 'a <a href="Bag.Elt.html#TYPEt">Elt.t</a></code></span></pre>
+      <div class="info"><code class="code">add t v</code> adds <code class="code">v</code> to the bag <code class="code">t</code>, returning an element that can
+    later be removed from the bag.  <code class="code">add</code> runs in constant time.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> remove : <code class="type">'a <a href="Bag.html#TYPEt">t</a> -&gt; 'a <a href="Bag.Elt.html#TYPEt">Elt.t</a> -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">remove t elt</code> removes <code class="code">elt</code> from the bag <code class="code">t</code>, raising an exception if <code class="code">elt</code>
+    is not in the bag.  <code class="code">remove</code> runs in constant time.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> choose : <code class="type">'a <a href="Bag.html#TYPEt">t</a> -&gt; 'a <a href="Bag.Elt.html#TYPEt">Elt.t</a> option</code></span></pre>
+      <div class="info"><code class="code">choose t</code> returns some element in the bag.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> remove_one : <code class="type">'a <a href="Bag.html#TYPEt">t</a> -&gt; 'a option</code></span></pre>
+      <div class="info"><code class="code">remove_one t</code> removes some element from the bag, and returns its value.
+    <code class="code">remove_one</code> runs in constant time.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> clear : <code class="type">'a <a href="Bag.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">clear t</code> removes all elements from the bag.  <code class="code">clear</code> runs in O(1) time.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> fold_elt : <code class="type">'a <a href="Bag.html#TYPEt">t</a> -&gt; init:'b -&gt; f:('b -&gt; 'a <a href="Bag.Elt.html#TYPEt">Elt.t</a> -&gt; 'b) -&gt; 'b</code></span></pre>
+      <div class="info"><code class="code">fold_elt t ~init ~f</code> is the same as fold, except <code class="code">f</code> is called with the
+    <code class="code">'a Elt.t</code>'s from the bag instead of the contained <code class="code">'a</code> values.<br/>    Note that like other iteration functions, it is an error to mutate <code class="code">t</code> inside the
+    fold. If you'd like to call <code class="code">remove</code> on any of the <code class="code">'a Elt.t</code>'s, accumulate them here
+    and do so after <code class="code">fold_elt</code> returns.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> iter_elt : <code class="type">'a <a href="Bag.html#TYPEt">t</a> -&gt; f:('a <a href="Bag.Elt.html#TYPEt">Elt.t</a> -&gt; unit) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_elt : <code class="type">'a <a href="Bag.html#TYPEt">t</a> -&gt; f:('a -&gt; bool) -&gt; 'a <a href="Bag.Elt.html#TYPEt">Elt.t</a> option</code></span></pre>
+      <div class="info"><code class="code">find_elt t ~f</code> looks at elements in the bag one-by-one until it finds one
+    <code class="code">elt</code> such that <code class="code">f (Elt.value elt)</code>, in which case it returns <code class="code">Some elt</code>.
+    If there is no element satisfying <code class="code">f</code>, then <code class="code">find_elt</code> returns <code class="code">None</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> until_empty : <code class="type">'a <a href="Bag.html#TYPEt">t</a> -&gt; ('a -&gt; unit) -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">until_empty t f</code> repeatedly removes a value <code class="code">v</code> from <code class="code">t</code> and runs <code class="code">f v</code>,
+    continuing until <code class="code">t</code> is empty.  Running <code class="code">f</code> may add elements to <code class="code">t</code> if it
+    wants.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> transfer : <code class="type">src:'a <a href="Bag.html#TYPEt">t</a> -&gt; dst:'a <a href="Bag.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">transfer ~src ~dst</code> moves all of the elements from <code class="code">src</code> to <code class="code">dst</code> in constant
+    time.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> of_list : <code class="type">'a list -&gt; 'a <a href="Bag.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unchecked_iter : <code class="type">'a <a href="Bag.html#TYPEt">t</a> -&gt; f:('a -&gt; unit) -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">unchecked_iter t ~f</code> behaves like <code class="code">iter t ~f</code> except that <code class="code">f</code> is allowed to modify
+    <code class="code">t</code>.  Elements added by <code class="code">f</code> may or may not be visited, elements removed by <code class="code">f</code> that
+    have not been visited will not be visited.  It is an (undetected) error to delete the
+    current element.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp : <code class="type">(<a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; 'a) -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; 'a <a href="Bag.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type">('a -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a>) -&gt; 'a <a href="Bag.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+<br/><code class="code">create ()</code> returns an empty bag.<br/>
+	  
+<br/><code class="code">add t v</code> adds <code class="code">v</code> to the bag <code class="code">t</code>, returning an element that can
+    later be removed from the bag.  <code class="code">add</code> runs in constant time.<br/>
+	  
+<br/><code class="code">remove t elt</code> removes <code class="code">elt</code> from the bag <code class="code">t</code>, raising an exception if <code class="code">elt</code>
+    is not in the bag.  <code class="code">remove</code> runs in constant time.<br/>
+	  
+<br/><code class="code">choose t</code> returns some element in the bag.<br/>
+	  
+<br/><code class="code">remove_one t</code> removes some element from the bag, and returns its value.
+    <code class="code">remove_one</code> runs in constant time.<br/>
+	  
+<br/><code class="code">clear t</code> removes all elements from the bag.  <code class="code">clear</code> runs in O(1) time.<br/>
+	  
+<br/><code class="code">fold_elt t ~init ~f</code> is the same as fold, except <code class="code">f</code> is called with the
+    <code class="code">'a Elt.t</code>'s from the bag instead of the contained <code class="code">'a</code> values.<br/>    Note that like other iteration functions, it is an error to mutate <code class="code">t</code> inside the
+    fold. If you'd like to call <code class="code">remove</code> on any of the <code class="code">'a Elt.t</code>'s, accumulate them here
+    and do so after <code class="code">fold_elt</code> returns.<br/>
+	  
+<br/><code class="code">find_elt t ~f</code> looks at elements in the bag one-by-one until it finds one
+    <code class="code">elt</code> such that <code class="code">f (Elt.value elt)</code>, in which case it returns <code class="code">Some elt</code>.
+    If there is no element satisfying <code class="code">f</code>, then <code class="code">find_elt</code> returns <code class="code">None</code>.<br/>
+	  
+<br/><code class="code">until_empty t f</code> repeatedly removes a value <code class="code">v</code> from <code class="code">t</code> and runs <code class="code">f v</code>,
+    continuing until <code class="code">t</code> is empty.  Running <code class="code">f</code> may add elements to <code class="code">t</code> if it
+    wants.<br/>
+	  
+<br/><code class="code">transfer ~src ~dst</code> moves all of the elements from <code class="code">src</code> to <code class="code">dst</code> in constant
+    time.<br/>
+	  
+<br/><code class="code">unchecked_iter t ~f</code> behaves like <code class="code">iter t ~f</code> except that <code class="code">f</code> is allowed to modify
+    <code class="code">t</code>.  Elements added by <code class="code">f</code> may or may not be visited, elements removed by <code class="code">f</code> that
+    have not been visited will not be visited.  It is an (undetected) error to delete the
+    current element.<br/>
+	  

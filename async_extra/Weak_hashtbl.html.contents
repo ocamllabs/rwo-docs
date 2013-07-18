@@ -1,0 +1,24 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'b) </code>t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">'a <a href="../core/Std.Hashtbl.Hashable.html#TYPEt">Core.Std.Hashtbl.Hashable.t</a> -&gt; ('a, 'b) <a href="Weak_hashtbl.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find : <code class="type">('a, 'b) <a href="Weak_hashtbl.html#TYPEt">t</a> -&gt; 'a -&gt; 'b <a href="../core/Std.Heap_block.html#TYPEt">Core.Std.Heap_block.t</a> option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_or_add : <code class="type">('a, 'b) <a href="Weak_hashtbl.html#TYPEt">t</a> -&gt;
+'a -&gt; default:(unit -&gt; 'b <a href="../core/Std.Heap_block.html#TYPEt">Core.Std.Heap_block.t</a>) -&gt; 'b <a href="../core/Std.Heap_block.html#TYPEt">Core.Std.Heap_block.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove : <code class="type">('a, 'b) <a href="Weak_hashtbl.html#TYPEt">t</a> -&gt; 'a -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> replace : <code class="type">('a, 'b) <a href="Weak_hashtbl.html#TYPEt">t</a> -&gt; key:'a -&gt; data:'b <a href="../core/Std.Heap_block.html#TYPEt">Core.Std.Heap_block.t</a> -&gt; unit</code></span></pre>
+      
+    

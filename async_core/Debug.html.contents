@@ -1,0 +1,15 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> module type of <a href="Config.Print_debug_messages_for.html">Config.Print_debug_messages_for</a></pre>
+	<div class="content">
+	<div file="Config.Print_debug_messages_for.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> log : <code class="type">string -&gt; 'a -&gt; ('a -&gt; <a href="../core/Std.Sexp.html#TYPEt">Core.Std.Sexp.t</a>) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> log_string : <code class="type">string -&gt; unit</code></span></pre>
+      
+    

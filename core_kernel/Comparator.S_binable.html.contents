@@ -1,0 +1,14 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Comparator.Pre_binable.html">Pre_binable</a></code></pre>
+	<div class="content">
+	<div file="Comparator.Pre_binable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<pre><span id="TYPEcomparator"><span class="keyword">type</span> comparator </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> comparator : <code class="type">(t, <a href="Comparator.S_binable.html#TYPEcomparator">comparator</a>) <a href="Comparator.html#TYPEt_">t_</a></code></span></pre>
+      
+    

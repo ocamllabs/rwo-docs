@@ -1,0 +1,10 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Versioned_typed_tcp.Datumable.html">Datumable</a></code> with type <a href="Versioned_typed_tcp.Datumable.html#TYPEdatum">datum</a> = <a href="Versioned_typed_tcp.Datum.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="Versioned_typed_tcp.Datumable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

@@ -1,0 +1,8 @@
+ 
+      <pre><span><span class="keyword">val</span> &gt;&gt;= : <code class="type">'a M.t -&gt; ('a -&gt; 'b M.t) -&gt; 'b M.t</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> &gt;&gt;| : <code class="type">'a M.t -&gt; ('a -&gt; 'b) -&gt; 'b M.t</code></span></pre>
+      
+    

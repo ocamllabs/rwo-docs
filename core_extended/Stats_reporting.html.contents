@@ -1,0 +1,73 @@
+<pre><span id="TYPEfield"><span class="keyword">type</span> field </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> init : <code class="type">msg:string -&gt; ?memory_limit:int -&gt; ?file_name:string -&gt; unit -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create_field : <code class="type">desc:string -&gt; type_desc:string -&gt; name:string -&gt; <a href="Stats_reporting.html#TYPEfield">field</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add_datum : <code class="type"><a href="Stats_reporting.html#TYPEfield">field</a> -&gt; int -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add_datum_float : <code class="type"><a href="Stats_reporting.html#TYPEfield">field</a> -&gt; float -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> adjust_if_required : <code class="type">unit -&gt; unit</code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Stats_reporting.Stored_data.html">Stored_data</a> : <code class="code">sig</code> <a href="Stats_reporting.Stored_data.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Stats_reporting.Stored_data.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> bin_field : <code class="type"><a href="Stats_reporting.html#TYPEfield">field</a> <a href="../core/Std.Bin_prot.Type_class.html#TYPEt">Core.Std.Bin_prot.Type_class.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_field : <code class="type"><a href="Stats_reporting.html#TYPEfield">field</a> <a href="../core/Std.Bin_prot.Read_ml.html#TYPEreader">Core.Std.Bin_prot.Read_ml.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_field_ : <code class="type"><a href="Stats_reporting.html#TYPEfield">field</a> <a href="../core/Std.Bin_prot.Unsafe_read_c.html#TYPEreader">Core.Std.Bin_prot.Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_field__ : <code class="type">(int -&gt; <a href="Stats_reporting.html#TYPEfield">field</a>) <a href="../core/Std.Bin_prot.Unsafe_read_c.html#TYPEreader">Core.Std.Bin_prot.Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_field : <code class="type"><a href="Stats_reporting.html#TYPEfield">field</a> <a href="../core/Std.Bin_prot.Type_class.html#TYPEreader">Core.Std.Bin_prot.Type_class.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_field : <code class="type"><a href="Stats_reporting.html#TYPEfield">field</a> <a href="../core/Std.Bin_prot.Size.html#TYPEsizer">Core.Std.Bin_prot.Size.sizer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_field : <code class="type"><a href="Stats_reporting.html#TYPEfield">field</a> <a href="../core/Std.Bin_prot.Write_ml.html#TYPEwriter">Core.Std.Bin_prot.Write_ml.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_field_ : <code class="type"><a href="Stats_reporting.html#TYPEfield">field</a> <a href="../core/Std.Bin_prot.Unsafe_write_c.html#TYPEwriter">Core.Std.Bin_prot.Unsafe_write_c.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_field : <code class="type"><a href="Stats_reporting.html#TYPEfield">field</a> <a href="../core/Std.Bin_prot.Type_class.html#TYPEwriter">Core.Std.Bin_prot.Type_class.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> field_of_sexp : <code class="type"><a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; <a href="Stats_reporting.html#TYPEfield">field</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_field : <code class="type"><a href="Stats_reporting.html#TYPEfield">field</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    

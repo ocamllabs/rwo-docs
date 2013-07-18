@@ -1,0 +1,32 @@
+ 
+      <pre><span><span class="keyword">val</span> __pa_ounit_275876e34cf609db118f3d84b799a790 : <code class="type">string</code></span></pre>
+      
+    
+
+<br/><code class="code">File_descr_watcher_intf.S</code> provides an API for for watching a set of file descriptors
+    to see if they are ready for reading or writing.<br/>    We have two implementations, one using epoll, and one using select.<br/>    None of the functions need to be thread-safe, with the exception of
+    <code class="code">thread_safe_check</code>.  So that implementations can easily do non-thread-safe actions,
+    checking for ready I/O is always done in three steps:<br/>    1. <code class="code">pre_check</code>, while holding the async lock
+    2. <code class="code">thread_safe_check</code>, while not holding the async lock
+    3. <code class="code">post_check</code>, while holding the async lock<br/>
+	  
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="File_descr_watcher_intf.Post.html">Post</a> : <code class="code">sig</code> <a href="File_descr_watcher_intf.Post.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="File_descr_watcher_intf.Post.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="File_descr_watcher_intf.Timeout.html">Timeout</a> : <code class="code">sig</code> <a href="File_descr_watcher_intf.Timeout.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="File_descr_watcher_intf.Timeout.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="File_descr_watcher_intf.S.html">S</a> = <code class="type"><code class="code">sig</code> <a href="File_descr_watcher_intf.S.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="File_descr_watcher_intf.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+
+

@@ -1,0 +1,24 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Versioned_rpc.Caller_converts.Pipe_rpc.S.html">S</a> = <code class="type"><code class="code">sig</code> <a href="Versioned_rpc.Caller_converts.Pipe_rpc.S.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Versioned_rpc.Caller_converts.Pipe_rpc.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Versioned_rpc.Caller_converts.Pipe_rpc.Make.html">Make</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">Model</code><code class="code"> : </code><code class="code">sig</code> <a href="Versioned_rpc.Caller_converts.Pipe_rpc.Make.Anon_2.html">..</a> <code class="code">end</code><code class="code">) -&gt; </code><code class="code">sig</code> <a href="Versioned_rpc.Caller_converts.Pipe_rpc.Make.html">..</a> <code class="code">end</code></div></pre><div class="info">Given a model of the types involved in a family of Pipe_RPCs,
+      this functor provides a single Pipe_RPC versioned dispatch
+      function <code class="code">dispatch_multi</code> in terms of that model and a mechanism
+      for registering the individual versions that <code class="code">dispatch_multi</code>
+      knows about.  Registration requires knowing how to get into and
+      out of the model.
+      <span class="verbatim">          ,--&gt;-- Q1 --&gt; R1 --&gt;-.    E1 --&gt;-.
+         /                      \           \
+        Q ---&gt;-- Q2 --&gt; R2 --&gt;-- R  E2 --&gt;-- E
+         \                      /           /
+          `--&gt;-- Q3 --&gt; R3 --&gt;-'    E3 --&gt;-'
+      </span>
+</div>
+	<div class="content" style="display:none">
+	<div file="Versioned_rpc.Caller_converts.Pipe_rpc.Make.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

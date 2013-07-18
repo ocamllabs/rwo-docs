@@ -1,0 +1,12 @@
+ 
+      <pre><span><span class="keyword">val</span> t : <code class="type"><a href="Sexp_intf.S.With_layout.html#TYPEt">t</a> -&gt; <a href="Type.html#TYPEt">Type.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t_or_comment : <code class="type"><a href="Sexp_intf.S.With_layout.html#TYPEt_or_comment">t_or_comment</a> -&gt; <a href="Type.html#TYPEt">Type.t</a> option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t_or_comments : <code class="type"><a href="Sexp_intf.S.With_layout.html#TYPEt_or_comment">t_or_comment</a> list -&gt; <a href="Type.html#TYPEt">Type.t</a> list</code></span></pre>
+      
+    

@@ -1,0 +1,117 @@
+<pre><span id="TYPEt_"><span class="keyword">type</span> <code class="type">('a, 'kind) </code>t_ </span></pre>
+      <div class="info">We use a phantom type to distinguish between throttles, which have
+    <code class="code">max_concurrent_jobs &gt;= 1</code>, and sequencers, which have <code class="code">max_concurrent_jobs = 1</code>.  All
+    operations are available on both.  We make the distinction because it is sometimes
+    useful to know from the type of a throttle that it is a sequencer and that at most one
+    job can be running at a time.</div>
+    
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t </span>= <code class="type">('a, [ `throttle ]) <a href="Throttle.html#TYPEt_">t_</a></code> </pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core/Std.Invariant.S1.html">Core.Std.Invariant.S1</a></code> with type t = 'a <a href="Throttle.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="../core/Std.Invariant.S1.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">continue_on_error:bool -&gt; max_concurrent_jobs:int -&gt; unit <a href="Throttle.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">create ~continue_on_error ~max_concurrent_jobs</code> returns a throttle that will run up
+    to <code class="code">max_concurrent_jobs</code> concurrently.<br/>    If some job raises an exception, then the throttle will stop, unless
+    <code class="code">continue_on_error</code> is true.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> create_with : <code class="type">continue_on_error:bool -&gt; 'a list -&gt; 'a <a href="Throttle.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">create_with ~continue_on_error job_resources</code> returns a throttle that will run up to
+    <code class="code">List.length job_resources</code> concurrently, and will ensure that all running jobs are
+    supplied distinct elements of <code class="code">job_resources</code>.</div>
+    
+<pre><span id="TYPEoutcome"><span class="keyword">type</span> <code class="type">'a </code>outcome </span>= <code class="type">[ `Aborted | `Ok of 'a | `Raised of exn ]</code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> enqueue' : <code class="type">('a, 'c) <a href="Throttle.html#TYPEt_">t_</a> -&gt; ('a -&gt; 'b <a href="Deferred.html#TYPEt">Deferred.t</a>) -&gt; 'b <a href="Throttle.html#TYPEoutcome">outcome</a> <a href="Deferred.html#TYPEt">Deferred.t</a></code></span></pre>
+      <div class="info"><code class="code">enqueue t job</code> schedules <code class="code">job</code> to be run as soon as possible.  Jobs are guaranteed to
+    be started in the order they are <code class="code">enqueue</code>d.<br/>    <code class="code">enqueue</code> raises an exception if the throttle is dead.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> enqueue : <code class="type">('a, 'c) <a href="Throttle.html#TYPEt_">t_</a> -&gt; ('a -&gt; 'b <a href="Deferred.html#TYPEt">Deferred.t</a>) -&gt; 'b <a href="Deferred.html#TYPEt">Deferred.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> prior_jobs_done : <code class="type">('a, 'b) <a href="Throttle.html#TYPEt_">t_</a> -&gt; unit <a href="Deferred.html#TYPEt">Deferred.t</a></code></span></pre>
+      <div class="info"><code class="code">prior_jobs_done t</code> becomes determined when all of the jobs that were previously
+    enqueued in <code class="code">t</code> have completed.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> max_concurrent_jobs : <code class="type">('a, 'b) <a href="Throttle.html#TYPEt_">t_</a> -&gt; int</code></span></pre>
+      <div class="info"><code class="code">max_concurrent_jobs t</code> returns the maximum number of jobs that <code class="code">t</code> will run
+    concurrently.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> num_jobs_running : <code class="type">('a, 'b) <a href="Throttle.html#TYPEt_">t_</a> -&gt; int</code></span></pre>
+      <div class="info"><code class="code">num_jobs_running t</code> returns the number of jobs that <code class="code">t</code> is currently running.  It
+    is guaranteed that if <code class="code">num_jobs_running t &lt; max_concurrent_jobs t</code> then
+    <code class="code">num_jobs_waiting_to_start t = 0</code>.  That is, the throttle always uses its maximum
+    concurrency if possible.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> num_jobs_waiting_to_start : <code class="type">('a, 'b) <a href="Throttle.html#TYPEt_">t_</a> -&gt; int</code></span></pre>
+      <div class="info"><code class="code">num_jobs_waiting_to_start t</code> returns the number of jobs that have been <code class="code">enqueue</code>d but
+    have not yet started.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> capacity_available : <code class="type">('a, 'b) <a href="Throttle.html#TYPEt_">t_</a> -&gt; unit <a href="Deferred.html#TYPEt">Deferred.t</a></code></span></pre>
+      <div class="info"><code class="code">capacity_available t</code> becomes determined the next time that <code class="code">t</code> has fewer than
+    <code class="code">max_concurrent_jobs t</code> running, and hence an <code class="code">enqueue</code>d job would start
+    immediately.</div>
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Throttle.Sequencer.html">Sequencer</a> : <code class="code">sig</code> <a href="Throttle.Sequencer.html">..</a> <code class="code">end</code></pre><div class="info">A sequencer is a throttle that is specialized to only allow one job at a time and to,
+    by default, not continue on error.</div>
+	<div class="content" style="display:none">
+	<div file="Throttle.Sequencer.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t_ : <code class="type">('a -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a>) -&gt;
+('kind -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a>) -&gt; ('a, 'kind) <a href="Throttle.html#TYPEt_">t_</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type">('a -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a>) -&gt; 'a <a href="Throttle.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+<br/><code class="code">create ~continue_on_error ~max_concurrent_jobs</code> returns a throttle that will run up
+    to <code class="code">max_concurrent_jobs</code> concurrently.<br/>    If some job raises an exception, then the throttle will stop, unless
+    <code class="code">continue_on_error</code> is true.<br/>
+	  
+<br/><code class="code">create_with ~continue_on_error job_resources</code> returns a throttle that will run up to
+    <code class="code">List.length job_resources</code> concurrently, and will ensure that all running jobs are
+    supplied distinct elements of <code class="code">job_resources</code>.<br/>
+	  
+<br/><code class="code">enqueue t job</code> schedules <code class="code">job</code> to be run as soon as possible.  Jobs are guaranteed to
+    be started in the order they are <code class="code">enqueue</code>d.<br/>    <code class="code">enqueue</code> raises an exception if the throttle is dead.<br/>
+	  
+<br/><code class="code">prior_jobs_done t</code> becomes determined when all of the jobs that were previously
+    enqueued in <code class="code">t</code> have completed.<br/>
+	  
+<br/><code class="code">max_concurrent_jobs t</code> returns the maximum number of jobs that <code class="code">t</code> will run
+    concurrently.<br/>
+	  
+<br/><code class="code">num_jobs_running t</code> returns the number of jobs that <code class="code">t</code> is currently running.  It
+    is guaranteed that if <code class="code">num_jobs_running t &lt; max_concurrent_jobs t</code> then
+    <code class="code">num_jobs_waiting_to_start t = 0</code>.  That is, the throttle always uses its maximum
+    concurrency if possible.<br/>
+	  
+<br/><code class="code">num_jobs_waiting_to_start t</code> returns the number of jobs that have been <code class="code">enqueue</code>d but
+    have not yet started.<br/>
+	  
+<br/><code class="code">capacity_available t</code> becomes determined the next time that <code class="code">t</code> has fewer than
+    <code class="code">max_concurrent_jobs t</code> running, and hence an <code class="code">enqueue</code>d job would start
+    immediately.<br/>
+	  
+<br/>A sequencer is a throttle that is specialized to only allow one job at a time and to,
+    by default, not continue on error.<br/>
+	  

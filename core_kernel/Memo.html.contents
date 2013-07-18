@@ -1,0 +1,15 @@
+<br/>Memoization code -- not re-entrant!<br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> general : <code class="type">?hashable:'a <a href="Std_internal.Hashtbl.Hashable.html#TYPEt">Std_internal.Hashtbl.Hashable.t</a> -&gt;
+?cache_size_bound:int -&gt; ('a -&gt; 'b) -&gt; 'a -&gt; 'b</code></span></pre>
+      <div class="info">Returns memoized version of any function with a single argument. The
+    default caching policy is to remember everything for the lifetime
+    of the returned closure, but one may specify an upper bound on
+    cache size.  Whenever a cache entry must be forgotten in order to
+    obey this bound, we pick the least-recently-used one.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> unit : <code class="type">(unit -&gt; 'a) -&gt; unit -&gt; 'a</code></span></pre>
+      <div class="info">efficient special case for argument type <code class="code">unit</code> </div>
+    

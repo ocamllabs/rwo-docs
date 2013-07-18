@@ -1,0 +1,40 @@
+ 
+      <pre><span><span class="keyword">val</span> iter : <code class="type"><a href="Procfs.Net.Route.html#TYPEt">t</a> -&gt;
+iface:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Net.Route.html#TYPEt">t</a> -&gt; string -&gt; unit) -&gt;
+destination:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, <a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+             <a href="Procfs.Net.Route.html#TYPEt">t</a> -&gt; <a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a> -&gt; unit) -&gt;
+gateway:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, <a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+         <a href="Procfs.Net.Route.html#TYPEt">t</a> -&gt; <a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a> -&gt; unit) -&gt;
+flags:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Net.Route.html#TYPEt">t</a> -&gt; int -&gt; unit) -&gt;
+refcnt:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Net.Route.html#TYPEt">t</a> -&gt; int -&gt; unit) -&gt;
+use:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Net.Route.html#TYPEt">t</a> -&gt; int -&gt; unit) -&gt;
+metric:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Net.Route.html#TYPEt">t</a> -&gt; int -&gt; unit) -&gt;
+mask:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, <a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+      <a href="Procfs.Net.Route.html#TYPEt">t</a> -&gt; <a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a> -&gt; unit) -&gt;
+mtu:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Net.Route.html#TYPEt">t</a> -&gt; int -&gt; unit) -&gt;
+window:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Net.Route.html#TYPEt">t</a> -&gt; int -&gt; unit) -&gt;
+irtt:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Net.Route.html#TYPEt">t</a> -&gt; int -&gt; unit) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold : <code class="type"><a href="Procfs.Net.Route.html#TYPEt">t</a> -&gt;
+init:'acc__ -&gt;
+iface:('acc__ -&gt; (<a href="Procfs.Net.Route.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Net.Route.html#TYPEt">t</a> -&gt; string -&gt; 'acc__) -&gt;
+destination:('acc__ -&gt;
+             (<a href="Procfs.Net.Route.html#TYPEt">t</a>, <a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+             <a href="Procfs.Net.Route.html#TYPEt">t</a> -&gt; <a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a> -&gt; 'acc__) -&gt;
+gateway:('acc__ -&gt;
+         (<a href="Procfs.Net.Route.html#TYPEt">t</a>, <a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+         <a href="Procfs.Net.Route.html#TYPEt">t</a> -&gt; <a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a> -&gt; 'acc__) -&gt;
+flags:('acc__ -&gt; (<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Net.Route.html#TYPEt">t</a> -&gt; int -&gt; 'acc__) -&gt;
+refcnt:('acc__ -&gt; (<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Net.Route.html#TYPEt">t</a> -&gt; int -&gt; 'acc__) -&gt;
+use:('acc__ -&gt; (<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Net.Route.html#TYPEt">t</a> -&gt; int -&gt; 'acc__) -&gt;
+metric:('acc__ -&gt; (<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Net.Route.html#TYPEt">t</a> -&gt; int -&gt; 'acc__) -&gt;
+mask:('acc__ -&gt;
+      (<a href="Procfs.Net.Route.html#TYPEt">t</a>, <a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+      <a href="Procfs.Net.Route.html#TYPEt">t</a> -&gt; <a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a> -&gt; 'acc__) -&gt;
+mtu:('acc__ -&gt; (<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Net.Route.html#TYPEt">t</a> -&gt; int -&gt; 'acc__) -&gt;
+window:('acc__ -&gt; (<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Net.Route.html#TYPEt">t</a> -&gt; int -&gt; 'acc__) -&gt;
+irtt:('acc__ -&gt; (<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Net.Route.html#TYPEt">t</a> -&gt; int -&gt; 'acc__) -&gt; 'acc__</code></span></pre>
+      
+    

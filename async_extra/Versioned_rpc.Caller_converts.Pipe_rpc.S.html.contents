@@ -1,0 +1,34 @@
+<pre><span id="TYPEquery"><span class="keyword">type</span> query </span></pre>
+      
+    
+<pre><span id="TYPEresponse"><span class="keyword">type</span> response </span></pre>
+      
+    
+<pre><span id="TYPEerror"><span class="keyword">type</span> error </span></pre>
+      
+    
+<br/>multi-version dispatch<br/>          The return type varies slightly from <code class="code">Rpc.Pipe_rpc.dispatch</code> to make it clear
+          that conversion of each individual element in the returned pipe may fail.<br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> deprecated_dispatch_multi : <code class="type">version:int -&gt;
+<a href="Rpc.Connection.html#TYPEt">Rpc.Connection.t</a> -&gt;
+<a href="Versioned_rpc.Caller_converts.Pipe_rpc.S.html#TYPEquery">query</a> -&gt;
+(<a href="Versioned_rpc.Caller_converts.Pipe_rpc.S.html#TYPEresponse">response</a> <a href="../core/Std.Or_error.html#TYPEt">Core.Std.Or_error.t</a> <a href="Import.Pipe.Reader.html#TYPEt">Import.Pipe.Reader.t</a> * <a href="Rpc.Pipe_rpc.Id.html#TYPEt">Rpc.Pipe_rpc.Id.t</a>,
+ <a href="Versioned_rpc.Caller_converts.Pipe_rpc.S.html#TYPEerror">error</a>)
+<a href="../core/Std.Result.html#TYPEt">Core.Std.Result.t</a> <a href="../core/Std.Or_error.html#TYPEt">Core.Std.Or_error.t</a> <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> dispatch_multi : <code class="type"><a href="Versioned_rpc.Connection_with_menu.html#TYPEt">Connection_with_menu.t</a> -&gt;
+<a href="Versioned_rpc.Caller_converts.Pipe_rpc.S.html#TYPEquery">query</a> -&gt;
+(<a href="Versioned_rpc.Caller_converts.Pipe_rpc.S.html#TYPEresponse">response</a> <a href="../core/Std.Or_error.html#TYPEt">Core.Std.Or_error.t</a> <a href="Import.Pipe.Reader.html#TYPEt">Import.Pipe.Reader.t</a> * <a href="Rpc.Pipe_rpc.Id.html#TYPEt">Rpc.Pipe_rpc.Id.t</a>,
+ <a href="Versioned_rpc.Caller_converts.Pipe_rpc.S.html#TYPEerror">error</a>)
+<a href="../core/Std.Result.html#TYPEt">Core.Std.Result.t</a> <a href="../core/Std.Or_error.html#TYPEt">Core.Std.Or_error.t</a> <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> versions : <code class="type">unit -&gt; <a href="../core/Std.Int.Set.html#TYPEt">Core.Std.Int.Set.t</a></code></span></pre>
+      <div class="info">all versions supported by <code class="code">dispatch_multi</code>.
+          (useful for computing which old versions may be pruned)</div>
+    

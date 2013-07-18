@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<title>Interned_string</title>
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
+<script type="text/javascript" src="doc_loader.js"> </script>
+</head>
+<body>
+
+<h1>Module Interned_string</h1>
+<pre><span class="keyword">module</span> Interned_string</pre><div class="info">Provides a functor for creating an interned string type.<br/>    An interned string is internally an int which is an index into a lookup table, which
+    makes hashing and (non-lexicographic) comparison faster than for strings.  The
+    tradeoff is that converting an interned string to and from a string is slower, since
+    they require table lookups instead of being no-ops.<br/>    Some notes on the implementation:<br/>    - It is not thread-safe (different applications of the functor can be used
+      safely from different threads, but an individual interned string module
+      is not safe to use concurrently from different threads.)<ul><li>It is leaky, meaning that an interned string, once allocated, will never be
+      deallocated.</li><li>Interned strings are compared based on the integer they are assigned on creation,
+      which is not a lexicographic order, and is not necessarily stable between runs of a
+      program.</li></ul>    The semantics of the other operations should be the same as for <code class="code">String</code>.<br/>    We don't fix the memory leak with weak pointers for performance reasons.  See
+    <code class="code">jane</code>/interns/ahuq/strint/README at revision b9a2b9dbf290.</div>
+<hr/>
+<div file="Interned_string.html.contents" class="content_to_load"> </div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<pre><code><span id="TYPEt"><span class="keyword">type</span> <code class="type">'buf </code>t </span>= {<span class="keyword">private</span></code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.buf">buf</span> :<code class="type">'buf</code>;</code></td><td class="typefieldcomment" align="left">Buffer holding the I/O-vector</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.pos">pos</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Position of I/O-vector in buffer</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.len">len</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Length of I/O-vector in buffer</td>
+	  </tr></table>}
+      <div class="info">Representation of I/O-vectors.
+      NOTE: DO NOT CHANGE THE MEMORY LAYOUT OF THIS TYPE!!!
+      All C-functions in our bindings that handle I/O-vectors depend on it.</div>
+    
+<pre><span id="TYPEkind"><span class="keyword">type</span> <code class="type">'buf </code>kind </span></pre>
+      
+    
+<pre><span id="TYPEbigstring"><span class="keyword">type</span> bigstring </span>= <code class="type">(char, <a href="../otherlibs/Bigarray.html#TYPEint8_unsigned_elt">Bigarray.int8_unsigned_elt</a>, <a href="../otherlibs/Bigarray.html#TYPEc_layout">Bigarray.c_layout</a>) <a href="../otherlibs/Bigarray.Array1.html#TYPEt">Bigarray.Array1.t</a></code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> string_kind : <code class="type">string <a href="Core_unix.IOVec.html#TYPEkind">kind</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bigstring_kind : <code class="type"><a href="Core_unix.IOVec.html#TYPEbigstring">bigstring</a> <a href="Core_unix.IOVec.html#TYPEkind">kind</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> empty : <code class="type">'buf <a href="Core_unix.IOVec.html#TYPEkind">kind</a> -&gt; 'buf <a href="Core_unix.IOVec.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_string : <code class="type">?pos:int -&gt; ?len:int -&gt; string -&gt; string <a href="Core_unix.IOVec.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_bigstring : <code class="type">?pos:int -&gt; ?len:int -&gt; <a href="Core_unix.IOVec.html#TYPEbigstring">bigstring</a> -&gt; <a href="Core_unix.IOVec.html#TYPEbigstring">bigstring</a> <a href="Core_unix.IOVec.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> drop : <code class="type">'buf <a href="Core_unix.IOVec.html#TYPEt">t</a> -&gt; int -&gt; 'buf <a href="Core_unix.IOVec.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> max_iovecs : <code class="type">int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp : <code class="type">(<a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; 'buf) -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; 'buf <a href="Core_unix.IOVec.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type">('buf -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a>) -&gt; 'buf <a href="Core_unix.IOVec.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+<br/>Kind of I/O-vector buffers<br/>
+	  
+<br/><code class="code">empty</code> the empty I/O-vector.<br/>
+	  
+<br/><code class="code">of_string ?pos ?len str</code> <div class="parameters"><div class="param_info"><code class="code">pos</code> : default = 0</div><div class="param_info"><code class="code">len</code> : default = <code class="code">String.length str - pos</code>
+</div></div><b>Raises</b> <code>Invalid_argument</code> if designated substring out of bounds.<br/> <br/><b>Returns</b> an I/O-vector designated by
+      position <code class="code">pos</code> and length <code class="code">len</code> in string <code class="code">str</code>.<br/> <br/>
+	  
+<br/><code class="code">of_bigstring ?pos ?len bstr</code> <div class="parameters"><div class="param_info"><code class="code">pos</code> : default = 0</div><div class="param_info"><code class="code">len</code> : default = <code class="code">String.length str - pos</code>
+</div></div><b>Raises</b> <code>Invalid_argument</code> if designated substring out of bounds.<br/> <br/><b>Returns</b> an I/O-vector designated by
+      position <code class="code">pos</code> and length <code class="code">len</code> in bigstring <code class="code">bstr</code>.<br/> <br/>
+	  
+<br/><code class="code">drop iovec n</code> drops <code class="code">n</code> characters from <code class="code">iovec</code>.<b>Raises</b> <code>Failure</code> if <code class="code">n</code> is greater than length of <code class="code">iovec</code>.<br/><b>Returns</b> resulting
+      I/O-vector.<br/> <br/>
+	  

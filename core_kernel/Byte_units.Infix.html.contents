@@ -1,0 +1,16 @@
+ 
+      <pre><span><span class="keyword">val</span> - : <code class="type"><a href="Byte_units.html#TYPEt">t</a> -&gt; <a href="Byte_units.html#TYPEt">t</a> -&gt; <a href="Byte_units.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> + : <code class="type"><a href="Byte_units.html#TYPEt">t</a> -&gt; <a href="Byte_units.html#TYPEt">t</a> -&gt; <a href="Byte_units.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> / : <code class="type"><a href="Byte_units.html#TYPEt">t</a> -&gt; float -&gt; <a href="Byte_units.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> // : <code class="type"><a href="Byte_units.html#TYPEt">t</a> -&gt; <a href="Byte_units.html#TYPEt">t</a> -&gt; float</code></span></pre>
+      <div class="info"><code class="code">( // ) t1 t2</code> returns the ratio of t1 to t2</div>
+    

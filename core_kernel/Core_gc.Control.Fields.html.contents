@@ -1,0 +1,129 @@
+ 
+      <pre><span><span class="keyword">val</span> names : <code class="type">string list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> allocation_policy : <code class="type">(<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stack_limit : <code class="type">(<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> max_overhead : <code class="type">(<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> verbose : <code class="type">(<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> space_overhead : <code class="type">(<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> major_heap_increment : <code class="type">(<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> minor_heap_size : <code class="type">(<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold : <code class="type">init:'acc__ -&gt;
+minor_heap_size:('acc__ -&gt; (<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+major_heap_increment:('acc__ -&gt; (<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+space_overhead:('acc__ -&gt; (<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+verbose:('acc__ -&gt; (<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+max_overhead:('acc__ -&gt; (<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+stack_limit:('acc__ -&gt; (<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+allocation_policy:('acc__ -&gt; (<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt; 'acc__</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> make_creator : <code class="type">minor_heap_size:((<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+                 'compile_acc__ -&gt; ('input__ -&gt; int) * 'compile_acc__) -&gt;
+major_heap_increment:((<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+                      'compile_acc__ -&gt; ('input__ -&gt; int) * 'compile_acc__) -&gt;
+space_overhead:((<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+                'compile_acc__ -&gt; ('input__ -&gt; int) * 'compile_acc__) -&gt;
+verbose:((<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+         'compile_acc__ -&gt; ('input__ -&gt; int) * 'compile_acc__) -&gt;
+max_overhead:((<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+              'compile_acc__ -&gt; ('input__ -&gt; int) * 'compile_acc__) -&gt;
+stack_limit:((<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+             'compile_acc__ -&gt; ('input__ -&gt; int) * 'compile_acc__) -&gt;
+allocation_policy:((<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+                   'compile_acc__ -&gt; ('input__ -&gt; int) * 'compile_acc__) -&gt;
+'compile_acc__ -&gt; ('input__ -&gt; <a href="Core_gc.Control.html#TYPEt">t</a>) * 'compile_acc__</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">minor_heap_size:int -&gt;
+major_heap_increment:int -&gt;
+space_overhead:int -&gt;
+verbose:int -&gt;
+max_overhead:int -&gt; stack_limit:int -&gt; allocation_policy:int -&gt; <a href="Core_gc.Control.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map : <code class="type">minor_heap_size:((<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; int) -&gt;
+major_heap_increment:((<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; int) -&gt;
+space_overhead:((<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; int) -&gt;
+verbose:((<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; int) -&gt;
+max_overhead:((<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; int) -&gt;
+stack_limit:((<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; int) -&gt;
+allocation_policy:((<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; int) -&gt; <a href="Core_gc.Control.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter : <code class="type">minor_heap_size:((<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+major_heap_increment:((<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+space_overhead:((<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+verbose:((<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+max_overhead:((<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+stack_limit:((<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+allocation_policy:((<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> for_all : <code class="type">minor_heap_size:((<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+major_heap_increment:((<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+space_overhead:((<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+verbose:((<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+max_overhead:((<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+stack_limit:((<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+allocation_policy:((<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> exists : <code class="type">minor_heap_size:((<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+major_heap_increment:((<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+space_overhead:((<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+verbose:((<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+max_overhead:((<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+stack_limit:((<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+allocation_policy:((<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_list : <code class="type">minor_heap_size:((<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+major_heap_increment:((<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+space_overhead:((<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+verbose:((<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+max_overhead:((<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+stack_limit:((<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+allocation_policy:((<a href="Core_gc.Control.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt; 'elem__ list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map_poly : <code class="type">([&lt; `Read | `Set_and_create ], <a href="Core_gc.Control.html#TYPEt">t</a>, 'x0) <a href="../fieldslib/Field.html#TYPEuser">Fieldslib.Field.user</a> -&gt; 'x0 list</code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Core_gc.Control.Fields.Direct.html">Direct</a> : <code class="code">sig</code> <a href="Core_gc.Control.Fields.Direct.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Core_gc.Control.Fields.Direct.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

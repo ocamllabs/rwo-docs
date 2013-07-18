@@ -1,0 +1,388 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core_kernel/Std.Comparable.S.html">Core_kernel.Std.Comparable.S</a></code> with type t = <a href="Signal.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="../core_kernel/Std.Comparable.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core_kernel/Std.Hashable.S.html">Core_kernel.Std.Hashable.S</a></code> with type t = <a href="Signal.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="../core_kernel/Std.Hashable.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core_kernel/Std.Stringable.S.html">Core_kernel.Std.Stringable.S</a></code> with type t = <a href="Signal.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="../core_kernel/Std.Stringable.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> equal : <code class="type"><a href="Signal.html#TYPEt">t</a> -&gt; <a href="Signal.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_system_int : <code class="type">int -&gt; <a href="Signal.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">of_system_int</code> and <code class="code">to_system_int</code> return and take respectively a signal number
+    corresponding to those in the system's /usr/include/bits/signum.h (or equivalent).  It
+    is not guaranteed that these numbers are portable across any given pair of systems --
+    although some are defined as standard by POSIX.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> to_system_int : <code class="type"><a href="Signal.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_caml_int : <code class="type">int -&gt; <a href="Signal.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">of_caml_int</code> constructs a Signal.t given an O'Caml internal signal number.  This is
+    only for the use of the Core_unix module.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> to_caml_int : <code class="type"><a href="Signal.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_string : <code class="type"><a href="Signal.html#TYPEt">t</a> -&gt; string</code></span></pre>
+      <div class="info"><code class="code">to_string t</code> returns a human-readable name: &quot;sigabrt&quot;, &quot;sigalrm&quot;, ...</div>
+    
+<pre><span id="TYPEsys_behavior"><span class="keyword">type</span> sys_behavior </span>= <code class="type">[ `Continue | `Dump_core | `Ignore | `Stop | `Terminate ]</code> </pre>
+      <div class="info">The default behaviour of the system if these signals trickle to the top level of a
+    program.  See include/linux/kernel.h in the Linux kernel source tree (not the file
+    /usr/include/linux/kernel.h).</div>
+    
+<pre><span id="TYPEbehavior"><span class="keyword">type</span> behavior </span>= <code class="type">[ `Default | `Handle of <a href="Signal.html#TYPEt">t</a> -&gt; unit | `Ignore ]</code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> default_sys_behavior : <code class="type"><a href="Signal.html#TYPEt">t</a> -&gt; <a href="Signal.html#TYPEsys_behavior">sys_behavior</a></code></span></pre>
+      <div class="info"><code class="code">default_sys_behavior t</code>
+    Query the default system behavior for a signal.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> signal : <code class="type"><a href="Signal.html#TYPEt">t</a> -&gt; <a href="Signal.html#TYPEbehavior">behavior</a> -&gt; <a href="Signal.html#TYPEbehavior">behavior</a></code></span></pre>
+      <div class="info"><code class="code">signal t</code>
+    Set the behavior of the system on receipt of a given signal.  The
+   first argument is the signal number.  Return the behavior
+   previously associated with the signal. If the signal number is
+   invalid (or not available on your system), an <code class="code">Invalid_argument</code>
+   exception is raised.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> set : <code class="type"><a href="Signal.html#TYPEt">t</a> -&gt; <a href="Signal.html#TYPEbehavior">behavior</a> -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">set t b</code> is <code class="code">ignore (signal t b)</code> </div>
+    
+ 
+      <pre><span><span class="keyword">val</span> handle : <code class="type"><a href="Signal.html#TYPEt">t</a> -&gt; (<a href="Signal.html#TYPEt">t</a> -&gt; unit) -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">handle t f</code> is <code class="code">set t (`Handle f)</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> handle_default : <code class="type"><a href="Signal.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">handle_default t</code> is <code class="code">set t `Default</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> ignore : <code class="type"><a href="Signal.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">ignore t</code> is <code class="code">set t `Ignore</code>.</div>
+    
+<pre><span id="TYPEpid_spec"><span class="keyword">type</span> pid_spec </span>= <code class="type">[ `Group of <a href="../core_kernel/Std.Pid.html#TYPEt">Core_kernel.Std.Pid.t</a> | `My_group | `Pid of <a href="../core_kernel/Std.Pid.html#TYPEt">Core_kernel.Std.Pid.t</a> ]</code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> send : <code class="type"><a href="Signal.html#TYPEt">t</a> -&gt; <a href="Signal.html#TYPEpid_spec">pid_spec</a> -&gt; [ `No_such_process | `Ok ]</code></span></pre>
+      <div class="info"><code class="code">send signal pid</code> sends <code class="code">signal</code> to the process whose process id is <code class="code">pid</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> send_i : <code class="type"><a href="Signal.html#TYPEt">t</a> -&gt; <a href="Signal.html#TYPEpid_spec">pid_spec</a> -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">send_i signal ~pid</code> sends <code class="code">signal</code> to the process whose process id is <code class="code">pid</code>.
+ No exception will be raised if <code class="code">pid</code> is a zombie or nonexistent.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> send_exn : <code class="type"><a href="Signal.html#TYPEt">t</a> -&gt; <a href="Signal.html#TYPEpid_spec">pid_spec</a> -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">send_exn signal ~pid</code> sends <code class="code">signal</code> to the process whose process id is
+ <code class="code">pid</code>.  In Caml's standard library, this is called <code class="code">Unix.kill</code>.  Sending a
+ signal to a zombie and/or nonexistent process will raise an exception.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> can_send_to : <code class="type"><a href="../core_kernel/Std.Pid.html#TYPEt">Core_kernel.Std.Pid.t</a> -&gt; bool</code></span></pre>
+      <div class="info"><code class="code">can_send_to pid</code> returns true if <code class="code">pid</code> is running and the current process has
+    permission to send it signals.</div>
+    
+<pre><span id="TYPEsigprocmask_command"><span class="keyword">type</span> sigprocmask_command </span>= <code class="type">[ `Block | `Set | `Unblock ]</code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sigprocmask : <code class="type"><a href="Signal.html#TYPEsigprocmask_command">sigprocmask_command</a> -&gt; <a href="Signal.html#TYPEt">t</a> list -&gt; <a href="Signal.html#TYPEt">t</a> list</code></span></pre>
+      <div class="info"><code class="code">sigprocmask cmd sigs</code> changes the set of blocked signals.
+ If <code class="code">cmd</code> is <code class="code">`Set</code>, blocked signals are set to those in the list <code class="code">sigs</code>.
+ If <code class="code">cmd</code> is <code class="code">`Block</code>, the signals in <code class="code">sigs</code> are added to the set of blocked
+   signals.
+ If <code class="code">cmd</code> is <code class="code">`Unblock</code>, the signals in <code class="code">sigs</code> are removed from the set of
+   blocked signals.
+ <code class="code">sigprocmask</code> returns the set of previously blocked signals.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> sigpending : <code class="type">unit -&gt; <a href="Signal.html#TYPEt">t</a> list</code></span></pre>
+      <div class="info"><code class="code">sigpending ()</code> returns the set of blocked signals that are currently
+ pending.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> sigsuspend : <code class="type"><a href="Signal.html#TYPEt">t</a> list -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">sigsuspend sigs</code> atomically sets the blocked signals to <code class="code">sigs</code> and waits for
+ a non-ignored, non-blocked signal to be delivered.  On return, the blocked
+ signals are reset to their initial value.</div>
+    
+<br/>Specific signals, along with their default behavior and meaning.<br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> abrt : <code class="type"><a href="Signal.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> alrm : <code class="type"><a href="Signal.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> chld : <code class="type"><a href="Signal.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> cont : <code class="type"><a href="Signal.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fpe : <code class="type"><a href="Signal.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> hup : <code class="type"><a href="Signal.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ill : <code class="type"><a href="Signal.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> int : <code class="type"><a href="Signal.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> kill : <code class="type"><a href="Signal.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pipe : <code class="type"><a href="Signal.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> prof : <code class="type"><a href="Signal.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> quit : <code class="type"><a href="Signal.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> segv : <code class="type"><a href="Signal.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stop : <code class="type"><a href="Signal.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> term : <code class="type"><a href="Signal.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> tstp : <code class="type"><a href="Signal.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ttin : <code class="type"><a href="Signal.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ttou : <code class="type"><a href="Signal.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> usr1 : <code class="type"><a href="Signal.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> usr2 : <code class="type"><a href="Signal.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> vtalrm : <code class="type"><a href="Signal.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> zero : <code class="type"><a href="Signal.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp : <code class="type"><a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; <a href="Signal.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type"><a href="Signal.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_t : <code class="type"><a href="Signal.html#TYPEt">t</a> <a href="../core_kernel/Std.Bin_prot.Type_class.html#TYPEt">Core_kernel.Std.Bin_prot.Type_class.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t : <code class="type"><a href="Signal.html#TYPEt">t</a> <a href="../core_kernel/Std.Bin_prot.Read_ml.html#TYPEreader">Core_kernel.Std.Bin_prot.Read_ml.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t_ : <code class="type"><a href="Signal.html#TYPEt">t</a> <a href="../core_kernel/Std.Bin_prot.Unsafe_read_c.html#TYPEreader">Core_kernel.Std.Bin_prot.Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t__ : <code class="type">(int -&gt; <a href="Signal.html#TYPEt">t</a>) <a href="../core_kernel/Std.Bin_prot.Unsafe_read_c.html#TYPEreader">Core_kernel.Std.Bin_prot.Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t : <code class="type"><a href="Signal.html#TYPEt">t</a> <a href="../core_kernel/Std.Bin_prot.Type_class.html#TYPEreader">Core_kernel.Std.Bin_prot.Type_class.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t : <code class="type"><a href="Signal.html#TYPEt">t</a> <a href="../core_kernel/Std.Bin_prot.Size.html#TYPEsizer">Core_kernel.Std.Bin_prot.Size.sizer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t : <code class="type"><a href="Signal.html#TYPEt">t</a> <a href="../core_kernel/Std.Bin_prot.Write_ml.html#TYPEwriter">Core_kernel.Std.Bin_prot.Write_ml.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_ : <code class="type"><a href="Signal.html#TYPEt">t</a> <a href="../core_kernel/Std.Bin_prot.Unsafe_write_c.html#TYPEwriter">Core_kernel.Std.Bin_prot.Unsafe_write_c.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t : <code class="type"><a href="Signal.html#TYPEt">t</a> <a href="../core_kernel/Std.Bin_prot.Type_class.html#TYPEwriter">Core_kernel.Std.Bin_prot.Type_class.writer</a></code></span></pre>
+      
+    
+<br/><code class="code">of_system_int</code> and <code class="code">to_system_int</code> return and take respectively a signal number
+    corresponding to those in the system's /usr/include/bits/signum.h (or equivalent).  It
+    is not guaranteed that these numbers are portable across any given pair of systems --
+    although some are defined as standard by POSIX.<br/>
+	  
+<br/><code class="code">of_caml_int</code> constructs a Signal.t given an O'Caml internal signal number.  This is
+    only for the use of the Core_unix module.<br/>
+	  
+<br/><code class="code">to_string t</code> returns a human-readable name: &quot;sigabrt&quot;, &quot;sigalrm&quot;, ...<br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> sys_behavior_of_sexp : <code class="type"><a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; <a href="Signal.html#TYPEsys_behavior">sys_behavior</a></code></span></pre>
+      <div class="info">The default behaviour of the system if these signals trickle to the top level of a
+    program.  See include/linux/kernel.h in the Linux kernel source tree (not the file
+    /usr/include/linux/kernel.h).</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> __sys_behavior_of_sexp__ : <code class="type"><a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; <a href="Signal.html#TYPEsys_behavior">sys_behavior</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_sys_behavior : <code class="type"><a href="Signal.html#TYPEsys_behavior">sys_behavior</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+<br/><code class="code">default_sys_behavior t</code>
+    Query the default system behavior for a signal.<br/>
+	  
+<br/><code class="code">signal t</code>
+    Set the behavior of the system on receipt of a given signal.  The
+   first argument is the signal number.  Return the behavior
+   previously associated with the signal. If the signal number is
+   invalid (or not available on your system), an <code class="code">Invalid_argument</code>
+   exception is raised.<br/>
+	  
+<br/><code class="code">set t b</code> is <code class="code">ignore (signal t b)</code> <br/>
+	  
+<br/><code class="code">handle t f</code> is <code class="code">set t (`Handle f)</code>.<br/>
+	  
+<br/><code class="code">handle_default t</code> is <code class="code">set t `Default</code>.<br/>
+	  
+<br/><code class="code">ignore t</code> is <code class="code">set t `Ignore</code>.<br/>
+	  
+<br/><code class="code">send signal pid</code> sends <code class="code">signal</code> to the process whose process id is <code class="code">pid</code>.<br/>
+	  
+<br/><code class="code">send_i signal ~pid</code> sends <code class="code">signal</code> to the process whose process id is <code class="code">pid</code>.
+ No exception will be raised if <code class="code">pid</code> is a zombie or nonexistent.<br/>
+	  
+<br/><code class="code">send_exn signal ~pid</code> sends <code class="code">signal</code> to the process whose process id is
+ <code class="code">pid</code>.  In Caml's standard library, this is called <code class="code">Unix.kill</code>.  Sending a
+ signal to a zombie and/or nonexistent process will raise an exception.<br/>
+	  
+<br/><code class="code">can_send_to pid</code> returns true if <code class="code">pid</code> is running and the current process has
+    permission to send it signals.<br/>
+	  
+<br/><code class="code">sigprocmask cmd sigs</code> changes the set of blocked signals.
+ If <code class="code">cmd</code> is <code class="code">`Set</code>, blocked signals are set to those in the list <code class="code">sigs</code>.
+ If <code class="code">cmd</code> is <code class="code">`Block</code>, the signals in <code class="code">sigs</code> are added to the set of blocked
+   signals.
+ If <code class="code">cmd</code> is <code class="code">`Unblock</code>, the signals in <code class="code">sigs</code> are removed from the set of
+   blocked signals.
+ <code class="code">sigprocmask</code> returns the set of previously blocked signals.<br/>
+	  
+<br/><code class="code">sigpending ()</code> returns the set of blocked signals that are currently
+ pending.<br/>
+	  
+<br/><code class="code">sigsuspend sigs</code> atomically sets the blocked signals to <code class="code">sigs</code> and waits for
+ a non-ignored, non-blocked signal to be delivered.  On return, the blocked
+ signals are reset to their initial value.<br/>
+	  
+<br/>Specific signals, along with their default behavior and meaning.<br/>
+	  
+<br/><code class="code">Dump_core</code>  Abnormal termination<br/>
+	  
+<br/><code class="code">Terminate</code>  Timeout<br/>
+	  
+<br/><code class="code">Ignore</code>     Child process terminated<br/>
+	  
+<br/><code class="code">Continue</code>   Continue<br/>
+	  
+<br/><code class="code">Dump_core</code>  Arithmetic exception<br/>
+	  
+<br/><code class="code">Terminate</code>  Hangup on controlling terminal<br/>
+	  
+<br/><code class="code">Dump_core</code>  Invalid hardware instruction<br/>
+	  
+<br/><code class="code">Terminate</code>  Interactive interrupt (ctrl-C)<br/>
+	  
+<br/><code class="code">Terminate</code>  Termination (cannot be ignored)<br/>
+	  
+<br/><code class="code">Terminate</code>  Broken pipe<br/>
+	  
+<br/><code class="code">Terminate</code>  Profiling interrupt<br/>
+	  
+<br/><code class="code">Dump_core</code>  Interactive termination<br/>
+	  
+<br/><code class="code">Dump_core</code>  Invalid memory reference<br/>
+	  
+<br/><code class="code">Stop</code>       Stop<br/>
+	  
+<br/><code class="code">Terminate</code>  Termination<br/>
+	  
+<br/><code class="code">Stop</code>       Interactive stop<br/>
+	  
+<br/><code class="code">Stop</code>       Terminal read from background process<br/>
+	  
+<br/><code class="code">Stop</code>       Terminal write from background process<br/>
+	  
+<br/><code class="code">Terminate</code>  Application-defined signal 1<br/>
+	  
+<br/><code class="code">Terminate</code>  Application-defined signal 2<br/>
+	  
+<br/><code class="code">Terminate</code>  Timeout in virtual time<br/>
+	  
+<br/><code class="code">Ignore</code>     No-op; can be used to test whether the target
+                                 process exists and the current process has
+                                 permission to signal it<br/>
+	  

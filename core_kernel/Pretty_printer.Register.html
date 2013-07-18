@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<title>Pretty_printer.Register</title>
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
+<script type="text/javascript" src="doc_loader.js"> </script>
+</head>
+<body>
+
+<h1>Module Pretty_printer.Register = <a href="Pretty_printer.S.html">Pretty_printer.S</a></h1>
+	<pre><span class="keyword">module</span> <a href="Pretty_printer.Register.html">Register</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="code">sig</code> <a href="Pretty_printer.Register.Anon_0.html">..</a> <code class="code">end</code><code class="code">) -&gt; </code><code class="code"><a href="Pretty_printer.S.html">S</a></code> with type <a href="Pretty_printer.S.html#TYPEt">t</a> = M.t</div></pre><div class="info"><code class="code">Register</code> builds a <code class="code">pp</code> function from a <code class="code">to_string</code> function, and adds the
+    <code class="code">module_name ^ &quot;.pp&quot;</code> to the list of pretty printers.  The idea is to statically
+    guarantee that one has the desired <code class="code">pp</code> function at the same point where the <code class="code">name</code> is
+    added.</div>
+<hr/>
+<div file="Pretty_printer.Register.html.contents" class="content_to_load"> </div>
+</body>
+</html>

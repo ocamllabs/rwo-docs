@@ -1,0 +1,11 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_string : <code class="type">string -&gt; <a href="Stringable.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_string : <code class="type"><a href="Stringable.S.html#TYPEt">t</a> -&gt; string</code></span></pre>
+      
+    

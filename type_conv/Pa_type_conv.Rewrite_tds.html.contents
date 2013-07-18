@@ -1,0 +1,10 @@
+ 
+      <pre><span><span class="keyword">val</span> sig_ : <code class="type">Camlp4.PreCast.Ast.Loc.t -&gt;
+bool -&gt; Camlp4.PreCast.Ast.ctyp -&gt; Camlp4.PreCast.Ast.sig_item</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> str_ : <code class="type">Camlp4.PreCast.Ast.Loc.t -&gt;
+bool -&gt; Camlp4.PreCast.Ast.ctyp -&gt; Camlp4.PreCast.Ast.str_item</code></span></pre>
+      
+    

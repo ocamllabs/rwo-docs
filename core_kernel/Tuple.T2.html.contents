@@ -1,0 +1,55 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'b) </code>t </span>= <code class="type">'a * 'b</code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">'a -&gt; 'b -&gt; ('a, 'b) <a href="Tuple.T2.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> curry : <code class="type">(('a, 'b) <a href="Tuple.T2.html#TYPEt">t</a> -&gt; 'c) -&gt; 'a -&gt; 'b -&gt; 'c</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> uncurry : <code class="type">('a -&gt; 'b -&gt; 'c) -&gt; ('a, 'b) <a href="Tuple.T2.html#TYPEt">t</a> -&gt; 'c</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> compare : <code class="type">cmp1:('a -&gt; 'a -&gt; int) -&gt;
+cmp2:('b -&gt; 'b -&gt; int) -&gt; ('a, 'b) <a href="Tuple.T2.html#TYPEt">t</a> -&gt; ('a, 'b) <a href="Tuple.T2.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> equal : <code class="type">eq1:('a -&gt; 'a -&gt; bool) -&gt;
+eq2:('b -&gt; 'b -&gt; bool) -&gt; ('a, 'b) <a href="Tuple.T2.html#TYPEt">t</a> -&gt; ('a, 'b) <a href="Tuple.T2.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get1 : <code class="type">('a, 'b) <a href="Tuple.T2.html#TYPEt">t</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get2 : <code class="type">('b, 'a) <a href="Tuple.T2.html#TYPEt">t</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map1 : <code class="type">f:('a -&gt; 'c) -&gt; ('a, 'b) <a href="Tuple.T2.html#TYPEt">t</a> -&gt; ('c, 'b) <a href="Tuple.T2.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map2 : <code class="type">f:('b -&gt; 'c) -&gt; ('a, 'b) <a href="Tuple.T2.html#TYPEt">t</a> -&gt; ('a, 'c) <a href="Tuple.T2.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> swap : <code class="type">('a, 'b) <a href="Tuple.T2.html#TYPEt">t</a> -&gt; ('b, 'a) <a href="Tuple.T2.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp : <code class="type">(<a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; 'a) -&gt;
+(<a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; 'b) -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; ('a, 'b) <a href="Tuple.T2.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type">('a -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a>) -&gt;
+('b -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a>) -&gt; ('a, 'b) <a href="Tuple.T2.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    

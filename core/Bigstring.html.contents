@@ -1,0 +1,166 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> module type of <a href="../core_kernel/Std.Bigstring.html">Core_kernel.Std.Bigstring</a> with type t = <a href="../core_kernel/Std.Bigstring.html#TYPEt">Core_kernel.Std.Bigstring.t</a></pre>
+	<div class="content">
+	<div file="../core_kernel/Std.Bigstring.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<pre><span id="EXCEPTIONIOError"><span class="keyword">exception</span> IOError</span> <span class="keyword">of</span> <code class="type">int * exn</code></pre><div class="info">Type of I/O errors</div>
+<br/><br/><h6 id="6_TITLE">Input functions</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> read : <code class="type">?min_len:int -&gt; <a href="../otherlibs/Unix.html#TYPEfile_descr">Unix.file_descr</a> -&gt; ?pos:int -&gt; ?len:int -&gt; t -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> really_read : <code class="type"><a href="../otherlibs/Unix.html#TYPEfile_descr">Unix.file_descr</a> -&gt; ?pos:int -&gt; ?len:int -&gt; t -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> really_recv : <code class="type"><a href="../otherlibs/Unix.html#TYPEfile_descr">Unix.file_descr</a> -&gt; ?pos:int -&gt; ?len:int -&gt; t -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> recvfrom_assume_fd_is_nonblocking : <code class="type"><a href="../otherlibs/Unix.html#TYPEfile_descr">Unix.file_descr</a> -&gt; ?pos:int -&gt; ?len:int -&gt; t -&gt; int * <a href="../otherlibs/Unix.html#TYPEsockaddr">Unix.sockaddr</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> read_assume_fd_is_nonblocking : <code class="type"><a href="../otherlibs/Unix.html#TYPEfile_descr">Unix.file_descr</a> -&gt; ?pos:int -&gt; ?len:int -&gt; t -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pread_assume_fd_is_nonblocking : <code class="type"><a href="../otherlibs/Unix.html#TYPEfile_descr">Unix.file_descr</a> -&gt; offset:int -&gt; ?pos:int -&gt; ?len:int -&gt; t -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> input : <code class="type">?min_len:int -&gt; <a href="../stdlib/Pervasives.html#TYPEin_channel">in_channel</a> -&gt; ?pos:int -&gt; ?len:int -&gt; t -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> really_input : <code class="type"><a href="../stdlib/Pervasives.html#TYPEin_channel">in_channel</a> -&gt; ?pos:int -&gt; ?len:int -&gt; t -&gt; unit</code></span></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Output functions</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> really_write : <code class="type"><a href="../otherlibs/Unix.html#TYPEfile_descr">Unix.file_descr</a> -&gt; ?pos:int -&gt; ?len:int -&gt; t -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> really_send_no_sigpipe : <code class="type">(<a href="../otherlibs/Unix.html#TYPEfile_descr">Unix.file_descr</a> -&gt; ?pos:int -&gt; ?len:int -&gt; t -&gt; unit)
+<a href="../core_kernel/Std.Or_error.html#TYPEt">Core_kernel.Std.Or_error.t</a></code></span></pre>
+      <div class="info"><code class="code">really_send_no_sigpipe sock ?pos ?len bstr</code> sends <code class="code">len</code> bytes in
+    bigstring <code class="code">bstr</code> starting at position <code class="code">pos</code> to socket <code class="code">sock</code> without
+    blocking and ignoring <code class="code">SIGPIPE</code>.<br/> <div class="parameters"><div class="param_info"><code class="code">pos</code> : default = 0</div><div class="param_info"><code class="code">len</code> : default = <code class="code">length bstr - pos</code><br/>    <code class="code">really_send_no_sigpipe</code> is not implemented on some platforms, in which
+    case it is an <code class="code">Error</code> value that indicates that it is unimplemented.</div></div><b>Raises</b> <code>Invalid_argument</code> if the designated range is out of bounds.<br/><code>IOError</code> in the case of output errors.<br/> <br/></div>
+    
+ 
+      <pre><span><span class="keyword">val</span> send_nonblocking_no_sigpipe : <code class="type">(<a href="../otherlibs/Unix.html#TYPEfile_descr">Unix.file_descr</a> -&gt; ?pos:int -&gt; ?len:int -&gt; t -&gt; int option)
+<a href="../core_kernel/Std.Or_error.html#TYPEt">Core_kernel.Std.Or_error.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sendto_nonblocking_no_sigpipe : <code class="type">(<a href="../otherlibs/Unix.html#TYPEfile_descr">Unix.file_descr</a> -&gt; ?pos:int -&gt; ?len:int -&gt; t -&gt; <a href="../otherlibs/Unix.html#TYPEsockaddr">Unix.sockaddr</a> -&gt; int option)
+<a href="../core_kernel/Std.Or_error.html#TYPEt">Core_kernel.Std.Or_error.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> write : <code class="type"><a href="../otherlibs/Unix.html#TYPEfile_descr">Unix.file_descr</a> -&gt; ?pos:int -&gt; ?len:int -&gt; t -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pwrite_assume_fd_is_nonblocking : <code class="type"><a href="../otherlibs/Unix.html#TYPEfile_descr">Unix.file_descr</a> -&gt; offset:int -&gt; ?pos:int -&gt; ?len:int -&gt; t -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> write_assume_fd_is_nonblocking : <code class="type"><a href="../otherlibs/Unix.html#TYPEfile_descr">Unix.file_descr</a> -&gt; ?pos:int -&gt; ?len:int -&gt; t -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> writev : <code class="type"><a href="../otherlibs/Unix.html#TYPEfile_descr">Unix.file_descr</a> -&gt; ?count:int -&gt; t <a href="Core_unix.IOVec.html#TYPEt">Core_unix.IOVec.t</a> array -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> writev_assume_fd_is_nonblocking : <code class="type"><a href="../otherlibs/Unix.html#TYPEfile_descr">Unix.file_descr</a> -&gt; ?count:int -&gt; t <a href="Core_unix.IOVec.html#TYPEt">Core_unix.IOVec.t</a> array -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> recvmmsg_assume_fd_is_nonblocking : <code class="type">(<a href="../otherlibs/Unix.html#TYPEfile_descr">Unix.file_descr</a> -&gt;
+ ?count:int -&gt;
+ ?srcs:<a href="../otherlibs/Unix.html#TYPEsockaddr">Unix.sockaddr</a> array -&gt;
+ t <a href="Core_unix.IOVec.html#TYPEt">Core_unix.IOVec.t</a> array -&gt; lens:int array -&gt; int)
+<a href="../core_kernel/Std.Or_error.html#TYPEt">Core_kernel.Std.Or_error.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sendmsg_nonblocking_no_sigpipe : <code class="type">(<a href="../otherlibs/Unix.html#TYPEfile_descr">Unix.file_descr</a> -&gt; ?count:int -&gt; t <a href="Core_unix.IOVec.html#TYPEt">Core_unix.IOVec.t</a> array -&gt; int option)
+<a href="../core_kernel/Std.Or_error.html#TYPEt">Core_kernel.Std.Or_error.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> output : <code class="type">?min_len:int -&gt; <a href="../stdlib/Pervasives.html#TYPEout_channel">out_channel</a> -&gt; ?pos:int -&gt; ?len:int -&gt; t -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> really_output : <code class="type"><a href="../stdlib/Pervasives.html#TYPEout_channel">out_channel</a> -&gt; ?pos:int -&gt; ?len:int -&gt; t -&gt; unit</code></span></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Unsafe functions</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> unsafe_read_assume_fd_is_nonblocking : <code class="type"><a href="../otherlibs/Unix.html#TYPEfile_descr">Unix.file_descr</a> -&gt; pos:int -&gt; len:int -&gt; t -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_write : <code class="type"><a href="../otherlibs/Unix.html#TYPEfile_descr">Unix.file_descr</a> -&gt; pos:int -&gt; len:int -&gt; t -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_write_assume_fd_is_nonblocking : <code class="type"><a href="../otherlibs/Unix.html#TYPEfile_descr">Unix.file_descr</a> -&gt; pos:int -&gt; len:int -&gt; t -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_read : <code class="type">min_len:int -&gt; <a href="../otherlibs/Unix.html#TYPEfile_descr">Unix.file_descr</a> -&gt; pos:int -&gt; len:int -&gt; t -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_really_recv : <code class="type"><a href="../otherlibs/Unix.html#TYPEfile_descr">Unix.file_descr</a> -&gt; pos:int -&gt; len:int -&gt; t -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_really_write : <code class="type"><a href="../otherlibs/Unix.html#TYPEfile_descr">Unix.file_descr</a> -&gt; pos:int -&gt; len:int -&gt; t -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_really_send_no_sigpipe : <code class="type">(<a href="../otherlibs/Unix.html#TYPEfile_descr">Unix.file_descr</a> -&gt; pos:int -&gt; len:int -&gt; t -&gt; unit)
+<a href="../core_kernel/Std.Or_error.html#TYPEt">Core_kernel.Std.Or_error.t</a></code></span></pre>
+      <div class="info"><code class="code">unsafe_really_send_no_sigpipe sock ~pos ~len bstr</code>
+    similar to TODO reference : Bigstring.send, but does not perform any
+    bounds checks.  Will crash on bounds errors!</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_send_nonblocking_no_sigpipe : <code class="type">(<a href="../otherlibs/Unix.html#TYPEfile_descr">Unix.file_descr</a> -&gt; pos:int -&gt; len:int -&gt; t -&gt; int option)
+<a href="../core_kernel/Std.Or_error.html#TYPEt">Core_kernel.Std.Or_error.t</a></code></span></pre>
+      <div class="info"><code class="code">unsafe_send_nonblocking_no_sigpipe sock ~pos ~len bstr</code> similar to
+    TODO reference : Bigstring.send_nonblocking_no_sigpipe, but does not perform any
+    bounds checks.  Will crash on bounds errors!</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_writev : <code class="type"><a href="../otherlibs/Unix.html#TYPEfile_descr">Unix.file_descr</a> -&gt; t <a href="Core_unix.IOVec.html#TYPEt">Core_unix.IOVec.t</a> array -&gt; int -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_sendmsg_nonblocking_no_sigpipe : <code class="type">(<a href="../otherlibs/Unix.html#TYPEfile_descr">Unix.file_descr</a> -&gt; t <a href="Core_unix.IOVec.html#TYPEt">Core_unix.IOVec.t</a> array -&gt; int -&gt; int option)
+<a href="../core_kernel/Std.Or_error.html#TYPEt">Core_kernel.Std.Or_error.t</a></code></span></pre>
+      <div class="info"><code class="code">unsafe_sendmsg_nonblocking_no_sigpipe fd iovecs count</code>
+    similar to TODO reference : Bigstring.sendmsg_nonblocking_no_sigpipe, but
+    does not perform any bounds checks.  Will crash on bounds errors!</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_input : <code class="type">min_len:int -&gt; <a href="../stdlib/Pervasives.html#TYPEin_channel">in_channel</a> -&gt; pos:int -&gt; len:int -&gt; t -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_output : <code class="type">min_len:int -&gt; <a href="../stdlib/Pervasives.html#TYPEout_channel">out_channel</a> -&gt; pos:int -&gt; len:int -&gt; t -&gt; int</code></span></pre>
+      
+    

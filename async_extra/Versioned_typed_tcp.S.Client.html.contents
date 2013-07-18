@@ -1,0 +1,57 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">?logfun:<a href="Versioned_typed_tcp.S.html#TYPElogfun">logfun</a> -&gt;
+?now:(unit -&gt; <a href="../core/Std.Time.html#TYPEt">Core.Std.Time.t</a>) -&gt;
+?check_remote_name:bool -&gt;
+ip:string -&gt;
+port:int -&gt;
+expected_remote_name:Remote_name.t -&gt; My_name.t -&gt; <a href="Versioned_typed_tcp.S.Client.html#TYPEt">t</a> <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a></code></span></pre>
+      <div class="info">create a new (initially disconnected) client</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> connect : <code class="type"><a href="Versioned_typed_tcp.S.Client.html#TYPEt">t</a> -&gt; unit <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a></code></span></pre>
+      <div class="info"><code class="code">connect t</code> If the connection is not currently established, initiate one.<b>Returns</b> a deferred that becomes determined when the connection is established.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> close_connection : <code class="type"><a href="Versioned_typed_tcp.S.Client.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      <div class="info">If a connection is currently established, close it.  Also, if we're trying to
+        connect, give up.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> listen : <code class="type"><a href="Versioned_typed_tcp.S.Client.html#TYPEt">t</a> -&gt; (Remote_name.t, Recv.t) <a href="Versioned_typed_tcp.Client_msg.html#TYPEt">Client_msg.t</a> <a href="Import.Stream.html#TYPEt">Import.Stream.t</a></code></span></pre>
+      <div class="info"><code class="code">listen t</code> <b>Returns</b> a stream of messages from the server and errors</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> listen_ignore_errors : <code class="type">?stop:unit <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a> -&gt; <a href="Versioned_typed_tcp.S.Client.html#TYPEt">t</a> -&gt; Recv.t <a href="Import.Stream.html#TYPEt">Import.Stream.t</a></code></span></pre>
+      <div class="info"><code class="code">listen_ignore_errors t</code> like <code class="code">listen</code>, but with no errors or meta data.  When
+        listen_ignore_errors is called it installs a filter on the stream that never
+        goes away (unless t is destroyed or you provide a stop), so you should
+        not call it many times throwing away the result.  If you need to do this
+        use listen.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> send : <code class="type"><a href="Versioned_typed_tcp.S.Client.html#TYPEt">t</a> -&gt; Send.t -&gt; [ `Dropped | `Sent of <a href="../core/Std.Time.html#TYPEt">Core.Std.Time.t</a> ] <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a></code></span></pre>
+      <div class="info"><code class="code">send t msg</code> send a message to the server. If the connection is
+        not currently established, initiate one.<b>Returns</b> a deferred that is filled in with either the time the
+        message was handed to the OS, or <code class="code">`Dropped</code>. <code class="code">`Dropped</code> means that
+        there was an error, and the message will not be sent.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> send_ignore_errors : <code class="type"><a href="Versioned_typed_tcp.S.Client.html#TYPEt">t</a> -&gt; Send.t -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">send_ignore_errors t</code> exactly like <code class="code">send</code> but with no error reporting.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> state : <code class="type"><a href="Versioned_typed_tcp.S.Client.html#TYPEt">t</a> -&gt; [ `Connected | `Connecting | `Disconnected ]</code></span></pre>
+      <div class="info"><code class="code">state t</code> <b>Returns</b> the state of the connection</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> last_connect_error : <code class="type"><a href="Versioned_typed_tcp.S.Client.html#TYPEt">t</a> -&gt; exn option</code></span></pre>
+      <div class="info"><code class="code">last_connect_error t</code> returns the error (if any) that happened on the
+        last connection attempt.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> flushed : <code class="type"><a href="Versioned_typed_tcp.S.Client.html#TYPEt">t</a> -&gt; [ `Flushed | `Pending of <a href="../core/Std.Time.html#TYPEt">Core.Std.Time.t</a> <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a> ]</code></span></pre>
+      
+    

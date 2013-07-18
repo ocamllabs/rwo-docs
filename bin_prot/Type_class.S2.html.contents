@@ -1,0 +1,9 @@
+<pre><span id="TYPEwriter"><span class="keyword">type</span> <code class="type">('a, 'b, 'c) </code>writer </span>= <code class="type">'a <a href="Type_class.html#TYPEwriter0">writer0</a> -&gt; ('b, 'c) <a href="Type_class.S1.html#TYPEwriter">S1.writer</a></code> </pre>
+      
+    
+<pre><span id="TYPEreader"><span class="keyword">type</span> <code class="type">('a, 'b, 'c) </code>reader </span>= <code class="type">'a <a href="Type_class.html#TYPEreader0">reader0</a> -&gt; ('b, 'c) <a href="Type_class.S1.html#TYPEreader">S1.reader</a></code> </pre>
+      
+    
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'b, 'c) </code>t </span>= <code class="type">'a <a href="Type_class.html#TYPEt0">t0</a> -&gt; ('b, 'c) <a href="Type_class.S1.html#TYPEt">S1.t</a></code> </pre>
+      
+    

@@ -1,0 +1,62 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('address, 'listening_on) </code>t </span></pre>
+      
+    
+<pre><span id="TYPEinet"><span class="keyword">type</span> inet </span>= <code class="type">(<a href="Import.Socket.Address.Inet.html#TYPEt">Import.Socket.Address.Inet.t</a>, int) <a href="Tcp.Server.html#TYPEt">t</a></code> </pre>
+      
+    
+<pre><span id="TYPEunix"><span class="keyword">type</span> unix </span>= <code class="type">(<a href="Import.Socket.Address.Unix.html#TYPEt">Import.Socket.Address.Unix.t</a>, string) <a href="Tcp.Server.html#TYPEt">t</a></code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> invariant : <code class="type">([&lt; <a href="Import.Socket.Address.html#TYPEt">Import.Socket.Address.t</a> ], 'a) <a href="Tcp.Server.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> listening_on : <code class="type">([&lt; <a href="Import.Socket.Address.html#TYPEt">Import.Socket.Address.t</a> ], 'listening_on) <a href="Tcp.Server.html#TYPEt">t</a> -&gt; 'listening_on</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> close : <code class="type">([&lt; <a href="Import.Socket.Address.html#TYPEt">Import.Socket.Address.t</a> ], 'a) <a href="Tcp.Server.html#TYPEt">t</a> -&gt; unit <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a></code></span></pre>
+      <div class="info"><code class="code">close t</code> starts closing the listening socket, and returns a deferred that becomes
+      determined after <code class="code">Fd.close_finished fd</code> on the socket's fd.  It is guaranteed that
+      <code class="code">t</code>'s client handler will never be called after <code class="code">close t</code>.  It is ok to call <code class="code">close</code>
+      multiple times on the same <code class="code">t</code>; calls subsequent to the initial call will have no
+      effect, but will return the same deferred as the original call.<br/>      <code class="code">close_finished</code> becomes determined after <code class="code">Fd.close_finished fd</code> on the socket's fd,
+     i.e. the same deferred that <code class="code">close</code> returns.  <code class="code">close_finished</code> differs from <code class="code">close</code>
+     in that it does not have the side effect of initiating a close.<br/>     <code class="code">is_closed t</code> returns <code class="code">true</code> iff <code class="code">close t</code> has been called.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> close_finished : <code class="type">([&lt; <a href="Import.Socket.Address.html#TYPEt">Import.Socket.Address.t</a> ], 'a) <a href="Tcp.Server.html#TYPEt">t</a> -&gt; unit <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_closed : <code class="type">([&lt; <a href="Import.Socket.Address.html#TYPEt">Import.Socket.Address.t</a> ], 'a) <a href="Tcp.Server.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">?max_connections:int -&gt;
+?max_pending_connections:int -&gt;
+?buffer_age_limit:<a href="Import.Writer.html#TYPEbuffer_age_limit">Import.Writer.buffer_age_limit</a> -&gt;
+?on_handler_error:[ `Call of
+                      ([&lt; <a href="Import.Socket.Address.html#TYPEt">Import.Socket.Address.t</a> ] as 'a) -&gt; exn -&gt; unit
+                  | `Ignore
+                  | `Raise ] -&gt;
+('a, 'listening_on) <a href="Tcp.Where_to_listen.html#TYPEt">Where_to_listen.t</a> -&gt;
+('a -&gt; <a href="Import.Reader.html#TYPEt">Import.Reader.t</a> -&gt; <a href="Import.Writer.html#TYPEt">Import.Writer.t</a> -&gt; unit <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a>) -&gt;
+('a, 'listening_on) <a href="Tcp.Server.html#TYPEt">t</a> <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a></code></span></pre>
+      <div class="info"><code class="code">create where_to_listen handler</code> starts a server listening to a socket as specified
+      by <code class="code">where_to_listen</code>.  It returns a server once the socket is ready to accept
+      connections.  The server calls <code class="code">handler (address, reader, writer)</code> for each client
+      that connects.  If the deferred returned by <code class="code">handler</code> is ever determined, or
+      <code class="code">handler</code> raises an exception, then <code class="code">reader</code> and <code class="code">writer</code> are closed.<br/>      <code class="code">max_pending_connections</code> is the maximum number of clients that can have a
+      connection pending, as with <code class="code">Unix.Socket.listen</code>.  Additional connections will be
+      rejected.<br/>      <code class="code">max_connections</code> is the maximum number of clients that can be connected
+      simultaneously.  The server will not call <code class="code">accept</code> unless the number of clients is
+      less than <code class="code">max_connections</code>, although of course potential clients can have a
+      connection pending.<br/>      <code class="code">buffer_age_limit</code> passes on to the underlying writer option of the same name.<br/>      <code class="code">on_handler_error</code> determines what happens if the handler throws an exception.  The
+      default is <code class="code">`Raise</code>.  If an exception is raised by on_handler_error (either
+      explicitely via `Raise, or in the closure passed to `Call) no further connections
+      will be accepted.<br/>      The server will stop accepting and close the listening socket when an error handler
+      raises (either via <code class="code">`Raise</code> or <code class="code">`Call f</code> where <code class="code">f</code> raises), or if <code class="code">close</code> is
+      called.</div>
+    

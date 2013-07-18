@@ -1,0 +1,5 @@
+ 
+      <pre><span><span class="keyword">val</span> to_string_hum : <code class="type"><a href="../core/Std.Time.Span.html#TYPEt">Core.Std.Time.Span.t</a> -&gt; string</code></span></pre>
+      <div class="info">Convert a time span to a human-readable string, e.g. &quot;1:23:45.778&quot;
+     (versus &quot;1.396h&quot; from <code class="code">Time.Span.to_string</code>).</div>
+    

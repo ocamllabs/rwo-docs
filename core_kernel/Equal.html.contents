@@ -1,0 +1,47 @@
+ 
+      <pre><span><span class="keyword">val</span> __pa_ounit_275876e34cf609db118f3d84b799a790 : <code class="type">string</code></span></pre>
+      
+    
+
+<br/>This module defines signatures that are to be included in other signatures to ensure a
+    consistent interface to <code class="code">equal</code> functions.  There is a signature (<code class="code">S</code>, <code class="code">S1</code>, <code class="code">S2</code>,
+    <code class="code">S3</code>) for each arity of type.  Usage looks like:<br/>    <pre class="codepre"><code class="code">
+      type t
+      include Equal.S with type t := t
+    </code></pre><br/>    or<br/>    <pre class="codepre"><code class="code">
+      type 'a t
+      include Equal.S1 with type 'a t := 'a t
+    </code></pre>
+<br/>
+	  
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t </span>= <code class="type">'a -&gt; 'a -&gt; bool</code> </pre>
+      
+    
+<pre><span id="TYPEequal"><span class="keyword">type</span> <code class="type">'a </code>equal </span>= <code class="type">'a <a href="Equal.html#TYPEt">t</a></code> </pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Equal.S.html">S</a> = <code class="type"><code class="code">sig</code> <a href="Equal.S.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Equal.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Equal.S1.html">S1</a> = <code class="type"><code class="code">sig</code> <a href="Equal.S1.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Equal.S1.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Equal.S2.html">S2</a> = <code class="type"><code class="code">sig</code> <a href="Equal.S2.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Equal.S2.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Equal.S3.html">S3</a> = <code class="type"><code class="code">sig</code> <a href="Equal.S3.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Equal.S3.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+

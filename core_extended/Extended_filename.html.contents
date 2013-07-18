@@ -1,0 +1,56 @@
+ 
+      <pre><span><span class="keyword">val</span> normalize : <code class="type">string -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> parent : <code class="type">string -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> make_relative : <code class="type">?to_:string -&gt; string -&gt; string</code></span></pre>
+      <div class="info"><code class="code">make_relative ~to_:src f</code>
+   returns <code class="code">f</code> relative to <code class="code">src</code>.<br/> <b>Raises</b> <code>Failure</code> if <code class="code">is_relative f &lt;&gt; is_relative src</code>
+<br/></div>
+    
+ 
+      <pre><span><span class="keyword">val</span> make_absolute : <code class="type">string -&gt; string</code></span></pre>
+      <div class="info"><code class="code">make_absolute src</code>
+   Turn <code class="code">src</code> in an absolute path expanded from the current working directory.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> expand : <code class="type">?from:string -&gt; string -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> explode : <code class="type">string -&gt; string list</code></span></pre>
+      <div class="info">Splits a given path in a list of strings.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> implode : <code class="type">string list -&gt; string</code></span></pre>
+      <div class="info">dual to explode</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> normalize_path : <code class="type">string list -&gt; string list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> compare : <code class="type">string -&gt; string -&gt; int</code></span></pre>
+      <div class="info">Filename.compare is a comparaison that normalizes filenames (&quot;./a&quot; = &quot;a&quot;) use
+   a more human ready algorithm based on <code class="code">String.collate</code>
+   (&quot;rfc02.txt &gt; rfc1.txt&quot;) and extenstions (&quot;a.c&quot; &gt; &quot;a.h&quot;).<br/>   It is a total comparaison on normalized filenames.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> with_open_temp_file : <code class="type">?in_dir:string -&gt;
+?write:(<a href="../stdlib/Pervasives.html#TYPEout_channel">out_channel</a> -&gt; unit) -&gt; f:(string -&gt; 'a) -&gt; string -&gt; string -&gt; 'a</code></span></pre>
+      <div class="info"><code class="code">with_open_temp_file ~write ~f prefix suffix</code>
+   create a temporary file; runs <code class="code">write</code> on its <code class="code">out_channel</code> and then <code class="code">f</code> on
+   the resulting file. The file is removed once <code class="code">f</code> is done running.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> with_temp_dir : <code class="type">?in_dir:string -&gt; string -&gt; string -&gt; f:(string -&gt; 'a) -&gt; 'a</code></span></pre>
+      <div class="info">Runs <code class="code">f</code> with a temporary dir as option and removes the directory afterwards.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> is_parent : <code class="type">string -&gt; string -&gt; bool</code></span></pre>
+      
+    

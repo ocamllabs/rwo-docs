@@ -1,0 +1,207 @@
+<pre><span id="TYPEnat"><span class="keyword">type</span> nat </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create_nat : <code class="type">int -&gt; <a href="Nat.html#TYPEnat">nat</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> make_nat : <code class="type">int -&gt; <a href="Nat.html#TYPEnat">nat</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set_to_zero_nat : <code class="type"><a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; int -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> blit_nat : <code class="type"><a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; <a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; int -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> copy_nat : <code class="type"><a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; int -&gt; <a href="Nat.html#TYPEnat">nat</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set_digit_nat : <code class="type"><a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; int -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> nth_digit_nat : <code class="type"><a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set_digit_nat_native : <code class="type"><a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; nativeint -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> nth_digit_nat_native : <code class="type"><a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; nativeint</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> length_nat : <code class="type"><a href="Nat.html#TYPEnat">nat</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> num_digits_nat : <code class="type"><a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; int -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> num_leading_zero_bits_in_digit : <code class="type"><a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_digit_int : <code class="type"><a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_digit_zero : <code class="type"><a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_digit_normalized : <code class="type"><a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_digit_odd : <code class="type"><a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_zero_nat : <code class="type"><a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; int -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_nat_int : <code class="type"><a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; int -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> int_of_nat : <code class="type"><a href="Nat.html#TYPEnat">nat</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> nat_of_int : <code class="type">int -&gt; <a href="Nat.html#TYPEnat">nat</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> incr_nat : <code class="type"><a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; int -&gt; int -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add_nat : <code class="type"><a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; int -&gt; <a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; int -&gt; int -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> complement_nat : <code class="type"><a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; int -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> decr_nat : <code class="type"><a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; int -&gt; int -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sub_nat : <code class="type"><a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; int -&gt; <a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; int -&gt; int -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mult_digit_nat : <code class="type"><a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; int -&gt; <a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; int -&gt; <a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mult_nat : <code class="type"><a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; int -&gt; <a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; int -&gt; <a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; int -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> square_nat : <code class="type"><a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; int -&gt; <a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; int -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> shift_left_nat : <code class="type"><a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; int -&gt; <a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; int -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> div_digit_nat : <code class="type"><a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; <a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; <a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; int -&gt; <a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> div_nat : <code class="type"><a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; int -&gt; <a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; int -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> shift_right_nat : <code class="type"><a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; int -&gt; <a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; int -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> compare_digits_nat : <code class="type"><a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; <a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> compare_nat : <code class="type"><a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; int -&gt; <a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; int -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> eq_nat : <code class="type"><a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; int -&gt; <a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; int -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> le_nat : <code class="type"><a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; int -&gt; <a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; int -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> lt_nat : <code class="type"><a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; int -&gt; <a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; int -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ge_nat : <code class="type"><a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; int -&gt; <a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; int -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> gt_nat : <code class="type"><a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; int -&gt; <a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; int -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> land_digit_nat : <code class="type"><a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; <a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> lor_digit_nat : <code class="type"><a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; <a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> lxor_digit_nat : <code class="type"><a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; <a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> gcd_nat : <code class="type"><a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; int -&gt; <a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; int -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sqrt_nat : <code class="type"><a href="Nat.html#TYPEnat">nat</a> -&gt; int -&gt; int -&gt; <a href="Nat.html#TYPEnat">nat</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> string_of_nat : <code class="type"><a href="Nat.html#TYPEnat">nat</a> -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> nat_of_string : <code class="type">string -&gt; <a href="Nat.html#TYPEnat">nat</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sys_nat_of_string : <code class="type">int -&gt; string -&gt; int -&gt; int -&gt; <a href="Nat.html#TYPEnat">nat</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> float_of_nat : <code class="type"><a href="Nat.html#TYPEnat">nat</a> -&gt; float</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> make_power_base : <code class="type">int -&gt; <a href="Nat.html#TYPEnat">nat</a> -&gt; int * int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> power_base_int : <code class="type">int -&gt; int -&gt; <a href="Nat.html#TYPEnat">nat</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> length_of_digit : <code class="type">int</code></span></pre>
+      
+    

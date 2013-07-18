@@ -1,0 +1,236 @@
+ 
+      <pre><span><span class="keyword">val</span> names : <code class="type">string list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> oom_score : <code class="type">(<a href="Procfs.Process.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> oom_adj : <code class="type">(<a href="Procfs.Process.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fds : <code class="type">(<a href="Procfs.Process.html#TYPEt">t</a>, <a href="Procfs.Process.Fd.html#TYPEt">Fd.t</a> list option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> top_command : <code class="type">(<a href="Procfs.Process.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> task_stats : <code class="type">(<a href="Procfs.Process.html#TYPEt">t</a>, <a href="Procfs.Process.Stat.html#TYPEt">Stat.t</a> <a href="../core/Std.Pid.Map.html#TYPEt">Core.Std.Pid.Map.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> status : <code class="type">(<a href="Procfs.Process.html#TYPEt">t</a>, <a href="Procfs.Process.Status.html#TYPEt">Status.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> statm : <code class="type">(<a href="Procfs.Process.html#TYPEt">t</a>, <a href="Procfs.Process.Statm.html#TYPEt">Statm.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stat : <code class="type">(<a href="Procfs.Process.html#TYPEt">t</a>, <a href="Procfs.Process.Stat.html#TYPEt">Stat.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> limits : <code class="type">(<a href="Procfs.Process.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.html#TYPEt">Limits.t</a> option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> root : <code class="type">(<a href="Procfs.Process.html#TYPEt">t</a>, string option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> exe : <code class="type">(<a href="Procfs.Process.html#TYPEt">t</a>, string option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> environ : <code class="type">(<a href="Procfs.Process.html#TYPEt">t</a>, string option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> cwd : <code class="type">(<a href="Procfs.Process.html#TYPEt">t</a>, string option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> cmdline : <code class="type">(<a href="Procfs.Process.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pid : <code class="type">(<a href="Procfs.Process.html#TYPEt">t</a>, <a href="../core/Std.Pid.html#TYPEt">Core.Std.Pid.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold : <code class="type">init:'acc__ -&gt;
+pid:('acc__ -&gt; (<a href="Procfs.Process.html#TYPEt">t</a>, <a href="../core/Std.Pid.html#TYPEt">Core.Std.Pid.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+cmdline:('acc__ -&gt; (<a href="Procfs.Process.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+cwd:('acc__ -&gt; (<a href="Procfs.Process.html#TYPEt">t</a>, string option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+environ:('acc__ -&gt; (<a href="Procfs.Process.html#TYPEt">t</a>, string option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+exe:('acc__ -&gt; (<a href="Procfs.Process.html#TYPEt">t</a>, string option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+root:('acc__ -&gt; (<a href="Procfs.Process.html#TYPEt">t</a>, string option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+limits:('acc__ -&gt; (<a href="Procfs.Process.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.html#TYPEt">Limits.t</a> option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+stat:('acc__ -&gt; (<a href="Procfs.Process.html#TYPEt">t</a>, <a href="Procfs.Process.Stat.html#TYPEt">Stat.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+statm:('acc__ -&gt; (<a href="Procfs.Process.html#TYPEt">t</a>, <a href="Procfs.Process.Statm.html#TYPEt">Statm.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+status:('acc__ -&gt; (<a href="Procfs.Process.html#TYPEt">t</a>, <a href="Procfs.Process.Status.html#TYPEt">Status.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+task_stats:('acc__ -&gt;
+            (<a href="Procfs.Process.html#TYPEt">t</a>, <a href="Procfs.Process.Stat.html#TYPEt">Stat.t</a> <a href="../core/Std.Pid.Map.html#TYPEt">Core.Std.Pid.Map.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+top_command:('acc__ -&gt; (<a href="Procfs.Process.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+fds:('acc__ -&gt; (<a href="Procfs.Process.html#TYPEt">t</a>, <a href="Procfs.Process.Fd.html#TYPEt">Fd.t</a> list option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+oom_adj:('acc__ -&gt; (<a href="Procfs.Process.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+oom_score:('acc__ -&gt; (<a href="Procfs.Process.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt; 'acc__</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> make_creator : <code class="type">pid:((<a href="Procfs.Process.html#TYPEt">t</a>, <a href="../core/Std.Pid.html#TYPEt">Core.Std.Pid.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+     'compile_acc__ -&gt; ('input__ -&gt; <a href="../core/Std.Pid.html#TYPEt">Core.Std.Pid.t</a>) * 'compile_acc__) -&gt;
+cmdline:((<a href="Procfs.Process.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+         'compile_acc__ -&gt; ('input__ -&gt; string) * 'compile_acc__) -&gt;
+cwd:((<a href="Procfs.Process.html#TYPEt">t</a>, string option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+     'compile_acc__ -&gt; ('input__ -&gt; string option) * 'compile_acc__) -&gt;
+environ:((<a href="Procfs.Process.html#TYPEt">t</a>, string option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+         'compile_acc__ -&gt; ('input__ -&gt; string option) * 'compile_acc__) -&gt;
+exe:((<a href="Procfs.Process.html#TYPEt">t</a>, string option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+     'compile_acc__ -&gt; ('input__ -&gt; string option) * 'compile_acc__) -&gt;
+root:((<a href="Procfs.Process.html#TYPEt">t</a>, string option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+      'compile_acc__ -&gt; ('input__ -&gt; string option) * 'compile_acc__) -&gt;
+limits:((<a href="Procfs.Process.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.html#TYPEt">Limits.t</a> option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+        'compile_acc__ -&gt; ('input__ -&gt; <a href="Procfs.Process.Limits.html#TYPEt">Limits.t</a> option) * 'compile_acc__) -&gt;
+stat:((<a href="Procfs.Process.html#TYPEt">t</a>, <a href="Procfs.Process.Stat.html#TYPEt">Stat.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+      'compile_acc__ -&gt; ('input__ -&gt; <a href="Procfs.Process.Stat.html#TYPEt">Stat.t</a>) * 'compile_acc__) -&gt;
+statm:((<a href="Procfs.Process.html#TYPEt">t</a>, <a href="Procfs.Process.Statm.html#TYPEt">Statm.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+       'compile_acc__ -&gt; ('input__ -&gt; <a href="Procfs.Process.Statm.html#TYPEt">Statm.t</a>) * 'compile_acc__) -&gt;
+status:((<a href="Procfs.Process.html#TYPEt">t</a>, <a href="Procfs.Process.Status.html#TYPEt">Status.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+        'compile_acc__ -&gt; ('input__ -&gt; <a href="Procfs.Process.Status.html#TYPEt">Status.t</a>) * 'compile_acc__) -&gt;
+task_stats:((<a href="Procfs.Process.html#TYPEt">t</a>, <a href="Procfs.Process.Stat.html#TYPEt">Stat.t</a> <a href="../core/Std.Pid.Map.html#TYPEt">Core.Std.Pid.Map.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+            'compile_acc__ -&gt;
+            ('input__ -&gt; <a href="Procfs.Process.Stat.html#TYPEt">Stat.t</a> <a href="../core/Std.Pid.Map.html#TYPEt">Core.Std.Pid.Map.t</a>) * 'compile_acc__) -&gt;
+top_command:((<a href="Procfs.Process.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+             'compile_acc__ -&gt; ('input__ -&gt; string) * 'compile_acc__) -&gt;
+fds:((<a href="Procfs.Process.html#TYPEt">t</a>, <a href="Procfs.Process.Fd.html#TYPEt">Fd.t</a> list option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+     'compile_acc__ -&gt; ('input__ -&gt; <a href="Procfs.Process.Fd.html#TYPEt">Fd.t</a> list option) * 'compile_acc__) -&gt;
+oom_adj:((<a href="Procfs.Process.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+         'compile_acc__ -&gt; ('input__ -&gt; int) * 'compile_acc__) -&gt;
+oom_score:((<a href="Procfs.Process.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+           'compile_acc__ -&gt; ('input__ -&gt; int) * 'compile_acc__) -&gt;
+'compile_acc__ -&gt; ('input__ -&gt; <a href="Procfs.Process.html#TYPEt">t</a>) * 'compile_acc__</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">pid:<a href="../core/Std.Pid.html#TYPEt">Core.Std.Pid.t</a> -&gt;
+cmdline:string -&gt;
+cwd:string option -&gt;
+environ:string option -&gt;
+exe:string option -&gt;
+root:string option -&gt;
+limits:<a href="Procfs.Process.Limits.html#TYPEt">Limits.t</a> option -&gt;
+stat:<a href="Procfs.Process.Stat.html#TYPEt">Stat.t</a> -&gt;
+statm:<a href="Procfs.Process.Statm.html#TYPEt">Statm.t</a> -&gt;
+status:<a href="Procfs.Process.Status.html#TYPEt">Status.t</a> -&gt;
+task_stats:<a href="Procfs.Process.Stat.html#TYPEt">Stat.t</a> <a href="../core/Std.Pid.Map.html#TYPEt">Core.Std.Pid.Map.t</a> -&gt;
+top_command:string -&gt;
+fds:<a href="Procfs.Process.Fd.html#TYPEt">Fd.t</a> list option -&gt; oom_adj:int -&gt; oom_score:int -&gt; <a href="Procfs.Process.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map : <code class="type">pid:((<a href="Procfs.Process.html#TYPEt">t</a>, <a href="../core/Std.Pid.html#TYPEt">Core.Std.Pid.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="../core/Std.Pid.html#TYPEt">Core.Std.Pid.t</a>) -&gt;
+cmdline:((<a href="Procfs.Process.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; string) -&gt;
+cwd:((<a href="Procfs.Process.html#TYPEt">t</a>, string option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; string option) -&gt;
+environ:((<a href="Procfs.Process.html#TYPEt">t</a>, string option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; string option) -&gt;
+exe:((<a href="Procfs.Process.html#TYPEt">t</a>, string option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; string option) -&gt;
+root:((<a href="Procfs.Process.html#TYPEt">t</a>, string option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; string option) -&gt;
+limits:((<a href="Procfs.Process.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.html#TYPEt">Limits.t</a> option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Limits.html#TYPEt">Limits.t</a> option) -&gt;
+stat:((<a href="Procfs.Process.html#TYPEt">t</a>, <a href="Procfs.Process.Stat.html#TYPEt">Stat.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Stat.html#TYPEt">Stat.t</a>) -&gt;
+statm:((<a href="Procfs.Process.html#TYPEt">t</a>, <a href="Procfs.Process.Statm.html#TYPEt">Statm.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Statm.html#TYPEt">Statm.t</a>) -&gt;
+status:((<a href="Procfs.Process.html#TYPEt">t</a>, <a href="Procfs.Process.Status.html#TYPEt">Status.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Status.html#TYPEt">Status.t</a>) -&gt;
+task_stats:((<a href="Procfs.Process.html#TYPEt">t</a>, <a href="Procfs.Process.Stat.html#TYPEt">Stat.t</a> <a href="../core/Std.Pid.Map.html#TYPEt">Core.Std.Pid.Map.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+            <a href="Procfs.Process.Stat.html#TYPEt">Stat.t</a> <a href="../core/Std.Pid.Map.html#TYPEt">Core.Std.Pid.Map.t</a>) -&gt;
+top_command:((<a href="Procfs.Process.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; string) -&gt;
+fds:((<a href="Procfs.Process.html#TYPEt">t</a>, <a href="Procfs.Process.Fd.html#TYPEt">Fd.t</a> list option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Fd.html#TYPEt">Fd.t</a> list option) -&gt;
+oom_adj:((<a href="Procfs.Process.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; int) -&gt;
+oom_score:((<a href="Procfs.Process.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; int) -&gt; <a href="Procfs.Process.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter : <code class="type">pid:((<a href="Procfs.Process.html#TYPEt">t</a>, <a href="../core/Std.Pid.html#TYPEt">Core.Std.Pid.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+cmdline:((<a href="Procfs.Process.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+cwd:((<a href="Procfs.Process.html#TYPEt">t</a>, string option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+environ:((<a href="Procfs.Process.html#TYPEt">t</a>, string option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+exe:((<a href="Procfs.Process.html#TYPEt">t</a>, string option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+root:((<a href="Procfs.Process.html#TYPEt">t</a>, string option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+limits:((<a href="Procfs.Process.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.html#TYPEt">Limits.t</a> option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+stat:((<a href="Procfs.Process.html#TYPEt">t</a>, <a href="Procfs.Process.Stat.html#TYPEt">Stat.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+statm:((<a href="Procfs.Process.html#TYPEt">t</a>, <a href="Procfs.Process.Statm.html#TYPEt">Statm.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+status:((<a href="Procfs.Process.html#TYPEt">t</a>, <a href="Procfs.Process.Status.html#TYPEt">Status.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+task_stats:((<a href="Procfs.Process.html#TYPEt">t</a>, <a href="Procfs.Process.Stat.html#TYPEt">Stat.t</a> <a href="../core/Std.Pid.Map.html#TYPEt">Core.Std.Pid.Map.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+top_command:((<a href="Procfs.Process.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+fds:((<a href="Procfs.Process.html#TYPEt">t</a>, <a href="Procfs.Process.Fd.html#TYPEt">Fd.t</a> list option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+oom_adj:((<a href="Procfs.Process.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+oom_score:((<a href="Procfs.Process.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> for_all : <code class="type">pid:((<a href="Procfs.Process.html#TYPEt">t</a>, <a href="../core/Std.Pid.html#TYPEt">Core.Std.Pid.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+cmdline:((<a href="Procfs.Process.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+cwd:((<a href="Procfs.Process.html#TYPEt">t</a>, string option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+environ:((<a href="Procfs.Process.html#TYPEt">t</a>, string option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+exe:((<a href="Procfs.Process.html#TYPEt">t</a>, string option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+root:((<a href="Procfs.Process.html#TYPEt">t</a>, string option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+limits:((<a href="Procfs.Process.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.html#TYPEt">Limits.t</a> option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+stat:((<a href="Procfs.Process.html#TYPEt">t</a>, <a href="Procfs.Process.Stat.html#TYPEt">Stat.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+statm:((<a href="Procfs.Process.html#TYPEt">t</a>, <a href="Procfs.Process.Statm.html#TYPEt">Statm.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+status:((<a href="Procfs.Process.html#TYPEt">t</a>, <a href="Procfs.Process.Status.html#TYPEt">Status.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+task_stats:((<a href="Procfs.Process.html#TYPEt">t</a>, <a href="Procfs.Process.Stat.html#TYPEt">Stat.t</a> <a href="../core/Std.Pid.Map.html#TYPEt">Core.Std.Pid.Map.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+top_command:((<a href="Procfs.Process.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+fds:((<a href="Procfs.Process.html#TYPEt">t</a>, <a href="Procfs.Process.Fd.html#TYPEt">Fd.t</a> list option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+oom_adj:((<a href="Procfs.Process.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+oom_score:((<a href="Procfs.Process.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> exists : <code class="type">pid:((<a href="Procfs.Process.html#TYPEt">t</a>, <a href="../core/Std.Pid.html#TYPEt">Core.Std.Pid.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+cmdline:((<a href="Procfs.Process.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+cwd:((<a href="Procfs.Process.html#TYPEt">t</a>, string option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+environ:((<a href="Procfs.Process.html#TYPEt">t</a>, string option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+exe:((<a href="Procfs.Process.html#TYPEt">t</a>, string option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+root:((<a href="Procfs.Process.html#TYPEt">t</a>, string option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+limits:((<a href="Procfs.Process.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.html#TYPEt">Limits.t</a> option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+stat:((<a href="Procfs.Process.html#TYPEt">t</a>, <a href="Procfs.Process.Stat.html#TYPEt">Stat.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+statm:((<a href="Procfs.Process.html#TYPEt">t</a>, <a href="Procfs.Process.Statm.html#TYPEt">Statm.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+status:((<a href="Procfs.Process.html#TYPEt">t</a>, <a href="Procfs.Process.Status.html#TYPEt">Status.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+task_stats:((<a href="Procfs.Process.html#TYPEt">t</a>, <a href="Procfs.Process.Stat.html#TYPEt">Stat.t</a> <a href="../core/Std.Pid.Map.html#TYPEt">Core.Std.Pid.Map.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+top_command:((<a href="Procfs.Process.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+fds:((<a href="Procfs.Process.html#TYPEt">t</a>, <a href="Procfs.Process.Fd.html#TYPEt">Fd.t</a> list option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+oom_adj:((<a href="Procfs.Process.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+oom_score:((<a href="Procfs.Process.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_list : <code class="type">pid:((<a href="Procfs.Process.html#TYPEt">t</a>, <a href="../core/Std.Pid.html#TYPEt">Core.Std.Pid.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+cmdline:((<a href="Procfs.Process.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+cwd:((<a href="Procfs.Process.html#TYPEt">t</a>, string option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+environ:((<a href="Procfs.Process.html#TYPEt">t</a>, string option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+exe:((<a href="Procfs.Process.html#TYPEt">t</a>, string option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+root:((<a href="Procfs.Process.html#TYPEt">t</a>, string option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+limits:((<a href="Procfs.Process.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.html#TYPEt">Limits.t</a> option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+stat:((<a href="Procfs.Process.html#TYPEt">t</a>, <a href="Procfs.Process.Stat.html#TYPEt">Stat.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+statm:((<a href="Procfs.Process.html#TYPEt">t</a>, <a href="Procfs.Process.Statm.html#TYPEt">Statm.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+status:((<a href="Procfs.Process.html#TYPEt">t</a>, <a href="Procfs.Process.Status.html#TYPEt">Status.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+task_stats:((<a href="Procfs.Process.html#TYPEt">t</a>, <a href="Procfs.Process.Stat.html#TYPEt">Stat.t</a> <a href="../core/Std.Pid.Map.html#TYPEt">Core.Std.Pid.Map.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+top_command:((<a href="Procfs.Process.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+fds:((<a href="Procfs.Process.html#TYPEt">t</a>, <a href="Procfs.Process.Fd.html#TYPEt">Fd.t</a> list option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+oom_adj:((<a href="Procfs.Process.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+oom_score:((<a href="Procfs.Process.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt; 'elem__ list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map_poly : <code class="type">([&lt; `Read | `Set_and_create ], <a href="Procfs.Process.html#TYPEt">t</a>, 'x0) <a href="../fieldslib/Field.html#TYPEuser">Fieldslib.Field.user</a> -&gt; 'x0 list</code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Procfs.Process.Fields.Direct.html">Direct</a> : <code class="code">sig</code> <a href="Procfs.Process.Fields.Direct.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Procfs.Process.Fields.Direct.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

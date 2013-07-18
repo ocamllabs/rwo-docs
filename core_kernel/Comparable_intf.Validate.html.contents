@@ -1,0 +1,15 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> validate_lbound : <code class="type">min:<a href="Comparable_intf.Validate.html#TYPEt">t</a> <a href="Comparable_intf.html#TYPEbound">bound</a> -&gt; <a href="Comparable_intf.Validate.html#TYPEt">t</a> <a href="Validate.html#TYPEcheck">Validate.check</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> validate_ubound : <code class="type">max:<a href="Comparable_intf.Validate.html#TYPEt">t</a> <a href="Comparable_intf.html#TYPEbound">bound</a> -&gt; <a href="Comparable_intf.Validate.html#TYPEt">t</a> <a href="Validate.html#TYPEcheck">Validate.check</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> validate_bound : <code class="type">min:<a href="Comparable_intf.Validate.html#TYPEt">t</a> <a href="Comparable_intf.html#TYPEbound">bound</a> -&gt; max:<a href="Comparable_intf.Validate.html#TYPEt">t</a> <a href="Comparable_intf.html#TYPEbound">bound</a> -&gt; <a href="Comparable_intf.Validate.html#TYPEt">t</a> <a href="Validate.html#TYPEcheck">Validate.check</a></code></span></pre>
+      
+    

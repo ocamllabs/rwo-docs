@@ -1,0 +1,21 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t </span></pre>
+      <div class="info">A &quot;force_once&quot; is a thunk that can only be forced once.  Subsequent forces
+    will raise an exception.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">(unit -&gt; 'a) -&gt; 'a <a href="Force_once.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">create f</code> creates a new force_once</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> force : <code class="type">'a <a href="Force_once.html#TYPEt">t</a> -&gt; 'a</code></span></pre>
+      <div class="info"><code class="code">force t</code> runs the thunk if it hadn't already been forced, else it raises an
+    exception.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> ignore : <code class="type">unit -&gt; unit <a href="Force_once.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">ignore ()</code> = create (fun () -&gt; ())</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type">('a -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a>) -&gt; 'a <a href="Force_once.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    

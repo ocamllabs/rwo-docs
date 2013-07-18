@@ -1,0 +1,30 @@
+<pre><code><span id="TYPEt"><span class="keyword">type</span> t </span>= </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Atom"><span class="constructor">Atom</span></span> <span class="keyword">of</span> <code class="type">Pos.t * string * string option</code></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.List"><span class="constructor">List</span></span> <span class="keyword">of</span> <code class="type">Pos.t * t_or_comment list * Pos.t</code></code></td>
+	   </tr></table>
+      <div class="info">S-expressions annotated with relative source positions and comments</div>
+    
+<pre><code><span id="TYPEt_or_comment"><span class="keyword">type</span> t_or_comment </span>= </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt_or_comment.Sexp"><span class="constructor">Sexp</span></span> <span class="keyword">of</span> <code class="type"><a href="Type_with_layout.Make.S.html#TYPEt">t</a></code></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt_or_comment.Comment"><span class="constructor">Comment</span></span> <span class="keyword">of</span> <code class="type">comment</code></code></td>
+	   </tr></table>
+      
+    
+<pre><code><span id="TYPEcomment"><span class="keyword">type</span> comment </span>= </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTcomment.Plain_comment"><span class="constructor">Plain_comment</span></span> <span class="keyword">of</span> <code class="type">Pos.t * string</code></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTcomment.Sexp_comment"><span class="constructor">Sexp_comment</span></span> <span class="keyword">of</span> <code class="type">Pos.t * <a href="Type_with_layout.Make.S.html#TYPEcomment">comment</a> list * <a href="Type_with_layout.Make.S.html#TYPEt">t</a></code></code></td>
+	   </tr></table>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type"><a href="Type_with_layout.Make.S.html#TYPEt">t</a> -&gt; <a href="Type.html#TYPEt">Type.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_comment : <code class="type"><a href="Type_with_layout.Make.S.html#TYPEcomment">comment</a> -&gt; <a href="Type.html#TYPEt">Type.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t_or_comment : <code class="type"><a href="Type_with_layout.Make.S.html#TYPEt_or_comment">t_or_comment</a> -&gt; <a href="Type.html#TYPEt">Type.t</a></code></span></pre>
+      
+    

@@ -1,0 +1,77 @@
+<br/>Simple example:<br/>  open Core.Std
+  module Bench = Core_extended.Bench<br/>  let main () =
+    Bench.bench <code class="code">Bench.Test.create ~name:&quot;test&quot; (fun () -&gt; ignore (Time.now ()))</code>
+  ;;<br/>  let () = main ()<br/>
+	  
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Deprecated_bench.Test.html">Test</a> : <code class="code">sig</code> <a href="Deprecated_bench.Test.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Deprecated_bench.Test.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Deprecated_bench.Result.html">Result</a> : <code class="code">sig</code> <a href="Deprecated_bench.Result.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Deprecated_bench.Result.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<br/>verbosity (default low):  If low, only prints results.  If mid, additionally prints
+   time estimates and a status line.  If high, additionally prints information at each
+   step of benchmarking.<br/>   gc_prefs:  can be used to set custom GC settings during benchmarking (they will be
+   reverted when the function returns)<br/>   no_compactions (default false):  disables compactions during benchmarking, reverted
+   when the function returns.  Takes precedence over gc_prefs.<br/>   trials (default `Auto): runs this many trials for each sample. If `Auto, bench will
+   automatically determine the number of trials to run based on how long it takes to run
+   one trial. It will run enough trials n so that the mean cost of calling rdtscp is less
+   than one percent of n, and it takes more than 0.01 seconds.<br/>   clock (default wall):  controls time measurement method.  Wall includes waiting on I/O
+   and when the process is suspended/descheduled; cpu only counts time spent on
+   computations.<br/>
+	  
+<pre><span id="TYPEwith_benchmark_flags"><span class="keyword">type</span> <code class="type">'a </code>with_benchmark_flags </span>= <code class="type">?verbosity:[ `High | `Low | `Mid ] -&gt;
+?gc_prefs:<a href="../core/Std.Gc.Control.html#TYPEt">Core.Std.Gc.Control.t</a> -&gt;
+?no_compactions:bool -&gt;
+?trials:[ `Auto | `Num of int ] -&gt; ?clock:[ `Cpu | `Wall ] -&gt; 'a</code> </pre>
+      
+    
+<pre><span id="TYPEcolumn"><span class="keyword">type</span> column </span>= <code class="type">[ `Allocated
+| `Cycles
+| `Input_size
+| `Name
+| `Nanos
+| `Normalized_cycles
+| `Warnings ]</code> </pre>
+      
+    
+<pre><span id="TYPEwith_print_flags"><span class="keyword">type</span> <code class="type">'a </code>with_print_flags </span>= <code class="type">?limit_width_to:int -&gt;
+?columns:[ `Allocated
+         | `Cycles
+         | `If_not_empty of <a href="Deprecated_bench.html#TYPEcolumn">column</a>
+         | `Input_size
+         | `Name
+         | `Nanos
+         | `Normalized_cycles
+         | `Warnings ] list -&gt;
+?display:Textutils.Ascii_table.Display.t -&gt; 'a</code> </pre>
+      <div class="info">The &quot;Name&quot; and &quot;Input size&quot; columns of the printed table reflect the values passed to
+   Test.create.  The &quot;Normalized&quot; column is <code class="code">run_time / input_size</code>.  &quot;Stdev&quot; reports the
+   standard deviation for the &quot;Run time&quot; column.  &quot;Allocated&quot; reports the average number
+   of allocated words through the benchmarks.<br/>   &quot;Warnings&quot; may contain single characters indicating various things:
+     'm' indicates the minimum run time was less than 80% of the mean
+     'M' indicates the maximum run time was more than 120% of the mean
+     'c' indicates GC compactions occurred during testing
+     'a' indicates the number of words allocated was not the same in all tests<br/>   <code class="code">limit_with_to</code> defaults to 72.<br/>   <code class="code">columns</code>: select which columns to display. <code class="code">`If_not_empty c</code> means print the column
+   only if at least one cell contains something. It defaults to:
+     <code class="code">[`If_not_empty `Name; `Normalized_cycles; `If_not_empty `Warnings]</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> bench : <code class="type">(<a href="Deprecated_bench.Test.html#TYPEt">Test.t</a> list -&gt; unit) <a href="Deprecated_bench.html#TYPEwith_benchmark_flags">with_benchmark_flags</a> <a href="Deprecated_bench.html#TYPEwith_print_flags">with_print_flags</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bench_raw : <code class="type">(<a href="Deprecated_bench.Test.html#TYPEt">Test.t</a> list -&gt; <a href="Deprecated_bench.Result.html#TYPEt">Result.t</a> list) <a href="Deprecated_bench.html#TYPEwith_benchmark_flags">with_benchmark_flags</a></code></span></pre>
+      <div class="info"><code class="code">bench_raw</code> returns a list documenting the runtimes rather than printing to
+   stdout. These can be fed to print for results identical to calling bench.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> print : <code class="type">(<a href="Deprecated_bench.Result.html#TYPEt">Result.t</a> list -&gt; unit) <a href="Deprecated_bench.html#TYPEwith_print_flags">with_print_flags</a></code></span></pre>
+      
+    

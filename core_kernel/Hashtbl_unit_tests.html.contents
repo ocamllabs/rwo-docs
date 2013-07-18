@@ -1,0 +1,6 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Hashtbl_unit_tests.Make.html">Make</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">Hashtbl</code><code class="code"> : </code><code class="type"><a href="Core_hashtbl_intf.Hashtbl.html">Core_hashtbl_intf.Hashtbl</a></code><code class="code">) -&gt; </code><code class="code">sig</code> <a href="Hashtbl_unit_tests.Make.html">..</a> <code class="code">end</code></div></pre>
+	<div class="content" style="display:none">
+	<div file="Hashtbl_unit_tests.Make.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

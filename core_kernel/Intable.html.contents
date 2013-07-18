@@ -1,0 +1,12 @@
+ 
+      <pre><span><span class="keyword">val</span> __pa_ounit_275876e34cf609db118f3d84b799a790 : <code class="type">string</code></span></pre>
+      
+    
+
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Intable.S.html">S</a> = <code class="type"><code class="code">sig</code> <a href="Intable.S.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Intable.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+

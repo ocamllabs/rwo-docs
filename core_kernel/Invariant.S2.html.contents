@@ -1,0 +1,7 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'b) </code>t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> invariant : <code class="type">'a <a href="Invariant.html#TYPEinv">inv</a> -&gt; 'b <a href="Invariant.html#TYPEinv">inv</a> -&gt; ('a, 'b) <a href="Invariant.S2.html#TYPEt">t</a> <a href="Invariant.html#TYPEinv">inv</a></code></span></pre>
+      
+    

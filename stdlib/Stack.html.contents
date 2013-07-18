@@ -1,0 +1,40 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t </span></pre>
+      
+    
+<pre><span id="EXCEPTIONEmpty"><span class="keyword">exception</span> Empty</span></pre>
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">unit -&gt; 'a <a href="Stack.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> push : <code class="type">'a -&gt; 'a <a href="Stack.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pop : <code class="type">'a <a href="Stack.html#TYPEt">t</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> top : <code class="type">'a <a href="Stack.html#TYPEt">t</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> clear : <code class="type">'a <a href="Stack.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> copy : <code class="type">'a <a href="Stack.html#TYPEt">t</a> -&gt; 'a <a href="Stack.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_empty : <code class="type">'a <a href="Stack.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> length : <code class="type">'a <a href="Stack.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter : <code class="type">('a -&gt; unit) -&gt; 'a <a href="Stack.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    

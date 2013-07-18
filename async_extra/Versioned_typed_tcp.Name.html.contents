@@ -1,0 +1,31 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core/Std.Hashable.html">Core.Std.Hashable</a></code> with type t = <a href="Versioned_typed_tcp.Name.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="../core/Std.Hashable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core/Std.Binable.html">Core.Std.Binable</a></code> with type t = <a href="Versioned_typed_tcp.Name.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="../core/Std.Binable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core/Std.Stringable.html">Core.Std.Stringable</a></code> with type t = <a href="Versioned_typed_tcp.Name.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="../core/Std.Stringable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core/Std.Comparable.html">Core.Std.Comparable</a></code> with type t = <a href="Versioned_typed_tcp.Name.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="../core/Std.Comparable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

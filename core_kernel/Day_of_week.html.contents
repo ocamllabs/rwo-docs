@@ -1,0 +1,157 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Hashable.S.html">Hashable.S</a></code> with type t = <a href="Day_of_week.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="Hashable.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Comparable.S.html">Comparable.S</a></code> with type t = <a href="Day_of_week.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="Comparable.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Stringable.S.html">Stringable.S</a></code> with type t = <a href="Day_of_week.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="Stringable.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> invariant : <code class="type"><a href="Day_of_week.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sun : <code class="type"><a href="Day_of_week.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mon : <code class="type"><a href="Day_of_week.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> tue : <code class="type"><a href="Day_of_week.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> wed : <code class="type"><a href="Day_of_week.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> thu : <code class="type"><a href="Day_of_week.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fri : <code class="type"><a href="Day_of_week.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sat : <code class="type"><a href="Day_of_week.html#TYPEt">t</a></code></span></pre>
+      
+    
+<pre><span id="TYPEvariant"><span class="keyword">type</span> variant </span>= <code class="type">[ `Fri | `Mon | `Sat | `Sun | `Thu | `Tue | `Wed ]</code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get : <code class="type"><a href="Day_of_week.html#TYPEt">t</a> -&gt; <a href="Day_of_week.html#TYPEvariant">variant</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type"><a href="Day_of_week.html#TYPEvariant">variant</a> -&gt; <a href="Day_of_week.html#TYPEt">t</a></code></span></pre>
+      
+    
+<br/>conversion between ints and weekdays uses the same mapping as Unix.tm_wday.
+    0 &lt;-&gt; Sun, ... 6 &lt;-&gt; Sat<br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> of_int : <code class="type">int -&gt; <a href="Day_of_week.html#TYPEt">t</a> option</code></span></pre>
+      <div class="info"><code class="code">of_int i</code> returns i'th weekday if <code class="code">i</code> is in 0,1,...,6.  Otherwise it returns
+    None.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> of_int_exn : <code class="type">int -&gt; <a href="Day_of_week.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">of_int_exn i</code> should have i in 0,1,...,6 and returns the i'th weekday.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> to_int : <code class="type"><a href="Day_of_week.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      <div class="info"><code class="code">to_int t</code> returns an int in 0,1,...6.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> shift : <code class="type"><a href="Day_of_week.html#TYPEt">t</a> -&gt; int -&gt; <a href="Day_of_week.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">shift t i</code> goes forward (or backward) the specified number of weekdays</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> is_sun_or_sat : <code class="type"><a href="Day_of_week.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      <div class="info"><code class="code">is_sun_or_sat</code> returns true if t is Sunday or Saturday</div>
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Day_of_week.Stable.html">Stable</a> : <code class="code">sig</code> <a href="Day_of_week.Stable.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Day_of_week.Stable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp : <code class="type"><a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; <a href="Day_of_week.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type"><a href="Day_of_week.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_t : <code class="type"><a href="Day_of_week.html#TYPEt">t</a> <a href="../bin_prot/Type_class.html#TYPEt">Bin_prot.Type_class.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t : <code class="type"><a href="Day_of_week.html#TYPEt">t</a> <a href="../bin_prot/Read_ml.html#TYPEreader">Bin_prot.Read_ml.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t_ : <code class="type"><a href="Day_of_week.html#TYPEt">t</a> <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t__ : <code class="type">(int -&gt; <a href="Day_of_week.html#TYPEt">t</a>) <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t : <code class="type"><a href="Day_of_week.html#TYPEt">t</a> <a href="../bin_prot/Type_class.html#TYPEreader">Bin_prot.Type_class.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t : <code class="type"><a href="Day_of_week.html#TYPEt">t</a> <a href="../bin_prot/Size.html#TYPEsizer">Bin_prot.Size.sizer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t : <code class="type"><a href="Day_of_week.html#TYPEt">t</a> <a href="../bin_prot/Write_ml.html#TYPEwriter">Bin_prot.Write_ml.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_ : <code class="type"><a href="Day_of_week.html#TYPEt">t</a> <a href="../bin_prot/Unsafe_write_c.html#TYPEwriter">Bin_prot.Unsafe_write_c.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t : <code class="type"><a href="Day_of_week.html#TYPEt">t</a> <a href="../bin_prot/Type_class.html#TYPEwriter">Bin_prot.Type_class.writer</a></code></span></pre>
+      
+    
+<br/><code class="code">of_string s</code> accepts three-character abbreviations with any capitalization<br/>
+	  
+<br/>conversion between ints and weekdays uses the same mapping as Unix.tm_wday.
+    0 &lt;-&gt; Sun, ... 6 &lt;-&gt; Sat<br/>
+	  
+<br/><code class="code">of_int i</code> returns i'th weekday if <code class="code">i</code> is in 0,1,...,6.  Otherwise it returns
+    None.<br/>
+	  
+<br/><code class="code">of_int_exn i</code> should have i in 0,1,...,6 and returns the i'th weekday.<br/>
+	  
+<br/><code class="code">to_int t</code> returns an int in 0,1,...6.<br/>
+	  
+<br/><code class="code">shift t i</code> goes forward (or backward) the specified number of weekdays<br/>
+	  
+<br/><code class="code">is_sun_or_sat</code> returns true if t is Sunday or Saturday<br/>
+	  

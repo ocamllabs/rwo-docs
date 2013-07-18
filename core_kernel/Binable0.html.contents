@@ -1,0 +1,46 @@
+ 
+      <pre><span><span class="keyword">val</span> __pa_ounit_275876e34cf609db118f3d84b799a790 : <code class="type">string</code></span></pre>
+      
+    
+
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../bin_prot/Binable.html">Bin_prot.Binable</a></code></pre>
+	<div class="content">
+	<div file="../bin_prot/Binable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Binable0.List.html">List</a> : <code class="code"><a href="../stdlib/ListLabels.html">ListLabels</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Binable0.List.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Binable0.Of_stringable.html">Of_stringable</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="type"><a href="Stringable.S.html">Stringable.S</a></code><code class="code">) -&gt; </code><code class="code"><a href="../bin_prot/Utils.Make_binable.html">Bin_prot.Utils.Make_binable</a></code>(<code class="code">sig</code> <a href="Binable0.Of_stringable.html">..</a> <code class="code">end</code>)</div></pre>
+	<div class="content" style="display:none">
+	<div file="Binable0.Of_stringable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<pre><span id="TYPEbigstring"><span class="keyword">type</span> bigstring </span>= <code class="type">(char, <a href="../otherlibs/Bigarray.html#TYPEint8_unsigned_elt">Bigarray.int8_unsigned_elt</a>, <a href="../otherlibs/Bigarray.html#TYPEc_layout">Bigarray.c_layout</a>) <a href="../otherlibs/Bigarray.Array1.html#TYPEt">Bigarray.Array1.t</a></code> </pre>
+      
+    
+<pre><span id="TYPEm"><span class="keyword">type</span> <code class="type">'a </code>m </span>= <code class="type">(module S with type t = 'a)</code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_bigstring : <code class="type">(module S with type t = 'a) -&gt; <a href="../bin_prot/Common.html#TYPEbuf">Bin_prot.Common.buf</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create_bigstring : <code class="type">int -&gt;
+(char, <a href="../otherlibs/Bigarray.html#TYPEint8_unsigned_elt">Bigarray.int8_unsigned_elt</a>, <a href="../otherlibs/Bigarray.html#TYPEc_layout">Bigarray.c_layout</a>) <a href="../otherlibs/Bigarray.Array1.html#TYPEt">Bigarray.Array1.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_bigstring : <code class="type">?prefix_with_length:bool -&gt;
+(module S with type t = 'a) -&gt;
+'a -&gt; (char, <a href="../otherlibs/Bigarray.html#TYPEint8_unsigned_elt">Bigarray.int8_unsigned_elt</a>, <a href="../otherlibs/Bigarray.html#TYPEc_layout">Bigarray.c_layout</a>) <a href="../otherlibs/Bigarray.Array1.html#TYPEt">Bigarray.Array1.t</a></code></span></pre>
+      
+    
+

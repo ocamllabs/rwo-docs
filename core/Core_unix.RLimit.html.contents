@@ -1,0 +1,79 @@
+<pre><code><span id="TYPElimit"><span class="keyword">type</span> limit </span>= </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTlimit.Limit"><span class="constructor">Limit</span></span> <span class="keyword">of</span> <code class="type">int64</code></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTlimit.Infinity"><span class="constructor">Infinity</span></span></code></td>
+	   </tr></table>
+      
+    
+<pre><code><span id="TYPEt"><span class="keyword">type</span> t </span>= {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.cur">cur</span> :<code class="type"><a href="Core_unix.RLimit.html#TYPElimit">limit</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.max">max</span> :<code class="type"><a href="Core_unix.RLimit.html#TYPElimit">limit</a></code>;</code></td>
+	  </tr></table>}
+      
+    
+<pre><span id="TYPEresource"><span class="keyword">type</span> resource </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> core_file_size : <code class="type"><a href="Core_unix.RLimit.html#TYPEresource">resource</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> cpu_seconds : <code class="type"><a href="Core_unix.RLimit.html#TYPEresource">resource</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> data_segment : <code class="type"><a href="Core_unix.RLimit.html#TYPEresource">resource</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> file_size : <code class="type"><a href="Core_unix.RLimit.html#TYPEresource">resource</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> num_file_descriptors : <code class="type"><a href="Core_unix.RLimit.html#TYPEresource">resource</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stack : <code class="type"><a href="Core_unix.RLimit.html#TYPEresource">resource</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> virtual_memory : <code class="type"><a href="Core_unix.RLimit.html#TYPEresource">resource</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> nice : <code class="type"><a href="Core_unix.RLimit.html#TYPEresource">resource</a> <a href="../core_kernel/Std.Or_error.html#TYPEt">Core_kernel.Std.Or_error.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get : <code class="type"><a href="Core_unix.RLimit.html#TYPEresource">resource</a> -&gt; <a href="Core_unix.RLimit.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set : <code class="type"><a href="Core_unix.RLimit.html#TYPEresource">resource</a> -&gt; <a href="Core_unix.RLimit.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> limit_of_sexp : <code class="type"><a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; <a href="Core_unix.RLimit.html#TYPElimit">limit</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_limit : <code class="type"><a href="Core_unix.RLimit.html#TYPElimit">limit</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp : <code class="type"><a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; <a href="Core_unix.RLimit.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type"><a href="Core_unix.RLimit.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> resource_of_sexp : <code class="type"><a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; <a href="Core_unix.RLimit.html#TYPEresource">resource</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_resource : <code class="type"><a href="Core_unix.RLimit.html#TYPEresource">resource</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    

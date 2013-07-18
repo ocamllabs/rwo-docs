@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<title>Nano_mutex</title>
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
+<script type="text/javascript" src="doc_loader.js"> </script>
+</head>
+<body>
+
+<h1>Module Nano_mutex</h1>
+<pre><span class="keyword">module</span> Nano_mutex</pre><div class="info">A nano-mutex is a lightweight mutex that can be used only within a single OCaml
+    runtime.<br/>    <br/><h1 id="1_TITLE">Performance</h1><br/>
+    ===============
+    Nano-mutexes are intended to be significantly cheaper than OS-level mutexes.  Creating
+    a nano-mutex allocates a single OCaml record.  Locking and unlocking an uncontested
+    nano-mutex take a handful of instructions.  Only if a nano-mutex is contested will it
+    fall back to using an OS-level mutex.  If a nano-mutex becomes uncontested again, it
+    will switch back to using an OCaml-only lock.<br/>    Nano-mutexes can be faster than using OS-level mutexes because OCaml uses a global
+    lock on the runtime, and requires all running OCaml code to hold the lock.  The OCaml
+    compiler only allows thread switches at certain points, and we can use that fact to get
+    the atomic test-and-set used in the core of our implementaion without needing any
+    primitive locking, essentially because we're protected by the OCaml global lock.<br/>    Here are some benchmarks comparing various mutexes available in OCaml:<br/>    <span class="verbatim">      |-------------------------------------------------------------|
+      |                       Name | Run time | S. dev. | Allocated |
+      |----------------------------+----------+---------+-----------+
+      |          Caml.Mutex create |   247 ns |    0 ns |         3 |
+      |     Caml.Mutex lock/unlock |    49 ns |    0 ns |         0 |
+      |          Core.Mutex create |   698 ns |    0 ns |         3 |
+      |     Core.Mutex lock/unlock |    49 ns |    0 ns |         0 |
+      |          Nano_mutex create |    10 ns |    0 ns |         4 |
+      |     Nano_mutex lock/unlock |    28 ns |    0 ns |         0 |
+      |-------------------------------------------------------------|
+    </span><br/>    The benchmark code is in core/extended/lib_test/bench_nano_mutex.ml.<br/>    <br/><h1 id="1_TITLE">Error handling</h1><br/>
+    ==================
+    For any mutex, there are design choices as to how to behave in certain situations:<br/>    - recursive locking (when a thread locks a mutex it already has)<ul><li>unlocking an unlocked mutex</li><li>unlocking a mutex held by another thread</li></ul>    Here is a table comparing how the various mutexes behave:<br/>    <span class="verbatim">      |--------------------+------------+------------+------------+
+      |                    | Caml.Mutex | Core.Mutex | Nano_mutex |
+      |--------------------+------------+------------+------------+
+      | recursive lock     | undefined  | error      | error      |
+      | unlocking unlocked | undefined  | error      | error      |
+      | t1:lock  t2:unlock | undefined  | error      | error      |
+      |--------------------+------------+------------+------------+
+    </span>
+</div>
+<hr/>
+<div file="Nano_mutex.html.contents" class="content_to_load"> </div>
+</body>
+</html>

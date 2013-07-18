@@ -1,0 +1,19 @@
+ 
+      <pre><span><span class="keyword">val</span> __pa_ounit_275876e34cf609db118f3d84b799a790 : <code class="type">string</code></span></pre>
+      
+    
+
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Iobuf_intf.Accessors.html">Accessors</a> = <code class="type"><code class="code">sig</code> <a href="Iobuf_intf.Accessors.html">..</a> <code class="code">end</code></code></pre><div class="info">A collection of iobuf access functions.  This abstracts over <code class="code">Iobuf.Consume</code>,
+    <code class="code">Iobuf.Fill</code>, <code class="code">Iobuf.Peek</code>, and <code class="code">Iobuf.Poke</code>.</div>
+	<div class="content" style="display:none">
+	<div file="Iobuf_intf.Accessors.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Iobuf_intf.Unix.html">Unix</a> : <code class="code"><a href="Core_unix.html">Core_unix</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Iobuf_intf.Unix.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+

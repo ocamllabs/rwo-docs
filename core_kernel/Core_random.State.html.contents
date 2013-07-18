@@ -1,0 +1,48 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> default : <code class="type"><a href="Core_random.State.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> make : <code class="type">int array -&gt; <a href="Core_random.State.html#TYPEt">t</a></code></span></pre>
+      <div class="info">Create a new state and initialize it with the given seed.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> make_self_init : <code class="type">unit -&gt; <a href="Core_random.State.html#TYPEt">t</a></code></span></pre>
+      <div class="info">Create a new state and initialize it with a system-dependent low-entropy seed.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> copy : <code class="type"><a href="Core_random.State.html#TYPEt">t</a> -&gt; <a href="Core_random.State.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bits : <code class="type"><a href="Core_random.State.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      <div class="info">These functions are the same as the basic functions, except that they use (and
+      update) the given PRNG state instead of the default one.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> int : <code class="type"><a href="Core_random.State.html#TYPEt">t</a> -&gt; int -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> int32 : <code class="type"><a href="Core_random.State.html#TYPEt">t</a> -&gt; <a href="../stdlib/Int32.html#TYPEt">Int32.t</a> -&gt; <a href="../stdlib/Int32.html#TYPEt">Int32.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> nativeint : <code class="type"><a href="Core_random.State.html#TYPEt">t</a> -&gt; <a href="../stdlib/Nativeint.html#TYPEt">Nativeint.t</a> -&gt; <a href="../stdlib/Nativeint.html#TYPEt">Nativeint.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> int64 : <code class="type"><a href="Core_random.State.html#TYPEt">t</a> -&gt; <a href="../stdlib/Int64.html#TYPEt">Int64.t</a> -&gt; <a href="../stdlib/Int64.html#TYPEt">Int64.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> float : <code class="type"><a href="Core_random.State.html#TYPEt">t</a> -&gt; float -&gt; float</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bool : <code class="type"><a href="Core_random.State.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    

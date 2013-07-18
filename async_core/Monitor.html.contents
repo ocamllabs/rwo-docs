@@ -1,0 +1,174 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+<pre><span id="TYPEwith_optional_monitor_name"><span class="keyword">type</span> <code class="type">'a </code>with_optional_monitor_name </span>= <code class="type">?here:<a href="../core/Std.Source_code_position.html#TYPEt">Core.Std.Source_code_position.t</a> -&gt;
+?info:<a href="../core/Std.Info.html#TYPEt">Core.Std.Info.t</a> -&gt; ?name:string -&gt; 'a</code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">(unit -&gt; <a href="Monitor.html#TYPEt">t</a>) <a href="Monitor.html#TYPEwith_optional_monitor_name">with_optional_monitor_name</a></code></span></pre>
+      <div class="info"><code class="code">create ()</code> returns a new monitor whose parent is the current monitor.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> name : <code class="type"><a href="Monitor.html#TYPEt">t</a> -&gt; <a href="../core/Std.Info.html#TYPEt">Core.Std.Info.t</a></code></span></pre>
+      <div class="info"><code class="code">name t</code> returns the name of the monitor, or a unique id if no name was supplied to
+    <code class="code">create</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> current : <code class="type">unit -&gt; <a href="Monitor.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">current ()</code> returns the current monitor</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> errors : <code class="type"><a href="Monitor.html#TYPEt">t</a> -&gt; exn <a href="Tail.Stream.html#TYPEt">Tail.Stream.t</a></code></span></pre>
+      <div class="info"><code class="code">errors t</code> returns a stream of all subsequent errors that monitor <code class="code">t</code> sees.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> error : <code class="type"><a href="Monitor.html#TYPEt">t</a> -&gt; exn <a href="Deferred.html#TYPEt">Deferred.t</a></code></span></pre>
+      <div class="info"><code class="code">error t</code> returns a deferred that becomes defined if the monitor ever sees an error.
+    Calling <code class="code">error t</code> does not count as &quot;listening for errors&quot;, and if no one has called
+    <code class="code">errors t</code> to listen, then errors will still be raised up the monitor tree.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> extract_exn : <code class="type">exn -&gt; exn</code></span></pre>
+      <div class="info"><code class="code">extract_exn exn</code> extracts the exn from an error exn that comes from a monitor.  If it
+    is not supplied such an error exn, it returns the exn itself.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> has_seen_error : <code class="type"><a href="Monitor.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      <div class="info"><code class="code">has_seen_error t</code> returns true iff the monitor has ever seen an error.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> send_exn : <code class="type"><a href="Monitor.html#TYPEt">t</a> -&gt; ?backtrace:[ `Get | `This of string ] -&gt; exn -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">send_exn t exn ?backtrace</code> sends the exception <code class="code">exn</code> as an error to be handled
+    monitor <code class="code">t</code>.  By default, the error will not contain a backtrace.  However, the caller
+    can supply one using <code class="code">`This</code>, or use <code class="code">`Get</code> to request that <code class="code">send_exn</code> obtain one
+    using <code class="code">Exn.backtrace ()</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> try_with : <code class="type">(?extract_exn:bool -&gt;
+ ?run:[ `Now | `Schedule ] -&gt;
+ ?rest:[ `Ignore | `Raise ] -&gt;
+ (unit -&gt; 'a <a href="Deferred.html#TYPEt">Deferred.t</a>) -&gt; ('a, exn) <a href="../core/Std.Result.html#TYPEt">Core.Std.Result.t</a> <a href="Deferred.html#TYPEt">Deferred.t</a>)
+<a href="Monitor.html#TYPEwith_optional_monitor_name">with_optional_monitor_name</a></code></span></pre>
+      <div class="info"><code class="code">try_with f</code> runs <code class="code">f ()</code> in a monitor and returns the result as <code class="code">Ok x</code> if <code class="code">f</code> finishes
+    normally, or returns <code class="code">Error e</code> if there is some error.  It either runs <code class="code">f</code> now, if
+    <code class="code">run = `Now</code>, or schedules a job to run <code class="code">f</code>, if <code class="code">run = `Schedule</code>.  Once a result is
+    returned, the rest of the errors raised by <code class="code">f</code> are ignored or re-raised, as per
+    <code class="code">rest</code>.  <code class="code">try_with</code> never raises synchronously, and may only raise asynchronously with
+    <code class="code">rest = `Raise</code>.<br/>    The <code class="code">name</code> argument is used to give a name to the monitor the computation will be
+    running in.  This name will appear when printing errors.<br/>    If <code class="code">extract_exn = true</code>, then in an <code class="code">Error exn</code> result, the <code class="code">exn</code> will be the actual
+    exception raised by the computation.  If <code class="code">extract_exn = false</code>, then the <code class="code">exn</code> will
+    include additional information, like the monitor and backtrace.  One typically wants
+    <code class="code">extract_exn = false</code> due to the additional information.  However, sometimes one wants
+    the concision of <code class="code">extract_exn = true</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> handle_errors : <code class="type">((unit -&gt; 'a <a href="Deferred.html#TYPEt">Deferred.t</a>) -&gt; (exn -&gt; unit) -&gt; 'a <a href="Deferred.html#TYPEt">Deferred.t</a>)
+<a href="Monitor.html#TYPEwith_optional_monitor_name">with_optional_monitor_name</a></code></span></pre>
+      <div class="info"><code class="code">handle_errors ?name f handler</code> runs <code class="code">f ()</code> inside a new monitor with the optionally
+    supplied name, and calls <code class="code">handler error</code> on every error raised to that monitor.  Any
+    error raised by <code class="code">handler</code> goes to the monitor in effect when <code class="code">handle_errors</code> was
+    called.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> catch_stream : <code class="type">((unit -&gt; unit) -&gt; exn <a href="Tail.Stream.html#TYPEt">Tail.Stream.t</a>) <a href="Monitor.html#TYPEwith_optional_monitor_name">with_optional_monitor_name</a></code></span></pre>
+      <div class="info"><code class="code">catch_stream ?name f</code> runs <code class="code">f ()</code> inside a new monitor <code class="code">m</code> and returns the stream of
+    errors raised to <code class="code">m</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> catch : <code class="type">((unit -&gt; unit) -&gt; exn <a href="Deferred.html#TYPEt">Deferred.t</a>) <a href="Monitor.html#TYPEwith_optional_monitor_name">with_optional_monitor_name</a></code></span></pre>
+      <div class="info"><code class="code">catch ?name f</code> runs <code class="code">f ()</code> inside a new monitor <code class="code">m</code> and returns the first error
+    raised to <code class="code">m</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> protect : <code class="type">((unit -&gt; 'a <a href="Deferred.html#TYPEt">Deferred.t</a>) -&gt;
+ finally:(unit -&gt; unit <a href="Deferred.html#TYPEt">Deferred.t</a>) -&gt; 'a <a href="Deferred.html#TYPEt">Deferred.t</a>)
+<a href="Monitor.html#TYPEwith_optional_monitor_name">with_optional_monitor_name</a></code></span></pre>
+      <div class="info"><code class="code">protect f ~finally</code> runs <code class="code">f ()</code> and then <code class="code">finally</code> regardless of the success or
+    failure of <code class="code">f</code>.  It re-raises any exception thrown by <code class="code">f</code> or returns whatever <code class="code">f</code>
+    returned.<br/>    The <code class="code">name</code> argument is used to give a name to the monitor the computation will be
+    running in.  This name will appear when printing the errors.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> main : <code class="type"><a href="Monitor.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> kill : <code class="type"><a href="Monitor.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">kill t</code> causes <code class="code">t</code> and all of <code class="code">t</code>'s descendants to never start another job.  The job
+    that calls <code class="code">kill</code> will complete, even if it is a descendant of <code class="code">t</code>.<br/>    <code class="code">kill</code> can break user expectations.  For example, users expect in <code class="code">protect f ~finally</code>
+    that <code class="code">finally</code> will eventually run.  However, if the monitor in which <code class="code">finally</code> would
+    run is killed, then <code class="code">finally</code> will never run.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> is_alive : <code class="type"><a href="Monitor.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      <div class="info"><code class="code">is_alive t</code> returns <code class="code">true</code> iff none of <code class="code">t</code> or its ancestors have been killed.</div>
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Monitor.Exported_for_scheduler.html">Exported_for_scheduler</a> : <code class="code">sig</code> <a href="Monitor.Exported_for_scheduler.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Monitor.Exported_for_scheduler.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type"><a href="Monitor.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+<br/><code class="code">create ()</code> returns a new monitor whose parent is the current monitor.<br/>
+	  
+<br/><code class="code">name t</code> returns the name of the monitor, or a unique id if no name was supplied to
+    <code class="code">create</code>.<br/>
+	  
+<br/><code class="code">current ()</code> returns the current monitor<br/>
+	  
+<br/><code class="code">errors t</code> returns a stream of all subsequent errors that monitor <code class="code">t</code> sees.<br/>
+	  
+<br/><code class="code">error t</code> returns a deferred that becomes defined if the monitor ever sees an error.
+    Calling <code class="code">error t</code> does not count as &quot;listening for errors&quot;, and if no one has called
+    <code class="code">errors t</code> to listen, then errors will still be raised up the monitor tree.<br/>
+	  
+<br/><code class="code">extract_exn exn</code> extracts the exn from an error exn that comes from a monitor.  If it
+    is not supplied such an error exn, it returns the exn itself.<br/>
+	  
+<br/><code class="code">has_seen_error t</code> returns true iff the monitor has ever seen an error.<br/>
+	  
+<br/><code class="code">send_exn t exn ?backtrace</code> sends the exception <code class="code">exn</code> as an error to be handled
+    monitor <code class="code">t</code>.  By default, the error will not contain a backtrace.  However, the caller
+    can supply one using <code class="code">`This</code>, or use <code class="code">`Get</code> to request that <code class="code">send_exn</code> obtain one
+    using <code class="code">Exn.backtrace ()</code>.<br/>
+	  
+<br/><code class="code">try_with f</code> runs <code class="code">f ()</code> in a monitor and returns the result as <code class="code">Ok x</code> if <code class="code">f</code> finishes
+    normally, or returns <code class="code">Error e</code> if there is some error.  It either runs <code class="code">f</code> now, if
+    <code class="code">run = `Now</code>, or schedules a job to run <code class="code">f</code>, if <code class="code">run = `Schedule</code>.  Once a result is
+    returned, the rest of the errors raised by <code class="code">f</code> are ignored or re-raised, as per
+    <code class="code">rest</code>.  <code class="code">try_with</code> never raises synchronously, and may only raise asynchronously with
+    <code class="code">rest = `Raise</code>.<br/>    The <code class="code">name</code> argument is used to give a name to the monitor the computation will be
+    running in.  This name will appear when printing errors.<br/>    If <code class="code">extract_exn = true</code>, then in an <code class="code">Error exn</code> result, the <code class="code">exn</code> will be the actual
+    exception raised by the computation.  If <code class="code">extract_exn = false</code>, then the <code class="code">exn</code> will
+    include additional information, like the monitor and backtrace.  One typically wants
+    <code class="code">extract_exn = false</code> due to the additional information.  However, sometimes one wants
+    the concision of <code class="code">extract_exn = true</code>.<br/>
+	  
+<br/><code class="code">handle_errors ?name f handler</code> runs <code class="code">f ()</code> inside a new monitor with the optionally
+    supplied name, and calls <code class="code">handler error</code> on every error raised to that monitor.  Any
+    error raised by <code class="code">handler</code> goes to the monitor in effect when <code class="code">handle_errors</code> was
+    called.<br/>
+	  
+<br/><code class="code">catch_stream ?name f</code> runs <code class="code">f ()</code> inside a new monitor <code class="code">m</code> and returns the stream of
+    errors raised to <code class="code">m</code>.<br/>
+	  
+<br/><code class="code">catch ?name f</code> runs <code class="code">f ()</code> inside a new monitor <code class="code">m</code> and returns the first error
+    raised to <code class="code">m</code>.<br/>
+	  
+<br/><code class="code">protect f ~finally</code> runs <code class="code">f ()</code> and then <code class="code">finally</code> regardless of the success or
+    failure of <code class="code">f</code>.  It re-raises any exception thrown by <code class="code">f</code> or returns whatever <code class="code">f</code>
+    returned.<br/>    The <code class="code">name</code> argument is used to give a name to the monitor the computation will be
+    running in.  This name will appear when printing the errors.<br/>
+	  
+<br/><code class="code">kill t</code> causes <code class="code">t</code> and all of <code class="code">t</code>'s descendants to never start another job.  The job
+    that calls <code class="code">kill</code> will complete, even if it is a descendant of <code class="code">t</code>.<br/>    <code class="code">kill</code> can break user expectations.  For example, users expect in <code class="code">protect f ~finally</code>
+    that <code class="code">finally</code> will eventually run.  However, if the monitor in which <code class="code">finally</code> would
+    run is killed, then <code class="code">finally</code> will never run.<br/>
+	  
+<br/><code class="code">is_alive t</code> returns <code class="code">true</code> iff none of <code class="code">t</code> or its ancestors have been killed.<br/>
+	  

@@ -1,0 +1,99 @@
+ 
+      <pre><span><span class="keyword">val</span> __pa_ounit_275876e34cf609db118f3d84b799a790 : <code class="type">string</code></span></pre>
+      
+    
+
+<pre><code><span id="TYPEt_"><span class="keyword">type</span> <code class="type">'execution_context </code>t_ </span>= {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt_.name">name</span> :<code class="type"><a href="../core/Std.Info.html#TYPEt">Core.Std.Info.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt_.here">here</span> :<code class="type"><a href="../core/Std.Source_code_position.html#TYPEt">Core.Std.Source_code_position.t</a> option</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt_.id">id</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt_.parent">parent</span> :<code class="type">'execution_context <a href="Raw_monitor.html#TYPEt_">t_</a> option</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt_.errors">errors</span> :<code class="type">(exn, 'execution_context) <a href="Raw_tail.html#TYPEt">Raw_tail.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt_.has_seen_error">has_seen_error</span> :<code class="type">bool</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt_.someone_is_listening">someone_is_listening</span> :<code class="type">bool</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt_.kill_index">kill_index</span> :<code class="type"><a href="Kill_index.html#TYPEt">Kill_index.t</a></code>;</code></td>
+	  </tr></table>}
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> kill_index : <code class="type">'a <a href="Raw_monitor.html#TYPEt_">t_</a> -&gt; <a href="Kill_index.html#TYPEt">Kill_index.t</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> set_kill_index : <code class="type">'a <a href="Raw_monitor.html#TYPEt_">t_</a> -&gt; <a href="Kill_index.html#TYPEt">Kill_index.t</a> -&gt; unit</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> someone_is_listening : <code class="type">'a <a href="Raw_monitor.html#TYPEt_">t_</a> -&gt; bool</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> set_someone_is_listening : <code class="type">'a <a href="Raw_monitor.html#TYPEt_">t_</a> -&gt; bool -&gt; unit</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> has_seen_error : <code class="type">'a <a href="Raw_monitor.html#TYPEt_">t_</a> -&gt; bool</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> set_has_seen_error : <code class="type">'a <a href="Raw_monitor.html#TYPEt_">t_</a> -&gt; bool -&gt; unit</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> errors : <code class="type">'a <a href="Raw_monitor.html#TYPEt_">t_</a> -&gt; (exn, 'a) <a href="Raw_tail.html#TYPEt">Raw_tail.t</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> parent : <code class="type">'a <a href="Raw_monitor.html#TYPEt_">t_</a> -&gt; 'a <a href="Raw_monitor.html#TYPEt_">t_</a> option</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> id : <code class="type">'a <a href="Raw_monitor.html#TYPEt_">t_</a> -&gt; int</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> here : <code class="type">'a <a href="Raw_monitor.html#TYPEt_">t_</a> -&gt; <a href="../core/Std.Source_code_position.html#TYPEt">Core.Std.Source_code_position.t</a> option</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> name : <code class="type">'a <a href="Raw_monitor.html#TYPEt_">t_</a> -&gt; <a href="../core/Std.Info.html#TYPEt">Core.Std.Info.t</a></code></span></pre>
+      
+    
+
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Raw_monitor.Fields_of_t_.html">Fields_of_t_</a> : <code class="code">sig</code> <a href="Raw_monitor.Fields_of_t_.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Raw_monitor.Fields_of_t_.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Raw_monitor.Pretty.html">Pretty</a> : <code class="code">sig</code> <a href="Raw_monitor.Pretty.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Raw_monitor.Pretty.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> to_pretty : <code class="type">'a <a href="Raw_monitor.html#TYPEt_">t_</a> -&gt; <a href="Raw_monitor.Pretty.html#TYPEone">Pretty.one</a> <a href="../core/Std.List.html#TYPEt">Core.Std.List.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t_ : <code class="type">'a -&gt; 'b <a href="Raw_monitor.html#TYPEt_">t_</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+<pre><span id="EXCEPTIONShutdown"><span class="keyword">exception</span> Shutdown</span></pre>
+ 
+      <pre><span><span class="keyword">val</span> update_kill_index : <code class="type">'a <a href="Raw_monitor.html#TYPEt_">t_</a> -&gt; global_kill_index:<a href="Kill_index.html#TYPEt">Kill_index.t</a> -&gt; unit</code></span></pre>
+      
+    
+

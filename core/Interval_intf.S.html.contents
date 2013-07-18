@@ -1,0 +1,83 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+<pre><span id="TYPEbound"><span class="keyword">type</span> bound </span></pre>
+      
+    
+<pre><span id="TYPEt_"><span class="keyword">type</span> <code class="type">'a </code>t_ </span>= <code class="type"><a href="Interval_intf.S.html#TYPEt">t</a></code> </pre>
+      
+    
+<pre><span id="TYPEbound_"><span class="keyword">type</span> <code class="type">'a </code>bound_ </span>= <code class="type"><a href="Interval_intf.S.html#TYPEbound">bound</a></code> </pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Interval_intf.Gen.html">Gen</a></code> with type <a href="Interval_intf.Gen.html#TYPEt">t</a> = 'a <a href="Interval_intf.S.html#TYPEt_">t_</a> with type bound = 'a <a href="Interval_intf.S.html#TYPEbound_">bound_</a></pre>
+	<div class="content">
+	<div file="Interval_intf.Gen.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type"><a href="Interval_intf.S.html#TYPEbound">bound</a> -&gt; <a href="Interval_intf.S.html#TYPEbound">bound</a> -&gt; <a href="Interval_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+<pre><span id="TYPEpoly_t"><span class="keyword">type</span> <code class="type">'a </code>poly_t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_poly : <code class="type"><a href="Interval_intf.S.html#TYPEt">t</a> -&gt; <a href="Interval_intf.S.html#TYPEbound">bound</a> <a href="Interval_intf.S.html#TYPEpoly_t">poly_t</a></code></span></pre>
+      
+    
+<pre><span id="TYPEpoly_set"><span class="keyword">type</span> <code class="type">'a </code>poly_set </span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Interval_intf.S.Set.html">Set</a> : <code class="code">sig</code> <a href="Interval_intf.S.Set.html">..</a> <code class="code">end</code> with type interval = 'a <a href="Interval_intf.S.html#TYPEt_">t_</a></pre>
+	<div class="content" style="display:none">
+	<div file="Interval_intf.S.Set.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp : <code class="type"><a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; <a href="Interval_intf.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type"><a href="Interval_intf.S.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_t : <code class="type"><a href="Interval_intf.S.html#TYPEt">t</a> <a href="../bin_prot/Type_class.html#TYPEt">Bin_prot.Type_class.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t : <code class="type"><a href="Interval_intf.S.html#TYPEt">t</a> <a href="../bin_prot/Read_ml.html#TYPEreader">Bin_prot.Read_ml.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t_ : <code class="type"><a href="Interval_intf.S.html#TYPEt">t</a> <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t__ : <code class="type">(int -&gt; <a href="Interval_intf.S.html#TYPEt">t</a>) <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t : <code class="type"><a href="Interval_intf.S.html#TYPEt">t</a> <a href="../bin_prot/Type_class.html#TYPEreader">Bin_prot.Type_class.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t : <code class="type"><a href="Interval_intf.S.html#TYPEt">t</a> <a href="../bin_prot/Size.html#TYPEsizer">Bin_prot.Size.sizer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t : <code class="type"><a href="Interval_intf.S.html#TYPEt">t</a> <a href="../bin_prot/Write_ml.html#TYPEwriter">Bin_prot.Write_ml.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_ : <code class="type"><a href="Interval_intf.S.html#TYPEt">t</a> <a href="../bin_prot/Unsafe_write_c.html#TYPEwriter">Bin_prot.Unsafe_write_c.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t : <code class="type"><a href="Interval_intf.S.html#TYPEt">t</a> <a href="../bin_prot/Type_class.html#TYPEwriter">Bin_prot.Type_class.writer</a></code></span></pre>
+      
+    

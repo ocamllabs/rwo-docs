@@ -1,0 +1,43 @@
+<br/>If <code class="code">unpack_one : ('value, 'partial_unpack) unpack_one</code>, then <code class="code">unpack_one buf ?pos
+      ?len ?partial_unpack</code> must unpack at most one value of type <code class="code">'value</code> from <code class="code">buf</code>
+      starting at <code class="code">pos</code>, and not using more than <code class="code">len</code> characters.  <code class="code">unpack_one</code> must
+      returns one the following:<br/>      - <code class="code">`Ok (value, n)</code> -- unpacking succeeded and consumed <code class="code">n</code> bytes, where <code class="code">0 &lt;= n &lt;=
+      len</code>.  It is possible to have <code class="code">n = 0</code>, e.g. for sexp unpacking, which can only tell
+      it has reached the end of an atom when it encounters the following punctuation
+      character, which if it is left paren, is the start of the following sexp.<br/>      - <code class="code">`Not_enough_data (p, n)</code> -- unpacking encountered a valid proper prefix of a
+      packed value, and consumed <code class="code">n</code> bytes, where <code class="code">0 &lt;= n &lt;= len</code>.  <code class="code">p</code> is a &quot;partial
+      unpack&quot; that can be supplied to a future call to <code class="code">unpack_one</code> to continue unpacking.<br/>      - <code class="code">`Invalid_data</code> -- unpacking encountered an invalidly packed value.<br/>      A naive <code class="code">unpack_one</code> that only succeeds on a fully packed value could lead to
+      quadratic behavior if a packed value's bytes are input using a linear number of
+      calls to <code class="code">feed</code>.<br/>
+	  
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('value, 'partial_unpack) </code>t </span>= <code class="type">?partial_unpack:'partial_unpack -&gt;
+?pos:int -&gt;
+?len:int -&gt;
+<a href="Bigstring.html#TYPEt">Bigstring.t</a> -&gt;
+[ `Invalid_data of <a href="Error.html#TYPEt">Error.t</a>
+| `Not_enough_data of 'partial_unpack * int
+| `Ok of 'value * int ]</code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map : <code class="type">('a, 'partial_unpack) <a href="Unpack_buffer.Unpack_one.html#TYPEt">t</a> -&gt; f:('a -&gt; 'b) -&gt; ('b, 'partial_unpack) <a href="Unpack_buffer.Unpack_one.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create_bin_prot : <code class="type">'a <a href="../bin_prot/Type_class.html#TYPEreader">Bin_prot.Type_class.reader</a> -&gt; ('a, unit) <a href="Unpack_buffer.Unpack_one.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">create_bin_prot reader</code> returns an unpacker that reads the &quot;size-prefixed&quot; bin_prot
+      encoding, in which a value is encoded by first writing the length of the bin_prot
+      data as a 64-bit int, and then writing the data itself.  This encoding makes it
+      trivial to know if enough data is available in the buffer, so there is no need to
+      represent partially unpacked values, and hence <code class="code">'partial_unpack = unit</code>.</div>
+    
+<pre><span id="TYPEpartial_sexp"><span class="keyword">type</span> partial_sexp </span></pre>
+      <div class="info">Beware that when unpacking sexps, one cannot tell if one is at the end of an atom
+      until one hits punctuation.  So, one should always feed a space (&quot; &quot;) to a sexp
+      unpack buffer after feeding a batch of complete sexps, to ensure that the final sexp
+      is unpacked.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp : <code class="type">(<a href="Std_internal.Sexp.html#TYPEt">Std_internal.Sexp.t</a>, <a href="Unpack_buffer.Unpack_one.html#TYPEpartial_sexp">partial_sexp</a>) <a href="Unpack_buffer.Unpack_one.html#TYPEt">t</a></code></span></pre>
+      
+    

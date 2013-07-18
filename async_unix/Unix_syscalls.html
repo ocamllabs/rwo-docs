@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<title>Unix_syscalls</title>
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
+<script type="text/javascript" src="doc_loader.js"> </script>
+</head>
+<body>
+
+<h1>Module Unix_syscalls</h1>
+<pre><span class="keyword">module</span> Unix_syscalls</pre><div class="info"><code class="code">Unix_syscalls</code> provides an interface to many of the functions in OCaml's standard
+    Unix module.  It uses a deferred in the return type of functions that would block.
+    The idea is that in an async program one does not use the standard Unix module, since
+    in doing so one could accidentally block the whole program.<br/>    There are also a number of cosmetic changes (e.g. polymorphic variants) and other
+    improvements (e.g. phantom types on sockets) over the standard Unix module.</div>
+<hr/>
+<div file="Unix_syscalls.html.contents" class="content_to_load"> </div>
+</body>
+</html>

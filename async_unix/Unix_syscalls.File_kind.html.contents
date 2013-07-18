@@ -1,0 +1,3 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span>= <code class="type">[ `Block | `Char | `Directory | `Fifo | `File | `Link | `Socket ]</code> </pre>
+      
+    

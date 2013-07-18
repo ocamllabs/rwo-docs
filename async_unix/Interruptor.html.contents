@@ -1,0 +1,40 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core/Std.Invariant.S.html">Core.Std.Invariant.S</a></code> with type t = <a href="Interruptor.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="../core/Std.Invariant.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">create_fd:(<a href="Raw_fd.Kind.html#TYPEt">Raw_fd.Kind.t</a> -&gt;
+           <a href="../core/Std.Unix.File_descr.html#TYPEt">Core.Std.Unix.File_descr.t</a> -&gt; <a href="../core/Std.Info.html#TYPEt">Core.Std.Info.t</a> -&gt; <a href="Raw_fd.html#TYPEt">Raw_fd.t</a>) -&gt;
+<a href="Interruptor.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> read_fd : <code class="type"><a href="Interruptor.html#TYPEt">t</a> -&gt; <a href="Raw_fd.html#TYPEt">Raw_fd.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> thread_safe_interrupt : <code class="type"><a href="Interruptor.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">thread_safe_interrupt t</code> causes <code class="code">read_fd t</code> to become ready for reading.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> clear : <code class="type"><a href="Interruptor.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">clear t</code> causes <code class="code">read_fd t</code> to become not ready for reading.  It is guaranteed that
+    any calls to <code class="code">thread_safe_interrupt</code> after <code class="code">clear t</code> returns (and prior to another
+    call to <code class="code">clear t</code>) will cause <code class="code">read_fd</code> to become ready for reading.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type"><a href="Interruptor.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+<br/><code class="code">thread_safe_interrupt t</code> causes <code class="code">read_fd t</code> to become ready for reading.<br/>
+	  
+<br/><code class="code">clear t</code> causes <code class="code">read_fd t</code> to become not ready for reading.  It is guaranteed that
+    any calls to <code class="code">thread_safe_interrupt</code> after <code class="code">clear t</code> returns (and prior to another
+    call to <code class="code">clear t</code>) will cause <code class="code">read_fd</code> to become ready for reading.<br/>
+	  

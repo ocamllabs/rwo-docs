@@ -1,0 +1,15 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> lock_shared : <code class="type"><a href="Core_unix.Flock_command.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> lock_exclusive : <code class="type"><a href="Core_unix.Flock_command.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unlock : <code class="type"><a href="Core_unix.Flock_command.html#TYPEt">t</a></code></span></pre>
+      
+    

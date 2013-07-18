@@ -1,0 +1,41 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="File_tail.Error.html">Error</a> : <code class="code">sig</code> <a href="File_tail.Error.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="File_tail.Error.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="File_tail.Warning.html">Warning</a> : <code class="code">sig</code> <a href="File_tail.Warning.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="File_tail.Warning.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="File_tail.Update.html">Update</a> : <code class="code">sig</code> <a href="File_tail.Update.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="File_tail.Update.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">?read_buf_len:int -&gt;
+?read_delay:<a href="../core/Std.Time.Span.html#TYPEt">Core.Std.Time.Span.t</a> -&gt;
+?retry_null_reads:bool -&gt;
+?break_on_lines:bool -&gt;
+?ignore_inode_change:bool -&gt;
+?start_at:[ `Beginning | `End | `Pos of <a href="../core/Std.Int64.html#TYPEt">Core.Std.Int64.t</a> ] -&gt;
+?eof_latency_tolerance:<a href="../core/Std.Time.Span.html#TYPEt">Core.Std.Time.Span.t</a> -&gt;
+?null_read_tolerance:<a href="../core/Std.Time.Span.html#TYPEt">Core.Std.Time.Span.t</a> -&gt;
+string -&gt; <a href="File_tail.Update.html#TYPEt">Update.t</a> <a href="Import.Pipe.Reader.html#TYPEt">Import.Pipe.Reader.t</a></code></span></pre>
+      <div class="info"><code class="code">create file</code> creates a <code class="code">File_tail.t</code> that will immediately begin reading <code class="code">file</code>, and
+    then will start the stat-read loop.<br/>    <code class="code">read_buf_len</code> sets the size of the internal buffer used for making read system calls.<br/>    <code class="code">read_delay</code> sets how long the stat-read loop waits each time after it reaches eof
+    before stat'ing again.  Setting <code class="code">read_delay</code> too low could cause unecessary load.<br/>    If <code class="code">retry_null_reads = true</code>, then reads that return data with null ('\000')
+    characters are ignored and cause the system to delay 0.2s and attempt the read again.
+    If <code class="code">retry_null_reads = false</code>, then the file tail will process data with nulls just as
+    it would any other data.<br/>    If <code class="code">break_on_lines = true</code>, the file tail will break data into lines on '\n'.  If not,
+    the fill tail will return chunks of data from the end of the file as they are
+    available.<br/>    If <code class="code">ignore_inode_change = true</code>, the file tail will silently press on when the
+    <code class="code">file</code>'s inode changes.  If not, an inode change will cause the file tail to report an
+    error and stop.  CIFS changes inodes of mounted files few times a day and we need
+    <code class="code">ignore_inode_change = true</code> option to keep tailers watching files on it alive.<br/>    <code class="code">start_at</code> determines the file position at which the file tail starts.<br/>    <code class="code">eof_latency_tolerance</code> affects the <code class="code">Did_not_reach_eof_for</code> warning.<br/>    <code class="code">null_read_tolerance</code> determines how long the tailing must observe null reads
+    before it will report a <code class="code">Delayed_due_to_null_reads_for</code> warning.</div>
+    

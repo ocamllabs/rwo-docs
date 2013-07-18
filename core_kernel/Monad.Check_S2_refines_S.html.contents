@@ -1,0 +1,16 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'd) </code>t </span>= <code class="type">'a X.t</code> </pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code">sig</code> <a href="Monad.Check_S2_refines_S.html">..</a> <code class="code">end</code></pre>
+	<div class="content">
+	<div file="FIXME.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Monad.Check_S2_refines_S.Monad_infix.html">Monad_infix</a> : <code class="code">sig</code> <a href="Monad.Check_S2_refines_S.Monad_infix.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Monad.Check_S2_refines_S.Monad_infix.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

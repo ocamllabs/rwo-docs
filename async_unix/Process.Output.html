@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<title>Process.Output</title>
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
+<script type="text/javascript" src="doc_loader.js"> </script>
+</head>
+<body>
+
+<h1>Module Process.Output</h1>
+<pre><span class="keyword">module</span> <a href="Process.Output.html">Output</a> : <code class="code">sig</code> <a href="Process.Output.html">..</a> <code class="code">end</code></pre><div class="info"><code class="code">wait t</code> closes <code class="code">stdin t</code> and then begins collecting the output produced on <code class="code">t</code>'s
+    <code class="code">stdout</code> and <code class="code">stderr</code>, continuing to collect output until <code class="code">t</code> terminates.  As usual,
+    other async jobs can run before the deferred returned by <code class="code">wait</code> becomes determined.</div>
+<hr/>
+<div file="Process.Output.html.contents" class="content_to_load"> </div>
+</body>
+</html>

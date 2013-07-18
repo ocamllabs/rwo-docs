@@ -1,0 +1,75 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'd, 'w) </code>t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> char : <code class="type">(char, 'd, 'w) <a href="Iobuf_intf.Accessors.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> int8 : <code class="type">(int, 'd, 'w) <a href="Iobuf_intf.Accessors.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> int16_be : <code class="type">(int, 'd, 'w) <a href="Iobuf_intf.Accessors.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> int16_le : <code class="type">(int, 'd, 'w) <a href="Iobuf_intf.Accessors.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> int32_be : <code class="type">(int, 'd, 'w) <a href="Iobuf_intf.Accessors.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> int32_le : <code class="type">(int, 'd, 'w) <a href="Iobuf_intf.Accessors.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> uint8 : <code class="type">(int, 'd, 'w) <a href="Iobuf_intf.Accessors.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> uint16_be : <code class="type">(int, 'd, 'w) <a href="Iobuf_intf.Accessors.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> uint16_le : <code class="type">(int, 'd, 'w) <a href="Iobuf_intf.Accessors.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> uint32_be : <code class="type">(int, 'd, 'w) <a href="Iobuf_intf.Accessors.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> uint32_le : <code class="type">(int, 'd, 'w) <a href="Iobuf_intf.Accessors.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> int64_be : <code class="type">(int, 'd, 'w) <a href="Iobuf_intf.Accessors.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> int64_le : <code class="type">(int, 'd, 'w) <a href="Iobuf_intf.Accessors.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> int64_t_be : <code class="type">(<a href="../stdlib/Int64.html#TYPEt">Int64.t</a>, 'd, 'w) <a href="Iobuf_intf.Accessors.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> int64_t_le : <code class="type">(<a href="../stdlib/Int64.html#TYPEt">Int64.t</a>, 'd, 'w) <a href="Iobuf_intf.Accessors.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> padded_fixed_string : <code class="type">padding:char -&gt; len:int -&gt; (string, 'd, 'w) <a href="Iobuf_intf.Accessors.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> string : <code class="type">?str_pos:int -&gt; ?len:int -&gt; (string, 'd, 'w) <a href="Iobuf_intf.Accessors.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bigstring : <code class="type">?str_pos:int -&gt; ?len:int -&gt; (<a href="Bigstring.html#TYPEt">Bigstring.t</a>, 'd, 'w) <a href="Iobuf_intf.Accessors.html#TYPEt">t</a></code></span></pre>
+      
+    

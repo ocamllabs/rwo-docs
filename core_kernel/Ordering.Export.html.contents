@@ -1,0 +1,7 @@
+<pre><span id="TYPE_ordering"><span class="keyword">type</span> _ordering </span>= <code class="type"><a href="Ordering.html#TYPEt">t</a></code> </pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELT_ordering.Less"><span class="constructor">Less</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELT_ordering.Equal"><span class="constructor">Equal</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELT_ordering.Greater"><span class="constructor">Greater</span></span></code></td>
+	   </tr></table>
+      
+    

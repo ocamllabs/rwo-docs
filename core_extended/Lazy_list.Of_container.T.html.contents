@@ -1,0 +1,7 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> lazy_fold : <code class="type">'a <a href="Lazy_list.Of_container.T.html#TYPEt">t</a> -&gt; f:('a -&gt; 'b <a href="Lazy_m.html#TYPEt">Lazy_m.t</a> -&gt; 'b) -&gt; last:'b -&gt; 'b</code></span></pre>
+      
+    

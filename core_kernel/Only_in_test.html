@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<title>Only_in_test</title>
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
+<script type="text/javascript" src="doc_loader.js"> </script>
+</head>
+<body>
+
+<h1>Module Only_in_test</h1>
+<pre><span class="keyword">module</span> Only_in_test</pre><div class="info">This module can be used to safely expose functions and values in signatures
+    that can only be used in unit tests.<br/>    Under the hood, <code class="code">'a t = (unit -&gt; 'a)</code> and the only thing that ever forces them
+    is the <code class="code">run_tests_and_exit</code> function below which actually runs the unit tests.<br/>    For example, suppose in some module, <code class="code">type t</code> is actually an <code class="code">int</code>.  You
+    want to keep the type definition opaque, but use the underlying
+    representation in unit tests.  You could write in the ml:<br/>    <pre class="codepre"><code class="code">let test_to_int t = Only_in_test.return t
+    [let test_of_int n = Only_in_test.return n</code></pre><br/>    You would then expose in the mli:<br/>    <pre class="codepre"><code class="code">type t
+    ... functions for use in regular programming...
+    val test_to_int : t -&gt; int Only_in_test.t
+    val test_of_int : int -&gt; t Only_in_test.t</code></pre><br/>    Finally, if you have specific values that you might want to use in unit
+    tests, but that have top-level side-effects or take too long to compute, you
+    can delay the side-effects or computation until the unit tests are run by
+    writing, e.g.:<br/>    <code class="code">let (test_special_value : t Only_in_test.t) =
+       Only_in_test.of_thunk (fun () -&gt;  (factorial 100))</code><br/>    instead of<br/>    <code class="code">let (test_special_value : t Only_in_test.t) =
+       Only_in_test.return (factorial 100)</code>
+</div>
+<hr/>
+<div file="Only_in_test.html.contents" class="content_to_load"> </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Type_with_layout.Make.html">Make</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">Pos</code><code class="code"> : </code><code class="code">sig</code> <a href="Type_with_layout.Make.Anon_0.html">..</a> <code class="code">end</code><code class="code">) -&gt; </code><code class="code">sig</code> <a href="Type_with_layout.Make.html">..</a> <code class="code">end</code></div></pre>
+	<div class="content" style="display:none">
+	<div file="Type_with_layout.Make.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Type_with_layout.Parsed.html">Parsed</a> : <code class="code"><a href="Src_pos.Absolute.html">Src_pos.Absolute</a>(<a href="Src_pos.Absolute.html">Src_pos.Absolute</a>)</code></pre>
+	<div class="content" style="display:none">
+	<div file="Type_with_layout.Parsed.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Src_pos.Relative.html">Src_pos.Relative</a>(<a href="Src_pos.Relative.html">Src_pos.Relative</a>)</code></pre>
+	<div class="content">
+	<div file="Src_pos.Relative.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> relativize : <code class="type"><a href="Type_with_layout.Parsed.html#TYPEt_or_comment">Parsed.t_or_comment</a> -&gt; t_or_comment</code></span></pre>
+      
+    

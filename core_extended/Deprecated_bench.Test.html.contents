@@ -1,0 +1,15 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">?name:string -&gt; ?size:int -&gt; (unit -&gt; unit) -&gt; <a href="Deprecated_bench.Test.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> name : <code class="type"><a href="Deprecated_bench.Test.html#TYPEt">t</a> -&gt; string option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> size : <code class="type"><a href="Deprecated_bench.Test.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    

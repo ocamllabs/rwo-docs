@@ -1,0 +1,29 @@
+<pre><code><span id="TYPEt"><span class="keyword">type</span> t </span>= {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.bag">bag</span> :<code class="type">(<a href="Raw_signal_manager.Signal.html#TYPEt">Signal.t</a> -&gt; unit) <a href="../core/Std.html#TYPEsexp_opaque">Core.Std.sexp_opaque</a> <a href="../core/Std.Bag.html#TYPEt">Core.Std.Bag.t</a></code>;</code></td>
+	  </tr></table>}
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type"><a href="Raw_signal_manager.Handlers.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">unit -&gt; <a href="Raw_signal_manager.Handlers.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add : <code class="type"><a href="Raw_signal_manager.Handlers.html#TYPEt">t</a> -&gt;
+(<a href="Raw_signal_manager.Signal.html#TYPEt">Signal.t</a> -&gt; unit) <a href="../core/Std.html#TYPEsexp_opaque">Core.Std.sexp_opaque</a> -&gt;
+(<a href="Raw_signal_manager.Signal.html#TYPEt">Signal.t</a> -&gt; unit) <a href="../core/Std.html#TYPEsexp_opaque">Core.Std.sexp_opaque</a> <a href="../core/Std.Bag.Elt.html#TYPEt">Core.Std.Bag.Elt.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove : <code class="type"><a href="Raw_signal_manager.Handlers.html#TYPEt">t</a> -&gt; (<a href="Raw_signal_manager.Signal.html#TYPEt">Signal.t</a> -&gt; unit) <a href="../core/Std.html#TYPEsexp_opaque">Core.Std.sexp_opaque</a> <a href="../core/Std.Bag.Elt.html#TYPEt">Core.Std.Bag.Elt.t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> deliver : <code class="type"><a href="Raw_signal_manager.Handlers.html#TYPEt">t</a> -&gt; <a href="Raw_signal_manager.Signal.html#TYPEt">Signal.t</a> -&gt; unit</code></span></pre>
+      
+    

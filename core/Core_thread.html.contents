@@ -1,0 +1,89 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      <div class="info">The type of thread handles.</div>
+    
+<br/><br/><h6 id="6_TITLE">Thread creation and termination</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">('a -&gt; 'b) -&gt; 'a -&gt; <a href="Core_thread.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> self : <code class="type">unit -&gt; <a href="Core_thread.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> id : <code class="type"><a href="Core_thread.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> exit : <code class="type">unit -&gt; unit</code></span></pre>
+      
+    
+<br/>Terminate prematurely the thread whose handle is given.
+   This functionality is available only with bytecode-level threads.<br/>
+	  
+<br/><br/><h6 id="6_TITLE">Suspending threads</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> delay : <code class="type">float -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> join : <code class="type"><a href="Core_thread.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> wait_read : <code class="type"><a href="../otherlibs/Unix.html#TYPEfile_descr">Unix.file_descr</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> wait_write : <code class="type"><a href="../otherlibs/Unix.html#TYPEfile_descr">Unix.file_descr</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> wait_timed_read : <code class="type"><a href="../otherlibs/Unix.html#TYPEfile_descr">Unix.file_descr</a> -&gt; float -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> wait_timed_write : <code class="type"><a href="../otherlibs/Unix.html#TYPEfile_descr">Unix.file_descr</a> -&gt; float -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> yield : <code class="type">unit -&gt; unit</code></span></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Management of signals</h6><br/> <br/>
+	  
+<br/>Signal handling follows the POSIX thread model: signals generated
+  by a thread are delivered to that thread; signals generated externally
+  are delivered to one of the threads that does not block it.
+  Each thread possesses a set of blocked signals, which can be modified
+  using TODO reference : Thread.sigmask.  This set is inherited at thread creation time.
+  Per-thread signal masks are supported only by the system thread library
+  under Unix, but not under Win32, nor by the VM thread library.<br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> sigmask : <code class="type"><a href="Signal.html#TYPEsigprocmask_command">Signal.sigprocmask_command</a> -&gt; <a href="Signal.html#TYPEt">Signal.t</a> list -&gt; <a href="Signal.html#TYPEt">Signal.t</a> list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> wait_signal : <code class="type"><a href="Signal.html#TYPEt">Signal.t</a> list -&gt; int</code></span></pre>
+      
+    
+<br/>Jane Street extensions<br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> threads_have_been_created : <code class="type">unit -&gt; bool</code></span></pre>
+      <div class="info"><code class="code">true</code> iff Thread.create has ever been called, even if there is
+    currently only one running thread.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> num_threads : <code class="type">unit -&gt; int option</code></span></pre>
+      <div class="info"><code class="code">num_threads ()</code> attempts to return the number of currently running
+    threads by parsing /proc.  Since this is an operation frought with
+    potential failure, we return an option in cases of failure</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> block_forever : <code class="type">unit -&gt; 'a</code></span></pre>
+      <div class="info"><code class="code">block_forever ()</code> will block the calling thread forever.</div>
+    

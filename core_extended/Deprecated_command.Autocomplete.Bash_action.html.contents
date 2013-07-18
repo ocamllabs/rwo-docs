@@ -1,0 +1,26 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span>= <code class="type">[ `Alias
+| `Arrayvar
+| `Binding
+| `Builtin
+| `Command
+| `Directory
+| `Disabled
+| `Enabled
+| `Export
+| `File
+| `Function
+| `Group
+| `Helptopic
+| `Hostname
+| `Job
+| `Keyword
+| `Running
+| `Service
+| `Setopt
+| `Shopt
+| `Signal
+| `Stopped
+| `User
+| `Variable ]</code> </pre>
+      
+    
