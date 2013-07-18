@@ -1,0 +1,8 @@
+ 
+      <pre><span><span class="keyword">val</span> formatter_of_buffer : <code class="type"><a href="Bigbuffer.html#TYPEt">t</a> -&gt; <a href="../stdlib/Format.html#TYPEformatter">Format.formatter</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bprintf : <code class="type"><a href="Bigbuffer.html#TYPEt">t</a> -&gt; ('a, <a href="../stdlib/Format.html#TYPEformatter">Format.formatter</a>, unit) <a href="../stdlib/Pervasives.html#TYPEformat">format</a> -&gt; 'a</code></span></pre>
+      
+    

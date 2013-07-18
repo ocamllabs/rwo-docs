@@ -1,0 +1,82 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span>= <code class="type">T.t</code> </pre>
+      
+    
+<pre><span id="TYPEdatum"><span class="keyword">type</span> datum </span>= <code class="type"><a href="Versioned_typed_tcp.Datumable_of_binable.Make_datumable5.html#TYPEt">t</a></code> </pre>
+      
+    
+FIX ME
+
+ 
+      <pre><span><span class="keyword">val</span> alloc : <code class="type"><a href="../core/Std.Int.html#TYPEt">Core.Std.Int.t</a> -&gt; <a href="../core/Std.Bigsubstring.html#TYPEt">Core.Std.Bigsubstring.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> marshal : <code class="type">to_v:('a -&gt; 'b option) -&gt;
+bin_size_t:('b -&gt; <a href="../core/Std.Int.html#TYPEt">Core.Std.Int.t</a>) -&gt;
+bin_write_t:(<a href="../core/Std.Bigsubstring.html#TYPEbase">Core.Std.Bigsubstring.base</a> -&gt; pos:int -&gt; 'b -&gt; int) -&gt;
+'a -&gt; <a href="../core/Std.Bigsubstring.html#TYPEt">Core.Std.Bigsubstring.t</a> option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unmarshal : <code class="type">of_v:('a -&gt; 'b) -&gt;
+bin_read_t:(<a href="../core/Std.Bigsubstring.html#TYPEbase">Core.Std.Bigsubstring.base</a> -&gt; pos_ref:int <a href="../stdlib/Pervasives.html#TYPEref">ref</a> -&gt; 'a) -&gt;
+<a href="../core/Std.Bigsubstring.html#TYPEt">Core.Std.Bigsubstring.t</a> -&gt; 'b</code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Versioned_typed_tcp.Datumable_of_binable.Make_datumable5.F.html">F</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">VN</code><code class="code"> : </code><code class="type"><a href="Versioned_typed_tcp.Datumable_of_binable.T_bin.html">T_bin</a></code><code class="code">) -&gt; </code><div class="sig_block"><code class="code">functor (</code><code class="code">C</code><code class="code"> : </code><code class="type">T(T)</code><code class="code">) -&gt; </code><code class="code">sig</code> <a href="Versioned_typed_tcp.Datumable_of_binable.Make_datumable5.F.html">..</a> <code class="code">end</code></div></div></pre>
+	<div class="content" style="display:none">
+	<div file="Versioned_typed_tcp.Datumable_of_binable.Make_datumable5.F.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Versioned_typed_tcp.Datumable_of_binable.Make_datumable5.F1.html">F1</a> : HTML_OF_MODULE_IDENT BUG(<code class="code">V1_cvt</code>)</pre>
+	<div class="content" style="display:none">
+	<div file="Versioned_typed_tcp.Datumable_of_binable.Make_datumable5.F1.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Versioned_typed_tcp.Datumable_of_binable.Make_datumable5.F2.html">F2</a> : HTML_OF_MODULE_IDENT BUG(<code class="code">V2_cvt</code>)</pre>
+	<div class="content" style="display:none">
+	<div file="Versioned_typed_tcp.Datumable_of_binable.Make_datumable5.F2.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Versioned_typed_tcp.Datumable_of_binable.Make_datumable5.F3.html">F3</a> : HTML_OF_MODULE_IDENT BUG(<code class="code">V3_cvt</code>)</pre>
+	<div class="content" style="display:none">
+	<div file="Versioned_typed_tcp.Datumable_of_binable.Make_datumable5.F3.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Versioned_typed_tcp.Datumable_of_binable.Make_datumable5.F4.html">F4</a> : HTML_OF_MODULE_IDENT BUG(<code class="code">V4_cvt</code>)</pre>
+	<div class="content" style="display:none">
+	<div file="Versioned_typed_tcp.Datumable_of_binable.Make_datumable5.F4.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Versioned_typed_tcp.Datumable_of_binable.Make_datumable5.F5.html">F5</a> : HTML_OF_MODULE_IDENT BUG(<code class="code">V5_cvt</code>)</pre>
+	<div class="content" style="display:none">
+	<div file="Versioned_typed_tcp.Datumable_of_binable.Make_datumable5.F5.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> funs : <code class="type">((T.t -&gt; <a href="../core/Std.Bigsubstring.html#TYPEt">Core.Std.Bigsubstring.t</a> option) *
+ (<a href="../core/Std.Bigsubstring.html#TYPEt">Core.Std.Bigsubstring.t</a> -&gt; T.t option))
+array</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> lookup : <code class="type"><a href="Versioned_typed_tcp.Version.html#TYPEt">Version.t</a> -&gt;
+((T.t -&gt; <a href="../core/Std.Bigsubstring.html#TYPEt">Core.Std.Bigsubstring.t</a> option) *
+ (<a href="../core/Std.Bigsubstring.html#TYPEt">Core.Std.Bigsubstring.t</a> -&gt; T.t option), exn)
+<a href="../core/Std.Result.html#TYPEt">Core.Std.Result.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> lookup_marshal_fun : <code class="type"><a href="Versioned_typed_tcp.Version.html#TYPEt">Version.t</a> -&gt; (T.t -&gt; <a href="../core/Std.Bigsubstring.html#TYPEt">Core.Std.Bigsubstring.t</a> option, exn) <a href="../core/Std.Result.html#TYPEt">Core.Std.Result.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> lookup_unmarshal_fun : <code class="type"><a href="Versioned_typed_tcp.Version.html#TYPEt">Version.t</a> -&gt; (<a href="../core/Std.Bigsubstring.html#TYPEt">Core.Std.Bigsubstring.t</a> -&gt; T.t option, exn) <a href="../core/Std.Result.html#TYPEt">Core.Std.Result.t</a></code></span></pre>
+      
+    

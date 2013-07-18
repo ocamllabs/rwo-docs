@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<title>Documented_match_statement</title>
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
+<script type="text/javascript" src="doc_loader.js"> </script>
+</head>
+<body>
+
+<h1>Module Documented_match_statement</h1>
+<pre><span class="keyword">module</span> Documented_match_statement</pre><div class="info">A <code class="code">t</code> represents a match statement where every case is documented.  You can then use it
+    in one way to extract documentation, and in another way as the underlying function.<br/>    More specifically, an <code class="code">('input,'output) t</code> represents a match statement matching things
+    of type <code class="code">input'</code> and producing things of type <code class="code">'output</code>. It consists of
+    <code class="code">specific_cases</code> and a <code class="code">catchall_case</code>.<br/>    The <code class="code">specific_cases</code> are straightforward:
+    <code class="code">{pattern=pattern;documentation=documentation;value=value}</code> represents
+    &quot;| pattern -&gt; value&quot;, with <code class="code">documentation</code> explaining what's going on.<br/>    The <code class="code">catchall_case</code> can be either <code class="code">`Unused x</code>, representing &quot;| _ -&gt; x&quot; with no
+    documentation, or <code class="code">`Used case</code>, representing &quot;| x -&gt; f x&quot;, where <code class="code">f</code> is <code class="code">case.value</code>,
+    and <code class="code">case.documentation</code> explains what's going on with <code class="code">f</code>.  This is intended to allow
+    many input values to be handled uniformly without having to document each one individually.</div>
+<hr/>
+<div file="Documented_match_statement.html.contents" class="content_to_load"> </div>
+</body>
+</html>

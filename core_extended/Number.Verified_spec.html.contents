@@ -1,0 +1,11 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Number.Spec.html">Spec</a></code></pre>
+	<div class="content">
+	<div file="Number.Spec.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> check : <code class="type">t -&gt; (unit, string) <a href="../core/Std.Result.html#TYPEt">Core.Std.Result.t</a></code></span></pre>
+      
+    

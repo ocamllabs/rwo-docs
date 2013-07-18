@@ -1,0 +1,11 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> screen : <code class="type"><a href="Log.Blocking.Output.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">(<a href="Log.Message.html#TYPEt">Message.t</a> -&gt; unit) -&gt; <a href="Log.Blocking.Output.html#TYPEt">t</a></code></span></pre>
+      
+    

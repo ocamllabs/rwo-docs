@@ -1,0 +1,374 @@
+ 
+      <pre><span><span class="keyword">val</span> __pa_ounit_275876e34cf609db118f3d84b799a790 : <code class="type">string</code></span></pre>
+      
+    
+
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Raw_scheduler.Core_scheduler.html">Core_scheduler</a> : <code class="code"><a href="../async_core/Scheduler.html">Async_core.Scheduler</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Raw_scheduler.Core_scheduler.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Raw_scheduler.Fd.html">Fd</a> : <code class="code"><a href="Raw_fd.html">Raw_fd</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Raw_scheduler.Fd.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Raw_scheduler.Watching.html">Watching</a> : <code class="code"><a href="Raw_scheduler.Fd.html#TYPEWatching">Fd.Watching</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Raw_scheduler.Watching.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Raw_scheduler.Signal.html">Signal</a> : <code class="code"><a href="../core/Std.Signal.html">Core.Std.Signal</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Raw_scheduler.Signal.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Raw_scheduler.Timerfd.html">Timerfd</a> : <code class="code"><a href="../core/Std.Linux_ext.Timerfd.html">Core.Std.Linux_ext.Timerfd</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Raw_scheduler.Timerfd.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> debug : <code class="type">bool</code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Raw_scheduler.File_descr_watcher.html">File_descr_watcher</a> : <code class="code">sig</code> <a href="Raw_scheduler.File_descr_watcher.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Raw_scheduler.File_descr_watcher.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<pre><span id="TYPEwith_options"><span class="keyword">type</span> <code class="type">'a </code>with_options </span>= <code class="type">'a <a href="Raw_scheduler.Core_scheduler.html#TYPEwith_options">Core_scheduler.with_options</a></code> </pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code">sig</code> <a href="Raw_scheduler.html">..</a> <code class="code">end</code></pre>
+	<div class="content">
+	<div file="FIXME.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> cycle_count : <code class="type">unit -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> cycle_start : <code class="type">unit -&gt; <a href="../core/Std.Time.html#TYPEt">Core.Std.Time.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> cycle_times : <code class="type">unit -&gt; <a href="../core/Std.Time.Span.html#TYPEt">Core.Std.Time.Span.t</a> <a href="../async_core/Async_stream.html#TYPEt">Async_core.Async_stream.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set_max_num_jobs_per_priority_per_cycle : <code class="type">int -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> force_current_cycle_to_end : <code class="type">unit -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> file_descr_watcher_backend : <code class="type"><a href="Import.Config.File_descr_watcher.html#TYPEt">Import.Config.File_descr_watcher.t</a> <a href="../stdlib/Pervasives.html#TYPEref">ref</a></code></span></pre>
+      
+    
+<pre><code><span id="TYPEt"><span class="keyword">type</span> t </span>= {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.mutex">mutex</span> :<code class="type"><a href="../core/Std.Nano_mutex.html#TYPEt">Core.Std.Nano_mutex.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.is_running">is_running</span> :<code class="type">bool</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.have_called_go">have_called_go</span> :<code class="type">bool</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.fds_whose_watching_has_changed">fds_whose_watching_has_changed</span> :<code class="type"><a href="Raw_scheduler.Fd.html#TYPEt">Fd.t</a> list</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.file_descr_watcher">file_descr_watcher</span> :<code class="type"><a href="Raw_scheduler.File_descr_watcher.html#TYPEt">File_descr_watcher.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.fd_by_descr">fd_by_descr</span> :<code class="type"><a href="Fd_by_descr.html#TYPEt">Fd_by_descr.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.timerfd">timerfd</span> :<code class="type"><a href="../core/Std.Linux_ext.Timerfd.html#TYPEt">Core.Std.Linux_ext.Timerfd.t</a> option</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.scheduler_thread_id">scheduler_thread_id</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.interruptor">interruptor</span> :<code class="type"><a href="Interruptor.html#TYPEt">Interruptor.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.signal_manager">signal_manager</span> :<code class="type"><a href="Raw_signal_manager.html#TYPEt">Raw_signal_manager.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.thread_pool">thread_pool</span> :<code class="type"><a href="Thread_pool.html#TYPEt">Thread_pool.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.core_scheduler">core_scheduler</span> :<code class="type"><a href="Raw_scheduler.Core_scheduler.html#TYPEt">Core_scheduler.t</a></code>;</code></td>
+	  </tr></table>}
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type"><a href="Raw_scheduler.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> core_scheduler : <code class="type"><a href="Raw_scheduler.html#TYPEt">t</a> -&gt; <a href="Raw_scheduler.Core_scheduler.html#TYPEt">Core_scheduler.t</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> thread_pool : <code class="type"><a href="Raw_scheduler.html#TYPEt">t</a> -&gt; <a href="Thread_pool.html#TYPEt">Thread_pool.t</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> signal_manager : <code class="type"><a href="Raw_scheduler.html#TYPEt">t</a> -&gt; <a href="Raw_signal_manager.html#TYPEt">Raw_signal_manager.t</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> interruptor : <code class="type"><a href="Raw_scheduler.html#TYPEt">t</a> -&gt; <a href="Interruptor.html#TYPEt">Interruptor.t</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> scheduler_thread_id : <code class="type"><a href="Raw_scheduler.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> set_scheduler_thread_id : <code class="type"><a href="Raw_scheduler.html#TYPEt">t</a> -&gt; int -&gt; unit</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> timerfd : <code class="type"><a href="Raw_scheduler.html#TYPEt">t</a> -&gt; <a href="../core/Std.Linux_ext.Timerfd.html#TYPEt">Core.Std.Linux_ext.Timerfd.t</a> option</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> set_timerfd : <code class="type"><a href="Raw_scheduler.html#TYPEt">t</a> -&gt; <a href="../core/Std.Linux_ext.Timerfd.html#TYPEt">Core.Std.Linux_ext.Timerfd.t</a> option -&gt; unit</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> fd_by_descr : <code class="type"><a href="Raw_scheduler.html#TYPEt">t</a> -&gt; <a href="Fd_by_descr.html#TYPEt">Fd_by_descr.t</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> file_descr_watcher : <code class="type"><a href="Raw_scheduler.html#TYPEt">t</a> -&gt; <a href="Raw_scheduler.File_descr_watcher.html#TYPEt">File_descr_watcher.t</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> fds_whose_watching_has_changed : <code class="type"><a href="Raw_scheduler.html#TYPEt">t</a> -&gt; <a href="Raw_scheduler.Fd.html#TYPEt">Fd.t</a> list</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> set_fds_whose_watching_has_changed : <code class="type"><a href="Raw_scheduler.html#TYPEt">t</a> -&gt; <a href="Raw_scheduler.Fd.html#TYPEt">Fd.t</a> list -&gt; unit</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> have_called_go : <code class="type"><a href="Raw_scheduler.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> set_have_called_go : <code class="type"><a href="Raw_scheduler.html#TYPEt">t</a> -&gt; bool -&gt; unit</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> is_running : <code class="type"><a href="Raw_scheduler.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> set_is_running : <code class="type"><a href="Raw_scheduler.html#TYPEt">t</a> -&gt; bool -&gt; unit</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> mutex : <code class="type"><a href="Raw_scheduler.html#TYPEt">t</a> -&gt; <a href="../core/Std.Nano_mutex.html#TYPEt">Core.Std.Nano_mutex.t</a></code></span></pre>
+      
+    
+
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Raw_scheduler.Fields.html">Fields</a> : <code class="code">sig</code> <a href="Raw_scheduler.Fields.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Raw_scheduler.Fields.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> current_execution_context : <code class="type"><a href="Raw_scheduler.html#TYPEt">t</a> -&gt; <a href="../async_core/Execution_context.html#TYPEt">Async_core.Execution_context.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> with_execution_context : <code class="type"><a href="Raw_scheduler.html#TYPEt">t</a> -&gt; <a href="../async_core/Execution_context.html#TYPEt">Async_core.Execution_context.t</a> -&gt; f:(unit -&gt; 'a) -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> preserve_execution_context : <code class="type"><a href="Raw_scheduler.html#TYPEt">t</a> -&gt; ('a -&gt; unit) -&gt; ('a -&gt; unit) <a href="../core/Std.Staged.html#TYPEt">Core.Std.Staged.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create_fd : <code class="type"><a href="Raw_scheduler.html#TYPEt">t</a> -&gt; <a href="Raw_scheduler.Fd.Kind.html#TYPEt">Fd.Kind.t</a> -&gt; <a href="../core/Std.Unix.File_descr.html#TYPEt">Core.Std.Unix.File_descr.t</a> -&gt; <a href="../core/Std.Info.html#TYPEt">Core.Std.Info.t</a> -&gt; <a href="Raw_scheduler.Fd.html#TYPEt">Fd.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> lock : <code class="type"><a href="Raw_scheduler.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> try_lock : <code class="type"><a href="Raw_scheduler.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unlock : <code class="type"><a href="Raw_scheduler.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> with_lock : <code class="type"><a href="Raw_scheduler.html#TYPEt">t</a> -&gt; (unit -&gt; 'a) -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> am_holding_lock : <code class="type"><a href="Raw_scheduler.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+<pre><code><span id="TYPEthe_one_and_only"><span class="keyword">type</span> the_one_and_only </span>= </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTthe_one_and_only.Not_ready_to_initialize"><span class="constructor">Not_ready_to_initialize</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTthe_one_and_only.Ready_to_initialize"><span class="constructor">Ready_to_initialize</span></span> <span class="keyword">of</span> <code class="type">unit -&gt; <a href="Raw_scheduler.html#TYPEt">t</a></code></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTthe_one_and_only.Initialized"><span class="constructor">Initialized</span></span> <span class="keyword">of</span> <code class="type"><a href="Raw_scheduler.html#TYPEt">t</a></code></code></td>
+	   </tr></table>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mutex_for_initializing_the_one_and_only_ref : <code class="type"><a href="../core/Std.Nano_mutex.html#TYPEt">Core.Std.Nano_mutex.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> the_one_and_only_ref : <code class="type"><a href="Raw_scheduler.html#TYPEthe_one_and_only">the_one_and_only</a> <a href="../stdlib/Pervasives.html#TYPEref">ref</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_ready_to_initialize : <code class="type">unit -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> the_one_and_only_uncommon_case : <code class="type">should_lock:bool -&gt; <a href="Raw_scheduler.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> the_one_and_only : <code class="type">should_lock:bool -&gt; <a href="Raw_scheduler.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> current_thread_id : <code class="type">unit -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_main_thread : <code class="type">unit -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove_fd : <code class="type"><a href="Raw_scheduler.html#TYPEt">t</a> -&gt; <a href="Raw_fd.html#TYPEt">Raw_fd.t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> maybe_start_closing_fd : <code class="type"><a href="Raw_scheduler.html#TYPEt">t</a> -&gt; <a href="Raw_scheduler.Fd.html#TYPEt">Fd.t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> dec_num_active_syscalls_fd : <code class="type"><a href="Raw_scheduler.html#TYPEt">t</a> -&gt; <a href="Raw_scheduler.Fd.html#TYPEt">Fd.t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> invariant : <code class="type"><a href="Raw_scheduler.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> try_create_timerfd : <code class="type">unit -&gt; <a href="Raw_scheduler.Timerfd.html#TYPEt">Timerfd.t</a> option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">unit -&gt; <a href="Raw_scheduler.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> init : <code class="type">unit -&gt; unit</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> reset_in_forked_process : <code class="type">unit -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> thread_safe_wakeup_scheduler : <code class="type"><a href="Raw_scheduler.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> i_am_the_scheduler : <code class="type"><a href="Raw_scheduler.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> have_lock_do_cycle : <code class="type"><a href="Raw_scheduler.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set_fd_desired_watching : <code class="type"><a href="Raw_scheduler.html#TYPEt">t</a> -&gt; <a href="Raw_scheduler.Fd.html#TYPEt">Fd.t</a> -&gt; <a href="Read_write.Key.html#TYPEt">Read_write.Key.t</a> -&gt; <a href="Raw_scheduler.Fd.Watching.html#TYPEt">Fd.Watching.t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> request_start_watching : <code class="type"><a href="Raw_scheduler.html#TYPEt">t</a> -&gt;
+<a href="Raw_scheduler.Fd.html#TYPEt">Fd.t</a> -&gt;
+<a href="Read_write.Key.html#TYPEt">Read_write.Key.t</a> -&gt;
+[&gt; `Already_closed
+ | `Already_watching
+ | `Unsupported
+ | `Watching of <a href="Raw_scheduler.Fd.html#TYPEready_to_result">Fd.ready_to_result</a> <a href="Import.Ivar.html#TYPEt">Import.Ivar.t</a> ]</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> request_stop_watching : <code class="type"><a href="Raw_scheduler.html#TYPEt">t</a> -&gt; <a href="Raw_scheduler.Fd.html#TYPEt">Fd.t</a> -&gt; <a href="Read_write.Key.html#TYPEt">Read_write.Key.t</a> -&gt; <a href="Raw_scheduler.Fd.html#TYPEready_to_result">Fd.ready_to_result</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sync_changed_fds_to_file_descr_watcher : <code class="type"><a href="Raw_scheduler.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> be_the_scheduler : <code class="type">?raise_unhandled_exn:bool -&gt; <a href="Raw_scheduler.html#TYPEt">t</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add_finalizer : <code class="type"><a href="Raw_scheduler.html#TYPEt">t</a> -&gt; 'a <a href="../core/Std.Heap_block.html#TYPEt">Core.Std.Heap_block.t</a> -&gt; ('a <a href="../core/Std.Heap_block.html#TYPEt">Core.Std.Heap_block.t</a> -&gt; unit) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add_finalizer_exn : <code class="type"><a href="Raw_scheduler.html#TYPEt">t</a> -&gt; 'a -&gt; ('a -&gt; unit) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> go : <code class="type">?raise_unhandled_exn:bool -&gt; unit -&gt; <a href="../core_kernel/Std.html#TYPEnever_returns">Core_kernel.Std.never_returns</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> go_main : <code class="type">?raise_unhandled_exn:bool -&gt;
+?file_descr_watcher:<a href="Import.Config.File_descr_watcher.html#TYPEt">Import.Config.File_descr_watcher.t</a> -&gt;
+main:(unit -&gt; unit) -&gt; unit -&gt; <a href="../core_kernel/Std.html#TYPEnever_returns">Core_kernel.Std.never_returns</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_running : <code class="type">unit -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> report_long_cycle_times : <code class="type">?cutoff:<a href="../core/Std.Time.Span.html#TYPEt">Core.Std.Time.Span.t</a> -&gt; unit -&gt; unit</code></span></pre>
+      
+    
+<pre><code><span id="TYPEfolder"><span class="keyword">type</span> <code class="type">'b </code>folder </span>= {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTfolder.folder">folder</span> :<code class="type">'a. 'b -&gt; <a href="Raw_scheduler.html#TYPEt">t</a> -&gt; (<a href="Raw_scheduler.html#TYPEt">t</a>, 'a) <a href="../core/Std.Field.html#TYPEt">Core.Std.Field.t</a> -&gt; 'b</code>;</code></td>
+	  </tr></table>}
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t : <code class="type">unit -&gt; <a href="Raw_scheduler.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold_fields : <code class="type">init:'a -&gt; 'a <a href="Raw_scheduler.html#TYPEfolder">folder</a> -&gt; 'a</code></span></pre>
+      
+    
+

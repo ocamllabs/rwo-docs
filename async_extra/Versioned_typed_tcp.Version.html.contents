@@ -1,0 +1,11 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core/Std.Int.html">Core.Std.Int</a></code></pre>
+	<div class="content">
+	<div file="../core/Std.Int.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> add : <code class="type">t -&gt; t -&gt; t</code></span></pre>
+      
+    

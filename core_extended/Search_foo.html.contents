@@ -1,0 +1,66 @@
+<pre><span id="TYPEcomparison"><span class="keyword">type</span> comparison </span>= <code class="type">int</code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> cmp_fasc : <code class="type">('a -&gt; 'comparable) -&gt; 'a -&gt; 'a -&gt; <a href="Search_foo.html#TYPEcomparison">comparison</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> cmp_fdesc : <code class="type">('a -&gt; 'comparable) -&gt; 'a -&gt; 'a -&gt; <a href="Search_foo.html#TYPEcomparison">comparison</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> maxf : <code class="type">('a -&gt; 'comparable) -&gt; 'a -&gt; 'a -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> minf : <code class="type">('a -&gt; 'comparable) -&gt; 'a -&gt; 'a -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> in_order : <code class="type">'a list -&gt; cmp:('a -&gt; 'a -&gt; <a href="Search_foo.html#TYPEcomparison">comparison</a>) -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> max_len : <code class="type">key:('a -&gt; string) -&gt; 'a array -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bsearch : <code class="type">f:(int -&gt; <a href="Search_foo.html#TYPEcomparison">comparison</a>) -&gt; low:int -&gt; high:int -&gt; int option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bsearch_opt : <code class="type">f:(int -&gt; <a href="Search_foo.html#TYPEcomparison">comparison</a>) -&gt; low:int -&gt; high:int -&gt; int option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bsearch_exn : <code class="type">f:(int -&gt; <a href="Search_foo.html#TYPEcomparison">comparison</a>) -&gt; low:int -&gt; high:int -&gt; int</code></span></pre>
+      
+    
+<pre><span id="TYPEpoly_comparison"><span class="keyword">type</span> poly_comparison </span>= <code class="type">[ `Good | `High | `Low ]</code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bsearch2 : <code class="type">f:(int -&gt; <a href="Search_foo.html#TYPEpoly_comparison">poly_comparison</a>) -&gt; low:int -&gt; high:int -&gt; int option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bsearch2_opt : <code class="type">f:(int -&gt; <a href="Search_foo.html#TYPEpoly_comparison">poly_comparison</a>) -&gt; low:int -&gt; high:int -&gt; int option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bsearch2_exn : <code class="type">f:(int -&gt; <a href="Search_foo.html#TYPEpoly_comparison">poly_comparison</a>) -&gt; low:int -&gt; high:int -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bsearch_val : <code class="type">f:(int -&gt; <a href="Search_foo.html#TYPEcomparison">comparison</a> * 'a) -&gt; low:int -&gt; high:int -&gt; (int * 'a) option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bsearch_val_opt : <code class="type">f:(int -&gt; <a href="Search_foo.html#TYPEcomparison">comparison</a> * 'a) -&gt; low:int -&gt; high:int -&gt; (int * 'a) option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bsearch_val_exn : <code class="type">f:(int -&gt; <a href="Search_foo.html#TYPEcomparison">comparison</a> * 'a) -&gt; low:int -&gt; high:int -&gt; int * 'a</code></span></pre>
+      
+    

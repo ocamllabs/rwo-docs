@@ -1,0 +1,330 @@
+<br/>Process and system stats<br/>
+	  
+<pre><span id="TYPEbigint"><span class="keyword">type</span> bigint </span>= <code class="type"><a href="../core/Std.Big_int.html#TYPEbig_int">Core.Std.Big_int.big_int</a></code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> input_all_with_reused_buffer : <code class="type">unit -&gt; (string -&gt; string) <a href="../core/Std.Staged.html#TYPEt">Core.Std.Staged.t</a></code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Procfs.Process.html">Process</a> : <code class="code">sig</code> <a href="Procfs.Process.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Procfs.Process.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Procfs.Meminfo.html">Meminfo</a> : <code class="code">sig</code> <a href="Procfs.Meminfo.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Procfs.Meminfo.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Procfs.Kstat.html">Kstat</a> : <code class="code">sig</code> <a href="Procfs.Kstat.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Procfs.Kstat.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Procfs.Loadavg.html">Loadavg</a> : <code class="code">sig</code> <a href="Procfs.Loadavg.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Procfs.Loadavg.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> get_all_procs : <code class="type">unit -&gt; <a href="Procfs.Process.html#TYPEt">Process.t</a> list</code></span></pre>
+      <div class="info"><code class="code">get_all_procs</code> returns a list of all processes on the system</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> with_pid_exn : <code class="type"><a href="../core/Std.Pid.html#TYPEt">Core.Std.Pid.t</a> -&gt; <a href="Procfs.Process.html#TYPEt">Process.t</a></code></span></pre>
+      <div class="info"><code class="code">with_pid_exn pid</code> returns a single process that matches pid, or raises Not_found</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> with_pid : <code class="type"><a href="../core/Std.Pid.html#TYPEt">Core.Std.Pid.t</a> -&gt; <a href="Procfs.Process.html#TYPEt">Process.t</a> option</code></span></pre>
+      <div class="info"><code class="code">with_pid pid</code> returns a single process that matches pid</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> with_uid : <code class="type">int -&gt; <a href="Procfs.Process.html#TYPEt">Process.t</a> list</code></span></pre>
+      <div class="info"><code class="code">with_uid uid</code> returns all processes owned by uid</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> pgrep : <code class="type">(<a href="Procfs.Process.html#TYPEt">Process.t</a> -&gt; bool) -&gt; <a href="Procfs.Process.html#TYPEt">Process.t</a> list</code></span></pre>
+      <div class="info"><code class="code">pgrep f</code> returns all processes for which f is true</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> pkill : <code class="type">signal:<a href="../core/Std.Signal.html#TYPEt">Core.Std.Signal.t</a> -&gt;
+(<a href="Procfs.Process.html#TYPEt">Process.t</a> -&gt; bool) -&gt;
+(<a href="../core/Std.Pid.html#TYPEt">Core.Std.Pid.t</a> * (unit, <a href="../core/Std.Unix.html#TYPEerror">Core.Std.Unix.error</a>) <a href="../core/Std.Result.html#TYPEt">Core.Std.Result.t</a>) list</code></span></pre>
+      <div class="info"><code class="code">pkill ~signal f</code> sends the signal to all processes for which f returns true. It
+   returns the list of processes that were signaled, and the resulting errors if any.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> with_username_exn : <code class="type">string -&gt; <a href="Procfs.Process.html#TYPEt">Process.t</a> list</code></span></pre>
+      <div class="info"><code class="code">with_username_exn user</code> calls with_uid after looking up the user's uid</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> with_username : <code class="type">string -&gt; <a href="Procfs.Process.html#TYPEt">Process.t</a> list option</code></span></pre>
+      <div class="info"><code class="code">with_username user</code> calls with_uid after looking up the user's uid</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> jiffies_per_second_exn : <code class="type">unit -&gt; float</code></span></pre>
+      <div class="info"><code class="code">jiffies_per_second_exn</code>.  A jiffy &quot;is one tick of the system timer interrupt.  It is
+    not an absolute time interval unit, since its duration depends on the clock interrupt
+    frequency of the particular hardware platform.&quot;<br/>    Further reading: https://secure.wikimedia.org/wikipedia/en/wiki/Jiffy_(time)</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> jiffies_per_second : <code class="type">unit -&gt; float option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> meminfo_exn : <code class="type">unit -&gt; <a href="Procfs.Meminfo.html#TYPEt">Meminfo.t</a></code></span></pre>
+      <div class="info"><code class="code">meminfo_exn</code> queries /proc/meminfo and fills out Meminfo.t.  All values in bytes.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> meminfo : <code class="type">unit -&gt; <a href="Procfs.Meminfo.html#TYPEt">Meminfo.t</a> option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> loadavg_exn : <code class="type">unit -&gt; <a href="Procfs.Loadavg.html#TYPEt">Loadavg.t</a></code></span></pre>
+      <div class="info"><code class="code">loadavg_exn</code> parses /proc/loadavg.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> loadavg : <code class="type">unit -&gt; <a href="Procfs.Loadavg.html#TYPEt">Loadavg.t</a> option</code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Procfs.Net.html">Net</a> : <code class="code">sig</code> <a href="Procfs.Net.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Procfs.Net.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Procfs.Mount.html">Mount</a> : <code class="code">sig</code> <a href="Procfs.Mount.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Procfs.Mount.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> mounts : <code class="type">unit -&gt; <a href="Procfs.Mount.html#TYPEt">Mount.t</a> list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mounts_of_fstab : <code class="type">unit -&gt; <a href="Procfs.Mount.html#TYPEt">Mount.t</a> list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> supported_filesystems : <code class="type">unit -&gt; string list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> uptime : <code class="type">unit -&gt; <a href="../core/Std.Time.Span.html#TYPEt">Core.Std.Time.Span.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> process_age : <code class="type"><a href="Procfs.Process.html#TYPEt">Process.t</a> -&gt; <a href="../core/Std.Time.Span.html#TYPEt">Core.Std.Time.Span.t</a> option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> process_age' : <code class="type">jiffies_per_second:float -&gt; <a href="Procfs.Process.html#TYPEt">Process.t</a> -&gt; <a href="../core/Std.Time.Span.html#TYPEt">Core.Std.Time.Span.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bigint_of_sexp : <code class="type"><a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_bigint : <code class="type"><a href="Procfs.html#TYPEbigint">bigint</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+<br/>The filename of the executable<br/>
+	  
+<br/>One  character from the string &quot;RSDZTW&quot;<br/>
+	  
+<br/>The PID of the parent.<br/>
+	  
+<br/>The process group ID of the process.<br/>
+	  
+<br/>The session ID of the process.<br/>
+	  
+<br/>The tty the process uses.<br/>
+	  
+<br/>The process group ID of the process which currently owns
+                                  the tty...<br/>
+	  
+<br/>The kernel flags word of the process.<br/>
+	  
+<br/>The number of minor faults the process has made which have
+                                  not required loading a memory page from disk.<br/>
+	  
+<br/>The number of minor faults that the process’s waited-for
+                                  children have made.<br/>
+	  
+<br/>The number of major faults the process has made which have
+                                  required loading a page from disk.<br/>
+	  
+<br/>The number of major faults that the process’s waited-for
+                                  children have made.<br/>
+	  
+<br/>The number of jiffies that this process has been scheduled
+                                  in user mode.<br/>
+	  
+<br/>The number of jiffies that this process has been scheduled
+                                  in kernel mode.<br/>
+	  
+<br/>The number of jiffies that this process’s waited-for
+                                  children have been scheduled in user mode.<br/>
+	  
+<br/>The number of jiffies that this process’s waited-for
+                                  children have been scheduled in kernel mode.<br/>
+	  
+<br/>The standard nice value, plus fifteen.  The value is never
+                                  negative in the kernel.<br/>
+	  
+<br/>The nice value ranges from 19 to -19<br/>
+	  
+<br/>placeholder for removed field<br/>
+	  
+<br/>The time in jiffies before the next SIGALRM is sent to the
+                                  process due to an interval timer.<br/>
+	  
+<br/>The time in jiffies the process started after system boot.<br/>
+	  
+<br/>Virtual memory size in bytes.<br/>
+	  
+<br/>Resident Set Size: number of pages the process has in real
+                                  memory.<br/>
+	  
+<br/>Current limit in bytes on the rss of the process.<br/>
+	  
+<br/>The address above which program text can run.<br/>
+	  
+<br/>The address below which program text can run.<br/>
+	  
+<br/>The address of the start of the stack.<br/>
+	  
+<br/>The current value of esp (stack pointer)<br/>
+	  
+<br/>The current value of eip (instruction pointer)<br/>
+	  
+<br/>The bitmap of pending signals.<br/>
+	  
+<br/>The bitmap of blocked signals.<br/>
+	  
+<br/>The bitmap of ignored signals.<br/>
+	  
+<br/>The bitmap of caught signals.<br/>
+	  
+<br/>This is  the &quot;channel&quot; in which the process is waiting.
+                                  Address of a system call.<br/>
+	  
+<br/>(no longer maintained)<br/>
+	  
+<br/>(no longer maintained)<br/>
+	  
+<br/>Signal sent to parent when we die.<br/>
+	  
+<br/>CPU number last executed on.<br/>
+	  
+<br/>Real-time scheduling priority.<br/>
+	  
+<br/>Scheduling policy<br/>
+	  
+<br/>total program size<br/>
+	  
+<br/>resident set size<br/>
+	  
+<br/>shared pages<br/>
+	  
+<br/>text (code)<br/>
+	  
+<br/>library<br/>
+	  
+<br/>data/stack<br/>
+	  
+<br/>dirty pages (unused)<br/>
+	  
+<br/>Real user ID<br/>
+	  
+<br/>Effective user ID<br/>
+	  
+<br/>Saved user ID<br/>
+	  
+<br/>FS user ID<br/>
+	  
+<br/>Real group ID<br/>
+	  
+<br/>Effective group ID<br/>
+	  
+<br/>Saved group ID<br/>
+	  
+<br/>FS group ID<br/>
+	  
+<br/>File descriptor (0=stdin, 1=stdout, etc.)<br/>
+	  
+<br/>Kind of file<br/>
+	  
+<br/>Process ID<br/>
+	  
+<br/>Command-line (not reliable).<br/>
+	  
+<br/>Symlink to working directory.<br/>
+	  
+<br/>Process environment.<br/>
+	  
+<br/>Symlink to executed command.<br/>
+	  
+<br/>Per-process root (e.g. chroot)<br/>
+	  
+<br/>Per-process rlimit settings<br/>
+	  
+<br/>Status information.<br/>
+	  
+<br/>Memory status information.<br/>
+	  
+<br/>Some more assorted status information.<br/>
+	  
+<br/>Status information for each task (thread)<br/>
+	  
+<br/>Show what top would show for COMMAND<br/>
+	  
+<br/>File descriptors<br/>
+	  
+<br/>OOM killer niceness <code class="code">range: -17 to +15</code> <br/>
+	  
+<br/>OOM &quot;sacrifice&quot; priority<br/>
+	  
+<br/><code class="code">t</code> corresponds to the values in /proc/meminfo.  All values in bytes.<br/>
+	  
+<br/><code class="code">t</code> corresponds to the values in /proc/loadavg.<br/>
+	  
+<br/><code class="code">get_all_procs</code> returns a list of all processes on the system<br/>
+	  
+<br/><code class="code">with_pid_exn pid</code> returns a single process that matches pid, or raises Not_found<br/>
+	  
+<br/><code class="code">with_pid pid</code> returns a single process that matches pid<br/>
+	  
+<br/><code class="code">with_uid uid</code> returns all processes owned by uid<br/>
+	  
+<br/><code class="code">pgrep f</code> returns all processes for which f is true<br/>
+	  
+<br/><code class="code">pkill ~signal f</code> sends the signal to all processes for which f returns true. It
+   returns the list of processes that were signaled, and the resulting errors if any.<br/>
+	  
+<br/><code class="code">with_username_exn user</code> calls with_uid after looking up the user's uid<br/>
+	  
+<br/><code class="code">with_username user</code> calls with_uid after looking up the user's uid<br/>
+	  
+<br/><code class="code">jiffies_per_second_exn</code>.  A jiffy &quot;is one tick of the system timer interrupt.  It is
+    not an absolute time interval unit, since its duration depends on the clock interrupt
+    frequency of the particular hardware platform.&quot;<br/>    Further reading: https://secure.wikimedia.org/wikipedia/en/wiki/Jiffy_(time)<br/>
+	  
+<br/><code class="code">meminfo_exn</code> queries /proc/meminfo and fills out Meminfo.t.  All values in bytes.<br/>
+	  
+<br/><code class="code">loadavg_exn</code> parses /proc/loadavg.<br/>
+	  
+<br/>/proc/net/tcp, or what netstat or lsof -i parses.<br/>
+	  
+<br/>These don't do any IO and should be async-ok<br/>
+	  
+<br/>This does IO and is not async-ok.<br/>
+	  

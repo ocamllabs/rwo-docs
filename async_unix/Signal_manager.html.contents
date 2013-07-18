@@ -1,0 +1,75 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core/Std.Invariant.S.html">Core.Std.Invariant.S</a></code> with type t = <a href="Signal_manager.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="../core/Std.Invariant.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">thread_safe_notify_signal_delivered:(unit -&gt; unit) -&gt; <a href="Signal_manager.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">create</code> creates and returns a signal manager <code class="code">t</code>.  Whenever a signal that <code class="code">t</code> is
+    managing is delivered, it will call <code class="code">thread_safe_notify_signal_delivered</code> from within
+    the OCaml signal handler.  Therefore <code class="code">thread_safe_notify_signal_delivered</code> must be
+    thread safe.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> manage : <code class="type"><a href="Signal_manager.html#TYPEt">t</a> -&gt; <a href="../core/Std.Signal.html#TYPEt">Core.Std.Signal.t</a> -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">manage t signal</code> causes <code class="code">t</code> to manage <code class="code">signal</code>, thus overriding
+    <code class="code">default_sys_behavior</code> for that signal, and any other OCaml handler for that
+    signal.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> is_managing : <code class="type"><a href="Signal_manager.html#TYPEt">t</a> -&gt; <a href="../core/Std.Signal.html#TYPEt">Core.Std.Signal.t</a> -&gt; bool</code></span></pre>
+      <div class="info"><code class="code">is_managing t signal</code> returns true iff <code class="code">manage t signal</code> has been called</div>
+    
+<pre><span id="TYPEhandler"><span class="keyword">type</span> handler </span></pre>
+      <div class="info"><code class="code">install_handler t signals f</code> causes <code class="code">t</code> to manage the handling of <code class="code">signals</code>, and
+    registers <code class="code">f</code> to run on every signal in <code class="code">signals</code> that is delivered.   It is an
+    error if <code class="code">f</code> ever raises when it is called.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> install_handler : <code class="type"><a href="Signal_manager.html#TYPEt">t</a> -&gt; <a href="../core/Std.Signal.html#TYPEt">Core.Std.Signal.t</a> list -&gt; (<a href="../core/Std.Signal.html#TYPEt">Core.Std.Signal.t</a> -&gt; unit) -&gt; <a href="Signal_manager.html#TYPEhandler">handler</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove_handler : <code class="type"><a href="Signal_manager.html#TYPEt">t</a> -&gt; <a href="Signal_manager.html#TYPEhandler">handler</a> -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">remove_handler handler</code> causes the particular <code class="code">handler</code> to no longer handle the
+    signals it was registered to handle.  The signal manager continues to manage those
+    signals, i.e. the OCaml signal handler remains installed, whether or not they still
+    have handlers.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> handle_delivered : <code class="type"><a href="Signal_manager.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">handle_delivered t</code> runs all signal handlers on the signals that have been
+    delivered but not yet handled.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type"><a href="Signal_manager.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+<br/><code class="code">create</code> creates and returns a signal manager <code class="code">t</code>.  Whenever a signal that <code class="code">t</code> is
+    managing is delivered, it will call <code class="code">thread_safe_notify_signal_delivered</code> from within
+    the OCaml signal handler.  Therefore <code class="code">thread_safe_notify_signal_delivered</code> must be
+    thread safe.<br/>
+	  
+<br/><code class="code">manage t signal</code> causes <code class="code">t</code> to manage <code class="code">signal</code>, thus overriding
+    <code class="code">default_sys_behavior</code> for that signal, and any other OCaml handler for that
+    signal.<br/>
+	  
+<br/><code class="code">is_managing t signal</code> returns true iff <code class="code">manage t signal</code> has been called<br/>
+	  
+<br/><code class="code">install_handler t signals f</code> causes <code class="code">t</code> to manage the handling of <code class="code">signals</code>, and
+    registers <code class="code">f</code> to run on every signal in <code class="code">signals</code> that is delivered.   It is an
+    error if <code class="code">f</code> ever raises when it is called.<br/>
+	  
+<br/><code class="code">remove_handler handler</code> causes the particular <code class="code">handler</code> to no longer handle the
+    signals it was registered to handle.  The signal manager continues to manage those
+    signals, i.e. the OCaml signal handler remains installed, whether or not they still
+    have handlers.<br/>
+	  
+<br/><code class="code">handle_delivered t</code> runs all signal handlers on the signals that have been
+    delivered but not yet handled.<br/>
+	  

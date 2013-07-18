@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<title>Marshal</title>
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
+<script type="text/javascript" src="doc_loader.js"> </script>
+</head>
+<body>
+
+<h1>Module Marshal</h1>
+<pre><span class="keyword">module</span> Marshal</pre><div class="info">Marshaling of data structures.<br/>   This module provides functions to encode arbitrary data structures
+   as sequences of bytes, which can then be written on a file or
+   sent over a pipe or network connection.  The bytes can then
+   be read back later, possibly in another process, and decoded back
+   into a data structure. The format for the byte sequences
+   is compatible across all machines for a given version of OCaml.<br/>   Warning: marshaling is currently not type-safe. The type
+   of marshaled data is not transmitted along the value of the data,
+   making it impossible to check that the data read back possesses the
+   type expected by the context. In particular, the result type of
+   the <code class="code">Marshal.from_*</code> functions is given as <code class="code">'a</code>, but this is
+   misleading: the returned OCaml value does not possess type <code class="code">'a</code>
+   for all <code class="code">'a</code>; it has one, unique type which cannot be determined
+   at compile-type.  The programmer should explicitly give the expected
+   type of the returned value, using the following syntax:<ul><li><code class="code">(Marshal.from_channel chan : type)</code>.
+   Anything can happen at run-time if the object in the file does not
+   belong to the given type.</li></ul>   The representation of marshaled values is not human-readable,
+   and uses bytes that are not printable characters. Therefore,
+   input and output channels used in conjunction with <code class="code">Marshal.to_channel</code>
+   and <code class="code">Marshal.from_channel</code> must be opened in binary mode, using e.g.
+   <code class="code">open_out_bin</code> or <code class="code">open_in_bin</code>; channels opened in text mode will
+   cause unmarshaling errors on platforms where text channels behave
+   differently than binary channels, e.g. Windows.</div>
+<hr/>
+<div file="Marshal.html.contents" class="content_to_load"> </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+ 
+      <pre><span><span class="keyword">val</span> fprintf : <code class="type"><a href="Pervasives.html#TYPEout_channel">out_channel</a> -&gt; ('a, <a href="Pervasives.html#TYPEout_channel">out_channel</a>, unit) <a href="Pervasives.html#TYPEformat">format</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> printf : <code class="type">('a, <a href="Pervasives.html#TYPEout_channel">out_channel</a>, unit) <a href="Pervasives.html#TYPEformat">format</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> eprintf : <code class="type">('a, <a href="Pervasives.html#TYPEout_channel">out_channel</a>, unit) <a href="Pervasives.html#TYPEformat">format</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ifprintf : <code class="type">'a -&gt; ('b, 'a, unit) <a href="Pervasives.html#TYPEformat">format</a> -&gt; 'b</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sprintf : <code class="type">('a, unit, string) <a href="Pervasives.html#TYPEformat">format</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bprintf : <code class="type"><a href="Buffer.html#TYPEt">Buffer.t</a> -&gt; ('a, <a href="Buffer.html#TYPEt">Buffer.t</a>, unit) <a href="Pervasives.html#TYPEformat">format</a> -&gt; 'a</code></span></pre>
+      
+    
+<br/>Formatted output functions with continuations.<br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> kfprintf : <code class="type">(<a href="Pervasives.html#TYPEout_channel">out_channel</a> -&gt; 'a) -&gt;
+<a href="Pervasives.html#TYPEout_channel">out_channel</a> -&gt; ('b, <a href="Pervasives.html#TYPEout_channel">out_channel</a>, unit, 'a) <a href="Pervasives.html#TYPEformat4">format4</a> -&gt; 'b</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ksprintf : <code class="type">(string -&gt; 'a) -&gt; ('b, unit, string, 'a) <a href="Pervasives.html#TYPEformat4">format4</a> -&gt; 'b</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> kbprintf : <code class="type">(<a href="Buffer.html#TYPEt">Buffer.t</a> -&gt; 'a) -&gt; <a href="Buffer.html#TYPEt">Buffer.t</a> -&gt; ('b, <a href="Buffer.html#TYPEt">Buffer.t</a>, unit, 'a) <a href="Pervasives.html#TYPEformat4">format4</a> -&gt; 'b</code></span></pre>
+      
+    
+<br/>Deprecated<br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> kprintf : <code class="type">(string -&gt; 'a) -&gt; ('b, unit, string, 'a) <a href="Pervasives.html#TYPEformat4">format4</a> -&gt; 'b</code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Printf.CamlinternalPr.html">CamlinternalPr</a> : <code class="code">sig</code> <a href="Printf.CamlinternalPr.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Printf.CamlinternalPr.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

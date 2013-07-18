@@ -1,0 +1,186 @@
+ 
+      <pre><span><span class="keyword">val</span> argv : <code class="type">string array</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> executable_name : <code class="type">string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> file_exists : <code class="type">string -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_directory : <code class="type">string -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove : <code class="type">string -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rename : <code class="type">string -&gt; string -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> getenv : <code class="type">string -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> command : <code class="type">string -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> time : <code class="type">unit -&gt; float</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> chdir : <code class="type">string -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> getcwd : <code class="type">unit -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> readdir : <code class="type">string -&gt; string array</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> interactive : <code class="type">bool <a href="Pervasives.html#TYPEref">ref</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> os_type : <code class="type">string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> word_size : <code class="type">int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> big_endian : <code class="type">bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> max_string_length : <code class="type">int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> max_array_length : <code class="type">int</code></span></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Signal handling</h6><br/> <br/>
+	  
+<pre><code><span id="TYPEsignal_behavior"><span class="keyword">type</span> signal_behavior </span>= </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTsignal_behavior.Signal_default"><span class="constructor">Signal_default</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTsignal_behavior.Signal_ignore"><span class="constructor">Signal_ignore</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTsignal_behavior.Signal_handle"><span class="constructor">Signal_handle</span></span> <span class="keyword">of</span> <code class="type">int -&gt; unit</code></code></td><td class="typefieldcomment" align="left">What to do when receiving a signal:<ul><li><code class="code">Signal_default</code>: take the default behavior
+     (usually: abort the program)</li><li><code class="code">Signal_ignore</code>: ignore the signal</li><li><code class="code">Signal_handle f</code>: call function <code class="code">f</code>, giving it the signal
+   number as argument. </li></ul></td>
+	   </tr></table>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> signal : <code class="type">int -&gt; <a href="Sys.html#TYPEsignal_behavior">signal_behavior</a> -&gt; <a href="Sys.html#TYPEsignal_behavior">signal_behavior</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set_signal : <code class="type">int -&gt; <a href="Sys.html#TYPEsignal_behavior">signal_behavior</a> -&gt; unit</code></span></pre>
+      
+    
+<br/><br/><div class="h7">Signal numbers for the standard POSIX signals.</div><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> sigabrt : <code class="type">int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sigalrm : <code class="type">int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sigfpe : <code class="type">int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sighup : <code class="type">int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sigill : <code class="type">int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sigint : <code class="type">int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sigkill : <code class="type">int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sigpipe : <code class="type">int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sigquit : <code class="type">int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sigsegv : <code class="type">int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sigterm : <code class="type">int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sigusr1 : <code class="type">int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sigusr2 : <code class="type">int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sigchld : <code class="type">int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sigcont : <code class="type">int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sigstop : <code class="type">int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sigtstp : <code class="type">int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sigttin : <code class="type">int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sigttou : <code class="type">int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sigvtalrm : <code class="type">int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sigprof : <code class="type">int</code></span></pre>
+      
+    
+<pre><span id="EXCEPTIONBreak"><span class="keyword">exception</span> Break</span></pre>
+ 
+      <pre><span><span class="keyword">val</span> catch_break : <code class="type">bool -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ocaml_version : <code class="type">string</code></span></pre>
+      
+    

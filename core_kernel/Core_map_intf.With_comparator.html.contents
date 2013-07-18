@@ -1,0 +1,3 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('key, 'cmp, 'z) </code>t </span>= <code class="type">comparator:('key, 'cmp) <a href="Comparator.html#TYPEt">Comparator.t</a> -&gt; 'z</code> </pre>
+      
+    

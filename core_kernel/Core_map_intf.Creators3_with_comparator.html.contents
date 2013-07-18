@@ -1,0 +1,45 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'b, 'cmp) </code>t </span></pre>
+      
+    
+<pre><span id="TYPEtree"><span class="keyword">type</span> <code class="type">('a, 'b, 'cmp) </code>tree </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> empty : <code class="type">comparator:('a, 'cmp) <a href="Comparator.html#TYPEt">Comparator.t</a> -&gt; ('a, 'b, 'cmp) <a href="Core_map_intf.Creators3_with_comparator.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> singleton : <code class="type">comparator:('a, 'cmp) <a href="Comparator.html#TYPEt">Comparator.t</a> -&gt; 'a -&gt; 'b -&gt; ('a, 'b, 'cmp) <a href="Core_map_intf.Creators3_with_comparator.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_alist : <code class="type">comparator:('a, 'cmp) <a href="Comparator.html#TYPEt">Comparator.t</a> -&gt;
+('a * 'b) list -&gt; [ `Duplicate_key of 'a | `Ok of ('a, 'b, 'cmp) <a href="Core_map_intf.Creators3_with_comparator.html#TYPEt">t</a> ]</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_alist_exn : <code class="type">comparator:('a, 'cmp) <a href="Comparator.html#TYPEt">Comparator.t</a> -&gt; ('a * 'b) list -&gt; ('a, 'b, 'cmp) <a href="Core_map_intf.Creators3_with_comparator.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_alist_multi : <code class="type">comparator:('a, 'cmp) <a href="Comparator.html#TYPEt">Comparator.t</a> -&gt; ('a * 'b) list -&gt; ('a, 'b list, 'cmp) <a href="Core_map_intf.Creators3_with_comparator.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_alist_fold : <code class="type">comparator:('a, 'cmp) <a href="Comparator.html#TYPEt">Comparator.t</a> -&gt;
+('a * 'b) list -&gt; init:'c -&gt; f:('c -&gt; 'b -&gt; 'c) -&gt; ('a, 'c, 'cmp) <a href="Core_map_intf.Creators3_with_comparator.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_sorted_array : <code class="type">comparator:('a, 'cmp) <a href="Comparator.html#TYPEt">Comparator.t</a> -&gt;
+('a * 'b) array -&gt; ('a, 'b, 'cmp) <a href="Core_map_intf.Creators3_with_comparator.html#TYPEt">t</a> <a href="Or_error.html#TYPEt">Or_error.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_sorted_array_unchecked : <code class="type">comparator:('a, 'cmp) <a href="Comparator.html#TYPEt">Comparator.t</a> -&gt; ('a * 'b) array -&gt; ('a, 'b, 'cmp) <a href="Core_map_intf.Creators3_with_comparator.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_tree : <code class="type">comparator:('a, 'cmp) <a href="Comparator.html#TYPEt">Comparator.t</a> -&gt; ('a, 'b, 'cmp) <a href="Core_map_intf.Creators3_with_comparator.html#TYPEtree">tree</a> -&gt; ('a, 'b, 'cmp) <a href="Core_map_intf.Creators3_with_comparator.html#TYPEt">t</a></code></span></pre>
+      
+    

@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<title>Iobuf.Snapshot</title>
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
+<script type="text/javascript" src="doc_loader.js"> </script>
+</head>
+<body>
+
+<h1>Module Iobuf.Snapshot</h1>
+<pre><span class="keyword">module</span> <a href="Iobuf.Snapshot.html">Snapshot</a> : <code class="code">sig</code> <a href="Iobuf.Snapshot.html">..</a> <code class="code">end</code> with type <a href="Iobuf.Snapshot.html#TYPEiobuf">iobuf</a> = ('d, 'w) <a href="Iobuf.html#TYPEt">t</a></pre><div class="info">One can call <code class="code">snapshot t</code> to get a snapshot of the front of the window, and then later
+    restore that snapshot.  This is useful for speculatively parsing, and then rewinding
+    when there isn't enough data to finish.<br/>    Using a snapshot with a different iobuf, even a sub iobuf of the snapshotted one, has
+    unspecified results.  An exception may be raised, or a silent error may occur.
+    However, the safety guarantees of the iobuf will not be violated, i.e., the attempt
+    will not enlarge the limits of the subject iobuf.</div>
+<hr/>
+<div file="Iobuf.Snapshot.html.contents" class="content_to_load"> </div>
+</body>
+</html>

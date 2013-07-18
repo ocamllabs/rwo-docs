@@ -1,0 +1,344 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('elt, 'cmp) </code>t </span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Core_set.Tree.html">Tree</a> : <code class="code">sig</code> <a href="Core_set.Tree.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Core_set.Tree.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> invariants : <code class="type">('a, 'b) <a href="Core_set.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      <div class="info">Test if invariants of internal AVL search tree hold.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> comparator : <code class="type">('a, 'cmp) <a href="Core_set.html#TYPEt">t</a> -&gt; ('a, 'cmp) <a href="Comparator.html#TYPEt">Comparator.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> empty : <code class="type">comparator:('a, 'cmp) <a href="Comparator.html#TYPEt">Comparator.t</a> -&gt; ('a, 'cmp) <a href="Core_set.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> singleton : <code class="type">comparator:('a, 'cmp) <a href="Comparator.html#TYPEt">Comparator.t</a> -&gt; 'a -&gt; ('a, 'cmp) <a href="Core_set.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> length : <code class="type">('a, 'b) <a href="Core_set.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_empty : <code class="type">('a, 'b) <a href="Core_set.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem : <code class="type">('a, 'b) <a href="Core_set.html#TYPEt">t</a> -&gt; 'a -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add : <code class="type">('a, 'cmp) <a href="Core_set.html#TYPEt">t</a> -&gt; 'a -&gt; ('a, 'cmp) <a href="Core_set.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove : <code class="type">('a, 'cmp) <a href="Core_set.html#TYPEt">t</a> -&gt; 'a -&gt; ('a, 'cmp) <a href="Core_set.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> union : <code class="type">('a, 'cmp) <a href="Core_set.html#TYPEt">t</a> -&gt; ('a, 'cmp) <a href="Core_set.html#TYPEt">t</a> -&gt; ('a, 'cmp) <a href="Core_set.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> union_list : <code class="type">comparator:('a, 'cmp) <a href="Comparator.html#TYPEt">Comparator.t</a> -&gt; ('a, 'cmp) <a href="Core_set.html#TYPEt">t</a> list -&gt; ('a, 'cmp) <a href="Core_set.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> inter : <code class="type">('a, 'cmp) <a href="Core_set.html#TYPEt">t</a> -&gt; ('a, 'cmp) <a href="Core_set.html#TYPEt">t</a> -&gt; ('a, 'cmp) <a href="Core_set.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> diff : <code class="type">('a, 'cmp) <a href="Core_set.html#TYPEt">t</a> -&gt; ('a, 'cmp) <a href="Core_set.html#TYPEt">t</a> -&gt; ('a, 'cmp) <a href="Core_set.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> compare_direct : <code class="type">('a, 'cmp) <a href="Core_set.html#TYPEt">t</a> -&gt; ('a, 'cmp) <a href="Core_set.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> equal : <code class="type">('a, 'cmp) <a href="Core_set.html#TYPEt">t</a> -&gt; ('a, 'cmp) <a href="Core_set.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> exists : <code class="type">('a, 'b) <a href="Core_set.html#TYPEt">t</a> -&gt; f:('a -&gt; bool) -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> for_all : <code class="type">('a, 'b) <a href="Core_set.html#TYPEt">t</a> -&gt; f:('a -&gt; bool) -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> count : <code class="type">('a, 'b) <a href="Core_set.html#TYPEt">t</a> -&gt; f:('a -&gt; bool) -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find : <code class="type">('a, 'b) <a href="Core_set.html#TYPEt">t</a> -&gt; f:('a -&gt; bool) -&gt; 'a option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_map : <code class="type">('a, 'c) <a href="Core_set.html#TYPEt">t</a> -&gt; f:('a -&gt; 'b option) -&gt; 'b option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_exn : <code class="type">('a, 'b) <a href="Core_set.html#TYPEt">t</a> -&gt; f:('a -&gt; bool) -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_index : <code class="type">('a, 'b) <a href="Core_set.html#TYPEt">t</a> -&gt; int -&gt; 'a option</code></span></pre>
+      <div class="info"><code class="code">find_index t i</code> returns the <code class="code">i</code>th smallest element of <code class="code">t</code> in O(log n) time.  The
+    smallest element has <code class="code">i = 0</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> remove_index : <code class="type">('a, 'cmp) <a href="Core_set.html#TYPEt">t</a> -&gt; int -&gt; ('a, 'cmp) <a href="Core_set.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> subset : <code class="type">('a, 'cmp) <a href="Core_set.html#TYPEt">t</a> -&gt; ('a, 'cmp) <a href="Core_set.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      <div class="info"><code class="code">subset t1 t2</code> returns true iff <code class="code">t1</code> is a subset of <code class="code">t2</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> of_list : <code class="type">comparator:('a, 'cmp) <a href="Comparator.html#TYPEt">Comparator.t</a> -&gt; 'a list -&gt; ('a, 'cmp) <a href="Core_set.html#TYPEt">t</a></code></span></pre>
+      <div class="info">The list or array given to <code class="code">of_list</code> and <code class="code">of_array</code> need not be sorted.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> of_array : <code class="type">comparator:('a, 'cmp) <a href="Comparator.html#TYPEt">Comparator.t</a> -&gt; 'a array -&gt; ('a, 'cmp) <a href="Core_set.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_list : <code class="type">('a, 'b) <a href="Core_set.html#TYPEt">t</a> -&gt; 'a list</code></span></pre>
+      <div class="info"><code class="code">to_list</code> and <code class="code">to_array</code> produce sequences sorted in ascending order according to the
+    comparator.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> to_array : <code class="type">('a, 'b) <a href="Core_set.html#TYPEt">t</a> -&gt; 'a array</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_tree : <code class="type">('a, 'cmp) <a href="Core_set.html#TYPEt">t</a> -&gt; ('a, 'cmp) <a href="Core_set.Tree.html#TYPEt">Tree.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_tree : <code class="type">comparator:('a, 'cmp) <a href="Comparator.html#TYPEt">Comparator.t</a> -&gt; ('a, 'cmp) <a href="Core_set.Tree.html#TYPEt">Tree.t</a> -&gt; ('a, 'cmp) <a href="Core_set.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_sorted_array : <code class="type">comparator:('a, 'cmp) <a href="Comparator.html#TYPEt">Comparator.t</a> -&gt; 'a array -&gt; ('a, 'cmp) <a href="Core_set.html#TYPEt">t</a> <a href="Or_error.html#TYPEt">Or_error.t</a></code></span></pre>
+      <div class="info">Create set from sorted array.  The input must be sorted (either in ascending or
+    descending order as given by the comparator) and contain no duplicates, otherwise the
+    result is an error.  The complexity of this function is O(N).</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> of_sorted_array_unchecked : <code class="type">comparator:('a, 'cmp) <a href="Comparator.html#TYPEt">Comparator.t</a> -&gt; 'a array -&gt; ('a, 'cmp) <a href="Core_set.html#TYPEt">t</a></code></span></pre>
+      <div class="info">Similar to <code class="code">of_sorted_array</code>, but without checking the input array.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> stable_dedup_list : <code class="type">comparator:('a, 'b) <a href="Comparator.html#TYPEt">Comparator.t</a> -&gt; 'a list -&gt; 'a list</code></span></pre>
+      <div class="info"><code class="code">stable_dedup_list</code> is here rather than in the <code class="code">List</code> module because the
+    implementation relies crucially on sets, and because doing so allows one to avoid uses
+    of polymorphic comparison by instantiating the functor at a different implementation
+    of <code class="code">Comparator</code> and using the resulting <code class="code">stable_dedup_list</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> map : <code class="type">comparator:('b, 'cmp) <a href="Comparator.html#TYPEt">Comparator.t</a> -&gt;
+('a, 'c) <a href="Core_set.html#TYPEt">t</a> -&gt; f:('a -&gt; 'b) -&gt; ('b, 'cmp) <a href="Core_set.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> filter_map : <code class="type">comparator:('b, 'cmp) <a href="Comparator.html#TYPEt">Comparator.t</a> -&gt;
+('a, 'c) <a href="Core_set.html#TYPEt">t</a> -&gt; f:('a -&gt; 'b option) -&gt; ('b, 'cmp) <a href="Core_set.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> filter : <code class="type">('a, 'cmp) <a href="Core_set.html#TYPEt">t</a> -&gt; f:('a -&gt; bool) -&gt; ('a, 'cmp) <a href="Core_set.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold : <code class="type">('a, 'b) <a href="Core_set.html#TYPEt">t</a> -&gt; init:'accum -&gt; f:('accum -&gt; 'a -&gt; 'accum) -&gt; 'accum</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold_until : <code class="type">('a, 'b) <a href="Core_set.html#TYPEt">t</a> -&gt;
+init:'accum -&gt;
+f:('accum -&gt; 'a -&gt; [ `Continue of 'accum | `Stop of 'accum ]) -&gt; 'accum</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold_right : <code class="type">('a, 'b) <a href="Core_set.html#TYPEt">t</a> -&gt; init:'accum -&gt; f:('a -&gt; 'accum -&gt; 'accum) -&gt; 'accum</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter : <code class="type">('a, 'b) <a href="Core_set.html#TYPEt">t</a> -&gt; f:('a -&gt; unit) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter2 : <code class="type">('a, 'cmp) <a href="Core_set.html#TYPEt">t</a> -&gt;
+('a, 'cmp) <a href="Core_set.html#TYPEt">t</a> -&gt;
+f:([ `Both of 'a * 'a | `Left of 'a | `Right of 'a ] -&gt; unit) -&gt; unit</code></span></pre>
+      <div class="info">Iterate two sets side by side.  Complexity is O(M+N) where M and N are the sizes of
+    the two input sets. As an example, with the inputs <code class="code">0; 1</code> and <code class="code">1; 2</code>, <code class="code">f</code> will be
+    called with <code class="code">`Left 0</code>; <code class="code">`Both (1, 1)</code>; and <code class="code">`Right 2</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> partition_tf : <code class="type">('a, 'cmp) <a href="Core_set.html#TYPEt">t</a> -&gt; f:('a -&gt; bool) -&gt; ('a, 'cmp) <a href="Core_set.html#TYPEt">t</a> * ('a, 'cmp) <a href="Core_set.html#TYPEt">t</a></code></span></pre>
+      <div class="info">if <code class="code">a, b = partition_tf set ~f</code> then <code class="code">a</code> is the elements on which <code class="code">f</code> produced <code class="code">true</code>,
+    and <code class="code">b</code> is the elements on which <code class="code">f</code> produces <code class="code">false</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> elements : <code class="type">('a, 'b) <a href="Core_set.html#TYPEt">t</a> -&gt; 'a list</code></span></pre>
+      <div class="info">Same as TODO reference : to_list.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> min_elt : <code class="type">('a, 'b) <a href="Core_set.html#TYPEt">t</a> -&gt; 'a option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> min_elt_exn : <code class="type">('a, 'b) <a href="Core_set.html#TYPEt">t</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> max_elt : <code class="type">('a, 'b) <a href="Core_set.html#TYPEt">t</a> -&gt; 'a option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> max_elt_exn : <code class="type">('a, 'b) <a href="Core_set.html#TYPEt">t</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> choose : <code class="type">('a, 'b) <a href="Core_set.html#TYPEt">t</a> -&gt; 'a option</code></span></pre>
+      <div class="info">returns an arbitrary element, or <code class="code">None</code> if the set is empty.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> choose_exn : <code class="type">('a, 'b) <a href="Core_set.html#TYPEt">t</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> split : <code class="type">('a, 'cmp) <a href="Core_set.html#TYPEt">t</a> -&gt; 'a -&gt; ('a, 'cmp) <a href="Core_set.html#TYPEt">t</a> * bool * ('a, 'cmp) <a href="Core_set.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">split t x</code> produces a triple <code class="code">(t1, b, t2)</code> where <code class="code">t1</code> is the set of elements strictly
+    less than <code class="code">x</code>, <code class="code">b = mem set x</code>, and <code class="code">t2</code> is the set of elements strictly larger than
+    <code class="code">x</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> group_by : <code class="type">('a, 'cmp) <a href="Core_set.html#TYPEt">t</a> -&gt; equiv:('a -&gt; 'a -&gt; bool) -&gt; ('a, 'cmp) <a href="Core_set.html#TYPEt">t</a> list</code></span></pre>
+      <div class="info">if <code class="code">equiv</code> is an equivalence predicate, then <code class="code">group_by set ~equiv</code> produces a list
+    of equivalence classes (i.e., a set-theoretic quotient).  E.g.,<br/>    <pre class="codepre"><code class="code">
+      let chars = Set.of_list ['A'; 'a'; 'b'; 'c'] in
+      let equiv c c' = Char.equal (Char.uppercase c) (Char.uppercase c') in
+      group_by chars ~equiv
+    </code></pre><br/>    produces:<br/>    <pre class="codepre"><code class="code">
+      Set.of_list['A';'a']; Set.singleton 'b'; Set.singleton 'c']
+    </code></pre><br/>    <code class="code">group_by</code> runs in O(n^2) time.</div>
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Core_set.Poly.html">Poly</a> : <code class="code">sig</code> <a href="Core_set.Poly.html">..</a> <code class="code">end</code> with type <a href="Core_set.Poly.html#TYPEset">set</a> = ('a, 'b) <a href="Core_set.html#TYPEt">t</a></pre>
+	<div class="content" style="display:none">
+	<div file="Core_set.Poly.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Core_set.Elt.html">Elt</a> = <code class="type"><code class="code"><a href="Core_set_intf.Elt.html">Core_set_intf.Elt</a></code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Core_set.Elt.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Core_set.Elt_binable.html">Elt_binable</a> = <code class="type"><code class="code"><a href="Core_set_intf.Elt_binable.html">Core_set_intf.Elt_binable</a></code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Core_set.Elt_binable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Core_set.S.html">S</a> = <code class="type"><code class="code"><a href="Core_set_intf.S0.html">Core_set_intf.S0</a></code> with type set = ('a, 'b) <a href="Core_set.html#TYPEt">t</a> with type tree = ('a, 'b) <a href="Core_set.Tree.html#TYPEt">Tree.t</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Core_set.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Core_set.S_binable.html">S_binable</a> = <code class="type"><code class="code"><a href="Core_set_intf.S0_binable.html">Core_set_intf.S0_binable</a></code> with type set = ('a, 'b) <a href="Core_set.html#TYPEt">t</a> with type tree = ('a, 'b) <a href="Core_set.Tree.html#TYPEt">Tree.t</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Core_set.S_binable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Core_set.Make.html">Make</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">Elt</code><code class="code"> : </code><code class="type"><a href="Core_set.Elt.html">Elt</a></code><code class="code">) -&gt; </code><code class="code"><a href="Core_set.S.html">S</a></code> with type Elt.t = Elt.t</div></pre>
+	<div class="content" style="display:none">
+	<div file="Core_set.Make.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Core_set.Make_using_comparator.html">Make_using_comparator</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">Elt</code><code class="code"> : </code><code class="type"><a href="Comparator.S.html">Comparator.S</a></code><code class="code">) -&gt; </code><code class="code"><a href="Core_set.S.html">S</a></code> with type Elt.t = Elt.t with type Elt.comparator = Elt.comparator</div></pre>
+	<div class="content" style="display:none">
+	<div file="Core_set.Make_using_comparator.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Core_set.Make_binable.html">Make_binable</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">Elt</code><code class="code"> : </code><code class="type"><a href="Core_set.Elt_binable.html">Elt_binable</a></code><code class="code">) -&gt; </code><code class="code"><a href="Core_set.S_binable.html">S_binable</a></code> with type Elt.t = Elt.t</div></pre>
+	<div class="content" style="display:none">
+	<div file="Core_set.Make_binable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Core_set.Make_binable_using_comparator.html">Make_binable_using_comparator</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">Elt</code><code class="code"> : </code><code class="type"><a href="Comparator.S_binable.html">Comparator.S_binable</a></code><code class="code">) -&gt; </code><code class="code"><a href="Core_set.S_binable.html">S_binable</a></code> with type Elt.t = Elt.t with type Elt.comparator = Elt.comparator</div></pre>
+	<div class="content" style="display:none">
+	<div file="Core_set.Make_binable_using_comparator.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> compare : <code class="type">('elt -&gt; 'elt -&gt; int) -&gt;
+('cmp -&gt; 'cmp -&gt; int) -&gt; ('elt, 'cmp) <a href="Core_set.html#TYPEt">t</a> -&gt; ('elt, 'cmp) <a href="Core_set.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+<br/>Test if invariants of internal AVL search tree hold.<br/>
+	  
+<br/><code class="code">find_index t i</code> returns the <code class="code">i</code>th smallest element of <code class="code">t</code> in O(log n) time.  The
+    smallest element has <code class="code">i = 0</code>.<br/>
+	  
+<br/><code class="code">subset t1 t2</code> returns true iff <code class="code">t1</code> is a subset of <code class="code">t2</code>.<br/>
+	  
+<br/>The list or array given to <code class="code">of_list</code> and <code class="code">of_array</code> need not be sorted.<br/>
+	  
+<br/><code class="code">to_list</code> and <code class="code">to_array</code> produce sequences sorted in ascending order according to the
+    comparator.<br/>
+	  
+<br/>Create set from sorted array.  The input must be sorted (either in ascending or
+    descending order as given by the comparator) and contain no duplicates, otherwise the
+    result is an error.  The complexity of this function is O(N).<br/>
+	  
+<br/>Similar to <code class="code">of_sorted_array</code>, but without checking the input array.<br/>
+	  
+<br/><code class="code">stable_dedup_list</code> is here rather than in the <code class="code">List</code> module because the
+    implementation relies crucially on sets, and because doing so allows one to avoid uses
+    of polymorphic comparison by instantiating the functor at a different implementation
+    of <code class="code">Comparator</code> and using the resulting <code class="code">stable_dedup_list</code>.<br/>
+	  
+<br/>Iterate two sets side by side.  Complexity is O(M+N) where M and N are the sizes of
+    the two input sets. As an example, with the inputs <code class="code">0; 1</code> and <code class="code">1; 2</code>, <code class="code">f</code> will be
+    called with <code class="code">`Left 0</code>; <code class="code">`Both (1, 1)</code>; and <code class="code">`Right 2</code>.<br/>
+	  
+<br/>if <code class="code">a, b = partition_tf set ~f</code> then <code class="code">a</code> is the elements on which <code class="code">f</code> produced <code class="code">true</code>,
+    and <code class="code">b</code> is the elements on which <code class="code">f</code> produces <code class="code">false</code>.<br/>
+	  
+<br/>Same as TODO reference : to_list.<br/>
+	  
+<br/>returns an arbitrary element, or <code class="code">None</code> if the set is empty.<br/>
+	  
+<br/><code class="code">split t x</code> produces a triple <code class="code">(t1, b, t2)</code> where <code class="code">t1</code> is the set of elements strictly
+    less than <code class="code">x</code>, <code class="code">b = mem set x</code>, and <code class="code">t2</code> is the set of elements strictly larger than
+    <code class="code">x</code>.<br/>
+	  
+<br/>if <code class="code">equiv</code> is an equivalence predicate, then <code class="code">group_by set ~equiv</code> produces a list
+    of equivalence classes (i.e., a set-theoretic quotient).  E.g.,<br/>    <pre class="codepre"><code class="code">
+      let chars = Set.of_list ['A'; 'a'; 'b'; 'c'] in
+      let equiv c c' = Char.equal (Char.uppercase c) (Char.uppercase c') in
+      group_by chars ~equiv
+    </code></pre><br/>    produces:<br/>    <pre class="codepre"><code class="code">
+      Set.of_list['A';'a']; Set.singleton 'b'; Set.singleton 'c']
+    </code></pre><br/>    <code class="code">group_by</code> runs in O(n^2) time.<br/>
+	  

@@ -1,0 +1,24 @@
+<pre><span id="TYPEreader"><span class="keyword">type</span> <code class="type">'a </code>reader </span>= <code class="type">'a <a href="Read_ml.html#TYPEreader">Read_ml.reader</a></code> </pre>
+      
+    
+<pre><span id="TYPEreader1"><span class="keyword">type</span> <code class="type">('a, 'b) </code>reader1 </span>= <code class="type">'a <a href="Unsafe_read_c.html#TYPEreader">Unsafe_read_c.reader</a> -&gt; 'b <a href="Read_ml.html#TYPEreader">Read_ml.reader</a></code> </pre>
+      
+    
+<pre><span id="TYPEreader2"><span class="keyword">type</span> <code class="type">('a, 'b, 'c) </code>reader2 </span>= <code class="type">'a <a href="Unsafe_read_c.html#TYPEreader">Unsafe_read_c.reader</a> -&gt; ('b, 'c) <a href="Map_to_safe.html#TYPEreader1">reader1</a></code> </pre>
+      
+    
+<pre><span id="TYPEreader3"><span class="keyword">type</span> <code class="type">('a, 'b, 'c, 'd) </code>reader3 </span>= <code class="type">'a <a href="Unsafe_read_c.html#TYPEreader">Unsafe_read_c.reader</a> -&gt; ('b, 'c, 'd) <a href="Map_to_safe.html#TYPEreader2">reader2</a></code> </pre>
+      
+    
+<pre><span id="TYPEwriter"><span class="keyword">type</span> <code class="type">'a </code>writer </span>= <code class="type">'a <a href="Write_ml.html#TYPEwriter">Write_ml.writer</a></code> </pre>
+      
+    
+<pre><span id="TYPEwriter1"><span class="keyword">type</span> <code class="type">('a, 'b) </code>writer1 </span>= <code class="type">'a <a href="Unsafe_write_c.html#TYPEwriter">Unsafe_write_c.writer</a> -&gt; 'b <a href="Write_ml.html#TYPEwriter">Write_ml.writer</a></code> </pre>
+      
+    
+<pre><span id="TYPEwriter2"><span class="keyword">type</span> <code class="type">('a, 'b, 'c) </code>writer2 </span>= <code class="type">'a <a href="Unsafe_write_c.html#TYPEwriter">Unsafe_write_c.writer</a> -&gt; ('b, 'c) <a href="Map_to_safe.html#TYPEwriter1">writer1</a></code> </pre>
+      
+    
+<pre><span id="TYPEwriter3"><span class="keyword">type</span> <code class="type">('a, 'b, 'c, 'd) </code>writer3 </span>= <code class="type">'a <a href="Unsafe_write_c.html#TYPEwriter">Unsafe_write_c.writer</a> -&gt; ('b, 'c, 'd) <a href="Map_to_safe.html#TYPEwriter2">writer2</a></code> </pre>
+      
+    

@@ -1,0 +1,35 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Process.Status.html">Status</a> : <code class="code">sig</code> <a href="Process.Status.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Process.Status.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Process.Command_result.html">Command_result</a> : <code class="code">sig</code> <a href="Process.Command_result.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Process.Command_result.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> kill : <code class="type">?is_child:bool -&gt;
+?wait_for:<a href="../core/Std.Time.Span.html#TYPEt">Core.Std.Time.Span.t</a> -&gt;
+?signal:<a href="../core/Std.Signal.html#TYPEt">Core.Std.Signal.t</a> -&gt; <a href="../core/Pid.html#TYPEt">Core.Pid.t</a> -&gt; unit</code></span></pre>
+      <div class="info">kills a process by sending <code class="code">signal</code>; waiting for <code class="code">wait_for</code> and then
+    sending a <code class="code">sigkill</code>.
+    You need to set is_child to true when killing child processes or run waitpid
+    on them in another.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> run : <code class="type">?timeout:<a href="../core/Std.Time.Span.html#TYPEt">Core.Std.Time.Span.t</a> -&gt;
+?use_extra_path:bool -&gt;
+?working_dir:string -&gt;
+?setuid:int -&gt;
+?setgid:int -&gt;
+?env:[ `Extend of (string * string) list | `Replace of (string * string) list ] -&gt;
+?input:string -&gt;
+?keep_open:bool -&gt;
+?stdoutf:(string -&gt; int -&gt; unit) -&gt;
+?stderrf:(string -&gt; int -&gt; unit) -&gt;
+?tail_len:int -&gt; prog:string -&gt; args:string list -&gt; unit -&gt; <a href="Process.Command_result.html#TYPEt">Command_result.t</a></code></span></pre>
+      
+    

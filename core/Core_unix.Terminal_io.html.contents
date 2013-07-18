@@ -1,0 +1,163 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span>= {<code class="type"><a href="../otherlibs/Unix.html#TYPEterminal_io">Unix.terminal_io</a></code> </pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.c_ignbrk">c_ignbrk</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Ignore the break condition.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.c_brkint">c_brkint</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Signal interrupt on break condition.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.c_ignpar">c_ignpar</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Ignore characters with parity errors.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.c_parmrk">c_parmrk</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Mark parity errors.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.c_inpck">c_inpck</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Enable parity check on input.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.c_istrip">c_istrip</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Strip 8th bit on input characters.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.c_inlcr">c_inlcr</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Map NL to CR on input.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.c_igncr">c_igncr</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Ignore CR on input.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.c_icrnl">c_icrnl</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Map CR to NL on input.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.c_ixon">c_ixon</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Recognize XON/XOFF characters on input.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.c_ixoff">c_ixoff</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Emit XON/XOFF chars to control input flow.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.c_opost">c_opost</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Enable output processing.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.c_obaud">c_obaud</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Output baud rate (0 means close connection).</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.c_ibaud">c_ibaud</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Input baud rate.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.c_csize">c_csize</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Number of bits per character (5-8).</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.c_cstopb">c_cstopb</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Number of stop bits (1-2).</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.c_cread">c_cread</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Reception is enabled.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.c_parenb">c_parenb</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Enable parity generation and detection.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.c_parodd">c_parodd</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Specify odd parity instead of even.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.c_hupcl">c_hupcl</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Hang up on last close.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.c_clocal">c_clocal</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Ignore modem status lines.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.c_isig">c_isig</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Generate signal on INTR, QUIT, SUSP.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.c_icanon">c_icanon</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Enable canonical processing
+                                 (line buffering and editing)</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.c_noflsh">c_noflsh</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Disable flush after INTR, QUIT, SUSP.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.c_echo">c_echo</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Echo input characters.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.c_echoe">c_echoe</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Echo ERASE (to erase previous character).</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.c_echok">c_echok</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Echo KILL (to erase the current line).</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.c_echonl">c_echonl</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Echo NL even if c_echo is not set.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.c_vintr">c_vintr</span> :<code class="type">char</code>;</code></td><td class="typefieldcomment" align="left">Interrupt character (usually ctrl-C).</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.c_vquit">c_vquit</span> :<code class="type">char</code>;</code></td><td class="typefieldcomment" align="left">Quit character (usually ctrl-\).</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.c_verase">c_verase</span> :<code class="type">char</code>;</code></td><td class="typefieldcomment" align="left">Erase character (usually DEL or ctrl-H).</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.c_vkill">c_vkill</span> :<code class="type">char</code>;</code></td><td class="typefieldcomment" align="left">Kill line character (usually ctrl-U).</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.c_veof">c_veof</span> :<code class="type">char</code>;</code></td><td class="typefieldcomment" align="left">End-of-file character (usually ctrl-D).</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.c_veol">c_veol</span> :<code class="type">char</code>;</code></td><td class="typefieldcomment" align="left">Alternate end-of-line char. (usually none).</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.c_vmin">c_vmin</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Minimum number of characters to read
+                                 before the read request is satisfied.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.c_vtime">c_vtime</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Maximum read wait (in 0.1s units).</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.c_vstart">c_vstart</span> :<code class="type">char</code>;</code></td><td class="typefieldcomment" align="left">Start character (usually ctrl-Q).</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.c_vstop">c_vstop</span> :<code class="type">char</code>;</code></td><td class="typefieldcomment" align="left">Stop character (usually ctrl-S).</td>
+	  </tr></table>}
+      
+    
+<pre><span id="TYPEsetattr_when"><span class="keyword">type</span> setattr_when </span>= <code class="type"><a href="../otherlibs/Unix.html#TYPEsetattr_when">Unix.setattr_when</a></code> </pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTsetattr_when.TCSANOW"><span class="constructor">TCSANOW</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTsetattr_when.TCSADRAIN"><span class="constructor">TCSADRAIN</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTsetattr_when.TCSAFLUSH"><span class="constructor">TCSAFLUSH</span></span></code></td>
+	   </tr></table>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> tcgetattr : <code class="type"><a href="Core_unix.File_descr.html#TYPEt">File_descr.t</a> -&gt; <a href="Core_unix.Terminal_io.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> tcsetattr : <code class="type"><a href="Core_unix.Terminal_io.html#TYPEt">t</a> -&gt; <a href="Core_unix.File_descr.html#TYPEt">File_descr.t</a> -&gt; mode:<a href="Core_unix.Terminal_io.html#TYPEsetattr_when">setattr_when</a> -&gt; unit</code></span></pre>
+      <div class="info">Set the status of the terminal referred to by the given
+     file descriptor. The second argument indicates when the
+     status change takes place: immediately (<code class="code">TCSANOW</code>),
+     when all pending output has been transmitted (<code class="code">TCSADRAIN</code>),
+     or after flushing all input that has been received but not
+     read (<code class="code">TCSAFLUSH</code>). <code class="code">TCSADRAIN</code> is recommended when changing
+     the output parameters; <code class="code">TCSAFLUSH</code>, when changing the input
+     parameters.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> tcsendbreak : <code class="type"><a href="Core_unix.File_descr.html#TYPEt">File_descr.t</a> -&gt; duration:int -&gt; unit</code></span></pre>
+      <div class="info">Send a break condition on the given file descriptor.
+     The second argument is the duration of the break, in 0.1s units;
+     0 means standard duration (0.25s).</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> tcdrain : <code class="type"><a href="Core_unix.File_descr.html#TYPEt">File_descr.t</a> -&gt; unit</code></span></pre>
+      <div class="info">Waits until all output written on the given file descriptor
+     has been transmitted.</div>
+    
+<pre><span id="TYPEflush_queue"><span class="keyword">type</span> flush_queue </span>= <code class="type"><a href="../otherlibs/Unix.html#TYPEflush_queue">Unix.flush_queue</a></code> </pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTflush_queue.TCIFLUSH"><span class="constructor">TCIFLUSH</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTflush_queue.TCOFLUSH"><span class="constructor">TCOFLUSH</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTflush_queue.TCIOFLUSH"><span class="constructor">TCIOFLUSH</span></span></code></td>
+	   </tr></table>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> tcflush : <code class="type"><a href="Core_unix.File_descr.html#TYPEt">File_descr.t</a> -&gt; mode:<a href="Core_unix.Terminal_io.html#TYPEflush_queue">flush_queue</a> -&gt; unit</code></span></pre>
+      
+    
+<pre><span id="TYPEflow_action"><span class="keyword">type</span> flow_action </span>= <code class="type"><a href="../otherlibs/Unix.html#TYPEflow_action">Unix.flow_action</a></code> </pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTflow_action.TCOOFF"><span class="constructor">TCOOFF</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTflow_action.TCOON"><span class="constructor">TCOON</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTflow_action.TCIOFF"><span class="constructor">TCIOFF</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTflow_action.TCION"><span class="constructor">TCION</span></span></code></td>
+	   </tr></table>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> tcflow : <code class="type"><a href="Core_unix.File_descr.html#TYPEt">File_descr.t</a> -&gt; mode:<a href="Core_unix.Terminal_io.html#TYPEflow_action">flow_action</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> setsid : <code class="type">unit -&gt; int</code></span></pre>
+      <div class="info">Put the calling process in a new session and detach it from
+     its controlling terminal.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type"><a href="Core_unix.Terminal_io.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_setattr_when : <code class="type"><a href="Core_unix.Terminal_io.html#TYPEsetattr_when">setattr_when</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+<br/>Return the status of the terminal referred to by the given
+      file descriptor.<br/>
+	  
+<br/>Set the status of the terminal referred to by the given
+     file descriptor. The second argument indicates when the
+     status change takes place: immediately (<code class="code">TCSANOW</code>),
+     when all pending output has been transmitted (<code class="code">TCSADRAIN</code>),
+     or after flushing all input that has been received but not
+     read (<code class="code">TCSAFLUSH</code>). <code class="code">TCSADRAIN</code> is recommended when changing
+     the output parameters; <code class="code">TCSAFLUSH</code>, when changing the input
+     parameters.<br/>
+	  
+<br/>Send a break condition on the given file descriptor.
+     The second argument is the duration of the break, in 0.1s units;
+     0 means standard duration (0.25s).<br/>
+	  
+<br/>Waits until all output written on the given file descriptor
+     has been transmitted.<br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> flush_queue_of_sexp : <code class="type"><a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; <a href="Core_unix.Terminal_io.html#TYPEflush_queue">flush_queue</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_flush_queue : <code class="type"><a href="Core_unix.Terminal_io.html#TYPEflush_queue">flush_queue</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+<br/>Discard data written on the given file descriptor but not yet
+     transmitted, or data received but not yet read, depending on the
+     second argument: <code class="code">TCIFLUSH</code> flushes data received but not read,
+     <code class="code">TCOFLUSH</code> flushes data written but not transmitted, and
+     <code class="code">TCIOFLUSH</code> flushes both.<br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> flow_action_of_sexp : <code class="type"><a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; <a href="Core_unix.Terminal_io.html#TYPEflow_action">flow_action</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_flow_action : <code class="type"><a href="Core_unix.Terminal_io.html#TYPEflow_action">flow_action</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+<br/>Suspend or restart reception or transmission of data on
+     the given file descriptor, depending on the second argument:
+     <code class="code">TCOOFF</code> suspends output, <code class="code">TCOON</code> restarts output,
+     <code class="code">TCIOFF</code> transmits a STOP character to suspend input,
+     and <code class="code">TCION</code> transmits a START character to restart input.<br/>
+	  
+<br/>Put the calling process in a new session and detach it from
+     its controlling terminal.<br/>
+	  

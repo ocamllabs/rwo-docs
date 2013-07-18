@@ -1,0 +1,69 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span>= <code class="type"><a href="../otherlibs/Unix.html#TYPEfile_descr">Unix.file_descr</a></code> </pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core_kernel/Std.Hashable.S.html">Core_kernel.Std.Hashable.S</a></code> with type t = <a href="Core_unix.File_descr.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="../core_kernel/Std.Hashable.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core_kernel/Std.Stringable.S.html">Core_kernel.Std.Stringable.S</a></code> with type t = <a href="Core_unix.File_descr.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="../core_kernel/Std.Stringable.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> of_int : <code class="type">int -&gt; <a href="Core_unix.File_descr.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_int : <code class="type"><a href="Core_unix.File_descr.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp : <code class="type"><a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; <a href="Core_unix.File_descr.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type"><a href="Core_unix.File_descr.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_t : <code class="type"><a href="Core_unix.File_descr.html#TYPEt">t</a> <a href="../core_kernel/Std.Bin_prot.Type_class.html#TYPEt">Core_kernel.Std.Bin_prot.Type_class.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t : <code class="type"><a href="Core_unix.File_descr.html#TYPEt">t</a> <a href="../core_kernel/Std.Bin_prot.Read_ml.html#TYPEreader">Core_kernel.Std.Bin_prot.Read_ml.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t_ : <code class="type"><a href="Core_unix.File_descr.html#TYPEt">t</a> <a href="../core_kernel/Std.Bin_prot.Unsafe_read_c.html#TYPEreader">Core_kernel.Std.Bin_prot.Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t__ : <code class="type">(int -&gt; <a href="Core_unix.File_descr.html#TYPEt">t</a>) <a href="../core_kernel/Std.Bin_prot.Unsafe_read_c.html#TYPEreader">Core_kernel.Std.Bin_prot.Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t : <code class="type"><a href="Core_unix.File_descr.html#TYPEt">t</a> <a href="../core_kernel/Std.Bin_prot.Type_class.html#TYPEreader">Core_kernel.Std.Bin_prot.Type_class.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t : <code class="type"><a href="Core_unix.File_descr.html#TYPEt">t</a> <a href="../core_kernel/Std.Bin_prot.Size.html#TYPEsizer">Core_kernel.Std.Bin_prot.Size.sizer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t : <code class="type"><a href="Core_unix.File_descr.html#TYPEt">t</a> <a href="../core_kernel/Std.Bin_prot.Write_ml.html#TYPEwriter">Core_kernel.Std.Bin_prot.Write_ml.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_ : <code class="type"><a href="Core_unix.File_descr.html#TYPEt">t</a> <a href="../core_kernel/Std.Bin_prot.Unsafe_write_c.html#TYPEwriter">Core_kernel.Std.Bin_prot.Unsafe_write_c.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t : <code class="type"><a href="Core_unix.File_descr.html#TYPEt">t</a> <a href="../core_kernel/Std.Bin_prot.Type_class.html#TYPEwriter">Core_kernel.Std.Bin_prot.Type_class.writer</a></code></span></pre>
+      
+    

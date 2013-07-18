@@ -1,0 +1,67 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'b, 'c) </code>t </span>= <code class="type">('a, 'b, 'c) <a href="../core/Std.Map.html#TYPEt">Core.Std.Map.t</a></code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> change : <code class="type">('k, 'v, 'comparator) <a href="Deferred_intf.Deferred_map.html#TYPEt">t</a> -&gt;
+'k -&gt;
+('v option -&gt; 'v option <a href="Deferred_intf.Deferred.html#TYPEt">Deferred.t</a>) -&gt; ('k, 'v, 'comparator) <a href="Deferred_intf.Deferred_map.html#TYPEt">t</a> <a href="Deferred_intf.Deferred.html#TYPEt">Deferred.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter : <code class="type">?how:<a href="Deferred_intf.html#TYPEhow">how</a> -&gt;
+('k, 'v, 'a) <a href="Deferred_intf.Deferred_map.html#TYPEt">t</a> -&gt; f:(key:'k -&gt; data:'v -&gt; unit <a href="Deferred_intf.Deferred.html#TYPEt">Deferred.t</a>) -&gt; unit <a href="Deferred_intf.Deferred.html#TYPEt">Deferred.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map : <code class="type">?how:<a href="Deferred_intf.html#TYPEhow">how</a> -&gt;
+('k, 'v1, 'comparator) <a href="Deferred_intf.Deferred_map.html#TYPEt">t</a> -&gt;
+f:('v1 -&gt; 'v2 <a href="Deferred_intf.Deferred.html#TYPEt">Deferred.t</a>) -&gt; ('k, 'v2, 'comparator) <a href="Deferred_intf.Deferred_map.html#TYPEt">t</a> <a href="Deferred_intf.Deferred.html#TYPEt">Deferred.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mapi : <code class="type">?how:<a href="Deferred_intf.html#TYPEhow">how</a> -&gt;
+('k, 'v1, 'comparator) <a href="Deferred_intf.Deferred_map.html#TYPEt">t</a> -&gt;
+f:(key:'k -&gt; data:'v1 -&gt; 'v2 <a href="Deferred_intf.Deferred.html#TYPEt">Deferred.t</a>) -&gt;
+('k, 'v2, 'comparator) <a href="Deferred_intf.Deferred_map.html#TYPEt">t</a> <a href="Deferred_intf.Deferred.html#TYPEt">Deferred.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold : <code class="type">('k, 'v, 'b) <a href="Deferred_intf.Deferred_map.html#TYPEt">t</a> -&gt;
+init:'a -&gt; f:(key:'k -&gt; data:'v -&gt; 'a -&gt; 'a <a href="Deferred_intf.Deferred.html#TYPEt">Deferred.t</a>) -&gt; 'a <a href="Deferred_intf.Deferred.html#TYPEt">Deferred.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold_right : <code class="type">('k, 'v, 'b) <a href="Deferred_intf.Deferred_map.html#TYPEt">t</a> -&gt;
+init:'a -&gt; f:(key:'k -&gt; data:'v -&gt; 'a -&gt; 'a <a href="Deferred_intf.Deferred.html#TYPEt">Deferred.t</a>) -&gt; 'a <a href="Deferred_intf.Deferred.html#TYPEt">Deferred.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> filter : <code class="type">?how:<a href="Deferred_intf.html#TYPEhow">how</a> -&gt;
+('k, 'v, 'comparable) <a href="Deferred_intf.Deferred_map.html#TYPEt">t</a> -&gt;
+f:(key:'k -&gt; data:'v -&gt; bool <a href="Deferred_intf.Deferred.html#TYPEt">Deferred.t</a>) -&gt;
+('k, 'v, 'comparable) <a href="Deferred_intf.Deferred_map.html#TYPEt">t</a> <a href="Deferred_intf.Deferred.html#TYPEt">Deferred.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> filter_map : <code class="type">?how:<a href="Deferred_intf.html#TYPEhow">how</a> -&gt;
+('k, 'v1, 'comparable) <a href="Deferred_intf.Deferred_map.html#TYPEt">t</a> -&gt;
+f:('v1 -&gt; 'v2 option <a href="Deferred_intf.Deferred.html#TYPEt">Deferred.t</a>) -&gt; ('k, 'v2, 'comparable) <a href="Deferred_intf.Deferred_map.html#TYPEt">t</a> <a href="Deferred_intf.Deferred.html#TYPEt">Deferred.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> filter_mapi : <code class="type">?how:<a href="Deferred_intf.html#TYPEhow">how</a> -&gt;
+('k, 'v1, 'comparable) <a href="Deferred_intf.Deferred_map.html#TYPEt">t</a> -&gt;
+f:(key:'k -&gt; data:'v1 -&gt; 'v2 option <a href="Deferred_intf.Deferred.html#TYPEt">Deferred.t</a>) -&gt;
+('k, 'v2, 'comparable) <a href="Deferred_intf.Deferred_map.html#TYPEt">t</a> <a href="Deferred_intf.Deferred.html#TYPEt">Deferred.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> merge : <code class="type">?how:<a href="Deferred_intf.html#TYPEhow">how</a> -&gt;
+('k, 'v1, 'comparator) <a href="Deferred_intf.Deferred_map.html#TYPEt">t</a> -&gt;
+('k, 'v2, 'comparator) <a href="Deferred_intf.Deferred_map.html#TYPEt">t</a> -&gt;
+f:(key:'k -&gt;
+   [ `Both of 'v1 * 'v2 | `Left of 'v1 | `Right of 'v2 ] -&gt;
+   'v3 option <a href="Deferred_intf.Deferred.html#TYPEt">Deferred.t</a>) -&gt;
+('k, 'v3, 'comparator) <a href="Deferred_intf.Deferred_map.html#TYPEt">t</a> <a href="Deferred_intf.Deferred.html#TYPEt">Deferred.t</a></code></span></pre>
+      
+    

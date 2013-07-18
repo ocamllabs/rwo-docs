@@ -1,0 +1,60 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+<pre><span id="TYPEaccum"><span class="keyword">type</span> accum </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> required : <code class="type">?name:string -&gt; <a href="Deprecated_command.Annotated_field.html#TYPEt">t</a> list -&gt; doc:string -&gt; ('a, 'b) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Deprecated_command.Annotated_field.html#TYPEt">t</a> list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> default : <code class="type">?name:string -&gt;
+'field -&gt;
+('field -&gt; string) -&gt;
+<a href="Deprecated_command.Annotated_field.html#TYPEt">t</a> list -&gt; doc:string -&gt; ('a, 'field) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Deprecated_command.Annotated_field.html#TYPEt">t</a> list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> optional : <code class="type">?name:string -&gt;
+?suppress_word_optional:bool -&gt;
+<a href="Deprecated_command.Annotated_field.html#TYPEt">t</a> list -&gt; doc:string -&gt; ('a, 'b option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Deprecated_command.Annotated_field.html#TYPEt">t</a> list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set : <code class="type">?name:string -&gt;
+<a href="Deprecated_command.Annotated_field.html#TYPEt">t</a> list -&gt; doc:string -&gt; ('a, bool) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Deprecated_command.Annotated_field.html#TYPEt">t</a> list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> clear : <code class="type">?name:string -&gt;
+<a href="Deprecated_command.Annotated_field.html#TYPEt">t</a> list -&gt; doc:string -&gt; ('a, bool) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Deprecated_command.Annotated_field.html#TYPEt">t</a> list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> list : <code class="type">?name:string -&gt;
+<a href="Deprecated_command.Annotated_field.html#TYPEt">t</a> list -&gt; doc:string -&gt; ('a, 'b list) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Deprecated_command.Annotated_field.html#TYPEt">t</a> list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> init : <code class="type"><a href="Deprecated_command.Annotated_field.html#TYPEt">t</a> list -&gt; <a href="Deprecated_command.Annotated_field.html#TYPEaccum">accum</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_flag : <code class="type"><a href="Deprecated_command.Annotated_field.html#TYPEt">t</a> -&gt; <a href="Deprecated_command.Annotated_field.html#TYPEaccum">accum</a> <a href="Deprecated_command.Flag.html#TYPEt">Flag.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get : <code class="type"><a href="Deprecated_command.Annotated_field.html#TYPEaccum">accum</a> -&gt; (string -&gt; 'field) -&gt; ('a, 'field) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'field</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get_opt : <code class="type"><a href="Deprecated_command.Annotated_field.html#TYPEaccum">accum</a> -&gt;
+(string -&gt; 'field) -&gt; ('a, 'field option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'field option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get_list : <code class="type"><a href="Deprecated_command.Annotated_field.html#TYPEaccum">accum</a> -&gt;
+(string -&gt; 'field) -&gt; ('a, 'field list) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'field list</code></span></pre>
+      
+    

@@ -1,0 +1,15 @@
+<pre><code><span id="TYPEt"><span class="keyword">type</span> t </span>= </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Connect"><span class="constructor">Connect</span></span> <span class="keyword">of</span> <code class="type"><a href="Typed_tcp_intf.S.Client_id.html#TYPEt">Client_id.t</a></code></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Disconnect"><span class="constructor">Disconnect</span></span> <span class="keyword">of</span> <code class="type"><a href="Typed_tcp_intf.S.Client_id.html#TYPEt">Client_id.t</a> * <a href="../core/Std.Sexp.html#TYPEt">Core.Std.Sexp.t</a></code></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Denied_access"><span class="constructor">Denied_access</span></span> <span class="keyword">of</span> <code class="type">string</code></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Data"><span class="constructor">Data</span></span> <span class="keyword">of</span> <code class="type"><a href="Typed_tcp_intf.S.Client_id.html#TYPEt">Client_id.t</a> * <a href="Typed_tcp_intf.S.Client_message.html#TYPEt">Client_message.t</a></code></code></td>
+	   </tr></table>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core/Std.Sexpable.html">Core.Std.Sexpable</a></code> with type t = <a href="Typed_tcp_intf.S.Server_read_result.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="../core/Std.Sexpable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

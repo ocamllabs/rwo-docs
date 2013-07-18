@@ -1,0 +1,172 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span>= <code class="type">float</code> <span class="keyword">private</span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core_kernel/Std.Comparable_binable.html">Core_kernel.Std.Comparable_binable</a></code> with type t = <a href="Ofday.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="../core_kernel/Std.Comparable_binable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core_kernel/Std.Comparable.With_zero.html">Core_kernel.Std.Comparable.With_zero</a></code> with type t = <a href="Ofday.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="../core_kernel/Std.Comparable.With_zero.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core_kernel/Std.Floatable.html">Core_kernel.Std.Floatable</a></code> with type t = <a href="Ofday.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="../core_kernel/Std.Floatable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core_kernel/Std.Hashable_binable.html">Core_kernel.Std.Hashable_binable</a></code> with type t = <a href="Ofday.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="../core_kernel/Std.Hashable_binable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core_kernel/Std.Pretty_printer.S.html">Core_kernel.Std.Pretty_printer.S</a></code> with type t = <a href="Ofday.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="../core_kernel/Std.Pretty_printer.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core_kernel/Std.Robustly_comparable.html">Core_kernel.Std.Robustly_comparable</a></code> with type t = <a href="Ofday.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="../core_kernel/Std.Robustly_comparable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core_kernel/Std.Stringable.html">Core_kernel.Std.Stringable</a></code> with type t = <a href="Ofday.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="../core_kernel/Std.Stringable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">?hr:int -&gt; ?min:int -&gt; ?sec:int -&gt; ?ms:int -&gt; ?us:int -&gt; unit -&gt; <a href="Ofday.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_parts : <code class="type"><a href="Ofday.html#TYPEt">t</a> -&gt; <a href="Span.Parts.html#TYPEt">Span.Parts.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> start_of_day : <code class="type"><a href="Ofday.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> end_of_day : <code class="type"><a href="Ofday.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_span_since_start_of_day : <code class="type"><a href="Ofday.html#TYPEt">t</a> -&gt; <a href="Span.html#TYPEt">Span.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_span_since_start_of_day : <code class="type"><a href="Span.html#TYPEt">Span.t</a> -&gt; <a href="Ofday.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add : <code class="type"><a href="Ofday.html#TYPEt">t</a> -&gt; <a href="Span.html#TYPEt">Span.t</a> -&gt; <a href="Ofday.html#TYPEt">t</a> option</code></span></pre>
+      <div class="info"><code class="code">add t s</code> shifts the time of day <code class="code">t</code> by the span <code class="code">s</code>.  It returns None if
+    the result is not in the same day.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> sub : <code class="type"><a href="Ofday.html#TYPEt">t</a> -&gt; <a href="Span.html#TYPEt">Span.t</a> -&gt; <a href="Ofday.html#TYPEt">t</a> option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> diff : <code class="type"><a href="Ofday.html#TYPEt">t</a> -&gt; <a href="Ofday.html#TYPEt">t</a> -&gt; <a href="Span.html#TYPEt">Span.t</a></code></span></pre>
+      <div class="info"><code class="code">diff t1 t2</code> returns the difference in time between two ofdays, as if they occurred on
+    the same day</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> small_diff : <code class="type"><a href="Ofday.html#TYPEt">t</a> -&gt; <a href="Ofday.html#TYPEt">t</a> -&gt; <a href="Span.html#TYPEt">Span.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_string_trimmed : <code class="type"><a href="Ofday.html#TYPEt">t</a> -&gt; string</code></span></pre>
+      <div class="info">trailing seconds and subseconds are trimmed off if they are 0</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> to_sec_string : <code class="type"><a href="Ofday.html#TYPEt">t</a> -&gt; string</code></span></pre>
+      <div class="info">trailing milliseconds are trimmed</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> of_string_iso8601_extended : <code class="type">?pos:int -&gt; ?len:int -&gt; string -&gt; <a href="Ofday.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_millisec_string : <code class="type"><a href="Ofday.html#TYPEt">t</a> -&gt; string</code></span></pre>
+      <div class="info">with milliseconds</div>
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Ofday.Stable.html">Stable</a> : <code class="code">sig</code> <a href="Ofday.Stable.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Ofday.Stable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp : <code class="type"><a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; <a href="Ofday.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type"><a href="Ofday.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_t : <code class="type"><a href="Ofday.html#TYPEt">t</a> <a href="../core_kernel/Std.Bin_prot.Type_class.html#TYPEt">Core_kernel.Std.Bin_prot.Type_class.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t : <code class="type"><a href="Ofday.html#TYPEt">t</a> <a href="../core_kernel/Std.Bin_prot.Read_ml.html#TYPEreader">Core_kernel.Std.Bin_prot.Read_ml.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t_ : <code class="type"><a href="Ofday.html#TYPEt">t</a> <a href="../core_kernel/Std.Bin_prot.Unsafe_read_c.html#TYPEreader">Core_kernel.Std.Bin_prot.Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t__ : <code class="type">(int -&gt; <a href="Ofday.html#TYPEt">t</a>) <a href="../core_kernel/Std.Bin_prot.Unsafe_read_c.html#TYPEreader">Core_kernel.Std.Bin_prot.Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t : <code class="type"><a href="Ofday.html#TYPEt">t</a> <a href="../core_kernel/Std.Bin_prot.Type_class.html#TYPEreader">Core_kernel.Std.Bin_prot.Type_class.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t : <code class="type"><a href="Ofday.html#TYPEt">t</a> <a href="../core_kernel/Std.Bin_prot.Size.html#TYPEsizer">Core_kernel.Std.Bin_prot.Size.sizer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t : <code class="type"><a href="Ofday.html#TYPEt">t</a> <a href="../core_kernel/Std.Bin_prot.Write_ml.html#TYPEwriter">Core_kernel.Std.Bin_prot.Write_ml.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_ : <code class="type"><a href="Ofday.html#TYPEt">t</a> <a href="../core_kernel/Std.Bin_prot.Unsafe_write_c.html#TYPEwriter">Core_kernel.Std.Bin_prot.Unsafe_write_c.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t : <code class="type"><a href="Ofday.html#TYPEt">t</a> <a href="../core_kernel/Std.Bin_prot.Type_class.html#TYPEwriter">Core_kernel.Std.Bin_prot.Type_class.writer</a></code></span></pre>
+      
+    
+<br/><code class="code">add t s</code> shifts the time of day <code class="code">t</code> by the span <code class="code">s</code>.  It returns None if
+    the result is not in the same day.<br/>
+	  
+<br/><code class="code">diff t1 t2</code> returns the difference in time between two ofdays, as if they occurred on
+    the same day<br/>
+	  
+<br/>trailing seconds and subseconds are trimmed off if they are 0<br/>
+	  
+<br/>trailing milliseconds are trimmed<br/>
+	  
+<br/>with milliseconds<br/>
+	  

@@ -1,0 +1,67 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Number.Spec.html">Spec</a> = <code class="type"><code class="code">sig</code> <a href="Number.Spec.html">..</a> <code class="code">end</code></code></pre><div class="info">Specification of general number properties</div>
+	<div class="content" style="display:none">
+	<div file="Number.Spec.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Number.Verified_spec.html">Verified_spec</a> = <code class="type"><code class="code">sig</code> <a href="Number.Verified_spec.html">..</a> <code class="code">end</code></code></pre><div class="info">Specification of numbers with constraint checks</div>
+	<div class="content" style="display:none">
+	<div file="Number.Verified_spec.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Number.S.html">S</a> = <code class="type"><code class="code">sig</code> <a href="Number.S.html">..</a> <code class="code">end</code></code></pre><div class="info">Signature of numbers that have a verified (<code class="code">t</code>) and unverified (<code class="code">repr</code>)
+    representation and a function to verify the latter.</div>
+	<div class="content" style="display:none">
+	<div file="Number.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Number.S0.html">S0</a> = <code class="type"><code class="code">sig</code> <a href="Number.S0.html">..</a> <code class="code">end</code></code></pre><div class="info">Signature of numbers that also have a zero</div>
+	<div class="content" style="display:none">
+	<div file="Number.S0.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Number.Make_verified.html">Make_verified</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">Spec</code><code class="code"> : </code><code class="type"><a href="Number.Verified_spec.html">Verified_spec</a></code><code class="code">) -&gt; </code><code class="code"><a href="Number.S.html">S</a></code> with type <a href="Number.S.html#TYPErepr">repr</a> = Spec.t with type t = Spec.t</div></pre><div class="info">Functor for making constrained numbers from specifications.  This functor
+    enforces the invariant through a private type.</div>
+	<div class="content" style="display:none">
+	<div file="Number.Make_verified.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Number.Make_verified_unsafe.html">Make_verified_unsafe</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">Spec</code><code class="code"> : </code><code class="type"><a href="Number.Verified_spec.html">Verified_spec</a></code><code class="code">) -&gt; </code><code class="code"><a href="Number.S.html">S</a></code> with type <a href="Number.S.html#TYPErepr">repr</a> = Spec.t with type t = Spec.t</div></pre><div class="info">Same as TODO reference : Make_verified, but does not enforce invariants.  Useful for
+    extending verified numbers with more features before &quot;sealing&quot; the type
+    with a private declaration.</div>
+	<div class="content" style="display:none">
+	<div file="Number.Make_verified_unsafe.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Number.Verified_std_spec.html">Verified_std_spec</a> = <code class="type"><code class="code">sig</code> <a href="Number.Verified_std_spec.html">..</a> <code class="code">end</code></code></pre><div class="info">Specification used for standard numbers (<code class="code">Int.t</code>, <code class="code">Int32.t</code>, <code class="code">Int63.t</code>
+    <code class="code">Int64.t</code>, <code class="code">Nativeint.t</code>, <code class="code">Float.t</code>) to enrich them with <code class="code">Pos.t</code>,
+    <code class="code">Pos0.t</code>, <code class="code">Neg.t</code>, and <code class="code">Neg0.t</code> modules, and the <code class="code">Make_bounded</code> and
+    <code class="code">Make_bounded_unsafe</code> functors.</div>
+	<div class="content" style="display:none">
+	<div file="Number.Verified_std_spec.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Number.Verified_std.html">Verified_std</a> = <code class="type"><code class="code">sig</code> <a href="Number.Verified_std.html">..</a> <code class="code">end</code></code></pre><div class="info">Signature of standard numbers (<code class="code">Int.t</code>, <code class="code">Int32.t</code>, <code class="code">Int63.t</code>
+    <code class="code">Int64.t</code>, <code class="code">Nativeint.t</code>, <code class="code">Float.t</code>) to enrich them with <code class="code">Pos.t</code>,
+    <code class="code">Pos0.t</code>, <code class="code">Neg.t</code>, and <code class="code">Neg0.t</code> modules, and the <code class="code">Make_bounded</code> and
+    <code class="code">Make_bounded_unsafe</code> functors.</div>
+	<div class="content" style="display:none">
+	<div file="Number.Verified_std.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Number.Make_verified_std.html">Make_verified_std</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">Spec</code><code class="code"> : </code><code class="type"><a href="Number.Verified_std_spec.html">Verified_std_spec</a></code><code class="code">) -&gt; </code><code class="code"><a href="Number.Verified_std.html">Verified_std</a></code> with type <a href="Number.Verified_std.html#TYPErepr">repr</a> = Spec.t</div></pre><div class="info">Functor for enriching standard numbers (<code class="code">Int.t</code>, <code class="code">Int32.t</code>, <code class="code">Int63.t</code>
+    <code class="code">Int64.t</code>, <code class="code">Nativeint.t</code>, <code class="code">Float.t</code>) with <code class="code">Pos.t</code>, <code class="code">Pos0.t</code>, <code class="code">Neg.t</code>,
+    and <code class="code">Neg0.t</code> modules, and the <code class="code">Make_bounded</code> and <code class="code">Make_bounded_unsafe</code>
+    functors.</div>
+	<div class="content" style="display:none">
+	<div file="Number.Make_verified_std.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

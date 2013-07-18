@@ -1,0 +1,35 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> validate_positive : <code class="type"><a href="Comparable_intf.With_zero.html#TYPEt">t</a> <a href="Validate.html#TYPEcheck">Validate.check</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> validate_non_negative : <code class="type"><a href="Comparable_intf.With_zero.html#TYPEt">t</a> <a href="Validate.html#TYPEcheck">Validate.check</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> validate_negative : <code class="type"><a href="Comparable_intf.With_zero.html#TYPEt">t</a> <a href="Validate.html#TYPEcheck">Validate.check</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> validate_non_positive : <code class="type"><a href="Comparable_intf.With_zero.html#TYPEt">t</a> <a href="Validate.html#TYPEcheck">Validate.check</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_positive : <code class="type"><a href="Comparable_intf.With_zero.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_non_negative : <code class="type"><a href="Comparable_intf.With_zero.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_negative : <code class="type"><a href="Comparable_intf.With_zero.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_non_positive : <code class="type"><a href="Comparable_intf.With_zero.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    

@@ -1,0 +1,31 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'data </code>t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> empty : <code class="type">'data <a href="Crit_bit.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find : <code class="type">'data <a href="Crit_bit.html#TYPEt">t</a> -&gt; string -&gt; 'data option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add : <code class="type">'data <a href="Crit_bit.html#TYPEt">t</a> -&gt; key:string -&gt; data:'data -&gt; 'data <a href="Crit_bit.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove : <code class="type">'data <a href="Crit_bit.html#TYPEt">t</a> -&gt; string -&gt; 'data <a href="Crit_bit.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter : <code class="type">'data <a href="Crit_bit.html#TYPEt">t</a> -&gt; f:(key:string -&gt; data:'data -&gt; unit) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map : <code class="type">'data <a href="Crit_bit.html#TYPEt">t</a> -&gt; f:('data -&gt; 'b) -&gt; 'b <a href="Crit_bit.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold : <code class="type">'data <a href="Crit_bit.html#TYPEt">t</a> -&gt; init:'b -&gt; f:(key:string -&gt; data:'data -&gt; 'b -&gt; 'b) -&gt; 'b</code></span></pre>
+      
+    

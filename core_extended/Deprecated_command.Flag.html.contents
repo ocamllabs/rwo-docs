@@ -1,0 +1,200 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t </span></pre>
+      <div class="info">type of flags to a command with accumulator type <code class="code">'a</code> </div>
+    
+ 
+      <pre><span><span class="keyword">val</span> name : <code class="type">'a <a href="Deprecated_command.Flag.html#TYPEt">t</a> -&gt; string</code></span></pre>
+      
+    
+<pre><span id="TYPEcreate"><span class="keyword">type</span> <code class="type">('a, 'b) </code>create </span>= <code class="type">string -&gt;
+?aliases:string list -&gt; ?full_flag_required:bool -&gt; 'b -&gt; doc:string -&gt; 'a <a href="Deprecated_command.Flag.html#TYPEt">t</a></code> </pre>
+      <div class="info">Template for flag-creation functions</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> of_arg : <code class="type"><a href="../core/Std.Arg.html#TYPEt">Core.Std.Arg.t</a> -&gt; unit <a href="Deprecated_command.Flag.html#TYPEt">t</a></code></span></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Flag handling without an accumulator</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> noarg : <code class="type">(unit, unit -&gt; unit) <a href="Deprecated_command.Flag.html#TYPEcreate">create</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> string : <code class="type">(unit, string -&gt; unit) <a href="Deprecated_command.Flag.html#TYPEcreate">create</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> int : <code class="type">(unit, int -&gt; unit) <a href="Deprecated_command.Flag.html#TYPEcreate">create</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> float : <code class="type">(unit, float -&gt; unit) <a href="Deprecated_command.Flag.html#TYPEcreate">create</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bool : <code class="type">(unit, bool -&gt; unit) <a href="Deprecated_command.Flag.html#TYPEcreate">create</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> gen : <code class="type">(string -&gt; 'gen) -&gt; (unit, 'gen -&gt; unit) <a href="Deprecated_command.Flag.html#TYPEcreate">create</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set_string : <code class="type">(unit, string <a href="../stdlib/Pervasives.html#TYPEref">ref</a>) <a href="Deprecated_command.Flag.html#TYPEcreate">create</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set_string_opt : <code class="type">(unit, string option <a href="../stdlib/Pervasives.html#TYPEref">ref</a>) <a href="Deprecated_command.Flag.html#TYPEcreate">create</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set_int : <code class="type">(unit, int <a href="../stdlib/Pervasives.html#TYPEref">ref</a>) <a href="Deprecated_command.Flag.html#TYPEcreate">create</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set_int_opt : <code class="type">(unit, int option <a href="../stdlib/Pervasives.html#TYPEref">ref</a>) <a href="Deprecated_command.Flag.html#TYPEcreate">create</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set_float : <code class="type">(unit, float <a href="../stdlib/Pervasives.html#TYPEref">ref</a>) <a href="Deprecated_command.Flag.html#TYPEcreate">create</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set_float_opt : <code class="type">(unit, float option <a href="../stdlib/Pervasives.html#TYPEref">ref</a>) <a href="Deprecated_command.Flag.html#TYPEcreate">create</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set_date : <code class="type">(unit, <a href="../core/Std.Date.html#TYPEt">Core.Std.Date.t</a> <a href="../stdlib/Pervasives.html#TYPEref">ref</a>) <a href="Deprecated_command.Flag.html#TYPEcreate">create</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set_date_opt : <code class="type">(unit, <a href="../core/Std.Date.html#TYPEt">Core.Std.Date.t</a> option <a href="../stdlib/Pervasives.html#TYPEref">ref</a>) <a href="Deprecated_command.Flag.html#TYPEcreate">create</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set : <code class="type">(unit, bool <a href="../stdlib/Pervasives.html#TYPEref">ref</a>) <a href="Deprecated_command.Flag.html#TYPEcreate">create</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> clear : <code class="type">(unit, bool <a href="../stdlib/Pervasives.html#TYPEref">ref</a>) <a href="Deprecated_command.Flag.html#TYPEcreate">create</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set_gen : <code class="type">(string -&gt; 'gen) -&gt; (unit, 'gen <a href="../stdlib/Pervasives.html#TYPEref">ref</a>) <a href="Deprecated_command.Flag.html#TYPEcreate">create</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set_gen_opt : <code class="type">(string -&gt; 'gen) -&gt; (unit, 'gen option <a href="../stdlib/Pervasives.html#TYPEref">ref</a>) <a href="Deprecated_command.Flag.html#TYPEcreate">create</a></code></span></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">flag handling meant for use with immutable accumulator</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> noarg_acc : <code class="type">('a, 'a -&gt; 'a) <a href="Deprecated_command.Flag.html#TYPEcreate">create</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> string_acc : <code class="type">('a, 'a -&gt; string -&gt; 'a) <a href="Deprecated_command.Flag.html#TYPEcreate">create</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> int_acc : <code class="type">('a, 'a -&gt; int -&gt; 'a) <a href="Deprecated_command.Flag.html#TYPEcreate">create</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bool_acc : <code class="type">('a, 'a -&gt; bool -&gt; 'a) <a href="Deprecated_command.Flag.html#TYPEcreate">create</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> float_acc : <code class="type">('a, 'a -&gt; float -&gt; 'a) <a href="Deprecated_command.Flag.html#TYPEcreate">create</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> date_acc : <code class="type">('a, 'a -&gt; <a href="../core/Std.Date.html#TYPEt">Core.Std.Date.t</a> -&gt; 'a) <a href="Deprecated_command.Flag.html#TYPEcreate">create</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rest_acc : <code class="type">('a, 'a -&gt; string list -&gt; 'a) <a href="Deprecated_command.Flag.html#TYPEcreate">create</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> gen_acc : <code class="type">(string -&gt; 'gen) -&gt; ('a, 'a -&gt; 'gen -&gt; 'a) <a href="Deprecated_command.Flag.html#TYPEcreate">create</a></code></span></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">flag handling meant for use with mutable accumulator</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> noarg_mut : <code class="type">('a, 'a -&gt; unit) <a href="Deprecated_command.Flag.html#TYPEcreate">create</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> arg_mut : <code class="type">('a, 'a -&gt; string -&gt; unit) <a href="Deprecated_command.Flag.html#TYPEcreate">create</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> string_mut : <code class="type">('a, 'a -&gt; string -&gt; unit) <a href="Deprecated_command.Flag.html#TYPEcreate">create</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> int_mut : <code class="type">('a, 'a -&gt; int -&gt; unit) <a href="Deprecated_command.Flag.html#TYPEcreate">create</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bool_mut : <code class="type">('a, 'a -&gt; bool -&gt; unit) <a href="Deprecated_command.Flag.html#TYPEcreate">create</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> float_mut : <code class="type">('a, 'a -&gt; float -&gt; unit) <a href="Deprecated_command.Flag.html#TYPEcreate">create</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> date_mut : <code class="type">('a, 'a -&gt; <a href="../core/Std.Date.html#TYPEt">Core.Std.Date.t</a> -&gt; unit) <a href="Deprecated_command.Flag.html#TYPEcreate">create</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rest_mut : <code class="type">('a, 'a -&gt; string list -&gt; unit) <a href="Deprecated_command.Flag.html#TYPEcreate">create</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> gen_mut : <code class="type">(string -&gt; 'gen) -&gt; ('a, 'a -&gt; 'gen -&gt; unit) <a href="Deprecated_command.Flag.html#TYPEcreate">create</a></code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Deprecated_command.Flag.Action.html">Action</a> : <code class="code">sig</code> <a href="Deprecated_command.Flag.Action.html">..</a> <code class="code">end</code></pre><div class="info"><br/><h2 id="2_TITLE">Deprecated </h2><br/> This is the old deprecated interface to Flag</div>
+	<div class="content" style="display:none">
+	<div file="Deprecated_command.Flag.Action.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">?aliases:string list -&gt;
+?full_flag_required:bool -&gt; name:string -&gt; doc:string -&gt; 'a <a href="Deprecated_command.Flag.Action.html#TYPEt">Action.t</a> -&gt; 'a <a href="Deprecated_command.Flag.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> lift : <code class="type">'a <a href="Deprecated_command.Flag.html#TYPEt">t</a> -&gt; project:('b -&gt; 'a * ('a -&gt; 'b)) -&gt; 'b <a href="Deprecated_command.Flag.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">lift t ~project</code> transforms a flag with accumulator type <code class="code">'a</code>
+      into a flag with a more informative accumulator type <code class="code">'b</code>
+      provided that <code class="code">project x</code> returns a pair consisting of
+        1. a <code class="code">'a</code>-value extracted from the <code class="code">'b</code>-value <code class="code">x</code>, and
+        2. a function for rebuilding a modified <code class="code">'b</code>-value from
+           the modified <code class="code">'a</code>-value resulting from processing the flag.<br/>      The intended use pattern for <code class="code">lift</code> is when <code class="code">'b</code> is a record type
+      with a field <code class="code">foo</code> of type <code class="code">'a</code> and <code class="code">project</code> is
+        <code class="code">fun r -&gt; (r.foo, (fun foo' -&gt; { r with foo = foo' }))</code>
+</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> lift_unit : <code class="type">unit <a href="Deprecated_command.Flag.html#TYPEt">t</a> -&gt; 'any <a href="Deprecated_command.Flag.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_spec : <code class="type">('accum -&gt; 'accum) <a href="../stdlib/Pervasives.html#TYPEref">ref</a> -&gt; 'accum <a href="Deprecated_command.Flag.html#TYPEt">t</a> -&gt; ('c, 'c) <a href="../core/Std.Command.Spec.html#TYPEt">Core.Std.Command.Spec.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_spec_unit : <code class="type">unit <a href="Deprecated_command.Flag.html#TYPEt">t</a> -&gt; ('c, 'c) <a href="../core/Std.Command.Spec.html#TYPEt">Core.Std.Command.Spec.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_spec_units : <code class="type">unit <a href="Deprecated_command.Flag.html#TYPEt">t</a> list -&gt; ('c, 'c) <a href="../core/Std.Command.Spec.html#TYPEt">Core.Std.Command.Spec.t</a></code></span></pre>
+      
+    

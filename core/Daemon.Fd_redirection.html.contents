@@ -1,0 +1,6 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span>= <code class="type">[ `Dev_null
+| `Do_not_redirect
+| `File_append of string
+| `File_truncate of string ]</code> </pre>
+      
+    

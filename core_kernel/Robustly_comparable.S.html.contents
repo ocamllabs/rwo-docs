@@ -1,0 +1,31 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> &gt;=. : <code class="type"><a href="Robustly_comparable.S.html#TYPEt">t</a> -&gt; <a href="Robustly_comparable.S.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> &lt;=. : <code class="type"><a href="Robustly_comparable.S.html#TYPEt">t</a> -&gt; <a href="Robustly_comparable.S.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> =. : <code class="type"><a href="Robustly_comparable.S.html#TYPEt">t</a> -&gt; <a href="Robustly_comparable.S.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> &gt;. : <code class="type"><a href="Robustly_comparable.S.html#TYPEt">t</a> -&gt; <a href="Robustly_comparable.S.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> &lt;. : <code class="type"><a href="Robustly_comparable.S.html#TYPEt">t</a> -&gt; <a href="Robustly_comparable.S.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> &lt;&gt;. : <code class="type"><a href="Robustly_comparable.S.html#TYPEt">t</a> -&gt; <a href="Robustly_comparable.S.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> robustly_compare : <code class="type"><a href="Robustly_comparable.S.html#TYPEt">t</a> -&gt; <a href="Robustly_comparable.S.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    

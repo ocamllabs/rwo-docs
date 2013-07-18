@@ -1,0 +1,4 @@
+ 
+      <pre><span><span class="keyword">val</span> lift : <code class="type">('a1, 'b1) <a href="Type_equal.html#TYPEt">t</a> -&gt; ('a2, 'b2) <a href="Type_equal.html#TYPEt">t</a> -&gt; (('a1, 'a2) X.t, ('b1, 'b2) X.t) <a href="Type_equal.html#TYPEt">t</a></code></span></pre>
+      
+    

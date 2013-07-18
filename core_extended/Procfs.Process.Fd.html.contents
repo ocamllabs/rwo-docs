@@ -1,0 +1,44 @@
+<pre><code><span id="TYPEfd_stat"><span class="keyword">type</span> fd_stat </span>= </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTfd_stat.Path"><span class="constructor">Path</span></span> <span class="keyword">of</span> <code class="type">string</code></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTfd_stat.Socket"><span class="constructor">Socket</span></span> <span class="keyword">of</span> <code class="type"><a href="Procfs.Process.Inode.html#TYPEt">Inode.t</a></code></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTfd_stat.Pipe"><span class="constructor">Pipe</span></span> <span class="keyword">of</span> <code class="type"><a href="Procfs.Process.Inode.html#TYPEt">Inode.t</a></code></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTfd_stat.Inotify"><span class="constructor">Inotify</span></span></code></td>
+	   </tr></table>
+      
+    
+<pre><code><span id="TYPEt"><span class="keyword">type</span> t </span>= {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.fd">fd</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">File descriptor (0=stdin, 1=stdout, etc.)</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.fd_stat">fd_stat</span> :<code class="type"><a href="Procfs.Process.Fd.html#TYPEfd_stat">fd_stat</a></code>;</code></td><td class="typefieldcomment" align="left">Kind of file</td>
+	  </tr></table>}
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fd_stat : <code class="type"><a href="Procfs.Process.Fd.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Fd.html#TYPEfd_stat">fd_stat</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fd : <code class="type"><a href="Procfs.Process.Fd.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Procfs.Process.Fd.Fields.html">Fields</a> : <code class="code">sig</code> <a href="Procfs.Process.Fd.Fields.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Procfs.Process.Fd.Fields.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> fd_stat_of_sexp : <code class="type"><a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; <a href="Procfs.Process.Fd.html#TYPEfd_stat">fd_stat</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_fd_stat : <code class="type"><a href="Procfs.Process.Fd.html#TYPEfd_stat">fd_stat</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp : <code class="type"><a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; <a href="Procfs.Process.Fd.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type"><a href="Procfs.Process.Fd.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    

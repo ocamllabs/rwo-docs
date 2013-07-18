@@ -1,0 +1,18 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="MoreLabels.Hashtbl.html">Hashtbl</a> : <code class="code">sig</code> <a href="MoreLabels.Hashtbl.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="MoreLabels.Hashtbl.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="MoreLabels.Map.html">Map</a> : <code class="code">sig</code> <a href="MoreLabels.Map.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="MoreLabels.Map.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="MoreLabels.Set.html">Set</a> : <code class="code">sig</code> <a href="MoreLabels.Set.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="MoreLabels.Set.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

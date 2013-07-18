@@ -1,0 +1,14 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core/Std.Linux_ext.html">Core.Std.Linux_ext</a></code></pre>
+	<div class="content">
+	<div file="../core/Std.Linux_ext.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Extended_linux.html">Extended_linux</a></code></pre>
+	<div class="content">
+	<div file="Extended_linux.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

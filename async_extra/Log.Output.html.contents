@@ -1,0 +1,34 @@
+<pre><span id="TYPEmachine_readable_format"><span class="keyword">type</span> machine_readable_format </span>= <code class="type">[ `Bin_prot | `Sexp ]</code> </pre>
+      
+    
+<pre><span id="TYPEformat"><span class="keyword">type</span> format </span>= <code class="type">[ `Bin_prot | `Sexp | `Text ]</code> </pre>
+      
+    
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">(<a href="Log.Message.html#TYPEt">Message.t</a> <a href="../core/Std.Queue.html#TYPEt">Core.Std.Queue.t</a> -&gt; unit <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a>) -&gt; <a href="Log.Output.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">create f</code> returns a t, given a function that actually performs the final output
+      work.  It is the responsibility of the write function to contain all state, and to
+      clean up after itself when it is garbage collected (which may require a finalizer).<br/>      The &quot;stock&quot; output modules support a sexp and bin_prot output format, and other
+      output modules should make efforts to support them as well where it is
+      meaningful/appropriate to do so.<br/>      The unit Deferred returned by the function should not be fulfilled until the all of
+      the messages in the given queue are completely handled (e.g. written to disk).</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> screen : <code class="type"><a href="Log.Output.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> writer : <code class="type"><a href="Log.Output.html#TYPEformat">format</a> -&gt; <a href="Import.Writer.html#TYPEt">Import.Writer.t</a> -&gt; <a href="Log.Output.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> file : <code class="type"><a href="Log.Output.html#TYPEformat">format</a> -&gt; filename:string -&gt; <a href="Log.Output.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rotating_file : <code class="type"><a href="Log.Output.html#TYPEformat">format</a> -&gt; basename:string -&gt; <a href="Log.Rotation.html#TYPEt">Rotation.t</a> -&gt; <a href="Log.Output.html#TYPEt">t</a></code></span></pre>
+      
+    

@@ -1,0 +1,4 @@
+ 
+      <pre><span><span class="keyword">val</span> bprintf : <code class="type"><a href="Bigbuffer.html#TYPEt">t</a> -&gt; ('a, unit, string, unit) <a href="../stdlib/Pervasives.html#TYPEformat4">format4</a> -&gt; 'a</code></span></pre>
+      
+    

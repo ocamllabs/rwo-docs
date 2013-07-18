@@ -1,0 +1,18 @@
+<pre><span id="TYPElazy_list"><span class="keyword">type</span> <code class="type">'a </code>lazy_list </span>= <code class="type">'a <a href="Lazy_list.html#TYPEt">t</a></code> </pre>
+      
+    
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">'a <a href="Lazy_list.Iterator.html#TYPElazy_list">lazy_list</a> -&gt; 'a <a href="Lazy_list.Iterator.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> next : <code class="type">'a <a href="Lazy_list.Iterator.html#TYPEt">t</a> -&gt; 'a option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter : <code class="type">'a <a href="Lazy_list.Iterator.html#TYPEt">t</a> -&gt; f:('a -&gt; unit) -&gt; unit</code></span></pre>
+      
+    

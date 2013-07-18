@@ -1,0 +1,128 @@
+<pre><code><span id="TYPEt"><span class="keyword">type</span> t </span>= {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.mem_total">mem_total</span> :<code class="type"><a href="Procfs.html#TYPEbigint">bigint</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.mem_free">mem_free</span> :<code class="type"><a href="Procfs.html#TYPEbigint">bigint</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.buffers">buffers</span> :<code class="type"><a href="Procfs.html#TYPEbigint">bigint</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.cached">cached</span> :<code class="type"><a href="Procfs.html#TYPEbigint">bigint</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.swap_cached">swap_cached</span> :<code class="type"><a href="Procfs.html#TYPEbigint">bigint</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.active">active</span> :<code class="type"><a href="Procfs.html#TYPEbigint">bigint</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.inactive">inactive</span> :<code class="type"><a href="Procfs.html#TYPEbigint">bigint</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.swap_total">swap_total</span> :<code class="type"><a href="Procfs.html#TYPEbigint">bigint</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.swap_free">swap_free</span> :<code class="type"><a href="Procfs.html#TYPEbigint">bigint</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.dirty">dirty</span> :<code class="type"><a href="Procfs.html#TYPEbigint">bigint</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.writeback">writeback</span> :<code class="type"><a href="Procfs.html#TYPEbigint">bigint</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.anon_pages">anon_pages</span> :<code class="type"><a href="Procfs.html#TYPEbigint">bigint</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.mapped">mapped</span> :<code class="type"><a href="Procfs.html#TYPEbigint">bigint</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.slab">slab</span> :<code class="type"><a href="Procfs.html#TYPEbigint">bigint</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.page_tables">page_tables</span> :<code class="type"><a href="Procfs.html#TYPEbigint">bigint</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.nfs_unstable">nfs_unstable</span> :<code class="type"><a href="Procfs.html#TYPEbigint">bigint</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.bounce">bounce</span> :<code class="type"><a href="Procfs.html#TYPEbigint">bigint</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.commit_limit">commit_limit</span> :<code class="type"><a href="Procfs.html#TYPEbigint">bigint</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.committed_as">committed_as</span> :<code class="type"><a href="Procfs.html#TYPEbigint">bigint</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.vmalloc_total">vmalloc_total</span> :<code class="type"><a href="Procfs.html#TYPEbigint">bigint</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.vmalloc_used">vmalloc_used</span> :<code class="type"><a href="Procfs.html#TYPEbigint">bigint</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.vmalloc_chunk">vmalloc_chunk</span> :<code class="type"><a href="Procfs.html#TYPEbigint">bigint</a></code>;</code></td>
+	  </tr></table>}
+      <div class="info"><code class="code">t</code> corresponds to the values in /proc/meminfo.  All values in bytes.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> vmalloc_chunk : <code class="type"><a href="Procfs.Meminfo.html#TYPEt">t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> vmalloc_used : <code class="type"><a href="Procfs.Meminfo.html#TYPEt">t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> vmalloc_total : <code class="type"><a href="Procfs.Meminfo.html#TYPEt">t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> committed_as : <code class="type"><a href="Procfs.Meminfo.html#TYPEt">t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> commit_limit : <code class="type"><a href="Procfs.Meminfo.html#TYPEt">t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bounce : <code class="type"><a href="Procfs.Meminfo.html#TYPEt">t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> nfs_unstable : <code class="type"><a href="Procfs.Meminfo.html#TYPEt">t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> page_tables : <code class="type"><a href="Procfs.Meminfo.html#TYPEt">t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> slab : <code class="type"><a href="Procfs.Meminfo.html#TYPEt">t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mapped : <code class="type"><a href="Procfs.Meminfo.html#TYPEt">t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> anon_pages : <code class="type"><a href="Procfs.Meminfo.html#TYPEt">t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> writeback : <code class="type"><a href="Procfs.Meminfo.html#TYPEt">t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> dirty : <code class="type"><a href="Procfs.Meminfo.html#TYPEt">t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> swap_free : <code class="type"><a href="Procfs.Meminfo.html#TYPEt">t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> swap_total : <code class="type"><a href="Procfs.Meminfo.html#TYPEt">t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> inactive : <code class="type"><a href="Procfs.Meminfo.html#TYPEt">t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> active : <code class="type"><a href="Procfs.Meminfo.html#TYPEt">t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> swap_cached : <code class="type"><a href="Procfs.Meminfo.html#TYPEt">t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> cached : <code class="type"><a href="Procfs.Meminfo.html#TYPEt">t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> buffers : <code class="type"><a href="Procfs.Meminfo.html#TYPEt">t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem_free : <code class="type"><a href="Procfs.Meminfo.html#TYPEt">t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem_total : <code class="type"><a href="Procfs.Meminfo.html#TYPEt">t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a></code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Procfs.Meminfo.Fields.html">Fields</a> : <code class="code">sig</code> <a href="Procfs.Meminfo.Fields.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Procfs.Meminfo.Fields.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp : <code class="type"><a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; <a href="Procfs.Meminfo.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type"><a href="Procfs.Meminfo.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    

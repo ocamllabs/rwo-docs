@@ -1,0 +1,19 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span>= <code class="type">[ `Backspace
+| `Char of char
+| `Delete
+| `Down
+| `End
+| `Eof
+| `Home
+| `Left
+| `Newline
+| `Right
+| `Tab
+| `Unknown_escape of string * int option * int option
+| `Up ]</code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get : <code class="type">unit -&gt; <a href="Readline__input_char.html#TYPEt">t</a></code></span></pre>
+      
+    

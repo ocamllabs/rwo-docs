@@ -1,0 +1,28 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'connection_state </code>t </span></pre>
+      <div class="info">A <code class="code">'connection_state Implementations.t</code> is something which knows how to respond to
+      many different queries. It is conceptually a package of <code class="code">'connection_state
+      Implementation.t</code>'s.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> null : <code class="type">unit -&gt; 'connection_state <a href="Rpc.Implementations.html#TYPEt">t</a></code></span></pre>
+      <div class="info">a server that can handle no queries</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">implementations:'connection_state <a href="Rpc.Implementation.html#TYPEt">Implementation.t</a> list -&gt;
+on_unknown_rpc:[ `Call of rpc_tag:string -&gt; version:int -&gt; unit
+               | `Ignore
+               | `Raise ] -&gt;
+('connection_state <a href="Rpc.Implementations.html#TYPEt">t</a>,
+ [ `Duplicate_implementations of <a href="Rpc.Implementation.Description.html#TYPEt">Implementation.Description.t</a> list ])
+<a href="../core/Std.Result.html#TYPEt">Core.Std.Result.t</a></code></span></pre>
+      <div class="info"><code class="code">create ~implementations ~on_unknown_rpc</code> creates a server
+      capable of responding to the rpc's implemented in the implementation list.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> create_exn : <code class="type">implementations:'connection_state <a href="Rpc.Implementation.html#TYPEt">Implementation.t</a> list -&gt;
+on_unknown_rpc:[ `Call of rpc_tag:string -&gt; version:int -&gt; unit
+               | `Ignore
+               | `Raise ] -&gt;
+'connection_state <a href="Rpc.Implementations.html#TYPEt">t</a></code></span></pre>
+      
+    

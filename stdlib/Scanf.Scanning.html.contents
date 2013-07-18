@@ -1,0 +1,61 @@
+<pre><span id="TYPEin_channel"><span class="keyword">type</span> in_channel </span></pre>
+      
+    
+<pre><span id="TYPEscanbuf"><span class="keyword">type</span> scanbuf </span>= <code class="type"><a href="Scanf.Scanning.html#TYPEin_channel">in_channel</a></code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stdin : <code class="type"><a href="Scanf.Scanning.html#TYPEin_channel">in_channel</a></code></span></pre>
+      
+    
+<pre><span id="TYPEfile_name"><span class="keyword">type</span> file_name </span>= <code class="type">string</code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> open_in : <code class="type"><a href="Scanf.Scanning.html#TYPEfile_name">file_name</a> -&gt; <a href="Scanf.Scanning.html#TYPEin_channel">in_channel</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> open_in_bin : <code class="type"><a href="Scanf.Scanning.html#TYPEfile_name">file_name</a> -&gt; <a href="Scanf.Scanning.html#TYPEin_channel">in_channel</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> close_in : <code class="type"><a href="Scanf.Scanning.html#TYPEin_channel">in_channel</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> from_file : <code class="type"><a href="Scanf.Scanning.html#TYPEfile_name">file_name</a> -&gt; <a href="Scanf.Scanning.html#TYPEin_channel">in_channel</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> from_file_bin : <code class="type">string -&gt; <a href="Scanf.Scanning.html#TYPEin_channel">in_channel</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> from_string : <code class="type">string -&gt; <a href="Scanf.Scanning.html#TYPEin_channel">in_channel</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> from_function : <code class="type">(unit -&gt; char) -&gt; <a href="Scanf.Scanning.html#TYPEin_channel">in_channel</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> from_channel : <code class="type"><a href="Pervasives.html#TYPEin_channel">in_channel</a> -&gt; <a href="Scanf.Scanning.html#TYPEin_channel">in_channel</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> end_of_input : <code class="type"><a href="Scanf.Scanning.html#TYPEin_channel">in_channel</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> beginning_of_input : <code class="type"><a href="Scanf.Scanning.html#TYPEin_channel">in_channel</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> name_of_input : <code class="type"><a href="Scanf.Scanning.html#TYPEin_channel">in_channel</a> -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stdib : <code class="type"><a href="Scanf.Scanning.html#TYPEin_channel">in_channel</a></code></span></pre>
+      
+    

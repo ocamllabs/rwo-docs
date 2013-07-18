@@ -1,0 +1,11 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> equal : <code class="type"><a href="Hashtbl.SeededHashedType.html#TYPEt">t</a> -&gt; <a href="Hashtbl.SeededHashedType.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> hash : <code class="type">int -&gt; <a href="Hashtbl.SeededHashedType.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    

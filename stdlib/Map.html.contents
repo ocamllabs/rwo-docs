@@ -1,0 +1,18 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Map.OrderedType.html">OrderedType</a> = <code class="type"><code class="code">sig</code> <a href="Map.OrderedType.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Map.OrderedType.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Map.S.html">S</a> = <code class="type"><code class="code">sig</code> <a href="Map.S.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Map.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Map.Make.html">Make</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">Ord</code><code class="code"> : </code><code class="type"><a href="Map.OrderedType.html">OrderedType</a></code><code class="code">) -&gt; </code><code class="code"><a href="Map.S.html">S</a></code> with type <a href="Map.S.html#TYPEkey">key</a> = Ord.t</div></pre>
+	<div class="content" style="display:none">
+	<div file="Map.Make.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

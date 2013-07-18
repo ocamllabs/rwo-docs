@@ -1,0 +1,44 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Univ.Constr.html">Constr</a> : <code class="code">sig</code> <a href="Univ.Constr.html">..</a> <code class="code">end</code></pre><div class="info">A <code class="code">Constr.t</code> represents a single constructor in the extensible variant type.  On
+    creation, one must provide a name for the constructor and a sexp-converter for
+    serializing the argument to the variant.  Both the name and the sexp-converter are
+    used for display purposes only.</div>
+	<div class="content" style="display:none">
+	<div file="Univ.Constr.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> constr_name : <code class="type"><a href="Univ.html#TYPEt">t</a> -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">'a <a href="Univ.Constr.html#TYPEt">Constr.t</a> -&gt; 'a -&gt; <a href="Univ.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> does_match : <code class="type"><a href="Univ.html#TYPEt">t</a> -&gt; 'a <a href="Univ.Constr.html#TYPEt">Constr.t</a> -&gt; bool</code></span></pre>
+      <div class="info"><code class="code">does_match t constr</code> returns <code class="code">true</code> iff <code class="code">t</code> was created by <code class="code">create constr v</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> match_ : <code class="type"><a href="Univ.html#TYPEt">t</a> -&gt; 'a <a href="Univ.Constr.html#TYPEt">Constr.t</a> -&gt; 'a option</code></span></pre>
+      <div class="info"><code class="code">match_ t constr</code> returns <code class="code">Some v</code> if <code class="code">t</code> was created by <code class="code">create constr v</code>, and
+    returns <code class="code">None</code> otherwise.<br/>    <code class="code">match_exn t constr</code> returns <code class="code">v</code> if <code class="code">t</code> was created by <code class="code">create constr v</code>, and raises
+    otherwise.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> match_exn : <code class="type"><a href="Univ.html#TYPEt">t</a> -&gt; 'a <a href="Univ.Constr.html#TYPEt">Constr.t</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type"><a href="Univ.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+<br/><code class="code">does_match t constr</code> returns <code class="code">true</code> iff <code class="code">t</code> was created by <code class="code">create constr v</code>.<br/>
+	  
+<br/><code class="code">match_ t constr</code> returns <code class="code">Some v</code> if <code class="code">t</code> was created by <code class="code">create constr v</code>, and
+    returns <code class="code">None</code> otherwise.<br/>    <code class="code">match_exn t constr</code> returns <code class="code">v</code> if <code class="code">t</code> was created by <code class="code">create constr v</code>, and raises
+    otherwise.<br/>
+	  

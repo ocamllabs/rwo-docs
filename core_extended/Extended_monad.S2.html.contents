@@ -1,0 +1,15 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core/Monad.S2.html">Core.Monad.S2</a></code></pre>
+	<div class="content">
+	<div file="../core/Monad.S2.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> map_monad : <code class="type">'a list -&gt; f:('a -&gt; ('b, 'c) t) -&gt; ('b list, 'c) t</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map_monad_ignore : <code class="type">'a list -&gt; f:('a -&gt; (unit, 'b) t) -&gt; (unit, 'b) t</code></span></pre>
+      
+    

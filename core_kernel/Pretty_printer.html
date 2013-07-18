@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<title>Pretty_printer</title>
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
+<script type="text/javascript" src="doc_loader.js"> </script>
+</head>
+<body>
+
+<h1>Module Pretty_printer</h1>
+<pre><span class="keyword">module</span> Pretty_printer</pre><div class="info">A list of pretty printers for various types, for use in toplevels.<br/>    <code class="code">Pretty_printer</code> has a <code class="code">string list ref</code> with the names of <code class="code">pp</code> functions matching the
+    interface:<br/>    <pre class="codepre"><code class="code">
+      val pp : Format.formatter -&gt; t -&gt; unit
+    </code></pre><br/>    The names are actually OCaml identifier names, e.g. &quot;Core.Date.pp&quot;.  Code for building
+    toplevels (this code is not in Core) evaluates the strings to yield the pretty
+    printers and register them with OCaml runtime.</div>
+<hr/>
+<div file="Pretty_printer.html.contents" class="content_to_load"> </div>
+</body>
+</html>

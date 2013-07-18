@@ -1,0 +1,28 @@
+<pre><span id="TYPEdatum"><span class="keyword">type</span> datum </span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Versioned_typed_tcp.Versions.html">Versions</a></code></pre>
+	<div class="content">
+	<div file="Versioned_typed_tcp.Versions.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> lookup_marshal_fun : <code class="type"><a href="Versioned_typed_tcp.Version.html#TYPEt">Version.t</a> -&gt; (<a href="Versioned_typed_tcp.Datumable.html#TYPEdatum">datum</a> <a href="Versioned_typed_tcp.html#TYPEmarshal_fun">marshal_fun</a>, exn) <a href="../core/Std.Result.html#TYPEt">Core.Std.Result.t</a></code></span></pre>
+      <div class="info"><code class="code">lookup_marshal_fun v</code> This function takes a version <code class="code">v</code>, and returns a
+      function that will downgrade (if necessary) the current version to <code class="code">v</code> and
+      then write it to a bigsubstring. It is perfectly fine if one message
+      becomes zero or more messages as a result of downgrading, this is why the
+      marshal fun returns a list. The contents of these buffers will be copied
+      immediatly, so it is safe to reuse the same bigstring for multiple
+      marshals.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> lookup_unmarshal_fun : <code class="type"><a href="Versioned_typed_tcp.Version.html#TYPEt">Version.t</a> -&gt; (<a href="Versioned_typed_tcp.Datumable.html#TYPEdatum">datum</a> <a href="Versioned_typed_tcp.html#TYPEunmarshal_fun">unmarshal_fun</a>, exn) <a href="../core/Std.Result.html#TYPEt">Core.Std.Result.t</a></code></span></pre>
+      <div class="info"><code class="code">lookup_unmarshal_fun v</code> This function takes a version <code class="code">v</code>, and returns a
+      function that unmarshals a message and upgrades it, returning zero or more
+      messages as a result of the upgrade. The bigsubstring is only guaranteed
+      to contain valid data until the unmarshal function returns, after which it
+      may be overwritten immediatly.</div>
+    

@@ -1,0 +1,7 @@
+<pre><span id="EXCEPTIONNot_a_record_type"><span class="keyword">exception</span> Not_a_record_type</span> <span class="keyword">of</span> <code class="type"><a href="../core/Std.Sexp.html#TYPEt">Core.Std.Sexp.t</a></code></pre>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Extra_fields.Make.html">Make</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="type"><a href="../core/Std.Sexpable.html">Core.Std.Sexpable</a></code><code class="code">) -&gt; </code><code class="code">sig</code> <a href="Extra_fields.Make.html">..</a> <code class="code">end</code></div></pre>
+	<div class="content" style="display:none">
+	<div file="Extra_fields.Make.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

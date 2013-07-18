@@ -1,0 +1,17 @@
+ 
+      <pre><span><span class="keyword">val</span> % : <code class="type">t -&gt; t -&gt; t</code></span></pre>
+      <div class="info">mod and div operators that have the right behavior on negative numbers, that is, <code class="code">x
+      % y</code> always returns a value between 0 and <code class="code">y-1</code>.  Invariant:
+      <pre class="codepre"><code class="code">
+        if r = x % y &amp;&amp; q = x /% y then q * y + r = x
+      </code></pre>
+</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> /% : <code class="type">t -&gt; t -&gt; t</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> // : <code class="type">int -&gt; int -&gt; float</code></span></pre>
+      <div class="info">float division of integers</div>
+    

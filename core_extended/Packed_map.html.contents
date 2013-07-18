@@ -1,0 +1,24 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Packed_map.Key.html">Key</a> = <code class="type"><code class="code">sig</code> <a href="Packed_map.Key.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Packed_map.Key.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Packed_map.Value.html">Value</a> = <code class="type"><code class="code">sig</code> <a href="Packed_map.Value.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Packed_map.Value.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Packed_map.S.html">S</a> = <code class="type"><code class="code">sig</code> <a href="Packed_map.S.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Packed_map.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Packed_map.Make.html">Make</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">K</code><code class="code"> : </code><code class="type"><a href="Packed_map.Key.html">Key</a></code><code class="code">) -&gt; </code><div class="sig_block"><code class="code">functor (</code><code class="code">V</code><code class="code"> : </code><code class="type"><a href="Packed_map.Value.html">Value</a></code><code class="code">) -&gt; </code><code class="code"><a href="Packed_map.S.html">S</a></code> with type value = V.t and type <a href="Packed_map.S.html#TYPEkey">key</a> = K.t</div></div></pre>
+	<div class="content" style="display:none">
+	<div file="Packed_map.Make.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

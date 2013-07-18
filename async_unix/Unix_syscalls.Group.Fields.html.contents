@@ -1,0 +1,89 @@
+ 
+      <pre><span><span class="keyword">val</span> names : <code class="type">string list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem : <code class="type">(<a href="Unix_syscalls.Group.html#TYPEt">t</a>, string array) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> gid : <code class="type">(<a href="Unix_syscalls.Group.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> passwd : <code class="type">(<a href="Unix_syscalls.Group.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> name : <code class="type">(<a href="Unix_syscalls.Group.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold : <code class="type">init:'acc__ -&gt;
+name:('acc__ -&gt; (<a href="Unix_syscalls.Group.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+passwd:('acc__ -&gt; (<a href="Unix_syscalls.Group.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+gid:('acc__ -&gt; (<a href="Unix_syscalls.Group.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+mem:('acc__ -&gt; (<a href="Unix_syscalls.Group.html#TYPEt">t</a>, string array) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt; 'acc__</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> make_creator : <code class="type">name:((<a href="Unix_syscalls.Group.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+      'compile_acc__ -&gt; ('input__ -&gt; string) * 'compile_acc__) -&gt;
+passwd:((<a href="Unix_syscalls.Group.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+        'compile_acc__ -&gt; ('input__ -&gt; string) * 'compile_acc__) -&gt;
+gid:((<a href="Unix_syscalls.Group.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+     'compile_acc__ -&gt; ('input__ -&gt; int) * 'compile_acc__) -&gt;
+mem:((<a href="Unix_syscalls.Group.html#TYPEt">t</a>, string array) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+     'compile_acc__ -&gt; ('input__ -&gt; string array) * 'compile_acc__) -&gt;
+'compile_acc__ -&gt; ('input__ -&gt; <a href="Unix_syscalls.Group.html#TYPEt">t</a>) * 'compile_acc__</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">name:string -&gt; passwd:string -&gt; gid:int -&gt; mem:string array -&gt; <a href="Unix_syscalls.Group.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map : <code class="type">name:((<a href="Unix_syscalls.Group.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; string) -&gt;
+passwd:((<a href="Unix_syscalls.Group.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; string) -&gt;
+gid:((<a href="Unix_syscalls.Group.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; int) -&gt;
+mem:((<a href="Unix_syscalls.Group.html#TYPEt">t</a>, string array) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; string array) -&gt; <a href="Unix_syscalls.Group.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter : <code class="type">name:((<a href="Unix_syscalls.Group.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+passwd:((<a href="Unix_syscalls.Group.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+gid:((<a href="Unix_syscalls.Group.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+mem:((<a href="Unix_syscalls.Group.html#TYPEt">t</a>, string array) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> for_all : <code class="type">name:((<a href="Unix_syscalls.Group.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+passwd:((<a href="Unix_syscalls.Group.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+gid:((<a href="Unix_syscalls.Group.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+mem:((<a href="Unix_syscalls.Group.html#TYPEt">t</a>, string array) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> exists : <code class="type">name:((<a href="Unix_syscalls.Group.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+passwd:((<a href="Unix_syscalls.Group.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+gid:((<a href="Unix_syscalls.Group.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+mem:((<a href="Unix_syscalls.Group.html#TYPEt">t</a>, string array) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_list : <code class="type">name:((<a href="Unix_syscalls.Group.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+passwd:((<a href="Unix_syscalls.Group.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+gid:((<a href="Unix_syscalls.Group.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+mem:((<a href="Unix_syscalls.Group.html#TYPEt">t</a>, string array) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt; 'elem__ list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map_poly : <code class="type">([&lt; `Read | `Set_and_create ], <a href="Unix_syscalls.Group.html#TYPEt">t</a>, 'x0) <a href="../fieldslib/Field.html#TYPEuser">Fieldslib.Field.user</a> -&gt; 'x0 list</code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Unix_syscalls.Group.Fields.Direct.html">Direct</a> : <code class="code">sig</code> <a href="Unix_syscalls.Group.Fields.Direct.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Unix_syscalls.Group.Fields.Direct.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

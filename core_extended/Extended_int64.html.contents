@@ -1,0 +1,18 @@
+<br/>Extensions to <code class="code">Core.Core_int64</code>
+<br/>
+	  
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Extended_int64.Filesize.html">Filesize</a> : <code class="code">sig</code> <a href="Extended_int64.Filesize.html">..</a> <code class="code">end</code></pre><div class="info">An int reprensting a file length<br/>   Same as the int type but has a specific sexp converter so that you can
+    write &quot;10g&quot;. Suffixes are b,k,g,m...
+    The sexp reader also accepts plain ints.</div>
+	<div class="content" style="display:none">
+	<div file="Extended_int64.Filesize.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Number.Verified_std.html">Number.Verified_std</a></code> with type repr = <a href="../core/Std.Int64.html#TYPEt">Core.Std.Int64.t</a></pre>
+	<div class="content">
+	<div file="Number.Verified_std.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

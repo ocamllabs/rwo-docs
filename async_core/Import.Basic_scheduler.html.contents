@@ -1,0 +1,21 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Import.Basic_scheduler.Execution_context.html">Execution_context</a> : <code class="code">sig</code> <a href="Import.Basic_scheduler.Execution_context.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Import.Basic_scheduler.Execution_context.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t : <code class="type">unit -&gt; <a href="Import.Basic_scheduler.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> current_execution_context : <code class="type"><a href="Import.Basic_scheduler.html#TYPEt">t</a> -&gt; <a href="Import.Basic_scheduler.Execution_context.html#TYPEt">Execution_context.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add_job : <code class="type"><a href="Import.Basic_scheduler.html#TYPEt">t</a> -&gt; <a href="Import.Basic_scheduler.Execution_context.html#TYPEt">Execution_context.t</a> <a href="Job.html#TYPEt">Job.t</a> -&gt; unit</code></span></pre>
+      
+    

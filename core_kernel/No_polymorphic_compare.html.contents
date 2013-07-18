@@ -1,0 +1,48 @@
+<pre><span id="TYPEcompare"><span class="keyword">type</span> compare </span>= <code class="type">[ `no_polymorphic_compare ] -&gt;
+[ `no_polymorphic_compare ] -&gt; [ `no_polymorphic_compare ]</code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> compare : <code class="type"><a href="No_polymorphic_compare.html#TYPEcompare">compare</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> &lt; : <code class="type"><a href="No_polymorphic_compare.html#TYPEcompare">compare</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> &lt;= : <code class="type"><a href="No_polymorphic_compare.html#TYPEcompare">compare</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> &gt; : <code class="type"><a href="No_polymorphic_compare.html#TYPEcompare">compare</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> &gt;= : <code class="type"><a href="No_polymorphic_compare.html#TYPEcompare">compare</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> = : <code class="type"><a href="No_polymorphic_compare.html#TYPEcompare">compare</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> &lt;&gt; : <code class="type"><a href="No_polymorphic_compare.html#TYPEcompare">compare</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> equal : <code class="type"><a href="No_polymorphic_compare.html#TYPEcompare">compare</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> min : <code class="type"><a href="No_polymorphic_compare.html#TYPEcompare">compare</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> max : <code class="type"><a href="No_polymorphic_compare.html#TYPEcompare">compare</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> _squelch_unused_module_warning_ : <code class="type">unit</code></span></pre>
+      
+    

@@ -1,0 +1,12 @@
+ 
+      <pre><span><span class="keyword">val</span> number : <code class="type">'a list -&gt; ('a * int) list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> multimerge : <code class="type">'a list list -&gt; 'a list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> multimerge_unique : <code class="type">'a list list -&gt; 'a list</code></span></pre>
+      
+    

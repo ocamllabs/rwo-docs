@@ -1,0 +1,97 @@
+ 
+      <pre><span><span class="keyword">val</span> tuple_of_size_n_expected : <code class="type">string -&gt; int -&gt; <a href="Sexp.html#TYPEt">Sexp.t</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stag_no_args : <code class="type">string -&gt; <a href="Sexp.html#TYPEt">Sexp.t</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stag_incorrect_n_args : <code class="type">string -&gt; string -&gt; <a href="Sexp.html#TYPEt">Sexp.t</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stag_takes_args : <code class="type">string -&gt; <a href="Sexp.html#TYPEt">Sexp.t</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> nested_list_invalid_sum : <code class="type">string -&gt; <a href="Sexp.html#TYPEt">Sexp.t</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> empty_list_invalid_sum : <code class="type">string -&gt; <a href="Sexp.html#TYPEt">Sexp.t</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unexpected_stag : <code class="type">string -&gt; <a href="Sexp.html#TYPEt">Sexp.t</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> record_only_pairs_expected : <code class="type">string -&gt; <a href="Sexp.html#TYPEt">Sexp.t</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> record_superfluous_fields : <code class="type">what:string -&gt; loc:string -&gt; string list -&gt; <a href="Sexp.html#TYPEt">Sexp.t</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> record_duplicate_fields : <code class="type">string -&gt; string list -&gt; <a href="Sexp.html#TYPEt">Sexp.t</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> record_extra_fields : <code class="type">string -&gt; string list -&gt; <a href="Sexp.html#TYPEt">Sexp.t</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> record_get_undefined_loop : <code class="type">string list -&gt; (bool * string) list -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> record_undefined_elements : <code class="type">string -&gt; <a href="Sexp.html#TYPEt">Sexp.t</a> -&gt; (bool * string) list -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> record_list_instead_atom : <code class="type">string -&gt; <a href="Sexp.html#TYPEt">Sexp.t</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> record_poly_field_value : <code class="type">string -&gt; <a href="Sexp.html#TYPEt">Sexp.t</a> -&gt; 'a</code></span></pre>
+      
+    
+<pre><span id="EXCEPTIONNo_variant_match"><span class="keyword">exception</span> No_variant_match</span> <span class="keyword">of</span> <code class="type">string * <a href="Sexp.html#TYPEt">Sexp.t</a></code></pre>
+ 
+      <pre><span><span class="keyword">val</span> no_variant_match : <code class="type">string -&gt; <a href="Sexp.html#TYPEt">Sexp.t</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> no_matching_variant_found : <code class="type">string -&gt; <a href="Sexp.html#TYPEt">Sexp.t</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ptag_no_args : <code class="type">string -&gt; <a href="Sexp.html#TYPEt">Sexp.t</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ptag_incorrect_n_args : <code class="type">string -&gt; string -&gt; <a href="Sexp.html#TYPEt">Sexp.t</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ptag_takes_args : <code class="type">string -&gt; <a href="Sexp.html#TYPEt">Sexp.t</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> nested_list_invalid_poly_var : <code class="type">string -&gt; <a href="Sexp.html#TYPEt">Sexp.t</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> empty_list_invalid_poly_var : <code class="type">string -&gt; <a href="Sexp.html#TYPEt">Sexp.t</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> silly_type : <code class="type">string -&gt; <a href="Sexp.html#TYPEt">Sexp.t</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> empty_type : <code class="type">string -&gt; <a href="Sexp.html#TYPEt">Sexp.t</a> -&gt; 'a</code></span></pre>
+      
+    

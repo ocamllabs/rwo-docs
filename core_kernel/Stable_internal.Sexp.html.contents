@@ -1,0 +1,53 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span>= <code class="type"><a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code> </pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Atom"><span class="constructor">Atom</span></span> <span class="keyword">of</span> <code class="type">string</code></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.List"><span class="constructor">List</span></span> <span class="keyword">of</span> <code class="type"><a href="Stable_internal.Sexp.html#TYPEt">t</a> list</code></code></td>
+	   </tr></table>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> compare : <code class="type"><a href="Stable_internal.Sexp.html#TYPEt">t</a> -&gt; <a href="Stable_internal.Sexp.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> compare_t : <code class="type"><a href="Stable_internal.Sexp.html#TYPEt">t</a> -&gt; <a href="Stable_internal.Sexp.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t : <code class="type"><a href="Stable_internal.Sexp.html#TYPEt">t</a> sizer</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_ : <code class="type"><a href="Stable_internal.Sexp.html#TYPEt">t</a> <a href="../bin_prot/Unsafe_write_c.html#TYPEwriter">Bin_prot.Unsafe_write_c.writer</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t : <code class="type"><a href="../bin_prot/Common.html#TYPEbuf">Bin_prot.Common.buf</a> -&gt; pos:<a href="../bin_prot/Common.html#TYPEpos">Bin_prot.Common.pos</a> -&gt; <a href="Stable_internal.Sexp.html#TYPEt">t</a> -&gt; <a href="../bin_prot/Common.html#TYPEpos">Bin_prot.Common.pos</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t : <code class="type"><a href="Stable_internal.Sexp.html#TYPEt">t</a> <a href="../bin_prot/Type_class.html#TYPEwriter">Bin_prot.Type_class.writer</a></code></span></pre>
+      
+    
+
+
+
+
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t : <code class="type"><a href="Stable_internal.Sexp.html#TYPEt">t</a> <a href="../bin_prot/Type_class.html#TYPEreader">Bin_prot.Type_class.reader</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t : <code class="type"><a href="Stable_internal.Sexp.html#TYPEt">t</a> <a href="../bin_prot/Type_class.html#TYPEt">Bin_prot.Type_class.t</a></code></span></pre>
+      
+    
+
+<br/>&quot;structure item: Mismatch&quot;<br/>
+	  

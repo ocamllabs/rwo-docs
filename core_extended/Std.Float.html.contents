@@ -1,0 +1,14 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core/Float.html">Core.Float</a></code></pre>
+	<div class="content">
+	<div file="../core/Float.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Extended_float.html">Extended_float</a></code></pre>
+	<div class="content">
+	<div file="Extended_float.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

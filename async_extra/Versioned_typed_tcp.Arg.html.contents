@@ -1,0 +1,30 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Versioned_typed_tcp.Arg.Send.html">Send</a> : <code class="code"><a href="Versioned_typed_tcp.Datum.html">Datum</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Versioned_typed_tcp.Arg.Send.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Versioned_typed_tcp.Arg.Recv.html">Recv</a> : <code class="code"><a href="Versioned_typed_tcp.Datum.html">Datum</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Versioned_typed_tcp.Arg.Recv.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Versioned_typed_tcp.Arg.Remote_name.html">Remote_name</a> : <code class="code"><a href="Versioned_typed_tcp.Name.html">Name</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Versioned_typed_tcp.Arg.Remote_name.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Versioned_typed_tcp.Arg.My_name.html">My_name</a> : <code class="code"><a href="Versioned_typed_tcp.Name.html">Name</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Versioned_typed_tcp.Arg.My_name.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Versioned_typed_tcp.Arg.Mode.html">Mode</a> : <code class="code"><a href="Versioned_typed_tcp.Mode.html">Mode</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Versioned_typed_tcp.Arg.Mode.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

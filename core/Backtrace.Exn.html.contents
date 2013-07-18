@@ -1,0 +1,13 @@
+ 
+      <pre><span><span class="keyword">val</span> am_recording : <code class="type">unit -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set_recording : <code class="type">bool -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> most_recent : <code class="type">unit -&gt; string</code></span></pre>
+      <div class="info"><code class="code">most_recent ()</code> returns a string containing the stack that was unwound by the
+      most recently raised exception.</div>
+    

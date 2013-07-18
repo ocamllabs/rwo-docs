@@ -1,0 +1,12 @@
+<pre><code><span id="TYPEt"><span class="keyword">type</span> t </span>= </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Char"><span class="constructor">Char</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Fifo"><span class="constructor">Fifo</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.File"><span class="constructor">File</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Socket"><span class="constructor">Socket</span></span> <span class="keyword">of</span> <code class="type">[ `Active | `Bound | `Passive | `Unconnected ]</code></code></td>
+	   </tr></table>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> infer_using_stat : <code class="type"><a href="../core/Std.Unix.File_descr.html#TYPEt">Core.Std.Unix.File_descr.t</a> -&gt; <a href="Fd.Kind.html#TYPEt">t</a> <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a></code></span></pre>
+      
+    

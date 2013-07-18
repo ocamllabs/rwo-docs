@@ -1,0 +1,18 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Sexp_with_layout.Forget.Cps.html">Cps</a> : <code class="code">sig</code> <a href="Sexp_with_layout.Forget.Cps.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Sexp_with_layout.Forget.Cps.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> t : <code class="type">t -&gt; <a href="Type.html#TYPEt">Type.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t_or_comment : <code class="type">t_or_comment -&gt; <a href="Type.html#TYPEt">Type.t</a> option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t_or_comments : <code class="type">t_or_comment list -&gt; <a href="Type.html#TYPEt">Type.t</a> list</code></span></pre>
+      
+    

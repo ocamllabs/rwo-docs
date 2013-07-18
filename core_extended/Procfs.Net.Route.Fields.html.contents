@@ -1,0 +1,187 @@
+ 
+      <pre><span><span class="keyword">val</span> names : <code class="type">string list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> irtt : <code class="type">(<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> window : <code class="type">(<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mtu : <code class="type">(<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mask : <code class="type">(<a href="Procfs.Net.Route.html#TYPEt">t</a>, <a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> metric : <code class="type">(<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> use : <code class="type">(<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> refcnt : <code class="type">(<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> flags : <code class="type">(<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> gateway : <code class="type">(<a href="Procfs.Net.Route.html#TYPEt">t</a>, <a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> destination : <code class="type">(<a href="Procfs.Net.Route.html#TYPEt">t</a>, <a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iface : <code class="type">(<a href="Procfs.Net.Route.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold : <code class="type">init:'acc__ -&gt;
+iface:('acc__ -&gt; (<a href="Procfs.Net.Route.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+destination:('acc__ -&gt;
+             (<a href="Procfs.Net.Route.html#TYPEt">t</a>, <a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+gateway:('acc__ -&gt; (<a href="Procfs.Net.Route.html#TYPEt">t</a>, <a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+flags:('acc__ -&gt; (<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+refcnt:('acc__ -&gt; (<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+use:('acc__ -&gt; (<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+metric:('acc__ -&gt; (<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+mask:('acc__ -&gt; (<a href="Procfs.Net.Route.html#TYPEt">t</a>, <a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+mtu:('acc__ -&gt; (<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+window:('acc__ -&gt; (<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+irtt:('acc__ -&gt; (<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt; 'acc__</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> make_creator : <code class="type">iface:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+       'compile_acc__ -&gt; ('input__ -&gt; string) * 'compile_acc__) -&gt;
+destination:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, <a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+             'compile_acc__ -&gt;
+             ('input__ -&gt; <a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a>) * 'compile_acc__) -&gt;
+gateway:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, <a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+         'compile_acc__ -&gt;
+         ('input__ -&gt; <a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a>) * 'compile_acc__) -&gt;
+flags:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+       'compile_acc__ -&gt; ('input__ -&gt; int) * 'compile_acc__) -&gt;
+refcnt:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+        'compile_acc__ -&gt; ('input__ -&gt; int) * 'compile_acc__) -&gt;
+use:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+     'compile_acc__ -&gt; ('input__ -&gt; int) * 'compile_acc__) -&gt;
+metric:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+        'compile_acc__ -&gt; ('input__ -&gt; int) * 'compile_acc__) -&gt;
+mask:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, <a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+      'compile_acc__ -&gt;
+      ('input__ -&gt; <a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a>) * 'compile_acc__) -&gt;
+mtu:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+     'compile_acc__ -&gt; ('input__ -&gt; int) * 'compile_acc__) -&gt;
+window:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+        'compile_acc__ -&gt; ('input__ -&gt; int) * 'compile_acc__) -&gt;
+irtt:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+      'compile_acc__ -&gt; ('input__ -&gt; int) * 'compile_acc__) -&gt;
+'compile_acc__ -&gt; ('input__ -&gt; <a href="Procfs.Net.Route.html#TYPEt">t</a>) * 'compile_acc__</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">iface:string -&gt;
+destination:<a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a> -&gt;
+gateway:<a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a> -&gt;
+flags:int -&gt;
+refcnt:int -&gt;
+use:int -&gt;
+metric:int -&gt;
+mask:<a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a> -&gt; mtu:int -&gt; window:int -&gt; irtt:int -&gt; <a href="Procfs.Net.Route.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map : <code class="type">iface:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; string) -&gt;
+destination:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, <a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+             <a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a>) -&gt;
+gateway:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, <a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+         <a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a>) -&gt;
+flags:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; int) -&gt;
+refcnt:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; int) -&gt;
+use:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; int) -&gt;
+metric:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; int) -&gt;
+mask:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, <a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+      <a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a>) -&gt;
+mtu:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; int) -&gt;
+window:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; int) -&gt;
+irtt:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; int) -&gt; <a href="Procfs.Net.Route.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter : <code class="type">iface:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+destination:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, <a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+gateway:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, <a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+flags:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+refcnt:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+use:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+metric:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+mask:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, <a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+mtu:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+window:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+irtt:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> for_all : <code class="type">iface:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+destination:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, <a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+gateway:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, <a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+flags:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+refcnt:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+use:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+metric:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+mask:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, <a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+mtu:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+window:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+irtt:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> exists : <code class="type">iface:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+destination:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, <a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+gateway:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, <a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+flags:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+refcnt:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+use:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+metric:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+mask:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, <a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+mtu:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+window:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+irtt:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_list : <code class="type">iface:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, string) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+destination:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, <a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+gateway:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, <a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+flags:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+refcnt:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+use:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+metric:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+mask:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, <a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+mtu:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+window:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+irtt:((<a href="Procfs.Net.Route.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt; 'elem__ list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map_poly : <code class="type">([&lt; `Read | `Set_and_create ], <a href="Procfs.Net.Route.html#TYPEt">t</a>, 'x0) <a href="../fieldslib/Field.html#TYPEuser">Fieldslib.Field.user</a> -&gt; 'x0 list</code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Procfs.Net.Route.Fields.Direct.html">Direct</a> : <code class="code">sig</code> <a href="Procfs.Net.Route.Fields.Direct.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Procfs.Net.Route.Fields.Direct.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

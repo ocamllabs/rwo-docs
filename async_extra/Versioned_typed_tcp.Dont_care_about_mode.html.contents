@@ -1,0 +1,78 @@
+<pre><code><span id="TYPEt"><span class="keyword">type</span> t </span>= </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Dont_care_about_mode"><span class="constructor">Dont_care_about_mode</span></span></code></td>
+	   </tr></table>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> __t_of_sexp__ : <code class="type"><a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; <a href="Versioned_typed_tcp.Dont_care_about_mode.html#TYPEt">t</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp : <code class="type"><a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; <a href="Versioned_typed_tcp.Dont_care_about_mode.html#TYPEt">t</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type"><a href="Versioned_typed_tcp.Dont_care_about_mode.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t : <code class="type">'a -&gt; int</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_ : <code class="type"><a href="../core/Std.Bin_prot.Unsafe_common.html#TYPEsptr">Core.Std.Bin_prot.Unsafe_common.sptr</a> -&gt;
+<a href="../core/Std.Bin_prot.Unsafe_common.html#TYPEeptr">Core.Std.Bin_prot.Unsafe_common.eptr</a> -&gt;
+<a href="Versioned_typed_tcp.Dont_care_about_mode.html#TYPEt">t</a> -&gt; <a href="../core/Std.Bin_prot.Unsafe_common.html#TYPEsptr">Core.Std.Bin_prot.Unsafe_common.sptr</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t : <code class="type"><a href="../core/Std.Bin_prot.Common.html#TYPEbuf">Core.Std.Bin_prot.Common.buf</a> -&gt;
+pos:<a href="../core/Std.Bin_prot.Common.html#TYPEpos">Core.Std.Bin_prot.Common.pos</a> -&gt; <a href="Versioned_typed_tcp.Dont_care_about_mode.html#TYPEt">t</a> -&gt; <a href="../core/Std.Bin_prot.Common.html#TYPEpos">Core.Std.Bin_prot.Common.pos</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t : <code class="type"><a href="Versioned_typed_tcp.Dont_care_about_mode.html#TYPEt">t</a> <a href="../core/Std.Bin_prot.Type_class.html#TYPEwriter">Core.Std.Bin_prot.Type_class.writer</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t__ : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t_ : <code class="type"><a href="../core/Std.Bin_prot.Unsafe_common.html#TYPEsptr_ptr">Core.Std.Bin_prot.Unsafe_common.sptr_ptr</a> -&gt;
+<a href="../core/Std.Bin_prot.Unsafe_common.html#TYPEeptr">Core.Std.Bin_prot.Unsafe_common.eptr</a> -&gt; <a href="Versioned_typed_tcp.Dont_care_about_mode.html#TYPEt">t</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t : <code class="type"><a href="../core/Std.Bin_prot.Common.html#TYPEbuf">Core.Std.Bin_prot.Common.buf</a> -&gt; pos_ref:<a href="../core/Std.Bin_prot.Common.html#TYPEpos">Core.Std.Bin_prot.Common.pos</a> <a href="../stdlib/Pervasives.html#TYPEref">ref</a> -&gt; <a href="Versioned_typed_tcp.Dont_care_about_mode.html#TYPEt">t</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t : <code class="type"><a href="Versioned_typed_tcp.Dont_care_about_mode.html#TYPEt">t</a> <a href="../core/Std.Bin_prot.Type_class.html#TYPEreader">Core.Std.Bin_prot.Type_class.reader</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_t : <code class="type"><a href="Versioned_typed_tcp.Dont_care_about_mode.html#TYPEt">t</a> <a href="../core/Std.Bin_prot.Type_class.html#TYPEt">Core.Std.Bin_prot.Type_class.t</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> current : <code class="type">unit -&gt; <a href="Versioned_typed_tcp.Dont_care_about_mode.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> = : <code class="type"><a href="Versioned_typed_tcp.Dont_care_about_mode.html#TYPEt">t</a> -&gt; <a href="Versioned_typed_tcp.Dont_care_about_mode.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    

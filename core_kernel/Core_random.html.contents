@@ -1,0 +1,75 @@
+<br/><br/><h6 id="6_TITLE">Basic functions</h6><br/> <br/>
+	  
+<br/>Note that all of these &quot;basic&quot; functions mutate a global random state.<br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> init : <code class="type">int -&gt; unit</code></span></pre>
+      <div class="info">Initialize the generator, using the argument as a seed.  The same seed will always
+    yield the same sequence of numbers.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> full_init : <code class="type">int array -&gt; unit</code></span></pre>
+      <div class="info">Same as TODO reference : Random.init but takes more data as seed.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> self_init : <code class="type">unit -&gt; unit</code></span></pre>
+      <div class="info">Initialize the generator with a more-or-less random seed chosen in a system-dependent
+    way.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> bits : <code class="type">unit -&gt; int</code></span></pre>
+      <div class="info">Return 30 random bits in a nonnegative integer.<b>Before 3.12.0</b> used a different
+    algorithm (affects all the following functions)<br/></div>
+    
+ 
+      <pre><span><span class="keyword">val</span> int : <code class="type">int -&gt; int</code></span></pre>
+      <div class="info"><code class="code">Random.int bound</code> returns a random integer between 0 (inclusive) and <code class="code">bound</code>
+    (exclusive).  <code class="code">bound</code> must be greater than 0 and less than 2<sup class="superscript">30</sup>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> int32 : <code class="type"><a href="../stdlib/Int32.html#TYPEt">Int32.t</a> -&gt; <a href="../stdlib/Int32.html#TYPEt">Int32.t</a></code></span></pre>
+      <div class="info"><code class="code">Random.int32 bound</code> returns a random integer between 0 (inclusive) and <code class="code">bound</code>
+    (exclusive).  <code class="code">bound</code> must be greater than 0.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> nativeint : <code class="type"><a href="../stdlib/Nativeint.html#TYPEt">Nativeint.t</a> -&gt; <a href="../stdlib/Nativeint.html#TYPEt">Nativeint.t</a></code></span></pre>
+      <div class="info"><code class="code">Random.nativeint bound</code> returns a random integer between 0 (inclusive) and <code class="code">bound</code>
+    (exclusive).  <code class="code">bound</code> must be greater than 0.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> int64 : <code class="type"><a href="../stdlib/Int64.html#TYPEt">Int64.t</a> -&gt; <a href="../stdlib/Int64.html#TYPEt">Int64.t</a></code></span></pre>
+      <div class="info"><code class="code">Random.int64 bound</code> returns a random integer between 0 (inclusive) and <code class="code">bound</code>
+    (exclusive).  <code class="code">bound</code> must be greater than 0.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> float : <code class="type">float -&gt; float</code></span></pre>
+      <div class="info"><code class="code">Random.float bound</code> returns a random floating-point number between 0 (inclusive) and
+    <code class="code">bound</code> (exclusive).  If <code class="code">bound</code> is negative, the result is negative or zero.  If
+    <code class="code">bound</code> is 0, the result is 0.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> bool : <code class="type">unit -&gt; bool</code></span></pre>
+      <div class="info"><code class="code">Random.bool ()</code> returns <code class="code">true</code> or <code class="code">false</code> with probability 0.5 each.</div>
+    
+<br/><br/><h6 id="6_TITLE">Advanced functions</h6><br/> <br/>
+	  
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Core_random.State.html">State</a> : <code class="code">sig</code> <a href="Core_random.State.html">..</a> <code class="code">end</code></pre><div class="info">The functions from module <code class="code">State</code> manipulate the current state
+    of the random generator explicitely.
+    This allows using one or several deterministic PRNGs,
+    even in a multi-threaded program, without interference from
+    other parts of the program.</div>
+	<div class="content" style="display:none">
+	<div file="Core_random.State.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> get_state : <code class="type">unit -&gt; [ `Consider_using_Random_State_default ]</code></span></pre>
+      <div class="info">OCaml's <code class="code">Random.get_state</code> makes a copy of the default state, which is almost
+    certainly not what you want.  <code class="code">State.default</code>, which is the actual default state, is
+    probably what you want.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> set_state : <code class="type"><a href="Core_random.State.html#TYPEt">State.t</a> -&gt; unit</code></span></pre>
+      <div class="info">Set the state of the generator used by the basic functions.</div>
+    

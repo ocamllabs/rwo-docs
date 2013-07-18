@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<title>Iobuf</title>
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
+<script type="text/javascript" src="doc_loader.js"> </script>
+</head>
+<body>
+
+<h1>Module Iobuf</h1>
+<pre><span class="keyword">module</span> Iobuf</pre><div class="info">A non-moving (in the gc sense) contiguous range of bytes, useful for I/O operations.<br/>    An iobuf consists of:<br/>    - bigstring<ul><li>limits -- a subrange of the bigstring</li><li>window -- a subrange of the limits</li></ul>    All iobuf operations are restricted to operate within the limits.  Initially, the
+    window of an iobuf is identical to the limits.  A phantom type, &quot;seek&quot; permission,
+    controls whether or not code is allowed to change the limits and window.  With seek
+    permission, the limits can be <code class="code">narrow</code>ed, but can never be widened, and the window can
+    be set to an arbitrary subrange of the limits.<br/>    A phantom type controls whether code can read and write bytes in the bigstring (within
+    the limits) or can only read them.<br/>    To present a restricted view of an iobuf to a client, one can create a sub-iobuf or
+    add a type constraint.</div>
+<hr/>
+<div file="Iobuf.html.contents" class="content_to_load"> </div>
+</body>
+</html>

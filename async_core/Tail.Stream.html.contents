@@ -1,0 +1,27 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t </span></pre>
+      
+    
+<pre><span id="TYPEnext_"><span class="keyword">type</span> <code class="type">('a, 'execution_context) </code>next_ </span>= <code class="type">('a, 'execution_context) <a href="Raw_stream.html#TYPEnext">Raw_stream.next</a></code> </pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTnext_.Nil"><span class="constructor">Nil</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTnext_.Cons"><span class="constructor">Cons</span></span> <span class="keyword">of</span> <code class="type">'a * ('a, 'execution_context) <a href="Raw_stream.html#TYPEt">Raw_stream.t</a></code></code></td>
+	   </tr></table>
+      
+    
+<pre><span id="TYPEnext"><span class="keyword">type</span> <code class="type">'a </code>next </span>= <code class="type">('a, <a href="Execution_context.html#TYPEt">Execution_context.t</a>) <a href="Tail.Stream.html#TYPEnext_">next_</a></code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> next : <code class="type">'a <a href="Tail.Stream.html#TYPEt">t</a> -&gt; 'a <a href="Tail.Stream.html#TYPEnext">next</a> <a href="Deferred.html#TYPEt">Deferred.t</a></code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Import.Raw.html">Import.Raw</a></code> with type execution_context = <a href="Execution_context.html#TYPEt">Execution_context.t</a> with type raw = ('a, 'b) <a href="Raw_stream.html#TYPEt">Raw_stream.t</a> with type t = 'a <a href="Tail.Stream.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="Import.Raw.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type">('a -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a>) -&gt; 'a <a href="Tail.Stream.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    

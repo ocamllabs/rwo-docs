@@ -1,0 +1,97 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span>= <code class="type"><a href="../stdlib/Pervasives.html#TYPEin_channel">in_channel</a></code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stdin : <code class="type"><a href="In_channel.html#TYPEt">t</a></code></span></pre>
+      
+    
+<br/>Channels are opened in binary mode iff <code class="code">binary</code> is true.  This only has an effect on
+    Windows.<br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">?binary:bool -&gt; string -&gt; <a href="In_channel.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> with_file : <code class="type">?binary:bool -&gt; string -&gt; f:(<a href="In_channel.html#TYPEt">t</a> -&gt; 'a) -&gt; 'a</code></span></pre>
+      <div class="info"><code class="code">with_file ~f fname</code> executes <code class="code">~f</code> on the open channel from
+    <code class="code">fname</code>, and closes it afterwards.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> close : <code class="type"><a href="In_channel.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> input : <code class="type"><a href="In_channel.html#TYPEt">t</a> -&gt; buf:string -&gt; pos:int -&gt; len:int -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> really_input : <code class="type"><a href="In_channel.html#TYPEt">t</a> -&gt; buf:string -&gt; pos:int -&gt; len:int -&gt; unit option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> input_byte : <code class="type"><a href="In_channel.html#TYPEt">t</a> -&gt; int option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> input_char : <code class="type"><a href="In_channel.html#TYPEt">t</a> -&gt; char option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> input_binary_int : <code class="type"><a href="In_channel.html#TYPEt">t</a> -&gt; int option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_input_value : <code class="type"><a href="In_channel.html#TYPEt">t</a> -&gt; 'a option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> input_all : <code class="type"><a href="In_channel.html#TYPEt">t</a> -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> input_line : <code class="type">?fix_win_eol:bool -&gt; <a href="In_channel.html#TYPEt">t</a> -&gt; string option</code></span></pre>
+      <div class="info"><code class="code">input_line ?fix_win_eol t</code> reads a line from <code class="code">t</code> and returns it, without
+    the newline (&quot;\n&quot;) character at the end, and, if <code class="code">fix_win_eol</code> the trailing
+    &quot;\r\n&quot; is dropped.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> fold_lines : <code class="type">?fix_win_eol:bool -&gt; <a href="In_channel.html#TYPEt">t</a> -&gt; init:'a -&gt; f:('a -&gt; string -&gt; 'a) -&gt; 'a</code></span></pre>
+      <div class="info"><code class="code">fold_lines ?fix_win_eol t ~init ~f</code> folds over the lines read from <code class="code">t</code>
+    using <code class="code">input_line</code>.  Lines are provided to <code class="code">f</code> in the order they are
+    found in the file.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> input_lines : <code class="type">?fix_win_eol:bool -&gt; <a href="In_channel.html#TYPEt">t</a> -&gt; string list</code></span></pre>
+      <div class="info">Completely reads an input channel and returns the results as a list of
+    strings. Each line in one string.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> iter_lines : <code class="type">?fix_win_eol:bool -&gt; <a href="In_channel.html#TYPEt">t</a> -&gt; f:(string -&gt; unit) -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">iter_lines ?fix_win_eol t ~f</code> applies <code class="code">f</code> to each line read from <code class="code">t</code> using
+    <code class="code">input_line</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> seek : <code class="type"><a href="In_channel.html#TYPEt">t</a> -&gt; int64 -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pos : <code class="type"><a href="In_channel.html#TYPEt">t</a> -&gt; int64</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> length : <code class="type"><a href="In_channel.html#TYPEt">t</a> -&gt; int64</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set_binary_mode : <code class="type"><a href="In_channel.html#TYPEt">t</a> -&gt; bool -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> read_lines : <code class="type">string -&gt; string list</code></span></pre>
+      <div class="info"><code class="code">read_lines filename</code> Opens filename, reads all lines, and closes the file.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> read_all : <code class="type">string -&gt; string</code></span></pre>
+      <div class="info"><code class="code">read_all filename</code> Opens filename, reads all input, and closes the file.</div>
+    

@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<title>Exception_check</title>
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
+<script type="text/javascript" src="doc_loader.js"> </script>
+</head>
+<body>
+
+<h1>Module Exception_check</h1>
+<pre><span class="keyword">module</span> Exception_check</pre><div class="info">Code to test the effect of exceptions happening in strategic
+    places in daemons.<br/>    In order to use this module one defines a list
+    of (mnemonic, exception) pairs<br/>    E.G.<br/>    <code class="code">(&quot;M.f: invalid arg&quot;, Invalid_argument &quot;foo&quot;);
+     (&quot;Z.f: sys error&quot;, Sys_error &quot;bar&quot;);
+     (&quot;R.z: failure&quot;, Failure &quot;baz&quot;)</code><br/>    And one passes this list to create. Then one places calls to
+    Exception_check.maybe_raise &lt;name&gt;, in important parts of one's
+    code. When the code is run, it will listen on <code class="code">listen_port</code>, and
+    one can connect with netcat and type a name, which will
+    cause that exception to be raised on the next call to
+    <code class="code">Exception_check.maybe_raise</code>.</div>
+<hr/>
+<div file="Exception_check.html.contents" class="content_to_load"> </div>
+</body>
+</html>

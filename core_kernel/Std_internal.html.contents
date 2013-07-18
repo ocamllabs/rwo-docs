@@ -1,0 +1,558 @@
+ 
+      <pre><span><span class="keyword">val</span> __pa_ounit_275876e34cf609db118f3d84b799a790 : <code class="type">string</code></span></pre>
+      
+    
+
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Std_internal.Big_int.html">Big_int</a> : <code class="code"><a href="../sexplib/Std.Big_int.html">Sexplib.Std.Big_int</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Std_internal.Big_int.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Std_internal.Nat.html">Nat</a> : <code class="code"><a href="../sexplib/Std.Nat.html">Sexplib.Std.Nat</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Std_internal.Nat.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Std_internal.Ratio.html">Ratio</a> : <code class="code"><a href="../sexplib/Std.Ratio.html">Sexplib.Std.Ratio</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Std_internal.Ratio.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Std_internal.Num.html">Num</a> : <code class="code"><a href="../sexplib/Std.Num.html">Sexplib.Std.Num</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Std_internal.Num.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Std_internal.Set.html">Set</a> : <code class="code"><a href="Core_set.html">Core_set</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Std_internal.Set.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Std_internal.Map.html">Map</a> : <code class="code"><a href="Core_map.html">Core_map</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Std_internal.Map.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Std_internal.Array.html">Array</a> : <code class="code"><a href="Core_array.html">Core_array</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Std_internal.Array.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Std_internal.Array.html#TYPEInfix">Array.Infix</a></code></pre>
+	<div class="content">
+	<div file="Std_internal.Array.html#TYPEInfix.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Std_internal.Hashtbl.html">Hashtbl</a> : <code class="code"><a href="Core_hashtbl.html">Core_hashtbl</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Std_internal.Hashtbl.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Std_internal.String.html">String</a> : <code class="code"><a href="Core_string.html">Core_string</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Std_internal.String.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Std_internal.List.html">List</a> : <code class="code">sig</code> <a href="Std_internal.List.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Std_internal.List.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Std_internal.List.html#TYPEInfix">List.Infix</a></code></pre>
+	<div class="content">
+	<div file="Std_internal.List.html#TYPEInfix.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Std_internal.Queue.html">Queue</a> : <code class="code"><a href="Core_queue.html">Core_queue</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Std_internal.Queue.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Std_internal.Random.html">Random</a> : <code class="code"><a href="Core_random.html">Core_random</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Std_internal.Random.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Std_internal.Char.html">Char</a> : <code class="code"><a href="Core_char.html">Core_char</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Std_internal.Char.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Std_internal.Ordering.html">Ordering</a> : <code class="code"><a href="Ordering.html">Ordering</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Std_internal.Ordering.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Std_internal.Bool.html">Bool</a> : <code class="code"><a href="Bool.html">Bool</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Std_internal.Bool.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Std_internal.Int.html">Int</a> : <code class="code"><a href="Core_int.html">Core_int</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Std_internal.Int.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Std_internal.Int.html#TYPEInfix">Int.Infix</a></code></pre>
+	<div class="content">
+	<div file="Std_internal.Int.html#TYPEInfix.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Std_internal.Int32.html">Int32</a> : <code class="code"><a href="Core_int32.html">Core_int32</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Std_internal.Int32.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Std_internal.Int64.html">Int64</a> : <code class="code"><a href="Core_int64.html">Core_int64</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Std_internal.Int64.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Std_internal.Nativeint.html">Nativeint</a> : <code class="code"><a href="Core_nativeint.html">Core_nativeint</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Std_internal.Nativeint.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Std_internal.Lazy.html">Lazy</a> : <code class="code"><a href="Core_lazy.html">Core_lazy</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Std_internal.Lazy.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Std_internal.Field.html">Field</a> : <code class="code"><a href="Core_field.html">Core_field</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Std_internal.Field.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Std_internal.Ref.html">Ref</a> : <code class="code"><a href="Ref.html">Ref</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Std_internal.Ref.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Common.html">Common</a></code></pre>
+	<div class="content">
+	<div file="Common.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Float.html">Float</a></code></pre>
+	<div class="content">
+	<div file="Float.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Std_internal.String.html#TYPEInfix">String.Infix</a></code></pre>
+	<div class="content">
+	<div file="Std_internal.String.html#TYPEInfix.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> round : <code class="type">?dir:[ `Down | `Nearest | `Up | `Zero ] -&gt; <a href="Float.html#TYPEt">Float.t</a> -&gt; <a href="Float.html#TYPEt">Float.t</a></code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Interfaces.html">Interfaces</a></code></pre>
+	<div class="content">
+	<div file="Interfaces.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Std_internal.Sexp.html">Sexp</a> : <code class="code"><a href="Core_sexp.html">Core_sexp</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Std_internal.Sexp.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../sexplib/Conv.html">Sexplib.Conv</a></code></pre>
+	<div class="content">
+	<div file="../sexplib/Conv.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> printf : <code class="type">('a, <a href="../stdlib/Pervasives.html#TYPEout_channel">out_channel</a>, unit) <a href="../stdlib/Pervasives.html#TYPEformat">format</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bprintf : <code class="type"><a href="../stdlib/Buffer.html#TYPEt">Buffer.t</a> -&gt; ('a, <a href="../stdlib/Buffer.html#TYPEt">Buffer.t</a>, unit) <a href="../stdlib/Pervasives.html#TYPEformat">format</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> eprintf : <code class="type">('a, <a href="../stdlib/Pervasives.html#TYPEout_channel">out_channel</a>, unit) <a href="../stdlib/Pervasives.html#TYPEformat">format</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fprintf : <code class="type"><a href="../stdlib/Pervasives.html#TYPEout_channel">out_channel</a> -&gt; ('a, <a href="../stdlib/Pervasives.html#TYPEout_channel">out_channel</a>, unit) <a href="../stdlib/Pervasives.html#TYPEformat">format</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sprintf : <code class="type">('a, unit, string) <a href="../stdlib/Pervasives.html#TYPEformat">format</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ksprintf : <code class="type">(string -&gt; 'a) -&gt; ('b, unit, string, 'a) <a href="../stdlib/Pervasives.html#TYPEformat4">format4</a> -&gt; 'b</code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Result.Export.html">Result.Export</a></code></pre>
+	<div class="content">
+	<div file="Result.Export.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code">sig</code> <a href="Std_internal.html">..</a> <code class="code">end</code></pre>
+	<div class="content">
+	<div file="FIXME.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_exn : <code class="type"><a href="Exn.html#TYPEt">Exn.t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+<pre><span id="TYPEsexp_array"><span class="keyword">type</span> <code class="type">'a </code>sexp_array </span>= <code class="type">'a array</code> </pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> compare_sexp_array : <code class="type">'a. ('a -&gt; 'a -&gt; int) -&gt; 'a <a href="Std_internal.html#TYPEsexp_array">sexp_array</a> -&gt; 'a <a href="Std_internal.html#TYPEsexp_array">sexp_array</a> -&gt; int</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_size_sexp_array : <code class="type">'a <a href="../bin_prot/Size.html#TYPEsizer">Bin_prot.Size.sizer</a> -&gt; 'a array -&gt; int</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_sexp_array_ : <code class="type">'a <a href="../bin_prot/Unsafe_write_c.html#TYPEwriter">Bin_prot.Unsafe_write_c.writer</a> -&gt;
+<a href="../bin_prot/Unsafe_common.html#TYPEsptr">Bin_prot.Unsafe_common.sptr</a> -&gt;
+<a href="../bin_prot/Unsafe_common.html#TYPEeptr">Bin_prot.Unsafe_common.eptr</a> -&gt; 'a array -&gt; <a href="../bin_prot/Unsafe_common.html#TYPEsptr">Bin_prot.Unsafe_common.sptr</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_sexp_array : <code class="type">'a <a href="../bin_prot/Unsafe_write_c.html#TYPEwriter">Bin_prot.Unsafe_write_c.writer</a> -&gt;
+<a href="../bin_prot/Common.html#TYPEbuf">Bin_prot.Common.buf</a> -&gt;
+pos:<a href="../bin_prot/Common.html#TYPEpos">Bin_prot.Common.pos</a> -&gt; 'a array -&gt; <a href="../bin_prot/Common.html#TYPEpos">Bin_prot.Common.pos</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_sexp_array : <code class="type">'a <a href="../bin_prot/Type_class.html#TYPEwriter">Bin_prot.Type_class.writer</a> -&gt; 'a array <a href="../bin_prot/Type_class.html#TYPEwriter">Bin_prot.Type_class.writer</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_sexp_array__ : <code class="type">'a <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+<a href="../bin_prot/Unsafe_common.html#TYPEsptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt;
+<a href="../bin_prot/Unsafe_common.html#TYPEeptr">Bin_prot.Unsafe_common.eptr</a> -&gt; int -&gt; 'a array</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_sexp_array_ : <code class="type">'a <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+<a href="../bin_prot/Unsafe_common.html#TYPEsptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt; <a href="../bin_prot/Unsafe_common.html#TYPEeptr">Bin_prot.Unsafe_common.eptr</a> -&gt; 'a array</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_sexp_array : <code class="type">'a <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+<a href="../bin_prot/Common.html#TYPEbuf">Bin_prot.Common.buf</a> -&gt; pos_ref:<a href="../bin_prot/Common.html#TYPEpos">Bin_prot.Common.pos</a> <a href="../stdlib/Pervasives.html#TYPEref">ref</a> -&gt; 'a <a href="Std_internal.html#TYPEsexp_array">sexp_array</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_sexp_array : <code class="type">'a <a href="../bin_prot/Type_class.html#TYPEreader">Bin_prot.Type_class.reader</a> -&gt; 'a <a href="Std_internal.html#TYPEsexp_array">sexp_array</a> <a href="../bin_prot/Type_class.html#TYPEreader">Bin_prot.Type_class.reader</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_sexp_array : <code class="type">'a <a href="../bin_prot/Type_class.html#TYPEt">Bin_prot.Type_class.t</a> -&gt; 'a <a href="Std_internal.html#TYPEsexp_array">sexp_array</a> <a href="../bin_prot/Type_class.html#TYPEt">Bin_prot.Type_class.t</a></code></span></pre>
+      
+    
+
+<pre><span id="TYPEsexp_bool"><span class="keyword">type</span> sexp_bool </span>= <code class="type">bool</code> </pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> compare_sexp_bool : <code class="type"><a href="Std_internal.html#TYPEsexp_bool">sexp_bool</a> -&gt; <a href="Std_internal.html#TYPEsexp_bool">sexp_bool</a> -&gt; int</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_size_sexp_bool : <code class="type">bool -&gt; int</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_sexp_bool_ : <code class="type"><a href="../bin_prot/Unsafe_common.html#TYPEsptr">Bin_prot.Unsafe_common.sptr</a> -&gt;
+<a href="../bin_prot/Unsafe_common.html#TYPEeptr">Bin_prot.Unsafe_common.eptr</a> -&gt; bool -&gt; <a href="../bin_prot/Unsafe_common.html#TYPEsptr">Bin_prot.Unsafe_common.sptr</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_sexp_bool : <code class="type"><a href="../bin_prot/Common.html#TYPEbuf">Bin_prot.Common.buf</a> -&gt; pos:<a href="../bin_prot/Common.html#TYPEpos">Bin_prot.Common.pos</a> -&gt; bool -&gt; <a href="../bin_prot/Common.html#TYPEpos">Bin_prot.Common.pos</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_sexp_bool : <code class="type">bool <a href="../bin_prot/Type_class.html#TYPEwriter">Bin_prot.Type_class.writer</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_sexp_bool__ : <code class="type"><a href="../bin_prot/Unsafe_common.html#TYPEsptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt; <a href="../bin_prot/Unsafe_common.html#TYPEeptr">Bin_prot.Unsafe_common.eptr</a> -&gt; int -&gt; bool</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_sexp_bool_ : <code class="type"><a href="../bin_prot/Unsafe_common.html#TYPEsptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt; <a href="../bin_prot/Unsafe_common.html#TYPEeptr">Bin_prot.Unsafe_common.eptr</a> -&gt; bool</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_sexp_bool : <code class="type"><a href="../bin_prot/Common.html#TYPEbuf">Bin_prot.Common.buf</a> -&gt; pos_ref:<a href="../bin_prot/Common.html#TYPEpos">Bin_prot.Common.pos</a> <a href="../stdlib/Pervasives.html#TYPEref">ref</a> -&gt; <a href="Std_internal.html#TYPEsexp_bool">sexp_bool</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_sexp_bool : <code class="type"><a href="Std_internal.html#TYPEsexp_bool">sexp_bool</a> <a href="../bin_prot/Type_class.html#TYPEreader">Bin_prot.Type_class.reader</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_sexp_bool : <code class="type"><a href="Std_internal.html#TYPEsexp_bool">sexp_bool</a> <a href="../bin_prot/Type_class.html#TYPEt">Bin_prot.Type_class.t</a></code></span></pre>
+      
+    
+
+<pre><span id="TYPEsexp_list"><span class="keyword">type</span> <code class="type">'a </code>sexp_list </span>= <code class="type">'a list</code> </pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> compare_sexp_list : <code class="type">'a. ('a -&gt; 'a -&gt; int) -&gt; 'a <a href="Std_internal.html#TYPEsexp_list">sexp_list</a> -&gt; 'a <a href="Std_internal.html#TYPEsexp_list">sexp_list</a> -&gt; int</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_size_sexp_list : <code class="type">'a <a href="../bin_prot/Size.html#TYPEsizer">Bin_prot.Size.sizer</a> -&gt; 'a list -&gt; int</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_sexp_list_ : <code class="type">'a <a href="../bin_prot/Unsafe_write_c.html#TYPEwriter">Bin_prot.Unsafe_write_c.writer</a> -&gt;
+<a href="../bin_prot/Unsafe_common.html#TYPEsptr">Bin_prot.Unsafe_common.sptr</a> -&gt;
+<a href="../bin_prot/Unsafe_common.html#TYPEeptr">Bin_prot.Unsafe_common.eptr</a> -&gt; 'a list -&gt; <a href="../bin_prot/Unsafe_common.html#TYPEsptr">Bin_prot.Unsafe_common.sptr</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_sexp_list : <code class="type">'a <a href="../bin_prot/Unsafe_write_c.html#TYPEwriter">Bin_prot.Unsafe_write_c.writer</a> -&gt;
+<a href="../bin_prot/Common.html#TYPEbuf">Bin_prot.Common.buf</a> -&gt;
+pos:<a href="../bin_prot/Common.html#TYPEpos">Bin_prot.Common.pos</a> -&gt; 'a list -&gt; <a href="../bin_prot/Common.html#TYPEpos">Bin_prot.Common.pos</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_sexp_list : <code class="type">'a <a href="../bin_prot/Type_class.html#TYPEwriter">Bin_prot.Type_class.writer</a> -&gt; 'a list <a href="../bin_prot/Type_class.html#TYPEwriter">Bin_prot.Type_class.writer</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_sexp_list__ : <code class="type">'a <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+<a href="../bin_prot/Unsafe_common.html#TYPEsptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt;
+<a href="../bin_prot/Unsafe_common.html#TYPEeptr">Bin_prot.Unsafe_common.eptr</a> -&gt; int -&gt; 'a list</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_sexp_list_ : <code class="type">'a <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+<a href="../bin_prot/Unsafe_common.html#TYPEsptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt; <a href="../bin_prot/Unsafe_common.html#TYPEeptr">Bin_prot.Unsafe_common.eptr</a> -&gt; 'a list</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_sexp_list : <code class="type">'a <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+<a href="../bin_prot/Common.html#TYPEbuf">Bin_prot.Common.buf</a> -&gt; pos_ref:<a href="../bin_prot/Common.html#TYPEpos">Bin_prot.Common.pos</a> <a href="../stdlib/Pervasives.html#TYPEref">ref</a> -&gt; 'a <a href="Std_internal.html#TYPEsexp_list">sexp_list</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_sexp_list : <code class="type">'a <a href="../bin_prot/Type_class.html#TYPEreader">Bin_prot.Type_class.reader</a> -&gt; 'a <a href="Std_internal.html#TYPEsexp_list">sexp_list</a> <a href="../bin_prot/Type_class.html#TYPEreader">Bin_prot.Type_class.reader</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_sexp_list : <code class="type">'a <a href="../bin_prot/Type_class.html#TYPEt">Bin_prot.Type_class.t</a> -&gt; 'a <a href="Std_internal.html#TYPEsexp_list">sexp_list</a> <a href="../bin_prot/Type_class.html#TYPEt">Bin_prot.Type_class.t</a></code></span></pre>
+      
+    
+
+<pre><span id="TYPEsexp_option"><span class="keyword">type</span> <code class="type">'a </code>sexp_option </span>= <code class="type">'a option</code> </pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> compare_sexp_option : <code class="type">'a. ('a -&gt; 'a -&gt; int) -&gt; 'a <a href="Std_internal.html#TYPEsexp_option">sexp_option</a> -&gt; 'a <a href="Std_internal.html#TYPEsexp_option">sexp_option</a> -&gt; int</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_size_sexp_option : <code class="type">'a <a href="../bin_prot/Size.html#TYPEsizer">Bin_prot.Size.sizer</a> -&gt; 'a option -&gt; int</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_sexp_option_ : <code class="type">'a <a href="../bin_prot/Unsafe_write_c.html#TYPEwriter">Bin_prot.Unsafe_write_c.writer</a> -&gt;
+<a href="../bin_prot/Unsafe_common.html#TYPEsptr">Bin_prot.Unsafe_common.sptr</a> -&gt;
+<a href="../bin_prot/Unsafe_common.html#TYPEeptr">Bin_prot.Unsafe_common.eptr</a> -&gt; 'a option -&gt; <a href="../bin_prot/Unsafe_common.html#TYPEsptr">Bin_prot.Unsafe_common.sptr</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_sexp_option : <code class="type">'a <a href="../bin_prot/Unsafe_write_c.html#TYPEwriter">Bin_prot.Unsafe_write_c.writer</a> -&gt;
+<a href="../bin_prot/Common.html#TYPEbuf">Bin_prot.Common.buf</a> -&gt;
+pos:<a href="../bin_prot/Common.html#TYPEpos">Bin_prot.Common.pos</a> -&gt; 'a option -&gt; <a href="../bin_prot/Common.html#TYPEpos">Bin_prot.Common.pos</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_sexp_option : <code class="type">'a <a href="../bin_prot/Type_class.html#TYPEwriter">Bin_prot.Type_class.writer</a> -&gt; 'a option <a href="../bin_prot/Type_class.html#TYPEwriter">Bin_prot.Type_class.writer</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_sexp_option__ : <code class="type">'a <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+<a href="../bin_prot/Unsafe_common.html#TYPEsptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt;
+<a href="../bin_prot/Unsafe_common.html#TYPEeptr">Bin_prot.Unsafe_common.eptr</a> -&gt; int -&gt; 'a option</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_sexp_option_ : <code class="type">'a <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+<a href="../bin_prot/Unsafe_common.html#TYPEsptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt; <a href="../bin_prot/Unsafe_common.html#TYPEeptr">Bin_prot.Unsafe_common.eptr</a> -&gt; 'a option</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_sexp_option : <code class="type">'a <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+<a href="../bin_prot/Common.html#TYPEbuf">Bin_prot.Common.buf</a> -&gt; pos_ref:<a href="../bin_prot/Common.html#TYPEpos">Bin_prot.Common.pos</a> <a href="../stdlib/Pervasives.html#TYPEref">ref</a> -&gt; 'a <a href="Std_internal.html#TYPEsexp_option">sexp_option</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_sexp_option : <code class="type">'a <a href="../bin_prot/Type_class.html#TYPEreader">Bin_prot.Type_class.reader</a> -&gt; 'a <a href="Std_internal.html#TYPEsexp_option">sexp_option</a> <a href="../bin_prot/Type_class.html#TYPEreader">Bin_prot.Type_class.reader</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_sexp_option : <code class="type">'a <a href="../bin_prot/Type_class.html#TYPEt">Bin_prot.Type_class.t</a> -&gt; 'a <a href="Std_internal.html#TYPEsexp_option">sexp_option</a> <a href="../bin_prot/Type_class.html#TYPEt">Bin_prot.Type_class.t</a></code></span></pre>
+      
+    
+
+<pre><span id="TYPEsexp_opaque"><span class="keyword">type</span> <code class="type">'a </code>sexp_opaque </span>= <code class="type">'a</code> </pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> compare_sexp_opaque : <code class="type">'a. ('a -&gt; 'a -&gt; int) -&gt; 'a <a href="Std_internal.html#TYPEsexp_opaque">sexp_opaque</a> -&gt; 'a <a href="Std_internal.html#TYPEsexp_opaque">sexp_opaque</a> -&gt; int</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_size_sexp_opaque : <code class="type">('a -&gt; 'b) -&gt; 'a -&gt; 'b</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_sexp_opaque_ : <code class="type">('a -&gt; 'b -&gt; 'c -&gt; 'd) -&gt; 'a -&gt; 'b -&gt; 'c -&gt; 'd</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_sexp_opaque : <code class="type">(<a href="../bin_prot/Unsafe_common.html#TYPEsptr">Bin_prot.Unsafe_common.sptr</a> -&gt;
+ <a href="../bin_prot/Unsafe_common.html#TYPEeptr">Bin_prot.Unsafe_common.eptr</a> -&gt; 'a -&gt; <a href="../bin_prot/Unsafe_common.html#TYPEsptr">Bin_prot.Unsafe_common.sptr</a>) -&gt;
+<a href="../bin_prot/Common.html#TYPEbuf">Bin_prot.Common.buf</a> -&gt; pos:<a href="../bin_prot/Common.html#TYPEpos">Bin_prot.Common.pos</a> -&gt; 'a -&gt; <a href="../bin_prot/Common.html#TYPEpos">Bin_prot.Common.pos</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_sexp_opaque : <code class="type">'a <a href="../bin_prot/Type_class.html#TYPEwriter">Bin_prot.Type_class.writer</a> -&gt; 'a <a href="../bin_prot/Type_class.html#TYPEwriter">Bin_prot.Type_class.writer</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_sexp_opaque__ : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd -&gt; 'e</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_sexp_opaque_ : <code class="type">('a -&gt; 'b -&gt; 'c) -&gt; 'a -&gt; 'b -&gt; 'c</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_sexp_opaque : <code class="type">(<a href="../bin_prot/Unsafe_common.html#TYPEsptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt;
+ <a href="../bin_prot/Unsafe_common.html#TYPEeptr">Bin_prot.Unsafe_common.eptr</a> -&gt; 'a <a href="Std_internal.html#TYPEsexp_opaque">sexp_opaque</a>) -&gt;
+<a href="../bin_prot/Common.html#TYPEbuf">Bin_prot.Common.buf</a> -&gt; pos_ref:<a href="../bin_prot/Common.html#TYPEpos">Bin_prot.Common.pos</a> <a href="../stdlib/Pervasives.html#TYPEref">ref</a> -&gt; 'a <a href="Std_internal.html#TYPEsexp_opaque">sexp_opaque</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_sexp_opaque : <code class="type">'a <a href="Std_internal.html#TYPEsexp_opaque">sexp_opaque</a> <a href="../bin_prot/Type_class.html#TYPEreader">Bin_prot.Type_class.reader</a> -&gt;
+'a <a href="Std_internal.html#TYPEsexp_opaque">sexp_opaque</a> <a href="../bin_prot/Type_class.html#TYPEreader">Bin_prot.Type_class.reader</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_sexp_opaque : <code class="type">'a <a href="Std_internal.html#TYPEsexp_opaque">sexp_opaque</a> <a href="../bin_prot/Type_class.html#TYPEt">Bin_prot.Type_class.t</a> -&gt; 'a <a href="Std_internal.html#TYPEsexp_opaque">sexp_opaque</a> <a href="../bin_prot/Type_class.html#TYPEt">Bin_prot.Type_class.t</a></code></span></pre>
+      
+    
+
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Std_internal.Ordering.html#TYPEExport">Ordering.Export</a></code></pre>
+	<div class="content">
+	<div file="Std_internal.Ordering.html#TYPEExport.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<br/>&quot;structure item: Mismatch&quot;<br/>
+	  
+<br/><code class="code">stable_dedup</code> Same as <code class="code">dedup</code> but maintains the order of the list and doesn't allow
+      compare function to be specified (otherwise, the implementation in terms of Set.t
+      would hide a heavyweight functor instantiation at each call).<br/>
+	  

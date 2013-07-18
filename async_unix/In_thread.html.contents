@@ -1,0 +1,52 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="In_thread.Priority.html">Priority</a> : module type of <a href="../core/Std.Linux_ext.Priority.html">Core.Std.Linux_ext.Priority</a> with type t = <a href="../core/Std.Linux_ext.Priority.html#TYPEt">Core.Std.Linux_ext.Priority.t</a></pre>
+	<div class="content" style="display:none">
+	<div file="In_thread.Priority.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="In_thread.Helper_thread.html">Helper_thread</a> : <code class="code">sig</code> <a href="In_thread.Helper_thread.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="In_thread.Helper_thread.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> pipe_of_squeue : <code class="type">'a <a href="../core/Std.Squeue.html#TYPEt">Core.Std.Squeue.t</a> -&gt; 'a <a href="../async_core/Pipe.Reader.html#TYPEt">Async_core.Pipe.Reader.t</a></code></span></pre>
+      <div class="info"><code class="code">pipe_of_squeue squeue</code> returns a pipe <code class="code">p</code> and consumes the contents <code class="code">squeue</code>, placing
+    them in <code class="code">p</code>.  It repeatedly grabs everything from <code class="code">squeue</code>, places it in <code class="code">p</code>, and
+    then waits for pushback on <code class="code">p</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> run : <code class="type">?priority:<a href="In_thread.Priority.html#TYPEt">Priority.t</a> -&gt;
+?thread:<a href="In_thread.Helper_thread.html#TYPEt">Helper_thread.t</a> -&gt;
+?name:string -&gt; (unit -&gt; 'a) -&gt; 'a <a href="../async_core/Deferred.html#TYPEt">Async_core.Deferred.t</a></code></span></pre>
+      <div class="info"><code class="code">run ?priority ?thread ?name f</code> runs <code class="code">f ()</code> in another thread and returns the result
+    as a Deferred in the Async world.  If <code class="code">f ()</code> raises an exception (asynchronously,
+    since it is another thread) then that exception will be raised to the monitor that
+    called <code class="code">run</code>.<br/>    Async code should not be used from within <code class="code">f</code>.<br/>    If <code class="code">thread</code> is not supplied, then any thread from the thread pool could be used.  If
+    you need to run routines in a specific thread (as is required by some libraries like
+    Sqlite), you should create a helper thread and supply it to <code class="code">run</code>.<br/>    If <code class="code">priority</code> is supplied, the priority of the thread in the linux scheduler will be
+    set to <code class="code">priority</code> for the duration of <code class="code">f ()</code>, provided the thread is allowed to do so,
+    see `man setpriority`.<br/>    If you call <code class="code">run</code> several times with the same helper thread, the <code class="code">f ()</code> calls will run
+    in sequence, in the order in which they are supplied to <code class="code">run</code>.  Each <code class="code">f ()</code> will
+    complete (return or raise) before another <code class="code">f ()</code> starts.<br/>    For example, if you do:<br/>    <pre class="codepre"><code class="code">
+      let () =
+        run ~thread f1;
+        run ~thread f2;
+        run ~thread f3;
+    </code></pre><br/>    Then the thread will run <code class="code">f1 ()</code> to completion, then <code class="code">f2 ()</code> to completion, then
+    <code class="code">f3 ()</code> to completion.<br/>    If <code class="code">name</code> is supplied, the name of the thread will be set to it for the duration of
+    the execution of <code class="code">f ()</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> syscall : <code class="type">name:string -&gt;
+(unit -&gt; 'a) -&gt; ('a, exn) <a href="../core/Std.Result.html#TYPEt">Core.Std.Result.t</a> <a href="../async_core/Deferred.html#TYPEt">Async_core.Deferred.t</a></code></span></pre>
+      <div class="info"><code class="code">syscall f</code> runs f, which should be a single system call, and returns the result,
+    handling the restarting of interrupted system calls.  To avoid race conditions, the
+    <code class="code">f</code> supplied to <code class="code">syscall</code> should just make a system call.  That way, everything else
+    is done holding the Async lock.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> syscall_exn : <code class="type">name:string -&gt; (unit -&gt; 'a) -&gt; 'a <a href="../async_core/Deferred.html#TYPEt">Async_core.Deferred.t</a></code></span></pre>
+      
+    

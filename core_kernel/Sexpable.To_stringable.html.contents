@@ -1,0 +1,8 @@
+ 
+      <pre><span><span class="keyword">val</span> of_string : <code class="type">string -&gt; M.t</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_string : <code class="type">M.t -&gt; string</code></span></pre>
+      
+    

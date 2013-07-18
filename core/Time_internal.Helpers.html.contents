@@ -1,0 +1,20 @@
+ 
+      <pre><span><span class="keyword">val</span> blit_string_of_int_4_digits : <code class="type"><a href="../core_kernel/Std.String.html#TYPEt">Core_kernel.Std.String.t</a> -&gt; pos:int -&gt; int -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> blit_string_of_int_2_digits : <code class="type"><a href="../core_kernel/Std.String.html#TYPEt">Core_kernel.Std.String.t</a> -&gt; pos:int -&gt; int -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> blit_string_of_int_3_digits : <code class="type"><a href="../core_kernel/Std.String.html#TYPEt">Core_kernel.Std.String.t</a> -&gt; pos:int -&gt; int -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> parse_two_digits : <code class="type"><a href="../core_kernel/Std.String.html#TYPEt">Core_kernel.Std.String.t</a> -&gt; int -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> parse_four_digits : <code class="type"><a href="../core_kernel/Std.String.html#TYPEt">Core_kernel.Std.String.t</a> -&gt; int -&gt; int</code></span></pre>
+      
+    

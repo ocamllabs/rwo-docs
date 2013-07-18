@@ -1,0 +1,93 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      <div class="info">A file-descr-watcher is essentially a map from <code class="code">File_descr.t</code> to <code class="code">bool
+      Read_write.t</code>, which defines the set of file descriptors being watched, and for each
+      file descriptor, whether it is being watched for read, write, or both.  If a file
+      descriptor is not being watched for either, it is not in the map.</div>
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core/Std.Invariant.S.html">Core.Std.Invariant.S</a></code> with type t = <a href="File_descr_watcher_intf.S.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="../core/Std.Invariant.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> backend : <code class="type"><a href="Import.Config.File_descr_watcher.html#TYPEt">Import.Config.File_descr_watcher.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">num_file_descrs:int -&gt; <a href="File_descr_watcher_intf.S.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">create ~num_file_descrs</code> creates a new file-descr-watcher that is able to watch
+      file descriptors in <pre class="codepre"><code class="code"> [0, num_file_descrs) </code></pre>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> set : <code class="type"><a href="File_descr_watcher_intf.S.html#TYPEt">t</a> -&gt; <a href="Import.File_descr.html#TYPEt">Import.File_descr.t</a> -&gt; bool <a href="Read_write.html#TYPEt">Read_write.t</a> -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">set</code> alters the map of file descriptors being watched.  It will take effect on the
+      next call to <code class="code">thread_safe_check</code>.  Calling <code class="code">set fd</code> with <code class="code">{ read = false, write =
+      false }</code> removes <code class="code">fd</code> from the map.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> iter : <code class="type"><a href="File_descr_watcher_intf.S.html#TYPEt">t</a> -&gt; f:(<a href="Import.File_descr.html#TYPEt">Import.File_descr.t</a> -&gt; <a href="Read_write.Key.html#TYPEt">Read_write.Key.t</a> -&gt; unit) -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">iter t ~f</code> iterates over every file descriptor in the map, apply <code class="code">f</code> to it once
+      for each of {`Read,`Write} that it is being watched for.</div>
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="File_descr_watcher_intf.S.Pre.html">Pre</a> : <code class="code">sig</code> <a href="File_descr_watcher_intf.S.Pre.html">..</a> <code class="code">end</code></pre><div class="info"><code class="code">pre_check t</code> does whatever non-thread-safe work is necessary to prepare for the
+      system call that checks file descriptors being ready for read or write.  <code class="code">pre_check</code>
+      does not side effect <code class="code">t</code>.</div>
+	<div class="content" style="display:none">
+	<div file="File_descr_watcher_intf.S.Pre.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> pre_check : <code class="type"><a href="File_descr_watcher_intf.S.html#TYPEt">t</a> -&gt; <a href="File_descr_watcher_intf.S.Pre.html#TYPEt">Pre.t</a></code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="File_descr_watcher_intf.S.Check_result.html">Check_result</a> : <code class="code">sig</code> <a href="File_descr_watcher_intf.S.Check_result.html">..</a> <code class="code">end</code></pre><div class="info"><code class="code">thread_safe_check t pre ~timeout</code> checks the file descriptors for their status and
+      returns when at least one is available, or the <code class="code">timeout</code> passes.
+      <code class="code">thread_safe_check</code> does not side effect <code class="code">t</code>.  Unlike the rest of the functions in
+      this module, <code class="code">thread_safe_check</code> is thread safe.</div>
+	<div class="content" style="display:none">
+	<div file="File_descr_watcher_intf.S.Check_result.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> thread_safe_check : <code class="type"><a href="File_descr_watcher_intf.S.html#TYPEt">t</a> -&gt; <a href="File_descr_watcher_intf.S.Pre.html#TYPEt">Pre.t</a> -&gt; timeout:<a href="File_descr_watcher_intf.Timeout.html#TYPEt">Timeout.t</a> -&gt; <a href="File_descr_watcher_intf.S.Check_result.html#TYPEt">Check_result.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> post_check : <code class="type"><a href="File_descr_watcher_intf.S.html#TYPEt">t</a> -&gt;
+<a href="File_descr_watcher_intf.S.Check_result.html#TYPEt">Check_result.t</a> -&gt;
+[ `Ok of <a href="File_descr_watcher_intf.Post.html#TYPEt">Post.t</a> <a href="Read_write.html#TYPEt">Read_write.t</a> | `Syscall_interrupted | `Timeout ]</code></span></pre>
+      <div class="info"><code class="code">post_check t check_result</code> returns the file descriptors available for read and
+      write.  Any file descriptor appearing in <code class="code">post</code> for read must have been watched
+      for read, as per <code class="code">set</code>.  Similarly for write.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type"><a href="File_descr_watcher_intf.S.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+<br/><code class="code">create ~num_file_descrs</code> creates a new file-descr-watcher that is able to watch
+      file descriptors in <pre class="codepre"><code class="code"> [0, num_file_descrs) </code></pre>.<br/>
+	  
+<br/><code class="code">set</code> alters the map of file descriptors being watched.  It will take effect on the
+      next call to <code class="code">thread_safe_check</code>.  Calling <code class="code">set fd</code> with <code class="code">{ read = false, write =
+      false }</code> removes <code class="code">fd</code> from the map.<br/>
+	  
+<br/><code class="code">iter t ~f</code> iterates over every file descriptor in the map, apply <code class="code">f</code> to it once
+      for each of {`Read,`Write} that it is being watched for.<br/>
+	  
+<br/><code class="code">pre_check t</code> does whatever non-thread-safe work is necessary to prepare for the
+      system call that checks file descriptors being ready for read or write.  <code class="code">pre_check</code>
+      does not side effect <code class="code">t</code>.<br/>
+	  
+<br/><code class="code">thread_safe_check t pre ~timeout</code> checks the file descriptors for their status and
+      returns when at least one is available, or the <code class="code">timeout</code> passes.
+      <code class="code">thread_safe_check</code> does not side effect <code class="code">t</code>.  Unlike the rest of the functions in
+      this module, <code class="code">thread_safe_check</code> is thread safe.<br/>
+	  
+<br/><code class="code">post_check t check_result</code> returns the file descriptors available for read and
+      write.  Any file descriptor appearing in <code class="code">post</code> for read must have been watched
+      for read, as per <code class="code">set</code>.  Similarly for write.<br/>
+	  

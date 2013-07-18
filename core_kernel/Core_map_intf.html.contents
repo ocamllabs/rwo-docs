@@ -1,0 +1,195 @@
+ 
+      <pre><span><span class="keyword">val</span> __pa_ounit_275876e34cf609db118f3d84b799a790 : <code class="type">string</code></span></pre>
+      
+    
+
+<br/>This module defines interfaces used in <code class="code">Core.Std.Map</code>.  See the documentation in
+    core_map.mli for a description of the approach.<br/>    CRs and comments about <code class="code">Map</code> functions do not belong in this file.  They belong next
+    to the appropriate function in core_map.mli.<br/>    This module defines module types
+    <code class="code">{Creators,Accessors}{1,2,3,_generic,_with_comparator}</code>.  It uses check functors to
+    ensure that each module types is an instance of the corresponding <code class="code">_generic</code> one.<br/>    We must treat <code class="code">Creators</code> and <code class="code">Accessors</code> separately, because we sometimes need to
+    choose different instantiations of their <code class="code">options</code>.  In particular, <code class="code">Map</code> itself
+    matches <code class="code">Creators3_with_comparator</code> but <code class="code">Accessors3</code> (without comparator).<br/>
+	  
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Core_map_intf.Binable.html">Binable</a> : <code class="code"><a href="Binable0.html">Binable0</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Core_map_intf.Binable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Core_map_intf.List.html">List</a> : <code class="code"><a href="Core_list.html">Core_list</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Core_map_intf.List.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Core_map_intf.Key.html">Key</a> = <code class="type"><code class="code"><a href="Comparator.Pre.html">Comparator.Pre</a></code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Core_map_intf.Key.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Core_map_intf.Key_binable.html">Key_binable</a> = <code class="type"><code class="code"><a href="Comparator.Pre_binable.html">Comparator.Pre_binable</a></code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Core_map_intf.Key_binable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Core_map_intf.Without_comparator.html">Without_comparator</a> : <code class="code">sig</code> <a href="Core_map_intf.Without_comparator.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Core_map_intf.Without_comparator.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Core_map_intf.With_comparator.html">With_comparator</a> : <code class="code">sig</code> <a href="Core_map_intf.With_comparator.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Core_map_intf.With_comparator.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Core_map_intf.Accessors_generic.html">Accessors_generic</a> = <code class="type"><code class="code">sig</code> <a href="Core_map_intf.Accessors_generic.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Core_map_intf.Accessors_generic.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Core_map_intf.Accessors1.html">Accessors1</a> = <code class="type"><code class="code">sig</code> <a href="Core_map_intf.Accessors1.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Core_map_intf.Accessors1.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Core_map_intf.Accessors2.html">Accessors2</a> = <code class="type"><code class="code">sig</code> <a href="Core_map_intf.Accessors2.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Core_map_intf.Accessors2.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Core_map_intf.Accessors3.html">Accessors3</a> = <code class="type"><code class="code">sig</code> <a href="Core_map_intf.Accessors3.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Core_map_intf.Accessors3.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Core_map_intf.Accessors3_with_comparator.html">Accessors3_with_comparator</a> = <code class="type"><code class="code">sig</code> <a href="Core_map_intf.Accessors3_with_comparator.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Core_map_intf.Accessors3_with_comparator.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Core_map_intf.Check_accessors.html">Check_accessors</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">T</code><code class="code"> : </code><code class="type"><a href="T.T3.html">T.T3</a></code><code class="code">) -&gt; </code><div class="sig_block"><code class="code">functor (</code><code class="code">Tree</code><code class="code"> : </code><code class="type"><a href="T.T3.html">T.T3</a></code><code class="code">) -&gt; </code><div class="sig_block"><code class="code">functor (</code><code class="code">Key</code><code class="code"> : </code><code class="type"><a href="T.T1.html">T.T1</a></code><code class="code">) -&gt; </code><div class="sig_block"><code class="code">functor (</code><code class="code">Options</code><code class="code"> : </code><code class="type"><a href="T.T3.html">T.T3</a></code><code class="code">) -&gt; </code><div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="code"><a href="Core_map_intf.Accessors_generic.html">Accessors_generic</a></code> with type <a href="Core_map_intf.Accessors_generic.html#TYPEoptions">options</a> = ('a, 'b, 'c) Options.t with type t = ('a, 'b, 'c) T.t with type tree = ('a, 'b, 'c) Tree.t with type key = 'a Key.t<code class="code">) -&gt; </code><code class="code">sig</code> <a href="Core_map_intf.Check_accessors.html">..</a> <code class="code">end</code></div></div></div></div></div></pre>
+	<div class="content" style="display:none">
+	<div file="Core_map_intf.Check_accessors.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Core_map_intf.Check_accessors1.html">Check_accessors1</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="type"><a href="Core_map_intf.Accessors1.html">Accessors1</a></code><code class="code">) -&gt; </code>HTML_OF_MODULE_IDENT BUG(<code class="code">M</code>)</div></pre>
+	<div class="content" style="display:none">
+	<div file="Core_map_intf.Check_accessors1.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Core_map_intf.Check_accessors2.html">Check_accessors2</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="type"><a href="Core_map_intf.Accessors2.html">Accessors2</a></code><code class="code">) -&gt; </code>HTML_OF_MODULE_IDENT BUG(<code class="code">M</code>)</div></pre>
+	<div class="content" style="display:none">
+	<div file="Core_map_intf.Check_accessors2.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Core_map_intf.Check_accessors3.html">Check_accessors3</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="type"><a href="Core_map_intf.Accessors3.html">Accessors3</a></code><code class="code">) -&gt; </code>HTML_OF_MODULE_IDENT BUG(<code class="code">M</code>)</div></pre>
+	<div class="content" style="display:none">
+	<div file="Core_map_intf.Check_accessors3.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Core_map_intf.Check_accessors3_with_comparator.html">Check_accessors3_with_comparator</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="type"><a href="Core_map_intf.Accessors3_with_comparator.html">Accessors3_with_comparator</a></code><code class="code">) -&gt; </code>HTML_OF_MODULE_IDENT BUG(<code class="code">M</code>)</div></pre>
+	<div class="content" style="display:none">
+	<div file="Core_map_intf.Check_accessors3_with_comparator.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Core_map_intf.Creators_generic.html">Creators_generic</a> = <code class="type"><code class="code">sig</code> <a href="Core_map_intf.Creators_generic.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Core_map_intf.Creators_generic.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Core_map_intf.Creators1.html">Creators1</a> = <code class="type"><code class="code">sig</code> <a href="Core_map_intf.Creators1.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Core_map_intf.Creators1.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Core_map_intf.Creators2.html">Creators2</a> = <code class="type"><code class="code">sig</code> <a href="Core_map_intf.Creators2.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Core_map_intf.Creators2.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Core_map_intf.Creators3_with_comparator.html">Creators3_with_comparator</a> = <code class="type"><code class="code">sig</code> <a href="Core_map_intf.Creators3_with_comparator.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Core_map_intf.Creators3_with_comparator.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Core_map_intf.Check_creators.html">Check_creators</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">T</code><code class="code"> : </code><code class="type"><a href="T.T3.html">T.T3</a></code><code class="code">) -&gt; </code><div class="sig_block"><code class="code">functor (</code><code class="code">Tree</code><code class="code"> : </code><code class="type"><a href="T.T3.html">T.T3</a></code><code class="code">) -&gt; </code><div class="sig_block"><code class="code">functor (</code><code class="code">Key</code><code class="code"> : </code><code class="type"><a href="T.T1.html">T.T1</a></code><code class="code">) -&gt; </code><div class="sig_block"><code class="code">functor (</code><code class="code">Options</code><code class="code"> : </code><code class="type"><a href="T.T3.html">T.T3</a></code><code class="code">) -&gt; </code><div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="code"><a href="Core_map_intf.Creators_generic.html">Creators_generic</a></code> with type <a href="Core_map_intf.Creators_generic.html#TYPEoptions">options</a> = ('a, 'b, 'c) Options.t with type t = ('a, 'b, 'c) T.t with type tree = ('a, 'b, 'c) Tree.t with type key = 'a Key.t<code class="code">) -&gt; </code><code class="code">sig</code> <a href="Core_map_intf.Check_creators.html">..</a> <code class="code">end</code></div></div></div></div></div></pre>
+	<div class="content" style="display:none">
+	<div file="Core_map_intf.Check_creators.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Core_map_intf.Check_creators1.html">Check_creators1</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="type"><a href="Core_map_intf.Creators1.html">Creators1</a></code><code class="code">) -&gt; </code>HTML_OF_MODULE_IDENT BUG(<code class="code">M</code>)</div></pre>
+	<div class="content" style="display:none">
+	<div file="Core_map_intf.Check_creators1.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Core_map_intf.Check_creators2.html">Check_creators2</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="type"><a href="Core_map_intf.Creators2.html">Creators2</a></code><code class="code">) -&gt; </code>HTML_OF_MODULE_IDENT BUG(<code class="code">M</code>)</div></pre>
+	<div class="content" style="display:none">
+	<div file="Core_map_intf.Check_creators2.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Core_map_intf.Check_creators3_with_comparator.html">Check_creators3_with_comparator</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="type"><a href="Core_map_intf.Creators3_with_comparator.html">Creators3_with_comparator</a></code><code class="code">) -&gt; </code>HTML_OF_MODULE_IDENT BUG(<code class="code">M</code>)</div></pre>
+	<div class="content" style="display:none">
+	<div file="Core_map_intf.Check_creators3_with_comparator.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Core_map_intf.Creators_and_accessors_generic.html">Creators_and_accessors_generic</a> = <code class="type"><code class="code">sig</code> <a href="Core_map_intf.Creators_and_accessors_generic.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Core_map_intf.Creators_and_accessors_generic.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Core_map_intf.Creators_and_accessors1.html">Creators_and_accessors1</a> = <code class="type"><code class="code">sig</code> <a href="Core_map_intf.Creators_and_accessors1.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Core_map_intf.Creators_and_accessors1.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Core_map_intf.Creators_and_accessors2.html">Creators_and_accessors2</a> = <code class="type"><code class="code">sig</code> <a href="Core_map_intf.Creators_and_accessors2.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Core_map_intf.Creators_and_accessors2.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Core_map_intf.Creators_and_accessors3_with_comparator.html">Creators_and_accessors3_with_comparator</a> = <code class="type"><code class="code">sig</code> <a href="Core_map_intf.Creators_and_accessors3_with_comparator.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Core_map_intf.Creators_and_accessors3_with_comparator.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Core_map_intf.S.html">S</a> = <code class="type"><code class="code">sig</code> <a href="Core_map_intf.S.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Core_map_intf.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Core_map_intf.S_binable.html">S_binable</a> = <code class="type"><code class="code">sig</code> <a href="Core_map_intf.S_binable.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Core_map_intf.S_binable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+

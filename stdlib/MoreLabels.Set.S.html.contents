@@ -1,0 +1,102 @@
+<pre><span id="TYPEelt"><span class="keyword">type</span> elt </span></pre>
+      
+    
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> empty : <code class="type"><a href="MoreLabels.Set.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_empty : <code class="type"><a href="MoreLabels.Set.S.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem : <code class="type"><a href="MoreLabels.Set.S.html#TYPEelt">elt</a> -&gt; <a href="MoreLabels.Set.S.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add : <code class="type"><a href="MoreLabels.Set.S.html#TYPEelt">elt</a> -&gt; <a href="MoreLabels.Set.S.html#TYPEt">t</a> -&gt; <a href="MoreLabels.Set.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> singleton : <code class="type"><a href="MoreLabels.Set.S.html#TYPEelt">elt</a> -&gt; <a href="MoreLabels.Set.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove : <code class="type"><a href="MoreLabels.Set.S.html#TYPEelt">elt</a> -&gt; <a href="MoreLabels.Set.S.html#TYPEt">t</a> -&gt; <a href="MoreLabels.Set.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> union : <code class="type"><a href="MoreLabels.Set.S.html#TYPEt">t</a> -&gt; <a href="MoreLabels.Set.S.html#TYPEt">t</a> -&gt; <a href="MoreLabels.Set.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> inter : <code class="type"><a href="MoreLabels.Set.S.html#TYPEt">t</a> -&gt; <a href="MoreLabels.Set.S.html#TYPEt">t</a> -&gt; <a href="MoreLabels.Set.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> diff : <code class="type"><a href="MoreLabels.Set.S.html#TYPEt">t</a> -&gt; <a href="MoreLabels.Set.S.html#TYPEt">t</a> -&gt; <a href="MoreLabels.Set.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> compare : <code class="type"><a href="MoreLabels.Set.S.html#TYPEt">t</a> -&gt; <a href="MoreLabels.Set.S.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> equal : <code class="type"><a href="MoreLabels.Set.S.html#TYPEt">t</a> -&gt; <a href="MoreLabels.Set.S.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> subset : <code class="type"><a href="MoreLabels.Set.S.html#TYPEt">t</a> -&gt; <a href="MoreLabels.Set.S.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter : <code class="type">f:(<a href="MoreLabels.Set.S.html#TYPEelt">elt</a> -&gt; unit) -&gt; <a href="MoreLabels.Set.S.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold : <code class="type">f:(<a href="MoreLabels.Set.S.html#TYPEelt">elt</a> -&gt; 'a -&gt; 'a) -&gt; <a href="MoreLabels.Set.S.html#TYPEt">t</a> -&gt; init:'a -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> for_all : <code class="type">f:(<a href="MoreLabels.Set.S.html#TYPEelt">elt</a> -&gt; bool) -&gt; <a href="MoreLabels.Set.S.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> exists : <code class="type">f:(<a href="MoreLabels.Set.S.html#TYPEelt">elt</a> -&gt; bool) -&gt; <a href="MoreLabels.Set.S.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> filter : <code class="type">f:(<a href="MoreLabels.Set.S.html#TYPEelt">elt</a> -&gt; bool) -&gt; <a href="MoreLabels.Set.S.html#TYPEt">t</a> -&gt; <a href="MoreLabels.Set.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> partition : <code class="type">f:(<a href="MoreLabels.Set.S.html#TYPEelt">elt</a> -&gt; bool) -&gt; <a href="MoreLabels.Set.S.html#TYPEt">t</a> -&gt; <a href="MoreLabels.Set.S.html#TYPEt">t</a> * <a href="MoreLabels.Set.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> cardinal : <code class="type"><a href="MoreLabels.Set.S.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> elements : <code class="type"><a href="MoreLabels.Set.S.html#TYPEt">t</a> -&gt; <a href="MoreLabels.Set.S.html#TYPEelt">elt</a> list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> min_elt : <code class="type"><a href="MoreLabels.Set.S.html#TYPEt">t</a> -&gt; <a href="MoreLabels.Set.S.html#TYPEelt">elt</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> max_elt : <code class="type"><a href="MoreLabels.Set.S.html#TYPEt">t</a> -&gt; <a href="MoreLabels.Set.S.html#TYPEelt">elt</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> choose : <code class="type"><a href="MoreLabels.Set.S.html#TYPEt">t</a> -&gt; <a href="MoreLabels.Set.S.html#TYPEelt">elt</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> split : <code class="type"><a href="MoreLabels.Set.S.html#TYPEelt">elt</a> -&gt; <a href="MoreLabels.Set.S.html#TYPEt">t</a> -&gt; <a href="MoreLabels.Set.S.html#TYPEt">t</a> * bool * <a href="MoreLabels.Set.S.html#TYPEt">t</a></code></span></pre>
+      
+    

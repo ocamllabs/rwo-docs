@@ -1,0 +1,14 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core/Std.Exn.html">Core.Std.Exn</a></code></pre>
+	<div class="content">
+	<div file="../core/Std.Exn.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Extended_exn.html">Extended_exn</a></code></pre>
+	<div class="content">
+	<div file="Extended_exn.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

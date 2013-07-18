@@ -1,0 +1,57 @@
+ 
+      <pre><span><span class="keyword">val</span> iter : <code class="type">'a <a href="Raw_monitor.html#TYPEt_">t_</a> -&gt;
+name:(([&lt; `Read | `Set_and_create ], 'b <a href="Raw_monitor.html#TYPEt_">t_</a>, <a href="../core/Std.Info.html#TYPEt">Core.Std.Info.t</a>)
+      <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a <a href="Raw_monitor.html#TYPEt_">t_</a> -&gt; <a href="../core/Std.Info.html#TYPEt">Core.Std.Info.t</a> -&gt; 'c) -&gt;
+here:(([&lt; `Read | `Set_and_create ], 'd <a href="Raw_monitor.html#TYPEt_">t_</a>,
+       <a href="../core/Std.Source_code_position.html#TYPEt">Core.Std.Source_code_position.t</a> option)
+      <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+      'a <a href="Raw_monitor.html#TYPEt_">t_</a> -&gt; <a href="../core/Std.Source_code_position.html#TYPEt">Core.Std.Source_code_position.t</a> option -&gt; 'e) -&gt;
+id:(([&lt; `Read | `Set_and_create ], 'f <a href="Raw_monitor.html#TYPEt_">t_</a>, int) <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+    'a <a href="Raw_monitor.html#TYPEt_">t_</a> -&gt; int -&gt; 'g) -&gt;
+parent:(([&lt; `Read | `Set_and_create ], 'h <a href="Raw_monitor.html#TYPEt_">t_</a>, 'h <a href="Raw_monitor.html#TYPEt_">t_</a> option)
+        <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a <a href="Raw_monitor.html#TYPEt_">t_</a> -&gt; 'a <a href="Raw_monitor.html#TYPEt_">t_</a> option -&gt; 'i) -&gt;
+errors:(([&lt; `Read | `Set_and_create ], 'j <a href="Raw_monitor.html#TYPEt_">t_</a>, (exn, 'j) <a href="Raw_tail.html#TYPEt">Raw_tail.t</a>)
+        <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a <a href="Raw_monitor.html#TYPEt_">t_</a> -&gt; (exn, 'a) <a href="Raw_tail.html#TYPEt">Raw_tail.t</a> -&gt; 'k) -&gt;
+has_seen_error:(([&lt; `Read | `Set_and_create ], 'l <a href="Raw_monitor.html#TYPEt_">t_</a>, bool)
+                <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a <a href="Raw_monitor.html#TYPEt_">t_</a> -&gt; bool -&gt; 'm) -&gt;
+someone_is_listening:(([&lt; `Read | `Set_and_create ], 'n <a href="Raw_monitor.html#TYPEt_">t_</a>, bool)
+                      <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a <a href="Raw_monitor.html#TYPEt_">t_</a> -&gt; bool -&gt; 'o) -&gt;
+kill_index:(([&lt; `Read | `Set_and_create ], 'p <a href="Raw_monitor.html#TYPEt_">t_</a>, <a href="Kill_index.html#TYPEt">Kill_index.t</a>)
+            <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a <a href="Raw_monitor.html#TYPEt_">t_</a> -&gt; <a href="Kill_index.html#TYPEt">Kill_index.t</a> -&gt; 'q) -&gt;
+'q</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> fold : <code class="type">'a <a href="Raw_monitor.html#TYPEt_">t_</a> -&gt;
+init:'b -&gt;
+name:('b -&gt;
+      ([&lt; `Read | `Set_and_create ], 'c <a href="Raw_monitor.html#TYPEt_">t_</a>, <a href="../core/Std.Info.html#TYPEt">Core.Std.Info.t</a>)
+      <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a <a href="Raw_monitor.html#TYPEt_">t_</a> -&gt; <a href="../core/Std.Info.html#TYPEt">Core.Std.Info.t</a> -&gt; 'd) -&gt;
+here:('d -&gt;
+      ([&lt; `Read | `Set_and_create ], 'e <a href="Raw_monitor.html#TYPEt_">t_</a>,
+       <a href="../core/Std.Source_code_position.html#TYPEt">Core.Std.Source_code_position.t</a> option)
+      <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+      'a <a href="Raw_monitor.html#TYPEt_">t_</a> -&gt; <a href="../core/Std.Source_code_position.html#TYPEt">Core.Std.Source_code_position.t</a> option -&gt; 'f) -&gt;
+id:('f -&gt;
+    ([&lt; `Read | `Set_and_create ], 'g <a href="Raw_monitor.html#TYPEt_">t_</a>, int) <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+    'a <a href="Raw_monitor.html#TYPEt_">t_</a> -&gt; int -&gt; 'h) -&gt;
+parent:('h -&gt;
+        ([&lt; `Read | `Set_and_create ], 'i <a href="Raw_monitor.html#TYPEt_">t_</a>, 'i <a href="Raw_monitor.html#TYPEt_">t_</a> option)
+        <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a <a href="Raw_monitor.html#TYPEt_">t_</a> -&gt; 'a <a href="Raw_monitor.html#TYPEt_">t_</a> option -&gt; 'j) -&gt;
+errors:('j -&gt;
+        ([&lt; `Read | `Set_and_create ], 'k <a href="Raw_monitor.html#TYPEt_">t_</a>, (exn, 'k) <a href="Raw_tail.html#TYPEt">Raw_tail.t</a>)
+        <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a <a href="Raw_monitor.html#TYPEt_">t_</a> -&gt; (exn, 'a) <a href="Raw_tail.html#TYPEt">Raw_tail.t</a> -&gt; 'l) -&gt;
+has_seen_error:('l -&gt;
+                ([&lt; `Read | `Set_and_create ], 'm <a href="Raw_monitor.html#TYPEt_">t_</a>, bool)
+                <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a <a href="Raw_monitor.html#TYPEt_">t_</a> -&gt; bool -&gt; 'n) -&gt;
+someone_is_listening:('n -&gt;
+                      ([&lt; `Read | `Set_and_create ], 'o <a href="Raw_monitor.html#TYPEt_">t_</a>, bool)
+                      <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a <a href="Raw_monitor.html#TYPEt_">t_</a> -&gt; bool -&gt; 'p) -&gt;
+kill_index:('p -&gt;
+            ([&lt; `Read | `Set_and_create ], 'q <a href="Raw_monitor.html#TYPEt_">t_</a>, <a href="Kill_index.html#TYPEt">Kill_index.t</a>)
+            <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a <a href="Raw_monitor.html#TYPEt_">t_</a> -&gt; <a href="Kill_index.html#TYPEt">Kill_index.t</a> -&gt; 'r) -&gt;
+'r</code></span></pre>
+      
+    
+

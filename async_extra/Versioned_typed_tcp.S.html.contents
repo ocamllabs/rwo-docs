@@ -1,0 +1,23 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Versioned_typed_tcp.Arg.html">Arg</a></code></pre>
+	<div class="content">
+	<div file="Versioned_typed_tcp.Arg.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<pre><span id="TYPElogfun"><span class="keyword">type</span> logfun </span>= <code class="type">[ `Recv of Recv.t | `Send of Send.t ] -&gt;
+Remote_name.t -&gt; time_sent_received:<a href="../core/Std.Time.html#TYPEt">Core.Std.Time.t</a> -&gt; unit</code> </pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Versioned_typed_tcp.S.Server.html">Server</a> : <code class="code">sig</code> <a href="Versioned_typed_tcp.S.Server.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Versioned_typed_tcp.S.Server.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Versioned_typed_tcp.S.Client.html">Client</a> : <code class="code">sig</code> <a href="Versioned_typed_tcp.S.Client.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Versioned_typed_tcp.S.Client.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

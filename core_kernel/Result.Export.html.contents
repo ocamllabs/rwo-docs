@@ -1,0 +1,6 @@
+<pre><span id="TYPE_result"><span class="keyword">type</span> <code class="type">('ok, 'err) </code>_result </span>= <code class="type">('ok, 'err) <a href="Result.html#TYPEt">t</a></code> </pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELT_result.Ok"><span class="constructor">Ok</span></span> <span class="keyword">of</span> <code class="type">'ok</code></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELT_result.Error"><span class="constructor">Error</span></span> <span class="keyword">of</span> <code class="type">'err</code></code></td>
+	   </tr></table>
+      
+    

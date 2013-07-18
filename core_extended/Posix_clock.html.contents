@@ -1,0 +1,38 @@
+<pre><code><span id="TYPEt"><span class="keyword">type</span> t </span>= </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Realtime"><span class="constructor">Realtime</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Monotonic"><span class="constructor">Monotonic</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Process_cpu"><span class="constructor">Process_cpu</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Process_thread"><span class="constructor">Process_thread</span></span></code></td>
+	   </tr></table>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> all : <code class="type"><a href="Posix_clock.html#TYPEt">t</a> list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_string : <code class="type"><a href="Posix_clock.html#TYPEt">t</a> -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> getres : <code class="type">(<a href="Posix_clock.html#TYPEt">t</a> -&gt; <a href="../core/Std.Int63.html#TYPEt">Core.Std.Int63.t</a>) <a href="../core/Std.Or_error.html#TYPEt">Core.Std.Or_error.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> gettime : <code class="type">(<a href="Posix_clock.html#TYPEt">t</a> -&gt; <a href="../core/Std.Int63.html#TYPEt">Core.Std.Int63.t</a>) <a href="../core/Std.Or_error.html#TYPEt">Core.Std.Or_error.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> min_interval : <code class="type">(<a href="Posix_clock.html#TYPEt">t</a> -&gt; <a href="../core/Std.Int63.html#TYPEt">Core.Std.Int63.t</a>) <a href="../core/Std.Or_error.html#TYPEt">Core.Std.Or_error.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mean_gettime_cost : <code class="type">(measure:<a href="Posix_clock.html#TYPEt">t</a> -&gt; using:<a href="Posix_clock.html#TYPEt">t</a> -&gt; <a href="../core/Std.Int63.html#TYPEt">Core.Std.Int63.t</a>) <a href="../core/Std.Or_error.html#TYPEt">Core.Std.Or_error.t</a></code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Posix_clock.Time_stamp_counter.html">Time_stamp_counter</a> : <code class="code">sig</code> <a href="Posix_clock.Time_stamp_counter.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Posix_clock.Time_stamp_counter.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

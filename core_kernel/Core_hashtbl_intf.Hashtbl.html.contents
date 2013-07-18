@@ -1,0 +1,78 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Core_hashtbl_intf.Hashtbl.Hashable.html">Hashable</a> : <code class="code"><a href="Core_hashtbl_intf.Hashable.html">Hashable</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Core_hashtbl_intf.Hashtbl.Hashable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> hash : <code class="type">'a -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> hash_param : <code class="type">int -&gt; int -&gt; 'a -&gt; int</code></span></pre>
+      
+    
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'b) </code>t </span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Core_hashtbl_intf.Creators.html">Creators</a></code> with type <a href="Core_hashtbl_intf.Creators.html#TYPEt">t</a> = ('a, 'b) <a href="Core_hashtbl_intf.Hashtbl.html#TYPEt">t</a> with type key = 'a with type create_options = ('a, 'z) <a href="Core_hashtbl_intf.html#TYPEcreate_options_with_hashable">create_options_with_hashable</a></pre>
+	<div class="content">
+	<div file="Core_hashtbl_intf.Creators.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Core_hashtbl_intf.Accessors.html">Accessors</a></code> with type <a href="Core_hashtbl_intf.Accessors.html#TYPEt">t</a> = ('a, 'b) <a href="Core_hashtbl_intf.Hashtbl.html#TYPEt">t</a> with type key = 'a key</pre>
+	<div class="content">
+	<div file="Core_hashtbl_intf.Accessors.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Core_hashtbl_intf.Hashtbl.Poly.html">Poly</a> : <code class="code">sig</code> <a href="Core_hashtbl_intf.Hashtbl.Poly.html">..</a> <code class="code">end</code> with type <a href="Core_hashtbl_intf.Hashtbl.Poly.html#TYPEt">t</a> = ('a, 'b) <a href="Core_hashtbl_intf.Hashtbl.html#TYPEt">t</a></pre>
+	<div class="content" style="display:none">
+	<div file="Core_hashtbl_intf.Hashtbl.Poly.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Core_hashtbl_intf.Hashtbl.Key.html">Key</a> = <code class="type"><code class="code"><a href="Core_hashtbl_intf.Key.html">Key</a></code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Core_hashtbl_intf.Hashtbl.Key.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Core_hashtbl_intf.Hashtbl.Key_binable.html">Key_binable</a> = <code class="type"><code class="code"><a href="Core_hashtbl_intf.Key_binable.html">Key_binable</a></code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Core_hashtbl_intf.Hashtbl.Key_binable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Core_hashtbl_intf.Hashtbl.S.html">S</a> = <code class="type"><code class="code"><a href="Core_hashtbl_intf.S.html">S</a></code> with type <a href="Core_hashtbl_intf.S.html#TYPEhashtbl">hashtbl</a> = ('a, 'b) <a href="Core_hashtbl_intf.Hashtbl.html#TYPEt">t</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Core_hashtbl_intf.Hashtbl.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Core_hashtbl_intf.Hashtbl.S_binable.html">S_binable</a> = <code class="type"><code class="code"><a href="Core_hashtbl_intf.S_binable.html">S_binable</a></code> with type hashtbl = ('a, 'b) <a href="Core_hashtbl_intf.Hashtbl.html#TYPEt">t</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Core_hashtbl_intf.Hashtbl.S_binable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Core_hashtbl_intf.Hashtbl.Make.html">Make</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">Key</code><code class="code"> : </code><code class="type"><a href="Core_hashtbl_intf.Hashtbl.Key.html">Key</a></code><code class="code">) -&gt; </code><code class="code"><a href="Core_hashtbl_intf.Hashtbl.S.html">S</a></code> with type key = Key.t</div></pre>
+	<div class="content" style="display:none">
+	<div file="Core_hashtbl_intf.Hashtbl.Make.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Core_hashtbl_intf.Hashtbl.Make_binable.html">Make_binable</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">Key</code><code class="code"> : </code><code class="type"><a href="Core_hashtbl_intf.Hashtbl.Key_binable.html">Key_binable</a></code><code class="code">) -&gt; </code><code class="code"><a href="Core_hashtbl_intf.Hashtbl.S_binable.html">S_binable</a></code> with type key = Key.t</div></pre>
+	<div class="content" style="display:none">
+	<div file="Core_hashtbl_intf.Hashtbl.Make_binable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type">('a -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a>) -&gt;
+('b -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a>) -&gt; ('a, 'b) <a href="Core_hashtbl_intf.Hashtbl.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    

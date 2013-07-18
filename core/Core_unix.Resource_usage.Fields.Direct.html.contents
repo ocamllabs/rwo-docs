@@ -1,0 +1,42 @@
+ 
+      <pre><span><span class="keyword">val</span> iter : <code class="type"><a href="Core_unix.Resource_usage.html#TYPEt">t</a> -&gt;
+utime:((<a href="Core_unix.Resource_usage.html#TYPEt">t</a>, float) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_unix.Resource_usage.html#TYPEt">t</a> -&gt; float -&gt; unit) -&gt;
+stime:((<a href="Core_unix.Resource_usage.html#TYPEt">t</a>, float) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_unix.Resource_usage.html#TYPEt">t</a> -&gt; float -&gt; unit) -&gt;
+maxrss:((<a href="Core_unix.Resource_usage.html#TYPEt">t</a>, int64) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_unix.Resource_usage.html#TYPEt">t</a> -&gt; int64 -&gt; unit) -&gt;
+ixrss:((<a href="Core_unix.Resource_usage.html#TYPEt">t</a>, int64) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_unix.Resource_usage.html#TYPEt">t</a> -&gt; int64 -&gt; unit) -&gt;
+idrss:((<a href="Core_unix.Resource_usage.html#TYPEt">t</a>, int64) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_unix.Resource_usage.html#TYPEt">t</a> -&gt; int64 -&gt; unit) -&gt;
+isrss:((<a href="Core_unix.Resource_usage.html#TYPEt">t</a>, int64) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_unix.Resource_usage.html#TYPEt">t</a> -&gt; int64 -&gt; unit) -&gt;
+minflt:((<a href="Core_unix.Resource_usage.html#TYPEt">t</a>, int64) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_unix.Resource_usage.html#TYPEt">t</a> -&gt; int64 -&gt; unit) -&gt;
+majflt:((<a href="Core_unix.Resource_usage.html#TYPEt">t</a>, int64) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_unix.Resource_usage.html#TYPEt">t</a> -&gt; int64 -&gt; unit) -&gt;
+nswap:((<a href="Core_unix.Resource_usage.html#TYPEt">t</a>, int64) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_unix.Resource_usage.html#TYPEt">t</a> -&gt; int64 -&gt; unit) -&gt;
+inblock:((<a href="Core_unix.Resource_usage.html#TYPEt">t</a>, int64) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_unix.Resource_usage.html#TYPEt">t</a> -&gt; int64 -&gt; unit) -&gt;
+oublock:((<a href="Core_unix.Resource_usage.html#TYPEt">t</a>, int64) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_unix.Resource_usage.html#TYPEt">t</a> -&gt; int64 -&gt; unit) -&gt;
+msgsnd:((<a href="Core_unix.Resource_usage.html#TYPEt">t</a>, int64) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_unix.Resource_usage.html#TYPEt">t</a> -&gt; int64 -&gt; unit) -&gt;
+msgrcv:((<a href="Core_unix.Resource_usage.html#TYPEt">t</a>, int64) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_unix.Resource_usage.html#TYPEt">t</a> -&gt; int64 -&gt; unit) -&gt;
+nsignals:((<a href="Core_unix.Resource_usage.html#TYPEt">t</a>, int64) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_unix.Resource_usage.html#TYPEt">t</a> -&gt; int64 -&gt; unit) -&gt;
+nvcsw:((<a href="Core_unix.Resource_usage.html#TYPEt">t</a>, int64) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_unix.Resource_usage.html#TYPEt">t</a> -&gt; int64 -&gt; unit) -&gt;
+nivcsw:((<a href="Core_unix.Resource_usage.html#TYPEt">t</a>, int64) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_unix.Resource_usage.html#TYPEt">t</a> -&gt; int64 -&gt; unit) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold : <code class="type"><a href="Core_unix.Resource_usage.html#TYPEt">t</a> -&gt;
+init:'acc__ -&gt;
+utime:('acc__ -&gt; (<a href="Core_unix.Resource_usage.html#TYPEt">t</a>, float) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_unix.Resource_usage.html#TYPEt">t</a> -&gt; float -&gt; 'acc__) -&gt;
+stime:('acc__ -&gt; (<a href="Core_unix.Resource_usage.html#TYPEt">t</a>, float) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_unix.Resource_usage.html#TYPEt">t</a> -&gt; float -&gt; 'acc__) -&gt;
+maxrss:('acc__ -&gt; (<a href="Core_unix.Resource_usage.html#TYPEt">t</a>, int64) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_unix.Resource_usage.html#TYPEt">t</a> -&gt; int64 -&gt; 'acc__) -&gt;
+ixrss:('acc__ -&gt; (<a href="Core_unix.Resource_usage.html#TYPEt">t</a>, int64) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_unix.Resource_usage.html#TYPEt">t</a> -&gt; int64 -&gt; 'acc__) -&gt;
+idrss:('acc__ -&gt; (<a href="Core_unix.Resource_usage.html#TYPEt">t</a>, int64) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_unix.Resource_usage.html#TYPEt">t</a> -&gt; int64 -&gt; 'acc__) -&gt;
+isrss:('acc__ -&gt; (<a href="Core_unix.Resource_usage.html#TYPEt">t</a>, int64) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_unix.Resource_usage.html#TYPEt">t</a> -&gt; int64 -&gt; 'acc__) -&gt;
+minflt:('acc__ -&gt; (<a href="Core_unix.Resource_usage.html#TYPEt">t</a>, int64) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_unix.Resource_usage.html#TYPEt">t</a> -&gt; int64 -&gt; 'acc__) -&gt;
+majflt:('acc__ -&gt; (<a href="Core_unix.Resource_usage.html#TYPEt">t</a>, int64) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_unix.Resource_usage.html#TYPEt">t</a> -&gt; int64 -&gt; 'acc__) -&gt;
+nswap:('acc__ -&gt; (<a href="Core_unix.Resource_usage.html#TYPEt">t</a>, int64) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_unix.Resource_usage.html#TYPEt">t</a> -&gt; int64 -&gt; 'acc__) -&gt;
+inblock:('acc__ -&gt; (<a href="Core_unix.Resource_usage.html#TYPEt">t</a>, int64) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_unix.Resource_usage.html#TYPEt">t</a> -&gt; int64 -&gt; 'acc__) -&gt;
+oublock:('acc__ -&gt; (<a href="Core_unix.Resource_usage.html#TYPEt">t</a>, int64) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_unix.Resource_usage.html#TYPEt">t</a> -&gt; int64 -&gt; 'acc__) -&gt;
+msgsnd:('acc__ -&gt; (<a href="Core_unix.Resource_usage.html#TYPEt">t</a>, int64) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_unix.Resource_usage.html#TYPEt">t</a> -&gt; int64 -&gt; 'acc__) -&gt;
+msgrcv:('acc__ -&gt; (<a href="Core_unix.Resource_usage.html#TYPEt">t</a>, int64) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_unix.Resource_usage.html#TYPEt">t</a> -&gt; int64 -&gt; 'acc__) -&gt;
+nsignals:('acc__ -&gt; (<a href="Core_unix.Resource_usage.html#TYPEt">t</a>, int64) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_unix.Resource_usage.html#TYPEt">t</a> -&gt; int64 -&gt; 'acc__) -&gt;
+nvcsw:('acc__ -&gt; (<a href="Core_unix.Resource_usage.html#TYPEt">t</a>, int64) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_unix.Resource_usage.html#TYPEt">t</a> -&gt; int64 -&gt; 'acc__) -&gt;
+nivcsw:('acc__ -&gt; (<a href="Core_unix.Resource_usage.html#TYPEt">t</a>, int64) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Core_unix.Resource_usage.html#TYPEt">t</a> -&gt; int64 -&gt; 'acc__) -&gt;
+'acc__</code></span></pre>
+      
+    

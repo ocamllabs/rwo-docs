@@ -1,0 +1,17 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Utils.Make_binable_spec.Binable.html">Binable</a> : <code class="code"><a href="Binable.S.html">Binable.S</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Utils.Make_binable_spec.Binable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_binable : <code class="type"><a href="Utils.Make_binable_spec.html#TYPEt">t</a> -&gt; <a href="Utils.Make_binable_spec.Binable.html#TYPEt">Binable.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_binable : <code class="type"><a href="Utils.Make_binable_spec.Binable.html#TYPEt">Binable.t</a> -&gt; <a href="Utils.Make_binable_spec.html#TYPEt">t</a></code></span></pre>
+      
+    

@@ -1,0 +1,31 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'execution_context </code>t </span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core/Std.Invariant.S1.html">Core.Std.Invariant.S1</a></code> with type t = 'a <a href="Job.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="../core/Std.Invariant.S1.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">'execution_context -&gt; ('a -&gt; unit) -&gt; 'a -&gt; 'execution_context <a href="Job.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> do_nothing : <code class="type">'execution_context -&gt; 'execution_context <a href="Job.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> execution_context : <code class="type">'execution_context <a href="Job.html#TYPEt">t</a> -&gt; 'execution_context</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> run : <code class="type">'a <a href="Job.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type">('execution_context -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a>) -&gt;
+'execution_context <a href="Job.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    

@@ -1,0 +1,12 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Versioned_typed_tcp.Server_msg.Control.html">Control</a> : <code class="code">sig</code> <a href="Versioned_typed_tcp.Server_msg.Control.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Versioned_typed_tcp.Server_msg.Control.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<pre><code><span id="TYPEt"><span class="keyword">type</span> <code class="type">('name, 'data) </code>t </span>= </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Control"><span class="constructor">Control</span></span> <span class="keyword">of</span> <code class="type">'name <a href="Versioned_typed_tcp.Server_msg.Control.html#TYPEt">Control.t</a></code></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Data"><span class="constructor">Data</span></span> <span class="keyword">of</span> <code class="type">('name, 'data) <a href="Versioned_typed_tcp.Read_result.html#TYPEt">Read_result.t</a></code></code></td>
+	   </tr></table>
+      
+    

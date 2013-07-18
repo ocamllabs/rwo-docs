@@ -1,0 +1,179 @@
+<pre><code><span id="TYPEt"><span class="keyword">type</span> t </span>= {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.check_access">check_access</span> :<code class="type">(unit -&gt; unit) option</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.jobs">jobs</span> :<code class="type"><a href="Raw_scheduler.Execution_context.html#TYPEt">Execution_context.t</a> <a href="Job.html#TYPEt">Job.t</a> <a href="Jobs.html#TYPEt">Jobs.t</a> <a href="../core/Std.html#TYPEsexp_opaque">Core.Std.sexp_opaque</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.main_execution_context">main_execution_context</span> :<code class="type"><a href="Raw_scheduler.Execution_context.html#TYPEt">Execution_context.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.current_execution_context">current_execution_context</span> :<code class="type"><a href="Raw_scheduler.Execution_context.html#TYPEt">Execution_context.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.max_num_jobs_per_priority_per_cycle">max_num_jobs_per_priority_per_cycle</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.uncaught_exn">uncaught_exn</span> :<code class="type"><a href="../core/Std.Error.html#TYPEt">Core.Std.Error.t</a> option</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.global_kill_index">global_kill_index</span> :<code class="type"><a href="Kill_index.html#TYPEt">Kill_index.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.num_jobs_run">num_jobs_run</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.cycle_count">cycle_count</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.cycle_start">cycle_start</span> :<code class="type"><a href="../core/Std.Time.html#TYPEt">Core.Std.Time.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.last_cycle_time">last_cycle_time</span> :<code class="type"><a href="../core/Std.Time.Span.html#TYPEt">Core.Std.Time.Span.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.cycle_times">cycle_times</span> :<code class="type"><a href="../core/Std.Time.Span.html#TYPEt">Core.Std.Time.Span.t</a> <a href="Raw_scheduler.html#TYPEtail">tail</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.last_cycle_num_jobs">last_cycle_num_jobs</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.cycle_num_jobs">cycle_num_jobs</span> :<code class="type">int <a href="Raw_scheduler.html#TYPEtail">tail</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.events">events</span> :<code class="type"><a href="Raw_scheduler.Execution_context.html#TYPEt">Execution_context.t</a> <a href="Job.html#TYPEt">Job.t</a> <a href="Import.Timing_wheel.html#TYPEt">Import.Timing_wheel.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.finalizer_jobs">finalizer_jobs</span> :<code class="type"><a href="Raw_scheduler.Execution_context.html#TYPEt">Execution_context.t</a> <a href="Job.html#TYPEt">Job.t</a> <a href="../core/Std.Thread_safe_queue.html#TYPEt">Core.Std.Thread_safe_queue.t</a> <a href="../core/Std.html#TYPEsexp_opaque">Core.Std.sexp_opaque</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.thread_safe_finalizer_hook">thread_safe_finalizer_hook</span> :<code class="type">unit -&gt; unit</code>;</code></td>
+	  </tr></table>}
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type"><a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> thread_safe_finalizer_hook : <code class="type"><a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; unit -&gt; unit</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> set_thread_safe_finalizer_hook : <code class="type"><a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; (unit -&gt; unit) -&gt; unit</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> finalizer_jobs : <code class="type"><a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt;
+<a href="Raw_scheduler.Execution_context.html#TYPEt">Execution_context.t</a> <a href="Job.html#TYPEt">Job.t</a> <a href="../core/Std.Thread_safe_queue.html#TYPEt">Core.Std.Thread_safe_queue.t</a> <a href="../core/Std.html#TYPEsexp_opaque">Core.Std.sexp_opaque</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> events : <code class="type"><a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; <a href="Raw_scheduler.Execution_context.html#TYPEt">Execution_context.t</a> <a href="Job.html#TYPEt">Job.t</a> <a href="Import.Timing_wheel.html#TYPEt">Import.Timing_wheel.t</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> cycle_num_jobs : <code class="type"><a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; int <a href="Raw_scheduler.html#TYPEtail">tail</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> last_cycle_num_jobs : <code class="type"><a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> set_last_cycle_num_jobs : <code class="type"><a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; int -&gt; unit</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> cycle_times : <code class="type"><a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; <a href="../core/Std.Time.Span.html#TYPEt">Core.Std.Time.Span.t</a> <a href="Raw_scheduler.html#TYPEtail">tail</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> last_cycle_time : <code class="type"><a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; <a href="../core/Std.Time.Span.html#TYPEt">Core.Std.Time.Span.t</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> set_last_cycle_time : <code class="type"><a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; <a href="../core/Std.Time.Span.html#TYPEt">Core.Std.Time.Span.t</a> -&gt; unit</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> cycle_start : <code class="type"><a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; <a href="../core/Std.Time.html#TYPEt">Core.Std.Time.t</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> set_cycle_start : <code class="type"><a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; <a href="../core/Std.Time.html#TYPEt">Core.Std.Time.t</a> -&gt; unit</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> cycle_count : <code class="type"><a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> set_cycle_count : <code class="type"><a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; int -&gt; unit</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> num_jobs_run : <code class="type"><a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> set_num_jobs_run : <code class="type"><a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; int -&gt; unit</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> global_kill_index : <code class="type"><a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; <a href="Kill_index.html#TYPEt">Kill_index.t</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> set_global_kill_index : <code class="type"><a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; <a href="Kill_index.html#TYPEt">Kill_index.t</a> -&gt; unit</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> uncaught_exn : <code class="type"><a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; <a href="../core/Std.Error.html#TYPEt">Core.Std.Error.t</a> option</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> set_uncaught_exn : <code class="type"><a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; <a href="../core/Std.Error.html#TYPEt">Core.Std.Error.t</a> option -&gt; unit</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> max_num_jobs_per_priority_per_cycle : <code class="type"><a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> set_max_num_jobs_per_priority_per_cycle : <code class="type"><a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; int -&gt; unit</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> current_execution_context : <code class="type"><a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; <a href="Raw_scheduler.Execution_context.html#TYPEt">Execution_context.t</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> set_current_execution_context : <code class="type"><a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; <a href="Raw_scheduler.Execution_context.html#TYPEt">Execution_context.t</a> -&gt; unit</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> main_execution_context : <code class="type"><a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; <a href="Raw_scheduler.Execution_context.html#TYPEt">Execution_context.t</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> set_main_execution_context : <code class="type"><a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; <a href="Raw_scheduler.Execution_context.html#TYPEt">Execution_context.t</a> -&gt; unit</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> jobs : <code class="type"><a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; <a href="Raw_scheduler.Execution_context.html#TYPEt">Execution_context.t</a> <a href="Job.html#TYPEt">Job.t</a> <a href="Jobs.html#TYPEt">Jobs.t</a> <a href="../core/Std.html#TYPEsexp_opaque">Core.Std.sexp_opaque</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> check_access : <code class="type"><a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; (unit -&gt; unit) option</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> set_check_access : <code class="type"><a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; (unit -&gt; unit) option -&gt; unit</code></span></pre>
+      
+    
+
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Raw_scheduler.T.Fields.html">Fields</a> : <code class="code">sig</code> <a href="Raw_scheduler.T.Fields.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Raw_scheduler.T.Fields.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

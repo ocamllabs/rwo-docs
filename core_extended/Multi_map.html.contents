@@ -1,0 +1,70 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('k, 'v) </code>t </span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core/Std.Sexpable.S2.html">Core.Std.Sexpable.S2</a></code> with type t = ('a, 'b) <a href="Multi_map.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="../core/Std.Sexpable.S2.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> empty : <code class="type">('k, 'v) <a href="Multi_map.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> singleton : <code class="type">'k -&gt; 'v -&gt; ('k, 'v) <a href="Multi_map.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_empty : <code class="type">('k, 'v) <a href="Multi_map.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add : <code class="type">key:'k -&gt; data:'v -&gt; ('k, 'v) <a href="Multi_map.html#TYPEt">t</a> -&gt; ('k, 'v) <a href="Multi_map.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find : <code class="type">('k, 'v) <a href="Multi_map.html#TYPEt">t</a> -&gt; 'k -&gt; 'v list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove : <code class="type">('k, 'v) <a href="Multi_map.html#TYPEt">t</a> -&gt; 'k -&gt; ('k, 'v) <a href="Multi_map.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set : <code class="type">key:'k -&gt; data:'v list -&gt; ('k, 'v) <a href="Multi_map.html#TYPEt">t</a> -&gt; ('k, 'v) <a href="Multi_map.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem : <code class="type">('k, 'v) <a href="Multi_map.html#TYPEt">t</a> -&gt; 'k -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> keys : <code class="type">('k, 'v) <a href="Multi_map.html#TYPEt">t</a> -&gt; 'k list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter : <code class="type">f:(key:'k -&gt; data:'v -&gt; unit) -&gt; ('k, 'v) <a href="Multi_map.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map : <code class="type">f:('a -&gt; 'b) -&gt; ('k, 'a) <a href="Multi_map.html#TYPEt">t</a> -&gt; ('k, 'b) <a href="Multi_map.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mapi : <code class="type">f:(key:'k -&gt; data:'a -&gt; 'b) -&gt; ('k, 'a) <a href="Multi_map.html#TYPEt">t</a> -&gt; ('k, 'b) <a href="Multi_map.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold : <code class="type">f:(key:'k -&gt; data:'v -&gt; 'a -&gt; 'a) -&gt; ('k, 'v) <a href="Multi_map.html#TYPEt">t</a> -&gt; init:'a -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> filter : <code class="type">f:(key:'k -&gt; data:'v -&gt; bool) -&gt; ('k, 'v) <a href="Multi_map.html#TYPEt">t</a> -&gt; ('k, 'v) <a href="Multi_map.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> reduce : <code class="type">f:('v list -&gt; 'r) -&gt; ('k, 'v) <a href="Multi_map.html#TYPEt">t</a> -&gt; ('k, 'r) <a href="../core/Std.Map.Poly.html#TYPEt">Core.Std.Map.Poly.t</a></code></span></pre>
+      
+    

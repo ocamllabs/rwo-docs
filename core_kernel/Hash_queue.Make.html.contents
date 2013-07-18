@@ -1,0 +1,172 @@
+FIX ME
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Hash_queue.Make.Table.html">Table</a> : <code class="code"><a href="Hash_queue.Hashtbl.html#TYPEMake">Hashtbl.Make</a></code>(<code class="code"><a href="Hash_queue.Make.Key.html">Key</a></code>)</pre>
+	<div class="content" style="display:none">
+	<div file="Hash_queue.Make.Table.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Hash_queue.Make.Key_value.html">Key_value</a> : <code class="code">sig</code> <a href="Hash_queue.Make.Key_value.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Hash_queue.Make.Key_value.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Hash_queue.Make.Elt.html">Elt</a> : <code class="code"><a href="Doubly_linked.Elt.html">Doubly_linked.Elt</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Hash_queue.Make.Elt.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<pre><code><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t </span>= {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.num_readers">num_readers</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.queue">queue</span> :<code class="type">'a <a href="Hash_queue.Make.Key_value.html#TYPEt">Key_value.t</a> <a href="Doubly_linked.html#TYPEt">Doubly_linked.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.table">table</span> :<code class="type">'a <a href="Hash_queue.Make.Key_value.html#TYPEt">Key_value.t</a> <a href="Hash_queue.Make.Elt.html#TYPEt">Elt.t</a> <a href="Hash_queue.Make.Table.html#TYPEt">Table.t</a></code>;</code></td>
+	  </tr></table>}
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> invariant : <code class="type">'a <a href="Hash_queue.Make.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">unit -&gt; 'a <a href="Hash_queue.Make.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> read : <code class="type">'a <a href="Hash_queue.Make.html#TYPEt">t</a> -&gt; (unit -&gt; 'b) -&gt; 'b</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ensure_can_modify : <code class="type">'a <a href="Hash_queue.Make.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> clear : <code class="type">'a <a href="Hash_queue.Make.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> length : <code class="type">'a <a href="Hash_queue.Make.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_empty : <code class="type">'a <a href="Hash_queue.Make.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> lookup : <code class="type">'a <a href="Hash_queue.Make.html#TYPEt">t</a> -&gt; <a href="Hash_queue.Make.Table.html#TYPEkey">Table.key</a> <a href="Hash_queue.Hashtbl.html#TYPEkey">Hashtbl.key</a> -&gt; 'a option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> lookup_exn : <code class="type">'a <a href="Hash_queue.Make.html#TYPEt">t</a> -&gt; <a href="Hash_queue.Make.Table.html#TYPEkey">Table.key</a> <a href="Hash_queue.Hashtbl.html#TYPEkey">Hashtbl.key</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem : <code class="type">'a <a href="Hash_queue.Make.html#TYPEt">t</a> -&gt; <a href="Hash_queue.Make.Table.html#TYPEkey">Table.key</a> <a href="Hash_queue.Hashtbl.html#TYPEkey">Hashtbl.key</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_list : <code class="type">'a <a href="Hash_queue.Make.html#TYPEt">t</a> -&gt; 'a <a href="Hash_queue.List.html#TYPEt">List.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_array : <code class="type">'a <a href="Hash_queue.Make.html#TYPEt">t</a> -&gt; 'a <a href="Hash_queue.Array.html#TYPEt">Array.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> for_all : <code class="type">'a <a href="Hash_queue.Make.html#TYPEt">t</a> -&gt; f:('a -&gt; bool) -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> exists : <code class="type">'a <a href="Hash_queue.Make.html#TYPEt">t</a> -&gt; f:('a -&gt; bool) -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_map : <code class="type">'a <a href="Hash_queue.Make.html#TYPEt">t</a> -&gt; f:('a -&gt; 'b option) -&gt; 'b option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find : <code class="type">'a <a href="Hash_queue.Make.html#TYPEt">t</a> -&gt; f:('a -&gt; bool) -&gt; 'a <a href="Option.html#TYPEt">Option.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> enqueue : <code class="type">'a <a href="Hash_queue.Make.html#TYPEt">t</a> -&gt; <a href="Hash_queue.Make.Table.html#TYPEkey">Table.key</a> <a href="Hash_queue.Hashtbl.html#TYPEkey">Hashtbl.key</a> -&gt; 'a -&gt; [&gt; `Key_already_present | `Ok ]</code></span></pre>
+      
+    
+<pre><span id="EXCEPTIONEnqueue_duplicate_key"><span class="keyword">exception</span> Enqueue_duplicate_key</span> <span class="keyword">of</span> <code class="type"><a href="Hash_queue.Make.Key.html#TYPEt">Key.t</a></code></pre>
+
+ 
+      <pre><span><span class="keyword">val</span> enqueue_exn : <code class="type">'a <a href="Hash_queue.Make.html#TYPEt">t</a> -&gt; <a href="Hash_queue.Make.Table.html#TYPEkey">Table.key</a> <a href="Hash_queue.Hashtbl.html#TYPEkey">Hashtbl.key</a> -&gt; 'a -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> dequeue_with_key : <code class="type">'a <a href="Hash_queue.Make.html#TYPEt">t</a> -&gt; (<a href="Hash_queue.Make.Key.html#TYPEt">Key.t</a> * 'a) option</code></span></pre>
+      
+    
+<pre><span id="EXCEPTIONDequeue_with_key_empty"><span class="keyword">exception</span> Dequeue_with_key_empty</span></pre>
+
+ 
+      <pre><span><span class="keyword">val</span> dequeue_with_key_exn : <code class="type">'a <a href="Hash_queue.Make.html#TYPEt">t</a> -&gt; <a href="Hash_queue.Make.Key.html#TYPEt">Key.t</a> * 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> dequeue : <code class="type">'a <a href="Hash_queue.Make.html#TYPEt">t</a> -&gt; 'a option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> first : <code class="type">'a <a href="Hash_queue.Make.html#TYPEt">t</a> -&gt; 'a option</code></span></pre>
+      
+    
+<pre><span id="EXCEPTIONDequeue_empty"><span class="keyword">exception</span> Dequeue_empty</span></pre>
+
+ 
+      <pre><span><span class="keyword">val</span> dequeue_exn : <code class="type">'a <a href="Hash_queue.Make.html#TYPEt">t</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> keys : <code class="type">'a <a href="Hash_queue.Make.html#TYPEt">t</a> -&gt; <a href="Hash_queue.Make.Key.html#TYPEt">Key.t</a> <a href="Hash_queue.List.html#TYPEt">List.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iteri : <code class="type">'a <a href="Hash_queue.Make.html#TYPEt">t</a> -&gt; f:(key:<a href="Hash_queue.Make.Key.html#TYPEt">Key.t</a> -&gt; data:'a -&gt; unit) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter : <code class="type">'a <a href="Hash_queue.Make.html#TYPEt">t</a> -&gt; f:('a -&gt; unit) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> foldi : <code class="type">'a <a href="Hash_queue.Make.html#TYPEt">t</a> -&gt; init:'b -&gt; f:('b -&gt; key:<a href="Hash_queue.Make.Key.html#TYPEt">Key.t</a> -&gt; data:'a -&gt; 'b) -&gt; 'b</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold : <code class="type">'a <a href="Hash_queue.Make.html#TYPEt">t</a> -&gt; init:'b -&gt; f:('b -&gt; 'a -&gt; 'b) -&gt; 'b</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> count : <code class="type">'a <a href="Hash_queue.Make.html#TYPEt">t</a> -&gt; f:('a -&gt; bool) -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> dequeue_all : <code class="type">'a <a href="Hash_queue.Make.html#TYPEt">t</a> -&gt; f:('a -&gt; 'b) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove : <code class="type">'a <a href="Hash_queue.Make.html#TYPEt">t</a> -&gt; <a href="Hash_queue.Make.Table.html#TYPEkey">Table.key</a> <a href="Hash_queue.Hashtbl.html#TYPEkey">Hashtbl.key</a> -&gt; [&gt; `No_such_key | `Ok ]</code></span></pre>
+      
+    
+<pre><span id="EXCEPTIONRemove_unknown_key"><span class="keyword">exception</span> Remove_unknown_key</span> <span class="keyword">of</span> <code class="type"><a href="Hash_queue.Make.Key.html#TYPEt">Key.t</a></code></pre>
+
+ 
+      <pre><span><span class="keyword">val</span> remove_exn : <code class="type">'a <a href="Hash_queue.Make.html#TYPEt">t</a> -&gt; <a href="Hash_queue.Make.Table.html#TYPEkey">Table.key</a> <a href="Hash_queue.Hashtbl.html#TYPEkey">Hashtbl.key</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> replace : <code class="type">'a <a href="Hash_queue.Make.html#TYPEt">t</a> -&gt; <a href="Hash_queue.Make.Table.html#TYPEkey">Table.key</a> <a href="Hash_queue.Hashtbl.html#TYPEkey">Hashtbl.key</a> -&gt; 'a -&gt; [&gt; `No_such_key | `Ok ]</code></span></pre>
+      
+    
+<pre><span id="EXCEPTIONReplace_unknown_key"><span class="keyword">exception</span> Replace_unknown_key</span> <span class="keyword">of</span> <code class="type"><a href="Hash_queue.Make.Key.html#TYPEt">Key.t</a></code></pre>
+
+ 
+      <pre><span><span class="keyword">val</span> replace_exn : <code class="type">'a <a href="Hash_queue.Make.html#TYPEt">t</a> -&gt; <a href="Hash_queue.Make.Table.html#TYPEkey">Table.key</a> <a href="Hash_queue.Hashtbl.html#TYPEkey">Hashtbl.key</a> -&gt; 'a -&gt; unit</code></span></pre>
+      
+    

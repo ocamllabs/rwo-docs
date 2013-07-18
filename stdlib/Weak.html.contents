@@ -1,0 +1,61 @@
+<br/><br/><h6 id="6_TITLE">Low-level functions</h6><br/> <br/>
+	  
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">int -&gt; 'a <a href="Weak.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> length : <code class="type">'a <a href="Weak.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set : <code class="type">'a <a href="Weak.html#TYPEt">t</a> -&gt; int -&gt; 'a option -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get : <code class="type">'a <a href="Weak.html#TYPEt">t</a> -&gt; int -&gt; 'a option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get_copy : <code class="type">'a <a href="Weak.html#TYPEt">t</a> -&gt; int -&gt; 'a option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> check : <code class="type">'a <a href="Weak.html#TYPEt">t</a> -&gt; int -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fill : <code class="type">'a <a href="Weak.html#TYPEt">t</a> -&gt; int -&gt; int -&gt; 'a option -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> blit : <code class="type">'a <a href="Weak.html#TYPEt">t</a> -&gt; int -&gt; 'a <a href="Weak.html#TYPEt">t</a> -&gt; int -&gt; int -&gt; unit</code></span></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Weak hash tables</h6><br/> <br/>
+	  
+<br/>A weak hash table is a hashed set of values.  Each value may
+    magically disappear from the set when it is not used by the
+    rest of the program any more.  This is normally used to share
+    data structures without inducing memory leaks.
+    Weak hash tables are defined on values from a TODO reference : Hashtbl.HashedType
+    module; the <code class="code">equal</code> relation and <code class="code">hash</code> function are taken from that
+    module.  We will say that <code class="code">v</code> is an instance of <code class="code">x</code> if <code class="code">equal x v</code>
+    is <code class="code">true</code>.<br/>    The <code class="code">equal</code> relation must be able to work on a shallow copy of
+    the values and give the same result as with the values themselves.<br/>
+	  
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Weak.S.html">S</a> = <code class="type"><code class="code">sig</code> <a href="Weak.S.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Weak.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Weak.Make.html">Make</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">H</code><code class="code"> : </code><code class="type"><a href="Hashtbl.HashedType.html">Hashtbl.HashedType</a></code><code class="code">) -&gt; </code><code class="code"><a href="Weak.S.html">S</a></code> with type <a href="Weak.S.html#TYPEdata">data</a> = H.t</div></pre>
+	<div class="content" style="display:none">
+	<div file="Weak.Make.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

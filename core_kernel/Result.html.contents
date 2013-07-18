@@ -1,0 +1,196 @@
+<pre><code><span id="TYPEt"><span class="keyword">type</span> <code class="type">('ok, 'err) </code>t </span>= </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Ok"><span class="constructor">Ok</span></span> <span class="keyword">of</span> <code class="type">'ok</code></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Error"><span class="constructor">Error</span></span> <span class="keyword">of</span> <code class="type">'err</code></code></td>
+	   </tr></table>
+      <div class="info"><code class="code">'a</code> is a function's expected return type, and <code class="code">'b</code> is often an error message string.
+    <pre class="codepre"><code class="code">let ric_of_ticker = function
+    | &quot;IBM&quot; -&gt; Ok &quot;IBM.N&quot;
+    | &quot;MSFT&quot; -&gt; Ok &quot;MSFT.OQ&quot;
+    | &quot;AA&quot; -&gt; Ok &quot;AA.N&quot;
+    | &quot;CSCO&quot; -&gt; Ok &quot;CSCO.OQ&quot;
+    | _ as ticker -&gt; Error (sprintf &quot;can't find ric of %s&quot; ticker) </code></pre>
+    The return type of ric_of_ticker could be <code class="code">string option</code>, but <code class="code">(string, string)
+    Result.t</code> gives more control over the error message.</div>
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Monad.S2.html">Monad.S2</a></code> with type t = ('a, 'err) <a href="Result.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="Monad.S2.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> compare : <code class="type">('a -&gt; 'a -&gt; int) -&gt; ('b -&gt; 'b -&gt; int) -&gt; ('a, 'b) <a href="Result.html#TYPEt">t</a> -&gt; ('a, 'b) <a href="Result.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fail : <code class="type">'err -&gt; ('a, 'err) <a href="Result.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> failf : <code class="type">('a, unit, string, ('b, string) <a href="Result.html#TYPEt">t</a>) <a href="../stdlib/Pervasives.html#TYPEformat4">format4</a> -&gt; 'a</code></span></pre>
+      <div class="info">e.g. <code class="code">failf &quot;Couldn't find bloogle %s&quot; (Bloogle.to_string b)</code> </div>
+    
+ 
+      <pre><span><span class="keyword">val</span> is_ok : <code class="type">('a, 'b) <a href="Result.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_error : <code class="type">('a, 'b) <a href="Result.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ok : <code class="type">('ok, 'a) <a href="Result.html#TYPEt">t</a> -&gt; 'ok option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> error : <code class="type">('a, 'err) <a href="Result.html#TYPEt">t</a> -&gt; 'err option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_option : <code class="type">'ok option -&gt; error:'err -&gt; ('ok, 'err) <a href="Result.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter : <code class="type">('ok, 'a) <a href="Result.html#TYPEt">t</a> -&gt; f:('ok -&gt; unit) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter_error : <code class="type">('a, 'err) <a href="Result.html#TYPEt">t</a> -&gt; f:('err -&gt; unit) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map : <code class="type">('ok, 'err) <a href="Result.html#TYPEt">t</a> -&gt; f:('ok -&gt; 'c) -&gt; ('c, 'err) <a href="Result.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map_error : <code class="type">('ok, 'err) <a href="Result.html#TYPEt">t</a> -&gt; f:('err -&gt; 'c) -&gt; ('ok, 'c) <a href="Result.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> combine : <code class="type">('ok1, 'err) <a href="Result.html#TYPEt">t</a> -&gt;
+('ok2, 'err) <a href="Result.html#TYPEt">t</a> -&gt;
+ok:('ok1 -&gt; 'ok2 -&gt; 'ok3) -&gt; err:('err -&gt; 'err -&gt; 'err) -&gt; ('ok3, 'err) <a href="Result.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> call : <code class="type">f:('a -&gt; unit, 'b) <a href="Result.html#TYPEt">t</a> -&gt; 'a -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> apply : <code class="type">f:('a -&gt; 'b, 'err) <a href="Result.html#TYPEt">t</a> -&gt; 'a -&gt; ('b, 'err) <a href="Result.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ok_fst : <code class="type">('ok, 'err) <a href="Result.html#TYPEt">t</a> -&gt; [ `Fst of 'ok | `Snd of 'err ]</code></span></pre>
+      <div class="info"><code class="code">ok_fst</code> is useful with <code class="code">List.partition_map</code>.  Continuing the above example:
+<pre class="codepre"><code class="code">
+    let rics, errors = List.partition_map ~f:Result.ok_fst
+      (List.map ~f:ric_of_ticker [&quot;AA&quot;; &quot;F&quot;; &quot;CSCO&quot;; &quot;AAPL&quot;]) </code></pre> </div>
+    
+ 
+      <pre><span><span class="keyword">val</span> ok_if_true : <code class="type">bool -&gt; error:'err -&gt; (unit, 'err) <a href="Result.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> try_with : <code class="type">(unit -&gt; 'a) -&gt; ('a, exn) <a href="Result.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ok_exn : <code class="type">('ok, exn) <a href="Result.html#TYPEt">t</a> -&gt; 'ok</code></span></pre>
+      <div class="info"><code class="code">ok_exn t</code> returns <code class="code">x</code> if <code class="code">t = Ok x</code>, and raises <code class="code">exn</code> if <code class="code">t = Error exn</code> </div>
+    
+ 
+      <pre><span><span class="keyword">val</span> ok_or_failwith : <code class="type">('ok, string) <a href="Result.html#TYPEt">t</a> -&gt; 'ok</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ok_unit : <code class="type">(unit, 'a) <a href="Result.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">ok_unit = Ok ()</code>, used to avoid allocation as a performance hack</div>
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Result.Export.html">Export</a> : <code class="code">sig</code> <a href="Result.Export.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Result.Export.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Result.Stable.html">Stable</a> : <code class="code">sig</code> <a href="Result.Stable.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Result.Stable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> compare : <code class="type">('ok -&gt; 'ok -&gt; int) -&gt;
+('err -&gt; 'err -&gt; int) -&gt; ('ok, 'err) <a href="Result.html#TYPEt">t</a> -&gt; ('ok, 'err) <a href="Result.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp : <code class="type">(<a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; 'ok) -&gt;
+(<a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; 'err) -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; ('ok, 'err) <a href="Result.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type">('ok -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a>) -&gt;
+('err -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a>) -&gt; ('ok, 'err) <a href="Result.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_t : <code class="type">'ok <a href="../bin_prot/Type_class.html#TYPEt">Bin_prot.Type_class.t</a> -&gt;
+'err <a href="../bin_prot/Type_class.html#TYPEt">Bin_prot.Type_class.t</a> -&gt; ('ok, 'err) <a href="Result.html#TYPEt">t</a> <a href="../bin_prot/Type_class.html#TYPEt">Bin_prot.Type_class.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t : <code class="type">'ok <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+'err <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a> -&gt; ('ok, 'err) <a href="Result.html#TYPEt">t</a> <a href="../bin_prot/Read_ml.html#TYPEreader">Bin_prot.Read_ml.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t_ : <code class="type">'ok <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+'err <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+('ok, 'err) <a href="Result.html#TYPEt">t</a> <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t__ : <code class="type">'ok <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+'err <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+(int -&gt; ('ok, 'err) <a href="Result.html#TYPEt">t</a>) <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t : <code class="type">'ok <a href="../bin_prot/Type_class.html#TYPEreader">Bin_prot.Type_class.reader</a> -&gt;
+'err <a href="../bin_prot/Type_class.html#TYPEreader">Bin_prot.Type_class.reader</a> -&gt; ('ok, 'err) <a href="Result.html#TYPEt">t</a> <a href="../bin_prot/Type_class.html#TYPEreader">Bin_prot.Type_class.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t : <code class="type">'ok <a href="../bin_prot/Size.html#TYPEsizer">Bin_prot.Size.sizer</a> -&gt;
+'err <a href="../bin_prot/Size.html#TYPEsizer">Bin_prot.Size.sizer</a> -&gt; ('ok, 'err) <a href="Result.html#TYPEt">t</a> <a href="../bin_prot/Size.html#TYPEsizer">Bin_prot.Size.sizer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t : <code class="type">'ok <a href="../bin_prot/Unsafe_write_c.html#TYPEwriter">Bin_prot.Unsafe_write_c.writer</a> -&gt;
+'err <a href="../bin_prot/Unsafe_write_c.html#TYPEwriter">Bin_prot.Unsafe_write_c.writer</a> -&gt; ('ok, 'err) <a href="Result.html#TYPEt">t</a> <a href="../bin_prot/Write_ml.html#TYPEwriter">Bin_prot.Write_ml.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_ : <code class="type">'ok <a href="../bin_prot/Unsafe_write_c.html#TYPEwriter">Bin_prot.Unsafe_write_c.writer</a> -&gt;
+'err <a href="../bin_prot/Unsafe_write_c.html#TYPEwriter">Bin_prot.Unsafe_write_c.writer</a> -&gt;
+('ok, 'err) <a href="Result.html#TYPEt">t</a> <a href="../bin_prot/Unsafe_write_c.html#TYPEwriter">Bin_prot.Unsafe_write_c.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t : <code class="type">'ok <a href="../bin_prot/Type_class.html#TYPEwriter">Bin_prot.Type_class.writer</a> -&gt;
+'err <a href="../bin_prot/Type_class.html#TYPEwriter">Bin_prot.Type_class.writer</a> -&gt; ('ok, 'err) <a href="Result.html#TYPEt">t</a> <a href="../bin_prot/Type_class.html#TYPEwriter">Bin_prot.Type_class.writer</a></code></span></pre>
+      
+    
+<br/>e.g. <code class="code">failf &quot;Couldn't find bloogle %s&quot; (Bloogle.to_string b)</code> <br/>
+	  
+<br/><code class="code">ok_fst</code> is useful with <code class="code">List.partition_map</code>.  Continuing the above example:
+<pre class="codepre"><code class="code">
+    let rics, errors = List.partition_map ~f:Result.ok_fst
+      (List.map ~f:ric_of_ticker [&quot;AA&quot;; &quot;F&quot;; &quot;CSCO&quot;; &quot;AAPL&quot;]) </code></pre> <br/>
+	  
+<br/><code class="code">ok_exn t</code> returns <code class="code">x</code> if <code class="code">t = Ok x</code>, and raises <code class="code">exn</code> if <code class="code">t = Error exn</code> <br/>
+	  
+<br/><code class="code">ok_unit = Ok ()</code>, used to avoid allocation as a performance hack<br/>
+	  

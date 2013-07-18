@@ -1,0 +1,65 @@
+ 
+      <pre><span><span class="keyword">val</span> names : <code class="type">string list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> hard : <code class="type">(<a href="Procfs.Process.Limits.Rlimit.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEvalue">value</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> soft : <code class="type">(<a href="Procfs.Process.Limits.Rlimit.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEvalue">value</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold : <code class="type">init:'acc__ -&gt;
+soft:('acc__ -&gt; (<a href="Procfs.Process.Limits.Rlimit.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEvalue">value</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt;
+hard:('acc__ -&gt; (<a href="Procfs.Process.Limits.Rlimit.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEvalue">value</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'acc__) -&gt; 'acc__</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> make_creator : <code class="type">soft:((<a href="Procfs.Process.Limits.Rlimit.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEvalue">value</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+      'compile_acc__ -&gt; ('input__ -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEvalue">value</a>) * 'compile_acc__) -&gt;
+hard:((<a href="Procfs.Process.Limits.Rlimit.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEvalue">value</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+      'compile_acc__ -&gt; ('input__ -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEvalue">value</a>) * 'compile_acc__) -&gt;
+'compile_acc__ -&gt; ('input__ -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">t</a>) * 'compile_acc__</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">soft:<a href="Procfs.Process.Limits.Rlimit.html#TYPEvalue">value</a> -&gt; hard:<a href="Procfs.Process.Limits.Rlimit.html#TYPEvalue">value</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map : <code class="type">soft:((<a href="Procfs.Process.Limits.Rlimit.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEvalue">value</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEvalue">value</a>) -&gt;
+hard:((<a href="Procfs.Process.Limits.Rlimit.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEvalue">value</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEvalue">value</a>) -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter : <code class="type">soft:((<a href="Procfs.Process.Limits.Rlimit.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEvalue">value</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt;
+hard:((<a href="Procfs.Process.Limits.Rlimit.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEvalue">value</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; unit) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> for_all : <code class="type">soft:((<a href="Procfs.Process.Limits.Rlimit.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEvalue">value</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+hard:((<a href="Procfs.Process.Limits.Rlimit.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEvalue">value</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> exists : <code class="type">soft:((<a href="Procfs.Process.Limits.Rlimit.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEvalue">value</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt;
+hard:((<a href="Procfs.Process.Limits.Rlimit.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEvalue">value</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; bool) -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_list : <code class="type">soft:((<a href="Procfs.Process.Limits.Rlimit.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEvalue">value</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt;
+hard:((<a href="Procfs.Process.Limits.Rlimit.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEvalue">value</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; 'elem__) -&gt; 'elem__ list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map_poly : <code class="type">([&lt; `Read | `Set_and_create ], <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">t</a>, 'x0) <a href="../fieldslib/Field.html#TYPEuser">Fieldslib.Field.user</a> -&gt; 'x0 list</code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Procfs.Process.Limits.Rlimit.Fields.Direct.html">Direct</a> : <code class="code">sig</code> <a href="Procfs.Process.Limits.Rlimit.Fields.Direct.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Procfs.Process.Limits.Rlimit.Fields.Direct.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

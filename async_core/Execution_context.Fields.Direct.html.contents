@@ -1,0 +1,37 @@
+ 
+      <pre><span><span class="keyword">val</span> iter : <code class="type"><a href="Execution_context.html#TYPEt">t</a> -&gt;
+monitor:(([&lt; `Read | `Set_and_create ], <a href="Execution_context.html#TYPEt">t</a>, <a href="Execution_context.html#TYPEt">t</a> <a href="Execution_context.Monitor.html#TYPEt_">Monitor.t_</a> <a href="Backpatched.html#TYPEt">Backpatched.t</a>)
+         <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="Execution_context.html#TYPEt">t</a> -&gt; <a href="Execution_context.html#TYPEt">t</a> <a href="Execution_context.Monitor.html#TYPEt_">Monitor.t_</a> <a href="Backpatched.html#TYPEt">Backpatched.t</a> -&gt; 'a) -&gt;
+priority:(([&lt; `Read | `Set_and_create ], <a href="Execution_context.html#TYPEt">t</a>, <a href="Priority.html#TYPEt">Priority.t</a>)
+          <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="Execution_context.html#TYPEt">t</a> -&gt; <a href="Priority.html#TYPEt">Priority.t</a> -&gt; 'b) -&gt;
+backtrace_history:(([&lt; `Read | `Set_and_create ], <a href="Execution_context.html#TYPEt">t</a>,
+                    <a href="../core/Std.Backtrace.html#TYPEt">Core.Std.Backtrace.t</a> list)
+                   <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                   <a href="Execution_context.html#TYPEt">t</a> -&gt; <a href="../core/Std.Backtrace.html#TYPEt">Core.Std.Backtrace.t</a> list -&gt; 'c) -&gt;
+kill_index:(([&lt; `Read | `Set_and_create ], <a href="Execution_context.html#TYPEt">t</a>, <a href="Kill_index.html#TYPEt">Kill_index.t</a>)
+            <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="Execution_context.html#TYPEt">t</a> -&gt; <a href="Kill_index.html#TYPEt">Kill_index.t</a> -&gt; 'd) -&gt;
+'d</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> fold : <code class="type"><a href="Execution_context.html#TYPEt">t</a> -&gt;
+init:'a -&gt;
+monitor:('a -&gt;
+         ([&lt; `Read | `Set_and_create ], <a href="Execution_context.html#TYPEt">t</a>, <a href="Execution_context.html#TYPEt">t</a> <a href="Execution_context.Monitor.html#TYPEt_">Monitor.t_</a> <a href="Backpatched.html#TYPEt">Backpatched.t</a>)
+         <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="Execution_context.html#TYPEt">t</a> -&gt; <a href="Execution_context.html#TYPEt">t</a> <a href="Execution_context.Monitor.html#TYPEt_">Monitor.t_</a> <a href="Backpatched.html#TYPEt">Backpatched.t</a> -&gt; 'b) -&gt;
+priority:('b -&gt;
+          ([&lt; `Read | `Set_and_create ], <a href="Execution_context.html#TYPEt">t</a>, <a href="Priority.html#TYPEt">Priority.t</a>)
+          <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="Execution_context.html#TYPEt">t</a> -&gt; <a href="Priority.html#TYPEt">Priority.t</a> -&gt; 'c) -&gt;
+backtrace_history:('c -&gt;
+                   ([&lt; `Read | `Set_and_create ], <a href="Execution_context.html#TYPEt">t</a>,
+                    <a href="../core/Std.Backtrace.html#TYPEt">Core.Std.Backtrace.t</a> list)
+                   <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                   <a href="Execution_context.html#TYPEt">t</a> -&gt; <a href="../core/Std.Backtrace.html#TYPEt">Core.Std.Backtrace.t</a> list -&gt; 'd) -&gt;
+kill_index:('d -&gt;
+            ([&lt; `Read | `Set_and_create ], <a href="Execution_context.html#TYPEt">t</a>, <a href="Kill_index.html#TYPEt">Kill_index.t</a>)
+            <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="Execution_context.html#TYPEt">t</a> -&gt; <a href="Kill_index.html#TYPEt">Kill_index.t</a> -&gt; 'e) -&gt;
+'e</code></span></pre>
+      
+    
+

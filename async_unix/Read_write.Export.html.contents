@@ -1,0 +1,6 @@
+<pre><span id="TYPEread_write_"><span class="keyword">type</span> <code class="type">('a, 'z) </code>read_write_ </span>= {<code class="type">('a, 'z) <a href="Read_write.html#TYPEany">any</a></code> <span class="keyword">private</span></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTread_write_.read">read</span> :<code class="type">'a</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTread_write_.write">write</span> :<code class="type">'a</code>;</code></td>
+	  </tr></table>}
+      
+    

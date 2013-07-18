@@ -1,0 +1,25 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t </span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Hash_set_intf.Creators.html">Hash_set_intf.Creators</a></code> with type t = 'a <a href="Hash_set.Poly.html#TYPEt">t</a> with type elt = 'a with type create_options = ('key, 'z) <a href="Hash_set_intf.html#TYPEcreate_options_without_hashable">Hash_set_intf.create_options_without_hashable</a></pre>
+	<div class="content">
+	<div file="Hash_set_intf.Creators.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Hash_set_intf.Accessors.html">Hash_set_intf.Accessors</a></code> with type t = 'a <a href="Hash_set.Poly.html#TYPEt">t</a> with type elt = 'a elt</pre>
+	<div class="content">
+	<div file="Hash_set_intf.Accessors.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp : <code class="type">(<a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; 'a) -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; 'a <a href="Hash_set.Poly.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type">('a -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a>) -&gt; 'a <a href="Hash_set.Poly.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    

@@ -1,0 +1,50 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('query, 'state, 'update, 'error) </code>t </span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Rpc.State_rpc.Id.html">Id</a> : <code class="code">sig</code> <a href="Rpc.State_rpc.Id.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Rpc.State_rpc.Id.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">name:string -&gt;
+version:int -&gt;
+bin_query:'query <a href="../core/Std.Bin_prot.Type_class.html#TYPEt">Core.Std.Bin_prot.Type_class.t</a> -&gt;
+bin_state:'state <a href="../core/Std.Bin_prot.Type_class.html#TYPEt">Core.Std.Bin_prot.Type_class.t</a> -&gt;
+bin_update:'update <a href="../core/Std.Bin_prot.Type_class.html#TYPEt">Core.Std.Bin_prot.Type_class.t</a> -&gt;
+bin_error:'error <a href="../core/Std.Bin_prot.Type_class.html#TYPEt">Core.Std.Bin_prot.Type_class.t</a> -&gt;
+('query, 'state, 'update, 'error) <a href="Rpc.State_rpc.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> implement : <code class="type">('query, 'state, 'update, 'error) <a href="Rpc.State_rpc.html#TYPEt">t</a> -&gt;
+('connection_state -&gt;
+ 'query -&gt;
+ aborted:unit <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a> -&gt;
+ ('state * 'update <a href="Import.Pipe.Reader.html#TYPEt">Import.Pipe.Reader.t</a>, 'error) <a href="../core/Std.Result.html#TYPEt">Core.Std.Result.t</a>
+ <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a>) -&gt;
+'connection_state <a href="Rpc.Implementation.html#TYPEt">Implementation.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> dispatch : <code class="type">('query, 'state, 'update, 'error) <a href="Rpc.State_rpc.html#TYPEt">t</a> -&gt;
+<a href="Rpc.Connection.html#TYPEt">Connection.t</a> -&gt;
+'query -&gt;
+update:('state -&gt; 'update -&gt; 'state) -&gt;
+('state * ('state * 'update) <a href="Import.Pipe.Reader.html#TYPEt">Import.Pipe.Reader.t</a> * <a href="Rpc.State_rpc.Id.html#TYPEt">Id.t</a>, 'error)
+<a href="../core/Std.Result.html#TYPEt">Core.Std.Result.t</a> <a href="../core/Std.Or_error.html#TYPEt">Core.Std.Or_error.t</a> <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> abort : <code class="type">('a, 'b, 'c, 'd) <a href="Rpc.State_rpc.html#TYPEt">t</a> -&gt; <a href="Rpc.Connection.html#TYPEt">Connection.t</a> -&gt; <a href="Rpc.State_rpc.Id.html#TYPEt">Id.t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> name : <code class="type">('a, 'b, 'c, 'd) <a href="Rpc.State_rpc.html#TYPEt">t</a> -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> version : <code class="type">('a, 'b, 'c, 'd) <a href="Rpc.State_rpc.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    

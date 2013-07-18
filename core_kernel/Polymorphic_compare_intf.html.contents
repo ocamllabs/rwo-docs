@@ -1,0 +1,21 @@
+ 
+      <pre><span><span class="keyword">val</span> __pa_ounit_275876e34cf609db118f3d84b799a790 : <code class="type">string</code></span></pre>
+      
+    
+
+<br/>Interfaces used for hiding and replacing polymorphic compare.  Including a module with
+    interface <code class="code">S</code> should hide the majority of functions that use polymorphic compare.<br/>
+	  
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Polymorphic_compare_intf.Infix.html">Infix</a> = <code class="type"><code class="code">sig</code> <a href="Polymorphic_compare_intf.Infix.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Polymorphic_compare_intf.Infix.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Polymorphic_compare_intf.S.html">S</a> = <code class="type"><code class="code">sig</code> <a href="Polymorphic_compare_intf.S.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Polymorphic_compare_intf.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+

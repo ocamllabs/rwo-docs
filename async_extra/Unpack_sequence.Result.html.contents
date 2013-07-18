@@ -1,0 +1,17 @@
+<pre><code><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'b) </code>t </span>= </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Input_closed"><span class="constructor">Input_closed</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Input_closed_in_the_middle_of_data"><span class="constructor">Input_closed_in_the_middle_of_data</span></span> <span class="keyword">of</span> <code class="type">('a, 'b) <a href="../core/Std.Unpack_buffer.html#TYPEt">Core.Std.Unpack_buffer.t</a></code></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Output_closed"><span class="constructor">Output_closed</span></span> <span class="keyword">of</span> <code class="type">'a <a href="../core/Std.Queue.html#TYPEt">Core.Std.Queue.t</a> * ('a, 'b) <a href="../core/Std.Unpack_buffer.html#TYPEt">Core.Std.Unpack_buffer.t</a></code></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Unpack_error"><span class="constructor">Unpack_error</span></span> <span class="keyword">of</span> <code class="type"><a href="../core/Std.Error.html#TYPEt">Core.Std.Error.t</a></code></code></td>
+	   </tr></table>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_error : <code class="type">('a, 'b) <a href="Unpack_sequence.Result.html#TYPEt">t</a> -&gt; <a href="../core/Std.Error.html#TYPEt">Core.Std.Error.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type">('a -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a>) -&gt;
+('b -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a>) -&gt; ('a, 'b) <a href="Unpack_sequence.Result.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    

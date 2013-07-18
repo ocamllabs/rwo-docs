@@ -1,0 +1,51 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Raw_ivar.Handler.html">Handler</a> : <code class="code">sig</code> <a href="Raw_ivar.Handler.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Raw_ivar.Handler.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'execution_context) </code>t </span></pre>
+      
+    
+<pre><span id="TYPEivar"><span class="keyword">type</span> <code class="type">('a, 'execution_context) </code>ivar </span>= <code class="type">('a, 'execution_context) <a href="Raw_ivar.html#TYPEt">t</a></code> </pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core/Std.Invariant.S2.html">Core.Std.Invariant.S2</a></code> with type t = ('a, 'b) <a href="Raw_ivar.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="../core/Std.Invariant.S2.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">unit -&gt; ('a, 'b) <a href="Raw_ivar.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> peek : <code class="type">('a, 'b) <a href="Raw_ivar.html#TYPEt">t</a> -&gt; 'a option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_empty : <code class="type">('a, 'b) <a href="Raw_ivar.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_full : <code class="type">('a, 'b) <a href="Raw_ivar.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Raw_ivar.Scheduler_dependent.html">Scheduler_dependent</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">Scheduler</code><code class="code"> : </code><code class="type"><a href="Import.Basic_scheduler.html">Import.Basic_scheduler</a></code><code class="code">) -&gt; </code><div class="sig_block"><code class="code">functor (</code><code class="code">Ivar</code><code class="code"> : </code><code class="code"><a href="Import.Raw.html">Import.Raw</a></code> with type execution_context = Scheduler.Execution_context.t with type raw = ('a, 'execution_context) <a href="Raw_ivar.html#TYPEivar">ivar</a><code class="code">) -&gt; </code><code class="code">sig</code> <a href="Raw_ivar.Scheduler_dependent.html">..</a> <code class="code">end</code></div></div></pre>
+	<div class="content" style="display:none">
+	<div file="Raw_ivar.Scheduler_dependent.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> debug_space_leaks : <code class="type">int option <a href="../stdlib/Pervasives.html#TYPEref">ref</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type">('a -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a>) -&gt;
+('execution_context -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a>) -&gt;
+('a, 'execution_context) <a href="Raw_ivar.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    

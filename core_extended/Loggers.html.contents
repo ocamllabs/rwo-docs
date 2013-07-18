@@ -1,0 +1,49 @@
+<br/><br/><h2 id="2_TITLE">Interface specification of loggers</h2><br/> <br/>
+	  
+<pre><span id="TYPElogger"><span class="keyword">type</span> <code class="type">'a </code>logger </span>= <code class="type">('a, unit, string, unit) <a href="../stdlib/Pervasives.html#TYPEformat4">format4</a> -&gt; 'a</code> </pre>
+      <div class="info">Type of logging functions</div>
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Loggers.LOGGER.html">LOGGER</a> = <code class="type"><code class="code">sig</code> <a href="Loggers.LOGGER.html">..</a> <code class="code">end</code></code></pre><div class="info">Interface to loggers</div>
+	<div class="content" style="display:none">
+	<div file="Loggers.LOGGER.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Loggers.SPEC.html">SPEC</a> = <code class="type"><code class="code">sig</code> <a href="Loggers.SPEC.html">..</a> <code class="code">end</code></code></pre><div class="info">Specification for creating loggers</div>
+	<div class="content" style="display:none">
+	<div file="Loggers.SPEC.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Loggers.MakeLogger.html">MakeLogger</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">Spec</code><code class="code"> : </code><code class="type"><a href="Loggers.SPEC.html">SPEC</a></code><code class="code">) -&gt; </code><code class="code"><a href="Loggers.LOGGER.html">LOGGER</a></code></div></pre><div class="info">Functor for creating loggers</div>
+	<div class="content" style="display:none">
+	<div file="Loggers.MakeLogger.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<br/><br/><h2 id="2_TITLE">Logger implementations</h2><br/> <br/>
+	  
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Loggers.MakeChannel.html">MakeChannel</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">ChannelSpec</code><code class="code"> : </code><code class="code">sig</code> <a href="Loggers.MakeChannel.Anon_2.html">..</a> <code class="code">end</code><code class="code">) -&gt; </code><code class="code"><a href="Loggers.LOGGER.html">LOGGER</a></code></div></pre><div class="info">Functor for creating channel loggers</div>
+	<div class="content" style="display:none">
+	<div file="Loggers.MakeChannel.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Loggers.Stderr.html">Stderr</a> : <code class="code"><a href="Loggers.LOGGER.html">LOGGER</a></code></pre><div class="info">Logs to <code class="code">stderr</code> </div>
+	<div class="content" style="display:none">
+	<div file="Loggers.Stderr.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Loggers.Syslog.html">Syslog</a> : <code class="code"><a href="Loggers.LOGGER.html">LOGGER</a></code></pre><div class="info">Logs to syslog daemon</div>
+	<div class="content" style="display:none">
+	<div file="Loggers.Syslog.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Loggers.Ignore.html">Ignore</a> : <code class="code"><a href="Loggers.LOGGER.html">LOGGER</a></code></pre><div class="info">Ignores logging messages</div>
+	<div class="content" style="display:none">
+	<div file="Loggers.Ignore.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

@@ -1,0 +1,22 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Comparator.S_binable.html">Comparator.S_binable</a></code> with type t = <a href="Comparable_intf.Map_and_set_binable.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="Comparator.S_binable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Comparable_intf.Map_and_set_binable.Map.html">Map</a> : <code class="code"><a href="Core_map.S_binable.html">Core_map.S_binable</a></code> with type Key.t = <a href="Comparable_intf.Map_and_set_binable.html#TYPEt">t</a> with type Key.comparator = comparator</pre>
+	<div class="content" style="display:none">
+	<div file="Comparable_intf.Map_and_set_binable.Map.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Comparable_intf.Map_and_set_binable.Set.html">Set</a> : <code class="code"><a href="Core_set.S_binable.html">Core_set.S_binable</a></code> with type Elt.t = <a href="Comparable_intf.Map_and_set_binable.html#TYPEt">t</a> with type Elt.comparator = comparator</pre>
+	<div class="content" style="display:none">
+	<div file="Comparable_intf.Map_and_set_binable.Set.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

@@ -1,0 +1,65 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'b, 'c) </code>t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">('a, 'b) <a href="Bigarray.html#TYPEkind">kind</a> -&gt; 'c <a href="Bigarray.html#TYPElayout">layout</a> -&gt; int array -&gt; ('a, 'b, 'c) <a href="Bigarray.Genarray.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> num_dims : <code class="type">('a, 'b, 'c) <a href="Bigarray.Genarray.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> dims : <code class="type">('a, 'b, 'c) <a href="Bigarray.Genarray.html#TYPEt">t</a> -&gt; int array</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> nth_dim : <code class="type">('a, 'b, 'c) <a href="Bigarray.Genarray.html#TYPEt">t</a> -&gt; int -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> kind : <code class="type">('a, 'b, 'c) <a href="Bigarray.Genarray.html#TYPEt">t</a> -&gt; ('a, 'b) <a href="Bigarray.html#TYPEkind">kind</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> layout : <code class="type">('a, 'b, 'c) <a href="Bigarray.Genarray.html#TYPEt">t</a> -&gt; 'c <a href="Bigarray.html#TYPElayout">layout</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get : <code class="type">('a, 'b, 'c) <a href="Bigarray.Genarray.html#TYPEt">t</a> -&gt; int array -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set : <code class="type">('a, 'b, 'c) <a href="Bigarray.Genarray.html#TYPEt">t</a> -&gt; int array -&gt; 'a -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sub_left : <code class="type">('a, 'b, <a href="Bigarray.html#TYPEc_layout">c_layout</a>) <a href="Bigarray.Genarray.html#TYPEt">t</a> -&gt; int -&gt; int -&gt; ('a, 'b, <a href="Bigarray.html#TYPEc_layout">c_layout</a>) <a href="Bigarray.Genarray.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sub_right : <code class="type">('a, 'b, <a href="Bigarray.html#TYPEfortran_layout">fortran_layout</a>) <a href="Bigarray.Genarray.html#TYPEt">t</a> -&gt; int -&gt; int -&gt; ('a, 'b, <a href="Bigarray.html#TYPEfortran_layout">fortran_layout</a>) <a href="Bigarray.Genarray.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> slice_left : <code class="type">('a, 'b, <a href="Bigarray.html#TYPEc_layout">c_layout</a>) <a href="Bigarray.Genarray.html#TYPEt">t</a> -&gt; int array -&gt; ('a, 'b, <a href="Bigarray.html#TYPEc_layout">c_layout</a>) <a href="Bigarray.Genarray.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> slice_right : <code class="type">('a, 'b, <a href="Bigarray.html#TYPEfortran_layout">fortran_layout</a>) <a href="Bigarray.Genarray.html#TYPEt">t</a> -&gt; int array -&gt; ('a, 'b, <a href="Bigarray.html#TYPEfortran_layout">fortran_layout</a>) <a href="Bigarray.Genarray.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> blit : <code class="type">('a, 'b, 'c) <a href="Bigarray.Genarray.html#TYPEt">t</a> -&gt; ('a, 'b, 'c) <a href="Bigarray.Genarray.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fill : <code class="type">('a, 'b, 'c) <a href="Bigarray.Genarray.html#TYPEt">t</a> -&gt; 'a -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map_file : <code class="type"><a href="Unix.html#TYPEfile_descr">Unix.file_descr</a> -&gt;
+?pos:int64 -&gt;
+('a, 'b) <a href="Bigarray.html#TYPEkind">kind</a> -&gt; 'c <a href="Bigarray.html#TYPElayout">layout</a> -&gt; bool -&gt; int array -&gt; ('a, 'b, 'c) <a href="Bigarray.Genarray.html#TYPEt">t</a></code></span></pre>
+      
+    

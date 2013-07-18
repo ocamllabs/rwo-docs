@@ -1,0 +1,23 @@
+<pre><span id="TYPEquery"><span class="keyword">type</span> query </span></pre>
+      
+    
+<pre><span id="TYPEresponse"><span class="keyword">type</span> response </span></pre>
+      
+    
+<pre><span id="TYPEerror"><span class="keyword">type</span> error </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> implement_multi : <code class="type">?log_not_previously_seen_version:(name:string -&gt; int -&gt; unit) -&gt;
+('state -&gt;
+ <a href="Versioned_rpc.Callee_converts.Pipe_rpc.S.html#TYPEquery">query</a> -&gt;
+ aborted:unit <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a> -&gt;
+ (<a href="Versioned_rpc.Callee_converts.Pipe_rpc.S.html#TYPEresponse">response</a> <a href="Import.Pipe.Reader.html#TYPEt">Import.Pipe.Reader.t</a>, <a href="Versioned_rpc.Callee_converts.Pipe_rpc.S.html#TYPEerror">error</a>) <a href="../core/Std.Result.html#TYPEt">Core.Std.Result.t</a> <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a>) -&gt;
+'state <a href="Rpc.Implementation.html#TYPEt">Rpc.Implementation.t</a> list</code></span></pre>
+      <div class="info">implement multiple versions at once</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> versions : <code class="type">unit -&gt; <a href="../core/Std.Int.Set.html#TYPEt">Core.Std.Int.Set.t</a></code></span></pre>
+      <div class="info">all versions supported by <code class="code">dispatch_multi</code>.
+          (useful for computing which old versions may be pruned)</div>
+    

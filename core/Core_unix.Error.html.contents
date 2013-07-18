@@ -1,0 +1,7 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span>= <code class="type"><a href="Core_unix.html#TYPEerror">error</a></code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_system_int : <code class="type">int -&gt; <a href="Core_unix.Error.html#TYPEt">t</a></code></span></pre>
+      
+    

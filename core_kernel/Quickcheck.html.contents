@@ -1,0 +1,53 @@
+<pre><span id="TYPEgen"><span class="keyword">type</span> <code class="type">'a </code>gen </span>= <code class="type">unit -&gt; 'a</code> </pre>
+      <div class="info">the type of a random <code class="code">'a</code>-generator</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> fg : <code class="type">float <a href="Quickcheck.html#TYPEgen">gen</a></code></span></pre>
+      <div class="info">float generator (no nan, inf, etc.)</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> cg : <code class="type">char <a href="Quickcheck.html#TYPEgen">gen</a></code></span></pre>
+      <div class="info">character generator</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> nng : <code class="type">int <a href="Quickcheck.html#TYPEgen">gen</a></code></span></pre>
+      <div class="info">natural number generator</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> uig : <code class="type">int <a href="Quickcheck.html#TYPEgen">gen</a></code></span></pre>
+      <div class="info">unsigned int generator (uniform random in range min_int, max_int)</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> pg : <code class="type">'a <a href="Quickcheck.html#TYPEgen">gen</a> -&gt; 'b <a href="Quickcheck.html#TYPEgen">gen</a> -&gt; ('a * 'b) <a href="Quickcheck.html#TYPEgen">gen</a></code></span></pre>
+      <div class="info">pair generator</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> tg : <code class="type">'a <a href="Quickcheck.html#TYPEgen">gen</a> -&gt; 'b <a href="Quickcheck.html#TYPEgen">gen</a> -&gt; 'c <a href="Quickcheck.html#TYPEgen">gen</a> -&gt; ('a * 'b * 'c) <a href="Quickcheck.html#TYPEgen">gen</a></code></span></pre>
+      <div class="info">triple generator</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> lg : <code class="type">'a <a href="Quickcheck.html#TYPEgen">gen</a> -&gt; ?size_gen:int <a href="Quickcheck.html#TYPEgen">gen</a> -&gt; 'a list <a href="Quickcheck.html#TYPEgen">gen</a></code></span></pre>
+      <div class="info">list generator</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> sg : <code class="type">?char_gen:char <a href="Quickcheck.html#TYPEgen">gen</a> -&gt; ?size_gen:int <a href="Quickcheck.html#TYPEgen">gen</a> -&gt; string <a href="Quickcheck.html#TYPEgen">gen</a></code></span></pre>
+      <div class="info">string generator</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> always : <code class="type">'a -&gt; 'a <a href="Quickcheck.html#TYPEgen">gen</a></code></span></pre>
+      <div class="info">generator that always returns given value</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> laws : <code class="type">int -&gt; 'a <a href="Quickcheck.html#TYPEgen">gen</a> -&gt; ('a -&gt; bool) -&gt; 'a option</code></span></pre>
+      <div class="info"><code class="code">laws iter gen func</code> applies <code class="code">func</code> repeatedly (<code class="code">iter</code> times) on output
+    of <code class="code">gen</code>, and if <code class="code">func</code> ever returns false, then the input that caused
+    the failure is returned optionally.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> laws_exn : <code class="type">string -&gt; int -&gt; 'a <a href="Quickcheck.html#TYPEgen">gen</a> -&gt; ('a -&gt; bool) -&gt; unit</code></span></pre>
+      <div class="info">Like laws, but throws an exception instead of returning an option.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> repeat : <code class="type">int -&gt; ('a -&gt; unit) -&gt; 'a <a href="Quickcheck.html#TYPEgen">gen</a> -&gt; unit</code></span></pre>
+      
+    

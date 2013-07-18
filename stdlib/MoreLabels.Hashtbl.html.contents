@@ -1,0 +1,118 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'b) </code>t </span>= <code class="type">('a, 'b) <a href="Hashtbl.html#TYPEt">Hashtbl.t</a></code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">?random:bool -&gt; int -&gt; ('a, 'b) <a href="MoreLabels.Hashtbl.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> clear : <code class="type">('a, 'b) <a href="MoreLabels.Hashtbl.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> reset : <code class="type">('a, 'b) <a href="MoreLabels.Hashtbl.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> copy : <code class="type">('a, 'b) <a href="MoreLabels.Hashtbl.html#TYPEt">t</a> -&gt; ('a, 'b) <a href="MoreLabels.Hashtbl.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add : <code class="type">('a, 'b) <a href="MoreLabels.Hashtbl.html#TYPEt">t</a> -&gt; key:'a -&gt; data:'b -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find : <code class="type">('a, 'b) <a href="MoreLabels.Hashtbl.html#TYPEt">t</a> -&gt; 'a -&gt; 'b</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_all : <code class="type">('a, 'b) <a href="MoreLabels.Hashtbl.html#TYPEt">t</a> -&gt; 'a -&gt; 'b list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem : <code class="type">('a, 'b) <a href="MoreLabels.Hashtbl.html#TYPEt">t</a> -&gt; 'a -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove : <code class="type">('a, 'b) <a href="MoreLabels.Hashtbl.html#TYPEt">t</a> -&gt; 'a -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> replace : <code class="type">('a, 'b) <a href="MoreLabels.Hashtbl.html#TYPEt">t</a> -&gt; key:'a -&gt; data:'b -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter : <code class="type">f:(key:'a -&gt; data:'b -&gt; unit) -&gt; ('a, 'b) <a href="MoreLabels.Hashtbl.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold : <code class="type">f:(key:'a -&gt; data:'b -&gt; 'c -&gt; 'c) -&gt; ('a, 'b) <a href="MoreLabels.Hashtbl.html#TYPEt">t</a> -&gt; init:'c -&gt; 'c</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> length : <code class="type">('a, 'b) <a href="MoreLabels.Hashtbl.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> randomize : <code class="type">unit -&gt; unit</code></span></pre>
+      
+    
+<pre><span id="TYPEstatistics"><span class="keyword">type</span> statistics </span>= <code class="type"><a href="Hashtbl.html#TYPEstatistics">Hashtbl.statistics</a></code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stats : <code class="type">('a, 'b) <a href="MoreLabels.Hashtbl.html#TYPEt">t</a> -&gt; <a href="MoreLabels.Hashtbl.html#TYPEstatistics">statistics</a></code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="MoreLabels.Hashtbl.HashedType.html">HashedType</a> = <code class="type"><code class="code"><a href="Hashtbl.HashedType.html">Hashtbl.HashedType</a></code></code></pre>
+	<div class="content" style="display:none">
+	<div file="MoreLabels.Hashtbl.HashedType.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="MoreLabels.Hashtbl.SeededHashedType.html">SeededHashedType</a> = <code class="type"><code class="code"><a href="Hashtbl.SeededHashedType.html">Hashtbl.SeededHashedType</a></code></code></pre>
+	<div class="content" style="display:none">
+	<div file="MoreLabels.Hashtbl.SeededHashedType.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="MoreLabels.Hashtbl.S.html">S</a> = <code class="type"><code class="code">sig</code> <a href="MoreLabels.Hashtbl.S.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="MoreLabels.Hashtbl.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="MoreLabels.Hashtbl.SeededS.html">SeededS</a> = <code class="type"><code class="code">sig</code> <a href="MoreLabels.Hashtbl.SeededS.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="MoreLabels.Hashtbl.SeededS.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="MoreLabels.Hashtbl.Make.html">Make</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">H</code><code class="code"> : </code><code class="type"><a href="MoreLabels.Hashtbl.HashedType.html">HashedType</a></code><code class="code">) -&gt; </code><code class="code"><a href="MoreLabels.Hashtbl.S.html">S</a></code> with type <a href="MoreLabels.Hashtbl.S.html#TYPEkey">key</a> = H.t</div></pre>
+	<div class="content" style="display:none">
+	<div file="MoreLabels.Hashtbl.Make.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="MoreLabels.Hashtbl.MakeSeeded.html">MakeSeeded</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">H</code><code class="code"> : </code><code class="type"><a href="MoreLabels.Hashtbl.SeededHashedType.html">SeededHashedType</a></code><code class="code">) -&gt; </code><code class="code"><a href="MoreLabels.Hashtbl.SeededS.html">SeededS</a></code> with type <a href="MoreLabels.Hashtbl.SeededS.html#TYPEkey">key</a> = H.t</div></pre>
+	<div class="content" style="display:none">
+	<div file="MoreLabels.Hashtbl.MakeSeeded.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> hash : <code class="type">'a -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> seeded_hash : <code class="type">int -&gt; 'a -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> hash_param : <code class="type">int -&gt; int -&gt; 'a -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> seeded_hash_param : <code class="type">int -&gt; int -&gt; int -&gt; 'a -&gt; int</code></span></pre>
+      
+    

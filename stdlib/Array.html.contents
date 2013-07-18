@@ -1,0 +1,112 @@
+ 
+      <pre><span><span class="keyword">val</span> length : <code class="type">'a array -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get : <code class="type">'a array -&gt; int -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set : <code class="type">'a array -&gt; int -&gt; 'a -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> make : <code class="type">int -&gt; 'a -&gt; 'a array</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">int -&gt; 'a -&gt; 'a array</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> init : <code class="type">int -&gt; (int -&gt; 'a) -&gt; 'a array</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> make_matrix : <code class="type">int -&gt; int -&gt; 'a -&gt; 'a array array</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create_matrix : <code class="type">int -&gt; int -&gt; 'a -&gt; 'a array array</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> append : <code class="type">'a array -&gt; 'a array -&gt; 'a array</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> concat : <code class="type">'a array list -&gt; 'a array</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sub : <code class="type">'a array -&gt; int -&gt; int -&gt; 'a array</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> copy : <code class="type">'a array -&gt; 'a array</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fill : <code class="type">'a array -&gt; int -&gt; int -&gt; 'a -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> blit : <code class="type">'a array -&gt; int -&gt; 'a array -&gt; int -&gt; int -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_list : <code class="type">'a array -&gt; 'a list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_list : <code class="type">'a list -&gt; 'a array</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter : <code class="type">('a -&gt; unit) -&gt; 'a array -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map : <code class="type">('a -&gt; 'b) -&gt; 'a array -&gt; 'b array</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iteri : <code class="type">(int -&gt; 'a -&gt; unit) -&gt; 'a array -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mapi : <code class="type">(int -&gt; 'a -&gt; 'b) -&gt; 'a array -&gt; 'b array</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold_left : <code class="type">('a -&gt; 'b -&gt; 'a) -&gt; 'a -&gt; 'b array -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold_right : <code class="type">('b -&gt; 'a -&gt; 'a) -&gt; 'b array -&gt; 'a -&gt; 'a</code></span></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Sorting</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> sort : <code class="type">('a -&gt; 'a -&gt; int) -&gt; 'a array -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stable_sort : <code class="type">('a -&gt; 'a -&gt; int) -&gt; 'a array -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fast_sort : <code class="type">('a -&gt; 'a -&gt; int) -&gt; 'a array -&gt; unit</code></span></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Undocumented functions</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> unsafe_get : <code class="type">'a array -&gt; int -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_set : <code class="type">'a array -&gt; int -&gt; 'a -&gt; unit</code></span></pre>
+      
+    

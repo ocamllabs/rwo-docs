@@ -1,0 +1,134 @@
+ 
+      <pre><span><span class="keyword">val</span> iter : <code class="type"><a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt;
+check_access:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.T.html#TYPEt">t</a>, (unit -&gt; unit) option)
+              <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; (unit -&gt; unit) option -&gt; 'a) -&gt;
+jobs:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.T.html#TYPEt">t</a>,
+       <a href="Raw_scheduler.Execution_context.html#TYPEt">Execution_context.t</a> <a href="Job.html#TYPEt">Job.t</a> <a href="Jobs.html#TYPEt">Jobs.t</a> <a href="../core/Std.html#TYPEsexp_opaque">Core.Std.sexp_opaque</a>)
+      <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+      <a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; <a href="Raw_scheduler.Execution_context.html#TYPEt">Execution_context.t</a> <a href="Job.html#TYPEt">Job.t</a> <a href="Jobs.html#TYPEt">Jobs.t</a> <a href="../core/Std.html#TYPEsexp_opaque">Core.Std.sexp_opaque</a> -&gt; 'b) -&gt;
+main_execution_context:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.T.html#TYPEt">t</a>,
+                         <a href="Raw_scheduler.Execution_context.html#TYPEt">Execution_context.t</a>)
+                        <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                        <a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; <a href="Raw_scheduler.Execution_context.html#TYPEt">Execution_context.t</a> -&gt; 'c) -&gt;
+current_execution_context:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.T.html#TYPEt">t</a>,
+                            <a href="Raw_scheduler.Execution_context.html#TYPEt">Execution_context.t</a>)
+                           <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                           <a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; <a href="Raw_scheduler.Execution_context.html#TYPEt">Execution_context.t</a> -&gt; 'd) -&gt;
+max_num_jobs_per_priority_per_cycle:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.T.html#TYPEt">t</a>, int)
+                                     <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                                     <a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; int -&gt; 'e) -&gt;
+uncaught_exn:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.T.html#TYPEt">t</a>, <a href="../core/Std.Error.html#TYPEt">Core.Std.Error.t</a> option)
+              <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+              <a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; <a href="../core/Std.Error.html#TYPEt">Core.Std.Error.t</a> option -&gt; 'f) -&gt;
+global_kill_index:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.T.html#TYPEt">t</a>, <a href="Kill_index.html#TYPEt">Kill_index.t</a>)
+                   <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; <a href="Kill_index.html#TYPEt">Kill_index.t</a> -&gt; 'g) -&gt;
+num_jobs_run:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.T.html#TYPEt">t</a>, int)
+              <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; int -&gt; 'h) -&gt;
+cycle_count:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.T.html#TYPEt">t</a>, int)
+             <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; int -&gt; 'i) -&gt;
+cycle_start:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.T.html#TYPEt">t</a>, <a href="../core/Std.Time.html#TYPEt">Core.Std.Time.t</a>)
+             <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; <a href="../core/Std.Time.html#TYPEt">Core.Std.Time.t</a> -&gt; 'j) -&gt;
+last_cycle_time:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.T.html#TYPEt">t</a>, <a href="../core/Std.Time.Span.html#TYPEt">Core.Std.Time.Span.t</a>)
+                 <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                 <a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; <a href="../core/Std.Time.Span.html#TYPEt">Core.Std.Time.Span.t</a> -&gt; 'k) -&gt;
+cycle_times:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.T.html#TYPEt">t</a>, <a href="../core/Std.Time.Span.html#TYPEt">Core.Std.Time.Span.t</a> <a href="Raw_scheduler.html#TYPEtail">tail</a>)
+             <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+             <a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; <a href="../core/Std.Time.Span.html#TYPEt">Core.Std.Time.Span.t</a> <a href="Raw_scheduler.html#TYPEtail">tail</a> -&gt; 'l) -&gt;
+last_cycle_num_jobs:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.T.html#TYPEt">t</a>, int)
+                     <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; int -&gt; 'm) -&gt;
+cycle_num_jobs:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.T.html#TYPEt">t</a>, int <a href="Raw_scheduler.html#TYPEtail">tail</a>)
+                <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; int <a href="Raw_scheduler.html#TYPEtail">tail</a> -&gt; 'n) -&gt;
+events:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.T.html#TYPEt">t</a>,
+         <a href="Raw_scheduler.Execution_context.html#TYPEt">Execution_context.t</a> <a href="Job.html#TYPEt">Job.t</a> <a href="Import.Timing_wheel.html#TYPEt">Import.Timing_wheel.t</a>)
+        <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+        <a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; <a href="Raw_scheduler.Execution_context.html#TYPEt">Execution_context.t</a> <a href="Job.html#TYPEt">Job.t</a> <a href="Import.Timing_wheel.html#TYPEt">Import.Timing_wheel.t</a> -&gt; 'o) -&gt;
+finalizer_jobs:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.T.html#TYPEt">t</a>,
+                 <a href="Raw_scheduler.Execution_context.html#TYPEt">Execution_context.t</a> <a href="Job.html#TYPEt">Job.t</a> <a href="../core/Std.Thread_safe_queue.html#TYPEt">Core.Std.Thread_safe_queue.t</a>
+                 <a href="../core/Std.html#TYPEsexp_opaque">Core.Std.sexp_opaque</a>)
+                <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                <a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt;
+                <a href="Raw_scheduler.Execution_context.html#TYPEt">Execution_context.t</a> <a href="Job.html#TYPEt">Job.t</a> <a href="../core/Std.Thread_safe_queue.html#TYPEt">Core.Std.Thread_safe_queue.t</a>
+                <a href="../core/Std.html#TYPEsexp_opaque">Core.Std.sexp_opaque</a> -&gt; 'p) -&gt;
+thread_safe_finalizer_hook:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.T.html#TYPEt">t</a>, unit -&gt; unit)
+                            <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                            <a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; (unit -&gt; unit) -&gt; 'q) -&gt;
+'q</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> fold : <code class="type"><a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt;
+init:'a -&gt;
+check_access:('a -&gt;
+              ([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.T.html#TYPEt">t</a>, (unit -&gt; unit) option)
+              <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; (unit -&gt; unit) option -&gt; 'b) -&gt;
+jobs:('b -&gt;
+      ([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.T.html#TYPEt">t</a>,
+       <a href="Raw_scheduler.Execution_context.html#TYPEt">Execution_context.t</a> <a href="Job.html#TYPEt">Job.t</a> <a href="Jobs.html#TYPEt">Jobs.t</a> <a href="../core/Std.html#TYPEsexp_opaque">Core.Std.sexp_opaque</a>)
+      <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+      <a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; <a href="Raw_scheduler.Execution_context.html#TYPEt">Execution_context.t</a> <a href="Job.html#TYPEt">Job.t</a> <a href="Jobs.html#TYPEt">Jobs.t</a> <a href="../core/Std.html#TYPEsexp_opaque">Core.Std.sexp_opaque</a> -&gt; 'c) -&gt;
+main_execution_context:('c -&gt;
+                        ([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.T.html#TYPEt">t</a>,
+                         <a href="Raw_scheduler.Execution_context.html#TYPEt">Execution_context.t</a>)
+                        <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                        <a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; <a href="Raw_scheduler.Execution_context.html#TYPEt">Execution_context.t</a> -&gt; 'd) -&gt;
+current_execution_context:('d -&gt;
+                           ([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.T.html#TYPEt">t</a>,
+                            <a href="Raw_scheduler.Execution_context.html#TYPEt">Execution_context.t</a>)
+                           <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                           <a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; <a href="Raw_scheduler.Execution_context.html#TYPEt">Execution_context.t</a> -&gt; 'e) -&gt;
+max_num_jobs_per_priority_per_cycle:('e -&gt;
+                                     ([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.T.html#TYPEt">t</a>, int)
+                                     <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                                     <a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; int -&gt; 'f) -&gt;
+uncaught_exn:('f -&gt;
+              ([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.T.html#TYPEt">t</a>, <a href="../core/Std.Error.html#TYPEt">Core.Std.Error.t</a> option)
+              <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+              <a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; <a href="../core/Std.Error.html#TYPEt">Core.Std.Error.t</a> option -&gt; 'g) -&gt;
+global_kill_index:('g -&gt;
+                   ([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.T.html#TYPEt">t</a>, <a href="Kill_index.html#TYPEt">Kill_index.t</a>)
+                   <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; <a href="Kill_index.html#TYPEt">Kill_index.t</a> -&gt; 'h) -&gt;
+num_jobs_run:('h -&gt;
+              ([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.T.html#TYPEt">t</a>, int)
+              <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; int -&gt; 'i) -&gt;
+cycle_count:('i -&gt;
+             ([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.T.html#TYPEt">t</a>, int)
+             <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; int -&gt; 'j) -&gt;
+cycle_start:('j -&gt;
+             ([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.T.html#TYPEt">t</a>, <a href="../core/Std.Time.html#TYPEt">Core.Std.Time.t</a>)
+             <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; <a href="../core/Std.Time.html#TYPEt">Core.Std.Time.t</a> -&gt; 'k) -&gt;
+last_cycle_time:('k -&gt;
+                 ([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.T.html#TYPEt">t</a>, <a href="../core/Std.Time.Span.html#TYPEt">Core.Std.Time.Span.t</a>)
+                 <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                 <a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; <a href="../core/Std.Time.Span.html#TYPEt">Core.Std.Time.Span.t</a> -&gt; 'l) -&gt;
+cycle_times:('l -&gt;
+             ([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.T.html#TYPEt">t</a>, <a href="../core/Std.Time.Span.html#TYPEt">Core.Std.Time.Span.t</a> <a href="Raw_scheduler.html#TYPEtail">tail</a>)
+             <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+             <a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; <a href="../core/Std.Time.Span.html#TYPEt">Core.Std.Time.Span.t</a> <a href="Raw_scheduler.html#TYPEtail">tail</a> -&gt; 'm) -&gt;
+last_cycle_num_jobs:('m -&gt;
+                     ([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.T.html#TYPEt">t</a>, int)
+                     <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; int -&gt; 'n) -&gt;
+cycle_num_jobs:('n -&gt;
+                ([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.T.html#TYPEt">t</a>, int <a href="Raw_scheduler.html#TYPEtail">tail</a>)
+                <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; int <a href="Raw_scheduler.html#TYPEtail">tail</a> -&gt; 'o) -&gt;
+events:('o -&gt;
+        ([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.T.html#TYPEt">t</a>,
+         <a href="Raw_scheduler.Execution_context.html#TYPEt">Execution_context.t</a> <a href="Job.html#TYPEt">Job.t</a> <a href="Import.Timing_wheel.html#TYPEt">Import.Timing_wheel.t</a>)
+        <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+        <a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; <a href="Raw_scheduler.Execution_context.html#TYPEt">Execution_context.t</a> <a href="Job.html#TYPEt">Job.t</a> <a href="Import.Timing_wheel.html#TYPEt">Import.Timing_wheel.t</a> -&gt; 'p) -&gt;
+finalizer_jobs:('p -&gt;
+                ([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.T.html#TYPEt">t</a>,
+                 <a href="Raw_scheduler.Execution_context.html#TYPEt">Execution_context.t</a> <a href="Job.html#TYPEt">Job.t</a> <a href="../core/Std.Thread_safe_queue.html#TYPEt">Core.Std.Thread_safe_queue.t</a>
+                 <a href="../core/Std.html#TYPEsexp_opaque">Core.Std.sexp_opaque</a>)
+                <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                <a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt;
+                <a href="Raw_scheduler.Execution_context.html#TYPEt">Execution_context.t</a> <a href="Job.html#TYPEt">Job.t</a> <a href="../core/Std.Thread_safe_queue.html#TYPEt">Core.Std.Thread_safe_queue.t</a>
+                <a href="../core/Std.html#TYPEsexp_opaque">Core.Std.sexp_opaque</a> -&gt; 'q) -&gt;
+thread_safe_finalizer_hook:('q -&gt;
+                            ([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.T.html#TYPEt">t</a>, unit -&gt; unit)
+                            <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                            <a href="Raw_scheduler.T.html#TYPEt">t</a> -&gt; (unit -&gt; unit) -&gt; 'r) -&gt;
+'r</code></span></pre>
+      
+    
+

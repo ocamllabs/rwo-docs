@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<title>Writer</title>
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
+<script type="text/javascript" src="doc_loader.js"> </script>
+</head>
+<body>
+
+<h1>Module Writer</h1>
+<pre><span class="keyword">module</span> Writer</pre><div class="info"><code class="code">Writer</code> is Async's main API for output to a file descriptor.  It is the analog of
+    <code class="code">Core.Std.Out_channel</code>.<br/>    Each writer has an internal buffer, to which <code class="code">Writer.write*</code> adds data.  Each writer
+    uses an async microthread that makes <code class="code">write()</code> system calls to move the data from the
+    writer's buffer to an OS buffer via the file descriptor.  There is no guarantee that
+    the data sync on the other side of the writer can keep up with the rate at which you
+    are writing.  If it cannot, the OS buffer will fill up and the writer's micro-thread
+    will be unable to send any bytes.  In that case, calls to <code class="code">Writer.write*</code> will grow
+    the writer's buffer without bound, as long as your program produces data.  One
+    solution to this problem is to call <code class="code">Writer.flushed</code> and not continue until that
+    becomes determined, which will only happen once the bytes in the writer's buffer have
+    been successfully transferred to the OS buffer.  Another solution is to check
+    <code class="code">Writer.bytes_to_write</code> and not produce any more data if that is beyond some bound.<br/>    There are two kinds of errors that one can handle with writers.  First, a writer can
+    be <code class="code">close</code>d, which will cause future <code class="code">write</code>s (and other operations) to synchronously
+    raise an excecption.  Second, the writer's microthread can fail due to a <code class="code">write()</code>
+    system call failing.  This will cause an exception to be sent to the writer's monitor,
+    which will be a child of the monitor in effect when the writer is created.  One can
+    deal with such asynchronous exceptions in the usual way, by handling the stream
+    returned by <code class="code">Monitor.errors (Writer.monitor writer)</code>.</div>
+<hr/>
+<div file="Writer.html.contents" class="content_to_load"> </div>
+</body>
+</html>

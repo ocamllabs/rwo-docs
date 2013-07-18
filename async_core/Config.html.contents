@@ -1,0 +1,63 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t : <code class="type"><a href="Config.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> environment_variable : <code class="type">string</code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Config.Print_debug_messages_for.html">Print_debug_messages_for</a> : <code class="code">sig</code> <a href="Config.Print_debug_messages_for.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Config.Print_debug_messages_for.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Config.File_descr_watcher.html">File_descr_watcher</a> : <code class="code">sig</code> <a href="Config.File_descr_watcher.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Config.File_descr_watcher.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> alarm_precision : <code class="type"><a href="../core/Std.Time.Span.html#TYPEt">Core.Std.Time.Span.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> check_invariants : <code class="type">bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> detect_invalid_access_from_thread : <code class="type">bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> epoll_max_ready_events : <code class="type">int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> file_descr_watcher : <code class="type"><a href="Config.File_descr_watcher.html#TYPEt">File_descr_watcher.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> max_num_open_file_descrs : <code class="type">int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> max_num_threads : <code class="type">int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> record_backtraces : <code class="type">bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> timing_wheel_level_bits : <code class="type"><a href="Import.Timing_wheel.Level_bits.html#TYPEt">Import.Timing_wheel.Level_bits.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type"><a href="Config.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    

@@ -1,0 +1,114 @@
+FIX ME
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Hash_heap.Make.Table.html">Table</a> : <code class="code"><a href="Hash_heap.Hashtbl.html#TYPEMake">Hashtbl.Make</a></code>(<code class="code"><a href="Hash_heap.Make.Key.html">Key</a></code>)</pre>
+	<div class="content" style="display:none">
+	<div file="Hash_heap.Make.Table.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<pre><code><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t </span>= {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.heap">heap</span> :<code class="type">(<a href="Hash_heap.Make.Key.html#TYPEt">Key.t</a> * 'a) <a href="Heap.html#TYPEt">Heap.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.tbl">tbl</span> :<code class="type">(<a href="Hash_heap.Make.Key.html#TYPEt">Key.t</a> * 'a) <a href="Heap.html#TYPEheap_el">Heap.heap_el</a> <a href="Hash_heap.Make.Table.html#TYPEt">Table.t</a></code>;</code></td>
+	  </tr></table>}
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">?min_size:int -&gt; ('a -&gt; 'a -&gt; int) -&gt; 'a <a href="Hash_heap.Make.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> push : <code class="type">'a <a href="Hash_heap.Make.html#TYPEt">t</a> -&gt;
+key:<a href="Hash_heap.Make.Table.html#TYPEkey">Table.key</a> <a href="Hash_heap.Hashtbl.html#TYPEkey">Hashtbl.key</a> -&gt; data:'a -&gt; [&gt; `Key_already_present | `Ok ]</code></span></pre>
+      
+    
+<pre><span id="EXCEPTIONKey_already_present"><span class="keyword">exception</span> Key_already_present</span> <span class="keyword">of</span> <code class="type"><a href="Hash_heap.Make.Key.html#TYPEt">Key.t</a></code></pre>
+
+ 
+      <pre><span><span class="keyword">val</span> push_exn : <code class="type">'a <a href="Hash_heap.Make.html#TYPEt">t</a> -&gt; key:<a href="Hash_heap.Make.Table.html#TYPEkey">Table.key</a> <a href="Hash_heap.Hashtbl.html#TYPEkey">Hashtbl.key</a> -&gt; data:'a -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> replace : <code class="type">'a <a href="Hash_heap.Make.html#TYPEt">t</a> -&gt; key:<a href="Hash_heap.Make.Table.html#TYPEkey">Table.key</a> <a href="Hash_heap.Hashtbl.html#TYPEkey">Hashtbl.key</a> -&gt; data:'a -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove : <code class="type">'a <a href="Hash_heap.Make.html#TYPEt">t</a> -&gt; <a href="Hash_heap.Make.Table.html#TYPEkey">Table.key</a> <a href="Hash_heap.Hashtbl.html#TYPEkey">Hashtbl.key</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem : <code class="type">'a <a href="Hash_heap.Make.html#TYPEt">t</a> -&gt; <a href="Hash_heap.Make.Table.html#TYPEkey">Table.key</a> <a href="Hash_heap.Hashtbl.html#TYPEkey">Hashtbl.key</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> top_with_key : <code class="type">'a <a href="Hash_heap.Make.html#TYPEt">t</a> -&gt; (<a href="Hash_heap.Make.Key.html#TYPEt">Key.t</a> * 'a) option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> top : <code class="type">'a <a href="Hash_heap.Make.html#TYPEt">t</a> -&gt; 'a option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> top_exn : <code class="type">'a <a href="Hash_heap.Make.html#TYPEt">t</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> top_with_key_exn : <code class="type">'a <a href="Hash_heap.Make.html#TYPEt">t</a> -&gt; <a href="Hash_heap.Make.Key.html#TYPEt">Key.t</a> * 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pop_with_key_exn : <code class="type">'a <a href="Hash_heap.Make.html#TYPEt">t</a> -&gt; <a href="Hash_heap.Make.Key.html#TYPEt">Key.t</a> * 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pop_with_key : <code class="type">'a <a href="Hash_heap.Make.html#TYPEt">t</a> -&gt; (<a href="Hash_heap.Make.Key.html#TYPEt">Key.t</a> * 'a) option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pop : <code class="type">'a <a href="Hash_heap.Make.html#TYPEt">t</a> -&gt; 'a option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pop_exn : <code class="type">'a <a href="Hash_heap.Make.html#TYPEt">t</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> cond_pop_with_key : <code class="type">'a <a href="Hash_heap.Make.html#TYPEt">t</a> -&gt; (key:<a href="Hash_heap.Make.Key.html#TYPEt">Key.t</a> -&gt; data:'a -&gt; bool) -&gt; (<a href="Hash_heap.Make.Key.html#TYPEt">Key.t</a> * 'a) option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> cond_pop : <code class="type">'a <a href="Hash_heap.Make.html#TYPEt">t</a> -&gt; ('a -&gt; bool) -&gt; 'a option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find : <code class="type">'a <a href="Hash_heap.Make.html#TYPEt">t</a> -&gt; <a href="Hash_heap.Make.Table.html#TYPEkey">Table.key</a> <a href="Hash_heap.Hashtbl.html#TYPEkey">Hashtbl.key</a> -&gt; 'a option</code></span></pre>
+      
+    
+<pre><span id="EXCEPTIONKey_not_found"><span class="keyword">exception</span> Key_not_found</span> <span class="keyword">of</span> <code class="type"><a href="Hash_heap.Make.Key.html#TYPEt">Key.t</a></code></pre>
+
+ 
+      <pre><span><span class="keyword">val</span> find_exn : <code class="type">'a <a href="Hash_heap.Make.html#TYPEt">t</a> -&gt; <a href="Hash_heap.Make.Table.html#TYPEkey">Table.key</a> <a href="Hash_heap.Hashtbl.html#TYPEkey">Hashtbl.key</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_pop : <code class="type">'a <a href="Hash_heap.Make.html#TYPEt">t</a> -&gt; <a href="Hash_heap.Make.Table.html#TYPEkey">Table.key</a> <a href="Hash_heap.Hashtbl.html#TYPEkey">Hashtbl.key</a> -&gt; 'a option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_pop_exn : <code class="type">'a <a href="Hash_heap.Make.html#TYPEt">t</a> -&gt; <a href="Hash_heap.Make.Table.html#TYPEkey">Table.key</a> <a href="Hash_heap.Hashtbl.html#TYPEkey">Hashtbl.key</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter : <code class="type">'a <a href="Hash_heap.Make.html#TYPEt">t</a> -&gt; f:(key:<a href="Hash_heap.Make.Key.html#TYPEt">Key.t</a> -&gt; data:'a -&gt; unit) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter_vals : <code class="type">'a <a href="Hash_heap.Make.html#TYPEt">t</a> -&gt; f:('a -&gt; unit) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> copy : <code class="type">'a <a href="Hash_heap.Make.html#TYPEt">t</a> -&gt; 'a <a href="Hash_heap.Make.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> length : <code class="type">'a <a href="Hash_heap.Make.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    

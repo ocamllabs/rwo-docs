@@ -1,0 +1,14 @@
+ 
+      <pre><span><span class="keyword">val</span> iter : <code class="type"><a href="Procfs.Process.Limits.Rlimit.html#TYPEt">t</a> -&gt;
+soft:((<a href="Procfs.Process.Limits.Rlimit.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEvalue">value</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEvalue">value</a> -&gt; unit) -&gt;
+hard:((<a href="Procfs.Process.Limits.Rlimit.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEvalue">value</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEvalue">value</a> -&gt; unit) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold : <code class="type"><a href="Procfs.Process.Limits.Rlimit.html#TYPEt">t</a> -&gt;
+init:'acc__ -&gt;
+soft:('acc__ -&gt; (<a href="Procfs.Process.Limits.Rlimit.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEvalue">value</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEvalue">value</a> -&gt; 'acc__) -&gt;
+hard:('acc__ -&gt; (<a href="Procfs.Process.Limits.Rlimit.html#TYPEt">t</a>, <a href="Procfs.Process.Limits.Rlimit.html#TYPEvalue">value</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Limits.Rlimit.html#TYPEvalue">value</a> -&gt; 'acc__) -&gt;
+'acc__</code></span></pre>
+      
+    

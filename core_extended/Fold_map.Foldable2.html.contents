@@ -1,0 +1,11 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> init : <code class="type">'a <a href="Fold_map.Foldable2.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> f : <code class="type">'a <a href="Fold_map.Foldable2.html#TYPEt">t</a> -&gt; 'a -&gt; 'a <a href="Fold_map.Foldable2.html#TYPEt">t</a></code></span></pre>
+      
+    

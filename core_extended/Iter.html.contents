@@ -1,0 +1,107 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> next : <code class="type">'a <a href="Iter.html#TYPEt">t</a> -&gt; 'a option</code></span></pre>
+      <div class="info">get the next element of the iterator</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> next_exn : <code class="type">'a <a href="Iter.html#TYPEt">t</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> progress : <code class="type">'a <a href="Iter.html#TYPEt">t</a> -&gt; float option</code></span></pre>
+      <div class="info">get the position in the iterator either None or Some x in <code class="code">0;1</code> </div>
+    
+ 
+      <pre><span><span class="keyword">val</span> progress_string : <code class="type">float option -&gt; string</code></span></pre>
+      <div class="info">convert the progress return value to a string: None-&gt;&quot;&quot;, Some-&gt;&quot; 33%&quot;</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> i : <code class="type">'a <a href="Iter.html#TYPEt">t</a> -&gt; f:('a -&gt; unit) -&gt; unit</code></span></pre>
+      <div class="info">iterate over the iterator: call f on each element</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> concat : <code class="type">'a <a href="Iter.html#TYPEt">t</a> list -&gt; 'a <a href="Iter.html#TYPEt">t</a></code></span></pre>
+      <div class="info">concatenate a list of iterators</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> reduce : <code class="type">'a <a href="Iter.html#TYPEt">t</a> -&gt; init:'i -&gt; f:('i -&gt; 'a -&gt; 'i) -&gt; 'i</code></span></pre>
+      <div class="info">fold over the iterator: call f on each element and return the accumulator</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> map : <code class="type">'a <a href="Iter.html#TYPEt">t</a> -&gt; f:('a -&gt; 'b) -&gt; 'b <a href="Iter.html#TYPEt">t</a></code></span></pre>
+      <div class="info">transform the iterator</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> fold : <code class="type">'a <a href="Iter.html#TYPEt">t</a> -&gt; init:'i -&gt; f:('i -&gt; 'a -&gt; 'i) -&gt; 'i</code></span></pre>
+      <div class="info">fold is the same as reduce</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> unfold : <code class="type">init:'i -&gt; f:('i -&gt; 'a * 'i) -&gt; stop:'i -&gt; 'a <a href="Iter.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find : <code class="type">'a <a href="Iter.html#TYPEt">t</a> -&gt; f:('a -&gt; bool) -&gt; 'a</code></span></pre>
+      <div class="info">find an element that satisfies the predicate</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> filter : <code class="type">'a <a href="Iter.html#TYPEt">t</a> -&gt; f:('a -&gt; bool) -&gt; 'a <a href="Iter.html#TYPEt">t</a></code></span></pre>
+      <div class="info">iterate over elements that satisfy the predicate</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> for_all : <code class="type">'a <a href="Iter.html#TYPEt">t</a> -&gt; f:('a -&gt; bool) -&gt; bool</code></span></pre>
+      <div class="info">evaluate a predicate over the entire iterator</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> exists : <code class="type">'a <a href="Iter.html#TYPEt">t</a> -&gt; f:('a -&gt; bool) -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t : <code class="type">?progress:(unit -&gt; float option) -&gt; (unit -&gt; 'a option) -&gt; 'a <a href="Iter.html#TYPEt">t</a></code></span></pre>
+      <div class="info">create an iterator from an iterating function</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> empty : <code class="type">'a <a href="Iter.html#TYPEt">t</a></code></span></pre>
+      <div class="info">an iterator that halts immediately</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> of_opt : <code class="type">'a option -&gt; 'a <a href="Iter.html#TYPEt">t</a></code></span></pre>
+      <div class="info">create an iterator that may iterate over one value</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> of_list : <code class="type">'a list -&gt; 'a <a href="Iter.html#TYPEt">t</a></code></span></pre>
+      <div class="info">create an iterator that will go over list elements</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> to_list : <code class="type">'a <a href="Iter.html#TYPEt">t</a> -&gt; f:('a -&gt; 'b) -&gt; 'b list</code></span></pre>
+      <div class="info">iterate a function and collect results to a list</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> to_list_opt : <code class="type">'a <a href="Iter.html#TYPEt">t</a> -&gt; f:('a -&gt; 'b option) -&gt; 'b list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_array : <code class="type">'a array -&gt; 'a <a href="Iter.html#TYPEt">t</a></code></span></pre>
+      <div class="info">create an iterator that will go over array elements</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> to_array : <code class="type">'a <a href="Iter.html#TYPEt">t</a> -&gt; f:('a -&gt; 'b) -&gt; 'b array</code></span></pre>
+      <div class="info">iterate a function and collect results to a array</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> to_array_opt : <code class="type">'a <a href="Iter.html#TYPEt">t</a> -&gt; f:('a -&gt; 'b option) -&gt; 'b array</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> channel_progress : <code class="type">?total:int64 -&gt; <a href="../stdlib/Pervasives.html#TYPEin_channel">in_channel</a> -&gt; unit -&gt; float option</code></span></pre>
+      <div class="info">create a progress function for an input channel</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> of_channel : <code class="type">?total:int64 -&gt; <a href="../stdlib/Pervasives.html#TYPEin_channel">in_channel</a> -&gt; f:(<a href="../stdlib/Pervasives.html#TYPEin_channel">in_channel</a> -&gt; 'a) -&gt; 'a <a href="Iter.html#TYPEt">t</a></code></span></pre>
+      <div class="info">create an iterator that will read from file using f</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> channel : <code class="type"><a href="../stdlib/Pervasives.html#TYPEin_channel">in_channel</a> -&gt; f:(<a href="../stdlib/Pervasives.html#TYPEin_channel">in_channel</a> -&gt; unit) -&gt; unit</code></span></pre>
+      <div class="info">call f on channel until End_of_file</div>
+    

@@ -1,0 +1,8 @@
+ 
+      <pre><span><span class="keyword">val</span> iter : <code class="type">'a list -&gt; f:('a -&gt; unit) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map : <code class="type">'a list -&gt; f:('a -&gt; 'b) -&gt; 'b list</code></span></pre>
+      
+    

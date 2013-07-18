@@ -1,0 +1,27 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get : <code class="type">(Thread.t -&gt; <a href="Linux_ext.Clock.html#TYPEt">t</a>) <a href="../core_kernel/Std.Or_error.html#TYPEt">Core_kernel.Std.Or_error.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get_time : <code class="type">(<a href="Linux_ext.Clock.html#TYPEt">t</a> -&gt; <a href="Span.html#TYPEt">Span.t</a>) <a href="../core_kernel/Std.Or_error.html#TYPEt">Core_kernel.Std.Or_error.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set_time : <code class="type">(<a href="Linux_ext.Clock.html#TYPEt">t</a> -&gt; <a href="Span.html#TYPEt">Span.t</a> -&gt; unit) <a href="../core_kernel/Std.Or_error.html#TYPEt">Core_kernel.Std.Or_error.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get_resolution : <code class="type">(<a href="Linux_ext.Clock.html#TYPEt">t</a> -&gt; <a href="Span.html#TYPEt">Span.t</a>) <a href="../core_kernel/Std.Or_error.html#TYPEt">Core_kernel.Std.Or_error.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get_process_clock : <code class="type">(unit -&gt; <a href="Linux_ext.Clock.html#TYPEt">t</a>) <a href="../core_kernel/Std.Or_error.html#TYPEt">Core_kernel.Std.Or_error.t</a></code></span></pre>
+      <div class="info"><code class="code">get_process_clock</code> the clock measuring the CPU-time of a process.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> get_thread_clock : <code class="type">(unit -&gt; <a href="Linux_ext.Clock.html#TYPEt">t</a>) <a href="../core_kernel/Std.Or_error.html#TYPEt">Core_kernel.Std.Or_error.t</a></code></span></pre>
+      <div class="info"><code class="code">get_thread_clock</code> the clock measuring the CPU-time of the current thread.</div>
+    

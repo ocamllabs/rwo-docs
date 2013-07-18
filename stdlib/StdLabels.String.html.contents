@@ -1,0 +1,127 @@
+ 
+      <pre><span><span class="keyword">val</span> length : <code class="type">string -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get : <code class="type">string -&gt; int -&gt; char</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set : <code class="type">string -&gt; int -&gt; char -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">int -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> make : <code class="type">int -&gt; char -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> copy : <code class="type">string -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sub : <code class="type">string -&gt; pos:int -&gt; len:int -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fill : <code class="type">string -&gt; pos:int -&gt; len:int -&gt; char -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> blit : <code class="type">src:string -&gt; src_pos:int -&gt; dst:string -&gt; dst_pos:int -&gt; len:int -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> concat : <code class="type">sep:string -&gt; string list -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter : <code class="type">f:(char -&gt; unit) -&gt; string -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iteri : <code class="type">f:(int -&gt; char -&gt; unit) -&gt; string -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map : <code class="type">f:(char -&gt; char) -&gt; string -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> trim : <code class="type">string -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> escaped : <code class="type">string -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> index : <code class="type">string -&gt; char -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rindex : <code class="type">string -&gt; char -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> index_from : <code class="type">string -&gt; int -&gt; char -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rindex_from : <code class="type">string -&gt; int -&gt; char -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> contains : <code class="type">string -&gt; char -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> contains_from : <code class="type">string -&gt; int -&gt; char -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rcontains_from : <code class="type">string -&gt; int -&gt; char -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> uppercase : <code class="type">string -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> lowercase : <code class="type">string -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> capitalize : <code class="type">string -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> uncapitalize : <code class="type">string -&gt; string</code></span></pre>
+      
+    
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span>= <code class="type">string</code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> compare : <code class="type"><a href="StdLabels.String.html#TYPEt">t</a> -&gt; <a href="StdLabels.String.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_get : <code class="type">string -&gt; int -&gt; char</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_set : <code class="type">string -&gt; int -&gt; char -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_blit : <code class="type">src:string -&gt; src_pos:int -&gt; dst:string -&gt; dst_pos:int -&gt; len:int -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_fill : <code class="type">string -&gt; pos:int -&gt; len:int -&gt; char -&gt; unit</code></span></pre>
+      
+    

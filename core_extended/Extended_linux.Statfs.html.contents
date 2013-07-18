@@ -1,0 +1,45 @@
+<pre><code><span id="TYPEf_type"><span class="keyword">type</span> f_type </span>= </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTf_type.ADFS_SUPER_MAGIC"><span class="constructor">ADFS_SUPER_MAGIC</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTf_type.AFFS_SUPER_MAGIC"><span class="constructor">AFFS_SUPER_MAGIC</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTf_type.BEFS_SUPER_MAGIC"><span class="constructor">BEFS_SUPER_MAGIC</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTf_type.BFS_MAGIC"><span class="constructor">BFS_MAGIC</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTf_type.CIFS_MAGIC_NUMBER"><span class="constructor">CIFS_MAGIC_NUMBER</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTf_type.CODA_SUPER_MAGIC"><span class="constructor">CODA_SUPER_MAGIC</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTf_type.COH_SUPER_MAGIC"><span class="constructor">COH_SUPER_MAGIC</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTf_type.CRAMFS_MAGIC"><span class="constructor">CRAMFS_MAGIC</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTf_type.DEVFS_SUPER_MAGIC"><span class="constructor">DEVFS_SUPER_MAGIC</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTf_type.EFS_SUPER_MAGIC"><span class="constructor">EFS_SUPER_MAGIC</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTf_type.EXT_SUPER_MAGIC"><span class="constructor">EXT_SUPER_MAGIC</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTf_type.EXT2_OLD_SUPER_MAGIC"><span class="constructor">EXT2_OLD_SUPER_MAGIC</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTf_type.EXT2_SUPER_MAGIC"><span class="constructor">EXT2_SUPER_MAGIC</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTf_type.EXT3_SUPER_MAGIC"><span class="constructor">EXT3_SUPER_MAGIC</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTf_type.HFS_SUPER_MAGIC"><span class="constructor">HFS_SUPER_MAGIC</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTf_type.HPFS_SUPER_MAGIC"><span class="constructor">HPFS_SUPER_MAGIC</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTf_type.HUGETLBFS_MAGIC"><span class="constructor">HUGETLBFS_MAGIC</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTf_type.ISOFS_SUPER_MAGIC"><span class="constructor">ISOFS_SUPER_MAGIC</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTf_type.JFFS2_SUPER_MAGIC"><span class="constructor">JFFS2_SUPER_MAGIC</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTf_type.JFS_SUPER_MAGIC"><span class="constructor">JFS_SUPER_MAGIC</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTf_type.MINIX_SUPER_MAGIC"><span class="constructor">MINIX_SUPER_MAGIC</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTf_type.MINIX_SUPER_MAGIC2"><span class="constructor">MINIX_SUPER_MAGIC2</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTf_type.MINIX2_SUPER_MAGIC"><span class="constructor">MINIX2_SUPER_MAGIC</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTf_type.MINIX2_SUPER_MAGIC2"><span class="constructor">MINIX2_SUPER_MAGIC2</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTf_type.MSDOS_SUPER_MAGIC"><span class="constructor">MSDOS_SUPER_MAGIC</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTf_type.NCP_SUPER_MAGIC"><span class="constructor">NCP_SUPER_MAGIC</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTf_type.NFS_SUPER_MAGIC"><span class="constructor">NFS_SUPER_MAGIC</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTf_type.NTFS_SB_MAGIC"><span class="constructor">NTFS_SB_MAGIC</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTf_type.UNKNOWN_SUPER_MAGIC"><span class="constructor">UNKNOWN_SUPER_MAGIC</span></span> <span class="keyword">of</span> <code class="type"><a href="../core/Std.Int32.html#TYPEt">Core.Std.Int32.t</a></code></code></td>
+	   </tr></table>
+      
+    
+<pre><code><span id="TYPEt"><span class="keyword">type</span> t </span>= {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.f_type">f_type</span> :<code class="type"><a href="Extended_linux.Statfs.html#TYPEf_type">f_type</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.f_bsize">f_bsize</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.f_blocks">f_blocks</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.f_bfree">f_bfree</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.f_bavail">f_bavail</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.f_files">f_files</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.f_ffree">f_ffree</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.f_namelen">f_namelen</span> :<code class="type">int</code>;</code></td>
+	  </tr></table>}
+      
+    

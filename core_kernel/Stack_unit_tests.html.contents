@@ -1,0 +1,47 @@
+ 
+      <pre><span><span class="keyword">val</span> __pa_ounit_275876e34cf609db118f3d84b799a790 : <code class="type">string</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> is_error : <code class="type">('a, 'b) <a href="Result.html#TYPEt">Result.t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_ok : <code class="type">('a, 'b) <a href="Result.html#TYPEt">Result.t</a> -&gt; bool</code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Stack_unit_tests.Debug.html">Debug</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">Stack</code><code class="code"> : </code><code class="type"><a href="Stack_intf.S.html">Stack_intf.S</a></code><code class="code">) -&gt; </code><code class="code">sig</code> <a href="Stack_unit_tests.Debug.html">..</a> <code class="code">end</code></div></pre>
+	<div class="content" style="display:none">
+	<div file="Stack_unit_tests.Debug.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Stack_unit_tests.Test.html">Test</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">Stack</code><code class="code"> : </code><code class="type"><a href="Stack_intf.S.html">Stack_intf.S</a></code><code class="code">) -&gt; </code><code class="code">sig</code> <a href="Stack_unit_tests.Test.html">..</a> <code class="code">end</code></div></pre>
+	<div class="content" style="display:none">
+	<div file="Stack_unit_tests.Test.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Stack_unit_tests.Test.html">Test</a></code>(<code class="code"><a href="Stack_unit_tests.Debug.html">Debug</a></code>(<code class="code"><a href="Core_stack.html">Core_stack</a></code>))</pre>
+	<div class="content">
+	<div file="Stack_unit_tests.Test.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Stack_unit_tests.Test.html">Test</a></code>(<code class="code"><a href="Stack_unit_tests.Debug.html">Debug</a></code>(<code class="code"><a href="Linked_stack.html">Linked_stack</a></code>))</pre>
+	<div class="content">
+	<div file="Stack_unit_tests.Test.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Stack_unit_tests.Test.html">Test</a></code>(<code class="code"><a href="Stack_unit_tests.Debug.html">Debug</a></code>(<code class="code">sig</code> <a href="Stack_unit_tests.html">..</a> <code class="code">end</code>))</pre>
+	<div class="content">
+	<div file="Stack_unit_tests.Test.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+

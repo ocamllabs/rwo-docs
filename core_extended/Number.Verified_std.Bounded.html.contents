@@ -1,0 +1,14 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Number.Verified_std.Bounded_spec.html">Bounded_spec</a></code></pre>
+	<div class="content">
+	<div file="Number.Verified_std.Bounded_spec.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Number.Verified_std.S.html">S</a></code></pre>
+	<div class="content">
+	<div file="Number.Verified_std.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

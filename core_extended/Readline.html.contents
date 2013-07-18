@@ -1,0 +1,32 @@
+<pre><span id="TYPEcompleter"><span class="keyword">type</span> completer </span>= <code class="type">left:string -&gt; right:string -&gt; string list</code> </pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Readline.History.html">History</a> : <code class="code">sig</code> <a href="Readline.History.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Readline.History.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> input_line : <code class="type">?history:<a href="Readline.History.html#TYPEt">History.t</a> -&gt;
+?prompt:string -&gt;
+?text:string -&gt; ?tab_completion:<a href="Readline.html#TYPEcompleter">completer</a> -&gt; unit -&gt; string option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> input_line_eof : <code class="type">?history:<a href="Readline.History.html#TYPEt">History.t</a> -&gt;
+?prompt:string -&gt; ?text:string -&gt; ?tab_completion:<a href="Readline.html#TYPEcompleter">completer</a> -&gt; unit -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> password : <code class="type">?prompt:string -&gt; unit -&gt; string option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> confirm : <code class="type">?prompt:string -&gt; string -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> choice : <code class="type">(string * 'a) list -&gt; 'a option</code></span></pre>
+      
+    

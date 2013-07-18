@@ -1,0 +1,15 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span>= <code class="type">string list -&gt; string list</code> </pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Deprecated_command.Autocomplete.Bash_action.html">Bash_action</a> : <code class="code">sig</code> <a href="Deprecated_command.Autocomplete.Bash_action.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Deprecated_command.Autocomplete.Bash_action.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> bash : <code class="type"><a href="Deprecated_command.Autocomplete.Bash_action.html#TYPEt">Bash_action.t</a> list -&gt; <a href="Deprecated_command.Autocomplete.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">create actions command_line</code> gets the completion suggestions that
+      bash's compgen would generate for the selected <code class="code">actions</code> and the
+      last word of the <code class="code">command_line</code>.</div>
+    

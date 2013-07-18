@@ -1,0 +1,25 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">string -&gt; ('a -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a>) -&gt; 'a <a href="Univ.Constr.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">create name to_sexp</code>
+      if the type <code class="code">'a</code> doesn't support sexp conversion, then a good practice
+      is to use <code class="code">sexp_of_opaque</code> as the converter.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> name : <code class="type">'a <a href="Univ.Constr.html#TYPEt">t</a> -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> hash : <code class="type">'a <a href="Univ.Constr.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type">('a -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a>) -&gt; 'a <a href="Univ.Constr.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+<br/><code class="code">create name to_sexp</code>
+      if the type <code class="code">'a</code> doesn't support sexp conversion, then a good practice
+      is to use <code class="code">sexp_of_opaque</code> as the converter.<br/>
+	  

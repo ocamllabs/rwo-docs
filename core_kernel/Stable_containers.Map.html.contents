@@ -1,0 +1,6 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Stable_containers.Map.V1.html">V1</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">Key</code><code class="code"> : </code><code class="type"><a href="Std.Comparator.S_binable.html">Std.Comparator.S_binable</a></code><code class="code">) -&gt; </code><code class="code">sig</code> <a href="Stable_containers.Map.V1.html">..</a> <code class="code">end</code></div></pre>
+	<div class="content" style="display:none">
+	<div file="Stable_containers.Map.V1.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

@@ -1,0 +1,46 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> module type of <a href="../core/Std.Signal.html">Core.Std.Signal</a> with type t = <a href="../core/Std.Signal.html#TYPEt">Core.Std.Signal.t</a></pre>
+	<div class="content">
+	<div file="../core/Std.Signal.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> handle_default : <code class="type">[ `Do_not_use_with_async ] -&gt; 'a</code></span></pre>
+      <div class="info">We override values from <code class="code">Core.Std.Signal</code> that we don't want people to use with
+    Async.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> ignore : <code class="type">[ `Do_not_use_with_async ] -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set : <code class="type">[ `Do_not_use_with_async ] -&gt; 'a -&gt; 'b</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> signal : <code class="type">[ `Do_not_use_with_async ] -&gt; 'a -&gt; 'b</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> handle : <code class="type">?stop:unit <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a> -&gt; t list -&gt; f:(t -&gt; unit) -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">handle ?stop signals ~f</code> arranges so that whenever a signal in <code class="code">signals</code> is
+    delivered, <code class="code">f</code> is called on that signal.  If <code class="code">f</code> raises, then an exception will be
+    raised to the monitor in effect when <code class="code">handle</code> was called.<br/>    Multiple calls to <code class="code">handle</code> with the same signal will cause all the handlers to run
+    when that signal is delivered, not just the last handler from the last call to
+    <code class="code">handle</code>.<br/>    The first time <code class="code">handle</code> is called for a signal, it will install a C signal handler for
+    that signal, which will replace the existing C signal handler for that signal.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> terminating : <code class="type">t list</code></span></pre>
+      <div class="info"><code class="code">terminating</code> is a list of signals that can be supplied to <code class="code">handle</code> and whose default
+    behavior is to terminate the program: alrm hup int term usr1 usr2.<br/>    Various signals whose <code class="code">default_sys_behavior</code> is <code class="code">`Terminate</code> are not included:<br/>    | kill   | it's not allowed to be handled                            |
+    | pipe   | async already ignores this signal, since it handles EPIPE |
+    | prof   | so that we can profile things with -p                     |
+    | vtalrm | it already has a handler                                  |</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> is_managed_by_async : <code class="type">t -&gt; bool</code></span></pre>
+      <div class="info"><code class="code">is_managed_by_async signal</code> returns true iff <code class="code">signal</code> is being managed by async, and
+    hence its default behavior is no longer in effect.</div>
+    

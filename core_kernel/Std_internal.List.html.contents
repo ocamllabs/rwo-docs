@@ -1,0 +1,17 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Core_list.html">Core_list</a></code></pre>
+	<div class="content">
+	<div file="Core_list.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> stable_dedup : <code class="type">'a list -&gt; 'a list</code></span></pre>
+      <div class="info"><code class="code">stable_dedup</code> Same as <code class="code">dedup</code> but maintains the order of the list and doesn't allow
+      compare function to be specified (otherwise, the implementation in terms of Set.t
+      would hide a heavyweight functor instantiation at each call).</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> stable_dedup_staged : <code class="type">compare:('a -&gt; 'a -&gt; int) -&gt; ('a list -&gt; 'a list) <a href="Staged.html#TYPEt">Staged.t</a></code></span></pre>
+      
+    

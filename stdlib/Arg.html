@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<title>Arg</title>
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
+<script type="text/javascript" src="doc_loader.js"> </script>
+</head>
+<body>
+
+<h1>Module Arg</h1>
+<pre><span class="keyword">module</span> Arg</pre><div class="info">Parsing of command line arguments.<br/>   This module provides a general mechanism for extracting options and
+   arguments from the command line to the program.<br/>   Syntax of command lines:
+    A keyword is a character string starting with a <code class="code">-</code>.
+    An option is a keyword alone or followed by an argument.
+    The types of keywords are: <code class="code">Unit</code>, <code class="code">Bool</code>, <code class="code">Set</code>, <code class="code">Clear</code>,
+    <code class="code">String</code>, <code class="code">Set_string</code>, <code class="code">Int</code>, <code class="code">Set_int</code>, <code class="code">Float</code>, <code class="code">Set_float</code>,
+    <code class="code">Tuple</code>, <code class="code">Symbol</code>, and <code class="code">Rest</code>.
+    <code class="code">Unit</code>, <code class="code">Set</code> and <code class="code">Clear</code> keywords take no argument. A <code class="code">Rest</code>
+    keyword takes the remaining of the command line as arguments.
+    Every other keyword takes the following word on the command line
+    as argument.
+    Arguments not preceded by a keyword are called anonymous arguments.<br/>   Examples (<code class="code">cmd</code> is assumed to be the command name):<ul><li>  <code class="code">cmd -flag           </code>(a unit option)</li><li>  <code class="code">cmd -int 1          </code>(an int option with argument <code class="code">1</code>)</li><li>  <code class="code">cmd -string foobar  </code>(a string option with argument <code class="code">&quot;foobar&quot;</code>)</li><li>  <code class="code">cmd -float 12.34    </code>(a float option with argument <code class="code">12.34</code>)</li><li>  <code class="code">cmd a b c           </code>(three anonymous arguments: <code class="code">&quot;a&quot;</code>, <code class="code">&quot;b&quot;</code>, and <code class="code">&quot;c&quot;</code>)</li><li>  <code class="code">cmd a b -- c d      </code>(two anonymous arguments and a rest option with
+                           two arguments)
+</li></ul></div>
+<hr/>
+<div file="Arg.html.contents" class="content_to_load"> </div>
+</body>
+</html>

@@ -1,0 +1,5 @@
+ 
+      <pre><span><span class="keyword">val</span> parse_ssh_client : <code class="type">unit -&gt; [ `From of <a href="Core_unix.Inet_addr.html#TYPEt">Core_unix.Inet_addr.t</a> | `Nowhere ] <a href="Or_error.html#TYPEt">Or_error.t</a></code></span></pre>
+      <div class="info"><code class="code">parse_ssh_client</code> reads the <code class="code">SSH_CLIENT</code> environment variable, retrieving the IP from
+    which you are currently sshing.</div>
+    

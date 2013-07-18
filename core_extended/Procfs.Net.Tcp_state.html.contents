@@ -1,0 +1,24 @@
+<pre><code><span id="TYPEt"><span class="keyword">type</span> t </span>= </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.TCP_ESTABLISHED"><span class="constructor">TCP_ESTABLISHED</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.TCP_SYN_SENT"><span class="constructor">TCP_SYN_SENT</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.TCP_SYN_RECV"><span class="constructor">TCP_SYN_RECV</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.TCP_FIN_WAIT1"><span class="constructor">TCP_FIN_WAIT1</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.TCP_FIN_WAIT2"><span class="constructor">TCP_FIN_WAIT2</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.TCP_TIME_WAIT"><span class="constructor">TCP_TIME_WAIT</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.TCP_CLOSE"><span class="constructor">TCP_CLOSE</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.TCP_CLOSE_WAIT"><span class="constructor">TCP_CLOSE_WAIT</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.TCP_LAST_ACK"><span class="constructor">TCP_LAST_ACK</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.TCP_LISTEN"><span class="constructor">TCP_LISTEN</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.TCP_CLOSING"><span class="constructor">TCP_CLOSING</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.TCP_MAX_STATES"><span class="constructor">TCP_MAX_STATES</span></span></code></td>
+	   </tr></table>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_int : <code class="type"><a href="Procfs.Net.Tcp_state.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_int : <code class="type">int -&gt; <a href="Procfs.Net.Tcp_state.html#TYPEt">t</a></code></span></pre>
+      
+    

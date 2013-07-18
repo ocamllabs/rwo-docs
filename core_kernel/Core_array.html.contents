@@ -1,0 +1,522 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t </span>= <code class="type">'a array</code> </pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Container.S1.html">Container.S1</a></code> with type t = 'a <a href="Core_array.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="Container.S1.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> max_length : <code class="type">int</code></span></pre>
+      <div class="info">Maximum length of a normal array.  The maximum length of a float array is
+    <code class="code">max_length/2</code> on 32-bit machines and <code class="code">max_length</code> on 64-bit machines.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> get : <code class="type">'a <a href="Core_array.html#TYPEt">t</a> -&gt; int -&gt; 'a</code></span></pre>
+      <div class="info"><code class="code">Array.get a n</code> returns the element number <code class="code">n</code> of array <code class="code">a</code>.
+   The first element has number 0.
+   The last element has number <code class="code">Array.length a - 1</code>.
+   You can also write <code class="code">a.(n)</code> instead of <code class="code">Array.get a n</code>.<br/>   Raise <code class="code">Invalid_argument &quot;index out of bounds&quot;</code>
+   if <code class="code">n</code> is outside the range 0 to <code class="code">(Array.length a - 1)</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> set : <code class="type">'a <a href="Core_array.html#TYPEt">t</a> -&gt; int -&gt; 'a -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">Array.set a n x</code> modifies array <code class="code">a</code> in place, replacing
+   element number <code class="code">n</code> with <code class="code">x</code>.
+   You can also write <code class="code">a.(n) &lt;- x</code> instead of <code class="code">Array.set a n x</code>.<br/>   Raise <code class="code">Invalid_argument &quot;index out of bounds&quot;</code>
+   if <code class="code">n</code> is outside the range 0 to <code class="code">Array.length a - 1</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_get : <code class="type">'a <a href="Core_array.html#TYPEt">t</a> -&gt; int -&gt; 'a</code></span></pre>
+      <div class="info">Unsafe version of <code class="code">get</code>.  Can cause arbitrary behavior when used to for an
+    out-of-bounds array access</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_set : <code class="type">'a <a href="Core_array.html#TYPEt">t</a> -&gt; int -&gt; 'a -&gt; unit</code></span></pre>
+      <div class="info">Unsafe version of <code class="code">set</code>.  Can cause arbitrary behavior when used to for an
+    out-of-bounds array access</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">len:int -&gt; 'a -&gt; 'a <a href="Core_array.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">create ~len x</code> creates an array of length <code class="code">len</code> with the value <code class="code">x</code> populated in each
+    element</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> init : <code class="type">int -&gt; f:(int -&gt; 'a) -&gt; 'a <a href="Core_array.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">init n ~f</code> creates an array of length <code class="code">n</code> where the <code class="code">i</code>th element is initialized with
+    <code class="code">f i</code> (starting at zero)</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> make_matrix : <code class="type">dimx:int -&gt; dimy:int -&gt; 'a -&gt; 'a <a href="Core_array.html#TYPEt">t</a> <a href="Core_array.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">Array.make_matrix dimx dimy e</code> returns a two-dimensional array
+   (an array of arrays) with first dimension <code class="code">dimx</code> and
+   second dimension <code class="code">dimy</code>. All the elements of this new matrix
+   are initially physically equal to <code class="code">e</code>.
+   The element (<code class="code">x,y</code>) of a matrix <code class="code">m</code> is accessed
+   with the notation <code class="code">m.(x).(y)</code>.<br/>   Raise <code class="code">Invalid_argument</code> if <code class="code">dimx</code> or <code class="code">dimy</code> is negative or
+   greater than <code class="code">Sys.max_array_length</code>.
+   If the value of <code class="code">e</code> is a floating-point number, then the maximum
+   size is only <code class="code">Sys.max_array_length / 2</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> append : <code class="type">'a <a href="Core_array.html#TYPEt">t</a> -&gt; 'a <a href="Core_array.html#TYPEt">t</a> -&gt; 'a <a href="Core_array.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">Array.append v1 v2</code> returns a fresh array containing the
+   concatenation of the arrays <code class="code">v1</code> and <code class="code">v2</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> concat : <code class="type">'a <a href="Core_array.html#TYPEt">t</a> list -&gt; 'a <a href="Core_array.html#TYPEt">t</a></code></span></pre>
+      <div class="info">Same as <code class="code">Array.append</code>, but concatenates a list of arrays.</div>
+    
+<pre><span id="TYPEsub"><span class="keyword">type</span> <code class="type">'a </code>sub </span>= <code class="type">'a <a href="Core_array.html#TYPEt">t</a> -&gt; pos:int -&gt; len:int -&gt; 'a <a href="Core_array.html#TYPEt">t</a></code> </pre>
+      <div class="info"><code class="code">Array.sub a start len</code> returns a fresh array of length <code class="code">len</code>, containing the elements
+    number <code class="code">start</code> to <code class="code">start + len - 1</code> of array <code class="code">a</code>.<br/>    Raise <code class="code">Invalid_argument &quot;Array.sub&quot;</code> if <code class="code">start</code> and <code class="code">len</code> do not designate a valid
+    subarray of <code class="code">a</code>; that is, if <code class="code">start &lt; 0</code>, or <code class="code">len &lt; 0</code>, or <code class="code">start + len &gt; Array.length
+    a</code>.<br/>    <code class="code">int_sub</code> and <code class="code">float_sub</code> provide fast bound-checked blit copying for immediate data
+    types.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> sub : <code class="type">'a <a href="Core_array.html#TYPEsub">sub</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> int_sub : <code class="type">int <a href="Core_array.html#TYPEsub">sub</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> float_sub : <code class="type">float <a href="Core_array.html#TYPEsub">sub</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> copy : <code class="type">'a <a href="Core_array.html#TYPEt">t</a> -&gt; 'a <a href="Core_array.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">Array.copy a</code> returns a copy of <code class="code">a</code>, that is, a fresh array
+    containing the same elements as <code class="code">a</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> fill : <code class="type">'a <a href="Core_array.html#TYPEt">t</a> -&gt; pos:int -&gt; len:int -&gt; 'a -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">Array.fill a ofs len x</code> modifies the array <code class="code">a</code> in place,
+   storing <code class="code">x</code> in elements number <code class="code">ofs</code> to <code class="code">ofs + len - 1</code>.<br/>   Raise <code class="code">Invalid_argument &quot;Array.fill&quot;</code> if <code class="code">ofs</code> and <code class="code">len</code> do not
+   designate a valid subarray of <code class="code">a</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> blit : <code class="type">src:'a <a href="Core_array.html#TYPEt">t</a> -&gt; src_pos:int -&gt; dst:'a <a href="Core_array.html#TYPEt">t</a> -&gt; dst_pos:int -&gt; len:int -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">Array.blit v1 o1 v2 o2 len</code> copies <code class="code">len</code> elements from array <code class="code">v1</code>, starting at
+    element number <code class="code">o1</code>, to array <code class="code">v2</code>, starting at element number <code class="code">o2</code>.  It works
+    correctly even if <code class="code">v1</code> and <code class="code">v2</code> are the same array, and the source and destination
+    chunks overlap.<br/>    Raise <code class="code">Invalid_argument &quot;Array.blit&quot;</code> if <code class="code">o1</code> and <code class="code">len</code> do not designate a valid
+    subarray of <code class="code">v1</code>, or if <code class="code">o2</code> and <code class="code">len</code> do not designate a valid subarray of <code class="code">v2</code>.<br/>    <code class="code">int_blit</code> and <code class="code">float_blit</code> provide fast bound-checked blits for immediate
+    data types.  The unsafe versions do not bound-check the arguments.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> int_blit : <code class="type">src:int <a href="Core_array.html#TYPEt">t</a> -&gt; src_pos:int -&gt; dst:int <a href="Core_array.html#TYPEt">t</a> -&gt; dst_pos:int -&gt; len:int -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> float_blit : <code class="type">src:float <a href="Core_array.html#TYPEt">t</a> -&gt; src_pos:int -&gt; dst:float <a href="Core_array.html#TYPEt">t</a> -&gt; dst_pos:int -&gt; len:int -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_int_blit : <code class="type">src:int <a href="Core_array.html#TYPEt">t</a> -&gt; src_pos:int -&gt; dst:int <a href="Core_array.html#TYPEt">t</a> -&gt; dst_pos:int -&gt; len:int -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_float_blit : <code class="type">src:float <a href="Core_array.html#TYPEt">t</a> -&gt; src_pos:int -&gt; dst:float <a href="Core_array.html#TYPEt">t</a> -&gt; dst_pos:int -&gt; len:int -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_list : <code class="type">'a list -&gt; 'a <a href="Core_array.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">Array.of_list l</code> returns a fresh array containing the elements of <code class="code">l</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> map : <code class="type">f:('a -&gt; 'b) -&gt; 'a <a href="Core_array.html#TYPEt">t</a> -&gt; 'b <a href="Core_array.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">Array.map ~f a</code> applies function <code class="code">f</code> to all the elements of <code class="code">a</code>,
+   and builds an array with the results returned by <code class="code">f</code>:
+   <code class="code">[| f a.(0); f a.(1); ...; f a.(Array.length a - 1) |]</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> iteri : <code class="type">f:(int -&gt; 'a -&gt; unit) -&gt; 'a <a href="Core_array.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      <div class="info">Same as TODO reference : Array.iter, but the
+   function is applied to the index of the element as first argument,
+   and the element itself as second argument.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> mapi : <code class="type">f:(int -&gt; 'a -&gt; 'b) -&gt; 'a <a href="Core_array.html#TYPEt">t</a> -&gt; 'b <a href="Core_array.html#TYPEt">t</a></code></span></pre>
+      <div class="info">Same as TODO reference : Array.map, but the
+   function is applied to the index of the element as first argument,
+   and the element itself as second argument.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> foldi : <code class="type">'a <a href="Core_array.html#TYPEt">t</a> -&gt; init:'b -&gt; f:(int -&gt; 'b -&gt; 'a -&gt; 'b) -&gt; 'b</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold_right : <code class="type">'a <a href="Core_array.html#TYPEt">t</a> -&gt; f:('a -&gt; 'b -&gt; 'b) -&gt; init:'b -&gt; 'b</code></span></pre>
+      <div class="info"><code class="code">Array.fold_right f a ~init</code> computes
+   <code class="code">f a.(0) (f a.(1) ( ... (f a.(n-1) init) ...))</code>,
+   where <code class="code">n</code> is the length of the array <code class="code">a</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> sort : <code class="type">?pos:int -&gt; ?len:int -&gt; 'a <a href="Core_array.html#TYPEt">t</a> -&gt; cmp:('a -&gt; 'a -&gt; int) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stable_sort : <code class="type">'a <a href="Core_array.html#TYPEt">t</a> -&gt; cmp:('a -&gt; 'a -&gt; int) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_sorted : <code class="type">'a <a href="Core_array.html#TYPEt">t</a> -&gt; cmp:('a -&gt; 'a -&gt; int) -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> concat_map : <code class="type">'a <a href="Core_array.html#TYPEt">t</a> -&gt; f:('a -&gt; 'b array) -&gt; 'b array</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> partition_tf : <code class="type">'a <a href="Core_array.html#TYPEt">t</a> -&gt; f:('a -&gt; bool) -&gt; 'a <a href="Core_array.html#TYPEt">t</a> * 'a <a href="Core_array.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> partitioni_tf : <code class="type">'a <a href="Core_array.html#TYPEt">t</a> -&gt; f:(int -&gt; 'a -&gt; bool) -&gt; 'a <a href="Core_array.html#TYPEt">t</a> * 'a <a href="Core_array.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> cartesian_product : <code class="type">'a <a href="Core_array.html#TYPEt">t</a> -&gt; 'b <a href="Core_array.html#TYPEt">t</a> -&gt; ('a * 'b) <a href="Core_array.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> normalize : <code class="type">'a <a href="Core_array.html#TYPEt">t</a> -&gt; int -&gt; int</code></span></pre>
+      <div class="info"><code class="code">normalize array index</code> returns a new index into the array such that if index is less
+    than zero, the returned index will &quot;wrap around&quot; -- i.e. array.(normalize array (-1))
+    returns the last element of the array.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> slice : <code class="type">'a <a href="Core_array.html#TYPEt">t</a> -&gt; int -&gt; int -&gt; 'a <a href="Core_array.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">slice array start stop</code> returns a fresh array including elements <code class="code">array.(start)</code>
+    through <code class="code">array.(stop-1)</code> with the small tweak that the start and stop positions are
+    normalized and a stop index of 0 means the same thing a stop index of <code class="code">Array.length
+    array</code>.  In summary, it's mostly like the slicing in Python or Matlab.  One difference
+    is that a stop value of 0 here is like not specifying a stop value in Python.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> nget : <code class="type">'a <a href="Core_array.html#TYPEt">t</a> -&gt; int -&gt; 'a</code></span></pre>
+      <div class="info">Array access with <code class="code">normalize</code>d index.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> nset : <code class="type">'a <a href="Core_array.html#TYPEt">t</a> -&gt; int -&gt; 'a -&gt; unit</code></span></pre>
+      <div class="info">Array modification with <code class="code">normalize</code>d index.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> filter_opt : <code class="type">'a option <a href="Core_array.html#TYPEt">t</a> -&gt; 'a <a href="Core_array.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">filter_opt array</code> returns a new array where <code class="code">None</code> entries are omitted and <code class="code">Some x</code>
+    entries are replaced with <code class="code">x</code>. Note that this changes the index at which elements
+    will appear.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> filter_map : <code class="type">'a <a href="Core_array.html#TYPEt">t</a> -&gt; f:('a -&gt; 'b option) -&gt; 'b <a href="Core_array.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">filter_map ~f array</code> maps <code class="code">f</code> over <code class="code">array</code> and filters <code class="code">None</code> out of the results.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> filter_mapi : <code class="type">'a <a href="Core_array.html#TYPEt">t</a> -&gt; f:(int -&gt; 'a -&gt; 'b option) -&gt; 'b <a href="Core_array.html#TYPEt">t</a></code></span></pre>
+      <div class="info">Same as <code class="code">filter_map</code> but uses TODO reference : Array.mapi.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> iter2_exn : <code class="type">'a <a href="Core_array.html#TYPEt">t</a> -&gt; 'b <a href="Core_array.html#TYPEt">t</a> -&gt; f:('a -&gt; 'b -&gt; unit) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map2_exn : <code class="type">'a <a href="Core_array.html#TYPEt">t</a> -&gt; 'b <a href="Core_array.html#TYPEt">t</a> -&gt; f:('a -&gt; 'b -&gt; 'c) -&gt; 'c <a href="Core_array.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold2_exn : <code class="type">'a <a href="Core_array.html#TYPEt">t</a> -&gt; 'b <a href="Core_array.html#TYPEt">t</a> -&gt; init:'c -&gt; f:('c -&gt; 'a -&gt; 'b -&gt; 'c) -&gt; 'c</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> for_all2_exn : <code class="type">'a <a href="Core_array.html#TYPEt">t</a> -&gt; 'b <a href="Core_array.html#TYPEt">t</a> -&gt; f:('a -&gt; 'b -&gt; bool) -&gt; bool</code></span></pre>
+      <div class="info"><code class="code">for_all2 t1 t2 ~f</code> fails if <code class="code">length t1 &lt;&gt; length t2</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> filter : <code class="type">f:('a -&gt; bool) -&gt; 'a <a href="Core_array.html#TYPEt">t</a> -&gt; 'a <a href="Core_array.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">filter ~f array</code> removes the elements for which <code class="code">f</code> returns false.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> filteri : <code class="type">f:(int -&gt; 'a -&gt; bool) -&gt; 'a <a href="Core_array.html#TYPEt">t</a> -&gt; 'a <a href="Core_array.html#TYPEt">t</a></code></span></pre>
+      <div class="info">Like <code class="code">filter</code> except <code class="code">f</code> also receives the index.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> swap : <code class="type">'a <a href="Core_array.html#TYPEt">t</a> -&gt; int -&gt; int -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">swap arr i j</code> swaps the value at index <code class="code">i</code> with that at index <code class="code">j</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> rev_inplace : <code class="type">'a <a href="Core_array.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">rev_inplace t</code> reverses <code class="code">t</code> in place</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> of_list_rev : <code class="type">'a list -&gt; 'a <a href="Core_array.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">of_list_rev l</code> converts from list then reverses in place</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> of_list_map : <code class="type">'a list -&gt; f:('a -&gt; 'b) -&gt; 'b <a href="Core_array.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">of_list_map l ~f</code> is the same as <code class="code">of_list (List.map l ~f)</code> </div>
+    
+ 
+      <pre><span><span class="keyword">val</span> of_list_rev_map : <code class="type">'a list -&gt; f:('a -&gt; 'b) -&gt; 'b <a href="Core_array.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">of_list_rev_map l ~f</code> is the same as <code class="code">rev_inplace (of_list_map l ~f)</code> </div>
+    
+ 
+      <pre><span><span class="keyword">val</span> replace : <code class="type">'a <a href="Core_array.html#TYPEt">t</a> -&gt; int -&gt; f:('a -&gt; 'a) -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">replace t i ~f</code> = <code class="code">t.(i) &lt;- f (t.(i))</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> replace_all : <code class="type">'a <a href="Core_array.html#TYPEt">t</a> -&gt; f:('a -&gt; 'a) -&gt; unit</code></span></pre>
+      <div class="info">modifies an array in place -- <code class="code">ar.(i)</code> will be set to <code class="code">f(ar.(i))</code> </div>
+    
+ 
+      <pre><span><span class="keyword">val</span> find_exn : <code class="type">'a <a href="Core_array.html#TYPEt">t</a> -&gt; f:('a -&gt; bool) -&gt; 'a</code></span></pre>
+      <div class="info"><code class="code">find_exn f t</code> returns the first <code class="code">a</code> in <code class="code">t</code> for which <code class="code">f t.(i)</code> is true.
+    It raises <code class="code">Not_found</code> if there is no such <code class="code">a</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> findi : <code class="type">'a <a href="Core_array.html#TYPEt">t</a> -&gt; f:(int -&gt; 'a -&gt; bool) -&gt; (int * 'a) option</code></span></pre>
+      <div class="info"><code class="code">findi t f</code> returns the first index <code class="code">i</code> of <code class="code">t</code> for which <code class="code">f i t.(i)</code> is true</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> findi_exn : <code class="type">'a <a href="Core_array.html#TYPEt">t</a> -&gt; f:(int -&gt; 'a -&gt; bool) -&gt; int * 'a</code></span></pre>
+      <div class="info"><code class="code">findi_exn t f</code> returns the first index <code class="code">i</code> of <code class="code">t</code> for which <code class="code">f i t.(i)</code> is
+    true.  It raises <code class="code">Not_found</code> if there is no such element.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> reduce : <code class="type">'a <a href="Core_array.html#TYPEt">t</a> -&gt; f:('a -&gt; 'a -&gt; 'a) -&gt; 'a option</code></span></pre>
+      <div class="info"><code class="code">reduce f [a1; ...; an]</code> is <code class="code">Some (f (... (f (f a1 a2) a3) ...) an)</code>.
+    Returns <code class="code">None</code> on the empty array.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> reduce_exn : <code class="type">'a <a href="Core_array.html#TYPEt">t</a> -&gt; f:('a -&gt; 'a -&gt; 'a) -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> permute : <code class="type">?random_state:<a href="Core_random.State.html#TYPEt">Core_random.State.t</a> -&gt; 'a <a href="Core_array.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">permute ?random_state t</code> randomly permutes <code class="code">t</code> in place.<br/>    <code class="code">permute</code> side affects <code class="code">random_state</code> by repeated calls to <code class="code">Random.State.int</code>.
+    If <code class="code">random_state</code> is not supplied, <code class="code">permute</code> uses <code class="code">Random.State.default</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> combine : <code class="type">'a <a href="Core_array.html#TYPEt">t</a> -&gt; 'b <a href="Core_array.html#TYPEt">t</a> -&gt; ('a * 'b) <a href="Core_array.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">combine ar</code> combines two arrays to an array of pairs.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> split : <code class="type">('a * 'b) <a href="Core_array.html#TYPEt">t</a> -&gt; 'a <a href="Core_array.html#TYPEt">t</a> * 'b <a href="Core_array.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">split ar</code> splits an array of pairs into two arrays of single elements.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> sorted_copy : <code class="type">'a <a href="Core_array.html#TYPEt">t</a> -&gt; cmp:('a -&gt; 'a -&gt; int) -&gt; 'a <a href="Core_array.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">sorted_copy ar cmp</code> returns a shallow copy of <code class="code">ar</code> that is sorted. Similar to
+    List.sort</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> last : <code class="type">'a <a href="Core_array.html#TYPEt">t</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> empty : <code class="type">unit -&gt; 'a <a href="Core_array.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">empty ()</code> creates an empty array</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> equal : <code class="type">'a <a href="Core_array.html#TYPEt">t</a> -&gt; 'a <a href="Core_array.html#TYPEt">t</a> -&gt; equal:('a -&gt; 'a -&gt; bool) -&gt; bool</code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Core_array.Infix.html">Infix</a> : <code class="code">sig</code> <a href="Core_array.Infix.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Core_array.Infix.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp : <code class="type">(<a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; 'a) -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; 'a <a href="Core_array.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type">('a -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a>) -&gt; 'a <a href="Core_array.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_t : <code class="type">'a <a href="../bin_prot/Type_class.html#TYPEt">Bin_prot.Type_class.t</a> -&gt; 'a <a href="Core_array.html#TYPEt">t</a> <a href="../bin_prot/Type_class.html#TYPEt">Bin_prot.Type_class.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t : <code class="type">'a <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a> -&gt; 'a <a href="Core_array.html#TYPEt">t</a> <a href="../bin_prot/Read_ml.html#TYPEreader">Bin_prot.Read_ml.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t_ : <code class="type">'a <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a> -&gt; 'a <a href="Core_array.html#TYPEt">t</a> <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t__ : <code class="type">'a <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+(int -&gt; 'a <a href="Core_array.html#TYPEt">t</a>) <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t : <code class="type">'a <a href="../bin_prot/Type_class.html#TYPEreader">Bin_prot.Type_class.reader</a> -&gt; 'a <a href="Core_array.html#TYPEt">t</a> <a href="../bin_prot/Type_class.html#TYPEreader">Bin_prot.Type_class.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t : <code class="type">'a <a href="../bin_prot/Size.html#TYPEsizer">Bin_prot.Size.sizer</a> -&gt; 'a <a href="Core_array.html#TYPEt">t</a> <a href="../bin_prot/Size.html#TYPEsizer">Bin_prot.Size.sizer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t : <code class="type">'a <a href="../bin_prot/Unsafe_write_c.html#TYPEwriter">Bin_prot.Unsafe_write_c.writer</a> -&gt; 'a <a href="Core_array.html#TYPEt">t</a> <a href="../bin_prot/Write_ml.html#TYPEwriter">Bin_prot.Write_ml.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_ : <code class="type">'a <a href="../bin_prot/Unsafe_write_c.html#TYPEwriter">Bin_prot.Unsafe_write_c.writer</a> -&gt; 'a <a href="Core_array.html#TYPEt">t</a> <a href="../bin_prot/Unsafe_write_c.html#TYPEwriter">Bin_prot.Unsafe_write_c.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t : <code class="type">'a <a href="../bin_prot/Type_class.html#TYPEwriter">Bin_prot.Type_class.writer</a> -&gt; 'a <a href="Core_array.html#TYPEt">t</a> <a href="../bin_prot/Type_class.html#TYPEwriter">Bin_prot.Type_class.writer</a></code></span></pre>
+      
+    
+<br/>Maximum length of a normal array.  The maximum length of a float array is
+    <code class="code">max_length/2</code> on 32-bit machines and <code class="code">max_length</code> on 64-bit machines.<br/>
+	  
+<br/><code class="code">Array.get a n</code> returns the element number <code class="code">n</code> of array <code class="code">a</code>.
+   The first element has number 0.
+   The last element has number <code class="code">Array.length a - 1</code>.
+   You can also write <code class="code">a.(n)</code> instead of <code class="code">Array.get a n</code>.<br/>   Raise <code class="code">Invalid_argument &quot;index out of bounds&quot;</code>
+   if <code class="code">n</code> is outside the range 0 to <code class="code">(Array.length a - 1)</code>.<br/>
+	  
+<br/><code class="code">Array.set a n x</code> modifies array <code class="code">a</code> in place, replacing
+   element number <code class="code">n</code> with <code class="code">x</code>.
+   You can also write <code class="code">a.(n) &lt;- x</code> instead of <code class="code">Array.set a n x</code>.<br/>   Raise <code class="code">Invalid_argument &quot;index out of bounds&quot;</code>
+   if <code class="code">n</code> is outside the range 0 to <code class="code">Array.length a - 1</code>.<br/>
+	  
+<br/>Unsafe version of <code class="code">get</code>.  Can cause arbitrary behavior when used to for an
+    out-of-bounds array access<br/>
+	  
+<br/>Unsafe version of <code class="code">set</code>.  Can cause arbitrary behavior when used to for an
+    out-of-bounds array access<br/>
+	  
+<br/><code class="code">create ~len x</code> creates an array of length <code class="code">len</code> with the value <code class="code">x</code> populated in each
+    element<br/>
+	  
+<br/><code class="code">init n ~f</code> creates an array of length <code class="code">n</code> where the <code class="code">i</code>th element is initialized with
+    <code class="code">f i</code> (starting at zero)<br/>
+	  
+<br/><code class="code">Array.make_matrix dimx dimy e</code> returns a two-dimensional array
+   (an array of arrays) with first dimension <code class="code">dimx</code> and
+   second dimension <code class="code">dimy</code>. All the elements of this new matrix
+   are initially physically equal to <code class="code">e</code>.
+   The element (<code class="code">x,y</code>) of a matrix <code class="code">m</code> is accessed
+   with the notation <code class="code">m.(x).(y)</code>.<br/>   Raise <code class="code">Invalid_argument</code> if <code class="code">dimx</code> or <code class="code">dimy</code> is negative or
+   greater than <code class="code">Sys.max_array_length</code>.
+   If the value of <code class="code">e</code> is a floating-point number, then the maximum
+   size is only <code class="code">Sys.max_array_length / 2</code>.<br/>
+	  
+<br/><code class="code">Array.append v1 v2</code> returns a fresh array containing the
+   concatenation of the arrays <code class="code">v1</code> and <code class="code">v2</code>.<br/>
+	  
+<br/>Same as <code class="code">Array.append</code>, but concatenates a list of arrays.<br/>
+	  
+<br/><code class="code">Array.sub a start len</code> returns a fresh array of length <code class="code">len</code>, containing the elements
+    number <code class="code">start</code> to <code class="code">start + len - 1</code> of array <code class="code">a</code>.<br/>    Raise <code class="code">Invalid_argument &quot;Array.sub&quot;</code> if <code class="code">start</code> and <code class="code">len</code> do not designate a valid
+    subarray of <code class="code">a</code>; that is, if <code class="code">start &lt; 0</code>, or <code class="code">len &lt; 0</code>, or <code class="code">start + len &gt; Array.length
+    a</code>.<br/>    <code class="code">int_sub</code> and <code class="code">float_sub</code> provide fast bound-checked blit copying for immediate data
+    types.<br/>
+	  
+<br/><code class="code">Array.copy a</code> returns a copy of <code class="code">a</code>, that is, a fresh array
+    containing the same elements as <code class="code">a</code>.<br/>
+	  
+<br/><code class="code">Array.fill a ofs len x</code> modifies the array <code class="code">a</code> in place,
+   storing <code class="code">x</code> in elements number <code class="code">ofs</code> to <code class="code">ofs + len - 1</code>.<br/>   Raise <code class="code">Invalid_argument &quot;Array.fill&quot;</code> if <code class="code">ofs</code> and <code class="code">len</code> do not
+   designate a valid subarray of <code class="code">a</code>.<br/>
+	  
+<br/><code class="code">Array.blit v1 o1 v2 o2 len</code> copies <code class="code">len</code> elements from array <code class="code">v1</code>, starting at
+    element number <code class="code">o1</code>, to array <code class="code">v2</code>, starting at element number <code class="code">o2</code>.  It works
+    correctly even if <code class="code">v1</code> and <code class="code">v2</code> are the same array, and the source and destination
+    chunks overlap.<br/>    Raise <code class="code">Invalid_argument &quot;Array.blit&quot;</code> if <code class="code">o1</code> and <code class="code">len</code> do not designate a valid
+    subarray of <code class="code">v1</code>, or if <code class="code">o2</code> and <code class="code">len</code> do not designate a valid subarray of <code class="code">v2</code>.<br/>    <code class="code">int_blit</code> and <code class="code">float_blit</code> provide fast bound-checked blits for immediate
+    data types.  The unsafe versions do not bound-check the arguments.<br/>
+	  
+<br/><code class="code">Array.of_list l</code> returns a fresh array containing the elements of <code class="code">l</code>.<br/>
+	  
+<br/><code class="code">Array.map ~f a</code> applies function <code class="code">f</code> to all the elements of <code class="code">a</code>,
+   and builds an array with the results returned by <code class="code">f</code>:
+   <code class="code">[| f a.(0); f a.(1); ...; f a.(Array.length a - 1) |]</code>.<br/>
+	  
+<br/>Same as TODO reference : Array.iter, but the
+   function is applied to the index of the element as first argument,
+   and the element itself as second argument.<br/>
+	  
+<br/>Same as TODO reference : Array.map, but the
+   function is applied to the index of the element as first argument,
+   and the element itself as second argument.<br/>
+	  
+<br/><code class="code">Array.fold_right f a ~init</code> computes
+   <code class="code">f a.(0) (f a.(1) ( ... (f a.(n-1) init) ...))</code>,
+   where <code class="code">n</code> is the length of the array <code class="code">a</code>.<br/>
+	  
+<br/><code class="code">normalize array index</code> returns a new index into the array such that if index is less
+    than zero, the returned index will &quot;wrap around&quot; -- i.e. array.(normalize array (-1))
+    returns the last element of the array.<br/>
+	  
+<br/><code class="code">slice array start stop</code> returns a fresh array including elements <code class="code">array.(start)</code>
+    through <code class="code">array.(stop-1)</code> with the small tweak that the start and stop positions are
+    normalized and a stop index of 0 means the same thing a stop index of <code class="code">Array.length
+    array</code>.  In summary, it's mostly like the slicing in Python or Matlab.  One difference
+    is that a stop value of 0 here is like not specifying a stop value in Python.<br/>
+	  
+<br/>Array access with <code class="code">normalize</code>d index.<br/>
+	  
+<br/>Array modification with <code class="code">normalize</code>d index.<br/>
+	  
+<br/><code class="code">filter_opt array</code> returns a new array where <code class="code">None</code> entries are omitted and <code class="code">Some x</code>
+    entries are replaced with <code class="code">x</code>. Note that this changes the index at which elements
+    will appear.<br/>
+	  
+<br/><code class="code">filter_map ~f array</code> maps <code class="code">f</code> over <code class="code">array</code> and filters <code class="code">None</code> out of the results.<br/>
+	  
+<br/>Same as <code class="code">filter_map</code> but uses TODO reference : Array.mapi.<br/>
+	  
+<br/><code class="code">for_all2 t1 t2 ~f</code> fails if <code class="code">length t1 &lt;&gt; length t2</code>.<br/>
+	  
+<br/><code class="code">filter ~f array</code> removes the elements for which <code class="code">f</code> returns false.<br/>
+	  
+<br/>Like <code class="code">filter</code> except <code class="code">f</code> also receives the index.<br/>
+	  
+<br/><code class="code">swap arr i j</code> swaps the value at index <code class="code">i</code> with that at index <code class="code">j</code>.<br/>
+	  
+<br/><code class="code">rev_inplace t</code> reverses <code class="code">t</code> in place<br/>
+	  
+<br/><code class="code">of_list_rev l</code> converts from list then reverses in place<br/>
+	  
+<br/><code class="code">of_list_map l ~f</code> is the same as <code class="code">of_list (List.map l ~f)</code> <br/>
+	  
+<br/><code class="code">of_list_rev_map l ~f</code> is the same as <code class="code">rev_inplace (of_list_map l ~f)</code> <br/>
+	  
+<br/><code class="code">replace t i ~f</code> = <code class="code">t.(i) &lt;- f (t.(i))</code>.<br/>
+	  
+<br/>modifies an array in place -- <code class="code">ar.(i)</code> will be set to <code class="code">f(ar.(i))</code> <br/>
+	  
+<br/><code class="code">find_exn f t</code> returns the first <code class="code">a</code> in <code class="code">t</code> for which <code class="code">f t.(i)</code> is true.
+    It raises <code class="code">Not_found</code> if there is no such <code class="code">a</code>.<br/>
+	  
+<br/><code class="code">findi t f</code> returns the first index <code class="code">i</code> of <code class="code">t</code> for which <code class="code">f i t.(i)</code> is true<br/>
+	  
+<br/><code class="code">findi_exn t f</code> returns the first index <code class="code">i</code> of <code class="code">t</code> for which <code class="code">f i t.(i)</code> is
+    true.  It raises <code class="code">Not_found</code> if there is no such element.<br/>
+	  
+<br/><code class="code">reduce f [a1; ...; an]</code> is <code class="code">Some (f (... (f (f a1 a2) a3) ...) an)</code>.
+    Returns <code class="code">None</code> on the empty array.<br/>
+	  
+<br/><code class="code">permute ?random_state t</code> randomly permutes <code class="code">t</code> in place.<br/>    <code class="code">permute</code> side affects <code class="code">random_state</code> by repeated calls to <code class="code">Random.State.int</code>.
+    If <code class="code">random_state</code> is not supplied, <code class="code">permute</code> uses <code class="code">Random.State.default</code>.<br/>
+	  
+<br/><code class="code">combine ar</code> combines two arrays to an array of pairs.<br/>
+	  
+<br/><code class="code">split ar</code> splits an array of pairs into two arrays of single elements.<br/>
+	  
+<br/><code class="code">sorted_copy ar cmp</code> returns a shallow copy of <code class="code">ar</code> that is sorted. Similar to
+    List.sort<br/>
+	  
+<br/><code class="code">empty ()</code> creates an empty array<br/>
+	  

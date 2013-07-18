@@ -1,0 +1,89 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      <div class="info"><code class="code">Open_flags.t</code> represents the flags associated with a file descriptor in the
+      open-file-descriptor table.  It deals with the same thing as OCaml's <code class="code">open_flag</code>
+      type; however, it uses Core's <code class="code">Flags</code> approach and the underlying integer bitmask
+      representation, and so interoperates more smoothly with C.</div>
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core_kernel/Std.Flags.S.html">Core_kernel.Std.Flags.S</a></code> with type t = <a href="Core_unix.Open_flags.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="../core_kernel/Std.Flags.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> rdonly : <code class="type"><a href="Core_unix.Open_flags.html#TYPEt">t</a></code></span></pre>
+      <div class="info">access mode.<br/>      These three flags are not individual bits like flags usually are.  The access mode
+      is represented by the lower two bits of the <code class="code">Open_flags.t</code>.  A particular
+      <code class="code">Open_flags.t</code> should include exactly one access mode.  Combining different
+      <code class="code">Open_flags.t</code>'s using flags operations (e.g <code class="code">+</code>) is only sensible if they have the
+      same access mode.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> wronly : <code class="type"><a href="Core_unix.Open_flags.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rdwr : <code class="type"><a href="Core_unix.Open_flags.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> creat : <code class="type"><a href="Core_unix.Open_flags.html#TYPEt">t</a></code></span></pre>
+      <div class="info">creation</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> excl : <code class="type"><a href="Core_unix.Open_flags.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> noctty : <code class="type"><a href="Core_unix.Open_flags.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> trunc : <code class="type"><a href="Core_unix.Open_flags.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> append : <code class="type"><a href="Core_unix.Open_flags.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> nonblock : <code class="type"><a href="Core_unix.Open_flags.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> dsync : <code class="type"><a href="Core_unix.Open_flags.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sync : <code class="type"><a href="Core_unix.Open_flags.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rsync : <code class="type"><a href="Core_unix.Open_flags.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> can_read : <code class="type"><a href="Core_unix.Open_flags.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      <div class="info"><code class="code">can_read t</code> iff <code class="code">t</code> has <code class="code">rdonly</code> or <code class="code">rdwr</code> </div>
+    
+ 
+      <pre><span><span class="keyword">val</span> can_write : <code class="type"><a href="Core_unix.Open_flags.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      <div class="info"><code class="code">can_read t</code> iff <code class="code">t</code> has <code class="code">wronly</code> or <code class="code">rdwr</code> </div>
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type"><a href="Core_unix.Open_flags.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+<br/>access mode.<br/>      These three flags are not individual bits like flags usually are.  The access mode
+      is represented by the lower two bits of the <code class="code">Open_flags.t</code>.  A particular
+      <code class="code">Open_flags.t</code> should include exactly one access mode.  Combining different
+      <code class="code">Open_flags.t</code>'s using flags operations (e.g <code class="code">+</code>) is only sensible if they have the
+      same access mode.<br/>
+	  
+<br/>creation<br/>
+	  
+<br/><code class="code">can_read t</code> iff <code class="code">t</code> has <code class="code">rdonly</code> or <code class="code">rdwr</code> <br/>
+	  
+<br/><code class="code">can_read t</code> iff <code class="code">t</code> has <code class="code">wronly</code> or <code class="code">rdwr</code> <br/>
+	  

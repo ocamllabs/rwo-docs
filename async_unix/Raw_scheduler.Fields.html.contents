@@ -1,0 +1,325 @@
+ 
+      <pre><span><span class="keyword">val</span> names : <code class="type">string list</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> core_scheduler : <code class="type">([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Raw_scheduler.Core_scheduler.html#TYPEt">Core_scheduler.t</a>)
+<a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> thread_pool : <code class="type">([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Thread_pool.html#TYPEt">Thread_pool.t</a>) <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> signal_manager : <code class="type">([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Raw_signal_manager.html#TYPEt">Raw_signal_manager.t</a>)
+<a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> interruptor : <code class="type">([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Interruptor.html#TYPEt">Interruptor.t</a>) <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> scheduler_thread_id : <code class="type">([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, int) <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> timerfd : <code class="type">([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="../core/Std.Linux_ext.Timerfd.html#TYPEt">Core.Std.Linux_ext.Timerfd.t</a> option)
+<a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> fd_by_descr : <code class="type">([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Fd_by_descr.html#TYPEt">Fd_by_descr.t</a>) <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> file_descr_watcher : <code class="type">([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Raw_scheduler.File_descr_watcher.html#TYPEt">File_descr_watcher.t</a>)
+<a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> fds_whose_watching_has_changed : <code class="type">([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Raw_scheduler.Fd.html#TYPEt">Fd.t</a> list) <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> have_called_go : <code class="type">([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, bool) <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> is_running : <code class="type">([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, bool) <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> mutex : <code class="type">([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="../core/Std.Nano_mutex.html#TYPEt">Core.Std.Nano_mutex.t</a>)
+<a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> make_creator : <code class="type">mutex:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="../core/Std.Nano_mutex.html#TYPEt">Core.Std.Nano_mutex.t</a>)
+       <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+       'a -&gt; ('b -&gt; <a href="../core/Std.Nano_mutex.html#TYPEt">Core.Std.Nano_mutex.t</a>) * 'c) -&gt;
+is_running:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, bool)
+            <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'c -&gt; ('b -&gt; bool) * 'd) -&gt;
+have_called_go:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, bool)
+                <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'd -&gt; ('b -&gt; bool) * 'e) -&gt;
+fds_whose_watching_has_changed:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Raw_scheduler.Fd.html#TYPEt">Fd.t</a> list)
+                                <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                                'e -&gt; ('b -&gt; <a href="Raw_scheduler.Fd.html#TYPEt">Fd.t</a> list) * 'f) -&gt;
+file_descr_watcher:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Raw_scheduler.File_descr_watcher.html#TYPEt">File_descr_watcher.t</a>)
+                    <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                    'f -&gt; ('b -&gt; <a href="Raw_scheduler.File_descr_watcher.html#TYPEt">File_descr_watcher.t</a>) * 'g) -&gt;
+fd_by_descr:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Fd_by_descr.html#TYPEt">Fd_by_descr.t</a>)
+             <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'g -&gt; ('b -&gt; <a href="Fd_by_descr.html#TYPEt">Fd_by_descr.t</a>) * 'h) -&gt;
+timerfd:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>,
+          <a href="../core/Std.Linux_ext.Timerfd.html#TYPEt">Core.Std.Linux_ext.Timerfd.t</a> option)
+         <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+         'h -&gt; ('b -&gt; <a href="../core/Std.Linux_ext.Timerfd.html#TYPEt">Core.Std.Linux_ext.Timerfd.t</a> option) * 'i) -&gt;
+scheduler_thread_id:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, int)
+                     <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'i -&gt; ('b -&gt; int) * 'j) -&gt;
+interruptor:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Interruptor.html#TYPEt">Interruptor.t</a>)
+             <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'j -&gt; ('b -&gt; <a href="Interruptor.html#TYPEt">Interruptor.t</a>) * 'k) -&gt;
+signal_manager:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Raw_signal_manager.html#TYPEt">Raw_signal_manager.t</a>)
+                <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                'k -&gt; ('b -&gt; <a href="Raw_signal_manager.html#TYPEt">Raw_signal_manager.t</a>) * 'l) -&gt;
+thread_pool:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Thread_pool.html#TYPEt">Thread_pool.t</a>)
+             <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'l -&gt; ('b -&gt; <a href="Thread_pool.html#TYPEt">Thread_pool.t</a>) * 'm) -&gt;
+core_scheduler:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Raw_scheduler.Core_scheduler.html#TYPEt">Core_scheduler.t</a>)
+                <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                'm -&gt; ('b -&gt; <a href="Raw_scheduler.Core_scheduler.html#TYPEt">Core_scheduler.t</a>) * 'n) -&gt;
+'a -&gt; ('b -&gt; <a href="Raw_scheduler.html#TYPEt">t</a>) * 'n</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">mutex:<a href="../core/Std.Nano_mutex.html#TYPEt">Core.Std.Nano_mutex.t</a> -&gt;
+is_running:bool -&gt;
+have_called_go:bool -&gt;
+fds_whose_watching_has_changed:<a href="Raw_scheduler.Fd.html#TYPEt">Fd.t</a> list -&gt;
+file_descr_watcher:<a href="Raw_scheduler.File_descr_watcher.html#TYPEt">File_descr_watcher.t</a> -&gt;
+fd_by_descr:<a href="Fd_by_descr.html#TYPEt">Fd_by_descr.t</a> -&gt;
+timerfd:<a href="../core/Std.Linux_ext.Timerfd.html#TYPEt">Core.Std.Linux_ext.Timerfd.t</a> option -&gt;
+scheduler_thread_id:int -&gt;
+interruptor:<a href="Interruptor.html#TYPEt">Interruptor.t</a> -&gt;
+signal_manager:<a href="Raw_signal_manager.html#TYPEt">Raw_signal_manager.t</a> -&gt;
+thread_pool:<a href="Thread_pool.html#TYPEt">Thread_pool.t</a> -&gt; core_scheduler:<a href="Raw_scheduler.Core_scheduler.html#TYPEt">Core_scheduler.t</a> -&gt; <a href="Raw_scheduler.html#TYPEt">t</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> map : <code class="type">mutex:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="../core/Std.Nano_mutex.html#TYPEt">Core.Std.Nano_mutex.t</a>)
+       <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="../core/Std.Nano_mutex.html#TYPEt">Core.Std.Nano_mutex.t</a>) -&gt;
+is_running:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, bool)
+            <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+have_called_go:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, bool)
+                <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+fds_whose_watching_has_changed:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Raw_scheduler.Fd.html#TYPEt">Fd.t</a> list)
+                                <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="Raw_scheduler.Fd.html#TYPEt">Fd.t</a> list) -&gt;
+file_descr_watcher:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Raw_scheduler.File_descr_watcher.html#TYPEt">File_descr_watcher.t</a>)
+                    <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="Raw_scheduler.File_descr_watcher.html#TYPEt">File_descr_watcher.t</a>) -&gt;
+fd_by_descr:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Fd_by_descr.html#TYPEt">Fd_by_descr.t</a>)
+             <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="Fd_by_descr.html#TYPEt">Fd_by_descr.t</a>) -&gt;
+timerfd:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>,
+          <a href="../core/Std.Linux_ext.Timerfd.html#TYPEt">Core.Std.Linux_ext.Timerfd.t</a> option)
+         <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="../core/Std.Linux_ext.Timerfd.html#TYPEt">Core.Std.Linux_ext.Timerfd.t</a> option) -&gt;
+scheduler_thread_id:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, int)
+                     <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; int) -&gt;
+interruptor:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Interruptor.html#TYPEt">Interruptor.t</a>)
+             <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="Interruptor.html#TYPEt">Interruptor.t</a>) -&gt;
+signal_manager:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Raw_signal_manager.html#TYPEt">Raw_signal_manager.t</a>)
+                <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="Raw_signal_manager.html#TYPEt">Raw_signal_manager.t</a>) -&gt;
+thread_pool:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Thread_pool.html#TYPEt">Thread_pool.t</a>)
+             <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="Thread_pool.html#TYPEt">Thread_pool.t</a>) -&gt;
+core_scheduler:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Raw_scheduler.Core_scheduler.html#TYPEt">Core_scheduler.t</a>)
+                <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="Raw_scheduler.Core_scheduler.html#TYPEt">Core_scheduler.t</a>) -&gt;
+<a href="Raw_scheduler.html#TYPEt">t</a></code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> iter : <code class="type">mutex:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="../core/Std.Nano_mutex.html#TYPEt">Core.Std.Nano_mutex.t</a>)
+       <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+is_running:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, bool)
+            <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'b) -&gt;
+have_called_go:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, bool)
+                <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'c) -&gt;
+fds_whose_watching_has_changed:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Raw_scheduler.Fd.html#TYPEt">Fd.t</a> list)
+                                <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'd) -&gt;
+file_descr_watcher:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Raw_scheduler.File_descr_watcher.html#TYPEt">File_descr_watcher.t</a>)
+                    <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'e) -&gt;
+fd_by_descr:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Fd_by_descr.html#TYPEt">Fd_by_descr.t</a>)
+             <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'f) -&gt;
+timerfd:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>,
+          <a href="../core/Std.Linux_ext.Timerfd.html#TYPEt">Core.Std.Linux_ext.Timerfd.t</a> option)
+         <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'g) -&gt;
+scheduler_thread_id:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, int)
+                     <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'h) -&gt;
+interruptor:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Interruptor.html#TYPEt">Interruptor.t</a>)
+             <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'i) -&gt;
+signal_manager:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Raw_signal_manager.html#TYPEt">Raw_signal_manager.t</a>)
+                <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'j) -&gt;
+thread_pool:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Thread_pool.html#TYPEt">Thread_pool.t</a>)
+             <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'k) -&gt;
+core_scheduler:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Raw_scheduler.Core_scheduler.html#TYPEt">Core_scheduler.t</a>)
+                <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'l) -&gt;
+'l</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> fold : <code class="type">init:'a -&gt;
+mutex:('a -&gt;
+       ([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="../core/Std.Nano_mutex.html#TYPEt">Core.Std.Nano_mutex.t</a>)
+       <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'b) -&gt;
+is_running:('b -&gt;
+            ([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, bool)
+            <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'c) -&gt;
+have_called_go:('c -&gt;
+                ([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, bool)
+                <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'd) -&gt;
+fds_whose_watching_has_changed:('d -&gt;
+                                ([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Raw_scheduler.Fd.html#TYPEt">Fd.t</a> list)
+                                <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'e) -&gt;
+file_descr_watcher:('e -&gt;
+                    ([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Raw_scheduler.File_descr_watcher.html#TYPEt">File_descr_watcher.t</a>)
+                    <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'f) -&gt;
+fd_by_descr:('f -&gt;
+             ([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Fd_by_descr.html#TYPEt">Fd_by_descr.t</a>)
+             <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'g) -&gt;
+timerfd:('g -&gt;
+         ([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>,
+          <a href="../core/Std.Linux_ext.Timerfd.html#TYPEt">Core.Std.Linux_ext.Timerfd.t</a> option)
+         <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'h) -&gt;
+scheduler_thread_id:('h -&gt;
+                     ([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, int)
+                     <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'i) -&gt;
+interruptor:('i -&gt;
+             ([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Interruptor.html#TYPEt">Interruptor.t</a>)
+             <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'j) -&gt;
+signal_manager:('j -&gt;
+                ([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Raw_signal_manager.html#TYPEt">Raw_signal_manager.t</a>)
+                <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'k) -&gt;
+thread_pool:('k -&gt;
+             ([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Thread_pool.html#TYPEt">Thread_pool.t</a>)
+             <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'l) -&gt;
+core_scheduler:('l -&gt;
+                ([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Raw_scheduler.Core_scheduler.html#TYPEt">Core_scheduler.t</a>)
+                <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'm) -&gt;
+'m</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> map_poly : <code class="type">([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, 'a) <a href="../fieldslib/Field.html#TYPEuser">Fieldslib.Field.user</a> -&gt; 'a list</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> for_all : <code class="type">mutex:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="../core/Std.Nano_mutex.html#TYPEt">Core.Std.Nano_mutex.t</a>)
+       <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+is_running:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, bool)
+            <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+have_called_go:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, bool)
+                <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+fds_whose_watching_has_changed:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Raw_scheduler.Fd.html#TYPEt">Fd.t</a> list)
+                                <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+file_descr_watcher:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Raw_scheduler.File_descr_watcher.html#TYPEt">File_descr_watcher.t</a>)
+                    <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+fd_by_descr:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Fd_by_descr.html#TYPEt">Fd_by_descr.t</a>)
+             <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+timerfd:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>,
+          <a href="../core/Std.Linux_ext.Timerfd.html#TYPEt">Core.Std.Linux_ext.Timerfd.t</a> option)
+         <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+scheduler_thread_id:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, int)
+                     <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+interruptor:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Interruptor.html#TYPEt">Interruptor.t</a>)
+             <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+signal_manager:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Raw_signal_manager.html#TYPEt">Raw_signal_manager.t</a>)
+                <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+thread_pool:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Thread_pool.html#TYPEt">Thread_pool.t</a>)
+             <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+core_scheduler:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Raw_scheduler.Core_scheduler.html#TYPEt">Core_scheduler.t</a>)
+                <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+bool</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> exists : <code class="type">mutex:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="../core/Std.Nano_mutex.html#TYPEt">Core.Std.Nano_mutex.t</a>)
+       <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+is_running:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, bool)
+            <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+have_called_go:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, bool)
+                <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+fds_whose_watching_has_changed:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Raw_scheduler.Fd.html#TYPEt">Fd.t</a> list)
+                                <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+file_descr_watcher:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Raw_scheduler.File_descr_watcher.html#TYPEt">File_descr_watcher.t</a>)
+                    <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+fd_by_descr:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Fd_by_descr.html#TYPEt">Fd_by_descr.t</a>)
+             <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+timerfd:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>,
+          <a href="../core/Std.Linux_ext.Timerfd.html#TYPEt">Core.Std.Linux_ext.Timerfd.t</a> option)
+         <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+scheduler_thread_id:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, int)
+                     <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+interruptor:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Interruptor.html#TYPEt">Interruptor.t</a>)
+             <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+signal_manager:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Raw_signal_manager.html#TYPEt">Raw_signal_manager.t</a>)
+                <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+thread_pool:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Thread_pool.html#TYPEt">Thread_pool.t</a>)
+             <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+core_scheduler:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Raw_scheduler.Core_scheduler.html#TYPEt">Core_scheduler.t</a>)
+                <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+bool</code></span></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> to_list : <code class="type">mutex:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="../core/Std.Nano_mutex.html#TYPEt">Core.Std.Nano_mutex.t</a>)
+       <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+is_running:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, bool)
+            <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+have_called_go:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, bool)
+                <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+fds_whose_watching_has_changed:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Raw_scheduler.Fd.html#TYPEt">Fd.t</a> list)
+                                <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+file_descr_watcher:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Raw_scheduler.File_descr_watcher.html#TYPEt">File_descr_watcher.t</a>)
+                    <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+fd_by_descr:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Fd_by_descr.html#TYPEt">Fd_by_descr.t</a>)
+             <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+timerfd:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>,
+          <a href="../core/Std.Linux_ext.Timerfd.html#TYPEt">Core.Std.Linux_ext.Timerfd.t</a> option)
+         <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+scheduler_thread_id:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, int)
+                     <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+interruptor:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Interruptor.html#TYPEt">Interruptor.t</a>)
+             <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+signal_manager:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Raw_signal_manager.html#TYPEt">Raw_signal_manager.t</a>)
+                <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+thread_pool:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Thread_pool.html#TYPEt">Thread_pool.t</a>)
+             <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+core_scheduler:(([&lt; `Read | `Set_and_create ], <a href="Raw_scheduler.html#TYPEt">t</a>, <a href="Raw_scheduler.Core_scheduler.html#TYPEt">Core_scheduler.t</a>)
+                <a href="../fieldslib/Field.html#TYPEt_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+'a list</code></span></pre>
+      
+    
+
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Raw_scheduler.Fields.Direct.html">Direct</a> : <code class="code">sig</code> <a href="Raw_scheduler.Fields.Direct.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Raw_scheduler.Fields.Direct.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

@@ -1,0 +1,19 @@
+<pre><span id="TYPEpersistent_singleton"><span class="keyword">type</span> persistent_singleton </span>= <code class="type">Z.t</code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> save_sexp : <code class="type">string -&gt; Z.t <a href="../core/Std.Option.html#TYPEt">Core.Std.Option.t</a> -&gt; unit <a href="../async_unix/Import.Deferred.html#TYPEt">Async_unix.Import.Deferred.t</a></code></span></pre>
+      
+    
+<pre><span id="EXCEPTIONCan_not_determine_whether_file_exists"><span class="keyword">exception</span> Can_not_determine_whether_file_exists</span> <span class="keyword">of</span> <code class="type">string</code></pre>
+
+<pre><span id="EXCEPTIONCan_not_load_due_to_unclean_shutdown"><span class="keyword">exception</span> Can_not_load_due_to_unclean_shutdown</span> <span class="keyword">of</span> <code class="type">string</code></pre>
+
+ 
+      <pre><span><span class="keyword">val</span> load : <code class="type">string -&gt; default:Z.t -&gt; Z.t <a href="../async_core/Deferred.html#TYPEt">Async_core.Deferred.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> save : <code class="type">string -&gt; value:Z.t -&gt; unit <a href="../async_unix/Import.Deferred.html#TYPEt">Async_unix.Import.Deferred.t</a></code></span></pre>
+      
+    

@@ -1,0 +1,22 @@
+ 
+      <pre><span><span class="keyword">val</span> foldi : <code class="type">init:'a -&gt; 'b array -&gt; f:(int -&gt; 'a -&gt; 'b -&gt; 'a) -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> random_split : <code class="type">?random_state:<a href="../core/Std.Random.State.html#TYPEt">Core.Std.Random.State.t</a> -&gt;
+'a array -&gt; p:float -&gt; 'a array * 'a array</code></span></pre>
+      <div class="info">makes a random split &amp; subset of an array; p (the fraction that you want to split) is
+   constrained to be <code class="code">0, 1</code>.  Note that the length of the first array will be the closest
+   integer to the fraction you desired, meaning that each element is NOT selected with
+   probability exactly p.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> random_sub : <code class="type">?random_state:<a href="../core/Std.Random.State.html#TYPEt">Core.Std.Random.State.t</a> -&gt; 'a array -&gt; p:float -&gt; 'a array</code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Extended_array.Access_control.html">Access_control</a> : <code class="code">sig</code> <a href="Extended_array.Access_control.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Extended_array.Access_control.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

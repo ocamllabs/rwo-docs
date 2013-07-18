@@ -1,0 +1,106 @@
+<br/><br/><h6 id="6_TITLE">Generator registration</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> set_conv_path_if_not_set : <code class="type">Camlp4.PreCast.Ast.Loc.t -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get_conv_path : <code class="type">unit -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add_generator : <code class="type">?is_exn:bool -&gt;
+string -&gt;
+(bool -&gt; Camlp4.PreCast.Ast.ctyp -&gt; Camlp4.PreCast.Ast.str_item) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add_generator_with_arg : <code class="type">?is_exn:bool -&gt;
+string -&gt;
+'a Camlp4.PreCast.Gram.Entry.t -&gt;
+('a option -&gt; bool -&gt; Camlp4.PreCast.Ast.ctyp -&gt; Camlp4.PreCast.Ast.str_item) -&gt;
+unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rm_generator : <code class="type">?is_exn:bool -&gt; string -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add_sig_generator : <code class="type">?delayed:bool -&gt;
+?is_exn:bool -&gt;
+string -&gt;
+(bool -&gt; Camlp4.PreCast.Ast.ctyp -&gt; Camlp4.PreCast.Ast.sig_item) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add_sig_generator_with_arg : <code class="type">?delayed:bool -&gt;
+?is_exn:bool -&gt;
+string -&gt;
+'a Camlp4.PreCast.Gram.Entry.t -&gt;
+('a option -&gt; bool -&gt; Camlp4.PreCast.Ast.ctyp -&gt; Camlp4.PreCast.Ast.sig_item) -&gt;
+unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rm_sig_generator : <code class="type">?is_exn:bool -&gt; string -&gt; unit</code></span></pre>
+      
+    
+<pre><span id="TYPErecord_field_generator"><span class="keyword">type</span> record_field_generator </span>= <code class="type">Camlp4.PreCast.Ast.ctyp -&gt; unit</code> </pre>
+      <div class="info">Type of record field code generators</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> add_record_field_generator : <code class="type">string -&gt; <a href="Pa_type_conv.html#TYPErecord_field_generator">record_field_generator</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add_record_field_generator_with_arg : <code class="type">string -&gt;
+'a Camlp4.PreCast.Gram.Entry.t -&gt;
+('a option -&gt; <a href="Pa_type_conv.html#TYPErecord_field_generator">record_field_generator</a>) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rm_record_field_generator : <code class="type">string -&gt; unit</code></span></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Generator sets registration</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> add_sig_set : <code class="type">?is_exn:bool -&gt; string -&gt; set:string list -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add_str_set : <code class="type">?is_exn:bool -&gt; string -&gt; set:string list -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add_set : <code class="type">kind:[ `Both | `Sig | `Str ] -&gt;
+is_exn:[ `Both | `No | `Yes ] -&gt; string -&gt; set:string list -&gt; unit</code></span></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Utility functions</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> get_loc_err : <code class="type">Camlp4.PreCast.Ast.Loc.t -&gt; string -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> hash_variant : <code class="type">string -&gt; int</code></span></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">General purpose code generation module</h6><br/> <br/>
+	  
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Pa_type_conv.Gen.html">Gen</a> : <code class="code">sig</code> <a href="Pa_type_conv.Gen.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Pa_type_conv.Gen.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<br/><br/><h6 id="6_TITLE">Utility functions to rewrite type definitions</h6><br/> <br/>
+	  
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Pa_type_conv.Rewrite_tds.html">Rewrite_tds</a> : <code class="code">sig</code> <a href="Pa_type_conv.Rewrite_tds.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Pa_type_conv.Rewrite_tds.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

@@ -1,0 +1,30 @@
+ 
+      <pre><span><span class="keyword">val</span> __pa_ounit_275876e34cf609db118f3d84b799a790 : <code class="type">string</code></span></pre>
+      
+    
+
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t </span>= <code class="type">'a -&gt; unit</code> </pre>
+      
+    
+<pre><span id="TYPEinv"><span class="keyword">type</span> <code class="type">'a </code>inv </span>= <code class="type">'a <a href="Invariant.html#TYPEt">t</a></code> </pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Invariant.S1.html">S1</a> = <code class="type"><code class="code">sig</code> <a href="Invariant.S1.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Invariant.S1.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Invariant.S2.html">S2</a> = <code class="type"><code class="code">sig</code> <a href="Invariant.S2.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Invariant.S2.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Invariant.S3.html">S3</a> = <code class="type"><code class="code">sig</code> <a href="Invariant.S3.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Invariant.S3.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+

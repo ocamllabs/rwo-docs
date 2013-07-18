@@ -1,0 +1,27 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Backpatched.Hole.html">Hole</a> : <code class="code">sig</code> <a href="Backpatched.Hole.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Backpatched.Hole.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">'a -&gt; 'a <a href="Backpatched.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_hole : <code class="type">'a <a href="Backpatched.Hole.html#TYPEt">Hole.t</a> -&gt; 'a <a href="Backpatched.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get_exn : <code class="type">'a <a href="Backpatched.html#TYPEt">t</a> -&gt; 'a</code></span></pre>
+      <div class="info">It is an error to <code class="code">get</code> from a hole that has not been filled.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type">('a -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a>) -&gt; 'a <a href="Backpatched.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+<br/>It is an error to <code class="code">get</code> from a hole that has not been filled.<br/>
+	  

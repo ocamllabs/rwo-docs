@@ -1,0 +1,5 @@
+ 
+      <pre><span><span class="keyword">val</span> format : <code class="type">?ofday:<a href="../core/Std.Time.Ofday.html#TYPEt">Core.Std.Time.Ofday.t</a> -&gt; string -&gt; <a href="../core/Std.Date.html#TYPEt">Core.Std.Date.t</a> -&gt; string</code></span></pre>
+      <div class="info">Shortcut for calling Core_extended.Unix.strftime without having to
+     create a Time.t and convert it to a Unix.tm.<br/>     <code class="code">format &quot;%Y-%m-%d&quot; t</code> will return &quot;YYYY-MM-DD&quot;</div>
+    

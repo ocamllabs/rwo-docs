@@ -1,0 +1,21 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add : <code class="type">'s <a href="Rpc.Implementation.html#TYPEt">Rpc.Implementation.t</a> list -&gt; 's <a href="Rpc.Implementation.html#TYPEt">Rpc.Implementation.t</a> list</code></span></pre>
+      <div class="info"><code class="code">add impls</code> extends a list of rpc implementations with an additional
+      rpc implementation for providing a <code class="code">Menu.t</code> when one is requested
+      via <code class="code">Menu.request</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> request : <code class="type"><a href="Rpc.Connection.html#TYPEt">Rpc.Connection.t</a> -&gt; <a href="Versioned_rpc.Menu.html#TYPEt">t</a> <a href="../core/Std.Or_error.html#TYPEt">Core.Std.Or_error.t</a> <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a></code></span></pre>
+      <div class="info">request an rpc version menu from an rpc connection</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> supported_rpcs : <code class="type"><a href="Versioned_rpc.Menu.html#TYPEt">t</a> -&gt; <a href="Rpc.Implementation.Description.html#TYPEt">Rpc.Implementation.Description.t</a> list</code></span></pre>
+      <div class="info">find what rpcs are supported</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> supported_versions : <code class="type"><a href="Versioned_rpc.Menu.html#TYPEt">t</a> -&gt; rpc_name:string -&gt; <a href="../core/Std.Int.Set.html#TYPEt">Core.Std.Int.Set.t</a></code></span></pre>
+      <div class="info">find what versions of a particular rpc are supported</div>
+    

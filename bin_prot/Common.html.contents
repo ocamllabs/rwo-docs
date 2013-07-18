@@ -1,0 +1,113 @@
+<br/><br/><h2 id="2_TITLE">Buffers</h2><br/> <br/>
+	  
+<pre><span id="TYPEpos"><span class="keyword">type</span> pos </span>= <code class="type">int</code> </pre>
+      <div class="info">Position within buffers</div>
+    
+<pre><span id="TYPEpos_ref"><span class="keyword">type</span> pos_ref </span>= <code class="type"><a href="Common.html#TYPEpos">pos</a> <a href="../stdlib/Pervasives.html#TYPEref">ref</a></code> </pre>
+      <div class="info">Reference to a position within buffers</div>
+    
+<pre><span id="TYPEbuf"><span class="keyword">type</span> buf </span>= <code class="type">(char, <a href="../otherlibs/Bigarray.html#TYPEint8_unsigned_elt">Bigarray.int8_unsigned_elt</a>, <a href="../otherlibs/Bigarray.html#TYPEc_layout">Bigarray.c_layout</a>) <a href="../otherlibs/Bigarray.Array1.html#TYPEt">Bigarray.Array1.t</a></code> </pre>
+      <div class="info">Buffers</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> create_buf : <code class="type">int -&gt; <a href="Common.html#TYPEbuf">buf</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> check_pos : <code class="type"><a href="Common.html#TYPEbuf">buf</a> -&gt; <a href="Common.html#TYPEpos">pos</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> check_next : <code class="type"><a href="Common.html#TYPEbuf">buf</a> -&gt; <a href="Common.html#TYPEpos">pos</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> safe_get_pos : <code class="type"><a href="Common.html#TYPEbuf">buf</a> -&gt; <a href="Common.html#TYPEpos_ref">pos_ref</a> -&gt; <a href="Common.html#TYPEpos">pos</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> blit_string_buf : <code class="type">?src_pos:int -&gt; string -&gt; ?dst_pos:int -&gt; <a href="Common.html#TYPEbuf">buf</a> -&gt; len:int -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> blit_buf_string : <code class="type">?src_pos:int -&gt; <a href="Common.html#TYPEbuf">buf</a> -&gt; ?dst_pos:int -&gt; string -&gt; len:int -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> blit_buf : <code class="type">?src_pos:int -&gt; src:<a href="Common.html#TYPEbuf">buf</a> -&gt; ?dst_pos:int -&gt; dst:<a href="Common.html#TYPEbuf">buf</a> -&gt; int -&gt; unit</code></span></pre>
+      
+    
+<br/><br/><h2 id="2_TITLE">Errors and exceptions</h2><br/> <br/>
+	  
+<pre><span id="EXCEPTIONBuffer_short"><span class="keyword">exception</span> Buffer_short</span></pre>
+<pre><span id="EXCEPTIONNo_variant_match"><span class="keyword">exception</span> No_variant_match</span></pre>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Common.ReadError.html">ReadError</a> : <code class="code">sig</code> <a href="Common.ReadError.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Common.ReadError.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<pre><span id="EXCEPTIONRead_error"><span class="keyword">exception</span> Read_error</span> <span class="keyword">of</span> <code class="type"><a href="Common.ReadError.html#TYPEt">ReadError.t</a> * <a href="Common.html#TYPEpos">pos</a></code></pre>
+<pre><span id="EXCEPTIONRead_exc"><span class="keyword">exception</span> Read_exc</span> <span class="keyword">of</span> <code class="type">exn * <a href="Common.html#TYPEpos">pos</a></code></pre>
+<pre><span id="EXCEPTIONPoly_rec_write"><span class="keyword">exception</span> Poly_rec_write</span> <span class="keyword">of</span> <code class="type">string</code></pre>
+<pre><span id="EXCEPTIONEmpty_type"><span class="keyword">exception</span> Empty_type</span> <span class="keyword">of</span> <code class="type">string</code></pre>
+ 
+      <pre><span><span class="keyword">val</span> raise_read_error : <code class="type"><a href="Common.ReadError.html#TYPEt">ReadError.t</a> -&gt; <a href="Common.html#TYPEpos">pos</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> raise_read_exc : <code class="type">exn -&gt; <a href="Common.html#TYPEpos">pos</a> -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> raise_concurrent_modification : <code class="type">string -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> array_bound_error : <code class="type">unit -&gt; 'a</code></span></pre>
+      
+    
+<br/><br/><h2 id="2_TITLE">Bigarrays</h2><br/> <br/>
+	  
+<pre><span id="TYPEvec32"><span class="keyword">type</span> vec32 </span>= <code class="type">(float, <a href="../otherlibs/Bigarray.html#TYPEfloat32_elt">Bigarray.float32_elt</a>, <a href="../otherlibs/Bigarray.html#TYPEfortran_layout">Bigarray.fortran_layout</a>) <a href="../otherlibs/Bigarray.Array1.html#TYPEt">Bigarray.Array1.t</a></code> </pre>
+      
+    
+<pre><span id="TYPEvec64"><span class="keyword">type</span> vec64 </span>= <code class="type">(float, <a href="../otherlibs/Bigarray.html#TYPEfloat64_elt">Bigarray.float64_elt</a>, <a href="../otherlibs/Bigarray.html#TYPEfortran_layout">Bigarray.fortran_layout</a>) <a href="../otherlibs/Bigarray.Array1.html#TYPEt">Bigarray.Array1.t</a></code> </pre>
+      
+    
+<pre><span id="TYPEvec"><span class="keyword">type</span> vec </span>= <code class="type"><a href="Common.html#TYPEvec64">vec64</a></code> </pre>
+      
+    
+<pre><span id="TYPEmat32"><span class="keyword">type</span> mat32 </span>= <code class="type">(float, <a href="../otherlibs/Bigarray.html#TYPEfloat32_elt">Bigarray.float32_elt</a>, <a href="../otherlibs/Bigarray.html#TYPEfortran_layout">Bigarray.fortran_layout</a>) <a href="../otherlibs/Bigarray.Array2.html#TYPEt">Bigarray.Array2.t</a></code> </pre>
+      
+    
+<pre><span id="TYPEmat64"><span class="keyword">type</span> mat64 </span>= <code class="type">(float, <a href="../otherlibs/Bigarray.html#TYPEfloat64_elt">Bigarray.float64_elt</a>, <a href="../otherlibs/Bigarray.html#TYPEfortran_layout">Bigarray.fortran_layout</a>) <a href="../otherlibs/Bigarray.Array2.html#TYPEt">Bigarray.Array2.t</a></code> </pre>
+      
+    
+<pre><span id="TYPEmat"><span class="keyword">type</span> mat </span>= <code class="type"><a href="Common.html#TYPEmat64">mat64</a></code> </pre>
+      
+    
+<br/><br/><h2 id="2_TITLE">Miscellaneous</h2><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> copy_htbl_list : <code class="type">('a, 'b) <a href="../stdlib/Hashtbl.html#TYPEt">Hashtbl.t</a> -&gt; ('a * 'b) list -&gt; ('a, 'b) <a href="../stdlib/Hashtbl.html#TYPEt">Hashtbl.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> variant_of_int : <code class="type">int -&gt; [&gt;  ]</code></span></pre>
+      
+    
+<br/><br/><h2 id="2_TITLE">NOTE: unsafe functions!!!</h2><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> unsafe_blit_buf : <code class="type">src_pos:int -&gt; src:<a href="Common.html#TYPEbuf">buf</a> -&gt; dst_pos:int -&gt; dst:<a href="Common.html#TYPEbuf">buf</a> -&gt; len:int -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_blit_string_buf : <code class="type">src_pos:int -&gt; string -&gt; dst_pos:int -&gt; <a href="Common.html#TYPEbuf">buf</a> -&gt; len:int -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_blit_buf_string : <code class="type">src_pos:int -&gt; <a href="Common.html#TYPEbuf">buf</a> -&gt; dst_pos:int -&gt; string -&gt; len:int -&gt; unit</code></span></pre>
+      
+    

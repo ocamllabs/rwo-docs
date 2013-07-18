@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<title>Tuple.Hashable</title>
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
+<script type="text/javascript" src="doc_loader.js"> </script>
+</head>
+<body>
+
+<h1>Module Tuple.Hashable = <a href="Tuple.Hashable_sexpable.html">Tuple.Hashable_sexpable</a></h1>
+	<pre><span class="keyword">module</span> <a href="Tuple.Hashable.html">Hashable</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">S1</code><code class="code"> : </code><code class="type"><a href="Tuple.Hashable_sexpable.html">Hashable_sexpable</a></code><code class="code">) -&gt; </code><div class="sig_block"><code class="code">functor (</code><code class="code">S2</code><code class="code"> : </code><code class="type"><a href="Tuple.Hashable_sexpable.html">Hashable_sexpable</a></code><code class="code">) -&gt; </code><code class="code"><a href="Tuple.Hashable_sexpable.html">Hashable_sexpable</a></code> with type <a href="Tuple.Hashable_sexpable.html#TYPEt">t</a> = S2(S2)</div></div></pre><div class="info">The difference between <code class="code">Hashable</code> and <code class="code">Hashable_t</code> functors is that the former's
+    result type doesn't contain type <code class="code">t</code> and the latter does. Therefore, <code class="code">Hashable</code> can't
+    be used to combine two pairs into 4-tuple. but <code class="code">Hashable_t</code> can. On the other hand
+    result of <code class="code">Hashable_t</code> cannot be combined with <code class="code">Comparable</code>.<br/>    example:
+    module Four_ints = Tuple.Hashable_t (Tuple.Hashable_t (Int)(Int))
+                                        (Tuple.Hashable_t (Int)(Int))<br/>    If instead we used <code class="code">Hashable</code> compiler would complain that the input to outer functor
+    doesn't have type <code class="code">t</code>.<br/>    On the other hand:
+    module Foo = struct
+      type t = String.t * Int.t
+      include Tuple.Comparable (String.t) (Int)
+      include Tuple.Hashable (String.t) (Int)
+    end<br/>    If we used <code class="code">Hashable_t</code> above, compiler would compile that we have two types <code class="code">t</code>
+    defined.<br/>    Unfortunately, it is not possible to define just one functor that could be used in
+    both cases.</div>
+<hr/>
+<div file="Tuple.Hashable.html.contents" class="content_to_load"> </div>
+</body>
+</html>

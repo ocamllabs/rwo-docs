@@ -1,0 +1,24 @@
+ 
+      <pre><span><span class="keyword">val</span> iter : <code class="type"><a href="Procfs.Process.Statm.html#TYPEt">t</a> -&gt;
+size:((<a href="Procfs.Process.Statm.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Statm.html#TYPEt">t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a> -&gt; unit) -&gt;
+resident:((<a href="Procfs.Process.Statm.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Statm.html#TYPEt">t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a> -&gt; unit) -&gt;
+share:((<a href="Procfs.Process.Statm.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Statm.html#TYPEt">t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a> -&gt; unit) -&gt;
+text:((<a href="Procfs.Process.Statm.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Statm.html#TYPEt">t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a> -&gt; unit) -&gt;
+lib:((<a href="Procfs.Process.Statm.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Statm.html#TYPEt">t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a> -&gt; unit) -&gt;
+data:((<a href="Procfs.Process.Statm.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Statm.html#TYPEt">t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a> -&gt; unit) -&gt;
+dt:((<a href="Procfs.Process.Statm.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Statm.html#TYPEt">t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a> -&gt; unit) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold : <code class="type"><a href="Procfs.Process.Statm.html#TYPEt">t</a> -&gt;
+init:'acc__ -&gt;
+size:('acc__ -&gt; (<a href="Procfs.Process.Statm.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Statm.html#TYPEt">t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a> -&gt; 'acc__) -&gt;
+resident:('acc__ -&gt; (<a href="Procfs.Process.Statm.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Statm.html#TYPEt">t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a> -&gt; 'acc__) -&gt;
+share:('acc__ -&gt; (<a href="Procfs.Process.Statm.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Statm.html#TYPEt">t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a> -&gt; 'acc__) -&gt;
+text:('acc__ -&gt; (<a href="Procfs.Process.Statm.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Statm.html#TYPEt">t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a> -&gt; 'acc__) -&gt;
+lib:('acc__ -&gt; (<a href="Procfs.Process.Statm.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Statm.html#TYPEt">t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a> -&gt; 'acc__) -&gt;
+data:('acc__ -&gt; (<a href="Procfs.Process.Statm.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Statm.html#TYPEt">t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a> -&gt; 'acc__) -&gt;
+dt:('acc__ -&gt; (<a href="Procfs.Process.Statm.html#TYPEt">t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Process.Statm.html#TYPEt">t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a> -&gt; 'acc__) -&gt;
+'acc__</code></span></pre>
+      
+    

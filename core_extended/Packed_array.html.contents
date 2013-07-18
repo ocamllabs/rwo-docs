@@ -1,0 +1,114 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Packed_array.Basic.html">Basic</a> = <code class="type"><code class="code">sig</code> <a href="Packed_array.Basic.html">..</a> <code class="code">end</code></code></pre><div class="info"><code class="code">Basic</code> is the minimal interface you need to provide to make a packed array for a new
+    type.</div>
+	<div class="content" style="display:none">
+	<div file="Packed_array.Basic.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Packed_array.S.html">S</a> = <code class="type"><code class="code">sig</code> <a href="Packed_array.S.html">..</a> <code class="code">end</code></code></pre><div class="info"><code class="code">S</code> is the packed array interface.</div>
+	<div class="content" style="display:none">
+	<div file="Packed_array.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Packed_array.Make.html">Make</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">B</code><code class="code"> : </code><code class="type"><a href="Packed_array.Basic.html">Basic</a></code><code class="code">) -&gt; </code><code class="code"><a href="Packed_array.S.html">S</a></code> with type t = B.t and type elt = B.elt</div></pre>
+	<div class="content" style="display:none">
+	<div file="Packed_array.Make.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Packed_array.Of_binable.html">Of_binable</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">B</code><code class="code"> : </code><code class="code">sig</code> <a href="Packed_array.Of_binable.Anon_0.html">..</a> <code class="code">end</code><code class="code">) -&gt; </code><code class="code"><a href="Packed_array.S.html">S</a></code> with type elt = B.t</div></pre><div class="info">The representation of a packed array type created using <code class="code">Of_binable</code> is a Bin_prot
+    buffer and a packed array of indices pointing to the beginning of each serialized
+    element in the buffer.</div>
+	<div class="content" style="display:none">
+	<div file="Packed_array.Of_binable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Packed_array.Tuple2.html">Tuple2</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">A</code><code class="code"> : </code><code class="type"><a href="Packed_array.Basic.html">Basic</a></code><code class="code">) -&gt; </code><div class="sig_block"><code class="code">functor (</code><code class="code">B</code><code class="code"> : </code><code class="type"><a href="Packed_array.Basic.html">Basic</a></code><code class="code">) -&gt; </code><code class="code">sig</code> <a href="Packed_array.Tuple2.html">..</a> <code class="code">end</code></div></div></pre><div class="info">the representation of a packed array of tuples is a tuple of packed arrays. This makes
+    the <code class="code">zip_exn</code> and <code class="code">unzip</code> functions constant time.</div>
+	<div class="content" style="display:none">
+	<div file="Packed_array.Tuple2.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Packed_array.Of_packed_array.html">Of_packed_array</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">P</code><code class="code"> : </code><code class="type"><a href="Packed_array.S.html">S</a></code><code class="code">) -&gt; </code><code class="code">sig</code> <a href="Packed_array.Of_packed_array.html">..</a> <code class="code">end</code></div></pre><div class="info"><code class="code">Of_packed_array(P)</code> creates a packed array of packed arrays. The representation is a
+    <code class="code">P.t</code> and packed array of indices into it which point to the beginning of each inner
+    array.</div>
+	<div class="content" style="display:none">
+	<div file="Packed_array.Of_packed_array.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Packed_array.Bool.html">Bool</a> : <code class="code"><a href="Packed_array.S.html">S</a></code> with type elt = bool</pre><div class="info">These primitive packed arrays are represented by their respective Bigarray types.</div>
+	<div class="content" style="display:none">
+	<div file="Packed_array.Bool.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Packed_array.Char.html">Char</a> : <code class="code"><a href="Packed_array.S.html">S</a></code> with type elt = char</pre>
+	<div class="content" style="display:none">
+	<div file="Packed_array.Char.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Packed_array.Int.html">Int</a> : <code class="code"><a href="Packed_array.S.html">S</a></code> with type elt = int</pre>
+	<div class="content" style="display:none">
+	<div file="Packed_array.Int.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Packed_array.Int8_unsigned.html">Int8_unsigned</a> : <code class="code"><a href="Packed_array.S.html">S</a></code> with type elt = int</pre>
+	<div class="content" style="display:none">
+	<div file="Packed_array.Int8_unsigned.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Packed_array.Int8.html">Int8</a> : <code class="code"><a href="Packed_array.S.html">S</a></code> with type elt = int</pre>
+	<div class="content" style="display:none">
+	<div file="Packed_array.Int8.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Packed_array.Int16_unsigned.html">Int16_unsigned</a> : <code class="code"><a href="Packed_array.S.html">S</a></code> with type elt = int</pre>
+	<div class="content" style="display:none">
+	<div file="Packed_array.Int16_unsigned.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Packed_array.Int16.html">Int16</a> : <code class="code"><a href="Packed_array.S.html">S</a></code> with type elt = int</pre>
+	<div class="content" style="display:none">
+	<div file="Packed_array.Int16.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Packed_array.Int32.html">Int32</a> : <code class="code"><a href="Packed_array.S.html">S</a></code> with type elt = int32</pre>
+	<div class="content" style="display:none">
+	<div file="Packed_array.Int32.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Packed_array.Int64.html">Int64</a> : <code class="code"><a href="Packed_array.S.html">S</a></code> with type elt = int64</pre>
+	<div class="content" style="display:none">
+	<div file="Packed_array.Int64.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Packed_array.Float32.html">Float32</a> : <code class="code"><a href="Packed_array.S.html">S</a></code> with type elt = float</pre>
+	<div class="content" style="display:none">
+	<div file="Packed_array.Float32.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Packed_array.Float.html">Float</a> : <code class="code"><a href="Packed_array.S.html">S</a></code> with type elt = float</pre>
+	<div class="content" style="display:none">
+	<div file="Packed_array.Float.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Packed_array.String.html">String</a> : <code class="code"><a href="Packed_array.S.html">S</a></code> with type elt = string</pre>
+	<div class="content" style="display:none">
+	<div file="Packed_array.String.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

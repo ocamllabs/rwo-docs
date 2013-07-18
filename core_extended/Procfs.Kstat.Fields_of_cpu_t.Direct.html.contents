@@ -1,0 +1,47 @@
+ 
+      <pre><span><span class="keyword">val</span> iter : <code class="type"><a href="Procfs.Kstat.html#TYPEcpu_t">cpu_t</a> -&gt;
+user:((<a href="Procfs.Kstat.html#TYPEcpu_t">cpu_t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Kstat.html#TYPEcpu_t">cpu_t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a> -&gt; unit) -&gt;
+nice:((<a href="Procfs.Kstat.html#TYPEcpu_t">cpu_t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Kstat.html#TYPEcpu_t">cpu_t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a> -&gt; unit) -&gt;
+sys:((<a href="Procfs.Kstat.html#TYPEcpu_t">cpu_t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Kstat.html#TYPEcpu_t">cpu_t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a> -&gt; unit) -&gt;
+idle:((<a href="Procfs.Kstat.html#TYPEcpu_t">cpu_t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Kstat.html#TYPEcpu_t">cpu_t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a> -&gt; unit) -&gt;
+iowait:((<a href="Procfs.Kstat.html#TYPEcpu_t">cpu_t</a>, <a href="Procfs.html#TYPEbigint">bigint</a> option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+        <a href="Procfs.Kstat.html#TYPEcpu_t">cpu_t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a> option -&gt; unit) -&gt;
+irq:((<a href="Procfs.Kstat.html#TYPEcpu_t">cpu_t</a>, <a href="Procfs.html#TYPEbigint">bigint</a> option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+     <a href="Procfs.Kstat.html#TYPEcpu_t">cpu_t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a> option -&gt; unit) -&gt;
+softirq:((<a href="Procfs.Kstat.html#TYPEcpu_t">cpu_t</a>, <a href="Procfs.html#TYPEbigint">bigint</a> option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+         <a href="Procfs.Kstat.html#TYPEcpu_t">cpu_t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a> option -&gt; unit) -&gt;
+steal:((<a href="Procfs.Kstat.html#TYPEcpu_t">cpu_t</a>, <a href="Procfs.html#TYPEbigint">bigint</a> option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+       <a href="Procfs.Kstat.html#TYPEcpu_t">cpu_t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a> option -&gt; unit) -&gt;
+guest:((<a href="Procfs.Kstat.html#TYPEcpu_t">cpu_t</a>, <a href="Procfs.html#TYPEbigint">bigint</a> option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+       <a href="Procfs.Kstat.html#TYPEcpu_t">cpu_t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a> option -&gt; unit) -&gt;
+unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold : <code class="type"><a href="Procfs.Kstat.html#TYPEcpu_t">cpu_t</a> -&gt;
+init:'acc__ -&gt;
+user:('acc__ -&gt;
+      (<a href="Procfs.Kstat.html#TYPEcpu_t">cpu_t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Kstat.html#TYPEcpu_t">cpu_t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a> -&gt; 'acc__) -&gt;
+nice:('acc__ -&gt;
+      (<a href="Procfs.Kstat.html#TYPEcpu_t">cpu_t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Kstat.html#TYPEcpu_t">cpu_t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a> -&gt; 'acc__) -&gt;
+sys:('acc__ -&gt; (<a href="Procfs.Kstat.html#TYPEcpu_t">cpu_t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Kstat.html#TYPEcpu_t">cpu_t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a> -&gt; 'acc__) -&gt;
+idle:('acc__ -&gt;
+      (<a href="Procfs.Kstat.html#TYPEcpu_t">cpu_t</a>, <a href="Procfs.html#TYPEbigint">bigint</a>) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt; <a href="Procfs.Kstat.html#TYPEcpu_t">cpu_t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a> -&gt; 'acc__) -&gt;
+iowait:('acc__ -&gt;
+        (<a href="Procfs.Kstat.html#TYPEcpu_t">cpu_t</a>, <a href="Procfs.html#TYPEbigint">bigint</a> option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+        <a href="Procfs.Kstat.html#TYPEcpu_t">cpu_t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a> option -&gt; 'acc__) -&gt;
+irq:('acc__ -&gt;
+     (<a href="Procfs.Kstat.html#TYPEcpu_t">cpu_t</a>, <a href="Procfs.html#TYPEbigint">bigint</a> option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+     <a href="Procfs.Kstat.html#TYPEcpu_t">cpu_t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a> option -&gt; 'acc__) -&gt;
+softirq:('acc__ -&gt;
+         (<a href="Procfs.Kstat.html#TYPEcpu_t">cpu_t</a>, <a href="Procfs.html#TYPEbigint">bigint</a> option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+         <a href="Procfs.Kstat.html#TYPEcpu_t">cpu_t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a> option -&gt; 'acc__) -&gt;
+steal:('acc__ -&gt;
+       (<a href="Procfs.Kstat.html#TYPEcpu_t">cpu_t</a>, <a href="Procfs.html#TYPEbigint">bigint</a> option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+       <a href="Procfs.Kstat.html#TYPEcpu_t">cpu_t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a> option -&gt; 'acc__) -&gt;
+guest:('acc__ -&gt;
+       (<a href="Procfs.Kstat.html#TYPEcpu_t">cpu_t</a>, <a href="Procfs.html#TYPEbigint">bigint</a> option) <a href="../fieldslib/Field.html#TYPEt">Fieldslib.Field.t</a> -&gt;
+       <a href="Procfs.Kstat.html#TYPEcpu_t">cpu_t</a> -&gt; <a href="Procfs.html#TYPEbigint">bigint</a> option -&gt; 'acc__) -&gt;
+'acc__</code></span></pre>
+      
+    

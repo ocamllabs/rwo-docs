@@ -1,0 +1,52 @@
+ 
+      <pre><span><span class="keyword">val</span> ~: : <code class="type">string list -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ~% : <code class="type">('a, unit, string) <a href="../stdlib/Pervasives.html#TYPEformat">format</a> -&gt; 'a</code></span></pre>
+      
+    
+<br/>printing functions<br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> print : <code class="type">string -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> eprint : <code class="type">string -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fprint : <code class="type"><a href="../stdlib/Pervasives.html#TYPEout_channel">out_channel</a> -&gt; string -&gt; unit</code></span></pre>
+      
+    
+<br/>printing functions that add endlines<br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> printl : <code class="type">string -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> eprintl : <code class="type">string -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fprintl : <code class="type"><a href="../stdlib/Pervasives.html#TYPEout_channel">out_channel</a> -&gt; string -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> lpad : <code class="type">?fill:<a href="../stdlib/Char.html#TYPEt">Char.t</a> -&gt; int -&gt; string -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rpad : <code class="type">?fill:<a href="../stdlib/Char.html#TYPEt">Char.t</a> -&gt; int -&gt; string -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> i2s : <code class="type">int -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> f2s : <code class="type">float -&gt; string</code></span></pre>
+      
+    

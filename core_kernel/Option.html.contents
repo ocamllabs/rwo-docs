@@ -1,0 +1,176 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t </span>= <code class="type">'a option</code> </pre>
+      <div class="info">Options are preferred over exceptions.  For example, use
+    <pre class="codepre"><code class="code">
+    let data = [(2, &quot;two&quot;); (5, &quot;five&quot;); (8, &quot;eight&quot;)];;
+    let f x = match List.Assoc.find_opt x data with
+    | Some y -&gt; y
+    | None -&gt; &quot;zero&quot; (* where &quot;zero&quot; is some default value *);; </code></pre>
+    rather than
+    <pre class="codepre"><code class="code">
+    let f x = try List.Assoc.find x data with Not_found -&gt; &quot;zero&quot;;; </code></pre>
+    In this case using an exception is shorter, but in nontrivial code options
+    are easier to understand.</div>
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Container.S1.html">Container.S1</a></code> with type t = 'a <a href="Option.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="Container.S1.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Monad.S.html">Monad.S</a></code> with type t = 'a <a href="Option.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="Monad.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> is_none : <code class="type">'a <a href="Option.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      <div class="info"><code class="code">is_none t</code> returns true iff t = None.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> is_some : <code class="type">'a <a href="Option.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      <div class="info"><code class="code">is_some t</code> returns true iff t = Some x.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> value_map : <code class="type">'a <a href="Option.html#TYPEt">t</a> -&gt; default:'b -&gt; f:('a -&gt; 'b) -&gt; 'b</code></span></pre>
+      <div class="info"><code class="code">value_map t ~f ~default</code> is equivalent to <code class="code">value (map t ~f) ~default</code>, except that
+    it is slightly faster since it avoids creating the intermediate option.  I.e.<br/>      <code class="code">value_map None     ~default ~f</code> = <code class="code">default</code>
+      <code class="code">value_map (Some x) ~default ~f</code> = <code class="code">f x</code> </div>
+    
+ 
+      <pre><span><span class="keyword">val</span> map2 : <code class="type">'a <a href="Option.html#TYPEt">t</a> -&gt; 'b <a href="Option.html#TYPEt">t</a> -&gt; f:('a -&gt; 'b -&gt; 'c) -&gt; 'c <a href="Option.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">map2 o f</code> map 'a option and 'b option to a 'c option using ~f</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> call : <code class="type">'a -&gt; f:('a -&gt; unit) <a href="Option.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">call x f</code> run optional function on argument</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> apply : <code class="type">'a -&gt; f:('a -&gt; 'b) <a href="Option.html#TYPEt">t</a> -&gt; 'b <a href="Option.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">apply x f</code> run optional function on argument and return an option</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> value : <code class="type">'a <a href="Option.html#TYPEt">t</a> -&gt; default:'a -&gt; 'a</code></span></pre>
+      <div class="info"><code class="code">value None ~default</code> = <code class="code">default</code>
+    <code class="code">value (Some x) ~default</code> = <code class="code">x</code>
+</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> value_exn : <code class="type">?here:<a href="Source_code_position0.html#TYPEt">Source_code_position0.t</a> -&gt;
+?error:<a href="Error.html#TYPEt">Error.t</a> -&gt; ?message:string -&gt; 'a <a href="Option.html#TYPEt">t</a> -&gt; 'a</code></span></pre>
+      <div class="info"><code class="code">value_exn (Some x)</code> = <code class="code">x</code>.  <code class="code">value_exn None</code> raises an error whose contents contain
+    the supplied <code class="code">~here</code>, <code class="code">~error</code>, and <code class="code">message</code>, or a default message if none are
+    supplied.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> equal : <code class="type">('a -&gt; 'a -&gt; bool) -&gt; 'a <a href="Option.html#TYPEt">t</a> -&gt; 'a <a href="Option.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> some : <code class="type">'a -&gt; 'a <a href="Option.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> both : <code class="type">'a <a href="Option.html#TYPEt">t</a> -&gt; 'b <a href="Option.html#TYPEt">t</a> -&gt; ('a * 'b) <a href="Option.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> first_some : <code class="type">'a <a href="Option.html#TYPEt">t</a> -&gt; 'a <a href="Option.html#TYPEt">t</a> -&gt; 'a <a href="Option.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> some_if : <code class="type">bool -&gt; 'a -&gt; 'a <a href="Option.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> filter : <code class="type">f:('a -&gt; bool) -&gt; 'a <a href="Option.html#TYPEt">t</a> -&gt; 'a <a href="Option.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> try_with : <code class="type">(unit -&gt; 'a) -&gt; 'a <a href="Option.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">try_with f</code> returns <code class="code">Some x</code> if <code class="code">f</code> returns <code class="code">x</code> and <code class="code">None</code> if <code class="code">f</code> raises an
+    exception.  See <code class="code">Result.try_with</code> if you'd like to know which exception.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> compare : <code class="type">cmp:('a -&gt; 'a -&gt; int) -&gt; 'a <a href="Option.html#TYPEt">t</a> -&gt; 'a <a href="Option.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> validate : <code class="type">none:unit <a href="Validate.html#TYPEcheck">Validate.check</a> -&gt; some:'a <a href="Validate.html#TYPEcheck">Validate.check</a> -&gt; 'a <a href="Option.html#TYPEt">t</a> <a href="Validate.html#TYPEcheck">Validate.check</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp : <code class="type">(<a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; 'a) -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; 'a <a href="Option.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type">('a -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a>) -&gt; 'a <a href="Option.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_t : <code class="type">'a <a href="../bin_prot/Type_class.html#TYPEt">Bin_prot.Type_class.t</a> -&gt; 'a <a href="Option.html#TYPEt">t</a> <a href="../bin_prot/Type_class.html#TYPEt">Bin_prot.Type_class.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t : <code class="type">'a <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a> -&gt; 'a <a href="Option.html#TYPEt">t</a> <a href="../bin_prot/Read_ml.html#TYPEreader">Bin_prot.Read_ml.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t_ : <code class="type">'a <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a> -&gt; 'a <a href="Option.html#TYPEt">t</a> <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t__ : <code class="type">'a <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+(int -&gt; 'a <a href="Option.html#TYPEt">t</a>) <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t : <code class="type">'a <a href="../bin_prot/Type_class.html#TYPEreader">Bin_prot.Type_class.reader</a> -&gt; 'a <a href="Option.html#TYPEt">t</a> <a href="../bin_prot/Type_class.html#TYPEreader">Bin_prot.Type_class.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t : <code class="type">'a <a href="../bin_prot/Size.html#TYPEsizer">Bin_prot.Size.sizer</a> -&gt; 'a <a href="Option.html#TYPEt">t</a> <a href="../bin_prot/Size.html#TYPEsizer">Bin_prot.Size.sizer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t : <code class="type">'a <a href="../bin_prot/Unsafe_write_c.html#TYPEwriter">Bin_prot.Unsafe_write_c.writer</a> -&gt; 'a <a href="Option.html#TYPEt">t</a> <a href="../bin_prot/Write_ml.html#TYPEwriter">Bin_prot.Write_ml.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_ : <code class="type">'a <a href="../bin_prot/Unsafe_write_c.html#TYPEwriter">Bin_prot.Unsafe_write_c.writer</a> -&gt; 'a <a href="Option.html#TYPEt">t</a> <a href="../bin_prot/Unsafe_write_c.html#TYPEwriter">Bin_prot.Unsafe_write_c.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t : <code class="type">'a <a href="../bin_prot/Type_class.html#TYPEwriter">Bin_prot.Type_class.writer</a> -&gt; 'a <a href="Option.html#TYPEt">t</a> <a href="../bin_prot/Type_class.html#TYPEwriter">Bin_prot.Type_class.writer</a></code></span></pre>
+      
+    
+<br/>Options form a monad, where <code class="code">return x =  Some x</code>,
+    <code class="code">(None &gt;&gt;= f) = None</code>, and <code class="code">(Some x &gt;&gt;= f) = f x</code>.<br/>
+	  
+<br/><code class="code">is_none t</code> returns true iff t = None.<br/>
+	  
+<br/><code class="code">is_some t</code> returns true iff t = Some x.<br/>
+	  
+<br/><code class="code">value_map t ~f ~default</code> is equivalent to <code class="code">value (map t ~f) ~default</code>, except that
+    it is slightly faster since it avoids creating the intermediate option.  I.e.<br/>      <code class="code">value_map None     ~default ~f</code> = <code class="code">default</code>
+      <code class="code">value_map (Some x) ~default ~f</code> = <code class="code">f x</code> <br/>
+	  
+<br/><code class="code">map2 o f</code> map 'a option and 'b option to a 'c option using ~f<br/>
+	  
+<br/><code class="code">call x f</code> run optional function on argument<br/>
+	  
+<br/><code class="code">apply x f</code> run optional function on argument and return an option<br/>
+	  
+<br/><code class="code">value None ~default</code> = <code class="code">default</code>
+    <code class="code">value (Some x) ~default</code> = <code class="code">x</code>
+<br/>
+	  
+<br/><code class="code">value_exn (Some x)</code> = <code class="code">x</code>.  <code class="code">value_exn None</code> raises an error whose contents contain
+    the supplied <code class="code">~here</code>, <code class="code">~error</code>, and <code class="code">message</code>, or a default message if none are
+    supplied.<br/>
+	  
+<br/><code class="code">try_with f</code> returns <code class="code">Some x</code> if <code class="code">f</code> returns <code class="code">x</code> and <code class="code">None</code> if <code class="code">f</code> raises an
+    exception.  See <code class="code">Result.try_with</code> if you'd like to know which exception.<br/>
+	  

@@ -1,0 +1,80 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Tcp_file.Server.File.html">File</a> : <code class="code">sig</code> <a href="Tcp_file.Server.File.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Tcp_file.Server.File.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> serve : <code class="type">auth:(<a href="Import.Socket.Address.Inet.html#TYPEt">Import.Socket.Address.Inet.t</a> -&gt; bool) -&gt;
+port:int -&gt; <a href="Tcp.Server.html#TYPEinet">Tcp.Server.inet</a> <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a></code></span></pre>
+      <div class="info"><code class="code">serve ~port ()</code> must be called before clients will be able to connect.  Sets up a
+      bound tcp socket on port that will be used to serve files to clients.  The unit
+      Deferred will be filled when the server is ready to receive clients.<br/>      The <code class="code">auth</code> function will be called once for every client connection.  If it returns
+      false the client will be disconnected immediately.  Further details of <code class="code">auth</code> can be
+      found in the documentation for <code class="code">Rpc.serve</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> open_file : <code class="type">?append:bool -&gt; ?dos_format:bool -&gt; string -&gt; <a href="Tcp_file.Server.File.html#TYPEt">File.t</a> <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a></code></span></pre>
+      <div class="info"><code class="code">open_file filename</code> open a file for writing.  The filename given should
+      be a real path on the server, and will create a real file there</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> serve_existing_static_file : <code class="type">string -&gt; unit <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a></code></span></pre>
+      <div class="info"><code class="code">serve_existing_static_file filename</code> adds <code class="code">filename</code> to the list of files
+      that can be accessed via the Client module.  As indicated in the name,
+      this file must already exist and must not grow or change.  When a client
+      requests the file it will be served from beginning to end.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> stop_serving : <code class="type"><a href="Tcp_file.Server.File.html#TYPEt">File.t</a> -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">stop_serving t</code> stops serving the file t to clients.  Calling this
+      function will not close the file if it is open.  (A possible use of this
+      function is if you want to delete the file on the sending side.)</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> close : <code class="type">?stop_serving:bool -&gt; <a href="Tcp_file.Server.File.html#TYPEt">File.t</a> -&gt; unit <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a></code></span></pre>
+      <div class="info"><code class="code">close t</code> closes the file t for writing.  If <code class="code">stop_serving</code> is false
+      (default is true) the file will be left on disk and will still be served
+      to clients on a create request.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> write_message : <code class="type"><a href="Tcp_file.Server.File.html#TYPEt">File.t</a> -&gt; string -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">write_message t msg</code> write <code class="code">msg</code> to <code class="code">t</code>.  <code class="code">msg</code> is assumed to contain no
+      newlines except possibly at the end.  A newline will be added to the end
+      in the file if it is not present.  The message may be transmitted to
+      clients with or without a newline.  The string passed to write_message is copied
+      and so may be freely modified once write_message returns.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> schedule_message : <code class="type"><a href="Tcp_file.Server.File.html#TYPEt">File.t</a> -&gt; <a href="../core/Std.Bigstring.html#TYPEt">Core.Std.Bigstring.t</a> -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">schedule_message t msg</code> is write, but the message is taken from the
+      provided bigstring.  Once a bigstring has been given to this function it is a
+      mistake to ever modify the bigstring in the future.  This is because it will take an
+      unknown amount of time to deliver the message to all connected clients</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> write_sexp : <code class="type"><a href="Tcp_file.Server.File.html#TYPEt">File.t</a> -&gt; <a href="../core/Std.Sexp.html#TYPEt">Core.Std.Sexp.t</a> -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">write_sexp t sexp</code> writes a Sexp.t as a single message</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> flushed : <code class="type"><a href="Tcp_file.Server.File.html#TYPEt">File.t</a> -&gt; unit <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a></code></span></pre>
+      <div class="info"><code class="code">flushed t</code> becomes determined only once all messages written to <code class="code">t</code> have been
+      written to disk.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> with_file : <code class="type">?append:bool -&gt;
+string -&gt; f:(<a href="Tcp_file.Server.File.html#TYPEt">File.t</a> -&gt; 'a <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a>) -&gt; 'a <a href="Import.Deferred.html#TYPEt">Import.Deferred.t</a></code></span></pre>
+      <div class="info"><code class="code">with_file filename ~f</code> opens filename and runs <code class="code">f</code>, passing the resultant
+      <code class="code">t</code>.  When the deferred returned by <code class="code">f</code> is determined, <code class="code">t</code> will be
+      closed.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> writer_monitor : <code class="type"><a href="Tcp_file.Server.File.html#TYPEt">File.t</a> -&gt; (<a href="Import.Monitor.html#TYPEt">Import.Monitor.t</a>, [ `This_is_a_static_file ]) <a href="../core/Std.Result.html#TYPEt">Core.Std.Result.t</a></code></span></pre>
+      <div class="info"><code class="code">monitor t</code> returns a monitor which will listen to errors arising from the
+      internal writer used by <code class="code">t</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> debug_snapshot : <code class="type">unit -&gt; <a href="../core/Std.Sexp.html#TYPEt">Core.Std.Sexp.t</a></code></span></pre>
+      <div class="info"><code class="code">debug_snapshot ()</code> returns an s-expression containing details of the current
+      state of the Tcp_file server.</div>
+    

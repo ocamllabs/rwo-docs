@@ -1,0 +1,11 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_float : <code class="type">float -&gt; <a href="Floatable.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_float : <code class="type"><a href="Floatable.S.html#TYPEt">t</a> -&gt; float</code></span></pre>
+      
+    

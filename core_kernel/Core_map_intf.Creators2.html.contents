@@ -1,0 +1,42 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'b) </code>t </span></pre>
+      
+    
+<pre><span id="TYPEtree"><span class="keyword">type</span> <code class="type">('a, 'b) </code>tree </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> empty : <code class="type">('a, 'b) <a href="Core_map_intf.Creators2.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> singleton : <code class="type">'a -&gt; 'b -&gt; ('a, 'b) <a href="Core_map_intf.Creators2.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_alist : <code class="type">('a * 'b) list -&gt; [ `Duplicate_key of 'a | `Ok of ('a, 'b) <a href="Core_map_intf.Creators2.html#TYPEt">t</a> ]</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_alist_exn : <code class="type">('a * 'b) list -&gt; ('a, 'b) <a href="Core_map_intf.Creators2.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_alist_multi : <code class="type">('a * 'b) list -&gt; ('a, 'b list) <a href="Core_map_intf.Creators2.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_alist_fold : <code class="type">('a * 'b) list -&gt; init:'c -&gt; f:('c -&gt; 'b -&gt; 'c) -&gt; ('a, 'c) <a href="Core_map_intf.Creators2.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_sorted_array : <code class="type">('a * 'b) array -&gt; ('a, 'b) <a href="Core_map_intf.Creators2.html#TYPEt">t</a> <a href="Or_error.html#TYPEt">Or_error.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_sorted_array_unchecked : <code class="type">('a * 'b) array -&gt; ('a, 'b) <a href="Core_map_intf.Creators2.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_tree : <code class="type">('a, 'b) <a href="Core_map_intf.Creators2.html#TYPEtree">tree</a> -&gt; ('a, 'b) <a href="Core_map_intf.Creators2.html#TYPEt">t</a></code></span></pre>
+      
+    

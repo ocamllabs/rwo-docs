@@ -1,0 +1,54 @@
+<pre><span id="TYPEdata"><span class="keyword">type</span> data </span></pre>
+      
+    
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">int -&gt; <a href="Weak.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> clear : <code class="type"><a href="Weak.S.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> merge : <code class="type"><a href="Weak.S.html#TYPEt">t</a> -&gt; <a href="Weak.S.html#TYPEdata">data</a> -&gt; <a href="Weak.S.html#TYPEdata">data</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add : <code class="type"><a href="Weak.S.html#TYPEt">t</a> -&gt; <a href="Weak.S.html#TYPEdata">data</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove : <code class="type"><a href="Weak.S.html#TYPEt">t</a> -&gt; <a href="Weak.S.html#TYPEdata">data</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find : <code class="type"><a href="Weak.S.html#TYPEt">t</a> -&gt; <a href="Weak.S.html#TYPEdata">data</a> -&gt; <a href="Weak.S.html#TYPEdata">data</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_all : <code class="type"><a href="Weak.S.html#TYPEt">t</a> -&gt; <a href="Weak.S.html#TYPEdata">data</a> -&gt; <a href="Weak.S.html#TYPEdata">data</a> list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem : <code class="type"><a href="Weak.S.html#TYPEt">t</a> -&gt; <a href="Weak.S.html#TYPEdata">data</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter : <code class="type">(<a href="Weak.S.html#TYPEdata">data</a> -&gt; unit) -&gt; <a href="Weak.S.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold : <code class="type">(<a href="Weak.S.html#TYPEdata">data</a> -&gt; 'a -&gt; 'a) -&gt; <a href="Weak.S.html#TYPEt">t</a> -&gt; 'a -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> count : <code class="type"><a href="Weak.S.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stats : <code class="type"><a href="Weak.S.html#TYPEt">t</a> -&gt; int * int * int * int * int * int</code></span></pre>
+      
+    

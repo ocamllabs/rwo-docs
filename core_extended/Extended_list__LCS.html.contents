@@ -1,0 +1,4 @@
+ 
+      <pre><span><span class="keyword">val</span> lcs : <code class="type">'a list -&gt; 'a list -&gt; 'a list</code></span></pre>
+      
+    

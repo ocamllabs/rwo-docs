@@ -1,0 +1,14 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('address, 'listening_on) </code>t </span></pre>
+      
+    
+<pre><span id="TYPEinet"><span class="keyword">type</span> inet </span>= <code class="type">(<a href="Import.Socket.Address.Inet.html#TYPEt">Import.Socket.Address.Inet.t</a>, int) <a href="Tcp.Where_to_listen.html#TYPEt">t</a></code> </pre>
+      
+    
+<pre><span id="TYPEunix"><span class="keyword">type</span> unix </span>= <code class="type">(<a href="Import.Socket.Address.Unix.html#TYPEt">Import.Socket.Address.Unix.t</a>, string) <a href="Tcp.Where_to_listen.html#TYPEt">t</a></code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">socket_type:([&lt; <a href="Import.Socket.Address.html#TYPEt">Import.Socket.Address.t</a> ] as 'a) <a href="Import.Socket.Type.html#TYPEt">Import.Socket.Type.t</a> -&gt;
+address:'a -&gt; listening_on:('a -&gt; 'listening_on) -&gt; ('a, 'listening_on) <a href="Tcp.Where_to_listen.html#TYPEt">t</a></code></span></pre>
+      
+    

@@ -1,0 +1,45 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core/Std.Interfaces.Comparable.html">Core.Std.Interfaces.Comparable</a></code> with type t = <a href="Number.Spec.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="../core/Std.Interfaces.Comparable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core/Std.Interfaces.Floatable.html">Core.Std.Interfaces.Floatable</a></code> with type t = <a href="Number.Spec.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="../core/Std.Interfaces.Floatable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core/Std.Hashable.S_binable.html">Core.Std.Hashable.S_binable</a></code> with type t = <a href="Number.Spec.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="../core/Std.Hashable.S_binable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core/Std.Interfaces.Sexpable.html">Core.Std.Interfaces.Sexpable</a></code> with type t = <a href="Number.Spec.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="../core/Std.Interfaces.Sexpable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core/Std.Interfaces.Stringable.html">Core.Std.Interfaces.Stringable</a></code> with type t = <a href="Number.Spec.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="../core/Std.Interfaces.Stringable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core/Std.Interfaces.Binable.html">Core.Std.Interfaces.Binable</a></code> with type t = <a href="Number.Spec.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="../core/Std.Interfaces.Binable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

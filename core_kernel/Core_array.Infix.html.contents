@@ -1,0 +1,4 @@
+ 
+      <pre><span><span class="keyword">val</span> &lt;|&gt; : <code class="type">'a <a href="Core_array.html#TYPEt">t</a> -&gt; int * int -&gt; 'a <a href="Core_array.html#TYPEt">t</a></code></span></pre>
+      
+    

@@ -1,0 +1,45 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+<pre><span id="TYPEel"><span class="keyword">type</span> el </span></pre>
+      
+    
+<pre><span id="TYPEacc"><span class="keyword">type</span> acc </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> module_name : <code class="type">string option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> length : <code class="type"><a href="Utils.Make_iterable_binable_spec.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter : <code class="type"><a href="Utils.Make_iterable_binable_spec.html#TYPEt">t</a> -&gt; f:(<a href="Utils.Make_iterable_binable_spec.html#TYPEel">el</a> -&gt; unit) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> init : <code class="type">int -&gt; <a href="Utils.Make_iterable_binable_spec.html#TYPEacc">acc</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> insert : <code class="type"><a href="Utils.Make_iterable_binable_spec.html#TYPEacc">acc</a> -&gt; <a href="Utils.Make_iterable_binable_spec.html#TYPEel">el</a> -&gt; int -&gt; <a href="Utils.Make_iterable_binable_spec.html#TYPEacc">acc</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> finish : <code class="type"><a href="Utils.Make_iterable_binable_spec.html#TYPEacc">acc</a> -&gt; <a href="Utils.Make_iterable_binable_spec.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_el : <code class="type"><a href="Utils.Make_iterable_binable_spec.html#TYPEel">el</a> <a href="Size.html#TYPEsizer">Size.sizer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_el_ : <code class="type"><a href="Utils.Make_iterable_binable_spec.html#TYPEel">el</a> <a href="Unsafe_write_c.html#TYPEwriter">Unsafe_write_c.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_el_ : <code class="type"><a href="Utils.Make_iterable_binable_spec.html#TYPEel">el</a> <a href="Unsafe_read_c.html#TYPEreader">Unsafe_read_c.reader</a></code></span></pre>
+      
+    

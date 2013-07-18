@@ -1,0 +1,67 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> contents : <code class="type"><a href="String_zipper.html#TYPEt">t</a> -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> left_contents : <code class="type"><a href="String_zipper.html#TYPEt">t</a> -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> right_contents : <code class="type"><a href="String_zipper.html#TYPEt">t</a> -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> insert_before : <code class="type"><a href="String_zipper.html#TYPEt">t</a> -&gt; char -&gt; <a href="String_zipper.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> insert_after : <code class="type"><a href="String_zipper.html#TYPEt">t</a> -&gt; char -&gt; <a href="String_zipper.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> drop_before : <code class="type"><a href="String_zipper.html#TYPEt">t</a> -&gt; (char * <a href="String_zipper.html#TYPEt">t</a>) option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> drop_after : <code class="type"><a href="String_zipper.html#TYPEt">t</a> -&gt; (char * <a href="String_zipper.html#TYPEt">t</a>) option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> drop_all_before : <code class="type"><a href="String_zipper.html#TYPEt">t</a> -&gt; (char list * <a href="String_zipper.html#TYPEt">t</a>) option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> drop_all_after : <code class="type"><a href="String_zipper.html#TYPEt">t</a> -&gt; (char list * <a href="String_zipper.html#TYPEt">t</a>) option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> previous : <code class="type"><a href="String_zipper.html#TYPEt">t</a> -&gt; <a href="String_zipper.html#TYPEt">t</a> option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> next : <code class="type"><a href="String_zipper.html#TYPEt">t</a> -&gt; <a href="String_zipper.html#TYPEt">t</a> option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> first : <code class="type"><a href="String_zipper.html#TYPEt">t</a> -&gt; <a href="String_zipper.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> last : <code class="type"><a href="String_zipper.html#TYPEt">t</a> -&gt; <a href="String_zipper.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> replace_left : <code class="type"><a href="String_zipper.html#TYPEt">t</a> -&gt; string -&gt; <a href="String_zipper.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> replace_right : <code class="type"><a href="String_zipper.html#TYPEt">t</a> -&gt; string -&gt; <a href="String_zipper.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">string -&gt; string -&gt; <a href="String_zipper.html#TYPEt">t</a></code></span></pre>
+      
+    

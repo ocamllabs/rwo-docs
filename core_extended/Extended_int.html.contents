@@ -1,0 +1,7 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Number.Verified_std.html">Number.Verified_std</a></code> with type repr = <a href="../core/Std.Int.html#TYPEt">Core.Std.Int.t</a></pre>
+	<div class="content">
+	<div file="Number.Verified_std.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

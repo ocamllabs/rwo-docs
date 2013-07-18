@@ -1,0 +1,117 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Versioned_typed_tcp.Make.Server.Connections.C.html">C</a> : <code class="code"><a href="Versioned_typed_tcp.Make.Connection.html">Connection</a></code></pre>
+	<div class="content" style="display:none">
+	<div file="Versioned_typed_tcp.Make.Server.Connections.C.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<pre><code><span id="TYPEt"><span class="keyword">type</span> t </span>= {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.by_name">by_name</span> :<code class="type">(<a href="Versioned_typed_tcp.Make.Server.Connections.C.html#TYPEt">C.t</a> <a href="../core/Std.Bag.html#TYPEt">Core.Std.Bag.t</a> * <a href="Versioned_typed_tcp.Make.Server.Connections.C.html#TYPEt">C.t</a> <a href="../core/Std.Bag.Elt.html#TYPEt">Core.Std.Bag.Elt.t</a>) Remote_name.Table.t</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.by_send_version">by_send_version</span> :<code class="type">(<a href="Versioned_typed_tcp.Make.Server.Connections.C.html#TYPEt">C.t</a> <a href="../core/Std.Bag.html#TYPEt">Core.Std.Bag.t</a> * Send.t <a href="Versioned_typed_tcp.html#TYPEmarshal_fun">marshal_fun</a>) <a href="Versioned_typed_tcp.Version.Table.html#TYPEt">Version.Table.t</a></code>;</code></td>
+	  </tr></table>}
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">unit -&gt; <a href="Versioned_typed_tcp.Make.Server.Connections.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold : <code class="type"><a href="Versioned_typed_tcp.Make.Server.Connections.html#TYPEt">t</a> -&gt;
+init:'a -&gt;
+f:(name:Remote_name.Table.key <a href="../core/Std.Hashtbl.html#TYPEkey">Core.Std.Hashtbl.key</a> -&gt; conn:<a href="Versioned_typed_tcp.Make.Server.Connections.C.html#TYPEt">C.t</a> -&gt; 'a -&gt; 'a) -&gt;
+'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem : <code class="type"><a href="Versioned_typed_tcp.Make.Server.Connections.html#TYPEt">t</a> -&gt; Remote_name.Table.key <a href="../core/Std.Hashtbl.html#TYPEkey">Core.Std.Hashtbl.key</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add : <code class="type"><a href="Versioned_typed_tcp.Make.Server.Connections.html#TYPEt">t</a> -&gt; name:Remote_name.Table.key <a href="../core/Std.Hashtbl.html#TYPEkey">Core.Std.Hashtbl.key</a> -&gt; conn:<a href="Versioned_typed_tcp.Make.Server.Connections.C.html#TYPEt">C.t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove : <code class="type"><a href="Versioned_typed_tcp.Make.Server.Connections.html#TYPEt">t</a> -&gt; Remote_name.Table.key <a href="../core/Std.Hashtbl.html#TYPEkey">Core.Std.Hashtbl.key</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find : <code class="type"><a href="Versioned_typed_tcp.Make.Server.Connections.html#TYPEt">t</a> -&gt; Remote_name.Table.key <a href="../core/Std.Hashtbl.html#TYPEkey">Core.Std.Hashtbl.key</a> -&gt; <a href="Versioned_typed_tcp.Make.Server.Connections.C.html#TYPEt">C.t</a> option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> maybe_log : <code class="type">logfun:([&gt; `Send of 'a ] -&gt; 'b -&gt; time_sent_received:'c -&gt; unit) option -&gt;
+name:'b -&gt; now:'c -&gt; 'a -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> schedule_bigstring_threshold : <code class="type">int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> send_to_some'' : <code class="type">'a -&gt;
+logfun:([&gt; `Send of 'a ] -&gt;
+        Remote_name.t -&gt; time_sent_received:<a href="../core/Std.Time.html#TYPEt">Core.Std.Time.t</a> -&gt; unit)
+       option -&gt;
+now:(unit -&gt; <a href="../core/Std.Time.html#TYPEt">Core.Std.Time.t</a>) -&gt;
+('b, 'c * ('a -&gt; <a href="../core/Std.Bigsubstring.html#TYPEt">Core.Std.Bigsubstring.t</a> option)) <a href="../core/Std.Hashtbl.html#TYPEt">Core.Std.Hashtbl.t</a> -&gt;
+('c -&gt; bool) -&gt;
+('c -&gt; f:(<a href="Versioned_typed_tcp.Make.Connection.html#TYPEt">Connection.t</a> -&gt; unit) -&gt; 'd) -&gt;
+[&gt; `Dropped | `Partial_success | `Sent ]</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> send_to_all' : <code class="type"><a href="Versioned_typed_tcp.Make.Server.Connections.html#TYPEt">t</a> -&gt;
+Send.t -&gt;
+logfun:([&gt; `Send of Send.t ] -&gt;
+        Remote_name.t -&gt; time_sent_received:<a href="../core/Std.Time.html#TYPEt">Core.Std.Time.t</a> -&gt; unit)
+       option -&gt;
+now:(unit -&gt; <a href="../core/Std.Time.html#TYPEt">Core.Std.Time.t</a>) -&gt; [&gt; `Dropped | `Partial_success | `Sent ]</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> send_to_all : <code class="type"><a href="Versioned_typed_tcp.Make.Server.Connections.html#TYPEt">t</a> -&gt;
+logfun:([&gt; `Send of Send.t ] -&gt;
+        Remote_name.t -&gt; time_sent_received:<a href="../core/Std.Time.html#TYPEt">Core.Std.Time.t</a> -&gt; unit)
+       option -&gt;
+now:(unit -&gt; <a href="../core/Std.Time.html#TYPEt">Core.Std.Time.t</a>) -&gt;
+Send.t -&gt; [&gt; `Dropped | `Partial_success | `Sent ] <a href="../async_core/Deferred.html#TYPEt">Async_core.Deferred.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> send_to_all_ignore_errors : <code class="type"><a href="Versioned_typed_tcp.Make.Server.Connections.html#TYPEt">t</a> -&gt;
+logfun:([&gt; `Send of Send.t ] -&gt;
+        Remote_name.t -&gt; time_sent_received:<a href="../core/Std.Time.html#TYPEt">Core.Std.Time.t</a> -&gt; unit)
+       option -&gt;
+now:(unit -&gt; <a href="../core/Std.Time.html#TYPEt">Core.Std.Time.t</a>) -&gt; Send.t -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> send_to_some' : <code class="type"><a href="Versioned_typed_tcp.Make.Server.Connections.html#TYPEt">t</a> -&gt;
+Send.t -&gt;
+logfun:([&gt; `Send of Send.t ] -&gt;
+        Remote_name.t -&gt; time_sent_received:<a href="../core/Std.Time.html#TYPEt">Core.Std.Time.t</a> -&gt; unit)
+       option -&gt;
+now:(unit -&gt; <a href="../core/Std.Time.html#TYPEt">Core.Std.Time.t</a>) -&gt;
+Remote_name.Table.key <a href="../core/Std.Hashtbl.html#TYPEkey">Core.Std.Hashtbl.key</a> <a href="../core/Std.List.html#TYPEt">Core.Std.List.t</a> -&gt;
+[&gt; `Dropped | `Partial_success | `Sent ]</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> send_to_some : <code class="type"><a href="Versioned_typed_tcp.Make.Server.Connections.html#TYPEt">t</a> -&gt;
+logfun:([&gt; `Send of Send.t ] -&gt;
+        Remote_name.t -&gt; time_sent_received:<a href="../core/Std.Time.html#TYPEt">Core.Std.Time.t</a> -&gt; unit)
+       option -&gt;
+now:(unit -&gt; <a href="../core/Std.Time.html#TYPEt">Core.Std.Time.t</a>) -&gt;
+Send.t -&gt;
+Remote_name.Table.key <a href="../core/Std.Hashtbl.html#TYPEkey">Core.Std.Hashtbl.key</a> <a href="../core/Std.List.html#TYPEt">Core.Std.List.t</a> -&gt;
+[&gt; `Dropped | `Partial_success | `Sent ] <a href="../async_core/Deferred.html#TYPEt">Async_core.Deferred.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> send_to_some_ignore_errors : <code class="type"><a href="Versioned_typed_tcp.Make.Server.Connections.html#TYPEt">t</a> -&gt;
+logfun:([&gt; `Send of Send.t ] -&gt;
+        Remote_name.t -&gt; time_sent_received:<a href="../core/Std.Time.html#TYPEt">Core.Std.Time.t</a> -&gt; unit)
+       option -&gt;
+now:(unit -&gt; <a href="../core/Std.Time.html#TYPEt">Core.Std.Time.t</a>) -&gt;
+Send.t -&gt; Remote_name.Table.key <a href="../core/Std.Hashtbl.html#TYPEkey">Core.Std.Hashtbl.key</a> <a href="../core/Std.List.html#TYPEt">Core.Std.List.t</a> -&gt; unit</code></span></pre>
+      
+    

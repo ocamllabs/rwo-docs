@@ -1,0 +1,24 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Stable_containers.Set.html">Set</a> : <code class="code">sig</code> <a href="Stable_containers.Set.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Stable_containers.Set.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Stable_containers.Hashtbl.html">Hashtbl</a> : <code class="code">sig</code> <a href="Stable_containers.Hashtbl.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Stable_containers.Hashtbl.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Stable_containers.Hash_set.html">Hash_set</a> : <code class="code">sig</code> <a href="Stable_containers.Hash_set.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Stable_containers.Hash_set.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Stable_containers.Map.html">Map</a> : <code class="code">sig</code> <a href="Stable_containers.Map.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Stable_containers.Map.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

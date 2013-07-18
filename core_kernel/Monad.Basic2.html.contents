@@ -1,0 +1,11 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'd) </code>t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bind : <code class="type">('a, 'd) <a href="Monad.Basic2.html#TYPEt">t</a> -&gt; ('a -&gt; ('b, 'd) <a href="Monad.Basic2.html#TYPEt">t</a>) -&gt; ('b, 'd) <a href="Monad.Basic2.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> return : <code class="type">'a -&gt; ('a, 'b) <a href="Monad.Basic2.html#TYPEt">t</a></code></span></pre>
+      
+    

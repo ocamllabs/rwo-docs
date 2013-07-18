@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<title>Config</title>
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
+<script type="text/javascript" src="doc_loader.js"> </script>
+</head>
+<body>
+
+<h1>Module Config</h1>
+<pre><span class="keyword">module</span> Config</pre><div class="info">Settings that globally affect the behavior of async.<br/>    These can be set by setting an environment variable, <code class="code">ASYNC_CONFIG</code>, to a sexp
+    representation of the config.  Also, setting <code class="code">ASYNC_CONFIG</code> to an invalid sexp
+    (e.g. the empty string), will cause your program to print to stderr a usage message
+    describing how to configure <code class="code">ASYNC_CONFIG</code>, and exit nonzero.  For example, the
+    following shell command should print the usage message:<br/>    <span class="verbatim">      ASYNC_CONFIG= foo.exe
+    </span>
+</div>
+<hr/>
+<div file="Config.html.contents" class="content_to_load"> </div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Packed_array.S.html">S</a></code> with type elt = P.t</pre>
+	<div class="content">
+	<div file="Packed_array.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> concat : <code class="type">t -&gt; P.t</code></span></pre>
+      
+    

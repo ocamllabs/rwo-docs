@@ -1,0 +1,5 @@
+<pre><span id="EXCEPTIONFound_anonymous_arguments"><span class="keyword">exception</span> Found_anonymous_arguments</span></pre>
+ 
+      <pre><span><span class="keyword">val</span> no_anons : <code class="type">'a -&gt; string list -&gt; 'a</code></span></pre>
+      
+    

@@ -1,0 +1,4 @@
+ 
+      <pre><span><span class="keyword">val</span> lazy_list_of_t : <code class="type">'a X.t -&gt; 'a <a href="Lazy_list.html#TYPEt">t</a></code></span></pre>
+      
+    

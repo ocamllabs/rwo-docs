@@ -1,0 +1,14 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Hashable.Hashtbl.html#TYPES">Hashtbl.S</a></code> with type key = <a href="Hashable.S_binable.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="Hashable.Hashtbl.html#TYPES.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Hashable.Binable.html#TYPES1">Binable.S1</a></code> with type t = 'a t</pre>
+	<div class="content">
+	<div file="Hashable.Binable.html#TYPES1.contents" class="content_to_load"> </div>
+	</div>
+  </div>

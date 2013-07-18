@@ -1,0 +1,535 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span>= <code class="type">string</code> </pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Identifiable.S.html">Identifiable.S</a></code> with type t = <a href="Core_string.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="Identifiable.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Container.S0.html">Container.S0</a></code> with type t = <a href="Core_string.html#TYPEt">t</a> with type elt = char</pre>
+	<div class="content">
+	<div file="Container.S0.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> max_length : <code class="type">int</code></span></pre>
+      <div class="info">Maximum length of a string.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> length : <code class="type"><a href="Core_string.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get : <code class="type"><a href="Core_string.html#TYPEt">t</a> -&gt; int -&gt; char</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set : <code class="type"><a href="Core_string.html#TYPEt">t</a> -&gt; int -&gt; char -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">int -&gt; <a href="Core_string.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> make : <code class="type">int -&gt; char -&gt; <a href="Core_string.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> copy : <code class="type"><a href="Core_string.html#TYPEt">t</a> -&gt; <a href="Core_string.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> init : <code class="type">int -&gt; f:(int -&gt; char) -&gt; <a href="Core_string.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sub : <code class="type"><a href="Core_string.html#TYPEt">t</a> -&gt; pos:int -&gt; len:int -&gt; <a href="Core_string.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fill : <code class="type"><a href="Core_string.html#TYPEt">t</a> -&gt; pos:int -&gt; len:int -&gt; char -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> blit : <code class="type">src:<a href="Core_string.html#TYPEt">t</a> -&gt; src_pos:int -&gt; dst:<a href="Core_string.html#TYPEt">t</a> -&gt; dst_pos:int -&gt; len:int -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> concat : <code class="type">?sep:<a href="Core_string.html#TYPEt">t</a> -&gt; <a href="Core_string.html#TYPEt">t</a> list -&gt; <a href="Core_string.html#TYPEt">t</a></code></span></pre>
+      <div class="info">concatanate all strings in the list using separator <code class="code">sep</code> (default sep &quot;&quot;)</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> escaped : <code class="type"><a href="Core_string.html#TYPEt">t</a> -&gt; <a href="Core_string.html#TYPEt">t</a></code></span></pre>
+      <div class="info">Warning: Only returns a copy if changes are necessary!  Special characters are
+    represented by escape sequences, following the lexical conventions of Objective
+    Caml.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> contains : <code class="type">?pos:int -&gt; ?len:int -&gt; <a href="Core_string.html#TYPEt">t</a> -&gt; char -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> uppercase : <code class="type"><a href="Core_string.html#TYPEt">t</a> -&gt; <a href="Core_string.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> lowercase : <code class="type"><a href="Core_string.html#TYPEt">t</a> -&gt; <a href="Core_string.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> capitalize : <code class="type"><a href="Core_string.html#TYPEt">t</a> -&gt; <a href="Core_string.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> uncapitalize : <code class="type"><a href="Core_string.html#TYPEt">t</a> -&gt; <a href="Core_string.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> index : <code class="type"><a href="Core_string.html#TYPEt">t</a> -&gt; char -&gt; int option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> index_exn : <code class="type"><a href="Core_string.html#TYPEt">t</a> -&gt; char -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rindex : <code class="type"><a href="Core_string.html#TYPEt">t</a> -&gt; char -&gt; int option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rindex_exn : <code class="type"><a href="Core_string.html#TYPEt">t</a> -&gt; char -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> index_from : <code class="type"><a href="Core_string.html#TYPEt">t</a> -&gt; int -&gt; char -&gt; int option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> index_from_exn : <code class="type"><a href="Core_string.html#TYPEt">t</a> -&gt; int -&gt; char -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rindex_from : <code class="type"><a href="Core_string.html#TYPEt">t</a> -&gt; int -&gt; char -&gt; int option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rindex_from_exn : <code class="type"><a href="Core_string.html#TYPEt">t</a> -&gt; int -&gt; char -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> slice : <code class="type"><a href="Core_string.html#TYPEt">t</a> -&gt; int -&gt; int -&gt; <a href="Core_string.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">slice s start stop</code> gets a slice of <code class="code">s</code> between <code class="code">start</code> and <code class="code">stop</code>.
+    <code class="code">start</code> and <code class="code">stop</code> will be normalized before the access.
+    (viz. Core_array.normalize).</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> to_list_rev : <code class="type"><a href="Core_string.html#TYPEt">t</a> -&gt; char list</code></span></pre>
+      <div class="info">Returns the reversed list of characters contained in a list.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> nget : <code class="type"><a href="Core_string.html#TYPEt">t</a> -&gt; int -&gt; char</code></span></pre>
+      <div class="info"><code class="code">nget s i</code> Gets the char at normalized position <code class="code">i</code> in <code class="code">s</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> nset : <code class="type"><a href="Core_string.html#TYPEt">t</a> -&gt; int -&gt; char -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">nset s i c</code> Sets the char at normalized position <code class="code">i</code> to <code class="code">c</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> is_suffix : <code class="type"><a href="Core_string.html#TYPEt">t</a> -&gt; suffix:<a href="Core_string.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      <div class="info"><code class="code">is_suffix s ~suffix</code> returns <code class="code">true</code> if <code class="code">s</code> ends with <code class="code">suffix</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> is_prefix : <code class="type"><a href="Core_string.html#TYPEt">t</a> -&gt; prefix:<a href="Core_string.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      <div class="info"><code class="code">is_prefix s ~prefix</code> returns <code class="code">true</code> if <code class="code">s</code> starts with <code class="code">prefix</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> lsplit2_exn : <code class="type"><a href="Core_string.html#TYPEt">t</a> -&gt; on:char -&gt; <a href="Core_string.html#TYPEt">t</a> * <a href="Core_string.html#TYPEt">t</a></code></span></pre>
+      <div class="info">If the string <code class="code">s</code> contains the character <code class="code">on</code>, then <code class="code">lsplit2_exn
+    s ~on</code> returns a pair containing <code class="code">s</code> split around the first
+    appearance of <code class="code">on</code> (from the left).<b>Raises</b> <code>Not_found</code> When <code class="code">on</code> cannot be found in <code class="code">s</code>
+<br/></div>
+    
+ 
+      <pre><span><span class="keyword">val</span> rsplit2_exn : <code class="type"><a href="Core_string.html#TYPEt">t</a> -&gt; on:char -&gt; <a href="Core_string.html#TYPEt">t</a> * <a href="Core_string.html#TYPEt">t</a></code></span></pre>
+      <div class="info">If the string <code class="code">s</code> contains the character <code class="code">on</code>, then <code class="code">rsplit2_exn
+    s ~on</code> returns a pair containing <code class="code">s</code> split around the first
+    appearance of <code class="code">on</code> (from the right).<b>Raises</b> <code>Not_found</code> When <code class="code">on</code> cannot be found in <code class="code">s</code>
+<br/></div>
+    
+ 
+      <pre><span><span class="keyword">val</span> lsplit2 : <code class="type"><a href="Core_string.html#TYPEt">t</a> -&gt; on:char -&gt; (<a href="Core_string.html#TYPEt">t</a> * <a href="Core_string.html#TYPEt">t</a>) option</code></span></pre>
+      <div class="info"><code class="code">lsplit2 line ~on</code> optionally returns <code class="code">line</code> split into two strings around the
+ first appearance of <code class="code">on</code> from the left</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> rsplit2 : <code class="type"><a href="Core_string.html#TYPEt">t</a> -&gt; on:char -&gt; (<a href="Core_string.html#TYPEt">t</a> * <a href="Core_string.html#TYPEt">t</a>) option</code></span></pre>
+      <div class="info"><code class="code">rsplit2 line ~on</code> optionally returns <code class="code">line</code> split into two strings around the
+ first appearance of <code class="code">on</code> from the right</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> split : <code class="type"><a href="Core_string.html#TYPEt">t</a> -&gt; on:char -&gt; <a href="Core_string.html#TYPEt">t</a> list</code></span></pre>
+      <div class="info"><code class="code">split s ~on</code> <b>Returns</b> a list of substrings of <code class="code">s</code> that are separated by
+    <code class="code">on</code>.  Consecutive <code class="code">on</code> characters will cause multiple empty strings
+    in the result.  Splitting the empty string returns a list of the empty
+    string, not the empty list.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> split_on_chars : <code class="type"><a href="Core_string.html#TYPEt">t</a> -&gt; on:char list -&gt; <a href="Core_string.html#TYPEt">t</a> list</code></span></pre>
+      <div class="info"><code class="code">split_on_chars s ~on</code> <b>Returns</b> a list of all substrings of <code class="code">s</code>
+    that are separated by one of the chars from <code class="code">on</code>.  <code class="code">on</code>
+    are not grouped.  So a grouping of <code class="code">on</code> in the source string will
+    produce multiple empty string splits in the result.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> lfindi : <code class="type">?pos:int -&gt; <a href="Core_string.html#TYPEt">t</a> -&gt; f:(int -&gt; char -&gt; bool) -&gt; int option</code></span></pre>
+      <div class="info"><code class="code">lfindi ?pos t ~f</code> returns the smallest <code class="code">i &gt;= pos</code> such that <code class="code">f i t.[i]</code>, if there is
+    such an <code class="code">i</code>.  By default, <code class="code">pos = 0</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> rfindi : <code class="type">?pos:int -&gt; <a href="Core_string.html#TYPEt">t</a> -&gt; f:(int -&gt; char -&gt; bool) -&gt; int option</code></span></pre>
+      <div class="info"><code class="code">rfindi ?pos t ~f</code> returns the largest <code class="code">i &lt;= pos</code> such that <code class="code">f i t.[i]</code>, if there is
+    such an <code class="code">i</code>.  By default <code class="code">pos = length t - 1</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> lstrip : <code class="type">?drop:(char -&gt; bool) -&gt; <a href="Core_string.html#TYPEt">t</a> -&gt; <a href="Core_string.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">lstrip ?drop s</code> returns a string with consecutive chars satisfying <code class="code">drop</code> (by default
+    white space, e.g. tabs, spaces, newlines, and carriage returns) stripped from the
+    beginning of <code class="code">s</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> rstrip : <code class="type">?drop:(char -&gt; bool) -&gt; <a href="Core_string.html#TYPEt">t</a> -&gt; <a href="Core_string.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">rstrip ?drop s</code> returns a string with consecutive chars satisfying <code class="code">drop</code> (by default
+    white space, e.g. tabs, spaces, newlines, and carriage returns) stripped from the end
+    of <code class="code">s</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> strip : <code class="type">?drop:(char -&gt; bool) -&gt; <a href="Core_string.html#TYPEt">t</a> -&gt; <a href="Core_string.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">strip ?drop s</code> returns a string with consecutive chars satisfying <code class="code">drop</code> (by default
+    white space, e.g. tabs, spaces, newlines, and carriage returns) stripped from the
+    begining and end of <code class="code">s</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> map : <code class="type"><a href="Core_string.html#TYPEt">t</a> -&gt; f:(char -&gt; char) -&gt; <a href="Core_string.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">map f s</code> applies <code class="code">f</code> to each character in <code class="code">s</code>, and returns the
+    resulting string.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> mapi : <code class="type"><a href="Core_string.html#TYPEt">t</a> -&gt; f:(int -&gt; char -&gt; char) -&gt; <a href="Core_string.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">mapi f s</code> applies <code class="code">f</code> to each character in <code class="code">s</code> and its index, and returns the
+    resulting string.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> foldi : <code class="type"><a href="Core_string.html#TYPEt">t</a> -&gt; init:'a -&gt; f:(int -&gt; 'a -&gt; char -&gt; 'a) -&gt; 'a</code></span></pre>
+      <div class="info"><code class="code">foldi</code> works similarly to <code class="code">fold</code>, but also pass in index of each character to <code class="code">f</code> </div>
+    
+ 
+      <pre><span><span class="keyword">val</span> concat_map : <code class="type">?sep:<a href="Core_string.html#TYPEt">t</a> -&gt; <a href="Core_string.html#TYPEt">t</a> -&gt; f:(char -&gt; <a href="Core_string.html#TYPEt">t</a>) -&gt; <a href="Core_string.html#TYPEt">t</a></code></span></pre>
+      <div class="info">Like <code class="code">map</code>, but allows replacement of a single character with zero or two or more
+    characters.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> filter : <code class="type"><a href="Core_string.html#TYPEt">t</a> -&gt; f:(char -&gt; bool) -&gt; <a href="Core_string.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">filter s ~f:predicate</code> discards characters not satisfying <code class="code">predicate</code> </div>
+    
+ 
+      <pre><span><span class="keyword">val</span> tr : <code class="type">target:char -&gt; replacement:char -&gt; <a href="Core_string.html#TYPEt">t</a> -&gt; <a href="Core_string.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">tr target replacement s</code> replaces every instance of <code class="code">target</code> in <code class="code">s</code> with
+    <code class="code">replacement</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> tr_inplace : <code class="type">target:char -&gt; replacement:char -&gt; <a href="Core_string.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      <div class="info"><code class="code">tr_inplace target replacement s</code> destructively modifies s (in place!)
+    replacing every instance of <code class="code">target</code> in <code class="code">s</code> with <code class="code">replacement</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> chop_suffix_exn : <code class="type"><a href="Core_string.html#TYPEt">t</a> -&gt; suffix:<a href="Core_string.html#TYPEt">t</a> -&gt; <a href="Core_string.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">chop_suffix s ~suf</code> returns a copy <code class="code">s</code> without the trailing <code class="code">suff</code>
+<b>Raises</b> <code>Invalid_argument</code> is <code class="code">suff</code> is not a suffix of <code class="code">s</code>
+<br/></div>
+    
+ 
+      <pre><span><span class="keyword">val</span> chop_prefix_exn : <code class="type"><a href="Core_string.html#TYPEt">t</a> -&gt; prefix:<a href="Core_string.html#TYPEt">t</a> -&gt; <a href="Core_string.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">chop_prefix s ~pref</code> returns a copy <code class="code">s</code> without the leading <code class="code">pref</code>
+<b>Raises</b> <code>Invalid_argument</code> is <code class="code">pref</code> is not a prefix of <code class="code">s</code>
+<br/></div>
+    
+ 
+      <pre><span><span class="keyword">val</span> chop_suffix : <code class="type"><a href="Core_string.html#TYPEt">t</a> -&gt; suffix:<a href="Core_string.html#TYPEt">t</a> -&gt; <a href="Core_string.html#TYPEt">t</a> option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> chop_prefix : <code class="type"><a href="Core_string.html#TYPEt">t</a> -&gt; prefix:<a href="Core_string.html#TYPEt">t</a> -&gt; <a href="Core_string.html#TYPEt">t</a> option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> suffix : <code class="type"><a href="Core_string.html#TYPEt">t</a> -&gt; int -&gt; <a href="Core_string.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">suffix s n</code> returns the longest suffix of <code class="code">s</code> of length less than or equal to <code class="code">n</code> </div>
+    
+ 
+      <pre><span><span class="keyword">val</span> prefix : <code class="type"><a href="Core_string.html#TYPEt">t</a> -&gt; int -&gt; <a href="Core_string.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">prefix s n</code> returns the longest prefix of <code class="code">s</code> of length less than or equal to <code class="code">n</code> </div>
+    
+ 
+      <pre><span><span class="keyword">val</span> drop_suffix : <code class="type"><a href="Core_string.html#TYPEt">t</a> -&gt; int -&gt; <a href="Core_string.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">drop_suffix s n</code> drops the longest suffix of <code class="code">s</code> of length less than or equal to <code class="code">n</code> </div>
+    
+ 
+      <pre><span><span class="keyword">val</span> drop_prefix : <code class="type"><a href="Core_string.html#TYPEt">t</a> -&gt; int -&gt; <a href="Core_string.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">drop_prefix s n</code> drops the longest prefix of <code class="code">s</code> of length less than or equal to <code class="code">n</code> </div>
+    
+ 
+      <pre><span><span class="keyword">val</span> concat_array : <code class="type">?sep:<a href="Core_string.html#TYPEt">t</a> -&gt; <a href="Core_string.html#TYPEt">t</a> array -&gt; <a href="Core_string.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">concat_array sep ar</code> like TODO reference : String.concat, but operates on arrays</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> hash : <code class="type"><a href="Core_string.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      <div class="info">slightly faster hash function on strings</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> equal : <code class="type"><a href="Core_string.html#TYPEt">t</a> -&gt; <a href="Core_string.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      <div class="info">fast equality function on strings, doesn't use compare_val</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> is_empty : <code class="type"><a href="Core_string.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      <div class="info"><code class="code">is_empty s</code> returns <code class="code">true</code> iff <code class="code">s</code> is empty (i.e. its length is 0).</div>
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Core_string.Infix.html">Infix</a> : <code class="code">sig</code> <a href="Core_string.Infix.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Core_string.Infix.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> of_char : <code class="type">char -&gt; <a href="Core_string.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_char_list : <code class="type">char list -&gt; <a href="Core_string.html#TYPEt">t</a></code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Core_string.Escaping.html">Escaping</a> : <code class="code">sig</code> <a href="Core_string.Escaping.html">..</a> <code class="code">end</code></pre><div class="info">Operations for escaping and unescaping strings, with paramaterized escape and
+    escapeworthy characters.  Escaping/unescaping using this module is more efficient than
+    using Pcre. Benchmark code can be found in core/benchmarks/string_escaping.ml.</div>
+	<div class="content" style="display:none">
+	<div file="Core_string.Escaping.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp : <code class="type"><a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; <a href="Core_string.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type"><a href="Core_string.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_t : <code class="type"><a href="Core_string.html#TYPEt">t</a> <a href="../bin_prot/Type_class.html#TYPEt">Bin_prot.Type_class.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t : <code class="type"><a href="Core_string.html#TYPEt">t</a> <a href="../bin_prot/Read_ml.html#TYPEreader">Bin_prot.Read_ml.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t_ : <code class="type"><a href="Core_string.html#TYPEt">t</a> <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t__ : <code class="type">(int -&gt; <a href="Core_string.html#TYPEt">t</a>) <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t : <code class="type"><a href="Core_string.html#TYPEt">t</a> <a href="../bin_prot/Type_class.html#TYPEreader">Bin_prot.Type_class.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t : <code class="type"><a href="Core_string.html#TYPEt">t</a> <a href="../bin_prot/Size.html#TYPEsizer">Bin_prot.Size.sizer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t : <code class="type"><a href="Core_string.html#TYPEt">t</a> <a href="../bin_prot/Write_ml.html#TYPEwriter">Bin_prot.Write_ml.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_ : <code class="type"><a href="Core_string.html#TYPEt">t</a> <a href="../bin_prot/Unsafe_write_c.html#TYPEwriter">Bin_prot.Unsafe_write_c.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t : <code class="type"><a href="Core_string.html#TYPEt">t</a> <a href="../bin_prot/Type_class.html#TYPEwriter">Bin_prot.Type_class.writer</a></code></span></pre>
+      
+    
+<br/>Maximum length of a string.<br/>
+	  
+<br/>concatanate all strings in the list using separator <code class="code">sep</code> (default sep &quot;&quot;)<br/>
+	  
+<br/>Warning: Only returns a copy if changes are necessary!  Special characters are
+    represented by escape sequences, following the lexical conventions of Objective
+    Caml.<br/>
+	  
+<br/><code class="code">slice s start stop</code> gets a slice of <code class="code">s</code> between <code class="code">start</code> and <code class="code">stop</code>.
+    <code class="code">start</code> and <code class="code">stop</code> will be normalized before the access.
+    (viz. Core_array.normalize).<br/>
+	  
+<br/>Returns the reversed list of characters contained in a list.<br/>
+	  
+<br/><code class="code">nget s i</code> Gets the char at normalized position <code class="code">i</code> in <code class="code">s</code>.<br/>
+	  
+<br/><code class="code">nset s i c</code> Sets the char at normalized position <code class="code">i</code> to <code class="code">c</code>.<br/>
+	  
+<br/><code class="code">is_suffix s ~suffix</code> returns <code class="code">true</code> if <code class="code">s</code> ends with <code class="code">suffix</code>.<br/>
+	  
+<br/><code class="code">is_prefix s ~prefix</code> returns <code class="code">true</code> if <code class="code">s</code> starts with <code class="code">prefix</code>.<br/>
+	  
+<br/>If the string <code class="code">s</code> contains the character <code class="code">on</code>, then <code class="code">lsplit2_exn
+    s ~on</code> returns a pair containing <code class="code">s</code> split around the first
+    appearance of <code class="code">on</code> (from the left).<b>Raises</b> <code>Not_found</code> When <code class="code">on</code> cannot be found in <code class="code">s</code>
+<br/><br/>
+	  
+<br/>If the string <code class="code">s</code> contains the character <code class="code">on</code>, then <code class="code">rsplit2_exn
+    s ~on</code> returns a pair containing <code class="code">s</code> split around the first
+    appearance of <code class="code">on</code> (from the right).<b>Raises</b> <code>Not_found</code> When <code class="code">on</code> cannot be found in <code class="code">s</code>
+<br/><br/>
+	  
+<br/><code class="code">lsplit2 line ~on</code> optionally returns <code class="code">line</code> split into two strings around the
+ first appearance of <code class="code">on</code> from the left<br/>
+	  
+<br/><code class="code">rsplit2 line ~on</code> optionally returns <code class="code">line</code> split into two strings around the
+ first appearance of <code class="code">on</code> from the right<br/>
+	  
+<br/><code class="code">split s ~on</code> <b>Returns</b> a list of substrings of <code class="code">s</code> that are separated by
+    <code class="code">on</code>.  Consecutive <code class="code">on</code> characters will cause multiple empty strings
+    in the result.  Splitting the empty string returns a list of the empty
+    string, not the empty list.<br/>
+	  
+<br/><code class="code">split_on_chars s ~on</code> <b>Returns</b> a list of all substrings of <code class="code">s</code>
+    that are separated by one of the chars from <code class="code">on</code>.  <code class="code">on</code>
+    are not grouped.  So a grouping of <code class="code">on</code> in the source string will
+    produce multiple empty string splits in the result.<br/>
+	  
+<br/><code class="code">lfindi ?pos t ~f</code> returns the smallest <code class="code">i &gt;= pos</code> such that <code class="code">f i t.[i]</code>, if there is
+    such an <code class="code">i</code>.  By default, <code class="code">pos = 0</code>.<br/>
+	  
+<br/><code class="code">rfindi ?pos t ~f</code> returns the largest <code class="code">i &lt;= pos</code> such that <code class="code">f i t.[i]</code>, if there is
+    such an <code class="code">i</code>.  By default <code class="code">pos = length t - 1</code>.<br/>
+	  
+<br/><code class="code">lstrip ?drop s</code> returns a string with consecutive chars satisfying <code class="code">drop</code> (by default
+    white space, e.g. tabs, spaces, newlines, and carriage returns) stripped from the
+    beginning of <code class="code">s</code>.<br/>
+	  
+<br/><code class="code">rstrip ?drop s</code> returns a string with consecutive chars satisfying <code class="code">drop</code> (by default
+    white space, e.g. tabs, spaces, newlines, and carriage returns) stripped from the end
+    of <code class="code">s</code>.<br/>
+	  
+<br/><code class="code">strip ?drop s</code> returns a string with consecutive chars satisfying <code class="code">drop</code> (by default
+    white space, e.g. tabs, spaces, newlines, and carriage returns) stripped from the
+    begining and end of <code class="code">s</code>.<br/>
+	  
+<br/><code class="code">map f s</code> applies <code class="code">f</code> to each character in <code class="code">s</code>, and returns the
+    resulting string.<br/>
+	  
+<br/><code class="code">mapi f s</code> applies <code class="code">f</code> to each character in <code class="code">s</code> and its index, and returns the
+    resulting string.<br/>
+	  
+<br/><code class="code">foldi</code> works similarly to <code class="code">fold</code>, but also pass in index of each character to <code class="code">f</code> <br/>
+	  
+<br/>Like <code class="code">map</code>, but allows replacement of a single character with zero or two or more
+    characters.<br/>
+	  
+<br/><code class="code">filter s ~f:predicate</code> discards characters not satisfying <code class="code">predicate</code> <br/>
+	  
+<br/><code class="code">tr target replacement s</code> replaces every instance of <code class="code">target</code> in <code class="code">s</code> with
+    <code class="code">replacement</code>.<br/>
+	  
+<br/><code class="code">tr_inplace target replacement s</code> destructively modifies s (in place!)
+    replacing every instance of <code class="code">target</code> in <code class="code">s</code> with <code class="code">replacement</code>.<br/>
+	  
+<br/><code class="code">chop_suffix s ~suf</code> returns a copy <code class="code">s</code> without the trailing <code class="code">suff</code>
+<b>Raises</b> <code>Invalid_argument</code> is <code class="code">suff</code> is not a suffix of <code class="code">s</code>
+<br/><br/>
+	  
+<br/><code class="code">chop_prefix s ~pref</code> returns a copy <code class="code">s</code> without the leading <code class="code">pref</code>
+<b>Raises</b> <code>Invalid_argument</code> is <code class="code">pref</code> is not a prefix of <code class="code">s</code>
+<br/><br/>
+	  
+<br/><code class="code">suffix s n</code> returns the longest suffix of <code class="code">s</code> of length less than or equal to <code class="code">n</code> <br/>
+	  
+<br/><code class="code">prefix s n</code> returns the longest prefix of <code class="code">s</code> of length less than or equal to <code class="code">n</code> <br/>
+	  
+<br/><code class="code">drop_suffix s n</code> drops the longest suffix of <code class="code">s</code> of length less than or equal to <code class="code">n</code> <br/>
+	  
+<br/><code class="code">drop_prefix s n</code> drops the longest prefix of <code class="code">s</code> of length less than or equal to <code class="code">n</code> <br/>
+	  
+<br/><code class="code">concat_array sep ar</code> like TODO reference : String.concat, but operates on arrays<br/>
+	  
+<br/>slightly faster hash function on strings<br/>
+	  
+<br/>fast equality function on strings, doesn't use compare_val<br/>
+	  
+<br/><code class="code">is_empty s</code> returns <code class="code">true</code> iff <code class="code">s</code> is empty (i.e. its length is 0).<br/>
+	  
+<br/>Operations for escaping and unescaping strings, with paramaterized escape and
+    escapeworthy characters.  Escaping/unescaping using this module is more efficient than
+    using Pcre. Benchmark code can be found in core/benchmarks/string_escaping.ml.<br/>
+	  
+<br/><code class="code">escape_gen_exn escapeworthy_map escape_char</code> returns a function that will escape a
+      string <code class="code">s</code> as follows: if <code class="code">(c1,c2)</code> is in <code class="code">escapeworthy_map</code>, then all occurences of
+      <code class="code">c1</code> are replaced by <code class="code">escape_char</code> concatenated to <code class="code">c2</code>.<br/>      Raises an exception if <code class="code">escapeworthy_map</code> is not one-to-one.  If <code class="code">escape_char</code> is
+      not in <code class="code">escapeworthy_map</code>, then it will be escaped to itself.<br/>
+	  
+<br/><code class="code">escape ~escapeworthy ~escape_char s</code> is
+      <pre class="codepre"><code class="code">
+        escape_gen_exn ~escapeworthy_map:(List.zip_exn escapeworthy escapeworthy)
+          ~escape_char
+      </code></pre>.
+      Duplicates and <code class="code">escape_char</code> will be removed from <code class="code">escapeworthy</code>.  So, no
+      exception will be raised<br/>
+	  
+<br/><code class="code">unescape_gen_exn</code> is the inverse operation of <code class="code">escape_gen_exn</code>. That is,
+      <pre class="codepre"><code class="code">
+      let escape = Staged.unstage (escape_gen_exn ~escapeworthy_map ~escape_char) in
+      let unescape = Staged.unstage (unescape_gen_exn ~escapeworthy_map ~escape_char) in
+      assert (s = unescape (escape s))
+      </code></pre>
+      always succeed when ~escapeworthy_map is not causing exceptions.<br/>
+	  
+<br/><code class="code">unescape ~escape_char</code> is defined as <code class="code">unescape_gen_exn ~map:[] ~escape_char</code> <br/>
+	  
+<br/>Any char in an escaped string is either escaping, escaped or literal. For example,
+      for escaped string &quot;0_a0__0&quot; with escape_char as '_', pos 1 and 4 are escaping, 2
+      and 5 are escaped, and the rest are literal<br/>      <code class="code">is_char_escaping s ~escape_char pos</code> return true if the char at <code class="code">pos</code> is escaping,
+      false otherwise.<br/>
+	  
+<br/><code class="code">is_char_escaped s ~escape_char pos</code> return true if the char at <code class="code">pos</code> is escaped,
+      false otherwise.<br/>
+	  
+<br/><code class="code">is_literal s ~escape_char pos</code> return true if the char at <code class="code">pos</code> is not escaped or
+      escaping.<br/>
+	  
+<br/><code class="code">index s ~escape_char char</code> find the first literal (not escaped) instance of
+      char in s starting from 0.<br/>
+	  
+<br/><code class="code">rindex s ~escape_char char</code> find the first literal (not escaped) instance of
+      char in s starting from the end of s and proceeding towards 0.<br/>
+	  
+<br/><code class="code">index_from s ~escape_char pos char</code> find the first literal (not escaped)
+      instance of char in s starting from pos and proceeding towards the end of s.<br/>
+	  
+<br/><code class="code">rindex_from s ~escape_char pos char</code> find the first literal (not escaped)
+      instance of char in s starting from pos and towards 0.<br/>
+	  
+<br/><code class="code">split s ~escape_char ~on</code> <b>Returns</b> a list of substrings of <code class="code">s</code> that are separated by
+      literal versions of <code class="code">on</code>.  Consecutive <code class="code">on</code> characters will cause multiple empty
+      strings in the result.  Splitting the empty string returns a list of the empty
+      string, not the empty list.<br/>      e.g. split ~escape_char:'_' ~on:',' &quot;foo,bar_,baz&quot; = <code class="code">&quot;foo&quot;; &quot;bar_,baz&quot;</code> <br/>
+	  
+<br/><code class="code">split_on_chars s ~on</code> <b>Returns</b> a list of all substrings of <code class="code">s</code> that are separated by
+      one of the literal chars from <code class="code">on</code>.  <code class="code">on</code> are not grouped.  So a grouping of <code class="code">on</code> in
+      the source string will produce multiple empty string splits in the result.<br/>      e.g. split_on_chars ~escape_char:'_' ~on:<code class="code">',';'|'</code> &quot;foo_|bar,baz|0&quot; -&gt;
+      <code class="code">&quot;foo_|bar&quot;; &quot;baz&quot;; &quot;0&quot;</code> <br/>
+	  

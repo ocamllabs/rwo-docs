@@ -1,0 +1,40 @@
+ 
+      <pre><span><span class="keyword">val</span> lseek : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; int64 -&gt; <a href="Unix.html#TYPEseek_command">seek_command</a> -&gt; int64</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> truncate : <code class="type">string -&gt; int64 -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ftruncate : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; int64 -&gt; unit</code></span></pre>
+      
+    
+<pre><code><span id="TYPEstats"><span class="keyword">type</span> stats </span>= {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTstats.st_dev">st_dev</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Device number</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTstats.st_ino">st_ino</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Inode number</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTstats.st_kind">st_kind</span> :<code class="type"><a href="Unix.html#TYPEfile_kind">file_kind</a></code>;</code></td><td class="typefieldcomment" align="left">Kind of the file</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTstats.st_perm">st_perm</span> :<code class="type"><a href="Unix.html#TYPEfile_perm">file_perm</a></code>;</code></td><td class="typefieldcomment" align="left">Access rights</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTstats.st_nlink">st_nlink</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Number of links</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTstats.st_uid">st_uid</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">User id of the owner</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTstats.st_gid">st_gid</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Group ID of the file's group</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTstats.st_rdev">st_rdev</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Device minor number</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTstats.st_size">st_size</span> :<code class="type">int64</code>;</code></td><td class="typefieldcomment" align="left">Size in bytes</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTstats.st_atime">st_atime</span> :<code class="type">float</code>;</code></td><td class="typefieldcomment" align="left">Last access time</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTstats.st_mtime">st_mtime</span> :<code class="type">float</code>;</code></td><td class="typefieldcomment" align="left">Last modification time</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTstats.st_ctime">st_ctime</span> :<code class="type">float</code>;</code></td><td class="typefieldcomment" align="left">Last status change time</td>
+	  </tr></table>}
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stat : <code class="type">string -&gt; <a href="Unix.LargeFile.html#TYPEstats">stats</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> lstat : <code class="type">string -&gt; <a href="Unix.LargeFile.html#TYPEstats">stats</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fstat : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; <a href="Unix.LargeFile.html#TYPEstats">stats</a></code></span></pre>
+      
+    

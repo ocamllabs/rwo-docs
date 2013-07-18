@@ -1,0 +1,228 @@
+<pre><code><span id="TYPEt"><span class="keyword">type</span> t </span>= {<span class="keyword">private</span></code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.y">y</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.m">m</span> :<code class="type"><a href="../core_kernel/Std.Month.html#TYPEt">Core_kernel.Std.Month.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.d">d</span> :<code class="type">int</code>;</code></td>
+	  </tr></table>}
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core_kernel/Std.Hashable_binable.html">Core_kernel.Std.Hashable_binable</a></code> with type t = <a href="Date.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="../core_kernel/Std.Hashable_binable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core_kernel/Std.Stringable.html">Core_kernel.Std.Stringable</a></code> with type t = <a href="Date.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="../core_kernel/Std.Stringable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core_kernel/Std.Comparable_binable.html">Core_kernel.Std.Comparable_binable</a></code> with type t = <a href="Date.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="../core_kernel/Std.Comparable_binable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core_kernel/Std.Pretty_printer.S.html">Core_kernel.Std.Pretty_printer.S</a></code> with type t = <a href="Date.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="../core_kernel/Std.Pretty_printer.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> create_exn : <code class="type">y:int -&gt; m:<a href="../core_kernel/Std.Month.html#TYPEt">Core_kernel.Std.Month.t</a> -&gt; d:int -&gt; <a href="Date.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">create_exn ~y ~m ~d</code> creates the date specified in the arguments.  Arguments are
+    validated, and are not normalized in any way.  So, days must be within the limits for
+    the month in question, numbers cannot be negative, years must be fully specified, etc.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> of_tm : <code class="type"><a href="Core_unix.html#TYPEtm">Core_unix.tm</a> -&gt; <a href="Date.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_string_iso8601_basic : <code class="type">string -&gt; pos:int -&gt; <a href="Date.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_string_iso8601_basic : <code class="type"><a href="Date.html#TYPEt">t</a> -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_string_american : <code class="type"><a href="Date.html#TYPEt">t</a> -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> day : <code class="type"><a href="Date.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> month : <code class="type"><a href="Date.html#TYPEt">t</a> -&gt; <a href="../core_kernel/Std.Month.html#TYPEt">Core_kernel.Std.Month.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> year : <code class="type"><a href="Date.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> day_of_week : <code class="type"><a href="Date.html#TYPEt">t</a> -&gt; <a href="../core_kernel/Std.Day_of_week.html#TYPEt">Core_kernel.Std.Day_of_week.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_weekend : <code class="type"><a href="Date.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_weekday : <code class="type"><a href="Date.html#TYPEt">t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_business_day : <code class="type"><a href="Date.html#TYPEt">t</a> -&gt; is_holiday:(<a href="Date.html#TYPEt">t</a> -&gt; bool) -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add_days : <code class="type"><a href="Date.html#TYPEt">t</a> -&gt; int -&gt; <a href="Date.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add_months : <code class="type"><a href="Date.html#TYPEt">t</a> -&gt; int -&gt; <a href="Date.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">add_months t n</code> returns date with max days for the month if the date would be
+    invalid. e.g. adding 1 month to Jan 30 results in Feb 28 due to Feb 30 being
+    an invalid date, Feb 29 is returned in cases of leap year. *</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> diff : <code class="type"><a href="Date.html#TYPEt">t</a> -&gt; <a href="Date.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      <div class="info"><code class="code">diff t1 t2</code> returns date <code class="code">t1</code> minus date <code class="code">t2</code> in days.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> add_weekdays : <code class="type"><a href="Date.html#TYPEt">t</a> -&gt; int -&gt; <a href="Date.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">add_weekdays t 0</code> returns the next weekday if <code class="code">t</code> is a weekend and <code class="code">t</code> otherwise.
+    Unlike add_days this is done by looping over the count of days to be added (forward or
+    backwards based on the sign), and is O(n) in the number of days to add.
+    Beware, <code class="code">add_weekdays sat 1</code> or <code class="code">add_weekdays sun 1</code> both return the next <code class="code">tue</code>,
+    not the next <code class="code">mon</code>. You may want to use <code class="code">following_weekday</code> if you want the next
+    following weekday, <code class="code">following_weekday (fri|sat|sun)</code> would all return the next <code class="code">mon</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> add_business_days : <code class="type"><a href="Date.html#TYPEt">t</a> -&gt; is_holiday:(<a href="Date.html#TYPEt">t</a> -&gt; bool) -&gt; int -&gt; <a href="Date.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">add_business_days t ~is_holiday n</code> returns a business day even when
+    <code class="code">n=0</code>. <code class="code">add_business_days ~is_holiday:(fun _ -&gt; false) ...</code> is the same as
+    <code class="code">add_weekdays</code>. Use <code class="code">Pnl_db.Calendar_events.is_holiday</code> as a conveninent holiday
+    function.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> dates_between : <code class="type">min:<a href="Date.html#TYPEt">t</a> -&gt; max:<a href="Date.html#TYPEt">t</a> -&gt; <a href="Date.html#TYPEt">t</a> list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> business_dates_between : <code class="type">min:<a href="Date.html#TYPEt">t</a> -&gt; max:<a href="Date.html#TYPEt">t</a> -&gt; is_holiday:(<a href="Date.html#TYPEt">t</a> -&gt; bool) -&gt; <a href="Date.html#TYPEt">t</a> list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> weekdays_between : <code class="type">min:<a href="Date.html#TYPEt">t</a> -&gt; max:<a href="Date.html#TYPEt">t</a> -&gt; <a href="Date.html#TYPEt">t</a> list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> previous_weekday : <code class="type"><a href="Date.html#TYPEt">t</a> -&gt; <a href="Date.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> following_weekday : <code class="type"><a href="Date.html#TYPEt">t</a> -&gt; <a href="Date.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> first_strictly_after : <code class="type"><a href="Date.html#TYPEt">t</a> -&gt; on:<a href="../core_kernel/Std.Day_of_week.html#TYPEt">Core_kernel.Std.Day_of_week.t</a> -&gt; <a href="Date.html#TYPEt">t</a></code></span></pre>
+      <div class="info"><code class="code">first_strictly_after t ~on:day_of_week</code> returns the first occurrence of <code class="code">day_of_week</code>
+    strictly after <code class="code">t</code>.</div>
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Date.Export.html">Export</a> : <code class="code">sig</code> <a href="Date.Export.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Date.Export.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Date.Stable.html">Stable</a> : <code class="code">sig</code> <a href="Date.Stable.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Date.Stable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp : <code class="type"><a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; <a href="Date.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type"><a href="Date.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_t : <code class="type"><a href="Date.html#TYPEt">t</a> <a href="../core_kernel/Std.Bin_prot.Type_class.html#TYPEt">Core_kernel.Std.Bin_prot.Type_class.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t : <code class="type"><a href="Date.html#TYPEt">t</a> <a href="../core_kernel/Std.Bin_prot.Read_ml.html#TYPEreader">Core_kernel.Std.Bin_prot.Read_ml.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t_ : <code class="type"><a href="Date.html#TYPEt">t</a> <a href="../core_kernel/Std.Bin_prot.Unsafe_read_c.html#TYPEreader">Core_kernel.Std.Bin_prot.Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t__ : <code class="type">(int -&gt; <a href="Date.html#TYPEt">t</a>) <a href="../core_kernel/Std.Bin_prot.Unsafe_read_c.html#TYPEreader">Core_kernel.Std.Bin_prot.Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t : <code class="type"><a href="Date.html#TYPEt">t</a> <a href="../core_kernel/Std.Bin_prot.Type_class.html#TYPEreader">Core_kernel.Std.Bin_prot.Type_class.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t : <code class="type"><a href="Date.html#TYPEt">t</a> <a href="../core_kernel/Std.Bin_prot.Size.html#TYPEsizer">Core_kernel.Std.Bin_prot.Size.sizer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t : <code class="type"><a href="Date.html#TYPEt">t</a> <a href="../core_kernel/Std.Bin_prot.Write_ml.html#TYPEwriter">Core_kernel.Std.Bin_prot.Write_ml.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_ : <code class="type"><a href="Date.html#TYPEt">t</a> <a href="../core_kernel/Std.Bin_prot.Unsafe_write_c.html#TYPEwriter">Core_kernel.Std.Bin_prot.Unsafe_write_c.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t : <code class="type"><a href="Date.html#TYPEt">t</a> <a href="../core_kernel/Std.Bin_prot.Type_class.html#TYPEwriter">Core_kernel.Std.Bin_prot.Type_class.writer</a></code></span></pre>
+      
+    
+<br/>converts a string to a date, in formats:
+ m/d/y
+ y-m-d (* valid iso8601_extended *)
+ DD MMM YYYY
+ DDMMMYYYY
+ YYYYMMDD<br/>
+	  
+<br/><code class="code">create_exn ~y ~m ~d</code> creates the date specified in the arguments.  Arguments are
+    validated, and are not normalized in any way.  So, days must be within the limits for
+    the month in question, numbers cannot be negative, years must be fully specified, etc.<br/>
+	  
+<br/><code class="code">add_months t n</code> returns date with max days for the month if the date would be
+    invalid. e.g. adding 1 month to Jan 30 results in Feb 28 due to Feb 30 being
+    an invalid date, Feb 29 is returned in cases of leap year. *<br/>
+	  
+<br/><code class="code">diff t1 t2</code> returns date <code class="code">t1</code> minus date <code class="code">t2</code> in days.<br/>
+	  
+<br/><code class="code">add_weekdays t 0</code> returns the next weekday if <code class="code">t</code> is a weekend and <code class="code">t</code> otherwise.
+    Unlike add_days this is done by looping over the count of days to be added (forward or
+    backwards based on the sign), and is O(n) in the number of days to add.
+    Beware, <code class="code">add_weekdays sat 1</code> or <code class="code">add_weekdays sun 1</code> both return the next <code class="code">tue</code>,
+    not the next <code class="code">mon</code>. You may want to use <code class="code">following_weekday</code> if you want the next
+    following weekday, <code class="code">following_weekday (fri|sat|sun)</code> would all return the next <code class="code">mon</code>.<br/>
+	  
+<br/><code class="code">add_business_days t ~is_holiday n</code> returns a business day even when
+    <code class="code">n=0</code>. <code class="code">add_business_days ~is_holiday:(fun _ -&gt; false) ...</code> is the same as
+    <code class="code">add_weekdays</code>. Use <code class="code">Pnl_db.Calendar_events.is_holiday</code> as a conveninent holiday
+    function.<br/>
+	  
+<br/><code class="code">first_strictly_after t ~on:day_of_week</code> returns the first occurrence of <code class="code">day_of_week</code>
+    strictly after <code class="code">t</code>.<br/>
+	  

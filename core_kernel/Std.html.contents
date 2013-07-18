@@ -1,0 +1,24 @@
+ 
+      <pre><span><span class="keyword">val</span> __pa_ounit_275876e34cf609db118f3d84b799a790 : <code class="type">string</code></span></pre>
+      
+    
+
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Std_kernel.html">Std_kernel</a></code></pre>
+	<div class="content">
+	<div file="Std_kernel.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Std_common.html">Std_common</a></code></pre>
+	<div class="content">
+	<div file="Std_common.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> _squelch_unused_module_warning_ : <code class="type">unit</code></span></pre>
+      
+    
+

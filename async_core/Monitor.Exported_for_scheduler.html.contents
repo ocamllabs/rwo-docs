@@ -1,0 +1,27 @@
+<pre><span id="TYPEwith_options"><span class="keyword">type</span> <code class="type">'a </code>with_options </span>= <code class="type">?monitor:<a href="Monitor.html#TYPEt">t</a> -&gt; ?priority:<a href="Priority.html#TYPEt">Priority.t</a> -&gt; 'a</code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> within' : <code class="type">((unit -&gt; 'a <a href="Deferred.html#TYPEt">Deferred.t</a>) -&gt; 'a <a href="Deferred.html#TYPEt">Deferred.t</a>) <a href="Monitor.Exported_for_scheduler.html#TYPEwith_options">with_options</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> within : <code class="type">((unit -&gt; unit) -&gt; unit) <a href="Monitor.Exported_for_scheduler.html#TYPEwith_options">with_options</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> within_v : <code class="type">((unit -&gt; 'a) -&gt; 'a option) <a href="Monitor.Exported_for_scheduler.html#TYPEwith_options">with_options</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> schedule' : <code class="type">((unit -&gt; 'a <a href="Deferred.html#TYPEt">Deferred.t</a>) -&gt; 'a <a href="Deferred.html#TYPEt">Deferred.t</a>) <a href="Monitor.Exported_for_scheduler.html#TYPEwith_options">with_options</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> schedule : <code class="type">((unit -&gt; unit) -&gt; unit) <a href="Monitor.Exported_for_scheduler.html#TYPEwith_options">with_options</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> within_context : <code class="type"><a href="Execution_context.html#TYPEt">Execution_context.t</a> -&gt; (unit -&gt; 'a) -&gt; ('a, unit) <a href="../core/Std.Result.html#TYPEt">Core.Std.Result.t</a></code></span></pre>
+      
+    

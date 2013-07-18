@@ -1,0 +1,50 @@
+<pre><code><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t </span>= {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.l">l</span> :<code class="type">'a list</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.r">r</span> :<code class="type">'a list</code>;</code></td>
+	  </tr></table>}
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">'a list -&gt; 'a list -&gt; 'a <a href="List_zipper.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> drop_before : <code class="type">'a <a href="List_zipper.html#TYPEt">t</a> -&gt; ('a * 'a <a href="List_zipper.html#TYPEt">t</a>) option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> drop_after : <code class="type">'a <a href="List_zipper.html#TYPEt">t</a> -&gt; ('a * 'a <a href="List_zipper.html#TYPEt">t</a>) option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> drop_all_before : <code class="type">'a <a href="List_zipper.html#TYPEt">t</a> -&gt; ('a list * 'a <a href="List_zipper.html#TYPEt">t</a>) option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> drop_all_after : <code class="type">'a <a href="List_zipper.html#TYPEt">t</a> -&gt; ('a list * 'a <a href="List_zipper.html#TYPEt">t</a>) option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> insert_before : <code class="type">'a <a href="List_zipper.html#TYPEt">t</a> -&gt; 'a -&gt; 'a <a href="List_zipper.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> insert_after : <code class="type">'a <a href="List_zipper.html#TYPEt">t</a> -&gt; 'a -&gt; 'a <a href="List_zipper.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> previous : <code class="type">'a <a href="List_zipper.html#TYPEt">t</a> -&gt; 'a <a href="List_zipper.html#TYPEt">t</a> option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> next : <code class="type">'a <a href="List_zipper.html#TYPEt">t</a> -&gt; 'a <a href="List_zipper.html#TYPEt">t</a> option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> replace_left : <code class="type">'a <a href="List_zipper.html#TYPEt">t</a> -&gt; 'a list -&gt; 'a <a href="List_zipper.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> replace_right : <code class="type">'a <a href="List_zipper.html#TYPEt">t</a> -&gt; 'a list -&gt; 'a <a href="List_zipper.html#TYPEt">t</a></code></span></pre>
+      
+    

@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<title>Versioned_rpc.Callee_converts.Rpc.Make</title>
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
+<script type="text/javascript" src="doc_loader.js"> </script>
+</head>
+<body>
+
+<h1>Module Versioned_rpc.Callee_converts.Rpc.Make</h1>
+<pre><span class="keyword">module</span> <a href="Versioned_rpc.Callee_converts.Rpc.Make.html">Make</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">Model</code><code class="code"> : </code><code class="code">sig</code> <a href="Versioned_rpc.Callee_converts.Rpc.Make.Anon_4.html">..</a> <code class="code">end</code><code class="code">) -&gt; </code><code class="code">sig</code> <a href="Versioned_rpc.Callee_converts.Rpc.Make.html">..</a> <code class="code">end</code></div></pre><div class="info">Given a model of the types involved in a family of RPCs, this
+      functor provides a single multi-version implementation function
+      <code class="code">implement_multi</code> in terms of that model and a mechanism for
+      registering the individual versions that <code class="code">implement_multi</code> knows
+      about.  Registration requires knowing how to get into and out of
+      the model.
+      <span class="verbatim">        Q1 --&gt;-.         ,--&gt;-- R1
+                \       /
+        Q2 --&gt;-- Q --&gt; R ---&gt;-- R2
+                /       \
+        Q3 --&gt;-'         `--&gt;-- R3
+      </span>
+</div>
+<hr/>
+<div file="Versioned_rpc.Callee_converts.Rpc.Make.html.contents" class="content_to_load"> </div>
+</body>
+</html>

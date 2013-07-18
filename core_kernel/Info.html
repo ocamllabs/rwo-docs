@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<title>Info</title>
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
+<script type="text/javascript" src="doc_loader.js"> </script>
+</head>
+<body>
+
+<h1>Module Info</h1>
+<pre><span class="keyword">module</span> Info</pre><div class="info"><code class="code">Info</code> is a library for lazily constructing human-readable information as a string or
+    sexp, with a primary use being error messages.  Using <code class="code">Info</code> is often preferable to
+    <code class="code">sprintf</code> or manually constructing strings because you don't have to eagerly construct
+    the string --- you only need to pay when you actually want to display the info.  which
+    for many applications is rare.  Using <code class="code">Info</code> is also better than creating custom
+    exceptions because you have more control over the format.<br/>    Info is intended to be constructed in the following style; for simple info, you write:<br/>    <pre class="codepre"><code class="code">Info.of_string &quot;Unable to find file&quot;</code></pre><br/>    For info where you want to attach some content, you would write:<br/>    <pre class="codepre"><code class="code">Info.create &quot;Unable to find file&quot; filename &lt;:sexp_of&lt; string &gt;&gt;</code></pre><br/>    Or even,<br/>    <pre class="codepre"><code class="code">
+    Info.create &quot;price too big&quot; (price, [`Max max_price])
+      (&lt;:sexp_of&lt; float * [`Max of float] &gt;&gt;)
+    </code></pre><br/>    Note that an <code class="code">Info.t</code> can be created from any arbritrary sexp with <code class="code">Info.t_of_sexp</code>.</div>
+<hr/>
+<div file="Info.html.contents" class="content_to_load"> </div>
+</body>
+</html>

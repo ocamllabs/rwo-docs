@@ -1,0 +1,103 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_string_hum : <code class="type"><a href="Info.html#TYPEt">t</a> -&gt; string</code></span></pre>
+      <div class="info">might be an expensive operation</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> of_string : <code class="type">string -&gt; <a href="Info.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_lazy : <code class="type">string <a href="../stdlib/Lazy.html#TYPEt">Lazy.t</a> -&gt; <a href="Info.html#TYPEt">t</a></code></span></pre>
+      <div class="info">Be careful that the body of the lazy or thunk does not access mutable data, since it
+    will only be called at an undetermined later point.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> of_thunk : <code class="type">(unit -&gt; string) -&gt; <a href="Info.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">?here:<a href="Source_code_position0.html#TYPEt">Source_code_position0.t</a> -&gt; string -&gt; 'a -&gt; ('a -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a>) -&gt; <a href="Info.html#TYPEt">t</a></code></span></pre>
+      <div class="info">For <code class="code">create msg z sexp_of_z</code>, be careful to use only immutable values for z, or be
+    aware that <code class="code">z</code> will be lazily converted to a sexp at a later point in time, which will
+    pick up the then-current state of <code class="code">z</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> tag : <code class="type"><a href="Info.html#TYPEt">t</a> -&gt; string -&gt; <a href="Info.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> tag_arg : <code class="type"><a href="Info.html#TYPEt">t</a> -&gt; string -&gt; 'a -&gt; ('a -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a>) -&gt; <a href="Info.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_list : <code class="type">?trunc_after:int -&gt; <a href="Info.html#TYPEt">t</a> list -&gt; <a href="Info.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_exn : <code class="type">?backtrace:[ `Get | `This of string ] -&gt; exn -&gt; <a href="Info.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_exn : <code class="type"><a href="Info.html#TYPEt">t</a> -&gt; exn</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pp : <code class="type"><a href="../stdlib/Format.html#TYPEformatter">Format.formatter</a> -&gt; <a href="Info.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp : <code class="type"><a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; <a href="Info.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type"><a href="Info.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_t : <code class="type"><a href="Info.html#TYPEt">t</a> <a href="../bin_prot/Type_class.html#TYPEt">Bin_prot.Type_class.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t : <code class="type"><a href="Info.html#TYPEt">t</a> <a href="../bin_prot/Read_ml.html#TYPEreader">Bin_prot.Read_ml.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t_ : <code class="type"><a href="Info.html#TYPEt">t</a> <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t__ : <code class="type">(int -&gt; <a href="Info.html#TYPEt">t</a>) <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t : <code class="type"><a href="Info.html#TYPEt">t</a> <a href="../bin_prot/Type_class.html#TYPEreader">Bin_prot.Type_class.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t : <code class="type"><a href="Info.html#TYPEt">t</a> <a href="../bin_prot/Size.html#TYPEsizer">Bin_prot.Size.sizer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t : <code class="type"><a href="Info.html#TYPEt">t</a> <a href="../bin_prot/Write_ml.html#TYPEwriter">Bin_prot.Write_ml.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_ : <code class="type"><a href="Info.html#TYPEt">t</a> <a href="../bin_prot/Unsafe_write_c.html#TYPEwriter">Bin_prot.Unsafe_write_c.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t : <code class="type"><a href="Info.html#TYPEt">t</a> <a href="../bin_prot/Type_class.html#TYPEwriter">Bin_prot.Type_class.writer</a></code></span></pre>
+      
+    
+<br/>might be an expensive operation<br/>
+	  
+<br/>Be careful that the body of the lazy or thunk does not access mutable data, since it
+    will only be called at an undetermined later point.<br/>
+	  
+<br/>For <code class="code">create msg z sexp_of_z</code>, be careful to use only immutable values for z, or be
+    aware that <code class="code">z</code> will be lazily converted to a sexp at a later point in time, which will
+    pick up the then-current state of <code class="code">z</code>.<br/>
+	  

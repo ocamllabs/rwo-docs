@@ -1,0 +1,63 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">int -&gt; <a href="Buffer.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> contents : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sub : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; int -&gt; int -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> blit : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; int -&gt; string -&gt; int -&gt; int -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> nth : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; int -&gt; char</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> length : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> clear : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> reset : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add_char : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; char -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add_string : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; string -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add_substring : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; string -&gt; int -&gt; int -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add_substitute : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; (string -&gt; string) -&gt; string -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add_buffer : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; <a href="Buffer.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add_channel : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; <a href="Pervasives.html#TYPEin_channel">in_channel</a> -&gt; int -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> output_buffer : <code class="type"><a href="Pervasives.html#TYPEout_channel">out_channel</a> -&gt; <a href="Buffer.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    

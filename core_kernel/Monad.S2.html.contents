@@ -1,0 +1,41 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Monad.Infix2.html">Infix2</a></code></pre>
+	<div class="content">
+	<div file="Monad.Infix2.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Monad.S2.Monad_infix.html">Monad_infix</a> : <code class="code"><a href="Monad.Infix2.html">Infix2</a></code> with type <a href="Monad.Infix2.html#TYPEt">t</a> = ('a, 'd) t</pre>
+	<div class="content" style="display:none">
+	<div file="Monad.S2.Monad_infix.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> bind : <code class="type">('a, 'd) t -&gt; ('a -&gt; ('b, 'd) t) -&gt; ('b, 'd) t</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> return : <code class="type">'a -&gt; ('a, 'b) t</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map : <code class="type">('a, 'd) t -&gt; f:('a -&gt; 'b) -&gt; ('b, 'd) t</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> join : <code class="type">(('a, 'd) t, 'd) t -&gt; ('a, 'd) t</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ignore : <code class="type">('a, 'd) t -&gt; (unit, 'd) t</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> all : <code class="type">('a, 'd) t list -&gt; ('a list, 'd) t</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> all_ignore : <code class="type">(unit, 'd) t list -&gt; (unit, 'd) t</code></span></pre>
+      
+    

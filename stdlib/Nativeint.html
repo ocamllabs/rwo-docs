@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<title>Nativeint</title>
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
+<script type="text/javascript" src="doc_loader.js"> </script>
+</head>
+<body>
+
+<h1>Module Nativeint</h1>
+<pre><span class="keyword">module</span> Nativeint</pre><div class="info">Processor-native integers.<br/>   This module provides operations on the type <code class="code">nativeint</code> of
+   signed 32-bit integers (on 32-bit platforms) or
+   signed 64-bit integers (on 64-bit platforms).
+   This integer type has exactly the same width as that of a <code class="code">long</code>
+   integer type in the C compiler.  All arithmetic operations over
+   <code class="code">nativeint</code> are taken modulo 2<sup class="superscript">32</sup> or 2<sup class="superscript">64</sup> depending
+   on the word size of the architecture.<br/>   Performance notice: values of type <code class="code">nativeint</code> occupy more memory
+   space than values of type <code class="code">int</code>, and arithmetic operations on
+   <code class="code">nativeint</code> are generally slower than those on <code class="code">int</code>.  Use <code class="code">nativeint</code>
+   only when the application requires the extra bit of precision
+   over the <code class="code">int</code> type.</div>
+<hr/>
+<div file="Nativeint.html.contents" class="content_to_load"> </div>
+</body>
+</html>

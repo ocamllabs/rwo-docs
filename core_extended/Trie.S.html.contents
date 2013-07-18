@@ -1,0 +1,37 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Trie.S.Key.html">Key</a> : <code class="code">sig</code> <a href="Trie.S.Key.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Trie.S.Key.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Trie.S.Part.html">Part</a> : <code class="code">sig</code> <a href="Trie.S.Part.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Trie.S.Part.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<pre><code><span id="TYPEt"><span class="keyword">type</span> t </span>= </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Node"><span class="constructor">Node</span></span> <span class="keyword">of</span> <code class="type">(bool * <a href="Trie.S.html#TYPEt">t</a>) <a href="Trie.S.Part.Table.html#TYPEt">Part.Table.t</a></code></code></td>
+	   </tr></table>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create : <code class="type">unit -&gt; <a href="Trie.S.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> contains : <code class="type"><a href="Trie.S.html#TYPEt">t</a> -&gt; <a href="Trie.S.Key.html#TYPEt">Key.t</a> -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add : <code class="type"><a href="Trie.S.html#TYPEt">t</a> -&gt; <a href="Trie.S.Key.html#TYPEt">Key.t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove : <code class="type"><a href="Trie.S.html#TYPEt">t</a> -&gt; <a href="Trie.S.Key.html#TYPEt">Key.t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> render_as_regexp : <code class="type"><a href="Trie.S.html#TYPEt">t</a> -&gt; capture_parts:bool -&gt; to_quoted_string:(<a href="Trie.S.Part.html#TYPEt">Part.t</a> -&gt; string) -&gt; string</code></span></pre>
+      
+    

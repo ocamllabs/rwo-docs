@@ -1,0 +1,7 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Make_substring.S.html">Make_substring.S</a></code> with type base = string</pre>
+	<div class="content">
+	<div file="Make_substring.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<title>Ordering</title>
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
+<script type="text/javascript" src="doc_loader.js"> </script>
+</head>
+<body>
+
+<h1>Module Ordering</h1>
+<pre><span class="keyword">module</span> Ordering</pre><div class="info"><code class="code">Ordering</code> is intended to make code that matches on the result of a comparison
+    more concise and easier to read.  For example, one would write:<br/>    <pre class="codepre"><code class="code">
+      match Ordering.of_int (compare x y) with
+      | Less -&gt; ...
+      | Equal -&gt; ...
+      | Greater -&gt; ...
+    </code></pre><br/>    rather than:<br/>    <pre class="codepre"><code class="code">
+      let r = compare x y in
+      if r &lt; 0 then
+        ...
+      else if r = 0 then
+        ...
+      else
+        ...
+    </code></pre>
+</div>
+<hr/>
+<div file="Ordering.html.contents" class="content_to_load"> </div>
+</body>
+</html>

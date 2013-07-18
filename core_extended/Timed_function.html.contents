@@ -1,0 +1,10 @@
+<pre><span id="EXCEPTIONTimeout"><span class="keyword">exception</span> Timeout</span></pre><div class="info">Functions with timeouts<br/>   This module is here to add timeouts to any functions.</div>
+ 
+      <pre><span><span class="keyword">val</span> run : <code class="type">timeout:float -&gt;
+f:('a -&gt; 'b) -&gt;
+sexp_of:('b -&gt; <a href="../core/Std.Sexp.html#TYPEt">Core.Std.Sexp.t</a>) -&gt;
+of_sexp:(<a href="../core/Std.Sexp.html#TYPEt">Core.Std.Sexp.t</a> -&gt; 'b) -&gt; 'a -&gt; 'b</code></span></pre>
+      <div class="info">Runs a function in a fork process to ensure a timeout.
+    The function passed must not raise an exception not have any weird
+    side effects.</div>
+    

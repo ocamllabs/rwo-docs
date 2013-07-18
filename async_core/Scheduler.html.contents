@@ -1,0 +1,147 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t : <code class="type">unit -&gt; <a href="Scheduler.html#TYPEt">t</a></code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="../core/Std.Invariant.S.html">Core.Std.Invariant.S</a></code> with type t = <a href="Scheduler.html#TYPEt">t</a></pre>
+	<div class="content">
+	<div file="../core/Std.Invariant.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> current_execution_context : <code class="type"><a href="Scheduler.html#TYPEt">t</a> -&gt; <a href="Execution_context.html#TYPEt">Execution_context.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> with_execution_context : <code class="type"><a href="Scheduler.html#TYPEt">t</a> -&gt; <a href="Execution_context.html#TYPEt">Execution_context.t</a> -&gt; f:(unit -&gt; 'a) -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> preserve_execution_context : <code class="type"><a href="Scheduler.html#TYPEt">t</a> -&gt; ('a -&gt; unit) -&gt; ('a -&gt; unit) <a href="../core/Std.Staged.html#TYPEt">Core.Std.Staged.t</a></code></span></pre>
+      <div class="info"><code class="code">preserve_execution_context f</code> saves the current execution context and returns a
+    function <code class="code">g</code> such that <code class="code">g a</code> adds a job that runs <code class="code">f a</code> in the saved execution
+    context.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> add_job : <code class="type"><a href="Execution_context.html#TYPEt">Execution_context.t</a> -&gt; ('a -&gt; unit) -&gt; 'a -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> main_execution_context : <code class="type"><a href="Execution_context.html#TYPEt">Execution_context.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> cycle_start : <code class="type"><a href="Scheduler.html#TYPEt">t</a> -&gt; <a href="../core/Std.Time.html#TYPEt">Core.Std.Time.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> run_cycle : <code class="type"><a href="Scheduler.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> run_cycles_until_no_jobs_remain : <code class="type">unit -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> next_upcoming_event : <code class="type"><a href="Scheduler.html#TYPEt">t</a> -&gt; <a href="../core/Std.Time.html#TYPEt">Core.Std.Time.t</a> option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> uncaught_exn : <code class="type"><a href="Scheduler.html#TYPEt">t</a> -&gt; <a href="../core/Std.Error.html#TYPEt">Core.Std.Error.t</a> option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> num_pending_jobs : <code class="type"><a href="Scheduler.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> num_jobs_run : <code class="type"><a href="Scheduler.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> cycle_times : <code class="type"><a href="Scheduler.html#TYPEt">t</a> -&gt; <a href="../core/Std.Time.Span.html#TYPEt">Core.Std.Time.Span.t</a> <a href="Async_stream.html#TYPEt">Async_stream.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> cycle_num_jobs : <code class="type"><a href="Scheduler.html#TYPEt">t</a> -&gt; int <a href="Async_stream.html#TYPEt">Async_stream.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> cycle_count : <code class="type"><a href="Scheduler.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set_max_num_jobs_per_priority_per_cycle : <code class="type"><a href="Scheduler.html#TYPEt">t</a> -&gt; int -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set_check_access : <code class="type"><a href="Scheduler.html#TYPEt">t</a> -&gt; (unit -&gt; unit) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> check_access : <code class="type"><a href="Scheduler.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> events : <code class="type"><a href="Scheduler.html#TYPEt">t</a> -&gt; <a href="Execution_context.html#TYPEt">Execution_context.t</a> <a href="Job.html#TYPEt">Job.t</a> <a href="Import.Timing_wheel.html#TYPEt">Import.Timing_wheel.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add_finalizer : <code class="type"><a href="Scheduler.html#TYPEt">t</a> -&gt; 'a <a href="../core/Std.Heap_block.html#TYPEt">Core.Std.Heap_block.t</a> -&gt; ('a <a href="../core/Std.Heap_block.html#TYPEt">Core.Std.Heap_block.t</a> -&gt; unit) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add_finalizer_exn : <code class="type"><a href="Scheduler.html#TYPEt">t</a> -&gt; 'a -&gt; ('a -&gt; unit) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set_thread_safe_finalizer_hook : <code class="type"><a href="Scheduler.html#TYPEt">t</a> -&gt; (unit -&gt; unit) -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> force_current_cycle_to_end : <code class="type"><a href="Scheduler.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    
+<pre><span id="TYPEwith_options"><span class="keyword">type</span> <code class="type">'a </code>with_options </span>= <code class="type">?monitor:<a href="Monitor.html#TYPEt">Monitor.t</a> -&gt; ?priority:<a href="Priority.html#TYPEt">Priority.t</a> -&gt; 'a</code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> within' : <code class="type">((unit -&gt; 'a <a href="Deferred.html#TYPEt">Deferred.t</a>) -&gt; 'a <a href="Deferred.html#TYPEt">Deferred.t</a>) <a href="Scheduler.html#TYPEwith_options">with_options</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> within : <code class="type">((unit -&gt; unit) -&gt; unit) <a href="Scheduler.html#TYPEwith_options">with_options</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> within_v : <code class="type">((unit -&gt; 'a) -&gt; 'a option) <a href="Scheduler.html#TYPEwith_options">with_options</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> schedule' : <code class="type">((unit -&gt; 'a <a href="Deferred.html#TYPEt">Deferred.t</a>) -&gt; 'a <a href="Deferred.html#TYPEt">Deferred.t</a>) <a href="Scheduler.html#TYPEwith_options">with_options</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> schedule : <code class="type">((unit -&gt; unit) -&gt; unit) <a href="Scheduler.html#TYPEwith_options">with_options</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> within_context : <code class="type"><a href="Execution_context.html#TYPEt">Execution_context.t</a> -&gt; (unit -&gt; 'a) -&gt; ('a, unit) <a href="../core/Std.Result.html#TYPEt">Core.Std.Result.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> reset_in_forked_process : <code class="type">unit -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type"><a href="Scheduler.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+<br/><code class="code">preserve_execution_context f</code> saves the current execution context and returns a
+    function <code class="code">g</code> such that <code class="code">g a</code> adds a job that runs <code class="code">f a</code> in the saved execution
+    context.<br/>
+	  

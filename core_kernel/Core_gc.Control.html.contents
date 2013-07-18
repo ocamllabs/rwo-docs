@@ -1,0 +1,141 @@
+<pre><code><span id="TYPEt"><span class="keyword">type</span> t </span>= {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.minor_heap_size">minor_heap_size</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">The size (in words) of the minor heap.  Changing
+       this parameter will trigger a minor collection.  Default: 32k.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.major_heap_increment">major_heap_increment</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">The minimum number of words to add to the
+       major heap when increasing it.  Default: 62k.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.space_overhead">space_overhead</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">The major GC speed is computed from this parameter.
+        This is the memory that will be &quot;wasted&quot; because the GC does not
+       immediatly collect unreachable blocks.  It is expressed as a
+       percentage of the memory used for live data.
+       The GC will work more (use more CPU time and collect
+       blocks more eagerly) if <code class="code">space_overhead</code> is smaller.
+       Default: 80.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.verbose">verbose</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">This value controls the GC messages on standard error output.
+       It is a sum of some of the following flags, to print messages
+       on the corresponding events:<ul><li><code class="code">0x001</code> Start of major GC cycle.</li><li><code class="code">0x002</code> Minor collection and major GC slice.</li><li><code class="code">0x004</code> Growing and shrinking of the heap.</li><li><code class="code">0x008</code> Resizing of stacks and memory manager tables.</li><li><code class="code">0x010</code> Heap compaction.</li><li><code class="code">0x020</code> Change of GC parameters.</li><li><code class="code">0x040</code> Computation of major GC slice size.</li><li><code class="code">0x080</code> Calling of finalisation functions.</li><li><code class="code">0x100</code> Bytecode executable search at start-up.</li><li><code class="code">0x200</code> Computation of compaction triggering condition.
+       Default: 0. </li></ul></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.max_overhead">max_overhead</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Heap compaction is triggered when the estimated amount
+       of &quot;wasted&quot; memory is more than <code class="code">max_overhead</code> percent of the
+       amount of live data.  If <code class="code">max_overhead</code> is set to 0, heap
+       compaction is triggered at the end of each major GC cycle
+       (this setting is intended for testing purposes only).
+       If <code class="code">max_overhead &gt;= 1000000</code>, compaction is never triggered.
+       Default: 500.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.stack_limit">stack_limit</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">The maximum size of the stack (in words).  This is only
+       relevant to the byte-code runtime, as the native code runtime
+       uses the operating system's stack.  Default: 256k.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.allocation_policy">allocation_policy</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">The policy used for allocating in the heap.  Possible
+        values are 0 and 1.  0 is the next-fit policy, which is
+        quite fast but can result in fragmentation.  1 is the
+        first-fit policy, which can be slower in some cases but
+        can be better for programs with fragmentation problems.
+        Default: 0.</td>
+	  </tr></table>}
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> allocation_policy : <code class="type"><a href="Core_gc.Control.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set_allocation_policy : <code class="type"><a href="Core_gc.Control.html#TYPEt">t</a> -&gt; int -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stack_limit : <code class="type"><a href="Core_gc.Control.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set_stack_limit : <code class="type"><a href="Core_gc.Control.html#TYPEt">t</a> -&gt; int -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> max_overhead : <code class="type"><a href="Core_gc.Control.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set_max_overhead : <code class="type"><a href="Core_gc.Control.html#TYPEt">t</a> -&gt; int -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> verbose : <code class="type"><a href="Core_gc.Control.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set_verbose : <code class="type"><a href="Core_gc.Control.html#TYPEt">t</a> -&gt; int -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> space_overhead : <code class="type"><a href="Core_gc.Control.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set_space_overhead : <code class="type"><a href="Core_gc.Control.html#TYPEt">t</a> -&gt; int -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> major_heap_increment : <code class="type"><a href="Core_gc.Control.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set_major_heap_increment : <code class="type"><a href="Core_gc.Control.html#TYPEt">t</a> -&gt; int -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> minor_heap_size : <code class="type"><a href="Core_gc.Control.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set_minor_heap_size : <code class="type"><a href="Core_gc.Control.html#TYPEt">t</a> -&gt; int -&gt; unit</code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Core_gc.Control.Fields.html">Fields</a> : <code class="code">sig</code> <a href="Core_gc.Control.Fields.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Core_gc.Control.Fields.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp : <code class="type"><a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a> -&gt; <a href="Core_gc.Control.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type"><a href="Core_gc.Control.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_t : <code class="type"><a href="Core_gc.Control.html#TYPEt">t</a> <a href="../bin_prot/Type_class.html#TYPEt">Bin_prot.Type_class.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t : <code class="type"><a href="Core_gc.Control.html#TYPEt">t</a> <a href="../bin_prot/Read_ml.html#TYPEreader">Bin_prot.Read_ml.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t_ : <code class="type"><a href="Core_gc.Control.html#TYPEt">t</a> <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t__ : <code class="type">(int -&gt; <a href="Core_gc.Control.html#TYPEt">t</a>) <a href="../bin_prot/Unsafe_read_c.html#TYPEreader">Bin_prot.Unsafe_read_c.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t : <code class="type"><a href="Core_gc.Control.html#TYPEt">t</a> <a href="../bin_prot/Type_class.html#TYPEreader">Bin_prot.Type_class.reader</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t : <code class="type"><a href="Core_gc.Control.html#TYPEt">t</a> <a href="../bin_prot/Size.html#TYPEsizer">Bin_prot.Size.sizer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t : <code class="type"><a href="Core_gc.Control.html#TYPEt">t</a> <a href="../bin_prot/Write_ml.html#TYPEwriter">Bin_prot.Write_ml.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_ : <code class="type"><a href="Core_gc.Control.html#TYPEt">t</a> <a href="../bin_prot/Unsafe_write_c.html#TYPEwriter">Bin_prot.Unsafe_write_c.writer</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t : <code class="type"><a href="Core_gc.Control.html#TYPEt">t</a> <a href="../bin_prot/Type_class.html#TYPEwriter">Bin_prot.Type_class.writer</a></code></span></pre>
+      
+    

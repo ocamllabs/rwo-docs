@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<title>Lazy_deferred</title>
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
+<script type="text/javascript" src="doc_loader.js"> </script>
+</head>
+<body>
+
+<h1>Module Lazy_deferred</h1>
+<pre><span class="keyword">module</span> Lazy_deferred</pre><div class="info">A <code class="code">Lazy_deferred.t</code> is a delayed computation that can produce a deferred.  Nothing
+    happens with a lazy deferred unless one <code class="code">force</code>s it.  Forcing a lazy deferred starts
+    the computation, which will eventually cause the deferred to become determined.  As
+    usual with laziness, multiply forcing a lazy deferred is no different than forcing it
+    a single time.<br/>    Exceptions (both synchronous and asynchronous) raised by a delayed computation are
+    returned by <code class="code">force</code> (<code class="code">wait</code>, <code class="code">peek</code>, etc.), or will be raised to the monitor in effect
+    when <code class="code">force_exn</code> (<code class="code">wait_exn</code>, <code class="code">peek_exn</code>, etc.) was called.</div>
+<hr/>
+<div file="Lazy_deferred.html.contents" class="content_to_load"> </div>
+</body>
+</html>

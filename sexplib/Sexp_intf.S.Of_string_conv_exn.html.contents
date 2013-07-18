@@ -1,0 +1,8 @@
+<pre><code><span id="TYPEt"><span class="keyword">type</span> t </span>= {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.exc">exc</span> :<code class="type">exn</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.sexp">sexp</span> :<code class="type"><a href="Type.html#TYPEt">Type.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.sub_sexp">sub_sexp</span> :<code class="type"><a href="Type.html#TYPEt">Type.t</a></code>;</code></td>
+	  </tr></table>}
+      
+    
+<pre><span id="EXCEPTIONE"><span class="keyword">exception</span> E</span> <span class="keyword">of</span> <code class="type"><a href="Sexp_intf.S.Of_string_conv_exn.html#TYPEt">t</a></code></pre>

@@ -1,0 +1,62 @@
+ 
+      <pre><span><span class="keyword">val</span> __pa_ounit_275876e34cf609db118f3d84b799a790 : <code class="type">string</code></span></pre>
+      
+    
+
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Comparable_intf.Infix.html">Infix</a> = <code class="type"><code class="code"><a href="Polymorphic_compare_intf.Infix.html">Polymorphic_compare_intf.Infix</a></code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Comparable_intf.Infix.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Comparable_intf.Polymorphic_compare.html">Polymorphic_compare</a> = <code class="type"><code class="code"><a href="Polymorphic_compare_intf.S.html">Polymorphic_compare_intf.S</a></code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Comparable_intf.Polymorphic_compare.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<pre><code><span id="TYPEbound"><span class="keyword">type</span> <code class="type">'a </code>bound </span>= </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTbound.Incl"><span class="constructor">Incl</span></span> <span class="keyword">of</span> <code class="type">'a</code></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTbound.Excl"><span class="constructor">Excl</span></span> <span class="keyword">of</span> <code class="type">'a</code></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTbound.Unbounded"><span class="constructor">Unbounded</span></span></code></td>
+	   </tr></table>
+      <div class="info">Used for specifying a bound (either upper or lower) as inclusive, exclusive, or
+    unbounded.</div>
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Comparable_intf.Validate.html">Validate</a> = <code class="type"><code class="code">sig</code> <a href="Comparable_intf.Validate.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Comparable_intf.Validate.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Comparable_intf.With_zero.html">With_zero</a> = <code class="type"><code class="code">sig</code> <a href="Comparable_intf.With_zero.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Comparable_intf.With_zero.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Comparable_intf.S_common.html">S_common</a> = <code class="type"><code class="code">sig</code> <a href="Comparable_intf.S_common.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Comparable_intf.S_common.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Comparable_intf.S.html">S</a> = <code class="type"><code class="code">sig</code> <a href="Comparable_intf.S.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Comparable_intf.S.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Comparable_intf.Map_and_set_binable.html">Map_and_set_binable</a> = <code class="type"><code class="code">sig</code> <a href="Comparable_intf.Map_and_set_binable.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Comparable_intf.Map_and_set_binable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Comparable_intf.S_binable.html">S_binable</a> = <code class="type"><code class="code">sig</code> <a href="Comparable_intf.S_binable.html">..</a> <code class="code">end</code></code></pre>
+	<div class="content" style="display:none">
+	<div file="Comparable_intf.S_binable.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+

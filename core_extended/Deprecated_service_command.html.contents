@@ -1,0 +1,4 @@
+ 
+      <pre><span><span class="keyword">val</span> command : <code class="type">lock_file:string -&gt; name:string -&gt; (unit -&gt; unit) -&gt; <a href="Deprecated_command.html#TYPEt">Deprecated_command.t</a></code></span></pre>
+      
+    

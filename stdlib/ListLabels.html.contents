@@ -1,0 +1,186 @@
+ 
+      <pre><span><span class="keyword">val</span> length : <code class="type">'a list -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> hd : <code class="type">'a list -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> tl : <code class="type">'a list -&gt; 'a list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> nth : <code class="type">'a list -&gt; int -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rev : <code class="type">'a list -&gt; 'a list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> append : <code class="type">'a list -&gt; 'a list -&gt; 'a list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rev_append : <code class="type">'a list -&gt; 'a list -&gt; 'a list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> concat : <code class="type">'a list list -&gt; 'a list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> flatten : <code class="type">'a list list -&gt; 'a list</code></span></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Iterators</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> iter : <code class="type">f:('a -&gt; unit) -&gt; 'a list -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iteri : <code class="type">f:(int -&gt; 'a -&gt; unit) -&gt; 'a list -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map : <code class="type">f:('a -&gt; 'b) -&gt; 'a list -&gt; 'b list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mapi : <code class="type">f:(int -&gt; 'a -&gt; 'b) -&gt; 'a list -&gt; 'b list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rev_map : <code class="type">f:('a -&gt; 'b) -&gt; 'a list -&gt; 'b list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold_left : <code class="type">f:('a -&gt; 'b -&gt; 'a) -&gt; init:'a -&gt; 'b list -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold_right : <code class="type">f:('a -&gt; 'b -&gt; 'b) -&gt; 'a list -&gt; init:'b -&gt; 'b</code></span></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Iterators on two lists</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> iter2 : <code class="type">f:('a -&gt; 'b -&gt; unit) -&gt; 'a list -&gt; 'b list -&gt; unit</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map2 : <code class="type">f:('a -&gt; 'b -&gt; 'c) -&gt; 'a list -&gt; 'b list -&gt; 'c list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rev_map2 : <code class="type">f:('a -&gt; 'b -&gt; 'c) -&gt; 'a list -&gt; 'b list -&gt; 'c list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold_left2 : <code class="type">f:('a -&gt; 'b -&gt; 'c -&gt; 'a) -&gt; init:'a -&gt; 'b list -&gt; 'c list -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold_right2 : <code class="type">f:('a -&gt; 'b -&gt; 'c -&gt; 'c) -&gt; 'a list -&gt; 'b list -&gt; init:'c -&gt; 'c</code></span></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">List scanning</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> for_all : <code class="type">f:('a -&gt; bool) -&gt; 'a list -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> exists : <code class="type">f:('a -&gt; bool) -&gt; 'a list -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> for_all2 : <code class="type">f:('a -&gt; 'b -&gt; bool) -&gt; 'a list -&gt; 'b list -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> exists2 : <code class="type">f:('a -&gt; 'b -&gt; bool) -&gt; 'a list -&gt; 'b list -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem : <code class="type">'a -&gt; set:'a list -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> memq : <code class="type">'a -&gt; set:'a list -&gt; bool</code></span></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">List searching</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> find : <code class="type">f:('a -&gt; bool) -&gt; 'a list -&gt; 'a</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> filter : <code class="type">f:('a -&gt; bool) -&gt; 'a list -&gt; 'a list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_all : <code class="type">f:('a -&gt; bool) -&gt; 'a list -&gt; 'a list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> partition : <code class="type">f:('a -&gt; bool) -&gt; 'a list -&gt; 'a list * 'a list</code></span></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Association lists</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> assoc : <code class="type">'a -&gt; ('a * 'b) list -&gt; 'b</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> assq : <code class="type">'a -&gt; ('a * 'b) list -&gt; 'b</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem_assoc : <code class="type">'a -&gt; map:('a * 'b) list -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem_assq : <code class="type">'a -&gt; map:('a * 'b) list -&gt; bool</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove_assoc : <code class="type">'a -&gt; ('a * 'b) list -&gt; ('a * 'b) list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove_assq : <code class="type">'a -&gt; ('a * 'b) list -&gt; ('a * 'b) list</code></span></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Lists of pairs</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> split : <code class="type">('a * 'b) list -&gt; 'a list * 'b list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> combine : <code class="type">'a list -&gt; 'b list -&gt; ('a * 'b) list</code></span></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Sorting</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> sort : <code class="type">cmp:('a -&gt; 'a -&gt; int) -&gt; 'a list -&gt; 'a list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stable_sort : <code class="type">cmp:('a -&gt; 'a -&gt; int) -&gt; 'a list -&gt; 'a list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fast_sort : <code class="type">cmp:('a -&gt; 'a -&gt; int) -&gt; 'a list -&gt; 'a list</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> merge : <code class="type">cmp:('a -&gt; 'a -&gt; int) -&gt; 'a list -&gt; 'a list -&gt; 'a list</code></span></pre>
+      
+    

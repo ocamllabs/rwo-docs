@@ -1,0 +1,7 @@
+<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pp : <code class="type"><a href="../stdlib/Format.html#TYPEformatter">Format.formatter</a> -&gt; <a href="Pretty_printer.S.html#TYPEt">t</a> -&gt; unit</code></span></pre>
+      
+    

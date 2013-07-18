@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<title>Bigarray</title>
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
+<script type="text/javascript" src="doc_loader.js"> </script>
+</head>
+<body>
+
+<h1>Module Bigarray</h1>
+<pre><span class="keyword">module</span> Bigarray</pre><div class="info">Large, multi-dimensional, numerical arrays.<br/>   This module implements multi-dimensional arrays of integers and
+   floating-point numbers, thereafter referred to as ``big arrays''.
+   The implementation allows efficient sharing of large numerical
+   arrays between OCaml code and C or Fortran numerical libraries.<br/>   Concerning the naming conventions, users of this module are encouraged
+   to do <code class="code">open Bigarray</code> in their source, then refer to array types and
+   operations via short dot notation, e.g. <code class="code">Array1.t</code> or <code class="code">Array2.sub</code>.<br/>   Big arrays support all the OCaml ad-hoc polymorphic operations:<ul><li>comparisons (<code class="code">=</code>, <code class="code">&lt;&gt;</code>, <code class="code">&lt;=</code>, etc, as well as TODO reference : Pervasives.compare);</li><li>hashing (module <code class="code">Hash</code>);</li><li>and structured input-output (the functions from the
+     TODO reference : Marshal module, as well as TODO reference : Pervasives.output_value
+     and TODO reference : Pervasives.input_value).
+</li></ul></div>
+<hr/>
+<div file="Bigarray.html.contents" class="content_to_load"> </div>
+</body>
+</html>

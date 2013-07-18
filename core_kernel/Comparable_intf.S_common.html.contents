@@ -1,0 +1,39 @@
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Comparable_intf.Polymorphic_compare.html">Polymorphic_compare</a></code></pre>
+	<div class="content">
+	<div file="Comparable_intf.Polymorphic_compare.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> ascending : <code class="type">t -&gt; t -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> descending : <code class="type">t -&gt; t -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> between : <code class="type">t -&gt; low:t -&gt; high:t -&gt; bool</code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Comparable_intf.S_common.Replace_polymorphic_compare.html">Replace_polymorphic_compare</a> : <code class="code">sig</code> <a href="Comparable_intf.S_common.Replace_polymorphic_compare.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Comparable_intf.S_common.Replace_polymorphic_compare.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+<pre><span id="TYPEcomparator"><span class="keyword">type</span> comparator </span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> comparator : <code class="type">(t, <a href="Comparable_intf.S_common.html#TYPEcomparator">comparator</a>) <a href="Comparator.html#TYPEt">Comparator.t</a></code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">-</button>
+	<pre><span class="keyword">include</span> <code class="code"><a href="Comparable_intf.Validate.html">Validate</a></code> with type <a href="Comparable_intf.Validate.html#TYPEt">t</a> = t</pre>
+	<div class="content">
+	<div file="Comparable_intf.Validate.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>

@@ -1,0 +1,97 @@
+<pre><code><span id="TYPEt"><span class="keyword">type</span> t </span>= {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.sl">sl</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.local_address">local_address</span> :<code class="type"><a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.local_port">local_port</span> :<code class="type"><a href="Extended_unix.Inet_port.html#TYPEt">Extended_unix.Inet_port.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.remote_address">remote_address</span> :<code class="type"><a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.remote_port">remote_port</span> :<code class="type"><a href="Extended_unix.Inet_port.html#TYPEt">Extended_unix.Inet_port.t</a> option</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.state">state</span> :<code class="type"><a href="Procfs.Net.Tcp_state.html#TYPEt">Tcp_state.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.tx_queue">tx_queue</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.rx_queue">rx_queue</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.tr">tr</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.tm_when">tm_when</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.retrnsmt">retrnsmt</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.uid">uid</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.timeout">timeout</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.inode">inode</span> :<code class="type"><a href="Procfs.Process.Inode.html#TYPEt">Process.Inode.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.rest">rest</span> :<code class="type">string</code>;</code></td>
+	  </tr></table>}
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rest : <code class="type"><a href="Procfs.Net.Tcp.html#TYPEt">t</a> -&gt; string</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> inode : <code class="type"><a href="Procfs.Net.Tcp.html#TYPEt">t</a> -&gt; <a href="Procfs.Process.Inode.html#TYPEt">Process.Inode.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> timeout : <code class="type"><a href="Procfs.Net.Tcp.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> uid : <code class="type"><a href="Procfs.Net.Tcp.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> retrnsmt : <code class="type"><a href="Procfs.Net.Tcp.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> tm_when : <code class="type"><a href="Procfs.Net.Tcp.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> tr : <code class="type"><a href="Procfs.Net.Tcp.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rx_queue : <code class="type"><a href="Procfs.Net.Tcp.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> tx_queue : <code class="type"><a href="Procfs.Net.Tcp.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> state : <code class="type"><a href="Procfs.Net.Tcp.html#TYPEt">t</a> -&gt; <a href="Procfs.Net.Tcp_state.html#TYPEt">Tcp_state.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remote_port : <code class="type"><a href="Procfs.Net.Tcp.html#TYPEt">t</a> -&gt; <a href="Extended_unix.Inet_port.html#TYPEt">Extended_unix.Inet_port.t</a> option</code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remote_address : <code class="type"><a href="Procfs.Net.Tcp.html#TYPEt">t</a> -&gt; <a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> local_port : <code class="type"><a href="Procfs.Net.Tcp.html#TYPEt">t</a> -&gt; <a href="Extended_unix.Inet_port.html#TYPEt">Extended_unix.Inet_port.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> local_address : <code class="type"><a href="Procfs.Net.Tcp.html#TYPEt">t</a> -&gt; <a href="../core/Std.Unix.Inet_addr.html#TYPEt">Core.Std.Unix.Inet_addr.t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sl : <code class="type"><a href="Procfs.Net.Tcp.html#TYPEt">t</a> -&gt; int</code></span></pre>
+      
+    
+<div class="expanding_content">
+	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Procfs.Net.Tcp.Fields.html">Fields</a> : <code class="code">sig</code> <a href="Procfs.Net.Tcp.Fields.html">..</a> <code class="code">end</code></pre>
+	<div class="content" style="display:none">
+	<div file="Procfs.Net.Tcp.Fields.html.contents" class="content_to_load"> </div>
+	</div>
+  </div>
+ 
+      <pre><span><span class="keyword">val</span> of_line : <code class="type">string -&gt; <a href="Procfs.Net.Tcp.html#TYPEt">t</a> option</code></span></pre>
+      <div class="info">These don't do any IO and should be async-ok</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> of_line_exn : <code class="type">string -&gt; <a href="Procfs.Net.Tcp.html#TYPEt">t</a></code></span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> load_exn : <code class="type">unit -&gt; <a href="Procfs.Net.Tcp.html#TYPEt">t</a> list</code></span></pre>
+      <div class="info">This does IO and is not async-ok.</div>
+    
