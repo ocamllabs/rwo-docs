@@ -1,0 +1,71 @@
+<div class="ocaml_toplevel_module">
+<div class="info">Operations on file names.</div>
+ 
+      <pre><span><span class="keyword">val</span> current_dir_name</span> : <code class="type">string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> parent_dir_name</span> : <code class="type">string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> dir_sep</span> : <code class="type">string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> concat</span> : <code class="type">string -&gt; string -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_relative</span> : <code class="type">string -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_implicit</span> : <code class="type">string -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> check_suffix</span> : <code class="type">string -&gt; string -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> chop_suffix</span> : <code class="type">string -&gt; string -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> chop_extension</span> : <code class="type">string -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> basename</span> : <code class="type">string -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> dirname</span> : <code class="type">string -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> temp_file</span> : <code class="type">?temp_dir:string -&gt; string -&gt; string -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> open_temp_file</span> : <code class="type">?mode:<a href="?package=stdlib&amp;module=Pervasives&amp;type=open_flag">open_flag</a> list -&gt;
+?temp_dir:string -&gt; string -&gt; string -&gt; string * <a href="?package=stdlib&amp;module=Pervasives&amp;type=out_channel">out_channel</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get_temp_dir_name</span> : <code class="type">unit -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set_temp_dir_name</span> : <code class="type">string -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> temp_dir_name</span> : <code class="type">string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> quote</span> : <code class="type">string -&gt; string</code></pre>
+      
+    </div>

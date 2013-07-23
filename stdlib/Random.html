@@ -1,0 +1,109 @@
+<div class="ocaml_toplevel_module">
+<div class="info">Pseudo-random number generators (PRNG).</div>
+<br/><br/><h6 id="6_TITLE">Basic functions</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> init</span> : <code class="type">int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> full_init</span> : <code class="type">int array -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> self_init</span> : <code class="type">unit -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bits</span> : <code class="type">unit -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> int</span> : <code class="type">int -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> int32</span> : <code class="type"><a href="?package=stdlib&amp;module=Int32&amp;type=t">Int32.t</a> -&gt; <a href="?package=stdlib&amp;module=Int32&amp;type=t">Int32.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> nativeint</span> : <code class="type"><a href="?package=stdlib&amp;module=Nativeint&amp;type=t">Nativeint.t</a> -&gt; <a href="?package=stdlib&amp;module=Nativeint&amp;type=t">Nativeint.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> int64</span> : <code class="type"><a href="?package=stdlib&amp;module=Int64&amp;type=t">Int64.t</a> -&gt; <a href="?package=stdlib&amp;module=Int64&amp;type=t">Int64.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> float</span> : <code class="type">float -&gt; float</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bool</span> : <code class="type">unit -&gt; bool</code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Advanced functions</h6><br/> <br/>
+	  
+<br/>The functions from module <code class="code">State</code> manipulate the current state
+    of the random generator explicitly.
+    This allows using one or several deterministic PRNGs,
+    even in a multi-threaded program, without interference from
+    other parts of the program.<br/>
+	  
+<div class="ocaml_module sig" name="State">
+		<pre><span class="keyword">module</span> <a href="?package=stdlib&amp;module=Random.State">State</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> make</span> : <code class="type">int array -&gt; <a href="?package=stdlib&amp;module=Random.State&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> make_self_init</span> : <code class="type">unit -&gt; <a href="?package=stdlib&amp;module=Random.State&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> copy</span> : <code class="type"><a href="?package=stdlib&amp;module=Random.State&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=Random.State&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bits</span> : <code class="type"><a href="?package=stdlib&amp;module=Random.State&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> int</span> : <code class="type"><a href="?package=stdlib&amp;module=Random.State&amp;type=t">t</a> -&gt; int -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> int32</span> : <code class="type"><a href="?package=stdlib&amp;module=Random.State&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=Int32&amp;type=t">Int32.t</a> -&gt; <a href="?package=stdlib&amp;module=Int32&amp;type=t">Int32.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> nativeint</span> : <code class="type"><a href="?package=stdlib&amp;module=Random.State&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=Nativeint&amp;type=t">Nativeint.t</a> -&gt; <a href="?package=stdlib&amp;module=Nativeint&amp;type=t">Nativeint.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> int64</span> : <code class="type"><a href="?package=stdlib&amp;module=Random.State&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=Int64&amp;type=t">Int64.t</a> -&gt; <a href="?package=stdlib&amp;module=Int64&amp;type=t">Int64.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> float</span> : <code class="type"><a href="?package=stdlib&amp;module=Random.State&amp;type=t">t</a> -&gt; float -&gt; float</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bool</span> : <code class="type"><a href="?package=stdlib&amp;module=Random.State&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+		</div>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> get_state</span> : <code class="type">unit -&gt; <a href="?package=stdlib&amp;module=Random.State&amp;type=t">State.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set_state</span> : <code class="type"><a href="?package=stdlib&amp;module=Random.State&amp;type=t">State.t</a> -&gt; unit</code></pre>
+      
+    </div>

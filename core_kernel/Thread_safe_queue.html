@@ -1,0 +1,33 @@
+<div class="ocaml_toplevel_module">
+
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">unit -&gt; 'a <a href="?package=core_kernel&amp;module=Thread_safe_queue&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create'</span> : <code class="type">unit -&gt; (unit -&gt; 'a option) * ('a -&gt; unit)</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> dequeue</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Thread_safe_queue&amp;type=t">t</a> -&gt; 'a option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> dequeue_until_empty</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Thread_safe_queue&amp;type=t">t</a> -&gt; ('a -&gt; unit) -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> enqueue</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Thread_safe_queue&amp;type=t">t</a> -&gt; 'a -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> length</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Thread_safe_queue&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; 'a <a href="?package=core_kernel&amp;module=Thread_safe_queue&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    </div>

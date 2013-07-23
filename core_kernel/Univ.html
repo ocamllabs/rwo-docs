@@ -1,0 +1,72 @@
+<div class="ocaml_toplevel_module">
+<div class="info">An extensible &quot;universal&quot; variant type, that can be extended by adding new
+    constructors with arguments of arbitrary type.</div>
+<div class="ocaml_module sig" name="Constr">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Univ.Constr">Constr</a> : <code class="code">sig</code> .. <code class="code">end</code></pre><div class="info">A <code class="code">Constr.t</code> represents a single constructor in the extensible variant type.  On
+    creation, one must provide a name for the constructor and a sexp-converter for
+    serializing the argument to the variant.  Both the name and the sexp-converter are
+    used for display purposes only.</div>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">string -&gt; ('a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; 'a <a href="?package=core_kernel&amp;module=Univ.Constr&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">create name to_sexp</code>
+      if the type <code class="code">'a</code> doesn't support sexp conversion, then a good practice
+      is to use <code class="code">sexp_of_opaque</code> as the converter.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> name</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Univ.Constr&amp;type=t">t</a> -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> hash</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Univ.Constr&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; 'a <a href="?package=core_kernel&amp;module=Univ.Constr&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+<br/><code class="code">create name to_sexp</code>
+      if the type <code class="code">'a</code> doesn't support sexp conversion, then a good practice
+      is to use <code class="code">sexp_of_opaque</code> as the converter.<br/>
+	  
+		</div>
+</div>
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> constr_name</span> : <code class="type"><a href="?package=core_kernel&amp;module=Univ&amp;type=t">t</a> -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Univ.Constr&amp;type=t">Constr.t</a> -&gt; 'a -&gt; <a href="?package=core_kernel&amp;module=Univ&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> does_match</span> : <code class="type"><a href="?package=core_kernel&amp;module=Univ&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Univ.Constr&amp;type=t">Constr.t</a> -&gt; bool</code></pre>
+      <div class="info"><code class="code">does_match t constr</code> returns <code class="code">true</code> iff <code class="code">t</code> was created by <code class="code">create constr v</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> match_</span> : <code class="type"><a href="?package=core_kernel&amp;module=Univ&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Univ.Constr&amp;type=t">Constr.t</a> -&gt; 'a option</code></pre>
+      <div class="info"><code class="code">match_ t constr</code> returns <code class="code">Some v</code> if <code class="code">t</code> was created by <code class="code">create constr v</code>, and
+    returns <code class="code">None</code> otherwise.<br/>    <code class="code">match_exn t constr</code> returns <code class="code">v</code> if <code class="code">t</code> was created by <code class="code">create constr v</code>, and raises
+    otherwise.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> match_exn</span> : <code class="type"><a href="?package=core_kernel&amp;module=Univ&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Univ.Constr&amp;type=t">Constr.t</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Univ&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+<br/><code class="code">does_match t constr</code> returns <code class="code">true</code> iff <code class="code">t</code> was created by <code class="code">create constr v</code>.<br/>
+	  
+<br/><code class="code">match_ t constr</code> returns <code class="code">Some v</code> if <code class="code">t</code> was created by <code class="code">create constr v</code>, and
+    returns <code class="code">None</code> otherwise.<br/>    <code class="code">match_exn t constr</code> returns <code class="code">v</code> if <code class="code">t</code> was created by <code class="code">create constr v</code>, and raises
+    otherwise.<br/>
+	  </div>

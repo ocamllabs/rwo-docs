@@ -1,0 +1,42 @@
+<div class="ocaml_toplevel_module">
+<div class="info">An implementation of compressed integer sets using lists of integer ranges. Operations
+    such as adding and membership are O(n) where n is the number of contigous ranges in
+    the set. For data that is mostly serial, n should remain very small.<br/>    Note that when n gets very large, in addition to poor performance, this behavior may
+    throw exceptions since some of the code is not tail-recursive.</div>
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> empty</span> : <code class="type"><a href="?package=core_kernel&amp;module=Int_set&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_string</span> : <code class="type"><a href="?package=core_kernel&amp;module=Int_set&amp;type=t">t</a> -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add_range</span> : <code class="type"><a href="?package=core_kernel&amp;module=Int_set&amp;type=t">t</a> -&gt; int -&gt; int -&gt; <a href="?package=core_kernel&amp;module=Int_set&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">add_range t i j</code> add all the numbers between <code class="code">i</code> and <code class="code">j</code> (inclusive) to the set. Note
+    that it doesn't matter which order <code class="code">i</code> and <code class="code">j</code> are specified in, the effect is the
+    same.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> add</span> : <code class="type"><a href="?package=core_kernel&amp;module=Int_set&amp;type=t">t</a> -&gt; int -&gt; <a href="?package=core_kernel&amp;module=Int_set&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">add t i</code> add <code class="code">i</code> to the set</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> mem</span> : <code class="type"><a href="?package=core_kernel&amp;module=Int_set&amp;type=t">t</a> -&gt; int -&gt; bool</code></pre>
+      <div class="info"><code class="code">mem t i</code> test whether <code class="code">i</code> is a member of the set</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> ranges</span> : <code class="type"><a href="?package=core_kernel&amp;module=Int_set&amp;type=t">t</a> -&gt; (int * int) list</code></pre>
+      <div class="info"><code class="code">ranges t</code> return a list of all ranges that make up the set</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> max</span> : <code class="type"><a href="?package=core_kernel&amp;module=Int_set&amp;type=t">t</a> -&gt; int option</code></pre>
+      <div class="info"><code class="code">max t</code> the biggest number in the set (if it exists)</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> min</span> : <code class="type"><a href="?package=core_kernel&amp;module=Int_set&amp;type=t">t</a> -&gt; int option</code></pre>
+      <div class="info"><code class="code">min t</code> the smallest number in the set (if it exists)</div>
+    </div>

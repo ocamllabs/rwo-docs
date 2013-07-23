@@ -1,0 +1,38 @@
+<div class="ocaml_toplevel_module">
+<div class="info">A list of pretty printers for various types, for use in toplevels.<br/>    <code class="code">Pretty_printer</code> has a <code class="code">string list ref</code> with the names of <code class="code">pp</code> functions matching the
+    interface:<br/>    <pre class="codepre"><code class="code">
+      val pp : Format.formatter -&gt; t -&gt; unit
+    </code></pre><br/>    The names are actually OCaml identifier names, e.g. &quot;Core.Date.pp&quot;.  Code for building
+    toplevels (this code is not in Core) evaluates the strings to yield the pretty
+    printers and register them with OCaml runtime.</div>
+ 
+      <pre><span><span class="keyword">val</span> all</span> : <code class="type">unit -&gt; string list</code></pre>
+      <div class="info"><code class="code">all ()</code> returns all pretty printers that have been <code class="code">register</code>ed.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> register</span> : <code class="type">string -&gt; unit</code></pre>
+      <div class="info"><code class="code">register name</code> adds <code class="code">name</code> to the list of pretty printers.</div>
+    
+<div class="ocaml_module sig" name="S">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Pretty_printer.S">S</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="info">Modules that provide a pretty printer will match <code class="code">S</code>.</div>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pp</span> : <code class="type"><a href="?package=stdlib&amp;module=Format&amp;type=formatter">Format.formatter</a> -&gt; <a href="?package=core_kernel&amp;module=Pretty_printer.S&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module ident" name="Register" path="?package=core_kernel&amp;amp;module=Pretty_printer.S">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Pretty_printer.Register">Register</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="code">sig</code> .. <code class="code">end</code><code class="code">) -&gt; </code><code class="code"><a href="?package=core_kernel&amp;module=Pretty_printer.S">S</a></code> with type <a href="?package=core_kernel&amp;module=Pretty_printer.S&amp;type=t">t</a> = M.t</div></pre><div class="info"><code class="code">Register</code> builds a <code class="code">pp</code> function from a <code class="code">to_string</code> function, and adds the
+    <code class="code">module_name ^ &quot;.pp&quot;</code> to the list of pretty printers.  The idea is to statically
+    guarantee that one has the desired <code class="code">pp</code> function at the same point where the <code class="code">name</code> is
+    added.</div>
+</div>
+<div class="ocaml_module ident" name="Register_pp" path="?package=core_kernel&amp;amp;module=Pretty_printer.S">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Pretty_printer.Register_pp">Register_pp</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="code">sig</code> .. <code class="code">end</code><code class="code">) -&gt; </code><code class="code"><a href="?package=core_kernel&amp;module=Pretty_printer.S">S</a></code> with type <a href="?package=core_kernel&amp;module=Pretty_printer.S&amp;type=t">t</a> = M.t</div></pre><div class="info"><code class="code">Register_pp</code> is like <code class="code">Register</code>, but allows a custom <code class="code">pp</code> function rather than using
+    <code class="code">to_string</code>.</div>
+</div></div>

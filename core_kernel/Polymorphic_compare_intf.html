@@ -1,0 +1,69 @@
+<div class="ocaml_toplevel_module">
+
+ 
+      <pre><span><span class="keyword">val</span> __pa_ounit_275876e34cf609db118f3d84b799a790</span> : <code class="type">string</code></pre>
+      
+    
+
+<br/>Interfaces used for hiding and replacing polymorphic compare.  Including a module with
+    interface <code class="code">S</code> should hide the majority of functions that use polymorphic compare.<br/>
+	  
+<div class="ocaml_module sig" name="Infix">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Polymorphic_compare_intf.Infix">Infix</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> &gt;=</span> : <code class="type"><a href="?package=core_kernel&amp;module=Polymorphic_compare_intf.Infix&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Polymorphic_compare_intf.Infix&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> &lt;=</span> : <code class="type"><a href="?package=core_kernel&amp;module=Polymorphic_compare_intf.Infix&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Polymorphic_compare_intf.Infix&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> =</span> : <code class="type"><a href="?package=core_kernel&amp;module=Polymorphic_compare_intf.Infix&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Polymorphic_compare_intf.Infix&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> &gt;</span> : <code class="type"><a href="?package=core_kernel&amp;module=Polymorphic_compare_intf.Infix&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Polymorphic_compare_intf.Infix&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> &lt;</span> : <code class="type"><a href="?package=core_kernel&amp;module=Polymorphic_compare_intf.Infix&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Polymorphic_compare_intf.Infix&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> &lt;&gt;</span> : <code class="type"><a href="?package=core_kernel&amp;module=Polymorphic_compare_intf.Infix&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Polymorphic_compare_intf.Infix&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="S">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Polymorphic_compare_intf.S">S</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Polymorphic_compare_intf.Infix" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Polymorphic_compare_intf.Infix">Infix</a></code></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> equal</span> : <code class="type"><a href="?package=core_kernel&amp;module=Polymorphic_compare_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Polymorphic_compare_intf.S&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> compare</span> : <code class="type"><a href="?package=core_kernel&amp;module=Polymorphic_compare_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Polymorphic_compare_intf.S&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> min</span> : <code class="type"><a href="?package=core_kernel&amp;module=Polymorphic_compare_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Polymorphic_compare_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Polymorphic_compare_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> max</span> : <code class="type"><a href="?package=core_kernel&amp;module=Polymorphic_compare_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Polymorphic_compare_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Polymorphic_compare_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+		</div>
+</div>
+</div>

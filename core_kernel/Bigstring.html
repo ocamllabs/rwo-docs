@@ -1,0 +1,363 @@
+<div class="ocaml_toplevel_module">
+<div class="info">String type based on <code class="code">Bigarray</code>, for use in I/O and C-bindings</div>
+<br/><br/><h6 id="6_TITLE">Types and exceptions</h6><br/> <br/>
+	  
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> = <code class="type">(char, <a href="?package=stdlib&amp;module=Bigarray&amp;type=int8_unsigned_elt">Bigarray.int8_unsigned_elt</a>, <a href="?package=stdlib&amp;module=Bigarray&amp;type=c_layout">Bigarray.c_layout</a>) <a href="?package=stdlib&amp;module=Bigarray.Array1&amp;type=t">Bigarray.Array1.t</a></code> </pre>
+      <div class="info">Type of bigstrings</div>
+    
+<br/><br/><h6 id="6_TITLE">Creation and string conversion</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">?max_mem_waiting_gc:<a href="?package=core_kernel&amp;module=Byte_units&amp;type=t">Byte_units.t</a> -&gt; int -&gt; <a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> init</span> : <code class="type">int -&gt; f:(int -&gt; char) -&gt; <a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">init n ~f</code> creates a bigstring <code class="code">t</code> of length <code class="code">n</code>, with <code class="code">t.{i} = f i</code> </div>
+    
+ 
+      <pre><span><span class="keyword">val</span> of_string</span> : <code class="type">?pos:int -&gt; ?len:int -&gt; string -&gt; <a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_string</span> : <code class="type">?pos:int -&gt; ?len:int -&gt; <a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> -&gt; string</code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Checking</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> check_args</span> : <code class="type">loc:string -&gt; pos:int -&gt; len:int -&gt; <a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get_opt_len</span> : <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> -&gt; pos:int -&gt; int option -&gt; int</code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Accessors</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> length</span> : <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sub</span> : <code class="type">?pos:int -&gt; ?len:int -&gt; <a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sub_shared</span> : <code class="type">?pos:int -&gt; ?len:int -&gt; <a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get</span> : <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> -&gt; int -&gt; char</code></pre>
+      <div class="info"><code class="code">get t pos</code> returns the character at <code class="code">pos</code> </div>
+    
+ 
+      <pre><span><span class="keyword">val</span> set</span> : <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> -&gt; int -&gt; char -&gt; unit</code></pre>
+      <div class="info"><code class="code">set t pos</code> sets the character at <code class="code">pos</code> </div>
+    
+ 
+      <pre><span><span class="keyword">val</span> is_mmapped</span> : <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Blitting</h6><br/> <br/>
+	  
+<br/><code class="code">blit ~src ?src_pos ?src_len ~dst ?dst_pos ()</code> blits <code class="code">src_len</code> characters
+    from <code class="code">src</code> starting at position <code class="code">src_pos</code> to <code class="code">dst</code> at position <code class="code">dst_pos</code>.<br/> <b>Raises</b> <code>Invalid_argument</code> if the designated ranges are out of bounds.<br/><br/>
+	  
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Blit.S" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Blit.S">Blit.S</a></code> with type t = <a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a></pre>
+</div>
+<div class="ocaml_module ident" name="To_string" path="?package=core_kernel&amp;amp;module=Blit.S_distinct">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Bigstring.To_string">To_string</a> : <code class="code"><a href="?package=core_kernel&amp;module=Blit.S_distinct">Blit.S_distinct</a></code> with type src = <a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> with type dst = string</pre>
+</div>
+<div class="ocaml_module ident" name="From_string" path="?package=core_kernel&amp;amp;module=Blit.S_distinct">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Bigstring.From_string">From_string</a> : <code class="code"><a href="?package=core_kernel&amp;module=Blit.S_distinct">Blit.S_distinct</a></code> with type src = string with type dst = <a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a></pre>
+</div>
+<br/><br/><h6 id="6_TITLE">Memory mapping</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> map_file</span> : <code class="type">shared:bool -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">Unix.file_descr</a> -&gt; int -&gt; <a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a></code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Search</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> find</span> : <code class="type">?pos:int -&gt; ?len:int -&gt; char -&gt; <a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> -&gt; int option</code></pre>
+      <div class="info"><code class="code">find ?pos ?len char t</code> returns <code class="code">Some i</code> for the smallest <code class="code">i &gt;= pos</code> such that
+    <code class="code">t.{i} = char</code>, or <code class="code">None</code> if there is no such <code class="code">i</code>.<br/> <div class="parameters"><div class="param_info"><code class="code">pos</code> : default = 0</div><div class="param_info"><code class="code">len</code> : default = <code class="code">length bstr - pos</code> </div></div></div>
+    
+<br/><br/><h6 id="6_TITLE">Destruction</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> unsafe_destroy</span> : <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> -&gt; unit</code></pre>
+      <div class="info"><code class="code">unsafe_destroy bstr</code> destroys the bigstring by deallocating its associated data or,
+    if memory-mapped, unmapping the corresponding file, and setting all dimensions to
+    zero.  This effectively frees the associated memory or address-space resources
+    instantaneously.  This feature helps working around a bug in the current OCaml
+    runtime, which does not correctly estimate how aggressively to reclaim such resources.<br/>    This operation is safe unless you have passed the bigstring to another thread that is
+    performing operations on it at the same time.  Access to the bigstring after this
+    operation will yield array bounds exceptions.<br/> <b>Raises</b> <code>Failure</code> if the bigstring has already been deallocated (or deemed &quot;external&quot;,
+    which is treated equivalently), or if it has proxies, i.e. other bigstrings referring
+    to the same data.<br/></div>
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_get_int8</span> : <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> -&gt; pos:int -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_set_int8</span> : <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> -&gt; pos:int -&gt; int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_get_uint8</span> : <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> -&gt; pos:int -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_set_uint8</span> : <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> -&gt; pos:int -&gt; int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_get_int16_le</span> : <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> -&gt; pos:int -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_get_int16_be</span> : <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> -&gt; pos:int -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_set_int16_le</span> : <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> -&gt; pos:int -&gt; int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_set_int16_be</span> : <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> -&gt; pos:int -&gt; int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_get_uint16_le</span> : <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> -&gt; pos:int -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_get_uint16_be</span> : <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> -&gt; pos:int -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_set_uint16_le</span> : <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> -&gt; pos:int -&gt; int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_set_uint16_be</span> : <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> -&gt; pos:int -&gt; int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_get_int32_le</span> : <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> -&gt; pos:int -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_get_int32_be</span> : <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> -&gt; pos:int -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_set_int32_le</span> : <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> -&gt; pos:int -&gt; int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_set_int32_be</span> : <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> -&gt; pos:int -&gt; int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_get_uint32_le</span> : <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> -&gt; pos:int -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_get_uint32_be</span> : <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> -&gt; pos:int -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_set_uint32_le</span> : <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> -&gt; pos:int -&gt; int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_set_uint32_be</span> : <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> -&gt; pos:int -&gt; int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_get_int64_le_exn</span> : <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> -&gt; pos:int -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_get_int64_be_exn</span> : <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> -&gt; pos:int -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_set_int64_le</span> : <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> -&gt; pos:int -&gt; int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_set_int64_be</span> : <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> -&gt; pos:int -&gt; int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_get_int32_t_le</span> : <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> -&gt; pos:int -&gt; <a href="?package=stdlib&amp;module=Int32&amp;type=t">Int32.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_get_int32_t_be</span> : <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> -&gt; pos:int -&gt; <a href="?package=stdlib&amp;module=Int32&amp;type=t">Int32.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_set_int32_t_le</span> : <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> -&gt; pos:int -&gt; <a href="?package=stdlib&amp;module=Int32&amp;type=t">Int32.t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_set_int32_t_be</span> : <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> -&gt; pos:int -&gt; <a href="?package=stdlib&amp;module=Int32&amp;type=t">Int32.t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_get_int64_t_le</span> : <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> -&gt; pos:int -&gt; <a href="?package=stdlib&amp;module=Int64&amp;type=t">Int64.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_get_int64_t_be</span> : <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> -&gt; pos:int -&gt; <a href="?package=stdlib&amp;module=Int64&amp;type=t">Int64.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_set_int64_t_le</span> : <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> -&gt; pos:int -&gt; <a href="?package=stdlib&amp;module=Int64&amp;type=t">Int64.t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_set_int64_t_be</span> : <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> -&gt; pos:int -&gt; <a href="?package=stdlib&amp;module=Int64&amp;type=t">Int64.t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get_padded_fixed_string</span> : <code class="type">padding:char -&gt; <a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> -&gt; pos:int -&gt; len:int -&gt; unit -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set_padded_fixed_string</span> : <code class="type">padding:char -&gt; <a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> -&gt; pos:int -&gt; len:int -&gt; string -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Read_ml&amp;type=reader">Bin_prot.Read_ml.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t_</span> : <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t__</span> : <code class="type">(int -&gt; <a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a>) <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Size&amp;type=sizer">Bin_prot.Size.sizer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Bin_prot.Write_ml.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_</span> : <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Creation and string conversion</h6><br/> <br/>
+	  
+<br/><code class="code">create length</code>
+<div class="parameters"><div class="param_info"><code class="code">max_mem_waiting_gc</code> : default = 256 M in OCaml &lt;= 3.12, 1 G otherwise. As
+    the total allocation of calls to <code class="code">create</code> approach <code class="code">max_mem_waiting_gc</code>,
+    the pressure in the garbage collector to be more agressive will increase.</div></div><b>Returns</b> a new bigstring having <code class="code">length</code>.
+    Content is undefined.<br/>
+	  
+<br/><code class="code">init n ~f</code> creates a bigstring <code class="code">t</code> of length <code class="code">n</code>, with <code class="code">t.{i} = f i</code> <br/>
+	  
+<br/><code class="code">of_string ?pos ?len str</code> <div class="parameters"><div class="param_info"><code class="code">pos</code> : default = 0</div><div class="param_info"><code class="code">len</code> : default = <code class="code">String.length str - pos</code>
+</div></div><b>Returns</b> a new bigstring that is equivalent
+    to the substring of length <code class="code">len</code> in <code class="code">str</code> starting at position <code class="code">pos</code>.<br/> <br/>
+	  
+<br/><code class="code">to_string ?pos ?len bstr</code> <div class="parameters"><div class="param_info"><code class="code">pos</code> : default = 0</div><div class="param_info"><code class="code">len</code> : default = <code class="code">length bstr - pos</code><br/> </div></div><b>Raises</b> <code>Invalid_argument</code> if the string would exceed runtime limits.<br/><b>Returns</b> a new string that is equivalent
+    to the substring of length <code class="code">len</code> in <code class="code">bstr</code> starting at position <code class="code">pos</code>.<br/> <br/>
+	  
+<br/><br/><h6 id="6_TITLE">Checking</h6><br/> <br/>
+	  
+<br/><code class="code">check_args ~loc ~pos ~len bstr</code> checks the position and length
+    arguments <code class="code">pos</code> and <code class="code">len</code> for bigstrings <code class="code">bstr</code>.<b>Raises</b> <code>Invalid_argument</code> if these arguments are illegal for the given
+    bigstring using <code class="code">loc</code> to indicate the calling context.<br/><br/>
+	  
+<br/><code class="code">get_opt_len bstr ~pos opt_len</code> <b>Returns</b> the length of a subbigstring
+    in <code class="code">bstr</code> starting at position <code class="code">pos</code> and given optional length
+    <code class="code">opt_len</code>.  This function does not check the validity of its
+    arguments.  Use TODO reference : check_args for that purpose.<br/>
+	  
+<br/><br/><h6 id="6_TITLE">Accessors</h6><br/> <br/>
+	  
+<br/><code class="code">length bstr</code> <b>Returns</b> the length of bigstring <code class="code">bstr</code>.<br/>
+	  
+<br/><code class="code">sub ?pos ?len bstr</code> <div class="parameters"><div class="param_info"><code class="code">pos</code> : default = 0</div><div class="param_info"><code class="code">len</code> : default = <code class="code">Bigstring.length bstr - pos</code>
+</div></div><b>Returns</b> the sub-bigstring in <code class="code">bstr</code> that starts at
+    position <code class="code">pos</code> and has length <code class="code">len</code>.  The sub-bigstring is a unique copy
+    of the memory region, i.e. modifying it will not modify the original
+    bigstring.  Note that this is different than the behavior of the
+    standard OCaml Array1.sub, which shares the memory.<br/> <br/>
+	  
+<br/><code class="code">sub_shared ?pos ?len bstr</code> <div class="parameters"><div class="param_info"><code class="code">pos</code> : default = 0</div><div class="param_info"><code class="code">len</code> : default = <code class="code">Bigstring.length bstr - pos</code>
+</div></div><b>Returns</b> the sub-bigstring in <code class="code">bstr</code>
+    that starts at position <code class="code">pos</code> and has length <code class="code">len</code>.  The sub-bigstring
+    shares the same memory region, i.e. modifying it will modify the
+    original bigstring.  Holding on to the sub-bigstring will also keep
+    the (usually bigger) original one around.<br/> <br/>
+	  
+<br/><code class="code">get t pos</code> returns the character at <code class="code">pos</code> <br/>
+	  
+<br/><code class="code">set t pos</code> sets the character at <code class="code">pos</code> <br/>
+	  
+<br/><code class="code">is_mmapped bstr</code> <b>Returns</b> whether the bigstring <code class="code">bstr</code> is
+    memory-mapped.<br/>
+	  
+<br/><br/><h6 id="6_TITLE">Blitting</h6><br/> <br/>
+	  
+<br/><code class="code">blit ~src ?src_pos ?src_len ~dst ?dst_pos ()</code> blits <code class="code">src_len</code> characters
+    from <code class="code">src</code> starting at position <code class="code">src_pos</code> to <code class="code">dst</code> at position <code class="code">dst_pos</code>.<br/> <b>Raises</b> <code>Invalid_argument</code> if the designated ranges are out of bounds.<br/><br/>
+	  
+<br/><br/><h6 id="6_TITLE">Memory mapping</h6><br/> <br/>
+	  
+<br/><code class="code">map_file shared fd n</code> memory-maps <code class="code">n</code> characters of the data
+    associated with descriptor <code class="code">fd</code> to a bigstring.  Iff <code class="code">shared</code> is
+    <code class="code">true</code>, all changes to the bigstring will be reflected in the file.<br/>
+	  
+<br/><br/><h6 id="6_TITLE">Search</h6><br/> <br/>
+	  
+<br/><code class="code">find ?pos ?len char t</code> returns <code class="code">Some i</code> for the smallest <code class="code">i &gt;= pos</code> such that
+    <code class="code">t.{i} = char</code>, or <code class="code">None</code> if there is no such <code class="code">i</code>.<br/> <div class="parameters"><div class="param_info"><code class="code">pos</code> : default = 0</div><div class="param_info"><code class="code">len</code> : default = <code class="code">length bstr - pos</code> </div></div><br/>
+	  
+<br/><br/><h6 id="6_TITLE">Destruction</h6><br/> <br/>
+	  
+<br/><code class="code">unsafe_destroy bstr</code> destroys the bigstring by deallocating its associated data or,
+    if memory-mapped, unmapping the corresponding file, and setting all dimensions to
+    zero.  This effectively frees the associated memory or address-space resources
+    instantaneously.  This feature helps working around a bug in the current OCaml
+    runtime, which does not correctly estimate how aggressively to reclaim such resources.<br/>    This operation is safe unless you have passed the bigstring to another thread that is
+    performing operations on it at the same time.  Access to the bigstring after this
+    operation will yield array bounds exceptions.<br/> <b>Raises</b> <code>Failure</code> if the bigstring has already been deallocated (or deemed &quot;external&quot;,
+    which is treated equivalently), or if it has proxies, i.e. other bigstrings referring
+    to the same data.<br/><br/>
+	  </div>

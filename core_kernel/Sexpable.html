@@ -1,0 +1,128 @@
+<div class="ocaml_toplevel_module">
+
+ 
+      <pre><span><span class="keyword">val</span> __pa_ounit_275876e34cf609db118f3d84b799a790</span> : <code class="type">string</code></pre>
+      
+    
+
+<div class="ocaml_module sig" name="S">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Sexpable.S">S</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core_kernel&amp;module=Sexpable.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Sexpable.S&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+		</div>
+</div>
+
+<div class="ocaml_module sig" name="S1">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Sexpable.S1">S1</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp</span> : <code class="type">(<a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'a) -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Sexpable.S1&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; 'a <a href="?package=core_kernel&amp;module=Sexpable.S1&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+		</div>
+</div>
+
+<div class="ocaml_module sig" name="S2">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Sexpable.S2">S2</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'b) </code>t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp</span> : <code class="type">(<a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'a) -&gt;
+(<a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'b) -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Sexpable.S2&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt;
+('b -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Sexpable.S2&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+		</div>
+</div>
+
+<div class="ocaml_module sig" name="S3">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Sexpable.S3">S3</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'b, 'c) </code>t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp</span> : <code class="type">(<a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'a) -&gt;
+(<a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'b) -&gt;
+(<a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'c) -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; ('a, 'b, 'c) <a href="?package=core_kernel&amp;module=Sexpable.S3&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt;
+('b -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt;
+('c -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; ('a, 'b, 'c) <a href="?package=core_kernel&amp;module=Sexpable.S3&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+		</div>
+</div>
+
+<div class="ocaml_module sig" name="Of_sexpable">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Sexpable.Of_sexpable">Of_sexpable</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">S</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Sexpable.S">S</a></code><code class="code">) -&gt; </code><div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="code">sig</code> .. <code class="code">end</code><code class="code">) -&gt; </code><code class="code">sig</code> .. <code class="code">end</code></div></div></pre>
+		<div class="ocaml_module_content">
+		       
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; M.t</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type">M.t -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="Of_stringable">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Sexpable.Of_stringable">Of_stringable</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Stringable.S">Stringable.S</a></code><code class="code">) -&gt; </code><code class="code">sig</code> .. <code class="code">end</code></div></pre>
+		<div class="ocaml_module_content">
+		       
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; M.t</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type">M.t -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="To_stringable">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Sexpable.To_stringable">To_stringable</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Sexpable.S">S</a></code><code class="code">) -&gt; </code><code class="code">sig</code> .. <code class="code">end</code></div></pre>
+		<div class="ocaml_module_content">
+		       
+ 
+      <pre><span><span class="keyword">val</span> of_string</span> : <code class="type">string -&gt; M.t</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_string</span> : <code class="type">M.t -&gt; string</code></pre>
+      
+    
+		</div>
+</div>
+</div>

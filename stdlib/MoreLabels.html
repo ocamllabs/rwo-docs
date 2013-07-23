@@ -1,0 +1,485 @@
+<div class="ocaml_toplevel_module">
+<div class="info">Extra labeled libraries.<br/>   This meta-module provides labelized version of the TODO reference : Hashtbl,
+   TODO reference : Map and TODO reference : Set modules.<br/>   They only differ by their labels. They are provided to help
+   porting from previous versions of OCaml.
+   The contents of this module are subject to change.</div>
+<div class="ocaml_module sig" name="Hashtbl">
+		<pre><span class="keyword">module</span> <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl">Hashtbl</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'b) </code>t</span> = <code class="type">('a, 'b) <a href="?package=stdlib&amp;module=Hashtbl&amp;type=t">Hashtbl.t</a></code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">?random:bool -&gt; int -&gt; ('a, 'b) <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> clear</span> : <code class="type">('a, 'b) <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> reset</span> : <code class="type">('a, 'b) <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> copy</span> : <code class="type">('a, 'b) <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl&amp;type=t">t</a> -&gt; ('a, 'b) <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add</span> : <code class="type">('a, 'b) <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl&amp;type=t">t</a> -&gt; key:'a -&gt; data:'b -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find</span> : <code class="type">('a, 'b) <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl&amp;type=t">t</a> -&gt; 'a -&gt; 'b</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_all</span> : <code class="type">('a, 'b) <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl&amp;type=t">t</a> -&gt; 'a -&gt; 'b list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem</span> : <code class="type">('a, 'b) <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl&amp;type=t">t</a> -&gt; 'a -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove</span> : <code class="type">('a, 'b) <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl&amp;type=t">t</a> -&gt; 'a -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> replace</span> : <code class="type">('a, 'b) <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl&amp;type=t">t</a> -&gt; key:'a -&gt; data:'b -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter</span> : <code class="type">f:(key:'a -&gt; data:'b -&gt; unit) -&gt; ('a, 'b) <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold</span> : <code class="type">f:(key:'a -&gt; data:'b -&gt; 'c -&gt; 'c) -&gt; ('a, 'b) <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl&amp;type=t">t</a> -&gt; init:'c -&gt; 'c</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> length</span> : <code class="type">('a, 'b) <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> randomize</span> : <code class="type">unit -&gt; unit</code></pre>
+      
+    
+<pre><span id="TYPEstatistics"><span class="keyword">type</span> statistics</span> = <code class="type"><a href="?package=stdlib&amp;module=Hashtbl&amp;type=statistics">Hashtbl.statistics</a></code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stats</span> : <code class="type">('a, 'b) <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl&amp;type=statistics">statistics</a></code></pre>
+      
+    
+<div class="ocaml_module ident" name="HashedType" path="?package=stdlib&amp;amp;module=Hashtbl.HashedType">
+		    <pre><span class="keyword">module type</span> <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.HashedType">HashedType</a> = <code class="type"><code class="code"><a href="?package=stdlib&amp;module=Hashtbl.HashedType">Hashtbl.HashedType</a></code></code></pre>
+</div>
+<div class="ocaml_module ident" name="SeededHashedType" path="?package=stdlib&amp;amp;module=Hashtbl.SeededHashedType">
+		    <pre><span class="keyword">module type</span> <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.SeededHashedType">SeededHashedType</a> = <code class="type"><code class="code"><a href="?package=stdlib&amp;module=Hashtbl.SeededHashedType">Hashtbl.SeededHashedType</a></code></code></pre>
+</div>
+<div class="ocaml_module sig" name="S">
+		<pre><span class="keyword">module type</span> <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.S">S</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEkey"><span class="keyword">type</span> key</span> </pre>
+      
+    
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">int -&gt; 'a <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> clear</span> : <code class="type">'a <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.S&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> reset</span> : <code class="type">'a <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.S&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> copy</span> : <code class="type">'a <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.S&amp;type=t">t</a> -&gt; 'a <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add</span> : <code class="type">'a <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.S&amp;type=t">t</a> -&gt; key:<a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.S&amp;type=key">key</a> -&gt; data:'a -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove</span> : <code class="type">'a <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.S&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.S&amp;type=key">key</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find</span> : <code class="type">'a <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.S&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.S&amp;type=key">key</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_all</span> : <code class="type">'a <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.S&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.S&amp;type=key">key</a> -&gt; 'a list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> replace</span> : <code class="type">'a <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.S&amp;type=t">t</a> -&gt; key:<a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.S&amp;type=key">key</a> -&gt; data:'a -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem</span> : <code class="type">'a <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.S&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.S&amp;type=key">key</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter</span> : <code class="type">f:(key:<a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.S&amp;type=key">key</a> -&gt; data:'a -&gt; unit) -&gt; 'a <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.S&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold</span> : <code class="type">f:(key:<a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.S&amp;type=key">key</a> -&gt; data:'a -&gt; 'b -&gt; 'b) -&gt; 'a <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.S&amp;type=t">t</a> -&gt; init:'b -&gt; 'b</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> length</span> : <code class="type">'a <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.S&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stats</span> : <code class="type">'a <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.S&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl&amp;type=statistics">statistics</a></code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="SeededS">
+		<pre><span class="keyword">module type</span> <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.SeededS">SeededS</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEkey"><span class="keyword">type</span> key</span> </pre>
+      
+    
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">?random:bool -&gt; int -&gt; 'a <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.SeededS&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> clear</span> : <code class="type">'a <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.SeededS&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> reset</span> : <code class="type">'a <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.SeededS&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> copy</span> : <code class="type">'a <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.SeededS&amp;type=t">t</a> -&gt; 'a <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.SeededS&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add</span> : <code class="type">'a <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.SeededS&amp;type=t">t</a> -&gt; key:<a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.SeededS&amp;type=key">key</a> -&gt; data:'a -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove</span> : <code class="type">'a <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.SeededS&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.SeededS&amp;type=key">key</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find</span> : <code class="type">'a <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.SeededS&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.SeededS&amp;type=key">key</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_all</span> : <code class="type">'a <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.SeededS&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.SeededS&amp;type=key">key</a> -&gt; 'a list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> replace</span> : <code class="type">'a <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.SeededS&amp;type=t">t</a> -&gt; key:<a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.SeededS&amp;type=key">key</a> -&gt; data:'a -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem</span> : <code class="type">'a <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.SeededS&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.SeededS&amp;type=key">key</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter</span> : <code class="type">f:(key:<a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.SeededS&amp;type=key">key</a> -&gt; data:'a -&gt; unit) -&gt; 'a <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.SeededS&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold</span> : <code class="type">f:(key:<a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.SeededS&amp;type=key">key</a> -&gt; data:'a -&gt; 'b -&gt; 'b) -&gt; 'a <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.SeededS&amp;type=t">t</a> -&gt; init:'b -&gt; 'b</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> length</span> : <code class="type">'a <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.SeededS&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stats</span> : <code class="type">'a <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.SeededS&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl&amp;type=statistics">statistics</a></code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module ident" name="Make" path="?package=stdlib&amp;amp;module=MoreLabels.Hashtbl.S">
+		    <pre><span class="keyword">module</span> <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.Make">Make</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">H</code><code class="code"> : </code><code class="type"><a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.HashedType">HashedType</a></code><code class="code">) -&gt; </code><code class="code"><a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.S">S</a></code> with type <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.S&amp;type=key">key</a> = H.t</div></pre>
+</div>
+<div class="ocaml_module ident" name="MakeSeeded" path="?package=stdlib&amp;amp;module=MoreLabels.Hashtbl.SeededS">
+		    <pre><span class="keyword">module</span> <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.MakeSeeded">MakeSeeded</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">H</code><code class="code"> : </code><code class="type"><a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.SeededHashedType">SeededHashedType</a></code><code class="code">) -&gt; </code><code class="code"><a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.SeededS">SeededS</a></code> with type <a href="?package=stdlib&amp;module=MoreLabels.Hashtbl.SeededS&amp;type=key">key</a> = H.t</div></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> hash</span> : <code class="type">'a -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> seeded_hash</span> : <code class="type">int -&gt; 'a -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> hash_param</span> : <code class="type">int -&gt; int -&gt; 'a -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> seeded_hash_param</span> : <code class="type">int -&gt; int -&gt; int -&gt; 'a -&gt; int</code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="Map">
+		<pre><span class="keyword">module</span> <a href="?package=stdlib&amp;module=MoreLabels.Map">Map</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+<div class="ocaml_module ident" name="OrderedType" path="?package=stdlib&amp;amp;module=Map.OrderedType">
+		    <pre><span class="keyword">module type</span> <a href="?package=stdlib&amp;module=MoreLabels.Map.OrderedType">OrderedType</a> = <code class="type"><code class="code"><a href="?package=stdlib&amp;module=Map.OrderedType">Map.OrderedType</a></code></code></pre>
+</div>
+<div class="ocaml_module sig" name="S">
+		<pre><span class="keyword">module type</span> <a href="?package=stdlib&amp;module=MoreLabels.Map.S">S</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEkey"><span class="keyword">type</span> key</span> </pre>
+      
+    
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">+'a </code>t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> empty</span> : <code class="type">'a <a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_empty</span> : <code class="type">'a <a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem</span> : <code class="type"><a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=key">key</a> -&gt; 'a <a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add</span> : <code class="type">key:<a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=key">key</a> -&gt; data:'a -&gt; 'a <a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=t">t</a> -&gt; 'a <a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> singleton</span> : <code class="type"><a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=key">key</a> -&gt; 'a -&gt; 'a <a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove</span> : <code class="type"><a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=key">key</a> -&gt; 'a <a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=t">t</a> -&gt; 'a <a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> merge</span> : <code class="type">f:(<a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=key">key</a> -&gt; 'a option -&gt; 'b option -&gt; 'c option) -&gt; 'a <a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=t">t</a> -&gt; 'b <a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=t">t</a> -&gt; 'c <a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> compare</span> : <code class="type">cmp:('a -&gt; 'a -&gt; int) -&gt; 'a <a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=t">t</a> -&gt; 'a <a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> equal</span> : <code class="type">cmp:('a -&gt; 'a -&gt; bool) -&gt; 'a <a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=t">t</a> -&gt; 'a <a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter</span> : <code class="type">f:(key:<a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=key">key</a> -&gt; data:'a -&gt; unit) -&gt; 'a <a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold</span> : <code class="type">f:(key:<a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=key">key</a> -&gt; data:'a -&gt; 'b -&gt; 'b) -&gt; 'a <a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=t">t</a> -&gt; init:'b -&gt; 'b</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> for_all</span> : <code class="type">f:(<a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=key">key</a> -&gt; 'a -&gt; bool) -&gt; 'a <a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> exists</span> : <code class="type">f:(<a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=key">key</a> -&gt; 'a -&gt; bool) -&gt; 'a <a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> filter</span> : <code class="type">f:(<a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=key">key</a> -&gt; 'a -&gt; bool) -&gt; 'a <a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=t">t</a> -&gt; 'a <a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> partition</span> : <code class="type">f:(<a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=key">key</a> -&gt; 'a -&gt; bool) -&gt; 'a <a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=t">t</a> -&gt; 'a <a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=t">t</a> * 'a <a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> cardinal</span> : <code class="type">'a <a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bindings</span> : <code class="type">'a <a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=t">t</a> -&gt; (<a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=key">key</a> * 'a) list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> min_binding</span> : <code class="type">'a <a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=key">key</a> * 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> max_binding</span> : <code class="type">'a <a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=key">key</a> * 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> choose</span> : <code class="type">'a <a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=key">key</a> * 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> split</span> : <code class="type"><a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=key">key</a> -&gt; 'a <a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=t">t</a> -&gt; 'a <a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=t">t</a> * 'a option * 'a <a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find</span> : <code class="type"><a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=key">key</a> -&gt; 'a <a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=t">t</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map</span> : <code class="type">f:('a -&gt; 'b) -&gt; 'a <a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=t">t</a> -&gt; 'b <a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mapi</span> : <code class="type">f:(<a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=key">key</a> -&gt; 'a -&gt; 'b) -&gt; 'a <a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=t">t</a> -&gt; 'b <a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=t">t</a></code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module ident" name="Make" path="?package=stdlib&amp;amp;module=MoreLabels.Map.S">
+		    <pre><span class="keyword">module</span> <a href="?package=stdlib&amp;module=MoreLabels.Map.Make">Make</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">Ord</code><code class="code"> : </code><code class="type"><a href="?package=stdlib&amp;module=MoreLabels.Map.OrderedType">OrderedType</a></code><code class="code">) -&gt; </code><code class="code"><a href="?package=stdlib&amp;module=MoreLabels.Map.S">S</a></code> with type <a href="?package=stdlib&amp;module=MoreLabels.Map.S&amp;type=key">key</a> = Ord.t</div></pre>
+</div>
+		</div>
+</div>
+<div class="ocaml_module sig" name="Set">
+		<pre><span class="keyword">module</span> <a href="?package=stdlib&amp;module=MoreLabels.Set">Set</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+<div class="ocaml_module ident" name="OrderedType" path="?package=stdlib&amp;amp;module=Set.OrderedType">
+		    <pre><span class="keyword">module type</span> <a href="?package=stdlib&amp;module=MoreLabels.Set.OrderedType">OrderedType</a> = <code class="type"><code class="code"><a href="?package=stdlib&amp;module=Set.OrderedType">Set.OrderedType</a></code></code></pre>
+</div>
+<div class="ocaml_module sig" name="S">
+		<pre><span class="keyword">module type</span> <a href="?package=stdlib&amp;module=MoreLabels.Set.S">S</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEelt"><span class="keyword">type</span> elt</span> </pre>
+      
+    
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> empty</span> : <code class="type"><a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_empty</span> : <code class="type"><a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem</span> : <code class="type"><a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=elt">elt</a> -&gt; <a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add</span> : <code class="type"><a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=elt">elt</a> -&gt; <a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> singleton</span> : <code class="type"><a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=elt">elt</a> -&gt; <a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove</span> : <code class="type"><a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=elt">elt</a> -&gt; <a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> union</span> : <code class="type"><a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> inter</span> : <code class="type"><a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> diff</span> : <code class="type"><a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> compare</span> : <code class="type"><a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> equal</span> : <code class="type"><a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> subset</span> : <code class="type"><a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter</span> : <code class="type">f:(<a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=elt">elt</a> -&gt; unit) -&gt; <a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold</span> : <code class="type">f:(<a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=elt">elt</a> -&gt; 'a -&gt; 'a) -&gt; <a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=t">t</a> -&gt; init:'a -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> for_all</span> : <code class="type">f:(<a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=elt">elt</a> -&gt; bool) -&gt; <a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> exists</span> : <code class="type">f:(<a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=elt">elt</a> -&gt; bool) -&gt; <a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> filter</span> : <code class="type">f:(<a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=elt">elt</a> -&gt; bool) -&gt; <a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> partition</span> : <code class="type">f:(<a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=elt">elt</a> -&gt; bool) -&gt; <a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=t">t</a> * <a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> cardinal</span> : <code class="type"><a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> elements</span> : <code class="type"><a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=elt">elt</a> list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> min_elt</span> : <code class="type"><a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=elt">elt</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> max_elt</span> : <code class="type"><a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=elt">elt</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> choose</span> : <code class="type"><a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=elt">elt</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> split</span> : <code class="type"><a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=elt">elt</a> -&gt; <a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=t">t</a> * bool * <a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find</span> : <code class="type"><a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=elt">elt</a> -&gt; <a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=elt">elt</a></code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module ident" name="Make" path="?package=stdlib&amp;amp;module=MoreLabels.Set.S">
+		    <pre><span class="keyword">module</span> <a href="?package=stdlib&amp;module=MoreLabels.Set.Make">Make</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">Ord</code><code class="code"> : </code><code class="type"><a href="?package=stdlib&amp;module=MoreLabels.Set.OrderedType">OrderedType</a></code><code class="code">) -&gt; </code><code class="code"><a href="?package=stdlib&amp;module=MoreLabels.Set.S">S</a></code> with type <a href="?package=stdlib&amp;module=MoreLabels.Set.S&amp;type=elt">elt</a> = Ord.t</div></pre>
+</div>
+		</div>
+</div></div>

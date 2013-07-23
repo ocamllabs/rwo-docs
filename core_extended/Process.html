@@ -1,0 +1,58 @@
+<div class="ocaml_toplevel_module">
+<div class="info">Low-level process handling<br/>   This is low-level enough that you should probably be using <code class="code">Shell</code> instead
+   to dispatch processes.</div>
+<div class="ocaml_module sig" name="Status">
+		<pre><span class="keyword">module</span> <a href="?package=core_extended&amp;module=Process.Status">Status</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> = <code class="type">[ `Exited of int
+| `Signaled of <a href="?package=core&amp;module=Std.Signal&amp;type=t">Core.Std.Signal.t</a>
+| `Timeout of <a href="?package=core&amp;module=Std.Time.Span&amp;type=t">Core.Std.Time.Span.t</a> ]</code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_string</span> : <code class="type"><a href="?package=core_extended&amp;module=Process.Status&amp;type=t">t</a> -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=core_extended&amp;module=Process.Status&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="Command_result">
+		<pre><span class="keyword">module</span> <a href="?package=core_extended&amp;module=Process.Command_result">Command_result</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><code><span id="TYPEt"><span class="keyword">type</span> t</span> = {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.status">status</span> :<code class="type"><a href="?package=core_extended&amp;module=Process.Status&amp;type=t">Status.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.stdout_tail">stdout_tail</span> :<code class="type">string</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.stderr_tail">stderr_tail</span> :<code class="type">string</code>;</code></td>
+	  </tr></table>}
+      
+    
+		</div>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> kill</span> : <code class="type">?is_child:bool -&gt;
+?wait_for:<a href="?package=core&amp;module=Std.Time.Span&amp;type=t">Core.Std.Time.Span.t</a> -&gt;
+?signal:<a href="?package=core&amp;module=Std.Signal&amp;type=t">Core.Std.Signal.t</a> -&gt; <a href="?package=core&amp;module=Pid&amp;type=t">Core.Pid.t</a> -&gt; unit</code></pre>
+      <div class="info">kills a process by sending <code class="code">signal</code>; waiting for <code class="code">wait_for</code> and then
+    sending a <code class="code">sigkill</code>.
+    You need to set is_child to true when killing child processes or run waitpid
+    on them in another.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> run</span> : <code class="type">?timeout:<a href="?package=core&amp;module=Std.Time.Span&amp;type=t">Core.Std.Time.Span.t</a> -&gt;
+?use_extra_path:bool -&gt;
+?working_dir:string -&gt;
+?setuid:int -&gt;
+?setgid:int -&gt;
+?env:[ `Extend of (string * string) list | `Replace of (string * string) list ] -&gt;
+?input:string -&gt;
+?keep_open:bool -&gt;
+?stdoutf:(string -&gt; int -&gt; unit) -&gt;
+?stderrf:(string -&gt; int -&gt; unit) -&gt;
+?tail_len:int -&gt; prog:string -&gt; args:string list -&gt; unit -&gt; <a href="?package=core_extended&amp;module=Process.Command_result&amp;type=t">Command_result.t</a></code></pre>
+      
+    </div>

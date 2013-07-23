@@ -1,0 +1,150 @@
+<div class="ocaml_toplevel_module">
+
+ 
+      <pre><span><span class="keyword">val</span> __pa_ounit_275876e34cf609db118f3d84b799a790</span> : <code class="type">string</code></pre>
+      
+    
+
+<div class="ocaml_module ident" name="Binable" path="?package=core_kernel&amp;amp;module=Binable0">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Hashable.Binable">Binable</a> : <code class="code"><a href="?package=core_kernel&amp;module=Binable0">Binable0</a></code></pre>
+</div>
+<div class="ocaml_module ident" name="Hashtbl" path="?package=core_kernel&amp;amp;module=Core_hashtbl">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Hashable.Hashtbl">Hashtbl</a> : <code class="code"><a href="?package=core_kernel&amp;module=Core_hashtbl">Core_hashtbl</a></code></pre>
+</div>
+<div class="ocaml_module sig" name="S">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Hashable.S">S</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> </pre>
+      
+    
+<div class="ocaml_module ident" name="Hashable" path="?package=core_kernel&amp;amp;module=T.T">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Hashable.S.Hashable">Hashable</a> : <code class="code"><a href="?package=core_kernel&amp;module=T.T">T.T</a></code> with type t = <a href="?package=core_kernel&amp;module=Hashable.S&amp;type=t">t</a></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> hash</span> : <code class="type"><a href="?package=core_kernel&amp;module=Hashable.S&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> compare</span> : <code class="type"><a href="?package=core_kernel&amp;module=Hashable.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Hashable.S&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> hashable</span> : <code class="type"><a href="?package=core_kernel&amp;module=Hashable.S&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Hashable.Hashtbl.Hashable&amp;type=t">Hashtbl.Hashable.t</a></code></pre>
+      
+    
+<div class="ocaml_module ident" name="Table" path="?package=core_kernel&amp;amp;module=Hashable.Hashtbl&amp;amp;type=S">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Hashable.S.Table">Table</a> : <code class="code"><a href="?package=core_kernel&amp;module=Hashable.Hashtbl&amp;type=S">Hashtbl.S</a></code> with type key = <a href="?package=core_kernel&amp;module=Hashable.S&amp;type=t">t</a></pre>
+</div>
+<div class="ocaml_module ident" name="Pooled_hashtbl" path="?package=core_kernel&amp;amp;module=Pooled_hashtbl.S">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Hashable.S.Pooled_hashtbl">Pooled_hashtbl</a> : <code class="code"><a href="?package=core_kernel&amp;module=Pooled_hashtbl.S">Pooled_hashtbl.S</a></code> with type key = <a href="?package=core_kernel&amp;module=Hashable.S&amp;type=t">t</a></pre>
+</div>
+<div class="ocaml_module ident" name="Hash_set" path="?package=core_kernel&amp;amp;module=Hash_set.S">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Hashable.S.Hash_set">Hash_set</a> : <code class="code"><a href="?package=core_kernel&amp;module=Hash_set.S">Hash_set.S</a></code> with type elt = <a href="?package=core_kernel&amp;module=Hashable.S&amp;type=t">t</a></pre>
+</div>
+<div class="ocaml_module ident" name="Hash_queue" path="?package=core_kernel&amp;amp;module=Hash_queue.S">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Hashable.S.Hash_queue">Hash_queue</a> : <code class="code"><a href="?package=core_kernel&amp;module=Hash_queue.S">Hash_queue.S</a></code> with type Key.t = <a href="?package=core_kernel&amp;module=Hashable.S&amp;type=t">t</a></pre>
+</div>
+<div class="ocaml_module ident" name="Hash_heap" path="?package=core_kernel&amp;amp;module=Hash_heap.S">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Hashable.S.Hash_heap">Hash_heap</a> : <code class="code"><a href="?package=core_kernel&amp;module=Hash_heap.S">Hash_heap.S</a></code> with type Key.t = <a href="?package=core_kernel&amp;module=Hashable.S&amp;type=t">t</a></pre>
+</div>
+		</div>
+</div>
+<div class="ocaml_module sig" name="Make">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Hashable.Make">Make</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">T</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Hashable.Hashtbl&amp;type=Key">Hashtbl.Key</a></code><code class="code">) -&gt; </code><code class="code">sig</code> .. <code class="code">end</code></div></pre>
+		<div class="ocaml_module_content">
+		       
+<div class="ocaml_include sig" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code">T</code></pre>
+</div>
+<div class="ocaml_module ident" name="Hashable">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Hashable.Make.Hashable">Hashable</a> : <code class="code">T</code></pre>
+</div>
+<div class="ocaml_module ident" name="Table" path="?package=core_kernel&amp;amp;module=Hashable.Hashtbl&amp;amp;type=Make">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Hashable.Make.Table">Table</a> : <code class="code"><a href="?package=core_kernel&amp;module=Hashable.Hashtbl&amp;type=Make">Hashtbl.Make</a></code>(<code class="code">T</code>)</pre>
+</div>
+<div class="ocaml_module ident" name="Pooled_hashtbl" path="?package=core_kernel&amp;amp;module=Pooled_hashtbl.Make">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Hashable.Make.Pooled_hashtbl">Pooled_hashtbl</a> : <code class="code"><a href="?package=core_kernel&amp;module=Pooled_hashtbl.Make">Pooled_hashtbl.Make</a></code>(<code class="code">T</code>)</pre>
+</div>
+<div class="ocaml_module ident" name="Hash_set" path="?package=core_kernel&amp;amp;module=Hash_set.Make">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Hashable.Make.Hash_set">Hash_set</a> : <code class="code"><a href="?package=core_kernel&amp;module=Hash_set.Make">Hash_set.Make</a></code>(<code class="code">T</code>)</pre>
+</div>
+<div class="ocaml_module ident" name="Hash_queue" path="?package=core_kernel&amp;amp;module=Hash_queue.Make">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Hashable.Make.Hash_queue">Hash_queue</a> : <code class="code"><a href="?package=core_kernel&amp;module=Hash_queue.Make">Hash_queue.Make</a></code>(<code class="code">T</code>)</pre>
+</div>
+<div class="ocaml_module ident" name="Hash_heap" path="?package=core_kernel&amp;amp;module=Hash_heap.Make">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Hashable.Make.Hash_heap">Hash_heap</a> : <code class="code"><a href="?package=core_kernel&amp;module=Hash_heap.Make">Hash_heap.Make</a></code>(<code class="code">T</code>)</pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> hashable</span> : <code class="type"><a href="?package=core_kernel&amp;module=Hashable.Make.Table&amp;type=key">Table.key</a> <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashable&amp;type=t">Core_hashtbl_intf.Hashable.t</a></code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="S_binable">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Hashable.S_binable">S_binable</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> </pre>
+      
+    
+<div class="ocaml_module ident" name="Hashable" path="?package=core_kernel&amp;amp;module=T.T">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Hashable.S_binable.Hashable">Hashable</a> : <code class="code"><a href="?package=core_kernel&amp;module=T.T">T.T</a></code> with type t = <a href="?package=core_kernel&amp;module=Hashable.S_binable&amp;type=t">t</a></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> hash</span> : <code class="type"><a href="?package=core_kernel&amp;module=Hashable.S_binable&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> hashable</span> : <code class="type"><a href="?package=core_kernel&amp;module=Hashable.S_binable&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Hashable.Hashtbl.Hashable&amp;type=t">Hashtbl.Hashable.t</a></code></pre>
+      
+    
+<div class="ocaml_module ident" name="Table" path="?package=core_kernel&amp;amp;module=Hashable.Hashtbl&amp;amp;type=S_binable">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Hashable.S_binable.Table">Table</a> : <code class="code"><a href="?package=core_kernel&amp;module=Hashable.Hashtbl&amp;type=S_binable">Hashtbl.S_binable</a></code> with type key = <a href="?package=core_kernel&amp;module=Hashable.S_binable&amp;type=t">t</a></pre>
+</div>
+<div class="ocaml_module ident" name="Pooled_hashtbl" path="?package=core_kernel&amp;amp;module=Pooled_hashtbl.S_binable">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Hashable.S_binable.Pooled_hashtbl">Pooled_hashtbl</a> : <code class="code"><a href="?package=core_kernel&amp;module=Pooled_hashtbl.S_binable">Pooled_hashtbl.S_binable</a></code> with type key = <a href="?package=core_kernel&amp;module=Hashable.S_binable&amp;type=t">t</a></pre>
+</div>
+<div class="ocaml_module ident" name="Hash_set" path="?package=core_kernel&amp;amp;module=Hash_set.S_binable">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Hashable.S_binable.Hash_set">Hash_set</a> : <code class="code"><a href="?package=core_kernel&amp;module=Hash_set.S_binable">Hash_set.S_binable</a></code> with type elt = <a href="?package=core_kernel&amp;module=Hashable.S_binable&amp;type=t">t</a></pre>
+</div>
+<div class="ocaml_module ident" name="Hash_queue" path="?package=core_kernel&amp;amp;module=Hash_queue.S">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Hashable.S_binable.Hash_queue">Hash_queue</a> : <code class="code"><a href="?package=core_kernel&amp;module=Hash_queue.S">Hash_queue.S</a></code> with type Key.t = <a href="?package=core_kernel&amp;module=Hashable.S_binable&amp;type=t">t</a></pre>
+</div>
+<div class="ocaml_module ident" name="Hash_heap" path="?package=core_kernel&amp;amp;module=Hash_heap.S">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Hashable.S_binable.Hash_heap">Hash_heap</a> : <code class="code"><a href="?package=core_kernel&amp;module=Hash_heap.S">Hash_heap.S</a></code> with type Key.t = <a href="?package=core_kernel&amp;module=Hashable.S_binable&amp;type=t">t</a></pre>
+</div>
+		</div>
+</div>
+<div class="ocaml_module sig" name="Make_binable">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Hashable.Make_binable">Make_binable</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">T</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Hashable.Hashtbl&amp;type=Key_binable">Hashtbl.Key_binable</a></code><code class="code">) -&gt; </code><code class="code">sig</code> .. <code class="code">end</code></div></pre>
+		<div class="ocaml_module_content">
+		       
+<div class="ocaml_module ident" name="Hashable">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Hashable.Make_binable.Hashable">Hashable</a> : <code class="code">T</code></pre>
+</div>
+<div class="ocaml_module ident" name="Table" path="?package=core_kernel&amp;amp;module=Hashable.Hashtbl&amp;amp;type=Make_binable">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Hashable.Make_binable.Table">Table</a> : <code class="code"><a href="?package=core_kernel&amp;module=Hashable.Hashtbl&amp;type=Make_binable">Hashtbl.Make_binable</a></code>(<code class="code">T</code>)</pre>
+</div>
+<div class="ocaml_module ident" name="Pooled_hashtbl" path="?package=core_kernel&amp;amp;module=Pooled_hashtbl.Make_binable">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Hashable.Make_binable.Pooled_hashtbl">Pooled_hashtbl</a> : <code class="code"><a href="?package=core_kernel&amp;module=Pooled_hashtbl.Make_binable">Pooled_hashtbl.Make_binable</a></code>(<code class="code">T</code>)</pre>
+</div>
+<div class="ocaml_module ident" name="Hash_set" path="?package=core_kernel&amp;amp;module=Hash_set.Make_binable">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Hashable.Make_binable.Hash_set">Hash_set</a> : <code class="code"><a href="?package=core_kernel&amp;module=Hash_set.Make_binable">Hash_set.Make_binable</a></code>(<code class="code">T</code>)</pre>
+</div>
+<div class="ocaml_module ident" name="Hash_queue" path="?package=core_kernel&amp;amp;module=Hash_queue.Make">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Hashable.Make_binable.Hash_queue">Hash_queue</a> : <code class="code"><a href="?package=core_kernel&amp;module=Hash_queue.Make">Hash_queue.Make</a></code>(<code class="code">T</code>)</pre>
+</div>
+<div class="ocaml_module ident" name="Hash_heap" path="?package=core_kernel&amp;amp;module=Hash_heap.Make">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Hashable.Make_binable.Hash_heap">Hash_heap</a> : <code class="code"><a href="?package=core_kernel&amp;module=Hash_heap.Make">Hash_heap.Make</a></code>(<code class="code">T</code>)</pre>
+</div>
+<div class="ocaml_include sig" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code">T</code></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> hashable</span> : <code class="type"><a href="?package=core_kernel&amp;module=Hashable.Make_binable.Table&amp;type=key">Table.key</a> <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashable&amp;type=t">Core_hashtbl_intf.Hashable.t</a></code></pre>
+      
+    
+		</div>
+</div>
+</div>

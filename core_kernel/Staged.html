@@ -1,0 +1,28 @@
+<div class="ocaml_toplevel_module">
+<div class="info">A type for making staging explicit in the type of a function.  For example, you might
+    want to have a function that creates a function for allocating unique identifiers.
+    Rather than using the type:<br/>    <pre class="codepre"><code class="code">
+    val make_id_allocator : unit -&gt; unit -&gt; int
+    </code></pre><br/>    you would have<br/>    <pre class="codepre"><code class="code">
+    val make_id_allocator : unit -&gt; (unit -&gt; int) Staged.t
+    </code></pre><br/>    Such a function could be defined as follows:<br/>    <pre class="codepre"><code class="code">
+    let make_id_allocator () =
+      let ctr = ref 0 in
+      stage (fun () -&gt; incr ctr; !ctr)
+    </code></pre><br/>    and could be invoked as follows:<br/>    <pre class="codepre"><code class="code">
+    let (id1,id2) =
+      let alloc = unstage (make_id_allocator ()) in
+      (alloc (), alloc ())
+    </code></pre><br/>    both stage and unstage functions are available in Common.<br/>    (Note that in many cases, including perhaps the one above, it's preferable to create a
+    custom type rather than use Staged.)</div>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">+'a </code>t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stage</span> : <code class="type">'a -&gt; 'a <a href="?package=core_kernel&amp;module=Staged&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unstage</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Staged&amp;type=t">t</a> -&gt; 'a</code></pre>
+      
+    </div>

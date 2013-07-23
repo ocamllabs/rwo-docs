@@ -1,0 +1,26 @@
+<div class="ocaml_toplevel_module">
+<div class="info"><code class="code">Weak</code> is like the OCaml standard library module of the same name, except that it
+    requires that the values in the weak set are heap blocks.</div>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">len:int -&gt; 'a <a href="?package=core_kernel&amp;module=Core_weak&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> length</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_weak&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_weak&amp;type=t">t</a> -&gt; int -&gt; 'a <a href="?package=core_kernel&amp;module=Heap_block&amp;type=t">Heap_block.t</a> option -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_weak&amp;type=t">t</a> -&gt; int -&gt; 'a <a href="?package=core_kernel&amp;module=Heap_block&amp;type=t">Heap_block.t</a> option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; 'a <a href="?package=core_kernel&amp;module=Core_weak&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    </div>

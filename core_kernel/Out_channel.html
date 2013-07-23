@@ -1,0 +1,89 @@
+<div class="ocaml_toplevel_module">
+
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> = <code class="type"><a href="?package=stdlib&amp;module=Pervasives&amp;type=out_channel">out_channel</a></code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stdout</span> : <code class="type"><a href="?package=core_kernel&amp;module=Out_channel&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stderr</span> : <code class="type"><a href="?package=core_kernel&amp;module=Out_channel&amp;type=t">t</a></code></pre>
+      
+    
+<pre><span id="TYPEwith_create_args"><span class="keyword">type</span> <code class="type">'a </code>with_create_args</span> = <code class="type">?binary:bool -&gt; ?append:bool -&gt; ?perm:int -&gt; 'a</code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">(string -&gt; <a href="?package=core_kernel&amp;module=Out_channel&amp;type=t">t</a>) <a href="?package=core_kernel&amp;module=Out_channel&amp;type=with_create_args">with_create_args</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> with_file</span> : <code class="type">(string -&gt; f:(<a href="?package=core_kernel&amp;module=Out_channel&amp;type=t">t</a> -&gt; 'a) -&gt; 'a) <a href="?package=core_kernel&amp;module=Out_channel&amp;type=with_create_args">with_create_args</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> close</span> : <code class="type"><a href="?package=core_kernel&amp;module=Out_channel&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set_binary_mode</span> : <code class="type"><a href="?package=core_kernel&amp;module=Out_channel&amp;type=t">t</a> -&gt; bool -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> flush</span> : <code class="type"><a href="?package=core_kernel&amp;module=Out_channel&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> output</span> : <code class="type"><a href="?package=core_kernel&amp;module=Out_channel&amp;type=t">t</a> -&gt; buf:string -&gt; pos:int -&gt; len:int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> output_string</span> : <code class="type"><a href="?package=core_kernel&amp;module=Out_channel&amp;type=t">t</a> -&gt; string -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> output_char</span> : <code class="type"><a href="?package=core_kernel&amp;module=Out_channel&amp;type=t">t</a> -&gt; char -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> output_byte</span> : <code class="type"><a href="?package=core_kernel&amp;module=Out_channel&amp;type=t">t</a> -&gt; int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> output_binary_int</span> : <code class="type"><a href="?package=core_kernel&amp;module=Out_channel&amp;type=t">t</a> -&gt; int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> output_value</span> : <code class="type"><a href="?package=core_kernel&amp;module=Out_channel&amp;type=t">t</a> -&gt; 'a -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> newline</span> : <code class="type"><a href="?package=core_kernel&amp;module=Out_channel&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> output_lines</span> : <code class="type"><a href="?package=core_kernel&amp;module=Out_channel&amp;type=t">t</a> -&gt; string list -&gt; unit</code></pre>
+      <div class="info">Outputs a list of lines, each terminated by a newline character</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> seek</span> : <code class="type"><a href="?package=core_kernel&amp;module=Out_channel&amp;type=t">t</a> -&gt; int64 -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pos</span> : <code class="type"><a href="?package=core_kernel&amp;module=Out_channel&amp;type=t">t</a> -&gt; int64</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> length</span> : <code class="type"><a href="?package=core_kernel&amp;module=Out_channel&amp;type=t">t</a> -&gt; int64</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> write_lines</span> : <code class="type">string -&gt; string list -&gt; unit</code></pre>
+      <div class="info"><code class="code">write_lines file lines</code> works like output_lines, except that the output is sent to
+    the named file.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> write_all</span> : <code class="type">string -&gt; data:string -&gt; unit</code></pre>
+      <div class="info"><code class="code">write_all file data</code> writes all data to the named file.</div>
+    </div>

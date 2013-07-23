@@ -1,0 +1,44 @@
+<div class="ocaml_toplevel_module">
+<div class="info">various combinators for functions</div>
+ 
+      <pre><span><span class="keyword">val</span> |!</span> : <code class="type">'a -&gt; ('a -&gt; 'b) -&gt; 'b</code></pre>
+      <div class="info">A 'pipe' operator. Deprecated.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> |&gt;</span> : <code class="type">'a -&gt; ('a -&gt; 'b) -&gt; 'b</code></pre>
+      <div class="info">A pipe operator, equivalent to |!, but this notation is more broadly accepted</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> const</span> : <code class="type">'a -&gt; 'b -&gt; 'a</code></pre>
+      <div class="info">produces a function that just returns its first argument</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> ignore</span> : <code class="type">'a -&gt; unit</code></pre>
+      <div class="info"><code class="code">ignore</code> is the same as <code class="code">Pervasives.ignore</code>.  It is useful to have here so
+ that code that rebinds <code class="code">ignore</code> can still refer to <code class="code">Fn.ignore</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> non</span> : <code class="type">('a -&gt; bool) -&gt; 'a -&gt; bool</code></pre>
+      <div class="info">Negates a function</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> forever</span> : <code class="type">(unit -&gt; unit) -&gt; exn</code></pre>
+      <div class="info"><code class="code">forever f</code> runs <code class="code">f ()</code> until it throws an exception and returns the
+    exception. This function is useful for read_line loops, etc.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> apply_n_times</span> : <code class="type">n:int -&gt; ('a -&gt; 'a) -&gt; 'a -&gt; 'a</code></pre>
+      <div class="info"><code class="code">apply_n_times ~n f x</code> is the <code class="code">n</code>-fold application of <code class="code">f</code> to <code class="code">x</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> id</span> : <code class="type">'a -&gt; 'a</code></pre>
+      <div class="info">The identity function</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> compose</span> : <code class="type">('b -&gt; 'c) -&gt; ('a -&gt; 'b) -&gt; 'a -&gt; 'c</code></pre>
+      <div class="info"><code class="code">compose f g x</code> is <code class="code">f (g x)</code> </div>
+    
+ 
+      <pre><span><span class="keyword">val</span> flip</span> : <code class="type">('a -&gt; 'b -&gt; 'c) -&gt; 'b -&gt; 'a -&gt; 'c</code></pre>
+      <div class="info">reverse the order of arguments for a binary function</div>
+    </div>

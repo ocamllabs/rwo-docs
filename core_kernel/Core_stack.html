@@ -1,0 +1,12 @@
+<div class="ocaml_toplevel_module">
+<div class="info">A stack implemented with an array.  See TODO reference : Stack_intf for documentation.<br/>    The implementation will grow the array as necessary.  By default, it will not
+    automatically shrink the array.  One can use <code class="code">set_auto_shrink</code> to change
+    auto-shrinking behavior.</div>
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Stack_intf.S" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Stack_intf.S">Stack_intf.S</a></code></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> set_auto_shrink</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_stack&amp;type=t">t</a> -&gt; bool -&gt; unit</code></pre>
+      <div class="info"><code class="code">set_auto_shrink t</code> controls whether <code class="code">t</code>'s array will automatically shrink when the
+    number of elements on the stack falls below 1/4 of the array size.</div>
+    </div>

@@ -1,0 +1,68 @@
+<div class="ocaml_toplevel_module">
+
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Std_internal.Identifiable" items="[&quot;Hash_heap&quot;,&quot;Hash_queue&quot;,&quot;Hash_set&quot;,&quot;Pooled_hashtbl&quot;,&quot;Table&quot;,&quot;Hashable&quot;,&quot;Set&quot;,&quot;Map&quot;,&quot;Replace_polymorphic_compare&quot;]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Std_internal.Identifiable">Std_internal.Identifiable</a></code> with type t = string</pre>
+</div>
+<div class="ocaml_module sig" name="Stable">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=String_id.Stable">Stable</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+<div class="ocaml_module sig" name="V1">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=String_id.Stable.V1">V1</a> : <code class="code">sig</code> .. <code class="code">end</code> with type <a href="?package=core_kernel&amp;module=String_id.Stable.V1&amp;type=t">t</a> = <a href="?package=core_kernel&amp;module=String_id&amp;type=t">t</a></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> compare</span> : <code class="type"><a href="?package=core_kernel&amp;module=String_id.Stable.V1&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=String_id.Stable.V1&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=String_id.Stable.V1&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=String_id.Stable.V1&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Read_ml&amp;type=reader">Bin_prot.Read_ml.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t_</span> : <code class="type"><a href="?package=core_kernel&amp;module=String_id.Stable.V1&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t__</span> : <code class="type">(int -&gt; <a href="?package=core_kernel&amp;module=String_id.Stable.V1&amp;type=t">t</a>) <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=String_id.Stable.V1&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=String_id.Stable.V1&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Size&amp;type=sizer">Bin_prot.Size.sizer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=String_id.Stable.V1&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Bin_prot.Write_ml.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_</span> : <code class="type"><a href="?package=core_kernel&amp;module=String_id.Stable.V1&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=String_id.Stable.V1&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core_kernel&amp;module=String_id.Stable.V1&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=String_id.Stable.V1&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+		</div>
+</div>
+		</div>
+</div></div>

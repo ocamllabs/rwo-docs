@@ -1,0 +1,245 @@
+<div class="ocaml_toplevel_module">
+
+ 
+      <pre><span><span class="keyword">val</span> __pa_ounit_275876e34cf609db118f3d84b799a790</span> : <code class="type">string</code></pre>
+      
+    
+
+<br/>A hash-heap is a combination of a heap and a hashtbl that supports
+    constant time lookup, and log(n) time removal and replacement of
+    elements in addition to the normal heap operations.<br/>
+	  
+<div class="ocaml_module ident" name="Hashtbl" path="?package=core_kernel&amp;amp;module=Core_hashtbl">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Hash_heap.Hashtbl">Hashtbl</a> : <code class="code"><a href="?package=core_kernel&amp;module=Core_hashtbl">Core_hashtbl</a></code></pre>
+</div>
+<div class="ocaml_module ident" name="Key" path="?package=core_kernel&amp;amp;module=Hash_heap.Hashtbl&amp;amp;type=Key">
+		    <pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Hash_heap.Key">Key</a> = <code class="type"><code class="code"><a href="?package=core_kernel&amp;module=Hash_heap.Hashtbl&amp;type=Key">Hashtbl.Key</a></code></code></pre>
+</div>
+<div class="ocaml_module sig" name="S">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Hash_heap.S">S</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<div class="ocaml_module ident" name="Key" path="?package=core_kernel&amp;amp;module=Hash_heap.Key">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Hash_heap.S.Key">Key</a> : <code class="code"><a href="?package=core_kernel&amp;module=Hash_heap.Key">Key</a></code></pre>
+</div>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">?min_size:int -&gt; ('a -&gt; 'a -&gt; int) -&gt; 'a <a href="?package=core_kernel&amp;module=Hash_heap.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> copy</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_heap.S&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Hash_heap.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> push</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_heap.S&amp;type=t">t</a> -&gt; key:<a href="?package=core_kernel&amp;module=Hash_heap.S.Key&amp;type=t">Key.t</a> -&gt; data:'a -&gt; [ `Key_already_present | `Ok ]</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> push_exn</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_heap.S&amp;type=t">t</a> -&gt; key:<a href="?package=core_kernel&amp;module=Hash_heap.S.Key&amp;type=t">Key.t</a> -&gt; data:'a -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> replace</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_heap.S&amp;type=t">t</a> -&gt; key:<a href="?package=core_kernel&amp;module=Hash_heap.S.Key&amp;type=t">Key.t</a> -&gt; data:'a -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_heap.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Hash_heap.S.Key&amp;type=t">Key.t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_heap.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Hash_heap.S.Key&amp;type=t">Key.t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> top</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_heap.S&amp;type=t">t</a> -&gt; 'a option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> top_exn</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_heap.S&amp;type=t">t</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> top_with_key</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_heap.S&amp;type=t">t</a> -&gt; (<a href="?package=core_kernel&amp;module=Hash_heap.S.Key&amp;type=t">Key.t</a> * 'a) option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> top_with_key_exn</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_heap.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Hash_heap.S.Key&amp;type=t">Key.t</a> * 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pop_with_key</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_heap.S&amp;type=t">t</a> -&gt; (<a href="?package=core_kernel&amp;module=Hash_heap.S.Key&amp;type=t">Key.t</a> * 'a) option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pop_with_key_exn</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_heap.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Hash_heap.S.Key&amp;type=t">Key.t</a> * 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pop</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_heap.S&amp;type=t">t</a> -&gt; 'a option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pop_exn</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_heap.S&amp;type=t">t</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> cond_pop_with_key</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_heap.S&amp;type=t">t</a> -&gt; (key:<a href="?package=core_kernel&amp;module=Hash_heap.S.Key&amp;type=t">Key.t</a> -&gt; data:'a -&gt; bool) -&gt; (<a href="?package=core_kernel&amp;module=Hash_heap.S.Key&amp;type=t">Key.t</a> * 'a) option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> cond_pop</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_heap.S&amp;type=t">t</a> -&gt; ('a -&gt; bool) -&gt; 'a option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_heap.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Hash_heap.S.Key&amp;type=t">Key.t</a> -&gt; 'a option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_pop</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_heap.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Hash_heap.S.Key&amp;type=t">Key.t</a> -&gt; 'a option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_exn</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_heap.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Hash_heap.S.Key&amp;type=t">Key.t</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_pop_exn</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_heap.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Hash_heap.S.Key&amp;type=t">Key.t</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_heap.S&amp;type=t">t</a> -&gt; f:(key:<a href="?package=core_kernel&amp;module=Hash_heap.S.Key&amp;type=t">Key.t</a> -&gt; data:'a -&gt; unit) -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter_vals</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_heap.S&amp;type=t">t</a> -&gt; f:('a -&gt; unit) -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> length</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_heap.S&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="Make">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Hash_heap.Make">Make</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">Key</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Hash_heap.Key">Key</a></code><code class="code">) -&gt; </code><code class="code">sig</code> .. <code class="code">end</code></div></pre>
+		<div class="ocaml_module_content">
+		       
+<div class="ocaml_module ident" name="Key">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Hash_heap.Make.Key">Key</a> : <code class="code">Key</code></pre>
+</div>
+<div class="ocaml_module ident" name="Table" path="?package=core_kernel&amp;amp;module=Hash_heap.Hashtbl&amp;amp;type=Make">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Hash_heap.Make.Table">Table</a> : <code class="code"><a href="?package=core_kernel&amp;module=Hash_heap.Hashtbl&amp;type=Make">Hashtbl.Make</a></code>(<code class="code"><a href="?package=core_kernel&amp;module=Hash_heap.Make.Key">Key</a></code>)</pre>
+</div>
+<pre><code><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> = {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.heap">heap</span> :<code class="type">(<a href="?package=core_kernel&amp;module=Hash_heap.Make.Key&amp;type=t">Key.t</a> * 'a) <a href="?package=core_kernel&amp;module=Heap&amp;type=t">Heap.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.tbl">tbl</span> :<code class="type">(<a href="?package=core_kernel&amp;module=Hash_heap.Make.Key&amp;type=t">Key.t</a> * 'a) <a href="?package=core_kernel&amp;module=Heap&amp;type=heap_el">Heap.heap_el</a> <a href="?package=core_kernel&amp;module=Hash_heap.Make.Table&amp;type=t">Table.t</a></code>;</code></td>
+	  </tr></table>}
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">?min_size:int -&gt; ('a -&gt; 'a -&gt; int) -&gt; 'a <a href="?package=core_kernel&amp;module=Hash_heap.Make&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> push</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_heap.Make&amp;type=t">t</a> -&gt;
+key:<a href="?package=core_kernel&amp;module=Hash_heap.Make.Table&amp;type=key">Table.key</a> <a href="?package=core_kernel&amp;module=Hash_heap.Hashtbl&amp;type=key">Hashtbl.key</a> -&gt; data:'a -&gt; [&gt; `Key_already_present | `Ok ]</code></pre>
+      
+    
+<pre><span id="EXCEPTIONKey_already_present"><span class="keyword">exception</span> Key_already_present</span> <span class="keyword">of</span> <code class="type"><a href="?package=core_kernel&amp;module=Hash_heap.Make.Key&amp;type=t">Key.t</a></code></pre>
+
+ 
+      <pre><span><span class="keyword">val</span> push_exn</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_heap.Make&amp;type=t">t</a> -&gt; key:<a href="?package=core_kernel&amp;module=Hash_heap.Make.Table&amp;type=key">Table.key</a> <a href="?package=core_kernel&amp;module=Hash_heap.Hashtbl&amp;type=key">Hashtbl.key</a> -&gt; data:'a -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> replace</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_heap.Make&amp;type=t">t</a> -&gt; key:<a href="?package=core_kernel&amp;module=Hash_heap.Make.Table&amp;type=key">Table.key</a> <a href="?package=core_kernel&amp;module=Hash_heap.Hashtbl&amp;type=key">Hashtbl.key</a> -&gt; data:'a -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_heap.Make&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Hash_heap.Make.Table&amp;type=key">Table.key</a> <a href="?package=core_kernel&amp;module=Hash_heap.Hashtbl&amp;type=key">Hashtbl.key</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_heap.Make&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Hash_heap.Make.Table&amp;type=key">Table.key</a> <a href="?package=core_kernel&amp;module=Hash_heap.Hashtbl&amp;type=key">Hashtbl.key</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> top_with_key</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_heap.Make&amp;type=t">t</a> -&gt; (<a href="?package=core_kernel&amp;module=Hash_heap.Make.Key&amp;type=t">Key.t</a> * 'a) option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> top</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_heap.Make&amp;type=t">t</a> -&gt; 'a option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> top_exn</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_heap.Make&amp;type=t">t</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> top_with_key_exn</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_heap.Make&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Hash_heap.Make.Key&amp;type=t">Key.t</a> * 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pop_with_key_exn</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_heap.Make&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Hash_heap.Make.Key&amp;type=t">Key.t</a> * 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pop_with_key</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_heap.Make&amp;type=t">t</a> -&gt; (<a href="?package=core_kernel&amp;module=Hash_heap.Make.Key&amp;type=t">Key.t</a> * 'a) option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pop</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_heap.Make&amp;type=t">t</a> -&gt; 'a option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pop_exn</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_heap.Make&amp;type=t">t</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> cond_pop_with_key</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_heap.Make&amp;type=t">t</a> -&gt; (key:<a href="?package=core_kernel&amp;module=Hash_heap.Make.Key&amp;type=t">Key.t</a> -&gt; data:'a -&gt; bool) -&gt; (<a href="?package=core_kernel&amp;module=Hash_heap.Make.Key&amp;type=t">Key.t</a> * 'a) option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> cond_pop</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_heap.Make&amp;type=t">t</a> -&gt; ('a -&gt; bool) -&gt; 'a option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_heap.Make&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Hash_heap.Make.Table&amp;type=key">Table.key</a> <a href="?package=core_kernel&amp;module=Hash_heap.Hashtbl&amp;type=key">Hashtbl.key</a> -&gt; 'a option</code></pre>
+      
+    
+<pre><span id="EXCEPTIONKey_not_found"><span class="keyword">exception</span> Key_not_found</span> <span class="keyword">of</span> <code class="type"><a href="?package=core_kernel&amp;module=Hash_heap.Make.Key&amp;type=t">Key.t</a></code></pre>
+
+ 
+      <pre><span><span class="keyword">val</span> find_exn</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_heap.Make&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Hash_heap.Make.Table&amp;type=key">Table.key</a> <a href="?package=core_kernel&amp;module=Hash_heap.Hashtbl&amp;type=key">Hashtbl.key</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_pop</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_heap.Make&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Hash_heap.Make.Table&amp;type=key">Table.key</a> <a href="?package=core_kernel&amp;module=Hash_heap.Hashtbl&amp;type=key">Hashtbl.key</a> -&gt; 'a option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_pop_exn</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_heap.Make&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Hash_heap.Make.Table&amp;type=key">Table.key</a> <a href="?package=core_kernel&amp;module=Hash_heap.Hashtbl&amp;type=key">Hashtbl.key</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_heap.Make&amp;type=t">t</a> -&gt; f:(key:<a href="?package=core_kernel&amp;module=Hash_heap.Make.Key&amp;type=t">Key.t</a> -&gt; data:'a -&gt; unit) -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter_vals</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_heap.Make&amp;type=t">t</a> -&gt; f:('a -&gt; unit) -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> copy</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_heap.Make&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Hash_heap.Make&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> length</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_heap.Make&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+		</div>
+</div>
+</div>

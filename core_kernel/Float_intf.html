@@ -1,0 +1,476 @@
+<div class="ocaml_toplevel_module">
+
+ 
+      <pre><span><span class="keyword">val</span> __pa_ounit_275876e34cf609db118f3d84b799a790</span> : <code class="type">string</code></pre>
+      
+    
+
+<br/>Floating-point representation and utilities.<br/>
+	  
+<div class="ocaml_module ident" name="Binable" path="?package=core_kernel&amp;amp;module=Binable0">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Float_intf.Binable">Binable</a> : <code class="code"><a href="?package=core_kernel&amp;module=Binable0">Binable0</a></code></pre>
+</div>
+<div class="ocaml_module sig" name="S">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Float_intf.S">S</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> </pre>
+      
+    
+<pre><span id="TYPEouter"><span class="keyword">type</span> outer</span> = <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a></code> </pre>
+      
+    
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Floatable.S" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Floatable.S">Floatable.S</a></code> with type t = <a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a></pre>
+</div>
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Identifiable.S" items="[&quot;Hash_heap&quot;,&quot;Hash_queue&quot;,&quot;Hash_set&quot;,&quot;Pooled_hashtbl&quot;,&quot;Table&quot;,&quot;Hashable&quot;,&quot;Set&quot;,&quot;Map&quot;,&quot;Replace_polymorphic_compare&quot;]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Identifiable.S">Identifiable.S</a></code> with type t = <a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a></pre>
+</div>
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Comparable.With_zero" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Comparable.With_zero">Comparable.With_zero</a></code> with type t = <a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a></pre>
+</div>
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Robustly_comparable.S" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Robustly_comparable.S">Robustly_comparable.S</a></code> with type t = <a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> validate_ordinary</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Validate&amp;type=check">Validate.check</a></code></pre>
+      <div class="info"><code class="code">validate_ordinary</code> fails if class is <code class="code">Nan</code> or <code class="code">Infinite</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> nan</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> infinity</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> neg_infinity</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> max_value</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> min_value</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> zero</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> epsilon</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> epsilon_float</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> max_finite_value</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> min_positive_value</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_int</span> : <code class="type">int -&gt; <a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_int</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_int64</span> : <code class="type">int64 -&gt; <a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_int64</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> -&gt; int64</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> round</span> : <code class="type">?dir:[ `Down | `Nearest | `Up | `Zero ] -&gt; <a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iround</span> : <code class="type">?dir:[ `Down | `Nearest | `Up | `Zero ] -&gt; <a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> -&gt; int option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iround_exn</span> : <code class="type">?dir:[ `Down | `Nearest | `Up | `Zero ] -&gt; <a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> round_towards_zero</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> round_down</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> round_up</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> round_nearest</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iround_towards_zero</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> -&gt; int option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iround_down</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> -&gt; int option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iround_up</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> -&gt; int option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iround_nearest</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> -&gt; int option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iround_towards_zero_exn</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iround_down_exn</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iround_up_exn</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iround_nearest_exn</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_nan</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_inf</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> -&gt; bool</code></pre>
+      <div class="info">includes positive and negative Float.infinity</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> min_inan</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a></code></pre>
+      <div class="info">min and max that return the other value if one of the values is a <code class="code">nan</code>. Returns
+      <code class="code">nan</code> if both arguments are <code class="code">nan</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> max_inan</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> +</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> -</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> *</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> /</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+<div class="ocaml_module sig" name="Parts">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Float_intf.S.Parts">Parts</a> : <code class="code">sig</code> .. <code class="code">end</code></pre><div class="info">Returns the fractional part and the whole (i.e. integer) part.  For example, <code class="code">modf
+      (-3.14)</code> returns <code class="code">{ fractional = -0.14; integral = -3.; }</code>!</div>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fractional</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S.Parts&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=outer">outer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> integral</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S.Parts&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=outer">outer</a></code></pre>
+      
+    
+		</div>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> modf</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Float_intf.S.Parts&amp;type=t">Parts.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mod_float</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">mod_float x y</code> returns a result with the same sign as <code class="code">x</code>.  It returns <code class="code">nan</code> if <code class="code">y</code>
+      is <code class="code">0</code>.  It is basically
+      <code class="code">let mod_float x y = x -. float(truncate(x/.y)) *. y</code>
+      not
+      <code class="code">let mod_float x y = x -. floor(x/.y) *. y</code>
+      and therefore resembles <code class="code">mod</code> on integers more than <code class="code">%</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> add</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sub</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> neg</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> scale</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> abs</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_string_hum</span> : <code class="type">?delimiter:char -&gt; ?decimals:int -&gt; ?strip_zero:bool -&gt; float -&gt; string</code></pre>
+      <div class="info">Pretty print float, for example <code class="code">to_string_hum ~decimals:3 1234.1999 = &quot;1_234.200&quot;</code>
+      <code class="code">to_string_hum ~decimals:3 ~strip_zero:true 1234.1999 = &quot;1_234.2&quot; </code>. No delimiters
+      are inserted to the right of the decimal.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> ldexp</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> -&gt; int -&gt; <a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> frexp</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> * int</code></pre>
+      
+    
+<div class="ocaml_module sig" name="Class">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Float_intf.S.Class">Class</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><code><span id="TYPEt"><span class="keyword">type</span> t</span> = </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Infinite"><span class="constructor">Infinite</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Nan"><span class="constructor">Nan</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Normal"><span class="constructor">Normal</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Subnormal"><span class="constructor">Subnormal</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Zero"><span class="constructor">Zero</span></span></code></td>
+	   </tr></table>
+      
+    
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Stringable.S" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Stringable.S">Stringable.S</a></code> with type t = <a href="?package=core_kernel&amp;module=Float_intf.S.Class&amp;type=t">t</a></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core_kernel&amp;module=Float_intf.S.Class&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S.Class&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S.Class&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S.Class&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Read_ml&amp;type=reader">Bin_prot.Read_ml.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t_</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S.Class&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t__</span> : <code class="type">(int -&gt; <a href="?package=core_kernel&amp;module=Float_intf.S.Class&amp;type=t">t</a>) <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S.Class&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S.Class&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Size&amp;type=sizer">Bin_prot.Size.sizer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S.Class&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Bin_prot.Write_ml.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S.Class&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S.Class&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+		</div>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> classify</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Float_intf.S.Class&amp;type=t">Class.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_finite</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+<div class="ocaml_module sig" name="Sign">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Float_intf.S.Sign">Sign</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><code><span id="TYPEt"><span class="keyword">type</span> t</span> = </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Neg"><span class="constructor">Neg</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Zero"><span class="constructor">Zero</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Pos"><span class="constructor">Pos</span></span></code></td>
+	   </tr></table>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core_kernel&amp;module=Float_intf.S.Sign&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S.Sign&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+		</div>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> sign</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Float_intf.S.Sign&amp;type=t">Sign.t</a></code></pre>
+      
+    
+<div class="ocaml_module sig" name="Terse">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Float_intf.S.Terse">Terse</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> = <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=outer">outer</a></code> </pre>
+      
+    
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Stringable.S" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Stringable.S">Stringable.S</a></code> with type t = <a href="?package=core_kernel&amp;module=Float_intf.S.Terse&amp;type=t">t</a></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core_kernel&amp;module=Float_intf.S.Terse&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S.Terse&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S.Terse&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S.Terse&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Read_ml&amp;type=reader">Bin_prot.Read_ml.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t_</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S.Terse&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t__</span> : <code class="type">(int -&gt; <a href="?package=core_kernel&amp;module=Float_intf.S.Terse&amp;type=t">t</a>) <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S.Terse&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S.Terse&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Size&amp;type=sizer">Bin_prot.Size.sizer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S.Terse&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Bin_prot.Write_ml.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S.Terse&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S.Terse&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+		</div>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> outer_of_sexp</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=outer">outer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_outer</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=outer">outer</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_outer</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=outer">outer</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_outer</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=outer">outer</a> <a href="?package=bin_prot&amp;module=Read_ml&amp;type=reader">Bin_prot.Read_ml.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_outer_</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=outer">outer</a> <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_outer__</span> : <code class="type">(int -&gt; <a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=outer">outer</a>) <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_outer</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=outer">outer</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_outer</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=outer">outer</a> <a href="?package=bin_prot&amp;module=Size&amp;type=sizer">Bin_prot.Size.sizer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_outer</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=outer">outer</a> <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Bin_prot.Write_ml.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_outer_</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=outer">outer</a> <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_outer</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float_intf.S&amp;type=outer">outer</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+<br/><code class="code">max</code> and <code class="code">min</code> will return nan if either argument is nan.<br/>      The <code class="code">validate_*</code> functions always fail if class is <code class="code">Nan</code> or <code class="code">Infinite</code>.<br/>
+	  
+<br/>The results of robust comparisons on <code class="code">nan</code> should be considered undefined.<br/>
+	  
+<br/><code class="code">validate_ordinary</code> fails if class is <code class="code">Nan</code> or <code class="code">Infinite</code>.<br/>
+	  
+<br/>includes positive and negative Float.infinity<br/>
+	  
+<br/>min and max that return the other value if one of the values is a <code class="code">nan</code>. Returns
+      <code class="code">nan</code> if both arguments are <code class="code">nan</code>.<br/>
+	  
+<br/>Returns the fractional part and the whole (i.e. integer) part.  For example, <code class="code">modf
+      (-3.14)</code> returns <code class="code">{ fractional = -0.14; integral = -3.; }</code>!<br/>
+	  
+<br/><code class="code">mod_float x y</code> returns a result with the same sign as <code class="code">x</code>.  It returns <code class="code">nan</code> if <code class="code">y</code>
+      is <code class="code">0</code>.  It is basically
+      <code class="code">let mod_float x y = x -. float(truncate(x/.y)) *. y</code>
+      not
+      <code class="code">let mod_float x y = x -. floor(x/.y) *. y</code>
+      and therefore resembles <code class="code">mod</code> on integers more than <code class="code">%</code>.<br/>
+	  
+<br/>Pretty print float, for example <code class="code">to_string_hum ~decimals:3 1234.1999 = &quot;1_234.200&quot;</code>
+      <code class="code">to_string_hum ~decimals:3 ~strip_zero:true 1234.1999 = &quot;1_234.2&quot; </code>. No delimiters
+      are inserted to the right of the decimal.<br/>
+	  
+		</div>
+</div>
+
+</div>

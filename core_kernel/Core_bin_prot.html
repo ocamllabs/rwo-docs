@@ -1,0 +1,28 @@
+<div class="ocaml_toplevel_module">
+
+ 
+      <pre><span><span class="keyword">val</span> __pa_ounit_275876e34cf609db118f3d84b799a790</span> : <code class="type">string</code></pre>
+      
+    
+
+<div class="ocaml_include sig" items="[&quot;Utils&quot;,&quot;Std&quot;,&quot;Read_c&quot;,&quot;Write_c&quot;,&quot;Binable&quot;,&quot;Type_class&quot;,&quot;Size&quot;,&quot;Map_to_safe&quot;,&quot;Write_ml&quot;,&quot;Unsafe_write_c&quot;,&quot;Read_ml&quot;,&quot;Unsafe_read_c&quot;,&quot;Unsafe_common&quot;,&quot;Nat0&quot;,&quot;Common&quot;]">
+		      <pre><span class="keyword">include</span> <code class="code">Bin_prot</code></pre>
+</div>
+<div class="ocaml_module sig" name="Writer">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Core_bin_prot.Writer">Writer</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> = {<code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code> </pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.size">size</span> :<code class="type">'a <a href="?package=core_kernel&amp;module=Core_bin_prot.Size&amp;type=sizer">Size.sizer</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.write">write</span> :<code class="type">'a <a href="?package=core_kernel&amp;module=Core_bin_prot.Write_ml&amp;type=writer">Write_ml.writer</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.unsafe_write">unsafe_write</span> :<code class="type">'a <a href="?package=core_kernel&amp;module=Core_bin_prot.Unsafe_write_c&amp;type=writer">Unsafe_write_c.writer</a></code>;</code></td>
+	  </tr></table>}
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_string</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_bin_prot.Writer&amp;type=t">t</a> -&gt; 'a -&gt; string</code></pre>
+      
+    
+		</div>
+</div>
+</div>

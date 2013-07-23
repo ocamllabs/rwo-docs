@@ -1,0 +1,95 @@
+<div class="ocaml_toplevel_module">
+<div class="info">Streams and parsers.</div>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> </pre>
+      
+    
+<pre><span id="EXCEPTIONFailure"><span class="keyword">exception</span> Failure</span></pre>
+<pre><span id="EXCEPTIONError"><span class="keyword">exception</span> Error</span> <span class="keyword">of</span> <code class="type">string</code></pre>
+<br/><br/><h6 id="6_TITLE">Stream builders</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> from</span> : <code class="type">(int -&gt; 'a option) -&gt; 'a <a href="?package=stdlib&amp;module=Stream&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_list</span> : <code class="type">'a list -&gt; 'a <a href="?package=stdlib&amp;module=Stream&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_string</span> : <code class="type">string -&gt; char <a href="?package=stdlib&amp;module=Stream&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_channel</span> : <code class="type"><a href="?package=stdlib&amp;module=Pervasives&amp;type=in_channel">in_channel</a> -&gt; char <a href="?package=stdlib&amp;module=Stream&amp;type=t">t</a></code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Stream iterator</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> iter</span> : <code class="type">('a -&gt; unit) -&gt; 'a <a href="?package=stdlib&amp;module=Stream&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Predefined parsers</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> next</span> : <code class="type">'a <a href="?package=stdlib&amp;module=Stream&amp;type=t">t</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> empty</span> : <code class="type">'a <a href="?package=stdlib&amp;module=Stream&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Useful functions</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> peek</span> : <code class="type">'a <a href="?package=stdlib&amp;module=Stream&amp;type=t">t</a> -&gt; 'a option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> junk</span> : <code class="type">'a <a href="?package=stdlib&amp;module=Stream&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> count</span> : <code class="type">'a <a href="?package=stdlib&amp;module=Stream&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> npeek</span> : <code class="type">int -&gt; 'a <a href="?package=stdlib&amp;module=Stream&amp;type=t">t</a> -&gt; 'a list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iapp</span> : <code class="type">'a <a href="?package=stdlib&amp;module=Stream&amp;type=t">t</a> -&gt; 'a <a href="?package=stdlib&amp;module=Stream&amp;type=t">t</a> -&gt; 'a <a href="?package=stdlib&amp;module=Stream&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> icons</span> : <code class="type">'a -&gt; 'a <a href="?package=stdlib&amp;module=Stream&amp;type=t">t</a> -&gt; 'a <a href="?package=stdlib&amp;module=Stream&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ising</span> : <code class="type">'a -&gt; 'a <a href="?package=stdlib&amp;module=Stream&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> lapp</span> : <code class="type">(unit -&gt; 'a <a href="?package=stdlib&amp;module=Stream&amp;type=t">t</a>) -&gt; 'a <a href="?package=stdlib&amp;module=Stream&amp;type=t">t</a> -&gt; 'a <a href="?package=stdlib&amp;module=Stream&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> lcons</span> : <code class="type">(unit -&gt; 'a) -&gt; 'a <a href="?package=stdlib&amp;module=Stream&amp;type=t">t</a> -&gt; 'a <a href="?package=stdlib&amp;module=Stream&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> lsing</span> : <code class="type">(unit -&gt; 'a) -&gt; 'a <a href="?package=stdlib&amp;module=Stream&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sempty</span> : <code class="type">'a <a href="?package=stdlib&amp;module=Stream&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> slazy</span> : <code class="type">(unit -&gt; 'a <a href="?package=stdlib&amp;module=Stream&amp;type=t">t</a>) -&gt; 'a <a href="?package=stdlib&amp;module=Stream&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> dump</span> : <code class="type">('a -&gt; unit) -&gt; 'a <a href="?package=stdlib&amp;module=Stream&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    </div>

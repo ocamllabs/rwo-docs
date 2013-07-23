@@ -1,0 +1,68 @@
+<div class="ocaml_toplevel_module">
+<div class="info">Facilities for printing exceptions and inspecting current call stack.</div>
+ 
+      <pre><span><span class="keyword">val</span> to_string</span> : <code class="type">exn -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> print</span> : <code class="type">('a -&gt; 'b) -&gt; 'a -&gt; 'b</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> catch</span> : <code class="type">('a -&gt; 'b) -&gt; 'a -&gt; 'b</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> print_backtrace</span> : <code class="type"><a href="?package=stdlib&amp;module=Pervasives&amp;type=out_channel">out_channel</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get_backtrace</span> : <code class="type">unit -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> record_backtrace</span> : <code class="type">bool -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> backtrace_status</span> : <code class="type">unit -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> register_printer</span> : <code class="type">(exn -&gt; string option) -&gt; unit</code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Raw backtraces</h6><br/> <br/>
+	  
+<pre><span id="TYPEraw_backtrace"><span class="keyword">type</span> raw_backtrace</span> </pre>
+      
+    
+<br/>The abstract type <code class="code">backtrace</code> stores exception backtraces in
+    a low-level format, instead of directly exposing them as string as
+    the <code class="code">get_backtrace()</code> function does.<br/>    This allows to pay the performance overhead of representation
+    conversion and formatting only at printing time, which is useful
+    if you want to record more backtrace than you actually print.<br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> get_raw_backtrace</span> : <code class="type">unit -&gt; <a href="?package=stdlib&amp;module=Printexc&amp;type=raw_backtrace">raw_backtrace</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> print_raw_backtrace</span> : <code class="type"><a href="?package=stdlib&amp;module=Pervasives&amp;type=out_channel">out_channel</a> -&gt; <a href="?package=stdlib&amp;module=Printexc&amp;type=raw_backtrace">raw_backtrace</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> raw_backtrace_to_string</span> : <code class="type"><a href="?package=stdlib&amp;module=Printexc&amp;type=raw_backtrace">raw_backtrace</a> -&gt; string</code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Current call stack</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> get_callstack</span> : <code class="type">int -&gt; <a href="?package=stdlib&amp;module=Printexc&amp;type=raw_backtrace">raw_backtrace</a></code></pre>
+      
+    
+<br/><code class="code">Printexc.get_callstack n</code> returns a description of the top of the
+    call stack on the current program point (for the current thread),
+    with at most <code class="code">n</code> entries.  (Note: this function is not related to
+    exceptions at all, despite being part of the <code class="code">Printexc</code> module.)<br/> <b>Since</b> 4.01.0<br/>
+	  </div>

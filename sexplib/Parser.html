@@ -1,0 +1,27 @@
+<div class="ocaml_toplevel_module">
+
+<pre><code><span id="TYPEtoken"><span class="keyword">type</span> token</span> = </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTtoken.STRING"><span class="constructor">STRING</span></span> <span class="keyword">of</span> <code class="type">string</code></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTtoken.LPAREN"><span class="constructor">LPAREN</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTtoken.RPAREN"><span class="constructor">RPAREN</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTtoken.EOF"><span class="constructor">EOF</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTtoken.HASH_SEMI"><span class="constructor">HASH_SEMI</span></span></code></td>
+	   </tr></table>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp</span> : <code class="type">(<a href="?package=stdlib&amp;module=Lexing&amp;type=lexbuf">Lexing.lexbuf</a> -&gt; <a href="?package=sexplib&amp;module=Parser&amp;type=token">token</a>) -&gt; <a href="?package=stdlib&amp;module=Lexing&amp;type=lexbuf">Lexing.lexbuf</a> -&gt; <a href="?package=sexplib&amp;module=Type&amp;type=t">Type.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_opt</span> : <code class="type">(<a href="?package=stdlib&amp;module=Lexing&amp;type=lexbuf">Lexing.lexbuf</a> -&gt; <a href="?package=sexplib&amp;module=Parser&amp;type=token">token</a>) -&gt; <a href="?package=stdlib&amp;module=Lexing&amp;type=lexbuf">Lexing.lexbuf</a> -&gt; <a href="?package=sexplib&amp;module=Type&amp;type=t">Type.t</a> option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexps</span> : <code class="type">(<a href="?package=stdlib&amp;module=Lexing&amp;type=lexbuf">Lexing.lexbuf</a> -&gt; <a href="?package=sexplib&amp;module=Parser&amp;type=token">token</a>) -&gt; <a href="?package=stdlib&amp;module=Lexing&amp;type=lexbuf">Lexing.lexbuf</a> -&gt; <a href="?package=sexplib&amp;module=Type&amp;type=t">Type.t</a> list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rev_sexps</span> : <code class="type">(<a href="?package=stdlib&amp;module=Lexing&amp;type=lexbuf">Lexing.lexbuf</a> -&gt; <a href="?package=sexplib&amp;module=Parser&amp;type=token">token</a>) -&gt; <a href="?package=stdlib&amp;module=Lexing&amp;type=lexbuf">Lexing.lexbuf</a> -&gt; <a href="?package=sexplib&amp;module=Type&amp;type=t">Type.t</a> list</code></pre>
+      
+    </div>

@@ -1,0 +1,615 @@
+<div class="ocaml_toplevel_module">
+
+ 
+      <pre><span><span class="keyword">val</span> __pa_ounit_275876e34cf609db118f3d84b799a790</span> : <code class="type">string</code></pre>
+      
+    
+
+<div class="ocaml_module ident" name="Binable" path="?package=core_kernel&amp;amp;module=Binable0">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Binable">Binable</a> : <code class="code"><a href="?package=core_kernel&amp;module=Binable0">Binable0</a></code></pre>
+</div>
+<div class="ocaml_module sig" name="Key">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Key">Key</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> compare</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Key&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Key&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> hash</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Key&amp;type=t">t</a> -&gt; int</code></pre>
+      <div class="info">Values returned by <code class="code">hash</code> must be non-negative.  An exception will be raised in the
+      case that <code class="code">hash</code> returns a negative value.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Key&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Key&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+<br/>Values returned by <code class="code">hash</code> must be non-negative.  An exception will be raised in the
+      case that <code class="code">hash</code> returns a negative value.<br/>
+	  
+		</div>
+</div>
+
+<div class="ocaml_module sig" name="Key_binable">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Key_binable">Key_binable</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> </pre>
+      
+    
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Core_hashtbl_intf.Key" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Key">Key</a></code> with type <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Key&amp;type=t">t</a> = <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Key_binable&amp;type=t">t</a></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> bin_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Key_binable&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Key_binable&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Read_ml&amp;type=reader">Bin_prot.Read_ml.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t_</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Key_binable&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t__</span> : <code class="type">(int -&gt; <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Key_binable&amp;type=t">t</a>) <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Key_binable&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Key_binable&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Size&amp;type=sizer">Bin_prot.Size.sizer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Key_binable&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Bin_prot.Write_ml.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Key_binable&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Key_binable&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+		</div>
+</div>
+
+<div class="ocaml_module sig" name="Hashable">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashable">Hashable</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><code><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> = {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.hash">hash</span> :<code class="type">'a -&gt; int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.compare">compare</span> :<code class="type">'a -&gt; 'a -&gt; int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.sexp_of_t">sexp_of_t</span> :<code class="type">'a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code>;</code></td>
+	  </tr></table>}
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> hash_param</span> : <code class="type">int -&gt; int -&gt; 'a -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> hash</span> : <code class="type">'a -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> poly</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashable&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_key</span> : <code class="type">(module Key with type t = 'a) -&gt; 'a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashable&amp;type=t">t</a></code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="Hashable">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashable">Hashable</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> = {<code class="type">'a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashable&amp;type=t">Hashable.t</a></code> </pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.hash">hash</span> :<code class="type">'a -&gt; int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.compare">compare</span> :<code class="type">'a -&gt; 'a -&gt; int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.sexp_of_t">sexp_of_t</span> :<code class="type">'a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code>;</code></td>
+	  </tr></table>}
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> poly</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashable&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_key</span> : <code class="type">(module Key with type t = 'a) -&gt; 'a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashable&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> hash_param</span> : <code class="type">int -&gt; int -&gt; 'a -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> hash</span> : <code class="type">'a -&gt; int</code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="Accessors">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors">Accessors</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'b) </code>t</span> </pre>
+      
+    
+<pre><span id="TYPEkey"><span class="keyword">type</span> <code class="type">'a </code>key</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_key</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=key">key</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> clear</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> copy</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> invariant</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; init:'c -&gt; f:(key:'a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=key">key</a> -&gt; data:'b -&gt; 'c -&gt; 'c) -&gt; 'c</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; f:(key:'a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=key">key</a> -&gt; data:'b -&gt; unit) -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> existsi</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; f:(key:'a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=key">key</a> -&gt; data:'b -&gt; bool) -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> exists</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; f:('b -&gt; bool) -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> length</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_empty</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=key">key</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=key">key</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove_one</span> : <code class="type">('a, 'b list) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=key">key</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> replace</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; key:'a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=key">key</a> -&gt; data:'b -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; key:'a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=key">key</a> -&gt; data:'b -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; key:'a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=key">key</a> -&gt; data:'b -&gt; [ `Duplicate | `Ok ]</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add_exn</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; key:'a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=key">key</a> -&gt; data:'b -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> change</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=key">key</a> -&gt; ('b option -&gt; 'b option) -&gt; unit</code></pre>
+      <div class="info"><code class="code">change t key f</code> updates the given table by changing the value stored under <code class="code">key</code>
+      according to <code class="code">f</code>, just like <code class="code">Map.change</code> (see that for example).</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> add_multi</span> : <code class="type">('a, 'b list) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; key:'a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=key">key</a> -&gt; data:'b -&gt; unit</code></pre>
+      <div class="info"><code class="code">add_multi t ~key ~data</code> if <code class="code">key</code> is present in the table then cons
+     <code class="code">data</code> on the list, otherwise add <code class="code">key</code> with a single element list.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> remove_multi</span> : <code class="type">('a, 'b list) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=key">key</a> -&gt; unit</code></pre>
+      <div class="info"><code class="code">remove_multi t key</code> updates the table, removing the head of the list bound to
+      <code class="code">key</code>. If the list has only one element (or is empty) then the binding is
+      removed.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> map</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; f:('b -&gt; 'c) -&gt; ('a, 'c) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">map t f</code> returns new table with bound values replaced by
+      <code class="code">f</code> applied to the bound values</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> mapi</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; f:(key:'a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=key">key</a> -&gt; data:'b -&gt; 'c) -&gt; ('a, 'c) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a></code></pre>
+      <div class="info">like <code class="code">map</code>, but function takes both key and data as arguments</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> filter_map</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; f:('b -&gt; 'c option) -&gt; ('a, 'c) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a></code></pre>
+      <div class="info">returns new map with bound values filtered by f applied to the bound
+      values</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> filter_mapi</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; f:(key:'a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=key">key</a> -&gt; data:'b -&gt; 'c option) -&gt; ('a, 'c) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a></code></pre>
+      <div class="info">like <code class="code">filter_map</code>, but function takes both key and data as arguments</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> filter</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; f:('b -&gt; bool) -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> filteri</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; f:(key:'a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=key">key</a> -&gt; data:'b -&gt; bool) -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> partition_map</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt;
+f:('b -&gt; [ `Fst of 'c | `Snd of 'd ]) -&gt; ('a, 'c) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> * ('a, 'd) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a></code></pre>
+      <div class="info">returns new maps with bound values partitioned by f applied to the bound values</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> partition_mapi</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt;
+f:(key:'a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=key">key</a> -&gt; data:'b -&gt; [ `Fst of 'c | `Snd of 'd ]) -&gt;
+('a, 'c) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> * ('a, 'd) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a></code></pre>
+      <div class="info">like <code class="code">partition_map</code>, but function takes both key and data as arguments</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> partition_tf</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; f:('b -&gt; bool) -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> * ('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> partitioni_tf</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; f:(key:'a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=key">key</a> -&gt; data:'b -&gt; bool) -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> * ('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_or_add</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=key">key</a> -&gt; default:(unit -&gt; 'b) -&gt; 'b</code></pre>
+      <div class="info"><code class="code">find_or_add t k ~default</code> returns the data associated with key k if it
+      is in the table t, otherwise it lets d = default() and adds it to the
+      table.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> find</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=key">key</a> -&gt; 'b option</code></pre>
+      <div class="info"><code class="code">find t k</code> returns Some (the current binding) of k in t, or None if no
+      such binding exists</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> find_exn</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=key">key</a> -&gt; 'b</code></pre>
+      <div class="info"><code class="code">find_exn t k</code> returns the current binding of k in t, or raises Not_found
+      if no such binding exists.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> find_and_remove</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=key">key</a> -&gt; 'b option</code></pre>
+      <div class="info"><code class="code">find_and_remove t k</code> returns Some (the current binding) of k in t and removes
+      it, or None is no such binding exists</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> iter_vals</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; f:('b -&gt; unit) -&gt; unit</code></pre>
+      <div class="info"><code class="code">iter_vals t ~f</code> is like iter, except it only supplies the value to f,
+      not the key.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> merge</span> : <code class="type">('k, 'a) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt;
+('k, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt;
+f:(key:'k <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=key">key</a> -&gt;
+   [ `Both of 'a * 'b | `Left of 'a | `Right of 'b ] -&gt; 'c option) -&gt;
+('k, 'c) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a></code></pre>
+      <div class="info">Merge two hashtables.<br/>      The result of <code class="code">merge f h1 h2</code> has as keys the set of all <code class="code">k</code> in the
+      union of the sets of keys of <code class="code">h1</code> and <code class="code">h2</code> for which <code class="code">d(k)</code> is not
+      None, where:<br/>      d(k) =<ul><li>f ~key:k (Some d1) None
+      if <code class="code">k</code> in <code class="code">h1</code> is to d1, and <code class="code">h2</code> does not map <code class="code">k</code>;</li></ul>      - f ~key:k None (Some d2)
+      if <code class="code">k</code> in <code class="code">h2</code> is to d2, and <code class="code">h1</code> does not map <code class="code">k</code>;<br/>      - f ~key:k (Some d1) (Some d2)
+      otherwise, where <code class="code">k</code> in <code class="code">h1</code> is to <code class="code">d1</code> and <code class="code">k</code> in <code class="code">h2</code> is to <code class="code">d2</code>.<br/>      Each key <code class="code">k</code> is mapped to a single piece of data x, where <code class="code">d(k)</code> = Some x.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> merge_into</span> : <code class="type">f:(key:'a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=key">key</a> -&gt; 'b -&gt; 'b option -&gt; 'b option) -&gt;
+src:('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; dst:('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; unit</code></pre>
+      <div class="info">Merge one hashtable into another.<br/>      After <code class="code">merge_into f src dst</code>, for every <code class="code">key</code> in <code class="code">src</code>, <code class="code">key</code> will be
+      re-mapped in <code class="code">dst</code> to <code class="code">v</code> if <code class="code">f ~key d1 (find dst key) = Some v</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> keys</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=key">key</a> list</code></pre>
+      <div class="info">Returns the list of all keys for given hashtable.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> data</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; 'b list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> filter_inplace</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; f:('b -&gt; bool) -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> filteri_inplace</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; f:('a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=key">key</a> -&gt; 'b -&gt; bool) -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> equal</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; ('b -&gt; 'b -&gt; bool) -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_alist</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; ('a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=key">key</a> * 'b) list</code></pre>
+      <div class="info">Returns the list of all (key,data) pairs for given hashtable.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> validate</span> : <code class="type">name:('a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=key">key</a> -&gt; string) -&gt; 'b <a href="?package=core_kernel&amp;module=Validate&amp;type=check">Validate.check</a> -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Validate&amp;type=check">Validate.check</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> incr</span> : <code class="type">?by:int -&gt; ('a, int) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=key">key</a> -&gt; unit</code></pre>
+      
+    
+		</div>
+</div>
+<pre><span id="TYPEcreate_options_without_hashable"><span class="keyword">type</span> <code class="type">('key, 'z) </code>create_options_without_hashable</span> = <code class="type">?growth_allowed:bool -&gt; ?size:int -&gt; 'z</code> </pre>
+      
+    
+<pre><span id="TYPEcreate_options_with_hashable"><span class="keyword">type</span> <code class="type">('key, 'z) </code>create_options_with_hashable</span> = <code class="type">?growth_allowed:bool -&gt; ?size:int -&gt; hashable:'key <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashable&amp;type=t">Hashable.t</a> -&gt; 'z</code> </pre>
+      
+    
+<div class="ocaml_module sig" name="Creators">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Creators">Creators</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'b) </code>t</span> </pre>
+      
+    
+<pre><span id="TYPEkey"><span class="keyword">type</span> <code class="type">'a </code>key</span> </pre>
+      
+    
+<pre><span id="TYPEcreate_options"><span class="keyword">type</span> <code class="type">('key, 'z) </code>create_options</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">('a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Creators&amp;type=key">key</a>, unit -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Creators&amp;type=t">t</a>) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Creators&amp;type=create_options">create_options</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_alist</span> : <code class="type">('a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Creators&amp;type=key">key</a>,
+ ('a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Creators&amp;type=key">key</a> * 'b) list -&gt; [ `Duplicate_key of 'a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Creators&amp;type=key">key</a> | `Ok of ('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Creators&amp;type=t">t</a> ])
+<a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Creators&amp;type=create_options">create_options</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_alist_report_all_dups</span> : <code class="type">('a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Creators&amp;type=key">key</a>,
+ ('a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Creators&amp;type=key">key</a> * 'b) list -&gt; [ `Duplicate_keys of 'a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Creators&amp;type=key">key</a> list | `Ok of ('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Creators&amp;type=t">t</a> ])
+<a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Creators&amp;type=create_options">create_options</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_alist_exn</span> : <code class="type">('a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Creators&amp;type=key">key</a>, ('a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Creators&amp;type=key">key</a> * 'b) list -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Creators&amp;type=t">t</a>) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Creators&amp;type=create_options">create_options</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_alist_multi</span> : <code class="type">('a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Creators&amp;type=key">key</a>, ('a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Creators&amp;type=key">key</a> * 'b) list -&gt; ('a, 'b list) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Creators&amp;type=t">t</a>) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Creators&amp;type=create_options">create_options</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create_mapped</span> : <code class="type">('a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Creators&amp;type=key">key</a>,
+ get_key:('r -&gt; 'a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Creators&amp;type=key">key</a>) -&gt;
+ get_data:('r -&gt; 'b) -&gt;
+ 'r list -&gt; [ `Duplicate_keys of 'a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Creators&amp;type=key">key</a> list | `Ok of ('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Creators&amp;type=t">t</a> ])
+<a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Creators&amp;type=create_options">create_options</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create_with_key</span> : <code class="type">('a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Creators&amp;type=key">key</a>,
+ get_key:('r -&gt; 'a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Creators&amp;type=key">key</a>) -&gt;
+ 'r list -&gt; [ `Duplicate_keys of 'a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Creators&amp;type=key">key</a> list | `Ok of ('a, 'r) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Creators&amp;type=t">t</a> ])
+<a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Creators&amp;type=create_options">create_options</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create_with_key_exn</span> : <code class="type">('a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Creators&amp;type=key">key</a>, get_key:('r -&gt; 'a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Creators&amp;type=key">key</a>) -&gt; 'r list -&gt; ('a, 'r) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Creators&amp;type=t">t</a>) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Creators&amp;type=create_options">create_options</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> group</span> : <code class="type">('a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Creators&amp;type=key">key</a>,
+ get_key:('r -&gt; 'a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Creators&amp;type=key">key</a>) -&gt;
+ get_data:('r -&gt; 'b) -&gt; combine:('b -&gt; 'b -&gt; 'b) -&gt; 'r list -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Creators&amp;type=t">t</a>)
+<a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Creators&amp;type=create_options">create_options</a></code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="S">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.S">S</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEkey"><span class="keyword">type</span> key</span> </pre>
+      
+    
+<pre><span id="TYPEhashtbl"><span class="keyword">type</span> <code class="type">('a, 'b) </code>hashtbl</span> </pre>
+      
+    
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'b </code>t</span> = <code class="type">(<a href="?package=core_kernel&amp;module=Core_hashtbl_intf.S&amp;type=key">key</a>, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.S&amp;type=hashtbl">hashtbl</a></code> </pre>
+      
+    
+<pre><span id="TYPEt_"><span class="keyword">type</span> <code class="type">('a, 'b) </code>t_</span> = <code class="type">'b <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.S&amp;type=t">t</a></code> </pre>
+      
+    
+<pre><span id="TYPEkey_"><span class="keyword">type</span> <code class="type">'a </code>key_</span> = <code class="type"><a href="?package=core_kernel&amp;module=Core_hashtbl_intf.S&amp;type=key">key</a></code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> hashable</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_hashtbl_intf.S&amp;type=key">key</a> <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashable&amp;type=t">Hashable.t</a></code></pre>
+      
+    
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Core_hashtbl_intf.Creators" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Creators">Creators</a></code> with type <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Creators&amp;type=t">t</a> = ('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.S&amp;type=t_">t_</a> with type key = 'a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.S&amp;type=key_">key_</a> with type create_options = ('key, 'z) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf&amp;type=create_options_without_hashable">create_options_without_hashable</a></pre>
+</div>
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Core_hashtbl_intf.Accessors" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors">Accessors</a></code> with type <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> = ('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.S&amp;type=t_">t_</a> with type key = 'a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.S&amp;type=key_">key_</a></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp</span> : <code class="type">(<a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'b) -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'b <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('b -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; 'b <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.S&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+		</div>
+</div>
+
+<div class="ocaml_module sig" name="S_binable">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.S_binable">S_binable</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Core_hashtbl_intf.S" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Core_hashtbl_intf.S">S</a></code></pre>
+</div>
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Core_hashtbl_intf.Binable&amp;amp;type=S1" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Binable&amp;type=S1">Binable.S1</a></code> with type t = 'v <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.S_binable&amp;type=t">t</a></pre>
+</div>
+		</div>
+</div>
+<div class="ocaml_module sig" name="Hashtbl">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashtbl">Hashtbl</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<div class="ocaml_module ident" name="Hashable" path="?package=core_kernel&amp;amp;module=Core_hashtbl_intf.Hashable">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashtbl.Hashable">Hashable</a> : <code class="code"><a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashable">Hashable</a></code></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> hash</span> : <code class="type">'a -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> hash_param</span> : <code class="type">int -&gt; int -&gt; 'a -&gt; int</code></pre>
+      
+    
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'b) </code>t</span> </pre>
+      
+    
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Core_hashtbl_intf.Creators" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Creators">Creators</a></code> with type <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Creators&amp;type=t">t</a> = ('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashtbl&amp;type=t">t</a> with type key = 'a with type create_options = ('a, 'z) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf&amp;type=create_options_with_hashable">create_options_with_hashable</a></pre>
+</div>
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Core_hashtbl_intf.Accessors" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors">Accessors</a></code> with type <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> = ('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashtbl&amp;type=t">t</a> with type key = 'a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashtbl&amp;type=key">key</a></pre>
+</div>
+<div class="ocaml_module sig" name="Poly">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashtbl.Poly">Poly</a> : <code class="code">sig</code> .. <code class="code">end</code> with type <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashtbl.Poly&amp;type=t">t</a> = ('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashtbl&amp;type=t">t</a></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'b) </code>t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> hashable</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashtbl.Hashable&amp;type=t">Hashable.t</a></code></pre>
+      
+    
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Core_hashtbl_intf.Creators" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Creators">Creators</a></code> with type <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Creators&amp;type=t">t</a> = ('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashtbl.Poly&amp;type=t">t</a> with type key = 'a with type create_options = ('key, 'z) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf&amp;type=create_options_without_hashable">create_options_without_hashable</a></pre>
+</div>
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Core_hashtbl_intf.Accessors" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors">Accessors</a></code> with type <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Accessors&amp;type=t">t</a> = ('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashtbl.Poly&amp;type=t">t</a> with type key = 'a <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashtbl.Poly&amp;type=key">key</a></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp</span> : <code class="type">(<a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'a) -&gt;
+(<a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'b) -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashtbl.Poly&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt;
+('b -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashtbl.Poly&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a> -&gt;
+'b <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a> -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashtbl.Poly&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+'b <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashtbl.Poly&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Read_ml&amp;type=reader">Bin_prot.Read_ml.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t_</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+'b <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashtbl.Poly&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t__</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+'b <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+(int -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashtbl.Poly&amp;type=t">t</a>) <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a> -&gt;
+'b <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a> -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashtbl.Poly&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Size&amp;type=sizer">Bin_prot.Size.sizer</a> -&gt;
+'b <a href="?package=bin_prot&amp;module=Size&amp;type=sizer">Bin_prot.Size.sizer</a> -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashtbl.Poly&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Size&amp;type=sizer">Bin_prot.Size.sizer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt;
+'b <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashtbl.Poly&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Bin_prot.Write_ml.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt;
+'b <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt;
+('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashtbl.Poly&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a> -&gt;
+'b <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a> -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashtbl.Poly&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module ident" name="Key" path="?package=core_kernel&amp;amp;module=Core_hashtbl_intf.Key">
+		    <pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashtbl.Key">Key</a> = <code class="type"><code class="code"><a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Key">Key</a></code></code></pre>
+</div>
+<div class="ocaml_module ident" name="Key_binable" path="?package=core_kernel&amp;amp;module=Core_hashtbl_intf.Key_binable">
+		    <pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashtbl.Key_binable">Key_binable</a> = <code class="type"><code class="code"><a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Key_binable">Key_binable</a></code></code></pre>
+</div>
+<div class="ocaml_module ident" name="S" path="?package=core_kernel&amp;amp;module=Core_hashtbl_intf.S">
+		    <pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashtbl.S">S</a> = <code class="type"><code class="code"><a href="?package=core_kernel&amp;module=Core_hashtbl_intf.S">S</a></code> with type <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.S&amp;type=hashtbl">hashtbl</a> = ('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashtbl&amp;type=t">t</a></code></pre>
+</div>
+<div class="ocaml_module ident" name="S_binable" path="?package=core_kernel&amp;amp;module=Core_hashtbl_intf.S_binable">
+		    <pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashtbl.S_binable">S_binable</a> = <code class="type"><code class="code"><a href="?package=core_kernel&amp;module=Core_hashtbl_intf.S_binable">S_binable</a></code> with type <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.S_binable&amp;type=hashtbl">hashtbl</a> = ('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashtbl&amp;type=t">t</a></code></pre>
+</div>
+<div class="ocaml_module ident" name="Make" path="?package=core_kernel&amp;amp;module=Core_hashtbl_intf.Hashtbl.S">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashtbl.Make">Make</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">Key</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashtbl.Key">Key</a></code><code class="code">) -&gt; </code><code class="code"><a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashtbl.S">S</a></code> with type key = Key.t</div></pre>
+</div>
+<div class="ocaml_module ident" name="Make_binable" path="?package=core_kernel&amp;amp;module=Core_hashtbl_intf.Hashtbl.S_binable">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashtbl.Make_binable">Make_binable</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">Key</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashtbl.Key_binable">Key_binable</a></code><code class="code">) -&gt; </code><code class="code"><a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashtbl.S_binable">S_binable</a></code> with type key = Key.t</div></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt;
+('b -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Core_hashtbl_intf.Hashtbl&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+		</div>
+</div>
+
+</div>

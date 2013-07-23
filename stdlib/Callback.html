@@ -1,0 +1,12 @@
+<div class="ocaml_toplevel_module">
+<div class="info">Registering OCaml values with the C runtime.<br/>   This module allows OCaml values to be registered with the C runtime
+   under a symbolic name, so that C code can later call back registered
+   OCaml functions, or raise registered OCaml exceptions.</div>
+ 
+      <pre><span><span class="keyword">val</span> register</span> : <code class="type">string -&gt; 'a -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> register_exception</span> : <code class="type">string -&gt; exn -&gt; unit</code></pre>
+      
+    </div>

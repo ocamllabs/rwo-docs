@@ -1,0 +1,100 @@
+<div class="ocaml_toplevel_module">
+
+ 
+      <pre><span><span class="keyword">val</span> __pa_ounit_275876e34cf609db118f3d84b799a790</span> : <code class="type">string</code></pre>
+      
+    
+
+<div class="ocaml_module sig" name="S">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Substring_intf.S">S</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEbase"><span class="keyword">type</span> base</span> </pre>
+      
+    
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> base</span> : <code class="type"><a href="?package=core_kernel&amp;module=Substring_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Substring_intf.S&amp;type=base">base</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pos</span> : <code class="type"><a href="?package=core_kernel&amp;module=Substring_intf.S&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> length</span> : <code class="type"><a href="?package=core_kernel&amp;module=Substring_intf.S&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">?pos:int -&gt; ?len:int -&gt; <a href="?package=core_kernel&amp;module=Substring_intf.S&amp;type=base">base</a> -&gt; <a href="?package=core_kernel&amp;module=Substring_intf.S&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">create ?pos ?len base</code> creates a substring of the base sequence of
+ length <code class="code">len</code> starting at position <code class="code">pos</code>, i.e.<br/>   base.<code class="code">pos</code>, base.<code class="code">pos + 1</code>, ... base.<code class="code">pos + len - 1</code><br/> It is required that:
+   0 &lt;= pos
+   0 &lt;= len
+   pos + len &lt;= length base<br/> It does not copy the characters.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> blit_to_string</span> : <code class="type"><a href="?package=core_kernel&amp;module=Substring_intf.S&amp;type=t">t</a> -&gt; dst:string -&gt; dst_pos:int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> blit_to_bigstring</span> : <code class="type"><a href="?package=core_kernel&amp;module=Substring_intf.S&amp;type=t">t</a> -&gt; dst:<a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">Bigstring.t</a> -&gt; dst_pos:int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> blit_from_string</span> : <code class="type"><a href="?package=core_kernel&amp;module=Substring_intf.S&amp;type=t">t</a> -&gt; src:string -&gt; src_pos:int -&gt; len:int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> blit_from_bigstring</span> : <code class="type"><a href="?package=core_kernel&amp;module=Substring_intf.S&amp;type=t">t</a> -&gt; src:<a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">Bigstring.t</a> -&gt; src_pos:int -&gt; len:int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> concat</span> : <code class="type"><a href="?package=core_kernel&amp;module=Substring_intf.S&amp;type=t">t</a> list -&gt; <a href="?package=core_kernel&amp;module=Substring_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> concat_string</span> : <code class="type"><a href="?package=core_kernel&amp;module=Substring_intf.S&amp;type=t">t</a> list -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> concat_bigstring</span> : <code class="type"><a href="?package=core_kernel&amp;module=Substring_intf.S&amp;type=t">t</a> list -&gt; <a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">Bigstring.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_bigstring</span> : <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">Bigstring.t</a> -&gt; <a href="?package=core_kernel&amp;module=Substring_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_string</span> : <code class="type">string -&gt; <a href="?package=core_kernel&amp;module=Substring_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_bigstring</span> : <code class="type"><a href="?package=core_kernel&amp;module=Substring_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">Bigstring.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_string</span> : <code class="type"><a href="?package=core_kernel&amp;module=Substring_intf.S&amp;type=t">t</a> -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> drop_prefix</span> : <code class="type"><a href="?package=core_kernel&amp;module=Substring_intf.S&amp;type=t">t</a> -&gt; int -&gt; <a href="?package=core_kernel&amp;module=Substring_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> drop_suffix</span> : <code class="type"><a href="?package=core_kernel&amp;module=Substring_intf.S&amp;type=t">t</a> -&gt; int -&gt; <a href="?package=core_kernel&amp;module=Substring_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> prefix</span> : <code class="type"><a href="?package=core_kernel&amp;module=Substring_intf.S&amp;type=t">t</a> -&gt; int -&gt; <a href="?package=core_kernel&amp;module=Substring_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> suffix</span> : <code class="type"><a href="?package=core_kernel&amp;module=Substring_intf.S&amp;type=t">t</a> -&gt; int -&gt; <a href="?package=core_kernel&amp;module=Substring_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+		</div>
+</div>
+</div>

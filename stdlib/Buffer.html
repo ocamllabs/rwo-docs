@@ -1,0 +1,68 @@
+<div class="ocaml_toplevel_module">
+<div class="info">Extensible string buffers.<br/>   This module implements string buffers that automatically expand
+   as necessary.  It provides accumulative concatenation of strings
+   in quasi-linear time (instead of quadratic time when strings are
+   concatenated pairwise).</div>
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">int -&gt; <a href="?package=stdlib&amp;module=Buffer&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> contents</span> : <code class="type"><a href="?package=stdlib&amp;module=Buffer&amp;type=t">t</a> -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sub</span> : <code class="type"><a href="?package=stdlib&amp;module=Buffer&amp;type=t">t</a> -&gt; int -&gt; int -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> blit</span> : <code class="type"><a href="?package=stdlib&amp;module=Buffer&amp;type=t">t</a> -&gt; int -&gt; string -&gt; int -&gt; int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> nth</span> : <code class="type"><a href="?package=stdlib&amp;module=Buffer&amp;type=t">t</a> -&gt; int -&gt; char</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> length</span> : <code class="type"><a href="?package=stdlib&amp;module=Buffer&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> clear</span> : <code class="type"><a href="?package=stdlib&amp;module=Buffer&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> reset</span> : <code class="type"><a href="?package=stdlib&amp;module=Buffer&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add_char</span> : <code class="type"><a href="?package=stdlib&amp;module=Buffer&amp;type=t">t</a> -&gt; char -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add_string</span> : <code class="type"><a href="?package=stdlib&amp;module=Buffer&amp;type=t">t</a> -&gt; string -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add_substring</span> : <code class="type"><a href="?package=stdlib&amp;module=Buffer&amp;type=t">t</a> -&gt; string -&gt; int -&gt; int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add_substitute</span> : <code class="type"><a href="?package=stdlib&amp;module=Buffer&amp;type=t">t</a> -&gt; (string -&gt; string) -&gt; string -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add_buffer</span> : <code class="type"><a href="?package=stdlib&amp;module=Buffer&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=Buffer&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add_channel</span> : <code class="type"><a href="?package=stdlib&amp;module=Buffer&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=Pervasives&amp;type=in_channel">in_channel</a> -&gt; int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> output_buffer</span> : <code class="type"><a href="?package=stdlib&amp;module=Pervasives&amp;type=out_channel">out_channel</a> -&gt; <a href="?package=stdlib&amp;module=Buffer&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    </div>

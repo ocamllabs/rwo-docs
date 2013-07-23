@@ -1,0 +1,142 @@
+<div class="ocaml_toplevel_module">
+<div class="info">Type for tracking errors in an Error.t. This is a specialization of the Result type,
+    where the Error constructor carries an Error.t.<br/>    A common idiom is to wrap a function that is not implemented on all platforms, e.g.:<br/>    val do_something_linux_specific : (unit -&gt; unit) Or_error.t</div>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> = <code class="type">('a, <a href="?package=core_kernel&amp;module=Error&amp;type=t">Error.t</a>) <a href="?package=core_kernel&amp;module=Result&amp;type=t">Result.t</a></code> </pre>
+      
+    
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Monad.S" items="[&quot;Monad_infix&quot;]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Monad.S">Monad.S</a></code> with type t = 'a <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">t</a></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> try_with</span> : <code class="type">?backtrace:bool -&gt; (unit -&gt; 'a) -&gt; 'a <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">try_with f</code> catches exceptions thrown by <code class="code">f</code> and returns them in the Result.t as an
+    Error.t.  <code class="code">try_with_join</code> is like <code class="code">try_with</code>, except that <code class="code">f</code> can throw exceptions or
+    return an Error directly, without ending up with a nested error; it is equivalent to
+    <code class="code">Result.join (try_with f)</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> try_with_join</span> : <code class="type">?backtrace:bool -&gt; (unit -&gt; 'a <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">t</a>) -&gt; 'a <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ok_exn</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">t</a> -&gt; 'a</code></pre>
+      <div class="info"><code class="code">ok_exn t</code> throws an exception if <code class="code">t</code> is an <code class="code">Error</code>, and otherwise returns the
+    contents of the <code class="code">Ok</code> constructor.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> of_exn</span> : <code class="type">?backtrace:[ `Get | `This of string ] -&gt; exn -&gt; 'a <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">of_exn exn</code> is <code class="code">Error (Error.of_exn exn)</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> of_exn_result</span> : <code class="type">('a, exn) <a href="?package=core_kernel&amp;module=Result&amp;type=t">Result.t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">of_exn_result (Ok a) = Ok a</code>, <code class="code">of_exn_result (Error exn) = of_exn exn</code> </div>
+    
+ 
+      <pre><span><span class="keyword">val</span> error</span> : <code class="type">string -&gt; 'a -&gt; ('a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; 'b <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">error message value sexp_of_value</code> constructs an <code class="code">Error.t</code> and returns it as a
+    <code class="code">Result.Error</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> error_string</span> : <code class="type">string -&gt; 'a <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">error_string message</code> is <code class="code">Error (Error.of_string message)</code> </div>
+    
+ 
+      <pre><span><span class="keyword">val</span> tag</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">t</a> -&gt; string -&gt; 'a <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">tag t string</code> is <code class="code">Result.map_error t ~f:(fun e -&gt; Error.tag e string)</code>.
+    <code class="code">tag_arg</code> is similar.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> tag_arg</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">t</a> -&gt; string -&gt; 'b -&gt; ('b -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; 'a <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unimplemented</span> : <code class="type">string -&gt; 'a <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">unimplemented name</code> returns a standard error value for an unimplemented value.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> combine_errors</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">t</a> list -&gt; 'a list <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">combine_errors ts</code> returns <code class="code">Ok</code> if every element in <code class="code">ts</code> is <code class="code">Ok</code>, else it returns
+    <code class="code">Error</code> with all the errors in <code class="code">ts</code>.  More precisely:<br/>    | combine_errors <code class="code">Ok a1; ...; Ok an</code> = Ok <code class="code">a1; ...; an</code>
+    | combine_errors <code class="code">...; Error e1; ...; Error en; ...</code>
+    |   = Error (Error.of_list <code class="code">e1; ...; en</code>)</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> combine_errors_unit</span> : <code class="type">unit <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">t</a> list -&gt; unit <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">combine_errors_unit</code> returns <code class="code">Ok</code> if every element in <code class="code">ts</code> is <code class="code">Ok ()</code>, else it
+    returns <code class="code">Error</code> with all the errors in <code class="code">ts</code>, like <code class="code">combine_errors</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp</span> : <code class="type">(<a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'a) -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; 'a <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Read_ml&amp;type=reader">Bin_prot.Read_ml.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t_</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t__</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+(int -&gt; 'a <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">t</a>) <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Size&amp;type=sizer">Bin_prot.Size.sizer</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Size&amp;type=sizer">Bin_prot.Size.sizer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Bin_prot.Write_ml.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+<br/><code class="code">try_with f</code> catches exceptions thrown by <code class="code">f</code> and returns them in the Result.t as an
+    Error.t.  <code class="code">try_with_join</code> is like <code class="code">try_with</code>, except that <code class="code">f</code> can throw exceptions or
+    return an Error directly, without ending up with a nested error; it is equivalent to
+    <code class="code">Result.join (try_with f)</code>.<br/>
+	  
+<br/><code class="code">ok_exn t</code> throws an exception if <code class="code">t</code> is an <code class="code">Error</code>, and otherwise returns the
+    contents of the <code class="code">Ok</code> constructor.<br/>
+	  
+<br/><code class="code">of_exn exn</code> is <code class="code">Error (Error.of_exn exn)</code>.<br/>
+	  
+<br/><code class="code">of_exn_result (Ok a) = Ok a</code>, <code class="code">of_exn_result (Error exn) = of_exn exn</code> <br/>
+	  
+<br/><code class="code">error message value sexp_of_value</code> constructs an <code class="code">Error.t</code> and returns it as a
+    <code class="code">Result.Error</code>.<br/>
+	  
+<br/><code class="code">error_string message</code> is <code class="code">Error (Error.of_string message)</code> <br/>
+	  
+<br/><code class="code">tag t string</code> is <code class="code">Result.map_error t ~f:(fun e -&gt; Error.tag e string)</code>.
+    <code class="code">tag_arg</code> is similar.<br/>
+	  
+<br/><code class="code">unimplemented name</code> returns a standard error value for an unimplemented value.<br/>
+	  
+<br/><code class="code">combine_errors ts</code> returns <code class="code">Ok</code> if every element in <code class="code">ts</code> is <code class="code">Ok</code>, else it returns
+    <code class="code">Error</code> with all the errors in <code class="code">ts</code>.  More precisely:<br/>    | combine_errors <code class="code">Ok a1; ...; Ok an</code> = Ok <code class="code">a1; ...; an</code>
+    | combine_errors <code class="code">...; Error e1; ...; Error en; ...</code>
+    |   = Error (Error.of_list <code class="code">e1; ...; en</code>)<br/>
+	  
+<br/><code class="code">combine_errors_unit</code> returns <code class="code">Ok</code> if every element in <code class="code">ts</code> is <code class="code">Ok ()</code>, else it
+    returns <code class="code">Error</code> with all the errors in <code class="code">ts</code>, like <code class="code">combine_errors</code>.<br/>
+	  </div>

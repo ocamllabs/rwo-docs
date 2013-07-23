@@ -1,0 +1,47 @@
+<div class="ocaml_toplevel_module">
+<div class="info">MD5 message digest.<br/>   This module provides functions to compute 128-bit 'digests' of
+   arbitrary-length strings or files. The digests are of cryptographic
+   quality: it is very hard, given a digest, to forge a string having
+   that digest. The algorithm used is MD5. This module should not be
+   used for secure and sensitive cryptographic applications. For these
+   kind of applications more recent and stronger cryptographic
+   primitives should be used instead.</div>
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> = <code class="type">string</code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> compare</span> : <code class="type"><a href="?package=stdlib&amp;module=Digest&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=Digest&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> string</span> : <code class="type">string -&gt; <a href="?package=stdlib&amp;module=Digest&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> substring</span> : <code class="type">string -&gt; int -&gt; int -&gt; <a href="?package=stdlib&amp;module=Digest&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> channel</span> : <code class="type"><a href="?package=stdlib&amp;module=Pervasives&amp;type=in_channel">in_channel</a> -&gt; int -&gt; <a href="?package=stdlib&amp;module=Digest&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> file</span> : <code class="type">string -&gt; <a href="?package=stdlib&amp;module=Digest&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> output</span> : <code class="type"><a href="?package=stdlib&amp;module=Pervasives&amp;type=out_channel">out_channel</a> -&gt; <a href="?package=stdlib&amp;module=Digest&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> input</span> : <code class="type"><a href="?package=stdlib&amp;module=Pervasives&amp;type=in_channel">in_channel</a> -&gt; <a href="?package=stdlib&amp;module=Digest&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_hex</span> : <code class="type"><a href="?package=stdlib&amp;module=Digest&amp;type=t">t</a> -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> from_hex</span> : <code class="type">string -&gt; <a href="?package=stdlib&amp;module=Digest&amp;type=t">t</a></code></pre>
+      
+    </div>

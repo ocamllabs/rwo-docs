@@ -1,0 +1,24 @@
+<div class="ocaml_toplevel_module">
+<div class="info">Provides a functor for creating an interned string type.<br/>    An interned string is internally an int which is an index into a lookup table, which
+    makes hashing and (non-lexicographic) comparison faster than for strings.  The
+    tradeoff is that converting an interned string to and from a string is slower, since
+    they require table lookups instead of being no-ops.<br/>    Some notes on the implementation:<br/>    - It is not thread-safe (different applications of the functor can be used
+      safely from different threads, but an individual interned string module
+      is not safe to use concurrently from different threads.)<ul><li>It is leaky, meaning that an interned string, once allocated, will never be
+      deallocated.</li><li>Interned strings are compared based on the integer they are assigned on creation,
+      which is not a lexicographic order, and is not necessarily stable between runs of a
+      program.</li></ul>    The semantics of the other operations should be the same as for <code class="code">String</code>.<br/>    We don't fix the memory leak with weak pointers for performance reasons.  See
+    <code class="code">jane</code>/interns/ahuq/strint/README at revision b9a2b9dbf290.</div>
+<div class="ocaml_module sig" name="Make">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Interned_string.Make">Make</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">T</code><code class="code"> : </code><code class="code">sig</code> .. <code class="code">end</code><code class="code">) -&gt; </code><code class="code">sig</code> .. <code class="code">end</code></div></pre>
+		<div class="ocaml_module_content">
+		       
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Std_internal.Identifiable" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Std_internal.Identifiable">Std_internal.Identifiable</a></code></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> of_bigstring</span> : <code class="type">?pos:int -&gt; ?len:int -&gt; <a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">Bigstring.t</a> -&gt; <a href="?package=core_kernel&amp;module=Interned_string.Make&amp;type=t">t</a></code></pre>
+      
+    
+		</div>
+</div></div>

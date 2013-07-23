@@ -1,0 +1,501 @@
+<div class="ocaml_toplevel_module">
+<div class="info">Large, multi-dimensional, numerical arrays.<br/>   This module implements multi-dimensional arrays of integers and
+   floating-point numbers, thereafter referred to as 'big arrays'.
+   The implementation allows efficient sharing of large numerical
+   arrays between OCaml code and C or Fortran numerical libraries.<br/>   Concerning the naming conventions, users of this module are encouraged
+   to do <code class="code">open Bigarray</code> in their source, then refer to array types and
+   operations via short dot notation, e.g. <code class="code">Array1.t</code> or <code class="code">Array2.sub</code>.<br/>   Big arrays support all the OCaml ad-hoc polymorphic operations:<ul><li>comparisons (<code class="code">=</code>, <code class="code">&lt;&gt;</code>, <code class="code">&lt;=</code>, etc, as well as TODO reference : Pervasives.compare);</li><li>hashing (module <code class="code">Hash</code>);</li><li>and structured input-output (the functions from the
+     TODO reference : Marshal module, as well as TODO reference : Pervasives.output_value
+     and TODO reference : Pervasives.input_value).
+</li></ul></div>
+<br/><br/><h6 id="6_TITLE">Element kinds</h6><br/> <br/>
+	  
+<br/>Big arrays can contain elements of the following kinds:<ul><li>IEEE single precision (32 bits) floating-point numbers
+   (TODO reference : Bigarray.float32_elt),</li><li>IEEE double precision (64 bits) floating-point numbers
+   (TODO reference : Bigarray.float64_elt),</li><li>IEEE single precision (2 * 32 bits) floating-point complex numbers
+   (TODO reference : Bigarray.complex32_elt),</li><li>IEEE double precision (2 * 64 bits) floating-point complex numbers
+   (TODO reference : Bigarray.complex64_elt),</li><li>8-bit integers (signed or unsigned)
+   (TODO reference : Bigarray.int8_signed_elt or TODO reference : Bigarray.int8_unsigned_elt),</li><li>16-bit integers (signed or unsigned)
+   (TODO reference : Bigarray.int16_signed_elt or TODO reference : Bigarray.int16_unsigned_elt),</li><li>OCaml integers (signed, 31 bits on 32-bit architectures,
+   63 bits on 64-bit architectures) (TODO reference : Bigarray.int_elt),</li><li>32-bit signed integer (TODO reference : Bigarray.int32_elt),</li><li>64-bit signed integers (TODO reference : Bigarray.int64_elt),</li><li>platform-native signed integers (32 bits on 32-bit architectures,
+   64 bits on 64-bit architectures) (TODO reference : Bigarray.nativeint_elt).</li></ul>   Each element kind is represented at the type level by one
+   of the abstract types defined below.<br/>
+	  
+<pre><span id="TYPEfloat32_elt"><span class="keyword">type</span> float32_elt</span> </pre>
+      
+    
+<pre><span id="TYPEfloat64_elt"><span class="keyword">type</span> float64_elt</span> </pre>
+      
+    
+<pre><span id="TYPEcomplex32_elt"><span class="keyword">type</span> complex32_elt</span> </pre>
+      
+    
+<pre><span id="TYPEcomplex64_elt"><span class="keyword">type</span> complex64_elt</span> </pre>
+      
+    
+<pre><span id="TYPEint8_signed_elt"><span class="keyword">type</span> int8_signed_elt</span> </pre>
+      
+    
+<pre><span id="TYPEint8_unsigned_elt"><span class="keyword">type</span> int8_unsigned_elt</span> </pre>
+      
+    
+<pre><span id="TYPEint16_signed_elt"><span class="keyword">type</span> int16_signed_elt</span> </pre>
+      
+    
+<pre><span id="TYPEint16_unsigned_elt"><span class="keyword">type</span> int16_unsigned_elt</span> </pre>
+      
+    
+<pre><span id="TYPEint_elt"><span class="keyword">type</span> int_elt</span> </pre>
+      
+    
+<pre><span id="TYPEint32_elt"><span class="keyword">type</span> int32_elt</span> </pre>
+      
+    
+<pre><span id="TYPEint64_elt"><span class="keyword">type</span> int64_elt</span> </pre>
+      
+    
+<pre><span id="TYPEnativeint_elt"><span class="keyword">type</span> nativeint_elt</span> </pre>
+      
+    
+<pre><span id="TYPEkind"><span class="keyword">type</span> <code class="type">('a, 'b) </code>kind</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> float32</span> : <code class="type">(float, <a href="?package=stdlib&amp;module=Bigarray&amp;type=float32_elt">float32_elt</a>) <a href="?package=stdlib&amp;module=Bigarray&amp;type=kind">kind</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> float64</span> : <code class="type">(float, <a href="?package=stdlib&amp;module=Bigarray&amp;type=float64_elt">float64_elt</a>) <a href="?package=stdlib&amp;module=Bigarray&amp;type=kind">kind</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> complex32</span> : <code class="type">(<a href="?package=stdlib&amp;module=Complex&amp;type=t">Complex.t</a>, <a href="?package=stdlib&amp;module=Bigarray&amp;type=complex32_elt">complex32_elt</a>) <a href="?package=stdlib&amp;module=Bigarray&amp;type=kind">kind</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> complex64</span> : <code class="type">(<a href="?package=stdlib&amp;module=Complex&amp;type=t">Complex.t</a>, <a href="?package=stdlib&amp;module=Bigarray&amp;type=complex64_elt">complex64_elt</a>) <a href="?package=stdlib&amp;module=Bigarray&amp;type=kind">kind</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> int8_signed</span> : <code class="type">(int, <a href="?package=stdlib&amp;module=Bigarray&amp;type=int8_signed_elt">int8_signed_elt</a>) <a href="?package=stdlib&amp;module=Bigarray&amp;type=kind">kind</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> int8_unsigned</span> : <code class="type">(int, <a href="?package=stdlib&amp;module=Bigarray&amp;type=int8_unsigned_elt">int8_unsigned_elt</a>) <a href="?package=stdlib&amp;module=Bigarray&amp;type=kind">kind</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> int16_signed</span> : <code class="type">(int, <a href="?package=stdlib&amp;module=Bigarray&amp;type=int16_signed_elt">int16_signed_elt</a>) <a href="?package=stdlib&amp;module=Bigarray&amp;type=kind">kind</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> int16_unsigned</span> : <code class="type">(int, <a href="?package=stdlib&amp;module=Bigarray&amp;type=int16_unsigned_elt">int16_unsigned_elt</a>) <a href="?package=stdlib&amp;module=Bigarray&amp;type=kind">kind</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> int</span> : <code class="type">(int, <a href="?package=stdlib&amp;module=Bigarray&amp;type=int_elt">int_elt</a>) <a href="?package=stdlib&amp;module=Bigarray&amp;type=kind">kind</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> int32</span> : <code class="type">(int32, <a href="?package=stdlib&amp;module=Bigarray&amp;type=int32_elt">int32_elt</a>) <a href="?package=stdlib&amp;module=Bigarray&amp;type=kind">kind</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> int64</span> : <code class="type">(int64, <a href="?package=stdlib&amp;module=Bigarray&amp;type=int64_elt">int64_elt</a>) <a href="?package=stdlib&amp;module=Bigarray&amp;type=kind">kind</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> nativeint</span> : <code class="type">(nativeint, <a href="?package=stdlib&amp;module=Bigarray&amp;type=nativeint_elt">nativeint_elt</a>) <a href="?package=stdlib&amp;module=Bigarray&amp;type=kind">kind</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> char</span> : <code class="type">(char, <a href="?package=stdlib&amp;module=Bigarray&amp;type=int8_unsigned_elt">int8_unsigned_elt</a>) <a href="?package=stdlib&amp;module=Bigarray&amp;type=kind">kind</a></code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Array layouts</h6><br/> <br/>
+	  
+<pre><span id="TYPEc_layout"><span class="keyword">type</span> c_layout</span> </pre>
+      
+    
+<pre><span id="TYPEfortran_layout"><span class="keyword">type</span> fortran_layout</span> </pre>
+      
+    
+<pre><span id="TYPElayout"><span class="keyword">type</span> <code class="type">'a </code>layout</span> </pre>
+      
+    
+<br/><br/><div class="h7">Supported layouts</div><br/><br/>   The abstract values <code class="code">c_layout</code> and <code class="code">fortran_layout</code> represent
+   the two supported layouts at the level of values.<br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> c_layout</span> : <code class="type"><a href="?package=stdlib&amp;module=Bigarray&amp;type=c_layout">c_layout</a> <a href="?package=stdlib&amp;module=Bigarray&amp;type=layout">layout</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fortran_layout</span> : <code class="type"><a href="?package=stdlib&amp;module=Bigarray&amp;type=fortran_layout">fortran_layout</a> <a href="?package=stdlib&amp;module=Bigarray&amp;type=layout">layout</a></code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Generic arrays (of arbitrarily many dimensions)</h6><br/> <br/>
+	  
+<div class="ocaml_module sig" name="Genarray">
+		<pre><span class="keyword">module</span> <a href="?package=stdlib&amp;module=Bigarray.Genarray">Genarray</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'b, 'c) </code>t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">('a, 'b) <a href="?package=stdlib&amp;module=Bigarray&amp;type=kind">kind</a> -&gt; 'c <a href="?package=stdlib&amp;module=Bigarray&amp;type=layout">layout</a> -&gt; int array -&gt; ('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Genarray&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> num_dims</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Genarray&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> dims</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Genarray&amp;type=t">t</a> -&gt; int array</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> nth_dim</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Genarray&amp;type=t">t</a> -&gt; int -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> kind</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Genarray&amp;type=t">t</a> -&gt; ('a, 'b) <a href="?package=stdlib&amp;module=Bigarray&amp;type=kind">kind</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> layout</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Genarray&amp;type=t">t</a> -&gt; 'c <a href="?package=stdlib&amp;module=Bigarray&amp;type=layout">layout</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Genarray&amp;type=t">t</a> -&gt; int array -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Genarray&amp;type=t">t</a> -&gt; int array -&gt; 'a -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sub_left</span> : <code class="type">('a, 'b, <a href="?package=stdlib&amp;module=Bigarray&amp;type=c_layout">c_layout</a>) <a href="?package=stdlib&amp;module=Bigarray.Genarray&amp;type=t">t</a> -&gt; int -&gt; int -&gt; ('a, 'b, <a href="?package=stdlib&amp;module=Bigarray&amp;type=c_layout">c_layout</a>) <a href="?package=stdlib&amp;module=Bigarray.Genarray&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sub_right</span> : <code class="type">('a, 'b, <a href="?package=stdlib&amp;module=Bigarray&amp;type=fortran_layout">fortran_layout</a>) <a href="?package=stdlib&amp;module=Bigarray.Genarray&amp;type=t">t</a> -&gt; int -&gt; int -&gt; ('a, 'b, <a href="?package=stdlib&amp;module=Bigarray&amp;type=fortran_layout">fortran_layout</a>) <a href="?package=stdlib&amp;module=Bigarray.Genarray&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> slice_left</span> : <code class="type">('a, 'b, <a href="?package=stdlib&amp;module=Bigarray&amp;type=c_layout">c_layout</a>) <a href="?package=stdlib&amp;module=Bigarray.Genarray&amp;type=t">t</a> -&gt; int array -&gt; ('a, 'b, <a href="?package=stdlib&amp;module=Bigarray&amp;type=c_layout">c_layout</a>) <a href="?package=stdlib&amp;module=Bigarray.Genarray&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> slice_right</span> : <code class="type">('a, 'b, <a href="?package=stdlib&amp;module=Bigarray&amp;type=fortran_layout">fortran_layout</a>) <a href="?package=stdlib&amp;module=Bigarray.Genarray&amp;type=t">t</a> -&gt; int array -&gt; ('a, 'b, <a href="?package=stdlib&amp;module=Bigarray&amp;type=fortran_layout">fortran_layout</a>) <a href="?package=stdlib&amp;module=Bigarray.Genarray&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> blit</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Genarray&amp;type=t">t</a> -&gt; ('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Genarray&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fill</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Genarray&amp;type=t">t</a> -&gt; 'a -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map_file</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">Unix.file_descr</a> -&gt;
+?pos:int64 -&gt;
+('a, 'b) <a href="?package=stdlib&amp;module=Bigarray&amp;type=kind">kind</a> -&gt; 'c <a href="?package=stdlib&amp;module=Bigarray&amp;type=layout">layout</a> -&gt; bool -&gt; int array -&gt; ('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Genarray&amp;type=t">t</a></code></pre>
+      
+    
+		</div>
+</div>
+<br/><br/><h6 id="6_TITLE">One-dimensional arrays</h6><br/> <br/>
+	  
+<div class="ocaml_module sig" name="Array1">
+		<pre><span class="keyword">module</span> <a href="?package=stdlib&amp;module=Bigarray.Array1">Array1</a> : <code class="code">sig</code> .. <code class="code">end</code></pre><div class="info">One-dimensional arrays. The <code class="code">Array1</code> structure provides operations
+   similar to those of
+   TODO reference : Bigarray.Genarray, but specialized to the case of one-dimensional arrays.
+   (The <code class="code">Array2</code> and <code class="code">Array3</code> structures below provide operations
+   specialized for two- and three-dimensional arrays.)
+   Statically knowing the number of dimensions of the array allows
+   faster operations, and more precise static type-checking.</div>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'b, 'c) </code>t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">('a, 'b) <a href="?package=stdlib&amp;module=Bigarray&amp;type=kind">kind</a> -&gt; 'c <a href="?package=stdlib&amp;module=Bigarray&amp;type=layout">layout</a> -&gt; int -&gt; ('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array1&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> dim</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array1&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> kind</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array1&amp;type=t">t</a> -&gt; ('a, 'b) <a href="?package=stdlib&amp;module=Bigarray&amp;type=kind">kind</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> layout</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array1&amp;type=t">t</a> -&gt; 'c <a href="?package=stdlib&amp;module=Bigarray&amp;type=layout">layout</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array1&amp;type=t">t</a> -&gt; int -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array1&amp;type=t">t</a> -&gt; int -&gt; 'a -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sub</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array1&amp;type=t">t</a> -&gt; int -&gt; int -&gt; ('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array1&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> blit</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array1&amp;type=t">t</a> -&gt; ('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array1&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fill</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array1&amp;type=t">t</a> -&gt; 'a -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_array</span> : <code class="type">('a, 'b) <a href="?package=stdlib&amp;module=Bigarray&amp;type=kind">kind</a> -&gt; 'c <a href="?package=stdlib&amp;module=Bigarray&amp;type=layout">layout</a> -&gt; 'a array -&gt; ('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array1&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map_file</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">Unix.file_descr</a> -&gt;
+?pos:int64 -&gt; ('a, 'b) <a href="?package=stdlib&amp;module=Bigarray&amp;type=kind">kind</a> -&gt; 'c <a href="?package=stdlib&amp;module=Bigarray&amp;type=layout">layout</a> -&gt; bool -&gt; int -&gt; ('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array1&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_get</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array1&amp;type=t">t</a> -&gt; int -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_set</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array1&amp;type=t">t</a> -&gt; int -&gt; 'a -&gt; unit</code></pre>
+      
+    
+		</div>
+</div>
+<br/><br/><h6 id="6_TITLE">Two-dimensional arrays</h6><br/> <br/>
+	  
+<div class="ocaml_module sig" name="Array2">
+		<pre><span class="keyword">module</span> <a href="?package=stdlib&amp;module=Bigarray.Array2">Array2</a> : <code class="code">sig</code> .. <code class="code">end</code></pre><div class="info">Two-dimensional arrays. The <code class="code">Array2</code> structure provides operations
+   similar to those of TODO reference : Bigarray.Genarray, but specialized to the
+   case of two-dimensional arrays.</div>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'b, 'c) </code>t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">('a, 'b) <a href="?package=stdlib&amp;module=Bigarray&amp;type=kind">kind</a> -&gt; 'c <a href="?package=stdlib&amp;module=Bigarray&amp;type=layout">layout</a> -&gt; int -&gt; int -&gt; ('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array2&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> dim1</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array2&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> dim2</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array2&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> kind</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array2&amp;type=t">t</a> -&gt; ('a, 'b) <a href="?package=stdlib&amp;module=Bigarray&amp;type=kind">kind</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> layout</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array2&amp;type=t">t</a> -&gt; 'c <a href="?package=stdlib&amp;module=Bigarray&amp;type=layout">layout</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array2&amp;type=t">t</a> -&gt; int -&gt; int -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array2&amp;type=t">t</a> -&gt; int -&gt; int -&gt; 'a -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sub_left</span> : <code class="type">('a, 'b, <a href="?package=stdlib&amp;module=Bigarray&amp;type=c_layout">c_layout</a>) <a href="?package=stdlib&amp;module=Bigarray.Array2&amp;type=t">t</a> -&gt; int -&gt; int -&gt; ('a, 'b, <a href="?package=stdlib&amp;module=Bigarray&amp;type=c_layout">c_layout</a>) <a href="?package=stdlib&amp;module=Bigarray.Array2&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sub_right</span> : <code class="type">('a, 'b, <a href="?package=stdlib&amp;module=Bigarray&amp;type=fortran_layout">fortran_layout</a>) <a href="?package=stdlib&amp;module=Bigarray.Array2&amp;type=t">t</a> -&gt; int -&gt; int -&gt; ('a, 'b, <a href="?package=stdlib&amp;module=Bigarray&amp;type=fortran_layout">fortran_layout</a>) <a href="?package=stdlib&amp;module=Bigarray.Array2&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> slice_left</span> : <code class="type">('a, 'b, <a href="?package=stdlib&amp;module=Bigarray&amp;type=c_layout">c_layout</a>) <a href="?package=stdlib&amp;module=Bigarray.Array2&amp;type=t">t</a> -&gt; int -&gt; ('a, 'b, <a href="?package=stdlib&amp;module=Bigarray&amp;type=c_layout">c_layout</a>) <a href="?package=stdlib&amp;module=Bigarray.Array1&amp;type=t">Array1.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> slice_right</span> : <code class="type">('a, 'b, <a href="?package=stdlib&amp;module=Bigarray&amp;type=fortran_layout">fortran_layout</a>) <a href="?package=stdlib&amp;module=Bigarray.Array2&amp;type=t">t</a> -&gt; int -&gt; ('a, 'b, <a href="?package=stdlib&amp;module=Bigarray&amp;type=fortran_layout">fortran_layout</a>) <a href="?package=stdlib&amp;module=Bigarray.Array1&amp;type=t">Array1.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> blit</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array2&amp;type=t">t</a> -&gt; ('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array2&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fill</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array2&amp;type=t">t</a> -&gt; 'a -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_array</span> : <code class="type">('a, 'b) <a href="?package=stdlib&amp;module=Bigarray&amp;type=kind">kind</a> -&gt; 'c <a href="?package=stdlib&amp;module=Bigarray&amp;type=layout">layout</a> -&gt; 'a array array -&gt; ('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array2&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map_file</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">Unix.file_descr</a> -&gt;
+?pos:int64 -&gt;
+('a, 'b) <a href="?package=stdlib&amp;module=Bigarray&amp;type=kind">kind</a> -&gt; 'c <a href="?package=stdlib&amp;module=Bigarray&amp;type=layout">layout</a> -&gt; bool -&gt; int -&gt; int -&gt; ('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array2&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_get</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array2&amp;type=t">t</a> -&gt; int -&gt; int -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_set</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array2&amp;type=t">t</a> -&gt; int -&gt; int -&gt; 'a -&gt; unit</code></pre>
+      
+    
+		</div>
+</div>
+<br/><br/><h6 id="6_TITLE">Three-dimensional arrays</h6><br/> <br/>
+	  
+<div class="ocaml_module sig" name="Array3">
+		<pre><span class="keyword">module</span> <a href="?package=stdlib&amp;module=Bigarray.Array3">Array3</a> : <code class="code">sig</code> .. <code class="code">end</code></pre><div class="info">Three-dimensional arrays. The <code class="code">Array3</code> structure provides operations
+   similar to those of TODO reference : Bigarray.Genarray, but specialized to the case
+   of three-dimensional arrays.</div>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'b, 'c) </code>t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">('a, 'b) <a href="?package=stdlib&amp;module=Bigarray&amp;type=kind">kind</a> -&gt; 'c <a href="?package=stdlib&amp;module=Bigarray&amp;type=layout">layout</a> -&gt; int -&gt; int -&gt; int -&gt; ('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array3&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> dim1</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array3&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> dim2</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array3&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> dim3</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array3&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> kind</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array3&amp;type=t">t</a> -&gt; ('a, 'b) <a href="?package=stdlib&amp;module=Bigarray&amp;type=kind">kind</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> layout</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array3&amp;type=t">t</a> -&gt; 'c <a href="?package=stdlib&amp;module=Bigarray&amp;type=layout">layout</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array3&amp;type=t">t</a> -&gt; int -&gt; int -&gt; int -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array3&amp;type=t">t</a> -&gt; int -&gt; int -&gt; int -&gt; 'a -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sub_left</span> : <code class="type">('a, 'b, <a href="?package=stdlib&amp;module=Bigarray&amp;type=c_layout">c_layout</a>) <a href="?package=stdlib&amp;module=Bigarray.Array3&amp;type=t">t</a> -&gt; int -&gt; int -&gt; ('a, 'b, <a href="?package=stdlib&amp;module=Bigarray&amp;type=c_layout">c_layout</a>) <a href="?package=stdlib&amp;module=Bigarray.Array3&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sub_right</span> : <code class="type">('a, 'b, <a href="?package=stdlib&amp;module=Bigarray&amp;type=fortran_layout">fortran_layout</a>) <a href="?package=stdlib&amp;module=Bigarray.Array3&amp;type=t">t</a> -&gt; int -&gt; int -&gt; ('a, 'b, <a href="?package=stdlib&amp;module=Bigarray&amp;type=fortran_layout">fortran_layout</a>) <a href="?package=stdlib&amp;module=Bigarray.Array3&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> slice_left_1</span> : <code class="type">('a, 'b, <a href="?package=stdlib&amp;module=Bigarray&amp;type=c_layout">c_layout</a>) <a href="?package=stdlib&amp;module=Bigarray.Array3&amp;type=t">t</a> -&gt; int -&gt; int -&gt; ('a, 'b, <a href="?package=stdlib&amp;module=Bigarray&amp;type=c_layout">c_layout</a>) <a href="?package=stdlib&amp;module=Bigarray.Array1&amp;type=t">Array1.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> slice_right_1</span> : <code class="type">('a, 'b, <a href="?package=stdlib&amp;module=Bigarray&amp;type=fortran_layout">fortran_layout</a>) <a href="?package=stdlib&amp;module=Bigarray.Array3&amp;type=t">t</a> -&gt; int -&gt; int -&gt; ('a, 'b, <a href="?package=stdlib&amp;module=Bigarray&amp;type=fortran_layout">fortran_layout</a>) <a href="?package=stdlib&amp;module=Bigarray.Array1&amp;type=t">Array1.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> slice_left_2</span> : <code class="type">('a, 'b, <a href="?package=stdlib&amp;module=Bigarray&amp;type=c_layout">c_layout</a>) <a href="?package=stdlib&amp;module=Bigarray.Array3&amp;type=t">t</a> -&gt; int -&gt; ('a, 'b, <a href="?package=stdlib&amp;module=Bigarray&amp;type=c_layout">c_layout</a>) <a href="?package=stdlib&amp;module=Bigarray.Array2&amp;type=t">Array2.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> slice_right_2</span> : <code class="type">('a, 'b, <a href="?package=stdlib&amp;module=Bigarray&amp;type=fortran_layout">fortran_layout</a>) <a href="?package=stdlib&amp;module=Bigarray.Array3&amp;type=t">t</a> -&gt; int -&gt; ('a, 'b, <a href="?package=stdlib&amp;module=Bigarray&amp;type=fortran_layout">fortran_layout</a>) <a href="?package=stdlib&amp;module=Bigarray.Array2&amp;type=t">Array2.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> blit</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array3&amp;type=t">t</a> -&gt; ('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array3&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fill</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array3&amp;type=t">t</a> -&gt; 'a -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_array</span> : <code class="type">('a, 'b) <a href="?package=stdlib&amp;module=Bigarray&amp;type=kind">kind</a> -&gt; 'c <a href="?package=stdlib&amp;module=Bigarray&amp;type=layout">layout</a> -&gt; 'a array array array -&gt; ('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array3&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map_file</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">Unix.file_descr</a> -&gt;
+?pos:int64 -&gt;
+('a, 'b) <a href="?package=stdlib&amp;module=Bigarray&amp;type=kind">kind</a> -&gt; 'c <a href="?package=stdlib&amp;module=Bigarray&amp;type=layout">layout</a> -&gt; bool -&gt; int -&gt; int -&gt; int -&gt; ('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array3&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_get</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array3&amp;type=t">t</a> -&gt; int -&gt; int -&gt; int -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_set</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array3&amp;type=t">t</a> -&gt; int -&gt; int -&gt; int -&gt; 'a -&gt; unit</code></pre>
+      
+    
+		</div>
+</div>
+<br/><br/><h6 id="6_TITLE">Coercions between generic big arrays and fixed-dimension big arrays</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> genarray_of_array1</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array1&amp;type=t">Array1.t</a> -&gt; ('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Genarray&amp;type=t">Genarray.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> genarray_of_array2</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array2&amp;type=t">Array2.t</a> -&gt; ('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Genarray&amp;type=t">Genarray.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> genarray_of_array3</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array3&amp;type=t">Array3.t</a> -&gt; ('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Genarray&amp;type=t">Genarray.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> array1_of_genarray</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Genarray&amp;type=t">Genarray.t</a> -&gt; ('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array1&amp;type=t">Array1.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> array2_of_genarray</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Genarray&amp;type=t">Genarray.t</a> -&gt; ('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array2&amp;type=t">Array2.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> array3_of_genarray</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Genarray&amp;type=t">Genarray.t</a> -&gt; ('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array3&amp;type=t">Array3.t</a></code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Re-shaping big arrays</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> reshape</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Genarray&amp;type=t">Genarray.t</a> -&gt; int array -&gt; ('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Genarray&amp;type=t">Genarray.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> reshape_1</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Genarray&amp;type=t">Genarray.t</a> -&gt; int -&gt; ('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array1&amp;type=t">Array1.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> reshape_2</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Genarray&amp;type=t">Genarray.t</a> -&gt; int -&gt; int -&gt; ('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array2&amp;type=t">Array2.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> reshape_3</span> : <code class="type">('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Genarray&amp;type=t">Genarray.t</a> -&gt; int -&gt; int -&gt; int -&gt; ('a, 'b, 'c) <a href="?package=stdlib&amp;module=Bigarray.Array3&amp;type=t">Array3.t</a></code></pre>
+      
+    </div>

@@ -1,0 +1,160 @@
+<div class="ocaml_toplevel_module">
+<div class="info">Character operations.</div>
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> = <code class="type">char</code> </pre>
+      <div class="info">An alias for the type of characters.</div>
+    
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Identifiable.S" items="[&quot;Hash_heap&quot;,&quot;Hash_queue&quot;,&quot;Hash_set&quot;,&quot;Pooled_hashtbl&quot;,&quot;Table&quot;,&quot;Hashable&quot;,&quot;Set&quot;,&quot;Map&quot;,&quot;Replace_polymorphic_compare&quot;]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Identifiable.S">Identifiable.S</a></code> with type t = <a href="?package=core_kernel&amp;module=Core_char&amp;type=t">t</a></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> to_int</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_char&amp;type=t">t</a> -&gt; int</code></pre>
+      <div class="info">Return the ASCII code of the argument.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> of_int</span> : <code class="type">int -&gt; <a href="?package=core_kernel&amp;module=Core_char&amp;type=t">t</a> option</code></pre>
+      <div class="info">Return the character with the given ASCII code or <code class="code">None</code> is the argument is outside
+    the range 0 to 255.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> of_int_exn</span> : <code class="type">int -&gt; <a href="?package=core_kernel&amp;module=Core_char&amp;type=t">t</a></code></pre>
+      <div class="info">Return the character with the given ASCII code.  Raise <code class="code">Failure</code> if the argument is
+    outside 0 to 255.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_of_int</span> : <code class="type">int -&gt; <a href="?package=core_kernel&amp;module=Core_char&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> escaped</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_char&amp;type=t">t</a> -&gt; string</code></pre>
+      <div class="info">Return a string representing the given character, with special characters escaped
+    following the lexical conventions of Objective Caml.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> lowercase</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_char&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Core_char&amp;type=t">t</a></code></pre>
+      <div class="info">Convert the given character to its equivalent lowercase character.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> uppercase</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_char&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Core_char&amp;type=t">t</a></code></pre>
+      <div class="info">Convert the given character to its equivalent uppercase character.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> is_digit</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_char&amp;type=t">t</a> -&gt; bool</code></pre>
+      <div class="info">'0' - '9'</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> is_lowercase</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_char&amp;type=t">t</a> -&gt; bool</code></pre>
+      <div class="info">'a' - 'z'</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> is_uppercase</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_char&amp;type=t">t</a> -&gt; bool</code></pre>
+      <div class="info">'A' - 'Z'</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> is_alpha</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_char&amp;type=t">t</a> -&gt; bool</code></pre>
+      <div class="info">'a' - 'z' or 'A' - 'Z'</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> is_alphanum</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_char&amp;type=t">t</a> -&gt; bool</code></pre>
+      <div class="info">'a' - 'z' or 'A' - 'Z' or '0' - '9'</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> is_print</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_char&amp;type=t">t</a> -&gt; bool</code></pre>
+      <div class="info">' ' - '~'</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> is_whitespace</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_char&amp;type=t">t</a> -&gt; bool</code></pre>
+      <div class="info">' ' or '\t' or '\r' or '\n'</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> get_digit</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_char&amp;type=t">t</a> -&gt; int option</code></pre>
+      <div class="info">Return <code class="code">Some i</code> if <code class="code">is_digit c</code> and <code class="code">None</code> otherwise.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> get_digit_exn</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_char&amp;type=t">t</a> -&gt; int</code></pre>
+      <div class="info">Return <code class="code">i</code> if <code class="code">is_digit c</code>.  Raises <code class="code">Failure</code> otherwise.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> min_value</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_char&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> max_value</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_char&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core_kernel&amp;module=Core_char&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_char&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_char&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_char&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Read_ml&amp;type=reader">Bin_prot.Read_ml.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t_</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_char&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t__</span> : <code class="type">(int -&gt; <a href="?package=core_kernel&amp;module=Core_char&amp;type=t">t</a>) <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_char&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_char&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Size&amp;type=sizer">Bin_prot.Size.sizer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_char&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Bin_prot.Write_ml.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_char&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_char&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+<br/>Return the ASCII code of the argument.<br/>
+	  
+<br/>Return the character with the given ASCII code or <code class="code">None</code> is the argument is outside
+    the range 0 to 255.<br/>
+	  
+<br/>Return the character with the given ASCII code.  Raise <code class="code">Failure</code> if the argument is
+    outside 0 to 255.<br/>
+	  
+<br/>Return a string representing the given character, with special characters escaped
+    following the lexical conventions of Objective Caml.<br/>
+	  
+<br/>Convert the given character to its equivalent lowercase character.<br/>
+	  
+<br/>Convert the given character to its equivalent uppercase character.<br/>
+	  
+<br/>'0' - '9'<br/>
+	  
+<br/>'a' - 'z'<br/>
+	  
+<br/>'A' - 'Z'<br/>
+	  
+<br/>'a' - 'z' or 'A' - 'Z'<br/>
+	  
+<br/>'a' - 'z' or 'A' - 'Z' or '0' - '9'<br/>
+	  
+<br/>' ' - '~'<br/>
+	  
+<br/>' ' or '\t' or '\r' or '\n'<br/>
+	  
+<br/>Return <code class="code">Some i</code> if <code class="code">is_digit c</code> and <code class="code">None</code> otherwise.<br/>
+	  
+<br/>Return <code class="code">i</code> if <code class="code">is_digit c</code>.  Raises <code class="code">Failure</code> otherwise.<br/>
+	  </div>

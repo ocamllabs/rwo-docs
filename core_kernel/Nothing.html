@@ -1,0 +1,88 @@
+<div class="ocaml_toplevel_module">
+<div class="info">An uninhabited type.<br/>    This is useful when interfaces require that a type be specified, but the implementer
+    knows this type will not be used in their implementation of the interface.<br/>    For instance, <code class="code">Async.Std.Rpc.Pipe_rpc.t</code> is parameterized by an error type, but a user
+    may want to define a Pipe RPC that can't fail.</div>
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> = <code class="type"><a href="?package=core_kernel&amp;module=Nothing0&amp;type=t">Nothing0.t</a></code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unreachable_code</span> : <code class="type"><a href="?package=core_kernel&amp;module=Nothing&amp;type=t">t</a> -&gt; 'a</code></pre>
+      <div class="info">Because there are no values of type <code class="code">Nothing.t</code>, a piece of code that has a value of
+    type <code class="code">Nothing.t</code> must be unreachable.  In such an unreachable piece of code, one can
+    use <code class="code">unreachable_code</code> to give the code whatever type one needs.  For example:<br/>    <pre class="codepre"><code class="code">
+      let f (r : (int, Nothing.t) Result.t) : int =
+        match r with
+        | Ok i -&gt; i
+        | Error n -&gt; Nothing.unreachable_code n
+      ;;
+    </code></pre> </div>
+    
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Identifiable.S" items="[&quot;Hash_heap&quot;,&quot;Hash_queue&quot;,&quot;Hash_set&quot;,&quot;Pooled_hashtbl&quot;,&quot;Table&quot;,&quot;Hashable&quot;,&quot;Set&quot;,&quot;Map&quot;,&quot;Replace_polymorphic_compare&quot;]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Identifiable.S">Identifiable.S</a></code> with type t = <a href="?package=core_kernel&amp;module=Nothing&amp;type=t">t</a><div class="info">It may seem weird that this is identifiable, but we're just trying to anticipate all
+    the contexts in which people may need this. It would be a crying shame if you had some
+    variant type involving <code class="code">Nothing.t</code> that you wished to make identifiable, but were
+    prevented for lack of <code class="code">Identifiable.S</code> here.<br/>    Obviously, <code class="code">of_string</code> and <code class="code">t_of_sexp</code> will raise an exception.</div></pre>
+</div>
+<div class="ocaml_module sig" name="Stable">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Nothing.Stable">Stable</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+<div class="ocaml_module sig" name="V1">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Nothing.Stable.V1">V1</a> : <code class="code">sig</code> .. <code class="code">end</code> with type <a href="?package=core_kernel&amp;module=Nothing.Stable.V1&amp;type=t">t</a> = <a href="?package=core_kernel&amp;module=Nothing&amp;type=t">t</a></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> compare</span> : <code class="type"><a href="?package=core_kernel&amp;module=Nothing.Stable.V1&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Nothing.Stable.V1&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Nothing.Stable.V1&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Nothing.Stable.V1&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Read_ml&amp;type=reader">Bin_prot.Read_ml.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t_</span> : <code class="type"><a href="?package=core_kernel&amp;module=Nothing.Stable.V1&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t__</span> : <code class="type">(int -&gt; <a href="?package=core_kernel&amp;module=Nothing.Stable.V1&amp;type=t">t</a>) <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Nothing.Stable.V1&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Nothing.Stable.V1&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Size&amp;type=sizer">Bin_prot.Size.sizer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Nothing.Stable.V1&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Bin_prot.Write_ml.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_</span> : <code class="type"><a href="?package=core_kernel&amp;module=Nothing.Stable.V1&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Nothing.Stable.V1&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core_kernel&amp;module=Nothing.Stable.V1&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Nothing.Stable.V1&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+		</div>
+</div>
+		</div>
+</div></div>

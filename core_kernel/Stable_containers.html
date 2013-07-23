@@ -1,0 +1,246 @@
+<div class="ocaml_toplevel_module">
+<div class="info">The Stable versions of Hashtbl, Hash_set, Map, and Set are defined here rather than in
+    their respective modules because:<br/>    1. We guarantee their serializations independent of the implementation of those modules
+    2. Given 1. it is cleaner (and still okay) to separate the code into a separate file</div>
+<div class="ocaml_module sig" name="Set">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Stable_containers.Set">Set</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+<div class="ocaml_module sig" name="V1">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Stable_containers.Set.V1">V1</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">Elt</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Std.Comparator.S_binable">Std.Comparator.S_binable</a></code><code class="code">) -&gt; </code><code class="code">sig</code> .. <code class="code">end</code></div></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> = <code class="type">(Elt.t, Elt.comparator) <a href="?package=core_kernel&amp;module=Std.Set&amp;type=t">Std.Set.t</a></code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Stable_containers.Set.V1&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Std.Bin_prot.Type_class&amp;type=t">Std.Bin_prot.Type_class.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Stable_containers.Set.V1&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Std.Bin_prot.Read_ml&amp;type=reader">Std.Bin_prot.Read_ml.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t_</span> : <code class="type"><a href="?package=core_kernel&amp;module=Stable_containers.Set.V1&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Std.Bin_prot.Unsafe_read_c&amp;type=reader">Std.Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t__</span> : <code class="type">(int -&gt; <a href="?package=core_kernel&amp;module=Stable_containers.Set.V1&amp;type=t">t</a>) <a href="?package=core_kernel&amp;module=Std.Bin_prot.Unsafe_read_c&amp;type=reader">Std.Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Stable_containers.Set.V1&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Std.Bin_prot.Type_class&amp;type=reader">Std.Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Stable_containers.Set.V1&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Std.Bin_prot.Size&amp;type=sizer">Std.Bin_prot.Size.sizer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Stable_containers.Set.V1&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Std.Bin_prot.Write_ml&amp;type=writer">Std.Bin_prot.Write_ml.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_</span> : <code class="type"><a href="?package=core_kernel&amp;module=Stable_containers.Set.V1&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Std.Bin_prot.Unsafe_write_c&amp;type=writer">Std.Bin_prot.Unsafe_write_c.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Stable_containers.Set.V1&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Std.Bin_prot.Type_class&amp;type=writer">Std.Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core_kernel&amp;module=Stable_containers.Set.V1&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Stable_containers.Set.V1&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+		</div>
+</div>
+		</div>
+</div>
+<div class="ocaml_module sig" name="Hashtbl">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Stable_containers.Hashtbl">Hashtbl</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+<div class="ocaml_module sig" name="V1">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Stable_containers.Hashtbl.V1">V1</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">Key</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Std.Hashtbl.Key_binable">Std.Hashtbl.Key_binable</a></code><code class="code">) -&gt; </code><code class="code">sig</code> .. <code class="code">end</code></div></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> = <code class="type">(Key.t, 'a) <a href="?package=core_kernel&amp;module=Std.Hashtbl&amp;type=t">Std.Hashtbl.t</a></code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_t</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Std.Bin_prot.Type_class&amp;type=t">Std.Bin_prot.Type_class.t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Stable_containers.Hashtbl.V1&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Std.Bin_prot.Type_class&amp;type=t">Std.Bin_prot.Type_class.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Std.Bin_prot.Unsafe_read_c&amp;type=reader">Std.Bin_prot.Unsafe_read_c.reader</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Stable_containers.Hashtbl.V1&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Std.Bin_prot.Read_ml&amp;type=reader">Std.Bin_prot.Read_ml.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t_</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Std.Bin_prot.Unsafe_read_c&amp;type=reader">Std.Bin_prot.Unsafe_read_c.reader</a> -&gt;
+'a <a href="?package=core_kernel&amp;module=Stable_containers.Hashtbl.V1&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Std.Bin_prot.Unsafe_read_c&amp;type=reader">Std.Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t__</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Std.Bin_prot.Unsafe_read_c&amp;type=reader">Std.Bin_prot.Unsafe_read_c.reader</a> -&gt;
+(int -&gt; 'a <a href="?package=core_kernel&amp;module=Stable_containers.Hashtbl.V1&amp;type=t">t</a>) <a href="?package=core_kernel&amp;module=Std.Bin_prot.Unsafe_read_c&amp;type=reader">Std.Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Std.Bin_prot.Type_class&amp;type=reader">Std.Bin_prot.Type_class.reader</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Stable_containers.Hashtbl.V1&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Std.Bin_prot.Type_class&amp;type=reader">Std.Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Std.Bin_prot.Size&amp;type=sizer">Std.Bin_prot.Size.sizer</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Stable_containers.Hashtbl.V1&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Std.Bin_prot.Size&amp;type=sizer">Std.Bin_prot.Size.sizer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Std.Bin_prot.Unsafe_write_c&amp;type=writer">Std.Bin_prot.Unsafe_write_c.writer</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Stable_containers.Hashtbl.V1&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Std.Bin_prot.Write_ml&amp;type=writer">Std.Bin_prot.Write_ml.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Std.Bin_prot.Unsafe_write_c&amp;type=writer">Std.Bin_prot.Unsafe_write_c.writer</a> -&gt;
+'a <a href="?package=core_kernel&amp;module=Stable_containers.Hashtbl.V1&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Std.Bin_prot.Unsafe_write_c&amp;type=writer">Std.Bin_prot.Unsafe_write_c.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Std.Bin_prot.Type_class&amp;type=writer">Std.Bin_prot.Type_class.writer</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Stable_containers.Hashtbl.V1&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Std.Bin_prot.Type_class&amp;type=writer">Std.Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp</span> : <code class="type">(<a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'a) -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Stable_containers.Hashtbl.V1&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; 'a <a href="?package=core_kernel&amp;module=Stable_containers.Hashtbl.V1&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+		</div>
+</div>
+		</div>
+</div>
+<div class="ocaml_module sig" name="Hash_set">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Stable_containers.Hash_set">Hash_set</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+<div class="ocaml_module sig" name="V1">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Stable_containers.Hash_set.V1">V1</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">Elt</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Std.Hash_set.Elt_binable">Std.Hash_set.Elt_binable</a></code><code class="code">) -&gt; </code><code class="code">sig</code> .. <code class="code">end</code></div></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> = <code class="type">Elt.t <a href="?package=core_kernel&amp;module=Std.Hash_set&amp;type=t">Std.Hash_set.t</a></code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Stable_containers.Hash_set.V1&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Std.Bin_prot.Type_class&amp;type=t">Std.Bin_prot.Type_class.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Stable_containers.Hash_set.V1&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Std.Bin_prot.Read_ml&amp;type=reader">Std.Bin_prot.Read_ml.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t_</span> : <code class="type"><a href="?package=core_kernel&amp;module=Stable_containers.Hash_set.V1&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Std.Bin_prot.Unsafe_read_c&amp;type=reader">Std.Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t__</span> : <code class="type">(int -&gt; <a href="?package=core_kernel&amp;module=Stable_containers.Hash_set.V1&amp;type=t">t</a>) <a href="?package=core_kernel&amp;module=Std.Bin_prot.Unsafe_read_c&amp;type=reader">Std.Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Stable_containers.Hash_set.V1&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Std.Bin_prot.Type_class&amp;type=reader">Std.Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Stable_containers.Hash_set.V1&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Std.Bin_prot.Size&amp;type=sizer">Std.Bin_prot.Size.sizer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Stable_containers.Hash_set.V1&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Std.Bin_prot.Write_ml&amp;type=writer">Std.Bin_prot.Write_ml.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_</span> : <code class="type"><a href="?package=core_kernel&amp;module=Stable_containers.Hash_set.V1&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Std.Bin_prot.Unsafe_write_c&amp;type=writer">Std.Bin_prot.Unsafe_write_c.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Stable_containers.Hash_set.V1&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Std.Bin_prot.Type_class&amp;type=writer">Std.Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core_kernel&amp;module=Stable_containers.Hash_set.V1&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Stable_containers.Hash_set.V1&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+		</div>
+</div>
+		</div>
+</div>
+<div class="ocaml_module sig" name="Map">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Stable_containers.Map">Map</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+<div class="ocaml_module sig" name="V1">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Stable_containers.Map.V1">V1</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">Key</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Std.Comparator.S_binable">Std.Comparator.S_binable</a></code><code class="code">) -&gt; </code><code class="code">sig</code> .. <code class="code">end</code></div></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> = <code class="type">(Key.t, 'a, Key.comparator) <a href="?package=core_kernel&amp;module=Std.Map&amp;type=t">Std.Map.t</a></code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_t</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Std.Bin_prot.Type_class&amp;type=t">Std.Bin_prot.Type_class.t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Stable_containers.Map.V1&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Std.Bin_prot.Type_class&amp;type=t">Std.Bin_prot.Type_class.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Std.Bin_prot.Unsafe_read_c&amp;type=reader">Std.Bin_prot.Unsafe_read_c.reader</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Stable_containers.Map.V1&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Std.Bin_prot.Read_ml&amp;type=reader">Std.Bin_prot.Read_ml.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t_</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Std.Bin_prot.Unsafe_read_c&amp;type=reader">Std.Bin_prot.Unsafe_read_c.reader</a> -&gt;
+'a <a href="?package=core_kernel&amp;module=Stable_containers.Map.V1&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Std.Bin_prot.Unsafe_read_c&amp;type=reader">Std.Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t__</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Std.Bin_prot.Unsafe_read_c&amp;type=reader">Std.Bin_prot.Unsafe_read_c.reader</a> -&gt;
+(int -&gt; 'a <a href="?package=core_kernel&amp;module=Stable_containers.Map.V1&amp;type=t">t</a>) <a href="?package=core_kernel&amp;module=Std.Bin_prot.Unsafe_read_c&amp;type=reader">Std.Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Std.Bin_prot.Type_class&amp;type=reader">Std.Bin_prot.Type_class.reader</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Stable_containers.Map.V1&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Std.Bin_prot.Type_class&amp;type=reader">Std.Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Std.Bin_prot.Size&amp;type=sizer">Std.Bin_prot.Size.sizer</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Stable_containers.Map.V1&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Std.Bin_prot.Size&amp;type=sizer">Std.Bin_prot.Size.sizer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Std.Bin_prot.Unsafe_write_c&amp;type=writer">Std.Bin_prot.Unsafe_write_c.writer</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Stable_containers.Map.V1&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Std.Bin_prot.Write_ml&amp;type=writer">Std.Bin_prot.Write_ml.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Std.Bin_prot.Unsafe_write_c&amp;type=writer">Std.Bin_prot.Unsafe_write_c.writer</a> -&gt;
+'a <a href="?package=core_kernel&amp;module=Stable_containers.Map.V1&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Std.Bin_prot.Unsafe_write_c&amp;type=writer">Std.Bin_prot.Unsafe_write_c.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Std.Bin_prot.Type_class&amp;type=writer">Std.Bin_prot.Type_class.writer</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Stable_containers.Map.V1&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Std.Bin_prot.Type_class&amp;type=writer">Std.Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp</span> : <code class="type">(<a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'a) -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Stable_containers.Map.V1&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; 'a <a href="?package=core_kernel&amp;module=Stable_containers.Map.V1&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+		</div>
+</div>
+		</div>
+</div></div>

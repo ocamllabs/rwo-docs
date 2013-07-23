@@ -1,0 +1,960 @@
+<div class="ocaml_toplevel_module">
+
+ 
+      <pre><span><span class="keyword">val</span> __pa_ounit_275876e34cf609db118f3d84b799a790</span> : <code class="type">string</code></pre>
+      
+    
+
+<div class="ocaml_module ident" name="Fd" path="?package=async_unix&amp;amp;module=Raw_fd">
+		    <pre><span class="keyword">module</span> <a href="?package=async_unix&amp;module=Raw_scheduler.Fd">Fd</a> : <code class="code"><a href="?package=async_unix&amp;module=Raw_fd">Raw_fd</a></code></pre>
+</div>
+<div class="ocaml_module ident" name="Watching" path="?package=async_unix&amp;amp;module=Raw_scheduler.Fd&amp;amp;type=Watching">
+		    <pre><span class="keyword">module</span> <a href="?package=async_unix&amp;module=Raw_scheduler.Watching">Watching</a> : <code class="code"><a href="?package=async_unix&amp;module=Raw_scheduler.Fd&amp;type=Watching">Fd.Watching</a></code></pre>
+</div>
+<div class="ocaml_module ident" name="Signal" path="?package=core&amp;amp;module=Std.Signal">
+		    <pre><span class="keyword">module</span> <a href="?package=async_unix&amp;module=Raw_scheduler.Signal">Signal</a> : <code class="code"><a href="?package=core&amp;module=Std.Signal">Core.Std.Signal</a></code></pre>
+</div>
+<div class="ocaml_module ident" name="Timerfd" path="?package=core&amp;amp;module=Std.Linux_ext.Timerfd">
+		    <pre><span class="keyword">module</span> <a href="?package=async_unix&amp;module=Raw_scheduler.Timerfd">Timerfd</a> : <code class="code"><a href="?package=core&amp;module=Std.Linux_ext.Timerfd">Core.Std.Linux_ext.Timerfd</a></code></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> debug</span> : <code class="type">bool</code></pre>
+      
+    
+<div class="ocaml_module sig" name="File_descr_watcher">
+		<pre><span class="keyword">module</span> <a href="?package=async_unix&amp;module=Raw_scheduler.File_descr_watcher">File_descr_watcher</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+<div class="ocaml_module sig" name="S">
+		<pre><span class="keyword">module type</span> <a href="?package=async_unix&amp;module=Raw_scheduler.File_descr_watcher.S">S</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<div class="ocaml_include ident" path="?package=async_unix&amp;amp;module=File_descr_watcher_intf.S" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=async_unix&amp;module=File_descr_watcher_intf.S">File_descr_watcher_intf.S</a></code></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> watcher</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler.File_descr_watcher.S&amp;type=t">t</a></code></pre>
+      
+    
+		</div>
+</div>
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> = <code class="type">(module S)</code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type">(module S) -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+		</div>
+</div>
+<pre><span id="TYPEwith_options"><span class="keyword">type</span> <code class="type">'a </code>with_options</span> = <code class="type">'a <a href="?package=async_unix&amp;module=Import.Core_scheduler&amp;type=with_options">Import.Core_scheduler.with_options</a></code> </pre>
+      
+    
+<div class="ocaml_include sig" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code">sig</code> .. <code class="code">end</code></pre><div class="ocaml_module_content">
+			    
+ 
+      <pre><span><span class="keyword">val</span> preserve_execution_context</span> : <code class="type">('a -&gt; unit) -&gt; ('a -&gt; unit) <a href="?package=core&amp;module=Std.Staged&amp;type=t">Core.Std.Staged.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> preserve_execution_context'</span> : <code class="type">('a -&gt; 'b <a href="?package=async_core&amp;module=Deferred&amp;type=t">Async_core.Deferred.t</a>) -&gt;
+('a -&gt; 'b <a href="?package=async_core&amp;module=Deferred&amp;type=t">Async_core.Deferred.t</a>) <a href="?package=core&amp;module=Std.Staged&amp;type=t">Core.Std.Staged.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> schedule</span> : <code class="type">((unit -&gt; unit) -&gt; unit) <a href="?package=async_unix&amp;module=Import.Core_scheduler&amp;type=with_options">Import.Core_scheduler.with_options</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> schedule'</span> : <code class="type">((unit -&gt; 'a <a href="?package=async_core&amp;module=Deferred&amp;type=t">Async_core.Deferred.t</a>) -&gt; 'a <a href="?package=async_core&amp;module=Deferred&amp;type=t">Async_core.Deferred.t</a>)
+<a href="?package=async_unix&amp;module=Import.Core_scheduler&amp;type=with_options">Import.Core_scheduler.with_options</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> within</span> : <code class="type">((unit -&gt; unit) -&gt; unit) <a href="?package=async_unix&amp;module=Import.Core_scheduler&amp;type=with_options">Import.Core_scheduler.with_options</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> within'</span> : <code class="type">((unit -&gt; 'a <a href="?package=async_core&amp;module=Deferred&amp;type=t">Async_core.Deferred.t</a>) -&gt; 'a <a href="?package=async_core&amp;module=Deferred&amp;type=t">Async_core.Deferred.t</a>)
+<a href="?package=async_unix&amp;module=Import.Core_scheduler&amp;type=with_options">Import.Core_scheduler.with_options</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> within_context</span> : <code class="type"><a href="?package=async_core&amp;module=Execution_context&amp;type=t">Async_core.Execution_context.t</a> -&gt;
+(unit -&gt; 'a) -&gt; ('a, unit) <a href="?package=core&amp;module=Std.Result&amp;type=t">Core.Std.Result.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> within_v</span> : <code class="type">((unit -&gt; 'a) -&gt; 'a option) <a href="?package=async_unix&amp;module=Import.Core_scheduler&amp;type=with_options">Import.Core_scheduler.with_options</a></code></pre>
+      
+    </div>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> cycle_count</span> : <code class="type">unit -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> cycle_start</span> : <code class="type">unit -&gt; <a href="?package=core&amp;module=Std.Time&amp;type=t">Core.Std.Time.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> cycle_times</span> : <code class="type">unit -&gt; <a href="?package=core&amp;module=Std.Time.Span&amp;type=t">Core.Std.Time.Span.t</a> <a href="?package=async_core&amp;module=Async_stream&amp;type=t">Async_core.Async_stream.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set_max_num_jobs_per_priority_per_cycle</span> : <code class="type">int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> force_current_cycle_to_end</span> : <code class="type">unit -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> file_descr_watcher_backend</span> : <code class="type"><a href="?package=async_unix&amp;module=Import.Config.File_descr_watcher&amp;type=t">Import.Config.File_descr_watcher.t</a> <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a></code></pre>
+      
+    
+<pre><code><span id="TYPEt"><span class="keyword">type</span> t</span> = {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.mutex">mutex</span> :<code class="type"><a href="?package=core&amp;module=Std.Nano_mutex&amp;type=t">Core.Std.Nano_mutex.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.is_running">is_running</span> :<code class="type">bool</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.have_called_go">have_called_go</span> :<code class="type">bool</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.fds_whose_watching_has_changed">fds_whose_watching_has_changed</span> :<code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler.Fd&amp;type=t">Fd.t</a> list</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.file_descr_watcher">file_descr_watcher</span> :<code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler.File_descr_watcher&amp;type=t">File_descr_watcher.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.fd_by_descr">fd_by_descr</span> :<code class="type"><a href="?package=async_unix&amp;module=Fd_by_descr&amp;type=t">Fd_by_descr.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.timerfd">timerfd</span> :<code class="type"><a href="?package=core&amp;module=Std.Linux_ext.Timerfd&amp;type=t">Core.Std.Linux_ext.Timerfd.t</a> option</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.scheduler_thread_id">scheduler_thread_id</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.interruptor">interruptor</span> :<code class="type"><a href="?package=async_unix&amp;module=Interruptor&amp;type=t">Interruptor.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.signal_manager">signal_manager</span> :<code class="type"><a href="?package=async_unix&amp;module=Raw_signal_manager&amp;type=t">Raw_signal_manager.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.thread_pool">thread_pool</span> :<code class="type"><a href="?package=async_unix&amp;module=Thread_pool&amp;type=t">Thread_pool.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.handle_thread_pool_stuck">handle_thread_pool_stuck</span> :<code class="type"><a href="?package=core&amp;module=Std.Time.Span&amp;type=t">Core.Std.Time.Span.t</a> -&gt; unit</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.busy_pollers">busy_pollers</span> :<code class="type"><a href="?package=async_unix&amp;module=Busy_pollers&amp;type=t">Busy_pollers.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.busy_poll_thread_is_running">busy_poll_thread_is_running</span> :<code class="type">bool</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.core_scheduler">core_scheduler</span> :<code class="type"><a href="?package=async_unix&amp;module=Import.Core_scheduler&amp;type=t">Import.Core_scheduler.t</a></code>;</code></td>
+	  </tr></table>}
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> core_scheduler</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; <a href="?package=async_unix&amp;module=Import.Core_scheduler&amp;type=t">Import.Core_scheduler.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> busy_poll_thread_is_running</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> set_busy_poll_thread_is_running</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; bool -&gt; unit</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> busy_pollers</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; <a href="?package=async_unix&amp;module=Busy_pollers&amp;type=t">Busy_pollers.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> handle_thread_pool_stuck</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; <a href="?package=core&amp;module=Std.Time.Span&amp;type=t">Core.Std.Time.Span.t</a> -&gt; unit</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> set_handle_thread_pool_stuck</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; (<a href="?package=core&amp;module=Std.Time.Span&amp;type=t">Core.Std.Time.Span.t</a> -&gt; unit) -&gt; unit</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> thread_pool</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; <a href="?package=async_unix&amp;module=Thread_pool&amp;type=t">Thread_pool.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> signal_manager</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; <a href="?package=async_unix&amp;module=Raw_signal_manager&amp;type=t">Raw_signal_manager.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> interruptor</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; <a href="?package=async_unix&amp;module=Interruptor&amp;type=t">Interruptor.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> scheduler_thread_id</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> set_scheduler_thread_id</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; int -&gt; unit</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> timerfd</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; <a href="?package=core&amp;module=Std.Linux_ext.Timerfd&amp;type=t">Core.Std.Linux_ext.Timerfd.t</a> option</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> set_timerfd</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; <a href="?package=core&amp;module=Std.Linux_ext.Timerfd&amp;type=t">Core.Std.Linux_ext.Timerfd.t</a> option -&gt; unit</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> fd_by_descr</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; <a href="?package=async_unix&amp;module=Fd_by_descr&amp;type=t">Fd_by_descr.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> file_descr_watcher</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; <a href="?package=async_unix&amp;module=Raw_scheduler.File_descr_watcher&amp;type=t">File_descr_watcher.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> fds_whose_watching_has_changed</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; <a href="?package=async_unix&amp;module=Raw_scheduler.Fd&amp;type=t">Fd.t</a> list</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> set_fds_whose_watching_has_changed</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; <a href="?package=async_unix&amp;module=Raw_scheduler.Fd&amp;type=t">Fd.t</a> list -&gt; unit</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> have_called_go</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> set_have_called_go</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; bool -&gt; unit</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> is_running</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> set_is_running</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; bool -&gt; unit</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> mutex</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; <a href="?package=core&amp;module=Std.Nano_mutex&amp;type=t">Core.Std.Nano_mutex.t</a></code></pre>
+      
+    
+
+<div class="ocaml_module sig" name="Fields">
+		<pre><span class="keyword">module</span> <a href="?package=async_unix&amp;module=Raw_scheduler.Fields">Fields</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+ 
+      <pre><span><span class="keyword">val</span> names</span> : <code class="type">string list</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> core_scheduler</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Import.Core_scheduler&amp;type=t">Import.Core_scheduler.t</a>)
+<a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> busy_poll_thread_is_running</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, bool) <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> busy_pollers</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Busy_pollers&amp;type=t">Busy_pollers.t</a>) <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> handle_thread_pool_stuck</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=core&amp;module=Std.Time.Span&amp;type=t">Core.Std.Time.Span.t</a> -&gt; unit)
+<a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> thread_pool</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Thread_pool&amp;type=t">Thread_pool.t</a>) <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> signal_manager</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Raw_signal_manager&amp;type=t">Raw_signal_manager.t</a>)
+<a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> interruptor</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Interruptor&amp;type=t">Interruptor.t</a>) <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> scheduler_thread_id</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, int) <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> timerfd</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=core&amp;module=Std.Linux_ext.Timerfd&amp;type=t">Core.Std.Linux_ext.Timerfd.t</a> option)
+<a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> fd_by_descr</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Fd_by_descr&amp;type=t">Fd_by_descr.t</a>) <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> file_descr_watcher</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Raw_scheduler.File_descr_watcher&amp;type=t">File_descr_watcher.t</a>)
+<a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> fds_whose_watching_has_changed</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Raw_scheduler.Fd&amp;type=t">Fd.t</a> list) <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> have_called_go</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, bool) <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> is_running</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, bool) <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> mutex</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=core&amp;module=Std.Nano_mutex&amp;type=t">Core.Std.Nano_mutex.t</a>)
+<a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> make_creator</span> : <code class="type">mutex:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=core&amp;module=Std.Nano_mutex&amp;type=t">Core.Std.Nano_mutex.t</a>)
+       <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+       'a -&gt; ('b -&gt; <a href="?package=core&amp;module=Std.Nano_mutex&amp;type=t">Core.Std.Nano_mutex.t</a>) * 'c) -&gt;
+is_running:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, bool)
+            <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'c -&gt; ('b -&gt; bool) * 'd) -&gt;
+have_called_go:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, bool)
+                <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'd -&gt; ('b -&gt; bool) * 'e) -&gt;
+fds_whose_watching_has_changed:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Raw_scheduler.Fd&amp;type=t">Fd.t</a> list)
+                                <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                                'e -&gt; ('b -&gt; <a href="?package=async_unix&amp;module=Raw_scheduler.Fd&amp;type=t">Fd.t</a> list) * 'f) -&gt;
+file_descr_watcher:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Raw_scheduler.File_descr_watcher&amp;type=t">File_descr_watcher.t</a>)
+                    <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                    'f -&gt; ('b -&gt; <a href="?package=async_unix&amp;module=Raw_scheduler.File_descr_watcher&amp;type=t">File_descr_watcher.t</a>) * 'g) -&gt;
+fd_by_descr:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Fd_by_descr&amp;type=t">Fd_by_descr.t</a>)
+             <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'g -&gt; ('b -&gt; <a href="?package=async_unix&amp;module=Fd_by_descr&amp;type=t">Fd_by_descr.t</a>) * 'h) -&gt;
+timerfd:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>,
+          <a href="?package=core&amp;module=Std.Linux_ext.Timerfd&amp;type=t">Core.Std.Linux_ext.Timerfd.t</a> option)
+         <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+         'h -&gt; ('b -&gt; <a href="?package=core&amp;module=Std.Linux_ext.Timerfd&amp;type=t">Core.Std.Linux_ext.Timerfd.t</a> option) * 'i) -&gt;
+scheduler_thread_id:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, int)
+                     <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'i -&gt; ('b -&gt; int) * 'j) -&gt;
+interruptor:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Interruptor&amp;type=t">Interruptor.t</a>)
+             <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'j -&gt; ('b -&gt; <a href="?package=async_unix&amp;module=Interruptor&amp;type=t">Interruptor.t</a>) * 'k) -&gt;
+signal_manager:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Raw_signal_manager&amp;type=t">Raw_signal_manager.t</a>)
+                <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                'k -&gt; ('b -&gt; <a href="?package=async_unix&amp;module=Raw_signal_manager&amp;type=t">Raw_signal_manager.t</a>) * 'l) -&gt;
+thread_pool:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Thread_pool&amp;type=t">Thread_pool.t</a>)
+             <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'l -&gt; ('b -&gt; <a href="?package=async_unix&amp;module=Thread_pool&amp;type=t">Thread_pool.t</a>) * 'm) -&gt;
+handle_thread_pool_stuck:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>,
+                           <a href="?package=core&amp;module=Std.Time.Span&amp;type=t">Core.Std.Time.Span.t</a> -&gt; unit)
+                          <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                          'm -&gt; ('b -&gt; <a href="?package=core&amp;module=Std.Time.Span&amp;type=t">Core.Std.Time.Span.t</a> -&gt; unit) * 'n) -&gt;
+busy_pollers:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Busy_pollers&amp;type=t">Busy_pollers.t</a>)
+              <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+              'n -&gt; ('b -&gt; <a href="?package=async_unix&amp;module=Busy_pollers&amp;type=t">Busy_pollers.t</a>) * 'o) -&gt;
+busy_poll_thread_is_running:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, bool)
+                             <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                             'o -&gt; ('b -&gt; bool) * 'p) -&gt;
+core_scheduler:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Import.Core_scheduler&amp;type=t">Import.Core_scheduler.t</a>)
+                <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                'p -&gt; ('b -&gt; <a href="?package=async_unix&amp;module=Import.Core_scheduler&amp;type=t">Import.Core_scheduler.t</a>) * 'q) -&gt;
+'a -&gt; ('b -&gt; <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>) * 'q</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">mutex:<a href="?package=core&amp;module=Std.Nano_mutex&amp;type=t">Core.Std.Nano_mutex.t</a> -&gt;
+is_running:bool -&gt;
+have_called_go:bool -&gt;
+fds_whose_watching_has_changed:<a href="?package=async_unix&amp;module=Raw_scheduler.Fd&amp;type=t">Fd.t</a> list -&gt;
+file_descr_watcher:<a href="?package=async_unix&amp;module=Raw_scheduler.File_descr_watcher&amp;type=t">File_descr_watcher.t</a> -&gt;
+fd_by_descr:<a href="?package=async_unix&amp;module=Fd_by_descr&amp;type=t">Fd_by_descr.t</a> -&gt;
+timerfd:<a href="?package=core&amp;module=Std.Linux_ext.Timerfd&amp;type=t">Core.Std.Linux_ext.Timerfd.t</a> option -&gt;
+scheduler_thread_id:int -&gt;
+interruptor:<a href="?package=async_unix&amp;module=Interruptor&amp;type=t">Interruptor.t</a> -&gt;
+signal_manager:<a href="?package=async_unix&amp;module=Raw_signal_manager&amp;type=t">Raw_signal_manager.t</a> -&gt;
+thread_pool:<a href="?package=async_unix&amp;module=Thread_pool&amp;type=t">Thread_pool.t</a> -&gt;
+handle_thread_pool_stuck:(<a href="?package=core&amp;module=Std.Time.Span&amp;type=t">Core.Std.Time.Span.t</a> -&gt; unit) -&gt;
+busy_pollers:<a href="?package=async_unix&amp;module=Busy_pollers&amp;type=t">Busy_pollers.t</a> -&gt;
+busy_poll_thread_is_running:bool -&gt;
+core_scheduler:<a href="?package=async_unix&amp;module=Import.Core_scheduler&amp;type=t">Import.Core_scheduler.t</a> -&gt; <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> map</span> : <code class="type">mutex:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=core&amp;module=Std.Nano_mutex&amp;type=t">Core.Std.Nano_mutex.t</a>)
+       <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="?package=core&amp;module=Std.Nano_mutex&amp;type=t">Core.Std.Nano_mutex.t</a>) -&gt;
+is_running:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, bool)
+            <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+have_called_go:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, bool)
+                <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+fds_whose_watching_has_changed:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Raw_scheduler.Fd&amp;type=t">Fd.t</a> list)
+                                <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="?package=async_unix&amp;module=Raw_scheduler.Fd&amp;type=t">Fd.t</a> list) -&gt;
+file_descr_watcher:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Raw_scheduler.File_descr_watcher&amp;type=t">File_descr_watcher.t</a>)
+                    <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="?package=async_unix&amp;module=Raw_scheduler.File_descr_watcher&amp;type=t">File_descr_watcher.t</a>) -&gt;
+fd_by_descr:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Fd_by_descr&amp;type=t">Fd_by_descr.t</a>)
+             <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="?package=async_unix&amp;module=Fd_by_descr&amp;type=t">Fd_by_descr.t</a>) -&gt;
+timerfd:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>,
+          <a href="?package=core&amp;module=Std.Linux_ext.Timerfd&amp;type=t">Core.Std.Linux_ext.Timerfd.t</a> option)
+         <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="?package=core&amp;module=Std.Linux_ext.Timerfd&amp;type=t">Core.Std.Linux_ext.Timerfd.t</a> option) -&gt;
+scheduler_thread_id:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, int)
+                     <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; int) -&gt;
+interruptor:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Interruptor&amp;type=t">Interruptor.t</a>)
+             <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="?package=async_unix&amp;module=Interruptor&amp;type=t">Interruptor.t</a>) -&gt;
+signal_manager:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Raw_signal_manager&amp;type=t">Raw_signal_manager.t</a>)
+                <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="?package=async_unix&amp;module=Raw_signal_manager&amp;type=t">Raw_signal_manager.t</a>) -&gt;
+thread_pool:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Thread_pool&amp;type=t">Thread_pool.t</a>)
+             <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="?package=async_unix&amp;module=Thread_pool&amp;type=t">Thread_pool.t</a>) -&gt;
+handle_thread_pool_stuck:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>,
+                           <a href="?package=core&amp;module=Std.Time.Span&amp;type=t">Core.Std.Time.Span.t</a> -&gt; unit)
+                          <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                          <a href="?package=core&amp;module=Std.Time.Span&amp;type=t">Core.Std.Time.Span.t</a> -&gt; unit) -&gt;
+busy_pollers:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Busy_pollers&amp;type=t">Busy_pollers.t</a>)
+              <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="?package=async_unix&amp;module=Busy_pollers&amp;type=t">Busy_pollers.t</a>) -&gt;
+busy_poll_thread_is_running:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, bool)
+                             <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+core_scheduler:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Import.Core_scheduler&amp;type=t">Import.Core_scheduler.t</a>)
+                <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="?package=async_unix&amp;module=Import.Core_scheduler&amp;type=t">Import.Core_scheduler.t</a>) -&gt;
+<a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> iter</span> : <code class="type">mutex:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=core&amp;module=Std.Nano_mutex&amp;type=t">Core.Std.Nano_mutex.t</a>)
+       <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+is_running:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, bool)
+            <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'b) -&gt;
+have_called_go:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, bool)
+                <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'c) -&gt;
+fds_whose_watching_has_changed:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Raw_scheduler.Fd&amp;type=t">Fd.t</a> list)
+                                <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'd) -&gt;
+file_descr_watcher:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Raw_scheduler.File_descr_watcher&amp;type=t">File_descr_watcher.t</a>)
+                    <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'e) -&gt;
+fd_by_descr:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Fd_by_descr&amp;type=t">Fd_by_descr.t</a>)
+             <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'f) -&gt;
+timerfd:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>,
+          <a href="?package=core&amp;module=Std.Linux_ext.Timerfd&amp;type=t">Core.Std.Linux_ext.Timerfd.t</a> option)
+         <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'g) -&gt;
+scheduler_thread_id:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, int)
+                     <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'h) -&gt;
+interruptor:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Interruptor&amp;type=t">Interruptor.t</a>)
+             <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'i) -&gt;
+signal_manager:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Raw_signal_manager&amp;type=t">Raw_signal_manager.t</a>)
+                <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'j) -&gt;
+thread_pool:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Thread_pool&amp;type=t">Thread_pool.t</a>)
+             <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'k) -&gt;
+handle_thread_pool_stuck:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>,
+                           <a href="?package=core&amp;module=Std.Time.Span&amp;type=t">Core.Std.Time.Span.t</a> -&gt; unit)
+                          <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'l) -&gt;
+busy_pollers:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Busy_pollers&amp;type=t">Busy_pollers.t</a>)
+              <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'm) -&gt;
+busy_poll_thread_is_running:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, bool)
+                             <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'n) -&gt;
+core_scheduler:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Import.Core_scheduler&amp;type=t">Import.Core_scheduler.t</a>)
+                <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'o) -&gt;
+'o</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> fold</span> : <code class="type">init:'a -&gt;
+mutex:('a -&gt;
+       ([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=core&amp;module=Std.Nano_mutex&amp;type=t">Core.Std.Nano_mutex.t</a>)
+       <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'b) -&gt;
+is_running:('b -&gt;
+            ([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, bool)
+            <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'c) -&gt;
+have_called_go:('c -&gt;
+                ([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, bool)
+                <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'd) -&gt;
+fds_whose_watching_has_changed:('d -&gt;
+                                ([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Raw_scheduler.Fd&amp;type=t">Fd.t</a> list)
+                                <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'e) -&gt;
+file_descr_watcher:('e -&gt;
+                    ([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Raw_scheduler.File_descr_watcher&amp;type=t">File_descr_watcher.t</a>)
+                    <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'f) -&gt;
+fd_by_descr:('f -&gt;
+             ([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Fd_by_descr&amp;type=t">Fd_by_descr.t</a>)
+             <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'g) -&gt;
+timerfd:('g -&gt;
+         ([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>,
+          <a href="?package=core&amp;module=Std.Linux_ext.Timerfd&amp;type=t">Core.Std.Linux_ext.Timerfd.t</a> option)
+         <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'h) -&gt;
+scheduler_thread_id:('h -&gt;
+                     ([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, int)
+                     <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'i) -&gt;
+interruptor:('i -&gt;
+             ([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Interruptor&amp;type=t">Interruptor.t</a>)
+             <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'j) -&gt;
+signal_manager:('j -&gt;
+                ([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Raw_signal_manager&amp;type=t">Raw_signal_manager.t</a>)
+                <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'k) -&gt;
+thread_pool:('k -&gt;
+             ([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Thread_pool&amp;type=t">Thread_pool.t</a>)
+             <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'l) -&gt;
+handle_thread_pool_stuck:('l -&gt;
+                          ([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>,
+                           <a href="?package=core&amp;module=Std.Time.Span&amp;type=t">Core.Std.Time.Span.t</a> -&gt; unit)
+                          <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'm) -&gt;
+busy_pollers:('m -&gt;
+              ([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Busy_pollers&amp;type=t">Busy_pollers.t</a>)
+              <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'n) -&gt;
+busy_poll_thread_is_running:('n -&gt;
+                             ([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, bool)
+                             <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'o) -&gt;
+core_scheduler:('o -&gt;
+                ([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Import.Core_scheduler&amp;type=t">Import.Core_scheduler.t</a>)
+                <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'p) -&gt;
+'p</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> map_poly</span> : <code class="type">([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, 'a) <a href="?package=fieldslib&amp;module=Field&amp;type=user">Fieldslib.Field.user</a> -&gt; 'a list</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> for_all</span> : <code class="type">mutex:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=core&amp;module=Std.Nano_mutex&amp;type=t">Core.Std.Nano_mutex.t</a>)
+       <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+is_running:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, bool)
+            <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+have_called_go:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, bool)
+                <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+fds_whose_watching_has_changed:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Raw_scheduler.Fd&amp;type=t">Fd.t</a> list)
+                                <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+file_descr_watcher:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Raw_scheduler.File_descr_watcher&amp;type=t">File_descr_watcher.t</a>)
+                    <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+fd_by_descr:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Fd_by_descr&amp;type=t">Fd_by_descr.t</a>)
+             <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+timerfd:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>,
+          <a href="?package=core&amp;module=Std.Linux_ext.Timerfd&amp;type=t">Core.Std.Linux_ext.Timerfd.t</a> option)
+         <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+scheduler_thread_id:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, int)
+                     <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+interruptor:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Interruptor&amp;type=t">Interruptor.t</a>)
+             <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+signal_manager:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Raw_signal_manager&amp;type=t">Raw_signal_manager.t</a>)
+                <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+thread_pool:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Thread_pool&amp;type=t">Thread_pool.t</a>)
+             <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+handle_thread_pool_stuck:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>,
+                           <a href="?package=core&amp;module=Std.Time.Span&amp;type=t">Core.Std.Time.Span.t</a> -&gt; unit)
+                          <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+busy_pollers:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Busy_pollers&amp;type=t">Busy_pollers.t</a>)
+              <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+busy_poll_thread_is_running:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, bool)
+                             <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+core_scheduler:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Import.Core_scheduler&amp;type=t">Import.Core_scheduler.t</a>)
+                <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+bool</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> exists</span> : <code class="type">mutex:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=core&amp;module=Std.Nano_mutex&amp;type=t">Core.Std.Nano_mutex.t</a>)
+       <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+is_running:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, bool)
+            <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+have_called_go:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, bool)
+                <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+fds_whose_watching_has_changed:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Raw_scheduler.Fd&amp;type=t">Fd.t</a> list)
+                                <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+file_descr_watcher:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Raw_scheduler.File_descr_watcher&amp;type=t">File_descr_watcher.t</a>)
+                    <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+fd_by_descr:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Fd_by_descr&amp;type=t">Fd_by_descr.t</a>)
+             <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+timerfd:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>,
+          <a href="?package=core&amp;module=Std.Linux_ext.Timerfd&amp;type=t">Core.Std.Linux_ext.Timerfd.t</a> option)
+         <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+scheduler_thread_id:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, int)
+                     <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+interruptor:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Interruptor&amp;type=t">Interruptor.t</a>)
+             <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+signal_manager:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Raw_signal_manager&amp;type=t">Raw_signal_manager.t</a>)
+                <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+thread_pool:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Thread_pool&amp;type=t">Thread_pool.t</a>)
+             <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+handle_thread_pool_stuck:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>,
+                           <a href="?package=core&amp;module=Std.Time.Span&amp;type=t">Core.Std.Time.Span.t</a> -&gt; unit)
+                          <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+busy_pollers:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Busy_pollers&amp;type=t">Busy_pollers.t</a>)
+              <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+busy_poll_thread_is_running:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, bool)
+                             <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+core_scheduler:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Import.Core_scheduler&amp;type=t">Import.Core_scheduler.t</a>)
+                <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; bool) -&gt;
+bool</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> to_list</span> : <code class="type">mutex:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=core&amp;module=Std.Nano_mutex&amp;type=t">Core.Std.Nano_mutex.t</a>)
+       <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+is_running:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, bool)
+            <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+have_called_go:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, bool)
+                <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+fds_whose_watching_has_changed:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Raw_scheduler.Fd&amp;type=t">Fd.t</a> list)
+                                <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+file_descr_watcher:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Raw_scheduler.File_descr_watcher&amp;type=t">File_descr_watcher.t</a>)
+                    <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+fd_by_descr:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Fd_by_descr&amp;type=t">Fd_by_descr.t</a>)
+             <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+timerfd:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>,
+          <a href="?package=core&amp;module=Std.Linux_ext.Timerfd&amp;type=t">Core.Std.Linux_ext.Timerfd.t</a> option)
+         <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+scheduler_thread_id:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, int)
+                     <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+interruptor:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Interruptor&amp;type=t">Interruptor.t</a>)
+             <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+signal_manager:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Raw_signal_manager&amp;type=t">Raw_signal_manager.t</a>)
+                <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+thread_pool:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Thread_pool&amp;type=t">Thread_pool.t</a>)
+             <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+handle_thread_pool_stuck:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>,
+                           <a href="?package=core&amp;module=Std.Time.Span&amp;type=t">Core.Std.Time.Span.t</a> -&gt; unit)
+                          <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+busy_pollers:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Busy_pollers&amp;type=t">Busy_pollers.t</a>)
+              <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+busy_poll_thread_is_running:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, bool)
+                             <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+core_scheduler:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Import.Core_scheduler&amp;type=t">Import.Core_scheduler.t</a>)
+                <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; 'a) -&gt;
+'a list</code></pre>
+      
+    
+
+<div class="ocaml_module sig" name="Direct">
+		<pre><span class="keyword">module</span> <a href="?package=async_unix&amp;module=Raw_scheduler.Fields.Direct">Direct</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+ 
+      <pre><span><span class="keyword">val</span> iter</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt;
+mutex:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=core&amp;module=Std.Nano_mutex&amp;type=t">Core.Std.Nano_mutex.t</a>)
+       <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; <a href="?package=core&amp;module=Std.Nano_mutex&amp;type=t">Core.Std.Nano_mutex.t</a> -&gt; 'a) -&gt;
+is_running:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, bool)
+            <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; bool -&gt; 'b) -&gt;
+have_called_go:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, bool)
+                <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; bool -&gt; 'c) -&gt;
+fds_whose_watching_has_changed:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Raw_scheduler.Fd&amp;type=t">Fd.t</a> list)
+                                <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                                <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; <a href="?package=async_unix&amp;module=Raw_scheduler.Fd&amp;type=t">Fd.t</a> list -&gt; 'd) -&gt;
+file_descr_watcher:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Raw_scheduler.File_descr_watcher&amp;type=t">File_descr_watcher.t</a>)
+                    <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                    <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; <a href="?package=async_unix&amp;module=Raw_scheduler.File_descr_watcher&amp;type=t">File_descr_watcher.t</a> -&gt; 'e) -&gt;
+fd_by_descr:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Fd_by_descr&amp;type=t">Fd_by_descr.t</a>)
+             <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; <a href="?package=async_unix&amp;module=Fd_by_descr&amp;type=t">Fd_by_descr.t</a> -&gt; 'f) -&gt;
+timerfd:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>,
+          <a href="?package=core&amp;module=Std.Linux_ext.Timerfd&amp;type=t">Core.Std.Linux_ext.Timerfd.t</a> option)
+         <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+         <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; <a href="?package=core&amp;module=Std.Linux_ext.Timerfd&amp;type=t">Core.Std.Linux_ext.Timerfd.t</a> option -&gt; 'g) -&gt;
+scheduler_thread_id:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, int)
+                     <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; int -&gt; 'h) -&gt;
+interruptor:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Interruptor&amp;type=t">Interruptor.t</a>)
+             <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; <a href="?package=async_unix&amp;module=Interruptor&amp;type=t">Interruptor.t</a> -&gt; 'i) -&gt;
+signal_manager:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Raw_signal_manager&amp;type=t">Raw_signal_manager.t</a>)
+                <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; <a href="?package=async_unix&amp;module=Raw_signal_manager&amp;type=t">Raw_signal_manager.t</a> -&gt; 'j) -&gt;
+thread_pool:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Thread_pool&amp;type=t">Thread_pool.t</a>)
+             <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; <a href="?package=async_unix&amp;module=Thread_pool&amp;type=t">Thread_pool.t</a> -&gt; 'k) -&gt;
+handle_thread_pool_stuck:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>,
+                           <a href="?package=core&amp;module=Std.Time.Span&amp;type=t">Core.Std.Time.Span.t</a> -&gt; unit)
+                          <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                          <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; (<a href="?package=core&amp;module=Std.Time.Span&amp;type=t">Core.Std.Time.Span.t</a> -&gt; unit) -&gt; 'l) -&gt;
+busy_pollers:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Busy_pollers&amp;type=t">Busy_pollers.t</a>)
+              <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; <a href="?package=async_unix&amp;module=Busy_pollers&amp;type=t">Busy_pollers.t</a> -&gt; 'm) -&gt;
+busy_poll_thread_is_running:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, bool)
+                             <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; bool -&gt; 'n) -&gt;
+core_scheduler:(([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Import.Core_scheduler&amp;type=t">Import.Core_scheduler.t</a>)
+                <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; <a href="?package=async_unix&amp;module=Import.Core_scheduler&amp;type=t">Import.Core_scheduler.t</a> -&gt; 'o) -&gt;
+'o</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> fold</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt;
+init:'a -&gt;
+mutex:('a -&gt;
+       ([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=core&amp;module=Std.Nano_mutex&amp;type=t">Core.Std.Nano_mutex.t</a>)
+       <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; <a href="?package=core&amp;module=Std.Nano_mutex&amp;type=t">Core.Std.Nano_mutex.t</a> -&gt; 'b) -&gt;
+is_running:('b -&gt;
+            ([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, bool)
+            <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; bool -&gt; 'c) -&gt;
+have_called_go:('c -&gt;
+                ([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, bool)
+                <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; bool -&gt; 'd) -&gt;
+fds_whose_watching_has_changed:('d -&gt;
+                                ([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Raw_scheduler.Fd&amp;type=t">Fd.t</a> list)
+                                <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                                <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; <a href="?package=async_unix&amp;module=Raw_scheduler.Fd&amp;type=t">Fd.t</a> list -&gt; 'e) -&gt;
+file_descr_watcher:('e -&gt;
+                    ([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Raw_scheduler.File_descr_watcher&amp;type=t">File_descr_watcher.t</a>)
+                    <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                    <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; <a href="?package=async_unix&amp;module=Raw_scheduler.File_descr_watcher&amp;type=t">File_descr_watcher.t</a> -&gt; 'f) -&gt;
+fd_by_descr:('f -&gt;
+             ([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Fd_by_descr&amp;type=t">Fd_by_descr.t</a>)
+             <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; <a href="?package=async_unix&amp;module=Fd_by_descr&amp;type=t">Fd_by_descr.t</a> -&gt; 'g) -&gt;
+timerfd:('g -&gt;
+         ([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>,
+          <a href="?package=core&amp;module=Std.Linux_ext.Timerfd&amp;type=t">Core.Std.Linux_ext.Timerfd.t</a> option)
+         <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+         <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; <a href="?package=core&amp;module=Std.Linux_ext.Timerfd&amp;type=t">Core.Std.Linux_ext.Timerfd.t</a> option -&gt; 'h) -&gt;
+scheduler_thread_id:('h -&gt;
+                     ([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, int)
+                     <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; int -&gt; 'i) -&gt;
+interruptor:('i -&gt;
+             ([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Interruptor&amp;type=t">Interruptor.t</a>)
+             <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; <a href="?package=async_unix&amp;module=Interruptor&amp;type=t">Interruptor.t</a> -&gt; 'j) -&gt;
+signal_manager:('j -&gt;
+                ([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Raw_signal_manager&amp;type=t">Raw_signal_manager.t</a>)
+                <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; <a href="?package=async_unix&amp;module=Raw_signal_manager&amp;type=t">Raw_signal_manager.t</a> -&gt; 'k) -&gt;
+thread_pool:('k -&gt;
+             ([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Thread_pool&amp;type=t">Thread_pool.t</a>)
+             <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; <a href="?package=async_unix&amp;module=Thread_pool&amp;type=t">Thread_pool.t</a> -&gt; 'l) -&gt;
+handle_thread_pool_stuck:('l -&gt;
+                          ([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>,
+                           <a href="?package=core&amp;module=Std.Time.Span&amp;type=t">Core.Std.Time.Span.t</a> -&gt; unit)
+                          <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                          <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; (<a href="?package=core&amp;module=Std.Time.Span&amp;type=t">Core.Std.Time.Span.t</a> -&gt; unit) -&gt; 'm) -&gt;
+busy_pollers:('m -&gt;
+              ([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Busy_pollers&amp;type=t">Busy_pollers.t</a>)
+              <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; <a href="?package=async_unix&amp;module=Busy_pollers&amp;type=t">Busy_pollers.t</a> -&gt; 'n) -&gt;
+busy_poll_thread_is_running:('n -&gt;
+                             ([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, bool)
+                             <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt; <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; bool -&gt; 'o) -&gt;
+core_scheduler:('o -&gt;
+                ([&lt; `Read | `Set_and_create ], <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, <a href="?package=async_unix&amp;module=Import.Core_scheduler&amp;type=t">Import.Core_scheduler.t</a>)
+                <a href="?package=fieldslib&amp;module=Field&amp;type=t_with_perm">Fieldslib.Field.t_with_perm</a> -&gt;
+                <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; <a href="?package=async_unix&amp;module=Import.Core_scheduler&amp;type=t">Import.Core_scheduler.t</a> -&gt; 'p) -&gt;
+'p</code></pre>
+      
+    
+
+		</div>
+</div>
+		</div>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> current_execution_context</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; <a href="?package=async_core&amp;module=Execution_context&amp;type=t">Async_core.Execution_context.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> with_execution_context</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; <a href="?package=async_core&amp;module=Execution_context&amp;type=t">Async_core.Execution_context.t</a> -&gt; f:(unit -&gt; 'a) -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create_fd</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; <a href="?package=async_unix&amp;module=Raw_scheduler.Fd.Kind&amp;type=t">Fd.Kind.t</a> -&gt; <a href="?package=async_unix&amp;module=Raw_scheduler.Fd.File_descr&amp;type=t">Fd.File_descr.t</a> -&gt; <a href="?package=core&amp;module=Std.Info&amp;type=t">Core.Std.Info.t</a> -&gt; <a href="?package=async_unix&amp;module=Raw_scheduler.Fd&amp;type=t">Fd.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> lock</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> try_lock</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unlock</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> with_lock</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; (unit -&gt; 'a) -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> am_holding_lock</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+<pre><code><span id="TYPEthe_one_and_only"><span class="keyword">type</span> the_one_and_only</span> = </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTthe_one_and_only.Not_ready_to_initialize"><span class="constructor">Not_ready_to_initialize</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTthe_one_and_only.Ready_to_initialize"><span class="constructor">Ready_to_initialize</span></span> <span class="keyword">of</span> <code class="type">unit -&gt; <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a></code></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTthe_one_and_only.Initialized"><span class="constructor">Initialized</span></span> <span class="keyword">of</span> <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a></code></code></td>
+	   </tr></table>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mutex_for_initializing_the_one_and_only_ref</span> : <code class="type"><a href="?package=core&amp;module=Std.Nano_mutex&amp;type=t">Core.Std.Nano_mutex.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> the_one_and_only_ref</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=the_one_and_only">the_one_and_only</a> <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_ready_to_initialize</span> : <code class="type">unit -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> the_one_and_only_uncommon_case</span> : <code class="type">should_lock:bool -&gt; <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> the_one_and_only</span> : <code class="type">should_lock:bool -&gt; <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> current_thread_id</span> : <code class="type">unit -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_main_thread</span> : <code class="type">unit -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove_fd</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; <a href="?package=async_unix&amp;module=Raw_fd&amp;type=t">Raw_fd.t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> maybe_start_closing_fd</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; <a href="?package=async_unix&amp;module=Raw_scheduler.Fd&amp;type=t">Fd.t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> dec_num_active_syscalls_fd</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; <a href="?package=async_unix&amp;module=Raw_scheduler.Fd&amp;type=t">Fd.t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> invariant</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> try_create_timerfd</span> : <code class="type">unit -&gt; <a href="?package=async_unix&amp;module=Raw_scheduler.Timerfd&amp;type=t">Timerfd.t</a> option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> default_handle_thread_pool_stuck</span> : <code class="type"><a href="?package=core&amp;module=Std.Time.Span&amp;type=t">Core.Std.Time.Span.t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> detect_stuck_thread_pool</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">unit -&gt; <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> init</span> : <code class="type">unit -&gt; unit</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> reset_in_forked_process</span> : <code class="type">unit -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> thread_safe_wakeup_scheduler</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> i_am_the_scheduler</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> have_lock_do_cycle</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set_fd_desired_watching</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; <a href="?package=async_unix&amp;module=Raw_scheduler.Fd&amp;type=t">Fd.t</a> -&gt; <a href="?package=async_unix&amp;module=Read_write.Key&amp;type=t">Read_write.Key.t</a> -&gt; <a href="?package=async_unix&amp;module=Raw_scheduler.Fd.Watching&amp;type=t">Fd.Watching.t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> request_start_watching</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt;
+<a href="?package=async_unix&amp;module=Raw_scheduler.Fd&amp;type=t">Fd.t</a> -&gt;
+<a href="?package=async_unix&amp;module=Read_write.Key&amp;type=t">Read_write.Key.t</a> -&gt;
+[&gt; `Already_closed
+ | `Already_watching
+ | `Unsupported
+ | `Watching of <a href="?package=async_unix&amp;module=Raw_scheduler.Fd&amp;type=ready_to_result">Fd.ready_to_result</a> <a href="?package=async_unix&amp;module=Import.Ivar&amp;type=t">Import.Ivar.t</a> ]</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> request_stop_watching</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; <a href="?package=async_unix&amp;module=Raw_scheduler.Fd&amp;type=t">Fd.t</a> -&gt; <a href="?package=async_unix&amp;module=Read_write.Key&amp;type=t">Read_write.Key.t</a> -&gt; <a href="?package=async_unix&amp;module=Raw_scheduler.Fd&amp;type=ready_to_result">Fd.ready_to_result</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sync_changed_fds_to_file_descr_watcher</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> be_the_scheduler</span> : <code class="type">?raise_unhandled_exn:bool -&gt; <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add_finalizer</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; 'a <a href="?package=core&amp;module=Std.Heap_block&amp;type=t">Core.Std.Heap_block.t</a> -&gt; ('a <a href="?package=core&amp;module=Std.Heap_block&amp;type=t">Core.Std.Heap_block.t</a> -&gt; unit) -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add_finalizer_exn</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; 'a -&gt; ('a -&gt; unit) -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> go</span> : <code class="type">?raise_unhandled_exn:bool -&gt; unit -&gt; <a href="?package=core_kernel&amp;module=Std&amp;type=never_returns">Core_kernel.Std.never_returns</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> go_main</span> : <code class="type">?raise_unhandled_exn:bool -&gt;
+?file_descr_watcher:<a href="?package=async_unix&amp;module=Import.Config.File_descr_watcher&amp;type=t">Import.Config.File_descr_watcher.t</a> -&gt;
+main:(unit -&gt; unit) -&gt; unit -&gt; <a href="?package=core_kernel&amp;module=Std&amp;type=never_returns">Core_kernel.Std.never_returns</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_running</span> : <code class="type">unit -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> report_long_cycle_times</span> : <code class="type">?cutoff:<a href="?package=core&amp;module=Std.Time.Span&amp;type=t">Core.Std.Time.Span.t</a> -&gt; unit -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> start_busy_poller_thread_if_not_running</span> : <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add_busy_poller</span> : <code class="type">(unit -&gt; [ `Continue_polling | `Stop_polling of 'a ]) -&gt; 'a <a href="?package=async_unix&amp;module=Import.Deferred&amp;type=t">Import.Deferred.t</a></code></pre>
+      
+    
+<pre><code><span id="TYPEfolder"><span class="keyword">type</span> <code class="type">'b </code>folder</span> = {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTfolder.folder">folder</span> :<code class="type">'a. 'b -&gt; <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a> -&gt; (<a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a>, 'a) <a href="?package=core&amp;module=Std.Field&amp;type=t">Core.Std.Field.t</a> -&gt; 'b</code>;</code></td>
+	  </tr></table>}
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t</span> : <code class="type">unit -&gt; <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold_fields</span> : <code class="type">init:'a -&gt; 'a <a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=folder">folder</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> handle_thread_pool_stuck</span> : <code class="type">(<a href="?package=core&amp;module=Std.Time.Span&amp;type=t">Core.Std.Time.Span.t</a> -&gt; unit) -&gt; unit</code></pre>
+      
+    
+</div>

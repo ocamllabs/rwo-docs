@@ -1,0 +1,421 @@
+<div class="ocaml_toplevel_module">
+<div class="info">Standard labeled libraries.<br/>   This meta-module provides labelized version of the TODO reference : Array,
+   TODO reference : List and TODO reference : String modules.<br/>   They only differ by their labels. Detailed interfaces can be found
+   in <code class="code">arrayLabels.mli</code>, <code class="code">listLabels.mli</code> and <code class="code">stringLabels.mli</code>.</div>
+<div class="ocaml_module sig" name="Array">
+		<pre><span class="keyword">module</span> <a href="?package=stdlib&amp;module=StdLabels.Array">Array</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+ 
+      <pre><span><span class="keyword">val</span> length</span> : <code class="type">'a array -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get</span> : <code class="type">'a array -&gt; int -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set</span> : <code class="type">'a array -&gt; int -&gt; 'a -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> make</span> : <code class="type">int -&gt; 'a -&gt; 'a array</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">int -&gt; 'a -&gt; 'a array</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> init</span> : <code class="type">int -&gt; f:(int -&gt; 'a) -&gt; 'a array</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> make_matrix</span> : <code class="type">dimx:int -&gt; dimy:int -&gt; 'a -&gt; 'a array array</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create_matrix</span> : <code class="type">dimx:int -&gt; dimy:int -&gt; 'a -&gt; 'a array array</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> append</span> : <code class="type">'a array -&gt; 'a array -&gt; 'a array</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> concat</span> : <code class="type">'a array list -&gt; 'a array</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sub</span> : <code class="type">'a array -&gt; pos:int -&gt; len:int -&gt; 'a array</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> copy</span> : <code class="type">'a array -&gt; 'a array</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fill</span> : <code class="type">'a array -&gt; pos:int -&gt; len:int -&gt; 'a -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> blit</span> : <code class="type">src:'a array -&gt; src_pos:int -&gt; dst:'a array -&gt; dst_pos:int -&gt; len:int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_list</span> : <code class="type">'a array -&gt; 'a list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_list</span> : <code class="type">'a list -&gt; 'a array</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter</span> : <code class="type">f:('a -&gt; unit) -&gt; 'a array -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map</span> : <code class="type">f:('a -&gt; 'b) -&gt; 'a array -&gt; 'b array</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iteri</span> : <code class="type">f:(int -&gt; 'a -&gt; unit) -&gt; 'a array -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mapi</span> : <code class="type">f:(int -&gt; 'a -&gt; 'b) -&gt; 'a array -&gt; 'b array</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold_left</span> : <code class="type">f:('a -&gt; 'b -&gt; 'a) -&gt; init:'a -&gt; 'b array -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold_right</span> : <code class="type">f:('a -&gt; 'b -&gt; 'b) -&gt; 'a array -&gt; init:'b -&gt; 'b</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sort</span> : <code class="type">cmp:('a -&gt; 'a -&gt; int) -&gt; 'a array -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stable_sort</span> : <code class="type">cmp:('a -&gt; 'a -&gt; int) -&gt; 'a array -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fast_sort</span> : <code class="type">cmp:('a -&gt; 'a -&gt; int) -&gt; 'a array -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_get</span> : <code class="type">'a array -&gt; int -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_set</span> : <code class="type">'a array -&gt; int -&gt; 'a -&gt; unit</code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="List">
+		<pre><span class="keyword">module</span> <a href="?package=stdlib&amp;module=StdLabels.List">List</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+ 
+      <pre><span><span class="keyword">val</span> length</span> : <code class="type">'a list -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> hd</span> : <code class="type">'a list -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> tl</span> : <code class="type">'a list -&gt; 'a list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> nth</span> : <code class="type">'a list -&gt; int -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rev</span> : <code class="type">'a list -&gt; 'a list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> append</span> : <code class="type">'a list -&gt; 'a list -&gt; 'a list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rev_append</span> : <code class="type">'a list -&gt; 'a list -&gt; 'a list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> concat</span> : <code class="type">'a list list -&gt; 'a list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> flatten</span> : <code class="type">'a list list -&gt; 'a list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter</span> : <code class="type">f:('a -&gt; unit) -&gt; 'a list -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map</span> : <code class="type">f:('a -&gt; 'b) -&gt; 'a list -&gt; 'b list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rev_map</span> : <code class="type">f:('a -&gt; 'b) -&gt; 'a list -&gt; 'b list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold_left</span> : <code class="type">f:('a -&gt; 'b -&gt; 'a) -&gt; init:'a -&gt; 'b list -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold_right</span> : <code class="type">f:('a -&gt; 'b -&gt; 'b) -&gt; 'a list -&gt; init:'b -&gt; 'b</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter2</span> : <code class="type">f:('a -&gt; 'b -&gt; unit) -&gt; 'a list -&gt; 'b list -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map2</span> : <code class="type">f:('a -&gt; 'b -&gt; 'c) -&gt; 'a list -&gt; 'b list -&gt; 'c list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rev_map2</span> : <code class="type">f:('a -&gt; 'b -&gt; 'c) -&gt; 'a list -&gt; 'b list -&gt; 'c list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold_left2</span> : <code class="type">f:('a -&gt; 'b -&gt; 'c -&gt; 'a) -&gt; init:'a -&gt; 'b list -&gt; 'c list -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold_right2</span> : <code class="type">f:('a -&gt; 'b -&gt; 'c -&gt; 'c) -&gt; 'a list -&gt; 'b list -&gt; init:'c -&gt; 'c</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> for_all</span> : <code class="type">f:('a -&gt; bool) -&gt; 'a list -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> exists</span> : <code class="type">f:('a -&gt; bool) -&gt; 'a list -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> for_all2</span> : <code class="type">f:('a -&gt; 'b -&gt; bool) -&gt; 'a list -&gt; 'b list -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> exists2</span> : <code class="type">f:('a -&gt; 'b -&gt; bool) -&gt; 'a list -&gt; 'b list -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem</span> : <code class="type">'a -&gt; set:'a list -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> memq</span> : <code class="type">'a -&gt; set:'a list -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find</span> : <code class="type">f:('a -&gt; bool) -&gt; 'a list -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> filter</span> : <code class="type">f:('a -&gt; bool) -&gt; 'a list -&gt; 'a list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_all</span> : <code class="type">f:('a -&gt; bool) -&gt; 'a list -&gt; 'a list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> partition</span> : <code class="type">f:('a -&gt; bool) -&gt; 'a list -&gt; 'a list * 'a list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> assoc</span> : <code class="type">'a -&gt; ('a * 'b) list -&gt; 'b</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> assq</span> : <code class="type">'a -&gt; ('a * 'b) list -&gt; 'b</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem_assoc</span> : <code class="type">'a -&gt; map:('a * 'b) list -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem_assq</span> : <code class="type">'a -&gt; map:('a * 'b) list -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove_assoc</span> : <code class="type">'a -&gt; ('a * 'b) list -&gt; ('a * 'b) list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove_assq</span> : <code class="type">'a -&gt; ('a * 'b) list -&gt; ('a * 'b) list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> split</span> : <code class="type">('a * 'b) list -&gt; 'a list * 'b list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> combine</span> : <code class="type">'a list -&gt; 'b list -&gt; ('a * 'b) list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sort</span> : <code class="type">cmp:('a -&gt; 'a -&gt; int) -&gt; 'a list -&gt; 'a list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stable_sort</span> : <code class="type">cmp:('a -&gt; 'a -&gt; int) -&gt; 'a list -&gt; 'a list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fast_sort</span> : <code class="type">cmp:('a -&gt; 'a -&gt; int) -&gt; 'a list -&gt; 'a list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> merge</span> : <code class="type">cmp:('a -&gt; 'a -&gt; int) -&gt; 'a list -&gt; 'a list -&gt; 'a list</code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="String">
+		<pre><span class="keyword">module</span> <a href="?package=stdlib&amp;module=StdLabels.String">String</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+ 
+      <pre><span><span class="keyword">val</span> length</span> : <code class="type">string -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get</span> : <code class="type">string -&gt; int -&gt; char</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set</span> : <code class="type">string -&gt; int -&gt; char -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">int -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> make</span> : <code class="type">int -&gt; char -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> copy</span> : <code class="type">string -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sub</span> : <code class="type">string -&gt; pos:int -&gt; len:int -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fill</span> : <code class="type">string -&gt; pos:int -&gt; len:int -&gt; char -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> blit</span> : <code class="type">src:string -&gt; src_pos:int -&gt; dst:string -&gt; dst_pos:int -&gt; len:int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> concat</span> : <code class="type">sep:string -&gt; string list -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter</span> : <code class="type">f:(char -&gt; unit) -&gt; string -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iteri</span> : <code class="type">f:(int -&gt; char -&gt; unit) -&gt; string -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map</span> : <code class="type">f:(char -&gt; char) -&gt; string -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> trim</span> : <code class="type">string -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> escaped</span> : <code class="type">string -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> index</span> : <code class="type">string -&gt; char -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rindex</span> : <code class="type">string -&gt; char -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> index_from</span> : <code class="type">string -&gt; int -&gt; char -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rindex_from</span> : <code class="type">string -&gt; int -&gt; char -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> contains</span> : <code class="type">string -&gt; char -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> contains_from</span> : <code class="type">string -&gt; int -&gt; char -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rcontains_from</span> : <code class="type">string -&gt; int -&gt; char -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> uppercase</span> : <code class="type">string -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> lowercase</span> : <code class="type">string -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> capitalize</span> : <code class="type">string -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> uncapitalize</span> : <code class="type">string -&gt; string</code></pre>
+      
+    
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> = <code class="type">string</code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> compare</span> : <code class="type"><a href="?package=stdlib&amp;module=StdLabels.String&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=StdLabels.String&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_get</span> : <code class="type">string -&gt; int -&gt; char</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_set</span> : <code class="type">string -&gt; int -&gt; char -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_blit</span> : <code class="type">src:string -&gt; src_pos:int -&gt; dst:string -&gt; dst_pos:int -&gt; len:int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_fill</span> : <code class="type">string -&gt; pos:int -&gt; len:int -&gt; char -&gt; unit</code></pre>
+      
+    
+		</div>
+</div></div>

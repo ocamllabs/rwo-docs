@@ -1,0 +1,246 @@
+<div class="ocaml_toplevel_module">
+<div class="info">A double ended queue that can shrink and expand on both ends.<br/>    An index is assigned to an element when it enters the queue, and the index of an
+    element is static (i.e. an index refers to a distinct element until that element is
+    removed from the queue, no matter how many intervening push/pop operations occur).<br/>    One consequence of this is that the minimum index may be &lt; 0.<br/>    The &quot;front&quot; is the smallest valid index, while the &quot;back&quot; is the largest.<br/>    All operations are amortized O(1) with a small constant.</div>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> </pre>
+      
+    
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Container.S1" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Container.S1">Container.S1</a></code> with type t = 'a <a href="?package=core_kernel&amp;module=Dequeue&amp;type=t">t</a></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">?initial_length:int -&gt; ?never_shrink:bool -&gt; unit -&gt; 'a <a href="?package=core_kernel&amp;module=Dequeue&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">create ?initial_length ?never_shrink ()</code> create a new <code class="code">t</code>.  <code class="code">initial_length</code> is the
+    initial length of the dequeue; it will be able to hold <code class="code">initial_length</code> elements
+    without resizing.  It must be positive.  If <code class="code">never_shrink</code> is true, the physical array
+    will never shrink; only expand.  If <code class="code">initial_length</code> is given without <code class="code">never_shrink</code>
+    then <code class="code">never_shrink</code> is presumed to be <code class="code">true</code>, otherwise <code class="code">never_shrink</code> defaults to
+    <code class="code">false</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> front_index</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Dequeue&amp;type=t">t</a> -&gt; int option</code></pre>
+      <div class="info"><code class="code">front_index t</code> return the index of the front item in <code class="code">t</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> front_index_exn</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Dequeue&amp;type=t">t</a> -&gt; int</code></pre>
+      <div class="info"><code class="code">front_index_exn t</code> throws an exception if <code class="code">t</code> is empty, otherwise returns the index
+    of the front item in <code class="code">t</code> </div>
+    
+ 
+      <pre><span><span class="keyword">val</span> back_index</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Dequeue&amp;type=t">t</a> -&gt; int option</code></pre>
+      <div class="info"><code class="code">back_index t</code> return the index of the back item in <code class="code">t</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> back_index_exn</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Dequeue&amp;type=t">t</a> -&gt; int</code></pre>
+      <div class="info"><code class="code">back_index_exn t</code> throws an exception if <code class="code">t</code> is empty, otherwise returns the index
+    of the back item in <code class="code">t</code> </div>
+    
+ 
+      <pre><span><span class="keyword">val</span> get</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Dequeue&amp;type=t">t</a> -&gt; int -&gt; 'a option</code></pre>
+      <div class="info"><code class="code">get t i</code> return the element at index <code class="code">i</code>.  Return <code class="code">None</code> if <code class="code">i</code> is invalid.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> get_exn</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Dequeue&amp;type=t">t</a> -&gt; int -&gt; 'a</code></pre>
+      <div class="info"><code class="code">get_exn t i</code> return the element at index <code class="code">i</code>.  Raise an exception if <code class="code">i</code> is
+    invalid.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> peek</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Dequeue&amp;type=t">t</a> -&gt; [ `back | `front ] -&gt; 'a option</code></pre>
+      <div class="info"><code class="code">peek t back_or_front</code> return the value at the back or front of the dequeue without
+    removing it.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> peek_front</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Dequeue&amp;type=t">t</a> -&gt; 'a option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> peek_front_exn</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Dequeue&amp;type=t">t</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> peek_back</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Dequeue&amp;type=t">t</a> -&gt; 'a option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> peek_back_exn</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Dequeue&amp;type=t">t</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set_exn</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Dequeue&amp;type=t">t</a> -&gt; int -&gt; 'a -&gt; unit</code></pre>
+      <div class="info"><code class="code">set_exn t i v</code> mutate the element at <code class="code">i</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> iter'</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Dequeue&amp;type=t">t</a> -&gt; [ `back_to_front | `front_to_back ] -&gt; f:('a -&gt; unit) -&gt; unit</code></pre>
+      <div class="info"><code class="code">iter' t ~f</code> iter over the elements of <code class="code">t</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> iteri</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Dequeue&amp;type=t">t</a> -&gt; f:(int -&gt; 'a -&gt; unit) -&gt; unit</code></pre>
+      <div class="info"><code class="code">iteri t ~f</code> iter over the elements of t <code class="code">`front_to_back</code> passing in the index.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> iteri'</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Dequeue&amp;type=t">t</a> -&gt; [ `back_to_front | `front_to_back ] -&gt; f:(int -&gt; 'a -&gt; unit) -&gt; unit</code></pre>
+      <div class="info"><code class="code">iteri' t ~f</code> as <code class="code">iter</code>, but also passes in the index of the current element.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> fold'</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Dequeue&amp;type=t">t</a> -&gt;
+[ `back_to_front | `front_to_back ] -&gt; init:'b -&gt; f:('b -&gt; 'a -&gt; 'b) -&gt; 'b</code></pre>
+      <div class="info"><code class="code">fold' t ~init ~f</code> fold over the elements of <code class="code">t</code> </div>
+    
+ 
+      <pre><span><span class="keyword">val</span> foldi</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Dequeue&amp;type=t">t</a> -&gt; init:'b -&gt; f:(int -&gt; 'b -&gt; 'a -&gt; 'b) -&gt; 'b</code></pre>
+      <div class="info"><code class="code">foldi t ~init ~f</code> as <code class="code">fold</code>, but also passes in the index of the current element.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> foldi'</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Dequeue&amp;type=t">t</a> -&gt;
+[ `back_to_front | `front_to_back ] -&gt;
+init:'b -&gt; f:(int -&gt; 'b -&gt; 'a -&gt; 'b) -&gt; 'b</code></pre>
+      <div class="info"><code class="code">foldi' t ~init ~f</code> as <code class="code">fold'</code>, but also passes in the index of the current element to
+    <code class="code">f</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> enqueue</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Dequeue&amp;type=t">t</a> -&gt; [ `back | `front ] -&gt; 'a -&gt; unit</code></pre>
+      <div class="info"><code class="code">enqueue t back_or_front v</code> push <code class="code">v</code> onto the <code class="code">back_or_front</code> of <code class="code">t</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> enqueue_front</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Dequeue&amp;type=t">t</a> -&gt; 'a -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> enqueue_back</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Dequeue&amp;type=t">t</a> -&gt; 'a -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> clear</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Dequeue&amp;type=t">t</a> -&gt; unit</code></pre>
+      <div class="info"><code class="code">clear t</code> removes all elements from <code class="code">t</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> drop</span> : <code class="type">?n:int -&gt; 'a <a href="?package=core_kernel&amp;module=Dequeue&amp;type=t">t</a> -&gt; [ `back | `front ] -&gt; unit</code></pre>
+      <div class="info"><code class="code">drop ?n t back_or_front</code> drop <code class="code">n</code> elements (default 1) from the <code class="code">back_or_front</code> of
+    <code class="code">t</code>.  If <code class="code">t</code> has fewer than <code class="code">n</code> elements then it is cleared.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> drop_front</span> : <code class="type">?n:int -&gt; 'a <a href="?package=core_kernel&amp;module=Dequeue&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> drop_back</span> : <code class="type">?n:int -&gt; 'a <a href="?package=core_kernel&amp;module=Dequeue&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> dequeue</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Dequeue&amp;type=t">t</a> -&gt; [ `back | `front ] -&gt; 'a option</code></pre>
+      <div class="info"><code class="code">dequeue t back_or_front</code> remove and return the <code class="code">back_or_front</code> of <code class="code">t</code> </div>
+    
+ 
+      <pre><span><span class="keyword">val</span> dequeue_exn</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Dequeue&amp;type=t">t</a> -&gt; [ `back | `front ] -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> dequeue_front</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Dequeue&amp;type=t">t</a> -&gt; 'a option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> dequeue_front_exn</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Dequeue&amp;type=t">t</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> dequeue_back</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Dequeue&amp;type=t">t</a> -&gt; 'a option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> dequeue_back_exn</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Dequeue&amp;type=t">t</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp</span> : <code class="type">(<a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'a) -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Dequeue&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; 'a <a href="?package=core_kernel&amp;module=Dequeue&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Dequeue&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Dequeue&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Read_ml&amp;type=reader">Bin_prot.Read_ml.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t_</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Dequeue&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t__</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+(int -&gt; 'a <a href="?package=core_kernel&amp;module=Dequeue&amp;type=t">t</a>) <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Dequeue&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Size&amp;type=sizer">Bin_prot.Size.sizer</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Dequeue&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Size&amp;type=sizer">Bin_prot.Size.sizer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Dequeue&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Bin_prot.Write_ml.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Dequeue&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Dequeue&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+<br/><code class="code">create ?initial_length ?never_shrink ()</code> create a new <code class="code">t</code>.  <code class="code">initial_length</code> is the
+    initial length of the dequeue; it will be able to hold <code class="code">initial_length</code> elements
+    without resizing.  It must be positive.  If <code class="code">never_shrink</code> is true, the physical array
+    will never shrink; only expand.  If <code class="code">initial_length</code> is given without <code class="code">never_shrink</code>
+    then <code class="code">never_shrink</code> is presumed to be <code class="code">true</code>, otherwise <code class="code">never_shrink</code> defaults to
+    <code class="code">false</code>.<br/>
+	  
+<br/><code class="code">front_index t</code> return the index of the front item in <code class="code">t</code>.<br/>
+	  
+<br/><code class="code">front_index_exn t</code> throws an exception if <code class="code">t</code> is empty, otherwise returns the index
+    of the front item in <code class="code">t</code> <br/>
+	  
+<br/><code class="code">back_index t</code> return the index of the back item in <code class="code">t</code>.<br/>
+	  
+<br/><code class="code">back_index_exn t</code> throws an exception if <code class="code">t</code> is empty, otherwise returns the index
+    of the back item in <code class="code">t</code> <br/>
+	  
+<br/><code class="code">get t i</code> return the element at index <code class="code">i</code>.  Return <code class="code">None</code> if <code class="code">i</code> is invalid.<br/>
+	  
+<br/><code class="code">get_exn t i</code> return the element at index <code class="code">i</code>.  Raise an exception if <code class="code">i</code> is
+    invalid.<br/>
+	  
+<br/><code class="code">peek t back_or_front</code> return the value at the back or front of the dequeue without
+    removing it.<br/>
+	  
+<br/><code class="code">set_exn t i v</code> mutate the element at <code class="code">i</code>.<br/>
+	  
+<br/><code class="code">iter' t ~f</code> iter over the elements of <code class="code">t</code>.<br/>
+	  
+<br/><code class="code">iteri t ~f</code> iter over the elements of t <code class="code">`front_to_back</code> passing in the index.<br/>
+	  
+<br/><code class="code">iteri' t ~f</code> as <code class="code">iter</code>, but also passes in the index of the current element.<br/>
+	  
+<br/><code class="code">fold' t ~init ~f</code> fold over the elements of <code class="code">t</code> <br/>
+	  
+<br/><code class="code">foldi t ~init ~f</code> as <code class="code">fold</code>, but also passes in the index of the current element.<br/>
+	  
+<br/><code class="code">foldi' t ~init ~f</code> as <code class="code">fold'</code>, but also passes in the index of the current element to
+    <code class="code">f</code>.<br/>
+	  
+<br/><code class="code">enqueue t back_or_front v</code> push <code class="code">v</code> onto the <code class="code">back_or_front</code> of <code class="code">t</code>.<br/>
+	  
+<br/><code class="code">clear t</code> removes all elements from <code class="code">t</code>.<br/>
+	  
+<br/><code class="code">drop ?n t back_or_front</code> drop <code class="code">n</code> elements (default 1) from the <code class="code">back_or_front</code> of
+    <code class="code">t</code>.  If <code class="code">t</code> has fewer than <code class="code">n</code> elements then it is cleared.<br/>
+	  
+<br/><code class="code">dequeue t back_or_front</code> remove and return the <code class="code">back_or_front</code> of <code class="code">t</code> <br/>
+	  </div>

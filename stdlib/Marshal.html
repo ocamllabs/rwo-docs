@@ -1,0 +1,67 @@
+<div class="ocaml_toplevel_module">
+<div class="info">Marshaling of data structures.<br/>   This module provides functions to encode arbitrary data structures
+   as sequences of bytes, which can then be written on a file or
+   sent over a pipe or network connection.  The bytes can then
+   be read back later, possibly in another process, and decoded back
+   into a data structure. The format for the byte sequences
+   is compatible across all machines for a given version of OCaml.<br/>   Warning: marshaling is currently not type-safe. The type
+   of marshaled data is not transmitted along the value of the data,
+   making it impossible to check that the data read back possesses the
+   type expected by the context. In particular, the result type of
+   the <code class="code">Marshal.from_*</code> functions is given as <code class="code">'a</code>, but this is
+   misleading: the returned OCaml value does not possess type <code class="code">'a</code>
+   for all <code class="code">'a</code>; it has one, unique type which cannot be determined
+   at compile-type.  The programmer should explicitly give the expected
+   type of the returned value, using the following syntax:<ul><li><code class="code">(Marshal.from_channel chan : type)</code>.
+   Anything can happen at run-time if the object in the file does not
+   belong to the given type.</li></ul>   OCaml exception values (of type <code class="code">exn</code>) returned by the unmarhsaller
+   should not be pattern-matched over through <code class="code">match ... with</code> or <code class="code">try
+   ... with</code>, because unmarshalling does not preserve the information
+   required for matching their exception constructor. Structural
+   equalities with other exception values, or most other uses such as
+   Printexc.to_string, will still work as expected.<br/>   The representation of marshaled values is not human-readable,
+   and uses bytes that are not printable characters. Therefore,
+   input and output channels used in conjunction with <code class="code">Marshal.to_channel</code>
+   and <code class="code">Marshal.from_channel</code> must be opened in binary mode, using e.g.
+   <code class="code">open_out_bin</code> or <code class="code">open_in_bin</code>; channels opened in text mode will
+   cause unmarshaling errors on platforms where text channels behave
+   differently than binary channels, e.g. Windows.</div>
+<pre><code><span id="TYPEextern_flags"><span class="keyword">type</span> extern_flags</span> = </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTextern_flags.No_sharing"><span class="constructor">No_sharing</span></span></code></td><td class="typefieldcomment" align="left">Don't preserve sharing</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTextern_flags.Closures"><span class="constructor">Closures</span></span></code></td><td class="typefieldcomment" align="left">Send function closures</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTextern_flags.Compat_32"><span class="constructor">Compat_32</span></span></code></td><td class="typefieldcomment" align="left">Ensure 32-bit compatibility</td>
+	   </tr></table>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_channel</span> : <code class="type"><a href="?package=stdlib&amp;module=Pervasives&amp;type=out_channel">out_channel</a> -&gt; 'a -&gt; <a href="?package=stdlib&amp;module=Marshal&amp;type=extern_flags">extern_flags</a> list -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_string</span> : <code class="type">'a -&gt; <a href="?package=stdlib&amp;module=Marshal&amp;type=extern_flags">extern_flags</a> list -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_buffer</span> : <code class="type">string -&gt; int -&gt; int -&gt; 'a -&gt; <a href="?package=stdlib&amp;module=Marshal&amp;type=extern_flags">extern_flags</a> list -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> from_channel</span> : <code class="type"><a href="?package=stdlib&amp;module=Pervasives&amp;type=in_channel">in_channel</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> from_string</span> : <code class="type">string -&gt; int -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> header_size</span> : <code class="type">int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> data_size</span> : <code class="type">string -&gt; int -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> total_size</span> : <code class="type">string -&gt; int -&gt; int</code></pre>
+      
+    </div>

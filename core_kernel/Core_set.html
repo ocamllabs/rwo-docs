@@ -1,0 +1,413 @@
+<div class="ocaml_toplevel_module">
+<div class="info">This module defines the <code class="code">Set</code> module for <code class="code">Core.Std</code>.  We use &quot;core_set&quot; as the file
+    name rather than &quot;set&quot; to avoid conflicts with OCaml's standard set module.<br/>    This module uses the same organizational approach as <code class="code">Core_map</code>.  See the
+    documentation in core_map.mli for a description of the approach.</div>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('elt, 'cmp) </code>t</span> </pre>
+      
+    
+<div class="ocaml_module sig" name="Tree">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Core_set.Tree">Tree</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'cmp) </code>t</span> </pre>
+      
+    
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Core_set_intf.Creators_and_accessors2_with_comparator" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Core_set_intf.Creators_and_accessors2_with_comparator">Core_set_intf.Creators_and_accessors2_with_comparator</a></code> with type set = ('a, 'b) <a href="?package=core_kernel&amp;module=Core_set.Tree&amp;type=t">t</a> with type t = ('a, 'b) <a href="?package=core_kernel&amp;module=Core_set.Tree&amp;type=t">t</a> with type tree = ('a, 'b) <a href="?package=core_kernel&amp;module=Core_set.Tree&amp;type=t">t</a></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt;
+('cmp -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set.Tree&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+		</div>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> invariants</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; bool</code></pre>
+      <div class="info">Test if invariants of internal AVL search tree hold.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> comparator</span> : <code class="type">('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Comparator&amp;type=t">Comparator.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> empty</span> : <code class="type">comparator:('a, 'cmp) <a href="?package=core_kernel&amp;module=Comparator&amp;type=t">Comparator.t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> singleton</span> : <code class="type">comparator:('a, 'cmp) <a href="?package=core_kernel&amp;module=Comparator&amp;type=t">Comparator.t</a> -&gt; 'a -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> length</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_empty</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; 'a -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add</span> : <code class="type">('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; 'a -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove</span> : <code class="type">('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; 'a -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> union</span> : <code class="type">('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> union_list</span> : <code class="type">comparator:('a, 'cmp) <a href="?package=core_kernel&amp;module=Comparator&amp;type=t">Comparator.t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> list -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> inter</span> : <code class="type">('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> diff</span> : <code class="type">('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> compare_direct</span> : <code class="type">('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> equal</span> : <code class="type">('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> exists</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; f:('a -&gt; bool) -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> for_all</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; f:('a -&gt; bool) -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> count</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; f:('a -&gt; bool) -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; f:('a -&gt; bool) -&gt; 'a option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_map</span> : <code class="type">('a, 'c) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; f:('a -&gt; 'b option) -&gt; 'b option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_exn</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; f:('a -&gt; bool) -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_index</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; int -&gt; 'a option</code></pre>
+      <div class="info"><code class="code">find_index t i</code> returns the <code class="code">i</code>th smallest element of <code class="code">t</code> in O(log n) time.  The
+    smallest element has <code class="code">i = 0</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> remove_index</span> : <code class="type">('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; int -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> subset</span> : <code class="type">('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; bool</code></pre>
+      <div class="info"><code class="code">subset t1 t2</code> returns true iff <code class="code">t1</code> is a subset of <code class="code">t2</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> of_list</span> : <code class="type">comparator:('a, 'cmp) <a href="?package=core_kernel&amp;module=Comparator&amp;type=t">Comparator.t</a> -&gt; 'a list -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a></code></pre>
+      <div class="info">The list or array given to <code class="code">of_list</code> and <code class="code">of_array</code> need not be sorted.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> of_array</span> : <code class="type">comparator:('a, 'cmp) <a href="?package=core_kernel&amp;module=Comparator&amp;type=t">Comparator.t</a> -&gt; 'a array -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_list</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; 'a list</code></pre>
+      <div class="info"><code class="code">to_list</code> and <code class="code">to_array</code> produce sequences sorted in ascending order according to the
+    comparator.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> to_array</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; 'a array</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_tree</span> : <code class="type">('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set.Tree&amp;type=t">Tree.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_tree</span> : <code class="type">comparator:('a, 'cmp) <a href="?package=core_kernel&amp;module=Comparator&amp;type=t">Comparator.t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set.Tree&amp;type=t">Tree.t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_sorted_array</span> : <code class="type">comparator:('a, 'cmp) <a href="?package=core_kernel&amp;module=Comparator&amp;type=t">Comparator.t</a> -&gt; 'a array -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">Or_error.t</a></code></pre>
+      <div class="info">Create set from sorted array.  The input must be sorted (either in ascending or
+    descending order as given by the comparator) and contain no duplicates, otherwise the
+    result is an error.  The complexity of this function is O(N).</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> of_sorted_array_unchecked</span> : <code class="type">comparator:('a, 'cmp) <a href="?package=core_kernel&amp;module=Comparator&amp;type=t">Comparator.t</a> -&gt; 'a array -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a></code></pre>
+      <div class="info">Similar to <code class="code">of_sorted_array</code>, but without checking the input array.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> stable_dedup_list</span> : <code class="type">comparator:('a, 'b) <a href="?package=core_kernel&amp;module=Comparator&amp;type=t">Comparator.t</a> -&gt; 'a list -&gt; 'a list</code></pre>
+      <div class="info"><code class="code">stable_dedup_list</code> is here rather than in the <code class="code">List</code> module because the
+    implementation relies crucially on sets, and because doing so allows one to avoid uses
+    of polymorphic comparison by instantiating the functor at a different implementation
+    of <code class="code">Comparator</code> and using the resulting <code class="code">stable_dedup_list</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> map</span> : <code class="type">comparator:('b, 'cmp) <a href="?package=core_kernel&amp;module=Comparator&amp;type=t">Comparator.t</a> -&gt;
+('a, 'c) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; f:('a -&gt; 'b) -&gt; ('b, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> filter_map</span> : <code class="type">comparator:('b, 'cmp) <a href="?package=core_kernel&amp;module=Comparator&amp;type=t">Comparator.t</a> -&gt;
+('a, 'c) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; f:('a -&gt; 'b option) -&gt; ('b, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> filter</span> : <code class="type">('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; f:('a -&gt; bool) -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; init:'accum -&gt; f:('accum -&gt; 'a -&gt; 'accum) -&gt; 'accum</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold_until</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt;
+init:'accum -&gt;
+f:('accum -&gt; 'a -&gt; [ `Continue of 'accum | `Stop of 'accum ]) -&gt; 'accum</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold_right</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; init:'accum -&gt; f:('a -&gt; 'accum -&gt; 'accum) -&gt; 'accum</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; f:('a -&gt; unit) -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter2</span> : <code class="type">('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt;
+('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt;
+f:([ `Both of 'a * 'a | `Left of 'a | `Right of 'a ] -&gt; unit) -&gt; unit</code></pre>
+      <div class="info">Iterate two sets side by side.  Complexity is O(M+N) where M and N are the sizes of
+    the two input sets. As an example, with the inputs <code class="code">0; 1</code> and <code class="code">1; 2</code>, <code class="code">f</code> will be
+    called with <code class="code">`Left 0</code>; <code class="code">`Both (1, 1)</code>; and <code class="code">`Right 2</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> partition_tf</span> : <code class="type">('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; f:('a -&gt; bool) -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> * ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a></code></pre>
+      <div class="info">if <code class="code">a, b = partition_tf set ~f</code> then <code class="code">a</code> is the elements on which <code class="code">f</code> produced <code class="code">true</code>,
+    and <code class="code">b</code> is the elements on which <code class="code">f</code> produces <code class="code">false</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> elements</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; 'a list</code></pre>
+      <div class="info">Same as TODO reference : to_list.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> min_elt</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; 'a option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> min_elt_exn</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> max_elt</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; 'a option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> max_elt_exn</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> choose</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; 'a option</code></pre>
+      <div class="info">returns an arbitrary element, or <code class="code">None</code> if the set is empty.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> choose_exn</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> split</span> : <code class="type">('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; 'a -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> * bool * ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">split t x</code> produces a triple <code class="code">(t1, b, t2)</code> where <code class="code">t1</code> is the set of elements strictly
+    less than <code class="code">x</code>, <code class="code">b = mem set x</code>, and <code class="code">t2</code> is the set of elements strictly larger than
+    <code class="code">x</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> group_by</span> : <code class="type">('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; equiv:('a -&gt; 'a -&gt; bool) -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> list</code></pre>
+      <div class="info">if <code class="code">equiv</code> is an equivalence predicate, then <code class="code">group_by set ~equiv</code> produces a list
+    of equivalence classes (i.e., a set-theoretic quotient).  E.g.,<br/>    <pre class="codepre"><code class="code">
+      let chars = Set.of_list ['A'; 'a'; 'b'; 'c'] in
+      let equiv c c' = Char.equal (Char.uppercase c) (Char.uppercase c') in
+      group_by chars ~equiv
+    </code></pre><br/>    produces:<br/>    <pre class="codepre"><code class="code">
+      Set.of_list['A';'a']; Set.singleton 'b'; Set.singleton 'c']
+    </code></pre><br/>    <code class="code">group_by</code> runs in O(n^2) time.</div>
+    
+<div class="ocaml_module sig" name="Poly">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Core_set.Poly">Poly</a> : <code class="code">sig</code> .. <code class="code">end</code> with type <a href="?package=core_kernel&amp;module=Core_set.Poly&amp;type=set">set</a> = ('a, 'b) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEset"><span class="keyword">type</span> <code class="type">('a, 'b) </code>set</span> </pre>
+      
+    
+<div class="ocaml_module sig" name="Tree">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Core_set.Poly.Tree">Tree</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'elt </code>t</span> = <code class="type">('elt, <a href="?package=core_kernel&amp;module=Comparator.Poly&amp;type=comparator">Comparator.Poly.comparator</a>) <a href="?package=core_kernel&amp;module=Core_set.Tree&amp;type=t">Tree.t</a></code> </pre>
+      
+    
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Core_set_intf.Creators_and_accessors1" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Core_set_intf.Creators_and_accessors1">Core_set_intf.Creators_and_accessors1</a></code> with type set = ('a, 'b) <a href="?package=core_kernel&amp;module=Core_set.Tree&amp;type=t">Tree.t</a> with type t = 'elt <a href="?package=core_kernel&amp;module=Core_set.Poly.Tree&amp;type=t">t</a> with type tree = 'elt <a href="?package=core_kernel&amp;module=Core_set.Poly.Tree&amp;type=t">t</a></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp</span> : <code class="type">(<a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'elt) -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'elt <a href="?package=core_kernel&amp;module=Core_set.Poly.Tree&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('elt -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; 'elt <a href="?package=core_kernel&amp;module=Core_set.Poly.Tree&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+		</div>
+</div>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'elt </code>t</span> = <code class="type">('elt, <a href="?package=core_kernel&amp;module=Comparator.Poly&amp;type=comparator">Comparator.Poly.comparator</a>) <a href="?package=core_kernel&amp;module=Core_set.Poly&amp;type=set">set</a></code> </pre>
+      
+    
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Core_set_intf.Creators_and_accessors1" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Core_set_intf.Creators_and_accessors1">Core_set_intf.Creators_and_accessors1</a></code> with type set = ('a, 'b) <a href="?package=core_kernel&amp;module=Core_set.Poly&amp;type=set">set</a> with type t = 'elt <a href="?package=core_kernel&amp;module=Core_set.Poly&amp;type=t">t</a> with type tree = 'elt <a href="?package=core_kernel&amp;module=Core_set.Poly.Tree&amp;type=t">Tree.t</a></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp</span> : <code class="type">(<a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'elt) -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'elt <a href="?package=core_kernel&amp;module=Core_set.Poly&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('elt -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; 'elt <a href="?package=core_kernel&amp;module=Core_set.Poly&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> compare</span> : <code class="type">('elt -&gt; 'elt -&gt; int) -&gt; 'elt <a href="?package=core_kernel&amp;module=Core_set.Poly&amp;type=t">t</a> -&gt; 'elt <a href="?package=core_kernel&amp;module=Core_set.Poly&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_t</span> : <code class="type">'elt <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a> -&gt; 'elt <a href="?package=core_kernel&amp;module=Core_set.Poly&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t</span> : <code class="type">'elt <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt; 'elt <a href="?package=core_kernel&amp;module=Core_set.Poly&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Read_ml&amp;type=reader">Bin_prot.Read_ml.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t_</span> : <code class="type">'elt <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt; 'elt <a href="?package=core_kernel&amp;module=Core_set.Poly&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t__</span> : <code class="type">'elt <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+(int -&gt; 'elt <a href="?package=core_kernel&amp;module=Core_set.Poly&amp;type=t">t</a>) <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t</span> : <code class="type">'elt <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a> -&gt; 'elt <a href="?package=core_kernel&amp;module=Core_set.Poly&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t</span> : <code class="type">'elt <a href="?package=bin_prot&amp;module=Size&amp;type=sizer">Bin_prot.Size.sizer</a> -&gt; 'elt <a href="?package=core_kernel&amp;module=Core_set.Poly&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Size&amp;type=sizer">Bin_prot.Size.sizer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t</span> : <code class="type">'elt <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt; 'elt <a href="?package=core_kernel&amp;module=Core_set.Poly&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Bin_prot.Write_ml.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_</span> : <code class="type">'elt <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt; 'elt <a href="?package=core_kernel&amp;module=Core_set.Poly&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t</span> : <code class="type">'elt <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a> -&gt; 'elt <a href="?package=core_kernel&amp;module=Core_set.Poly&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module ident" name="Elt" path="?package=core_kernel&amp;amp;module=Core_set_intf.Elt">
+		    <pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Core_set.Elt">Elt</a> = <code class="type"><code class="code"><a href="?package=core_kernel&amp;module=Core_set_intf.Elt">Core_set_intf.Elt</a></code></code></pre>
+</div>
+<div class="ocaml_module ident" name="Elt_binable" path="?package=core_kernel&amp;amp;module=Core_set_intf.Elt_binable">
+		    <pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Core_set.Elt_binable">Elt_binable</a> = <code class="type"><code class="code"><a href="?package=core_kernel&amp;module=Core_set_intf.Elt_binable">Core_set_intf.Elt_binable</a></code></code></pre>
+</div>
+<div class="ocaml_module ident" name="S" path="?package=core_kernel&amp;amp;module=Core_set_intf.S0">
+		    <pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Core_set.S">S</a> = <code class="type"><code class="code"><a href="?package=core_kernel&amp;module=Core_set_intf.S0">Core_set_intf.S0</a></code> with type set = ('a, 'b) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> with type tree = ('a, 'b) <a href="?package=core_kernel&amp;module=Core_set.Tree&amp;type=t">Tree.t</a></code></pre>
+</div>
+<div class="ocaml_module ident" name="S_binable" path="?package=core_kernel&amp;amp;module=Core_set_intf.S0_binable">
+		    <pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Core_set.S_binable">S_binable</a> = <code class="type"><code class="code"><a href="?package=core_kernel&amp;module=Core_set_intf.S0_binable">Core_set_intf.S0_binable</a></code> with type set = ('a, 'b) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> with type tree = ('a, 'b) <a href="?package=core_kernel&amp;module=Core_set.Tree&amp;type=t">Tree.t</a></code></pre>
+</div>
+<div class="ocaml_module ident" name="Make" path="?package=core_kernel&amp;amp;module=Core_set.S">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Core_set.Make">Make</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">Elt</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Core_set.Elt">Elt</a></code><code class="code">) -&gt; </code><code class="code"><a href="?package=core_kernel&amp;module=Core_set.S">S</a></code> with type Elt.t = Elt.t</div></pre>
+</div>
+<div class="ocaml_module ident" name="Make_using_comparator" path="?package=core_kernel&amp;amp;module=Core_set.S">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Core_set.Make_using_comparator">Make_using_comparator</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">Elt</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Comparator.S">Comparator.S</a></code><code class="code">) -&gt; </code><code class="code"><a href="?package=core_kernel&amp;module=Core_set.S">S</a></code> with type Elt.t = Elt.t with type Elt.comparator = Elt.comparator</div></pre>
+</div>
+<div class="ocaml_module ident" name="Make_binable" path="?package=core_kernel&amp;amp;module=Core_set.S_binable">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Core_set.Make_binable">Make_binable</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">Elt</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Core_set.Elt_binable">Elt_binable</a></code><code class="code">) -&gt; </code><code class="code"><a href="?package=core_kernel&amp;module=Core_set.S_binable">S_binable</a></code> with type Elt.t = Elt.t</div></pre>
+</div>
+<div class="ocaml_module ident" name="Make_binable_using_comparator" path="?package=core_kernel&amp;amp;module=Core_set.S_binable">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Core_set.Make_binable_using_comparator">Make_binable_using_comparator</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">Elt</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Comparator.S_binable">Comparator.S_binable</a></code><code class="code">) -&gt; </code><code class="code"><a href="?package=core_kernel&amp;module=Core_set.S_binable">S_binable</a></code> with type Elt.t = Elt.t with type Elt.comparator = Elt.comparator</div></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> compare</span> : <code class="type">('elt -&gt; 'elt -&gt; int) -&gt;
+('cmp -&gt; 'cmp -&gt; int) -&gt; ('elt, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; ('elt, 'cmp) <a href="?package=core_kernel&amp;module=Core_set&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+<br/>Test if invariants of internal AVL search tree hold.<br/>
+	  
+<br/><code class="code">find_index t i</code> returns the <code class="code">i</code>th smallest element of <code class="code">t</code> in O(log n) time.  The
+    smallest element has <code class="code">i = 0</code>.<br/>
+	  
+<br/><code class="code">subset t1 t2</code> returns true iff <code class="code">t1</code> is a subset of <code class="code">t2</code>.<br/>
+	  
+<br/>The list or array given to <code class="code">of_list</code> and <code class="code">of_array</code> need not be sorted.<br/>
+	  
+<br/><code class="code">to_list</code> and <code class="code">to_array</code> produce sequences sorted in ascending order according to the
+    comparator.<br/>
+	  
+<br/>Create set from sorted array.  The input must be sorted (either in ascending or
+    descending order as given by the comparator) and contain no duplicates, otherwise the
+    result is an error.  The complexity of this function is O(N).<br/>
+	  
+<br/>Similar to <code class="code">of_sorted_array</code>, but without checking the input array.<br/>
+	  
+<br/><code class="code">stable_dedup_list</code> is here rather than in the <code class="code">List</code> module because the
+    implementation relies crucially on sets, and because doing so allows one to avoid uses
+    of polymorphic comparison by instantiating the functor at a different implementation
+    of <code class="code">Comparator</code> and using the resulting <code class="code">stable_dedup_list</code>.<br/>
+	  
+<br/>Iterate two sets side by side.  Complexity is O(M+N) where M and N are the sizes of
+    the two input sets. As an example, with the inputs <code class="code">0; 1</code> and <code class="code">1; 2</code>, <code class="code">f</code> will be
+    called with <code class="code">`Left 0</code>; <code class="code">`Both (1, 1)</code>; and <code class="code">`Right 2</code>.<br/>
+	  
+<br/>if <code class="code">a, b = partition_tf set ~f</code> then <code class="code">a</code> is the elements on which <code class="code">f</code> produced <code class="code">true</code>,
+    and <code class="code">b</code> is the elements on which <code class="code">f</code> produces <code class="code">false</code>.<br/>
+	  
+<br/>Same as TODO reference : to_list.<br/>
+	  
+<br/>returns an arbitrary element, or <code class="code">None</code> if the set is empty.<br/>
+	  
+<br/><code class="code">split t x</code> produces a triple <code class="code">(t1, b, t2)</code> where <code class="code">t1</code> is the set of elements strictly
+    less than <code class="code">x</code>, <code class="code">b = mem set x</code>, and <code class="code">t2</code> is the set of elements strictly larger than
+    <code class="code">x</code>.<br/>
+	  
+<br/>if <code class="code">equiv</code> is an equivalence predicate, then <code class="code">group_by set ~equiv</code> produces a list
+    of equivalence classes (i.e., a set-theoretic quotient).  E.g.,<br/>    <pre class="codepre"><code class="code">
+      let chars = Set.of_list ['A'; 'a'; 'b'; 'c'] in
+      let equiv c c' = Char.equal (Char.uppercase c) (Char.uppercase c') in
+      group_by chars ~equiv
+    </code></pre><br/>    produces:<br/>    <pre class="codepre"><code class="code">
+      Set.of_list['A';'a']; Set.singleton 'b'; Set.singleton 'c']
+    </code></pre><br/>    <code class="code">group_by</code> runs in O(n^2) time.<br/>
+	  </div>

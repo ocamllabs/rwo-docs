@@ -1,0 +1,82 @@
+<div class="ocaml_toplevel_module">
+
+<div class="ocaml_module ident" name="Infix" path="?package=core_kernel&amp;amp;module=Comparable_intf.Infix">
+		    <pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Comparable.Infix">Infix</a> = <code class="type"><code class="code"><a href="?package=core_kernel&amp;module=Comparable_intf.Infix">Comparable_intf.Infix</a></code></code></pre>
+</div>
+<div class="ocaml_module ident" name="Map_and_set_binable" path="?package=core_kernel&amp;amp;module=Comparable_intf.Map_and_set_binable">
+		    <pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Comparable.Map_and_set_binable">Map_and_set_binable</a> = <code class="type"><code class="code"><a href="?package=core_kernel&amp;module=Comparable_intf.Map_and_set_binable">Comparable_intf.Map_and_set_binable</a></code></code></pre>
+</div>
+<div class="ocaml_module ident" name="S" path="?package=core_kernel&amp;amp;module=Comparable_intf.S">
+		    <pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Comparable.S">S</a> = <code class="type"><code class="code"><a href="?package=core_kernel&amp;module=Comparable_intf.S">Comparable_intf.S</a></code></code></pre>
+</div>
+<div class="ocaml_module ident" name="S_binable" path="?package=core_kernel&amp;amp;module=Comparable_intf.S_binable">
+		    <pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Comparable.S_binable">S_binable</a> = <code class="type"><code class="code"><a href="?package=core_kernel&amp;module=Comparable_intf.S_binable">Comparable_intf.S_binable</a></code></code></pre>
+</div>
+<div class="ocaml_module ident" name="S_common" path="?package=core_kernel&amp;amp;module=Comparable_intf.S_common">
+		    <pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Comparable.S_common">S_common</a> = <code class="type"><code class="code"><a href="?package=core_kernel&amp;module=Comparable_intf.S_common">Comparable_intf.S_common</a></code></code></pre>
+</div>
+<div class="ocaml_module ident" name="Validate" path="?package=core_kernel&amp;amp;module=Comparable_intf.Validate">
+		    <pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Comparable.Validate">Validate</a> = <code class="type"><code class="code"><a href="?package=core_kernel&amp;module=Comparable_intf.Validate">Comparable_intf.Validate</a></code></code></pre>
+</div>
+<div class="ocaml_module ident" name="With_zero" path="?package=core_kernel&amp;amp;module=Comparable_intf.With_zero">
+		    <pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Comparable.With_zero">With_zero</a> = <code class="type"><code class="code"><a href="?package=core_kernel&amp;module=Comparable_intf.With_zero">Comparable_intf.With_zero</a></code></code></pre>
+</div>
+<pre><span id="TYPEbound"><span class="keyword">type</span> <code class="type">'a </code>bound</span> = <code class="type">'a <a href="?package=core_kernel&amp;module=Comparable_intf&amp;type=bound">Comparable_intf.bound</a></code> </pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTbound.Incl"><span class="constructor">Incl</span></span> <span class="keyword">of</span> <code class="type">'a</code></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTbound.Excl"><span class="constructor">Excl</span></span> <span class="keyword">of</span> <code class="type">'a</code></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTbound.Unbounded"><span class="constructor">Unbounded</span></span></code></td>
+	   </tr></table>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> lexicographic</span> : <code class="type">('a -&gt; 'a -&gt; int) list -&gt; 'a -&gt; 'a -&gt; int</code></pre>
+      
+    
+<div class="ocaml_module ident" name="Inherit" path="?package=core_kernel&amp;amp;module=Comparable.S">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Comparable.Inherit">Inherit</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">C</code><code class="code"> : </code><code class="code">sig</code> .. <code class="code">end</code><code class="code">) -&gt; </code><div class="sig_block"><code class="code">functor (</code><code class="code">T</code><code class="code"> : </code><code class="code">sig</code> .. <code class="code">end</code><code class="code">) -&gt; </code><code class="code"><a href="?package=core_kernel&amp;module=Comparable.S">S</a></code> with type t = T.t</div></div></pre><div class="info">Inherit comparability from a component.</div>
+</div>
+<div class="ocaml_module ident" name="Make" path="?package=core_kernel&amp;amp;module=Comparable.S">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Comparable.Make">Make</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">T</code><code class="code"> : </code><code class="code">sig</code> .. <code class="code">end</code><code class="code">) -&gt; </code><code class="code"><a href="?package=core_kernel&amp;module=Comparable.S">S</a></code> with type t = T.t</div></pre><div class="info">Usage example:<br/>    <pre class="codepre"><code class="code">
+      module Foo = struct
+        module T = struct
+          type t = ... with compare, sexp
+        end
+        include T
+        include Comparable.Make (T)
+      end
+    </code></pre><br/>    Then include <code class="code">Comparable.S</code> in the signature (see comparable_intf.mli for an
+    example).</div>
+</div>
+<div class="ocaml_module ident" name="Make_binable" path="?package=core_kernel&amp;amp;module=Comparable.S_binable">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Comparable.Make_binable">Make_binable</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">T</code><code class="code"> : </code><code class="code">sig</code> .. <code class="code">end</code><code class="code">) -&gt; </code><code class="code"><a href="?package=core_kernel&amp;module=Comparable.S_binable">S_binable</a></code> with type t = T.t</div></pre>
+</div>
+<div class="ocaml_module ident" name="Map_and_set_binable" path="?package=core_kernel&amp;amp;module=Comparable.Map_and_set_binable">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Comparable.Map_and_set_binable">Map_and_set_binable</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">T</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Comparator.Pre_binable">Comparator.Pre_binable</a></code><code class="code">) -&gt; </code><code class="code"><a href="?package=core_kernel&amp;module=Comparable.Map_and_set_binable">Map_and_set_binable</a></code> with type t = T.t</div></pre>
+</div>
+<div class="ocaml_module ident" name="Poly" path="?package=core_kernel&amp;amp;module=Comparable.S">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Comparable.Poly">Poly</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">T</code><code class="code"> : </code><code class="code">sig</code> .. <code class="code">end</code><code class="code">) -&gt; </code><code class="code"><a href="?package=core_kernel&amp;module=Comparable.S">S</a></code> with type t = T.t</div></pre>
+</div>
+<div class="ocaml_module ident" name="Validate" path="?package=core_kernel&amp;amp;module=Comparable.Validate">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Comparable.Validate">Validate</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">T</code><code class="code"> : </code><code class="code">sig</code> .. <code class="code">end</code><code class="code">) -&gt; </code><code class="code"><a href="?package=core_kernel&amp;module=Comparable.Validate">Validate</a></code> with type t = T.t</div></pre>
+</div>
+<div class="ocaml_module ident" name="With_zero" path="?package=core_kernel&amp;amp;module=Comparable.With_zero">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Comparable.With_zero">With_zero</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">T</code><code class="code"> : </code><code class="code">sig</code> .. <code class="code">end</code><code class="code">) -&gt; </code><code class="code"><a href="?package=core_kernel&amp;module=Comparable.With_zero">With_zero</a></code> with type t = T.t</div></pre>
+</div>
+<div class="ocaml_module sig" name="Validate_with_zero">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Comparable.Validate_with_zero">Validate_with_zero</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">T</code><code class="code"> : </code><code class="code">sig</code> .. <code class="code">end</code><code class="code">) -&gt; </code><code class="code">sig</code> .. <code class="code">end</code></div></pre>
+		<div class="ocaml_module_content">
+		       
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Comparable.Validate" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Comparable.Validate">Validate</a></code> with type t = T.t</pre>
+</div>
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Comparable.With_zero" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Comparable.With_zero">With_zero</a></code> with type t = T.t</pre>
+</div>
+		</div>
+</div>
+<div class="ocaml_module sig" name="Check_sexp_conversion">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Comparable.Check_sexp_conversion">Check_sexp_conversion</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="code">sig</code> .. <code class="code">end</code><code class="code">) -&gt; </code><code class="code">sig</code> .. <code class="code">end</code></div></pre>
+		<div class="ocaml_module_content">
+		       
+		</div>
+</div></div>

@@ -1,0 +1,36 @@
+<div class="ocaml_toplevel_module">
+
+<pre><span id="TYPEbigstring"><span class="keyword">type</span> bigstring</span> = <code class="type">(char, <a href="?package=stdlib&amp;module=Bigarray&amp;type=int8_unsigned_elt">Bigarray.int8_unsigned_elt</a>, <a href="?package=stdlib&amp;module=Bigarray&amp;type=c_layout">Bigarray.c_layout</a>) <a href="?package=stdlib&amp;module=Bigarray.Array1&amp;type=t">Bigarray.Array1.t</a></code> </pre>
+      
+    
+<div class="ocaml_module ident" name="S" path="?package=bin_prot&amp;amp;module=Binable.S">
+		    <pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Binable.S">S</a> = <code class="type"><code class="code"><a href="?package=bin_prot&amp;module=Binable.S">Bin_prot.Binable.S</a></code></code></pre>
+</div>
+<div class="ocaml_module ident" name="S1" path="?package=bin_prot&amp;amp;module=Binable.S1">
+		    <pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Binable.S1">S1</a> = <code class="type"><code class="code"><a href="?package=bin_prot&amp;module=Binable.S1">Bin_prot.Binable.S1</a></code></code></pre>
+</div>
+<div class="ocaml_module ident" name="S2" path="?package=bin_prot&amp;amp;module=Binable.S2">
+		    <pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Binable.S2">S2</a> = <code class="type"><code class="code"><a href="?package=bin_prot&amp;module=Binable.S2">Bin_prot.Binable.S2</a></code></code></pre>
+</div>
+<div class="ocaml_module ident" name="Of_stringable" path="?package=core_kernel&amp;amp;module=Binable.S">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Binable.Of_stringable">Of_stringable</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Stringable.S">Stringable.S</a></code><code class="code">) -&gt; </code><code class="code"><a href="?package=core_kernel&amp;module=Binable.S">S</a></code> with type t = M.t</div></pre>
+</div>
+<pre><span id="TYPEm"><span class="keyword">type</span> <code class="type">'a </code>m</span> = <code class="type">(module S with type t = 'a)</code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_bigstring</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Binable&amp;type=m">m</a> -&gt; <a href="?package=core_kernel&amp;module=Binable&amp;type=bigstring">bigstring</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_bigstring</span> : <code class="type">?prefix_with_length:bool -&gt; 'a <a href="?package=core_kernel&amp;module=Binable&amp;type=m">m</a> -&gt; 'a -&gt; <a href="?package=core_kernel&amp;module=Binable&amp;type=bigstring">bigstring</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_string</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Binable&amp;type=m">m</a> -&gt; string -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_string</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Binable&amp;type=m">m</a> -&gt; 'a -&gt; string</code></pre>
+      
+    </div>

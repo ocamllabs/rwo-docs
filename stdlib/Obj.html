@@ -1,0 +1,140 @@
+<div class="ocaml_toplevel_module">
+<div class="info">Operations on internal representations of values.<br/>   Not for the casual user.</div>
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> repr</span> : <code class="type">'a -&gt; <a href="?package=stdlib&amp;module=Obj&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> obj</span> : <code class="type"><a href="?package=stdlib&amp;module=Obj&amp;type=t">t</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> magic</span> : <code class="type">'a -&gt; 'b</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_block</span> : <code class="type"><a href="?package=stdlib&amp;module=Obj&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_int</span> : <code class="type"><a href="?package=stdlib&amp;module=Obj&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> tag</span> : <code class="type"><a href="?package=stdlib&amp;module=Obj&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set_tag</span> : <code class="type"><a href="?package=stdlib&amp;module=Obj&amp;type=t">t</a> -&gt; int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> size</span> : <code class="type"><a href="?package=stdlib&amp;module=Obj&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> field</span> : <code class="type"><a href="?package=stdlib&amp;module=Obj&amp;type=t">t</a> -&gt; int -&gt; <a href="?package=stdlib&amp;module=Obj&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set_field</span> : <code class="type"><a href="?package=stdlib&amp;module=Obj&amp;type=t">t</a> -&gt; int -&gt; <a href="?package=stdlib&amp;module=Obj&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> double_field</span> : <code class="type"><a href="?package=stdlib&amp;module=Obj&amp;type=t">t</a> -&gt; int -&gt; float</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set_double_field</span> : <code class="type"><a href="?package=stdlib&amp;module=Obj&amp;type=t">t</a> -&gt; int -&gt; float -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> new_block</span> : <code class="type">int -&gt; int -&gt; <a href="?package=stdlib&amp;module=Obj&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> dup</span> : <code class="type"><a href="?package=stdlib&amp;module=Obj&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=Obj&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> truncate</span> : <code class="type"><a href="?package=stdlib&amp;module=Obj&amp;type=t">t</a> -&gt; int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add_offset</span> : <code class="type"><a href="?package=stdlib&amp;module=Obj&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=Int32&amp;type=t">Int32.t</a> -&gt; <a href="?package=stdlib&amp;module=Obj&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> lazy_tag</span> : <code class="type">int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> closure_tag</span> : <code class="type">int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> object_tag</span> : <code class="type">int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> infix_tag</span> : <code class="type">int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> forward_tag</span> : <code class="type">int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> no_scan_tag</span> : <code class="type">int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> abstract_tag</span> : <code class="type">int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> string_tag</span> : <code class="type">int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> double_tag</span> : <code class="type">int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> double_array_tag</span> : <code class="type">int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> custom_tag</span> : <code class="type">int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> final_tag</span> : <code class="type">int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> int_tag</span> : <code class="type">int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> out_of_heap_tag</span> : <code class="type">int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unaligned_tag</span> : <code class="type">int</code></pre>
+      
+    
+<br/>The following two functions are deprecated.  Use module TODO reference : Marshal
+    instead.<br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> marshal</span> : <code class="type"><a href="?package=stdlib&amp;module=Obj&amp;type=t">t</a> -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unmarshal</span> : <code class="type">string -&gt; int -&gt; <a href="?package=stdlib&amp;module=Obj&amp;type=t">t</a> * int</code></pre>
+      
+    </div>

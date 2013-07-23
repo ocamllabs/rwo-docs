@@ -1,0 +1,38 @@
+<div class="ocaml_toplevel_module">
+<div class="info">Deferred computations.</div>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> = <code class="type">'a lazy_t</code> </pre>
+      
+    
+<pre><span id="EXCEPTIONUndefined"><span class="keyword">exception</span> Undefined</span></pre>
+ 
+      <pre><span><span class="keyword">val</span> force</span> : <code class="type">'a <a href="?package=stdlib&amp;module=Lazy&amp;type=t">t</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> force_val</span> : <code class="type">'a <a href="?package=stdlib&amp;module=Lazy&amp;type=t">t</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> from_fun</span> : <code class="type">(unit -&gt; 'a) -&gt; 'a <a href="?package=stdlib&amp;module=Lazy&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> from_val</span> : <code class="type">'a -&gt; 'a <a href="?package=stdlib&amp;module=Lazy&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_val</span> : <code class="type">'a <a href="?package=stdlib&amp;module=Lazy&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> lazy_from_fun</span> : <code class="type">(unit -&gt; 'a) -&gt; 'a <a href="?package=stdlib&amp;module=Lazy&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> lazy_from_val</span> : <code class="type">'a -&gt; 'a <a href="?package=stdlib&amp;module=Lazy&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> lazy_is_val</span> : <code class="type">'a <a href="?package=stdlib&amp;module=Lazy&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    </div>

@@ -1,0 +1,56 @@
+<div class="ocaml_toplevel_module">
+<div class="info">Module for easily generating unit tests.  Based on code posted by
+    padiolea@irisa.fr to the caml mailing list.</div>
+<pre><span id="TYPEgen"><span class="keyword">type</span> <code class="type">'a </code>gen</span> = <code class="type">unit -&gt; 'a</code> </pre>
+      <div class="info">the type of a random <code class="code">'a</code>-generator</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> fg</span> : <code class="type">float <a href="?package=core_kernel&amp;module=Quickcheck&amp;type=gen">gen</a></code></pre>
+      <div class="info">float generator (no nan, inf, etc.)</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> cg</span> : <code class="type">char <a href="?package=core_kernel&amp;module=Quickcheck&amp;type=gen">gen</a></code></pre>
+      <div class="info">character generator</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> nng</span> : <code class="type">int <a href="?package=core_kernel&amp;module=Quickcheck&amp;type=gen">gen</a></code></pre>
+      <div class="info">natural number generator</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> uig</span> : <code class="type">int <a href="?package=core_kernel&amp;module=Quickcheck&amp;type=gen">gen</a></code></pre>
+      <div class="info">unsigned int generator (uniform random in range min_int, max_int)</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> pg</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Quickcheck&amp;type=gen">gen</a> -&gt; 'b <a href="?package=core_kernel&amp;module=Quickcheck&amp;type=gen">gen</a> -&gt; ('a * 'b) <a href="?package=core_kernel&amp;module=Quickcheck&amp;type=gen">gen</a></code></pre>
+      <div class="info">pair generator</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> tg</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Quickcheck&amp;type=gen">gen</a> -&gt; 'b <a href="?package=core_kernel&amp;module=Quickcheck&amp;type=gen">gen</a> -&gt; 'c <a href="?package=core_kernel&amp;module=Quickcheck&amp;type=gen">gen</a> -&gt; ('a * 'b * 'c) <a href="?package=core_kernel&amp;module=Quickcheck&amp;type=gen">gen</a></code></pre>
+      <div class="info">triple generator</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> lg</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Quickcheck&amp;type=gen">gen</a> -&gt; ?size_gen:int <a href="?package=core_kernel&amp;module=Quickcheck&amp;type=gen">gen</a> -&gt; 'a list <a href="?package=core_kernel&amp;module=Quickcheck&amp;type=gen">gen</a></code></pre>
+      <div class="info">list generator</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> sg</span> : <code class="type">?char_gen:char <a href="?package=core_kernel&amp;module=Quickcheck&amp;type=gen">gen</a> -&gt; ?size_gen:int <a href="?package=core_kernel&amp;module=Quickcheck&amp;type=gen">gen</a> -&gt; string <a href="?package=core_kernel&amp;module=Quickcheck&amp;type=gen">gen</a></code></pre>
+      <div class="info">string generator</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> always</span> : <code class="type">'a -&gt; 'a <a href="?package=core_kernel&amp;module=Quickcheck&amp;type=gen">gen</a></code></pre>
+      <div class="info">generator that always returns given value</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> laws</span> : <code class="type">int -&gt; 'a <a href="?package=core_kernel&amp;module=Quickcheck&amp;type=gen">gen</a> -&gt; ('a -&gt; bool) -&gt; 'a option</code></pre>
+      <div class="info"><code class="code">laws iter gen func</code> applies <code class="code">func</code> repeatedly (<code class="code">iter</code> times) on output
+    of <code class="code">gen</code>, and if <code class="code">func</code> ever returns false, then the input that caused
+    the failure is returned optionally.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> laws_exn</span> : <code class="type">string -&gt; int -&gt; 'a <a href="?package=core_kernel&amp;module=Quickcheck&amp;type=gen">gen</a> -&gt; ('a -&gt; bool) -&gt; unit</code></pre>
+      <div class="info">Like laws, but throws an exception instead of returning an option.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> repeat</span> : <code class="type">int -&gt; ('a -&gt; unit) -&gt; 'a <a href="?package=core_kernel&amp;module=Quickcheck&amp;type=gen">gen</a> -&gt; unit</code></pre>
+      
+    </div>

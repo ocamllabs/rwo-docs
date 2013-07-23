@@ -1,0 +1,97 @@
+
+<h1>Modules</h1>
+<table class="indextable">
+    
+<tr><td class="module"><a href="?package=async_core&amp;module=Async_condition">Async_condition</a></td><td><div class="info">
+<code class="code">Async.Condition</code> is async's implementation of the standard notion of a &quot;condition&quot;
+    variable, and is analogous to OCaml's <code class="code">Condition</code> module.</div></td></tr>
+
+<tr><td class="module"><a href="?package=async_core&amp;module=Async_gc">Async_gc</a></td><td/></tr>
+
+<tr><td class="module"><a href="?package=async_core&amp;module=Async_or_error">Async_or_error</a></td><td><div class="info">
+This module is the deferred analog of <code class="code">Core.Or_error</code>.</div></td></tr>
+
+<tr><td class="module"><a href="?package=async_core&amp;module=Async_stream">Async_stream</a></td><td><div class="info">
+For most applications one should use <code class="code">Pipe</code> instead of Stream</div></td></tr>
+
+<tr><td class="module"><a href="?package=async_core&amp;module=Backpatched">Backpatched</a></td><td><div class="info">
+A <code class="code">Backpatched</code> value is either a simple value or a &quot;hole&quot;, which may or may not have
+    been filled.</div></td></tr>
+
+<tr><td class="module"><a href="?package=async_core&amp;module=Clock">Clock</a></td><td><div class="info">
+Schedule jobs to run at a time in the future</div></td></tr>
+
+<tr><td class="module"><a href="?package=async_core&amp;module=Config">Config</a></td><td><div class="info">
+Settings that globally affect the behavior of async</div></td></tr>
+
+<tr><td class="module"><a href="?package=async_core&amp;module=Debug">Debug</a></td><td/></tr>
+
+<tr><td class="module"><a href="?package=async_core&amp;module=Deferred">Deferred</a></td><td/></tr>
+
+<tr><td class="module"><a href="?package=async_core&amp;module=Deferred_intf">Deferred_intf</a></td><td/></tr>
+
+<tr><td class="module"><a href="?package=async_core&amp;module=Deferred_std">Deferred_std</a></td><td/></tr>
+
+<tr><td class="module"><a href="?package=async_core&amp;module=Execution_context">Execution_context</a></td><td/></tr>
+
+<tr><td class="module"><a href="?package=async_core&amp;module=Handler">Handler</a></td><td><div class="info">
+A handler is a continuation that captures the current async execution context.</div></td></tr>
+
+<tr><td class="module"><a href="?package=async_core&amp;module=Import">Import</a></td><td/></tr>
+
+<tr><td class="module"><a href="?package=async_core&amp;module=Ivar">Ivar</a></td><td><div class="info">
+An ivar is a write-once cell that can be empty or full (i.e.</div></td></tr>
+
+<tr><td class="module"><a href="?package=async_core&amp;module=Job">Job</a></td><td/></tr>
+
+<tr><td class="module"><a href="?package=async_core&amp;module=Jobs">Jobs</a></td><td><div class="info">
+A <code class="code">Jobs.t</code> has a queue of jobs at each priority level.</div></td></tr>
+
+<tr><td class="module"><a href="?package=async_core&amp;module=Kill_index">Kill_index</a></td><td><div class="info">
+A timestamp used to implement <code class="code">Monitor.kill</code></div></td></tr>
+
+<tr><td class="module"><a href="?package=async_core&amp;module=Lazy_deferred">Lazy_deferred</a></td><td><div class="info">
+A <code class="code">Lazy_deferred.t</code> is a delayed computation that can produce a deferred.</div></td></tr>
+
+<tr><td class="module"><a href="?package=async_core&amp;module=Monitor">Monitor</a></td><td><div class="info">
+A monitor is a context that determines what to do when there is an unhandled
+    exception.</div></td></tr>
+
+<tr><td class="module"><a href="?package=async_core&amp;module=Pipe">Pipe</a></td><td><div class="info">
+A pipe is a buffered FIFO communication channel</div></td></tr>
+
+<tr><td class="module"><a href="?package=async_core&amp;module=Priority">Priority</a></td><td/></tr>
+
+<tr><td class="module"><a href="?package=async_core&amp;module=Raw_deferred">Raw_deferred</a></td><td/></tr>
+
+<tr><td class="module"><a href="?package=async_core&amp;module=Raw_handler">Raw_handler</a></td><td/></tr>
+
+<tr><td class="module"><a href="?package=async_core&amp;module=Raw_ivar">Raw_ivar</a></td><td/></tr>
+
+<tr><td class="module"><a href="?package=async_core&amp;module=Raw_monitor">Raw_monitor</a></td><td/></tr>
+
+<tr><td class="module"><a href="?package=async_core&amp;module=Raw_scheduler">Raw_scheduler</a></td><td/></tr>
+
+<tr><td class="module"><a href="?package=async_core&amp;module=Raw_stream">Raw_stream</a></td><td/></tr>
+
+<tr><td class="module"><a href="?package=async_core&amp;module=Scheduler">Scheduler</a></td><td/></tr>
+
+<tr><td class="module"><a href="?package=async_core&amp;module=Std">Std</a></td><td/></tr>
+
+<tr><td class="module"><a href="?package=async_core&amp;module=Tail">Tail</a></td><td><div class="info">
+A tail is a pointer to the end of a stream that can be used to extend the stream.</div></td></tr>
+
+<tr><td class="module"><a href="?package=async_core&amp;module=Test">Test</a></td><td/></tr>
+
+<tr><td class="module"><a href="?package=async_core&amp;module=Throttle">Throttle</a></td><td><div class="info">
+Throttles to limit the number of concurrent computations</div></td></tr>
+
+<tr><td class="module"><a href="?package=async_core&amp;module=Throttle_debug">Throttle_debug</a></td><td/></tr>
+
+<tr><td class="module"><a href="?package=async_core&amp;module=Throttle_unit_tests">Throttle_unit_tests</a></td><td><div class="info">
+This signature is here to remind us to update the unit tests whenever we change
+    <code class="code">Throttle</code>.</div></td></tr>
+
+<tr><td class="module"><a href="?package=async_core&amp;module=Unregister">Unregister</a></td><td/></tr>
+
+</table>

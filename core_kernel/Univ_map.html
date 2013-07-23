@@ -1,0 +1,181 @@
+<div class="ocaml_toplevel_module">
+<div class="info">Universal/heterogeneous maps.<br/>    These maps are useful for storing values of arbitrary type in a single map.  In order
+    to recover a value, it must be looked up with exactly the <code class="code">Key.t</code> it was stored in.
+    In other words, given different <code class="code">Key.t</code>'s from the same <code class="code">string</code>, one will not be able
+    to recover the key stored in the other one.<br/>    This is similar to <code class="code">Univ</code> in spirit, and is indeed built on top of <code class="code">Univ</code>.</div>
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> empty</span> : <code class="type"><a href="?package=core_kernel&amp;module=Univ_map&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_empty</span> : <code class="type"><a href="?package=core_kernel&amp;module=Univ_map&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+<div class="ocaml_module sig" name="Key">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Univ_map.Key">Key</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">string -&gt; ('a -&gt; <a href="?package=core_kernel&amp;module=Std_internal.Sexp&amp;type=t">Std_internal.Sexp.t</a>) -&gt; 'a <a href="?package=core_kernel&amp;module=Univ_map.Key&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; 'a <a href="?package=core_kernel&amp;module=Univ_map.Key&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+		</div>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> set</span> : <code class="type"><a href="?package=core_kernel&amp;module=Univ_map&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Univ_map.Key&amp;type=t">Key.t</a> -&gt; 'a -&gt; <a href="?package=core_kernel&amp;module=Univ_map&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem</span> : <code class="type"><a href="?package=core_kernel&amp;module=Univ_map&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Univ_map.Key&amp;type=t">Key.t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find</span> : <code class="type"><a href="?package=core_kernel&amp;module=Univ_map&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Univ_map.Key&amp;type=t">Key.t</a> -&gt; 'a option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_exn</span> : <code class="type"><a href="?package=core_kernel&amp;module=Univ_map&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Univ_map.Key&amp;type=t">Key.t</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add</span> : <code class="type"><a href="?package=core_kernel&amp;module=Univ_map&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Univ_map.Key&amp;type=t">Key.t</a> -&gt; 'a -&gt; [ `Duplicate | `Ok of <a href="?package=core_kernel&amp;module=Univ_map&amp;type=t">t</a> ]</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add_exn</span> : <code class="type"><a href="?package=core_kernel&amp;module=Univ_map&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Univ_map.Key&amp;type=t">Key.t</a> -&gt; 'a -&gt; <a href="?package=core_kernel&amp;module=Univ_map&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> change</span> : <code class="type"><a href="?package=core_kernel&amp;module=Univ_map&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Univ_map.Key&amp;type=t">Key.t</a> -&gt; ('a option -&gt; 'a option) -&gt; <a href="?package=core_kernel&amp;module=Univ_map&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> change_exn</span> : <code class="type"><a href="?package=core_kernel&amp;module=Univ_map&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Univ_map.Key&amp;type=t">Key.t</a> -&gt; ('a -&gt; 'a) -&gt; <a href="?package=core_kernel&amp;module=Univ_map&amp;type=t">t</a></code></pre>
+      
+    
+<div class="ocaml_module sig" name="With_default">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Univ_map.With_default">With_default</a> : <code class="code">sig</code> .. <code class="code">end</code></pre><div class="info">keys with associated default values, so that <code class="code">find</code> is no longer partial</div>
+		<div class="ocaml_module_content">
+		       
+<div class="ocaml_module sig" name="Key">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Univ_map.With_default.Key">Key</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">default:'a -&gt; string -&gt; ('a -&gt; <a href="?package=core_kernel&amp;module=Std_internal.Sexp&amp;type=t">Std_internal.Sexp.t</a>) -&gt; 'a <a href="?package=core_kernel&amp;module=Univ_map.With_default.Key&amp;type=t">t</a></code></pre>
+      
+    
+		</div>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> set</span> : <code class="type"><a href="?package=core_kernel&amp;module=Univ_map&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Univ_map.With_default.Key&amp;type=t">Key.t</a> -&gt; 'a -&gt; <a href="?package=core_kernel&amp;module=Univ_map&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find</span> : <code class="type"><a href="?package=core_kernel&amp;module=Univ_map&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Univ_map.With_default.Key&amp;type=t">Key.t</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> change</span> : <code class="type"><a href="?package=core_kernel&amp;module=Univ_map&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Univ_map.With_default.Key&amp;type=t">Key.t</a> -&gt; ('a -&gt; 'a) -&gt; <a href="?package=core_kernel&amp;module=Univ_map&amp;type=t">t</a></code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="With_fold">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Univ_map.With_fold">With_fold</a> : <code class="code">sig</code> .. <code class="code">end</code></pre><div class="info">keys that map to an accumulator value with an associated fold operation</div>
+		<div class="ocaml_module_content">
+		       
+<div class="ocaml_module sig" name="Key">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Univ_map.With_fold.Key">Key</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'b) </code>t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">init:'b -&gt;
+f:('b -&gt; 'a -&gt; 'b) -&gt; string -&gt; ('b -&gt; <a href="?package=core_kernel&amp;module=Std_internal.Sexp&amp;type=t">Std_internal.Sexp.t</a>) -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Univ_map.With_fold.Key&amp;type=t">t</a></code></pre>
+      
+    
+		</div>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> set</span> : <code class="type"><a href="?package=core_kernel&amp;module=Univ_map&amp;type=t">t</a> -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Univ_map.With_fold.Key&amp;type=t">Key.t</a> -&gt; 'b -&gt; <a href="?package=core_kernel&amp;module=Univ_map&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find</span> : <code class="type"><a href="?package=core_kernel&amp;module=Univ_map&amp;type=t">t</a> -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Univ_map.With_fold.Key&amp;type=t">Key.t</a> -&gt; 'b</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add</span> : <code class="type"><a href="?package=core_kernel&amp;module=Univ_map&amp;type=t">t</a> -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Univ_map.With_fold.Key&amp;type=t">Key.t</a> -&gt; 'a -&gt; <a href="?package=core_kernel&amp;module=Univ_map&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> change</span> : <code class="type"><a href="?package=core_kernel&amp;module=Univ_map&amp;type=t">t</a> -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Univ_map.With_fold.Key&amp;type=t">Key.t</a> -&gt; ('b -&gt; 'b) -&gt; <a href="?package=core_kernel&amp;module=Univ_map&amp;type=t">t</a></code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="Multi">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Univ_map.Multi">Multi</a> : <code class="code">sig</code> .. <code class="code">end</code></pre><div class="info">list-accumulating keys with a default value of the empty list</div>
+		<div class="ocaml_module_content">
+		       
+<div class="ocaml_module sig" name="Key">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Univ_map.Multi.Key">Key</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">string -&gt; ('a -&gt; <a href="?package=core_kernel&amp;module=Std_internal.Sexp&amp;type=t">Std_internal.Sexp.t</a>) -&gt; 'a <a href="?package=core_kernel&amp;module=Univ_map.Multi.Key&amp;type=t">t</a></code></pre>
+      
+    
+		</div>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> set</span> : <code class="type"><a href="?package=core_kernel&amp;module=Univ_map&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Univ_map.Multi.Key&amp;type=t">Key.t</a> -&gt; 'a list -&gt; <a href="?package=core_kernel&amp;module=Univ_map&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find</span> : <code class="type"><a href="?package=core_kernel&amp;module=Univ_map&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Univ_map.Multi.Key&amp;type=t">Key.t</a> -&gt; 'a list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add</span> : <code class="type"><a href="?package=core_kernel&amp;module=Univ_map&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Univ_map.Multi.Key&amp;type=t">Key.t</a> -&gt; 'a -&gt; <a href="?package=core_kernel&amp;module=Univ_map&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> change</span> : <code class="type"><a href="?package=core_kernel&amp;module=Univ_map&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Univ_map.Multi.Key&amp;type=t">Key.t</a> -&gt; ('a list -&gt; 'a list) -&gt; <a href="?package=core_kernel&amp;module=Univ_map&amp;type=t">t</a></code></pre>
+      
+    
+		</div>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Univ_map&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+<br/><code class="code">create name to_sexp</code> generates a fresh key.
+      Note: If type <code class="code">'a</code> doesn't support sexp conversion, then a good
+            practice is to use <code class="code">sexp_of_opaque</code> as the converter.<br/>
+	  
+<br/>keys with associated default values, so that <code class="code">find</code> is no longer partial<br/>
+	  
+<br/>keys that map to an accumulator value with an associated fold operation<br/>
+	  
+<br/>list-accumulating keys with a default value of the empty list<br/>
+	  </div>

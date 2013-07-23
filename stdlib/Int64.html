@@ -1,0 +1,154 @@
+<div class="ocaml_toplevel_module">
+<div class="info">64-bit integers.<br/>   This module provides operations on the type <code class="code">int64</code> of
+   signed 64-bit integers.  Unlike the built-in <code class="code">int</code> type,
+   the type <code class="code">int64</code> is guaranteed to be exactly 64-bit wide on all
+   platforms.  All arithmetic operations over <code class="code">int64</code> are taken
+   modulo 2<sup class="superscript">64</sup><br/>   Performance notice: values of type <code class="code">int64</code> occupy more memory
+   space than values of type <code class="code">int</code>, and arithmetic operations on
+   <code class="code">int64</code> are generally slower than those on <code class="code">int</code>.  Use <code class="code">int64</code>
+   only when the application requires exact 64-bit arithmetic.</div>
+ 
+      <pre><span><span class="keyword">val</span> zero</span> : <code class="type">int64</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> one</span> : <code class="type">int64</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> minus_one</span> : <code class="type">int64</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> neg</span> : <code class="type">int64 -&gt; int64</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add</span> : <code class="type">int64 -&gt; int64 -&gt; int64</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sub</span> : <code class="type">int64 -&gt; int64 -&gt; int64</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mul</span> : <code class="type">int64 -&gt; int64 -&gt; int64</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> div</span> : <code class="type">int64 -&gt; int64 -&gt; int64</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rem</span> : <code class="type">int64 -&gt; int64 -&gt; int64</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> succ</span> : <code class="type">int64 -&gt; int64</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pred</span> : <code class="type">int64 -&gt; int64</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> abs</span> : <code class="type">int64 -&gt; int64</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> max_int</span> : <code class="type">int64</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> min_int</span> : <code class="type">int64</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> logand</span> : <code class="type">int64 -&gt; int64 -&gt; int64</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> logor</span> : <code class="type">int64 -&gt; int64 -&gt; int64</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> logxor</span> : <code class="type">int64 -&gt; int64 -&gt; int64</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> lognot</span> : <code class="type">int64 -&gt; int64</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> shift_left</span> : <code class="type">int64 -&gt; int -&gt; int64</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> shift_right</span> : <code class="type">int64 -&gt; int -&gt; int64</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> shift_right_logical</span> : <code class="type">int64 -&gt; int -&gt; int64</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_int</span> : <code class="type">int -&gt; int64</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_int</span> : <code class="type">int64 -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_float</span> : <code class="type">float -&gt; int64</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_float</span> : <code class="type">int64 -&gt; float</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_int32</span> : <code class="type">int32 -&gt; int64</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_int32</span> : <code class="type">int64 -&gt; int32</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_nativeint</span> : <code class="type">nativeint -&gt; int64</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_nativeint</span> : <code class="type">int64 -&gt; nativeint</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_string</span> : <code class="type">string -&gt; int64</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_string</span> : <code class="type">int64 -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bits_of_float</span> : <code class="type">float -&gt; int64</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> float_of_bits</span> : <code class="type">int64 -&gt; float</code></pre>
+      
+    
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> = <code class="type">int64</code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> compare</span> : <code class="type"><a href="?package=stdlib&amp;module=Int64&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=Int64&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Deprecated functions</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> format</span> : <code class="type">string -&gt; int64 -&gt; string</code></pre>
+      
+    </div>
