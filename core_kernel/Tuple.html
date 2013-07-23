@@ -1,18 +1,216 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-
-<title>Tuple</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Tuple</h1>
-<pre><span class="keyword">module</span> Tuple</pre><div class="info">Functors and signatures for dealing with modules for tuples.</div>
-<hr/>
-<div file="Tuple.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<div class="ocaml_toplevel_module">
+<div class="info">Functors and signatures for dealing with modules for tuples.</div>
+<div class="ocaml_module sig" name="T2">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Tuple.T2">T2</a> : <code class="code">sig</code> .. <code class="code">end</code></pre><div class="info">Signature for a 2-tuple module</div>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'b) </code>t</span> = <code class="type">'a * 'b</code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">'a -&gt; 'b -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Tuple.T2&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> curry</span> : <code class="type">(('a, 'b) <a href="?package=core_kernel&amp;module=Tuple.T2&amp;type=t">t</a> -&gt; 'c) -&gt; 'a -&gt; 'b -&gt; 'c</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> uncurry</span> : <code class="type">('a -&gt; 'b -&gt; 'c) -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Tuple.T2&amp;type=t">t</a> -&gt; 'c</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> compare</span> : <code class="type">cmp1:('a -&gt; 'a -&gt; int) -&gt;
+cmp2:('b -&gt; 'b -&gt; int) -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Tuple.T2&amp;type=t">t</a> -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Tuple.T2&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> equal</span> : <code class="type">eq1:('a -&gt; 'a -&gt; bool) -&gt;
+eq2:('b -&gt; 'b -&gt; bool) -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Tuple.T2&amp;type=t">t</a> -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Tuple.T2&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get1</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Tuple.T2&amp;type=t">t</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get2</span> : <code class="type">('b, 'a) <a href="?package=core_kernel&amp;module=Tuple.T2&amp;type=t">t</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map1</span> : <code class="type">f:('a -&gt; 'c) -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Tuple.T2&amp;type=t">t</a> -&gt; ('c, 'b) <a href="?package=core_kernel&amp;module=Tuple.T2&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map2</span> : <code class="type">f:('b -&gt; 'c) -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Tuple.T2&amp;type=t">t</a> -&gt; ('a, 'c) <a href="?package=core_kernel&amp;module=Tuple.T2&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> swap</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Tuple.T2&amp;type=t">t</a> -&gt; ('b, 'a) <a href="?package=core_kernel&amp;module=Tuple.T2&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp</span> : <code class="type">(<a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'a) -&gt;
+(<a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'b) -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Tuple.T2&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt;
+('b -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Tuple.T2&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="T3">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Tuple.T3">T3</a> : <code class="code">sig</code> .. <code class="code">end</code></pre><div class="info">Signature for a 3-tuple module</div>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'b, 'c) </code>t</span> = <code class="type">'a * 'b * 'c</code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; ('a, 'b, 'c) <a href="?package=core_kernel&amp;module=Tuple.T3&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> curry</span> : <code class="type">(('a, 'b, 'c) <a href="?package=core_kernel&amp;module=Tuple.T3&amp;type=t">t</a> -&gt; 'd) -&gt; 'a -&gt; 'b -&gt; 'c -&gt; 'd</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> uncurry</span> : <code class="type">('a -&gt; 'b -&gt; 'c -&gt; 'd) -&gt; ('a, 'b, 'c) <a href="?package=core_kernel&amp;module=Tuple.T3&amp;type=t">t</a> -&gt; 'd</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> equal</span> : <code class="type">eq1:('a -&gt; 'a -&gt; bool) -&gt;
+eq2:('b -&gt; 'b -&gt; bool) -&gt;
+eq3:('c -&gt; 'c -&gt; bool) -&gt; ('a, 'b, 'c) <a href="?package=core_kernel&amp;module=Tuple.T3&amp;type=t">t</a> -&gt; ('a, 'b, 'c) <a href="?package=core_kernel&amp;module=Tuple.T3&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> compare</span> : <code class="type">cmp1:('a -&gt; 'a -&gt; int) -&gt;
+cmp2:('b -&gt; 'b -&gt; int) -&gt;
+cmp3:('c -&gt; 'c -&gt; int) -&gt; ('a, 'b, 'c) <a href="?package=core_kernel&amp;module=Tuple.T3&amp;type=t">t</a> -&gt; ('a, 'b, 'c) <a href="?package=core_kernel&amp;module=Tuple.T3&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get1</span> : <code class="type">('a, 'b, 'c) <a href="?package=core_kernel&amp;module=Tuple.T3&amp;type=t">t</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get2</span> : <code class="type">('b, 'a, 'c) <a href="?package=core_kernel&amp;module=Tuple.T3&amp;type=t">t</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get3</span> : <code class="type">('b, 'c, 'a) <a href="?package=core_kernel&amp;module=Tuple.T3&amp;type=t">t</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map1</span> : <code class="type">f:('a -&gt; 'd) -&gt; ('a, 'b, 'c) <a href="?package=core_kernel&amp;module=Tuple.T3&amp;type=t">t</a> -&gt; ('d, 'b, 'c) <a href="?package=core_kernel&amp;module=Tuple.T3&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map2</span> : <code class="type">f:('b -&gt; 'd) -&gt; ('a, 'b, 'c) <a href="?package=core_kernel&amp;module=Tuple.T3&amp;type=t">t</a> -&gt; ('a, 'd, 'c) <a href="?package=core_kernel&amp;module=Tuple.T3&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map3</span> : <code class="type">f:('c -&gt; 'd) -&gt; ('a, 'b, 'c) <a href="?package=core_kernel&amp;module=Tuple.T3&amp;type=t">t</a> -&gt; ('a, 'b, 'd) <a href="?package=core_kernel&amp;module=Tuple.T3&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp</span> : <code class="type">(<a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'a) -&gt;
+(<a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'b) -&gt;
+(<a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'c) -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; ('a, 'b, 'c) <a href="?package=core_kernel&amp;module=Tuple.T3&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt;
+('b -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt;
+('c -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; ('a, 'b, 'c) <a href="?package=core_kernel&amp;module=Tuple.T3&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+		</div>
+</div>
+<br/>These functors allow users to write:
+  <pre class="codepre"><code class="code">
+   module Foo = struct
+     include Tuple.Make       (String) (Int)
+     include Tuple.Comparable (String) (Int)
+     include Tuple.Hashable   (String) (Int)
+   end
+  </code></pre>
+<br/>
+	  
+<div class="ocaml_module sig" name="Make">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Tuple.Make">Make</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">T1</code><code class="code"> : </code><code class="code">sig</code> .. <code class="code">end</code><code class="code">) -&gt; </code><div class="sig_block"><code class="code">functor (</code><code class="code">T2</code><code class="code"> : </code><code class="code">sig</code> .. <code class="code">end</code><code class="code">) -&gt; </code><code class="code">sig</code> .. <code class="code">end</code></div></div></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> = <code class="type">T1.t * T2.t</code> </pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="Comparable_sexpable">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Tuple.Comparable_sexpable">Comparable_sexpable</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> </pre>
+      
+    
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Comparable.S" items="[&quot;Set&quot;,&quot;Map&quot;,&quot;Replace_polymorphic_compare&quot;]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Comparable.S">Comparable.S</a></code> with type t = <a href="?package=core_kernel&amp;module=Tuple.Comparable_sexpable&amp;type=t">t</a></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core_kernel&amp;module=Tuple.Comparable_sexpable&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Tuple.Comparable_sexpable&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module ident" name="Comparable" path="?package=core_kernel&amp;amp;module=Tuple.Comparable_sexpable">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Tuple.Comparable">Comparable</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">S1</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Tuple.Comparable_sexpable">Comparable_sexpable</a></code><code class="code">) -&gt; </code><div class="sig_block"><code class="code">functor (</code><code class="code">S2</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Tuple.Comparable_sexpable">Comparable_sexpable</a></code><code class="code">) -&gt; </code><code class="code"><a href="?package=core_kernel&amp;module=Tuple.Comparable_sexpable">Comparable_sexpable</a></code> with type <a href="?package=core_kernel&amp;module=Tuple.Comparable_sexpable&amp;type=t">t</a> = S2(S2)</div></div></pre>
+</div>
+<div class="ocaml_module sig" name="Hashable_sexpable">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Tuple.Hashable_sexpable">Hashable_sexpable</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> </pre>
+      
+    
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Hashable.S" items="[&quot;Hash_heap&quot;,&quot;Hash_queue&quot;,&quot;Hash_set&quot;,&quot;Pooled_hashtbl&quot;,&quot;Table&quot;,&quot;Hashable&quot;]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Hashable.S">Hashable.S</a></code> with type t = <a href="?package=core_kernel&amp;module=Tuple.Hashable_sexpable&amp;type=t">t</a></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core_kernel&amp;module=Tuple.Hashable_sexpable&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Tuple.Hashable_sexpable&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module ident" name="Hashable" path="?package=core_kernel&amp;amp;module=Tuple.Hashable_sexpable">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Tuple.Hashable">Hashable</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">S1</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Tuple.Hashable_sexpable">Hashable_sexpable</a></code><code class="code">) -&gt; </code><div class="sig_block"><code class="code">functor (</code><code class="code">S2</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Tuple.Hashable_sexpable">Hashable_sexpable</a></code><code class="code">) -&gt; </code><code class="code"><a href="?package=core_kernel&amp;module=Tuple.Hashable_sexpable">Hashable_sexpable</a></code> with type <a href="?package=core_kernel&amp;module=Tuple.Hashable_sexpable&amp;type=t">t</a> = S2(S2)</div></div></pre><div class="info">The difference between <code class="code">Hashable</code> and <code class="code">Hashable_t</code> functors is that the former's
+    result type doesn't contain type <code class="code">t</code> and the latter does. Therefore, <code class="code">Hashable</code> can't
+    be used to combine two pairs into 4-tuple. but <code class="code">Hashable_t</code> can. On the other hand
+    result of <code class="code">Hashable_t</code> cannot be combined with <code class="code">Comparable</code>.<br/>    example:
+    module Four_ints = Tuple.Hashable_t (Tuple.Hashable_t (Int)(Int))
+                                        (Tuple.Hashable_t (Int)(Int))<br/>    If instead we used <code class="code">Hashable</code> compiler would complain that the input to outer functor
+    doesn't have type <code class="code">t</code>.<br/>    On the other hand:
+    module Foo = struct
+      type t = String.t * Int.t
+      include Tuple.Comparable (String.t) (Int)
+      include Tuple.Hashable (String.t) (Int)
+    end<br/>    If we used <code class="code">Hashable_t</code> above, compiler would compile that we have two types <code class="code">t</code>
+    defined.<br/>    Unfortunately, it is not possible to define just one functor that could be used in
+    both cases.</div>
+</div>
+<div class="ocaml_module ident" name="Hashable_t" path="?package=core_kernel&amp;amp;module=Tuple.Hashable_sexpable">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Tuple.Hashable_t">Hashable_t</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">S1</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Tuple.Hashable_sexpable">Hashable_sexpable</a></code><code class="code">) -&gt; </code><div class="sig_block"><code class="code">functor (</code><code class="code">S2</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Tuple.Hashable_sexpable">Hashable_sexpable</a></code><code class="code">) -&gt; </code><code class="code"><a href="?package=core_kernel&amp;module=Tuple.Hashable_sexpable">Hashable_sexpable</a></code> with type <a href="?package=core_kernel&amp;module=Tuple.Hashable_sexpable&amp;type=t">t</a> = S2(S2)</div></div></pre>
+</div>
+<div class="ocaml_module ident" name="Sexpable" path="?package=core_kernel&amp;amp;module=Sexpable.S">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Tuple.Sexpable">Sexpable</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">S1</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Sexpable.S">Sexpable.S</a></code><code class="code">) -&gt; </code><div class="sig_block"><code class="code">functor (</code><code class="code">S2</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Sexpable.S">Sexpable.S</a></code><code class="code">) -&gt; </code><code class="code"><a href="?package=core_kernel&amp;module=Sexpable.S">Sexpable.S</a></code> with type t = S2(S2)</div></div></pre>
+</div></div>

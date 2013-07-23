@@ -1,17 +1,5 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-
-<title>Core_queue</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Core_queue</h1>
-<pre><span class="keyword">module</span> Core_queue</pre><div class="info">Core_queue is a wrapper around OCaml's standard Queue module that
+<div class="ocaml_toplevel_module">
+<div class="info">Core_queue is a wrapper around OCaml's standard Queue module that
     follows Core idioms and adds some functions.<br/>    Differences from the standard module:
       <code class="code">enqueue</code> replaces <code class="code">push</code>, <code class="code">add</code>, and takes the queue first.
       <code class="code">dequeue</code> replaces <code class="code">pop</code>, <code class="code">take</code>, takes the queue first, and returns an
@@ -19,7 +7,168 @@
       <code class="code">dequeue_exn</code> is available if you want to raise <code class="code">Empty</code>.
       <code class="code">iter</code> takes a labeled argument.
       <code class="code">transfer</code>'s arguments are labeled.</div>
-<hr/>
-<div file="Core_queue.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> </pre>
+      
+    
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Container.S1" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Container.S1">Container.S1</a></code> with type t = 'a <a href="?package=core_kernel&amp;module=Core_queue&amp;type=t">t</a></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">unit -&gt; 'a <a href="?package=core_kernel&amp;module=Core_queue&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">create ()</code> returns an empty queue.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> enqueue</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_queue&amp;type=t">t</a> -&gt; 'a -&gt; unit</code></pre>
+      <div class="info"><code class="code">enqueue t x</code> adds <code class="code">x</code> to the end of <code class="code">t</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> dequeue</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_queue&amp;type=t">t</a> -&gt; 'a option</code></pre>
+      <div class="info"><code class="code">dequeue t</code> returns <code class="code">None</code> if <code class="code">t</code> is empty, otherwise it removes and returns
+    the front of <code class="code">t</code> </div>
+    
+ 
+      <pre><span><span class="keyword">val</span> dequeue_exn</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_queue&amp;type=t">t</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> peek</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_queue&amp;type=t">t</a> -&gt; 'a option</code></pre>
+      <div class="info"><code class="code">peek t</code> returns <code class="code">None</code> if <code class="code">t</code> is empty, otherwise it returns <code class="code">Some x</code> where
+    <code class="code">x</code> is the front of <code class="code">t</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> peek_exn</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_queue&amp;type=t">t</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> clear</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_queue&amp;type=t">t</a> -&gt; unit</code></pre>
+      <div class="info"><code class="code">clear t</code> discards all elements from <code class="code">t</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> copy</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_queue&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_queue&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">copy t</code> returns a copy of <code class="code">t</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> filter_inplace</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_queue&amp;type=t">t</a> -&gt; f:('a -&gt; bool) -&gt; unit</code></pre>
+      <div class="info"><code class="code">filter_inplace t ~f</code> removes all elements of <code class="code">t</code> that don't satisfy <code class="code">f</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> transfer</span> : <code class="type">src:'a <a href="?package=core_kernel&amp;module=Core_queue&amp;type=t">t</a> -&gt; dst:'a <a href="?package=core_kernel&amp;module=Core_queue&amp;type=t">t</a> -&gt; unit</code></pre>
+      <div class="info"><code class="code">transfer ~src ~dst</code> adds all of the elements of <code class="code">src</code> to the end of <code class="code">dst</code>,
+    then clears <code class="code">src</code>. It is equivalent to the sequence
+      <code class="code">iter ~src ~f:(enqueue dst); clear src</code>
+    but runs in constant time.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> of_list</span> : <code class="type">'a list -&gt; 'a <a href="?package=core_kernel&amp;module=Core_queue&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">of_list list</code> returns a queue <code class="code">t</code> with the elements of <code class="code">list</code> in the same
+    order as the elements of <code class="code">list</code> (i.e. the first element of <code class="code">t</code> is the first
+    element of the list).</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> to_list</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_queue&amp;type=t">t</a> -&gt; 'a list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> partial_iter</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_queue&amp;type=t">t</a> -&gt; f:('a -&gt; [ `Continue | `Stop ]) -&gt; unit</code></pre>
+      <div class="info"><code class="code">partial_iter t ~f</code> iterates through t until f returns `Stop</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> map</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_queue&amp;type=t">t</a> -&gt; f:('a -&gt; 'b) -&gt; 'b <a href="?package=core_kernel&amp;module=Core_queue&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> concat_map</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_queue&amp;type=t">t</a> -&gt; f:('a -&gt; 'b list) -&gt; 'b <a href="?package=core_kernel&amp;module=Core_queue&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> filter_map</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_queue&amp;type=t">t</a> -&gt; f:('a -&gt; 'b option) -&gt; 'b <a href="?package=core_kernel&amp;module=Core_queue&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_array</span> : <code class="type">'a array -&gt; 'a <a href="?package=core_kernel&amp;module=Core_queue&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_array</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_queue&amp;type=t">t</a> -&gt; 'a array</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_queue&amp;type=t">t</a> -&gt; init:'b -&gt; f:('b -&gt; 'a -&gt; 'b) -&gt; 'b</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> singleton</span> : <code class="type">'a -&gt; 'a <a href="?package=core_kernel&amp;module=Core_queue&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp</span> : <code class="type">(<a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'a) -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_queue&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; 'a <a href="?package=core_kernel&amp;module=Core_queue&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_queue&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_queue&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Read_ml&amp;type=reader">Bin_prot.Read_ml.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t_</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_queue&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t__</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+(int -&gt; 'a <a href="?package=core_kernel&amp;module=Core_queue&amp;type=t">t</a>) <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_queue&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Size&amp;type=sizer">Bin_prot.Size.sizer</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_queue&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Size&amp;type=sizer">Bin_prot.Size.sizer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_queue&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Bin_prot.Write_ml.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_queue&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_queue&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+<br/><code class="code">create ()</code> returns an empty queue.<br/>
+	  
+<br/><code class="code">enqueue t x</code> adds <code class="code">x</code> to the end of <code class="code">t</code>.<br/>
+	  
+<br/><code class="code">dequeue t</code> returns <code class="code">None</code> if <code class="code">t</code> is empty, otherwise it removes and returns
+    the front of <code class="code">t</code> <br/>
+	  
+<br/><code class="code">peek t</code> returns <code class="code">None</code> if <code class="code">t</code> is empty, otherwise it returns <code class="code">Some x</code> where
+    <code class="code">x</code> is the front of <code class="code">t</code>.<br/>
+	  
+<br/><code class="code">clear t</code> discards all elements from <code class="code">t</code>.<br/>
+	  
+<br/><code class="code">copy t</code> returns a copy of <code class="code">t</code>.<br/>
+	  
+<br/><code class="code">filter_inplace t ~f</code> removes all elements of <code class="code">t</code> that don't satisfy <code class="code">f</code>.<br/>
+	  
+<br/><code class="code">transfer ~src ~dst</code> adds all of the elements of <code class="code">src</code> to the end of <code class="code">dst</code>,
+    then clears <code class="code">src</code>. It is equivalent to the sequence
+      <code class="code">iter ~src ~f:(enqueue dst); clear src</code>
+    but runs in constant time.<br/>
+	  
+<br/><code class="code">of_list list</code> returns a queue <code class="code">t</code> with the elements of <code class="code">list</code> in the same
+    order as the elements of <code class="code">list</code> (i.e. the first element of <code class="code">t</code> is the first
+    element of the list).<br/>
+	  
+<br/><code class="code">partial_iter t ~f</code> iterates through t until f returns `Stop<br/>
+	  </div>

@@ -1,18 +1,183 @@
-<!DOCTYPE HTML>
-<html>
-<head>
+<div class="ocaml_toplevel_module">
 
-<title>Byte_units</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Byte_units</h1>
-<pre><span class="keyword">module</span> Byte_units</pre>
-<hr/>
-<div file="Byte_units.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<div class="ocaml_module sig" name="Measure">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Byte_units.Measure">Measure</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> = <code class="type">[ `Bytes | `Gigabytes | `Kilobytes | `Megabytes | `Words ]</code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Byte_units.Measure&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Byte_units.Measure&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Read_ml&amp;type=reader">Bin_prot.Read_ml.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t_</span> : <code class="type"><a href="?package=core_kernel&amp;module=Byte_units.Measure&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t__</span> : <code class="type">(int -&gt; <a href="?package=core_kernel&amp;module=Byte_units.Measure&amp;type=t">t</a>) <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Byte_units.Measure&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Byte_units.Measure&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Size&amp;type=sizer">Bin_prot.Size.sizer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Byte_units.Measure&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Bin_prot.Write_ml.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_</span> : <code class="type"><a href="?package=core_kernel&amp;module=Byte_units.Measure&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Byte_units.Measure&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core_kernel&amp;module=Byte_units.Measure&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> __t_of_sexp__</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core_kernel&amp;module=Byte_units.Measure&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Byte_units.Measure&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+		</div>
+</div>
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type"><a href="?package=core_kernel&amp;module=Byte_units.Measure&amp;type=t">Measure.t</a> -&gt; float -&gt; <a href="?package=core_kernel&amp;module=Byte_units&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">create measure value</code> creates a <code class="code">t</code> from <code class="code">value</code> units of the given measure.</div>
+    
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Comparable.S" items="[&quot;Set&quot;,&quot;Map&quot;,&quot;Replace_polymorphic_compare&quot;]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Comparable.S">Comparable.S</a></code> with type t = <a href="?package=core_kernel&amp;module=Byte_units&amp;type=t">t</a></pre>
+</div>
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Hashable.S" items="[&quot;Hash_heap&quot;,&quot;Hash_queue&quot;,&quot;Hash_set&quot;,&quot;Pooled_hashtbl&quot;,&quot;Table&quot;,&quot;Hashable&quot;]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Hashable.S">Hashable.S</a></code> with type t = <a href="?package=core_kernel&amp;module=Byte_units&amp;type=t">t</a></pre>
+</div>
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Stringable.S" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Stringable.S">Stringable.S</a></code> with type t = <a href="?package=core_kernel&amp;module=Byte_units&amp;type=t">t</a></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> to_string_hum</span> : <code class="type">?measure:<a href="?package=core_kernel&amp;module=Byte_units.Measure&amp;type=t">Measure.t</a> -&gt; <a href="?package=core_kernel&amp;module=Byte_units&amp;type=t">t</a> -&gt; string</code></pre>
+      <div class="info"><code class="code">to_string_hum ?measure t</code> returns a string representation of <code class="code">t</code>.  If <code class="code">measure</code> is
+    not given then the largest measure (excluding <code class="code">`Words</code>) is used that causes the
+    translated value to exceed 1.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> bytes</span> : <code class="type"><a href="?package=core_kernel&amp;module=Byte_units&amp;type=t">t</a> -&gt; float</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> kilobytes</span> : <code class="type"><a href="?package=core_kernel&amp;module=Byte_units&amp;type=t">t</a> -&gt; float</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> megabytes</span> : <code class="type"><a href="?package=core_kernel&amp;module=Byte_units&amp;type=t">t</a> -&gt; float</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> gigabytes</span> : <code class="type"><a href="?package=core_kernel&amp;module=Byte_units&amp;type=t">t</a> -&gt; float</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> words</span> : <code class="type"><a href="?package=core_kernel&amp;module=Byte_units&amp;type=t">t</a> -&gt; float</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> scale</span> : <code class="type"><a href="?package=core_kernel&amp;module=Byte_units&amp;type=t">t</a> -&gt; float -&gt; <a href="?package=core_kernel&amp;module=Byte_units&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">scale t mul</code> scale the measure <code class="code">t</code> by <code class="code">mul</code> </div>
+    
+<div class="ocaml_module sig" name="Infix">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Byte_units.Infix">Infix</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+ 
+      <pre><span><span class="keyword">val</span> -</span> : <code class="type"><a href="?package=core_kernel&amp;module=Byte_units&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Byte_units&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Byte_units&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> +</span> : <code class="type"><a href="?package=core_kernel&amp;module=Byte_units&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Byte_units&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Byte_units&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> /</span> : <code class="type"><a href="?package=core_kernel&amp;module=Byte_units&amp;type=t">t</a> -&gt; float -&gt; <a href="?package=core_kernel&amp;module=Byte_units&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> //</span> : <code class="type"><a href="?package=core_kernel&amp;module=Byte_units&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Byte_units&amp;type=t">t</a> -&gt; float</code></pre>
+      <div class="info"><code class="code">( // ) t1 t2</code> returns the ratio of t1 to t2</div>
+    
+		</div>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core_kernel&amp;module=Byte_units&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Byte_units&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Byte_units&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Byte_units&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Read_ml&amp;type=reader">Bin_prot.Read_ml.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t_</span> : <code class="type"><a href="?package=core_kernel&amp;module=Byte_units&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t__</span> : <code class="type">(int -&gt; <a href="?package=core_kernel&amp;module=Byte_units&amp;type=t">t</a>) <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Byte_units&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Byte_units&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Size&amp;type=sizer">Bin_prot.Size.sizer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Byte_units&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Bin_prot.Write_ml.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_</span> : <code class="type"><a href="?package=core_kernel&amp;module=Byte_units&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Byte_units&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+<br/><code class="code">create measure value</code> creates a <code class="code">t</code> from <code class="code">value</code> units of the given measure.<br/>
+	  
+<br/><code class="code">to_string_hum ?measure t</code> returns a string representation of <code class="code">t</code>.  If <code class="code">measure</code> is
+    not given then the largest measure (excluding <code class="code">`Words</code>) is used that causes the
+    translated value to exceed 1.<br/>
+	  
+<br/><code class="code">scale t mul</code> scale the measure <code class="code">t</code> by <code class="code">mul</code> <br/>
+	  
+<br/><code class="code">( / ) t mul</code> scales <code class="code">t</code> by <code class="code">1/mul</code> <br/>
+	  
+<br/><code class="code">( // ) t1 t2</code> returns the ratio of t1 to t2<br/>
+	  </div>

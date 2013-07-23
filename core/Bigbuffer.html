@@ -1,18 +1,13 @@
-<!DOCTYPE HTML>
-<html>
-<head>
+<div class="ocaml_toplevel_module">
 
-<title>Bigbuffer</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Bigbuffer</h1>
-<pre><span class="keyword">module</span> Bigbuffer</pre>
-<hr/>
-<div file="Bigbuffer.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Std.Bigbuffer" items="[&quot;Printf&quot;,&quot;Format&quot;]">
+		      <pre><span class="keyword">include</span> module type of <a href="?package=core_kernel&amp;module=Std.Bigbuffer">Core_kernel.Std.Bigbuffer</a> with type t = <a href="?package=core_kernel&amp;module=Std.Bigbuffer&amp;type=t">Core_kernel.Std.Bigbuffer.t</a></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> add_channel</span> : <code class="type"><a href="?package=core&amp;module=Bigbuffer&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=Pervasives&amp;type=in_channel">in_channel</a> -&gt; int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> output_buffer</span> : <code class="type"><a href="?package=stdlib&amp;module=Pervasives&amp;type=out_channel">out_channel</a> -&gt; <a href="?package=core&amp;module=Bigbuffer&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    </div>

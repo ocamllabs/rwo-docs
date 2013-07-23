@@ -1,20 +1,207 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-
-<title>Binary_packing</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Binary_packing</h1>
-<pre><span class="keyword">module</span> Binary_packing</pre><div class="info">Packs and unpacks various types of integers into and from strings.<br/>   Functions ending in _int should not be used on 32 bit programs because native ocaml
+<div class="ocaml_toplevel_module">
+<div class="info">Packs and unpacks various types of integers into and from strings.<br/>   Functions ending in _int should not be used on 32 bit programs because native ocaml
    ints will not be big enough.<br/>   <code class="code">pos</code> arguments refer to the location in the buf string.<br/>   We support big and little endian ints.  Note that for an 8 bit (1 byte) integer, there
    is no difference because endian-ness only changes the order of bytes, not bits.</div>
-<hr/>
-<div file="Binary_packing.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<pre><span id="TYPEendian"><span class="keyword">type</span> endian</span> = <code class="type">[ `Big_endian | `Little_endian ]</code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unpack_signed_8</span> : <code class="type">buf:string -&gt; pos:int -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pack_signed_8</span> : <code class="type">buf:string -&gt; pos:int -&gt; int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unpack_unsigned_8</span> : <code class="type">buf:string -&gt; pos:int -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pack_unsigned_8</span> : <code class="type">buf:string -&gt; pos:int -&gt; int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unpack_signed_16</span> : <code class="type">byte_order:<a href="?package=core_kernel&amp;module=Binary_packing&amp;type=endian">endian</a> -&gt; buf:string -&gt; pos:int -&gt; int</code></pre>
+      <div class="info">The functions ending with <code class="code">_big_endian</code> or <code class="code">_little_endian</code> are faster than the ones
+   with explicit <code class="code">byte_order</code> argument:<br/> <span class="verbatim">                                Name | Run time | S. dev. | Warnings
+  ---------------------------------- | -------- | ------- | --------
+        pack_signed_16_little_endian |     4 ns |    0 ns |
+      unpack_signed_16_little_endian |     5 ns |    0 ns |
+                  pack_signed_32_int |    12 ns |    0 ns |
+                unpack_signed_32_int |    12 ns |    0 ns |
+    pack_signed_32_int_little_endian |     4 ns |    0 ns |
+  unpack_signed_32_int_little_endian |     5 ns |    0 ns |        M
+                  pack_signed_64_int |    21 ns |    0 ns |        M
+                unpack_signed_64_int |    21 ns |    0 ns |        M
+        pack_signed_64_little_endian |     8 ns |    0 ns |
+      unpack_signed_64_little_endian |     9 ns |    0 ns |        M
+
+</span>
+</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> pack_signed_16</span> : <code class="type">byte_order:<a href="?package=core_kernel&amp;module=Binary_packing&amp;type=endian">endian</a> -&gt; buf:string -&gt; pos:int -&gt; int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unpack_unsigned_16_big_endian</span> : <code class="type">buf:string -&gt; pos:int -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unpack_unsigned_16_little_endian</span> : <code class="type">buf:string -&gt; pos:int -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pack_unsigned_16_big_endian</span> : <code class="type">buf:string -&gt; pos:int -&gt; int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pack_unsigned_16_little_endian</span> : <code class="type">buf:string -&gt; pos:int -&gt; int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unpack_signed_16_big_endian</span> : <code class="type">buf:string -&gt; pos:int -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unpack_signed_16_little_endian</span> : <code class="type">buf:string -&gt; pos:int -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pack_signed_16_big_endian</span> : <code class="type">buf:string -&gt; pos:int -&gt; int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pack_signed_16_little_endian</span> : <code class="type">buf:string -&gt; pos:int -&gt; int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unpack_unsigned_16</span> : <code class="type">byte_order:<a href="?package=core_kernel&amp;module=Binary_packing&amp;type=endian">endian</a> -&gt; buf:string -&gt; pos:int -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pack_unsigned_16</span> : <code class="type">byte_order:<a href="?package=core_kernel&amp;module=Binary_packing&amp;type=endian">endian</a> -&gt; buf:string -&gt; pos:int -&gt; int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unpack_signed_32</span> : <code class="type">byte_order:<a href="?package=core_kernel&amp;module=Binary_packing&amp;type=endian">endian</a> -&gt; buf:string -&gt; pos:int -&gt; int32</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unpack_signed_32_int</span> : <code class="type">byte_order:<a href="?package=core_kernel&amp;module=Binary_packing&amp;type=endian">endian</a> -&gt; buf:string -&gt; pos:int -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pack_signed_32</span> : <code class="type">byte_order:<a href="?package=core_kernel&amp;module=Binary_packing&amp;type=endian">endian</a> -&gt; buf:string -&gt; pos:int -&gt; <a href="?package=stdlib&amp;module=Int32&amp;type=t">Int32.t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pack_signed_32_int</span> : <code class="type">byte_order:<a href="?package=core_kernel&amp;module=Binary_packing&amp;type=endian">endian</a> -&gt; buf:string -&gt; pos:int -&gt; int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unpack_unsigned_32_int_big_endian</span> : <code class="type">buf:string -&gt; pos:int -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unpack_unsigned_32_int_little_endian</span> : <code class="type">buf:string -&gt; pos:int -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pack_unsigned_32_int_big_endian</span> : <code class="type">buf:string -&gt; pos:int -&gt; int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pack_unsigned_32_int_little_endian</span> : <code class="type">buf:string -&gt; pos:int -&gt; int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unpack_signed_32_int_big_endian</span> : <code class="type">buf:string -&gt; pos:int -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unpack_signed_32_int_little_endian</span> : <code class="type">buf:string -&gt; pos:int -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pack_signed_32_int_big_endian</span> : <code class="type">buf:string -&gt; pos:int -&gt; int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pack_signed_32_int_little_endian</span> : <code class="type">buf:string -&gt; pos:int -&gt; int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unpack_unsigned_32_int</span> : <code class="type">byte_order:<a href="?package=core_kernel&amp;module=Binary_packing&amp;type=endian">endian</a> -&gt; buf:string -&gt; pos:int -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pack_unsigned_32_int</span> : <code class="type">byte_order:<a href="?package=core_kernel&amp;module=Binary_packing&amp;type=endian">endian</a> -&gt; buf:string -&gt; pos:int -&gt; int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unpack_signed_64</span> : <code class="type">byte_order:<a href="?package=core_kernel&amp;module=Binary_packing&amp;type=endian">endian</a> -&gt; buf:string -&gt; pos:int -&gt; int64</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unpack_signed_64_int</span> : <code class="type">byte_order:<a href="?package=core_kernel&amp;module=Binary_packing&amp;type=endian">endian</a> -&gt; buf:string -&gt; pos:int -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pack_signed_64</span> : <code class="type">byte_order:<a href="?package=core_kernel&amp;module=Binary_packing&amp;type=endian">endian</a> -&gt; buf:string -&gt; pos:int -&gt; <a href="?package=stdlib&amp;module=Int64&amp;type=t">Int64.t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pack_signed_64_int</span> : <code class="type">byte_order:<a href="?package=core_kernel&amp;module=Binary_packing&amp;type=endian">endian</a> -&gt; buf:string -&gt; pos:int -&gt; int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unpack_signed_64_big_endian</span> : <code class="type">buf:string -&gt; pos:int -&gt; int64</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unpack_signed_64_little_endian</span> : <code class="type">buf:string -&gt; pos:int -&gt; int64</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pack_signed_64_big_endian</span> : <code class="type">buf:string -&gt; pos:int -&gt; int64 -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pack_signed_64_little_endian</span> : <code class="type">buf:string -&gt; pos:int -&gt; int64 -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unpack_float</span> : <code class="type">byte_order:<a href="?package=core_kernel&amp;module=Binary_packing&amp;type=endian">endian</a> -&gt; buf:string -&gt; pos:int -&gt; float</code></pre>
+      <div class="info">As with integers, floats can be be packed big endian or little endian, depending on
+    the order in which the bytes of the float are layed out.  There is nothing interesting
+    going on computationally from a floating-point perspective; just laying out eight
+    bytes in one order or the other.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> pack_float</span> : <code class="type">byte_order:<a href="?package=core_kernel&amp;module=Binary_packing&amp;type=endian">endian</a> -&gt; buf:string -&gt; pos:int -&gt; float -&gt; unit</code></pre>
+      
+    
+<br/>The following functions operate on &quot;fixed length padded strings&quot;, by which is meant a
+    string possibly followed by some padding, such that the length of the string plus the
+    length of the padding equals the fixed length.<br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> unpack_padded_fixed_string</span> : <code class="type">?padding:char -&gt; buf:string -&gt; pos:int -&gt; len:int -&gt; unit -&gt; string</code></pre>
+      <div class="info">Decode the fixed length padded string having length <code class="code">len</code> from <code class="code">buf</code> starting at
+    <code class="code">pos</code>.  Return a string containing only the non-padding characters.  The default
+    padding is '\x00'.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> pack_padded_fixed_string</span> : <code class="type">?padding:char -&gt; buf:string -&gt; pos:int -&gt; len:int -&gt; string -&gt; unit</code></pre>
+      <div class="info">Encode and pack the given string as a padded fixed length string having length <code class="code">len</code>.
+    Place it in <code class="code">buf</code> starting at position <code class="code">pos</code>.  If the length of the string is less
+    then <code class="code">len</code> pad it with the padding characters until its length is equal to <code class="code">len</code>.  If
+    the string is longer than <code class="code">len</code> raise <code class="code">Invalid_argument</code>.  The default padding is
+    '\x00'.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> test</span> : <code class="type">unit -&gt; unit</code></pre>
+      
+    </div>

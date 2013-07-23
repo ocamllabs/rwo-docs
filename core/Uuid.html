@@ -1,19 +1,25 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-
-<title>Uuid</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Uuid</h1>
-<pre><span class="keyword">module</span> Uuid</pre><div class="info">Implements universally unique identifiers based on version 3 of the UUID
+<div class="ocaml_toplevel_module">
+<div class="info">Implements universally unique identifiers based on version 3 of the UUID
     specification.  Identifier generation is thread safe, and fast.</div>
-<hr/>
-<div file="Uuid.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> </pre>
+      
+    
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Std.Identifiable.S" items="[&quot;Hash_heap&quot;,&quot;Hash_queue&quot;,&quot;Hash_set&quot;,&quot;Pooled_hashtbl&quot;,&quot;Table&quot;,&quot;Hashable&quot;,&quot;Set&quot;,&quot;Map&quot;,&quot;Replace_polymorphic_compare&quot;]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Std.Identifiable.S">Core_kernel.Std.Identifiable.S</a></code> with type t = <a href="?package=core&amp;module=Uuid&amp;type=t">t</a></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">unit -&gt; <a href="?package=core&amp;module=Uuid&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">create ()</code> returns a new <code class="code">t</code> guaranteed to not be equal to any other UUID generated
+    by any process anywhere.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core&amp;module=Uuid&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=core&amp;module=Uuid&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+<br/><code class="code">create ()</code> returns a new <code class="code">t</code> guaranteed to not be equal to any other UUID generated
+    by any process anywhere.<br/>
+	  </div>

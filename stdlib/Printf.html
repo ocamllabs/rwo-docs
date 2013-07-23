@@ -1,18 +1,159 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-
-<title>Printf</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Printf</h1>
-<pre><span class="keyword">module</span> Printf</pre><div class="info">Formatted output functions.</div>
-<hr/>
-<div file="Printf.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<div class="ocaml_toplevel_module">
+<div class="info">Formatted output functions.</div>
+ 
+      <pre><span><span class="keyword">val</span> fprintf</span> : <code class="type"><a href="?package=stdlib&amp;module=Pervasives&amp;type=out_channel">out_channel</a> -&gt; ('a, <a href="?package=stdlib&amp;module=Pervasives&amp;type=out_channel">out_channel</a>, unit) <a href="?package=stdlib&amp;module=Pervasives&amp;type=format">format</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> printf</span> : <code class="type">('a, <a href="?package=stdlib&amp;module=Pervasives&amp;type=out_channel">out_channel</a>, unit) <a href="?package=stdlib&amp;module=Pervasives&amp;type=format">format</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> eprintf</span> : <code class="type">('a, <a href="?package=stdlib&amp;module=Pervasives&amp;type=out_channel">out_channel</a>, unit) <a href="?package=stdlib&amp;module=Pervasives&amp;type=format">format</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sprintf</span> : <code class="type">('a, unit, string) <a href="?package=stdlib&amp;module=Pervasives&amp;type=format">format</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bprintf</span> : <code class="type"><a href="?package=stdlib&amp;module=Buffer&amp;type=t">Buffer.t</a> -&gt; ('a, <a href="?package=stdlib&amp;module=Buffer&amp;type=t">Buffer.t</a>, unit) <a href="?package=stdlib&amp;module=Pervasives&amp;type=format">format</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ifprintf</span> : <code class="type">'a -&gt; ('b, 'a, unit) <a href="?package=stdlib&amp;module=Pervasives&amp;type=format">format</a> -&gt; 'b</code></pre>
+      
+    
+<br/>Formatted output functions with continuations.<br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> kfprintf</span> : <code class="type">(<a href="?package=stdlib&amp;module=Pervasives&amp;type=out_channel">out_channel</a> -&gt; 'a) -&gt;
+<a href="?package=stdlib&amp;module=Pervasives&amp;type=out_channel">out_channel</a> -&gt; ('b, <a href="?package=stdlib&amp;module=Pervasives&amp;type=out_channel">out_channel</a>, unit, 'a) <a href="?package=stdlib&amp;module=Pervasives&amp;type=format4">format4</a> -&gt; 'b</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ikfprintf</span> : <code class="type">(<a href="?package=stdlib&amp;module=Pervasives&amp;type=out_channel">out_channel</a> -&gt; 'a) -&gt;
+<a href="?package=stdlib&amp;module=Pervasives&amp;type=out_channel">out_channel</a> -&gt; ('b, <a href="?package=stdlib&amp;module=Pervasives&amp;type=out_channel">out_channel</a>, unit, 'a) <a href="?package=stdlib&amp;module=Pervasives&amp;type=format4">format4</a> -&gt; 'b</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ksprintf</span> : <code class="type">(string -&gt; 'a) -&gt; ('b, unit, string, 'a) <a href="?package=stdlib&amp;module=Pervasives&amp;type=format4">format4</a> -&gt; 'b</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> kbprintf</span> : <code class="type">(<a href="?package=stdlib&amp;module=Buffer&amp;type=t">Buffer.t</a> -&gt; 'a) -&gt; <a href="?package=stdlib&amp;module=Buffer&amp;type=t">Buffer.t</a> -&gt; ('b, <a href="?package=stdlib&amp;module=Buffer&amp;type=t">Buffer.t</a>, unit, 'a) <a href="?package=stdlib&amp;module=Pervasives&amp;type=format4">format4</a> -&gt; 'b</code></pre>
+      
+    
+<br/>Deprecated<br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> kprintf</span> : <code class="type">(string -&gt; 'a) -&gt; ('b, unit, string, 'a) <a href="?package=stdlib&amp;module=Pervasives&amp;type=format4">format4</a> -&gt; 'b</code></pre>
+      
+    
+<div class="ocaml_module sig" name="CamlinternalPr">
+		<pre><span class="keyword">module</span> <a href="?package=stdlib&amp;module=Printf.CamlinternalPr">CamlinternalPr</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+<div class="ocaml_module sig" name="Sformat">
+		<pre><span class="keyword">module</span> <a href="?package=stdlib&amp;module=Printf.CamlinternalPr.Sformat">Sformat</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEindex"><span class="keyword">type</span> index</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> index_of_int</span> : <code class="type">int -&gt; <a href="?package=stdlib&amp;module=Printf.CamlinternalPr.Sformat&amp;type=index">index</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> int_of_index</span> : <code class="type"><a href="?package=stdlib&amp;module=Printf.CamlinternalPr.Sformat&amp;type=index">index</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_index_of_int</span> : <code class="type">int -&gt; <a href="?package=stdlib&amp;module=Printf.CamlinternalPr.Sformat&amp;type=index">index</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> succ_index</span> : <code class="type"><a href="?package=stdlib&amp;module=Printf.CamlinternalPr.Sformat&amp;type=index">index</a> -&gt; <a href="?package=stdlib&amp;module=Printf.CamlinternalPr.Sformat&amp;type=index">index</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add_int_index</span> : <code class="type">int -&gt; <a href="?package=stdlib&amp;module=Printf.CamlinternalPr.Sformat&amp;type=index">index</a> -&gt; <a href="?package=stdlib&amp;module=Printf.CamlinternalPr.Sformat&amp;type=index">index</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sub</span> : <code class="type">('a, 'b, 'c, 'd, 'e, 'f) format6 -&gt; <a href="?package=stdlib&amp;module=Printf.CamlinternalPr.Sformat&amp;type=index">index</a> -&gt; int -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_string</span> : <code class="type">('a, 'b, 'c, 'd, 'e, 'f) format6 -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> length</span> : <code class="type">('a, 'b, 'c, 'd, 'e, 'f) format6 -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get</span> : <code class="type">('a, 'b, 'c, 'd, 'e, 'f) format6 -&gt; int -&gt; char</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_to_string</span> : <code class="type">('a, 'b, 'c, 'd, 'e, 'f) format6 -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unsafe_get</span> : <code class="type">('a, 'b, 'c, 'd, 'e, 'f) format6 -&gt; int -&gt; char</code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="Tformat">
+		<pre><span class="keyword">module</span> <a href="?package=stdlib&amp;module=Printf.CamlinternalPr.Tformat">Tformat</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><code><span id="TYPEac"><span class="keyword">type</span> ac</span> = {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTac.ac_rglr">ac_rglr</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTac.ac_skip">ac_skip</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTac.ac_rdrs">ac_rdrs</span> :<code class="type">int</code>;</code></td>
+	  </tr></table>}
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ac_of_format</span> : <code class="type">('a, 'b, 'c, 'd, 'e, 'f) format6 -&gt; <a href="?package=stdlib&amp;module=Printf.CamlinternalPr.Tformat&amp;type=ac">ac</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> count_printing_arguments_of_format</span> : <code class="type">('a, 'b, 'c, 'd, 'e, 'f) format6 -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sub_format</span> : <code class="type">(('a, 'b, 'c, 'd, 'e, 'f) format6 -&gt; int) -&gt;
+(('a, 'b, 'c, 'd, 'e, 'f) format6 -&gt; int -&gt; char -&gt; int) -&gt;
+char -&gt; ('a, 'b, 'c, 'd, 'e, 'f) format6 -&gt; int -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> summarize_format_type</span> : <code class="type">('a, 'b, 'c, 'd, 'e, 'f) format6 -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> scan_format</span> : <code class="type">('a, 'b, 'c, 'd, 'e, 'f) format6 -&gt;
+'g array -&gt;
+<a href="?package=stdlib&amp;module=Printf.CamlinternalPr.Sformat&amp;type=index">Sformat.index</a> -&gt;
+int -&gt;
+(<a href="?package=stdlib&amp;module=Printf.CamlinternalPr.Sformat&amp;type=index">Sformat.index</a> -&gt; string -&gt; int -&gt; 'h) -&gt;
+(<a href="?package=stdlib&amp;module=Printf.CamlinternalPr.Sformat&amp;type=index">Sformat.index</a> -&gt; 'i -&gt; 'j -&gt; int -&gt; 'h) -&gt;
+(<a href="?package=stdlib&amp;module=Printf.CamlinternalPr.Sformat&amp;type=index">Sformat.index</a> -&gt; 'k -&gt; int -&gt; 'h) -&gt;
+(<a href="?package=stdlib&amp;module=Printf.CamlinternalPr.Sformat&amp;type=index">Sformat.index</a> -&gt; int -&gt; 'h) -&gt;
+(<a href="?package=stdlib&amp;module=Printf.CamlinternalPr.Sformat&amp;type=index">Sformat.index</a> -&gt; ('l, 'm, 'n, 'o, 'p, 'q) format6 -&gt; int -&gt; 'h) -&gt; 'h</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> kapr</span> : <code class="type">(('a, 'b, 'c, 'd, 'e, 'f) format6 -&gt; <a href="?package=stdlib&amp;module=Obj&amp;type=t">Obj.t</a> array -&gt; 'g) -&gt;
+('a, 'b, 'c, 'd, 'e, 'f) format6 -&gt; 'g</code></pre>
+      
+    
+		</div>
+</div>
+		</div>
+</div></div>

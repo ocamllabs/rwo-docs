@@ -1,7 +1,0 @@
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a1, 'a2) </code>t </span></pre>
-      
-    
- 
-      <pre><span><span class="keyword">val</span> strip : <code class="type">(('a1, 'a2) <a href="Type_equal.Injective2.html#TYPEt">t</a>, ('b1, 'b2) <a href="Type_equal.Injective2.html#TYPEt">t</a>) <a href="Type_equal.html#TYPEequal">equal</a> -&gt; ('a1, 'b1) <a href="Type_equal.html#TYPEequal">equal</a> * ('a2, 'b2) <a href="Type_equal.html#TYPEequal">equal</a></code></span></pre>
-      
-    

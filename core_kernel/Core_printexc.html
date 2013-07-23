@@ -1,19 +1,31 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-
-<title>Core_printexc</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Core_printexc</h1>
-<pre><span class="keyword">module</span> Core_printexc</pre><div class="info">This module is here to ensure that we don't use the functions in <code class="code">Caml.Printexc</code>
+<div class="ocaml_toplevel_module">
+<div class="info">This module is here to ensure that we don't use the functions in <code class="code">Caml.Printexc</code>
     inadvertently</div>
-<hr/>
-<div file="Core_printexc.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+ 
+      <pre><span><span class="keyword">val</span> to_string</span> : <code class="type">exn -&gt; [ `Deprecated_use_Exn_to_string_instead ]</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> print</span> : <code class="type">exn -&gt; [ `Deprecated_use_Exn_to_string_instead ]</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> catch</span> : <code class="type">('a -&gt; 'b) -&gt; 'a -&gt; [ `Deprecated_use_Exn_handle_uncaught_instead ]</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> print_backtrace</span> : <code class="type"><a href="?package=stdlib&amp;module=Pervasives&amp;type=out_channel">out_channel</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get_backtrace</span> : <code class="type">unit -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> record_backtrace</span> : <code class="type">bool -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> backtrace_status</span> : <code class="type">unit -&gt; bool</code></pre>
+      
+    </div>

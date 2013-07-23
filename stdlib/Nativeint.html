@@ -1,17 +1,5 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-
-<title>Nativeint</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Nativeint</h1>
-<pre><span class="keyword">module</span> Nativeint</pre><div class="info">Processor-native integers.<br/>   This module provides operations on the type <code class="code">nativeint</code> of
+<div class="ocaml_toplevel_module">
+<div class="info">Processor-native integers.<br/>   This module provides operations on the type <code class="code">nativeint</code> of
    signed 32-bit integers (on 32-bit platforms) or
    signed 64-bit integers (on 64-bit platforms).
    This integer type has exactly the same width as that of a <code class="code">long</code>
@@ -22,7 +10,136 @@
    <code class="code">nativeint</code> are generally slower than those on <code class="code">int</code>.  Use <code class="code">nativeint</code>
    only when the application requires the extra bit of precision
    over the <code class="code">int</code> type.</div>
-<hr/>
-<div file="Nativeint.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+ 
+      <pre><span><span class="keyword">val</span> zero</span> : <code class="type">nativeint</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> one</span> : <code class="type">nativeint</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> minus_one</span> : <code class="type">nativeint</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> neg</span> : <code class="type">nativeint -&gt; nativeint</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add</span> : <code class="type">nativeint -&gt; nativeint -&gt; nativeint</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sub</span> : <code class="type">nativeint -&gt; nativeint -&gt; nativeint</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mul</span> : <code class="type">nativeint -&gt; nativeint -&gt; nativeint</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> div</span> : <code class="type">nativeint -&gt; nativeint -&gt; nativeint</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rem</span> : <code class="type">nativeint -&gt; nativeint -&gt; nativeint</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> succ</span> : <code class="type">nativeint -&gt; nativeint</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pred</span> : <code class="type">nativeint -&gt; nativeint</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> abs</span> : <code class="type">nativeint -&gt; nativeint</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> size</span> : <code class="type">int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> max_int</span> : <code class="type">nativeint</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> min_int</span> : <code class="type">nativeint</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> logand</span> : <code class="type">nativeint -&gt; nativeint -&gt; nativeint</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> logor</span> : <code class="type">nativeint -&gt; nativeint -&gt; nativeint</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> logxor</span> : <code class="type">nativeint -&gt; nativeint -&gt; nativeint</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> lognot</span> : <code class="type">nativeint -&gt; nativeint</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> shift_left</span> : <code class="type">nativeint -&gt; int -&gt; nativeint</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> shift_right</span> : <code class="type">nativeint -&gt; int -&gt; nativeint</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> shift_right_logical</span> : <code class="type">nativeint -&gt; int -&gt; nativeint</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_int</span> : <code class="type">int -&gt; nativeint</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_int</span> : <code class="type">nativeint -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_float</span> : <code class="type">float -&gt; nativeint</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_float</span> : <code class="type">nativeint -&gt; float</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_int32</span> : <code class="type">int32 -&gt; nativeint</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_int32</span> : <code class="type">nativeint -&gt; int32</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_string</span> : <code class="type">string -&gt; nativeint</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_string</span> : <code class="type">nativeint -&gt; string</code></pre>
+      
+    
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> = <code class="type">nativeint</code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> compare</span> : <code class="type"><a href="?package=stdlib&amp;module=Nativeint&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=Nativeint&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Deprecated functions</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> format</span> : <code class="type">string -&gt; nativeint -&gt; string</code></pre>
+      
+    </div>

@@ -1,5 +1,0 @@
- 
-      <pre><span><span class="keyword">val</span> start : <code class="type">?callback:(elapsed:<a href="../core/Std.Time.Span.html#TYPEt">Core.Std.Time.Span.t</a> -&gt; unit) -&gt; unit -&gt; unit</code></span></pre>
-      <div class="info"><code class="code">start</code> starts a thread that watches for blockouts where the OCaml
-    lock isn't released.  By default, it prints a message to stderr.</div>
-    

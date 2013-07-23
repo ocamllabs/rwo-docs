@@ -1,18 +1,38 @@
-<!DOCTYPE HTML>
-<html>
-<head>
+<div class="ocaml_toplevel_module">
 
-<title>Binable0</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
+ 
+      <pre><span><span class="keyword">val</span> __pa_ounit_275876e34cf609db118f3d84b799a790</span> : <code class="type">string</code></pre>
+      
+    
 
-<h1>Module Binable0</h1>
-<pre><span class="keyword">module</span> Binable0</pre>
-<hr/>
-<div file="Binable0.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<div class="ocaml_include ident" path="?package=bin_prot&amp;amp;module=Binable" items="[&quot;S2&quot;,&quot;S1&quot;,&quot;S&quot;]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=bin_prot&amp;module=Binable">Bin_prot.Binable</a></code></pre>
+</div>
+<div class="ocaml_module ident" name="List" path="?package=stdlib&amp;amp;module=ListLabels">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Binable0.List">List</a> : <code class="code"><a href="?package=stdlib&amp;module=ListLabels">ListLabels</a></code></pre>
+</div>
+<div class="ocaml_module ident" name="Of_stringable" path="?package=bin_prot&amp;amp;module=Utils.Make_binable">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Binable0.Of_stringable">Of_stringable</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Stringable.S">Stringable.S</a></code><code class="code">) -&gt; </code><code class="code"><a href="?package=bin_prot&amp;module=Utils.Make_binable">Bin_prot.Utils.Make_binable</a></code>(<code class="code">sig</code> .. <code class="code">end</code>)</div></pre>
+</div>
+<pre><span id="TYPEbigstring"><span class="keyword">type</span> bigstring</span> = <code class="type">(char, <a href="?package=stdlib&amp;module=Bigarray&amp;type=int8_unsigned_elt">Bigarray.int8_unsigned_elt</a>, <a href="?package=stdlib&amp;module=Bigarray&amp;type=c_layout">Bigarray.c_layout</a>) <a href="?package=stdlib&amp;module=Bigarray.Array1&amp;type=t">Bigarray.Array1.t</a></code> </pre>
+      
+    
+<pre><span id="TYPEm"><span class="keyword">type</span> <code class="type">'a </code>m</span> = <code class="type">(module S with type t = 'a)</code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_bigstring</span> : <code class="type">(module S with type t = 'a) -&gt; <a href="?package=bin_prot&amp;module=Common&amp;type=buf">Bin_prot.Common.buf</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create_bigstring</span> : <code class="type">int -&gt;
+(char, <a href="?package=stdlib&amp;module=Bigarray&amp;type=int8_unsigned_elt">Bigarray.int8_unsigned_elt</a>, <a href="?package=stdlib&amp;module=Bigarray&amp;type=c_layout">Bigarray.c_layout</a>) <a href="?package=stdlib&amp;module=Bigarray.Array1&amp;type=t">Bigarray.Array1.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_bigstring</span> : <code class="type">?prefix_with_length:bool -&gt;
+(module S with type t = 'a) -&gt;
+'a -&gt; (char, <a href="?package=stdlib&amp;module=Bigarray&amp;type=int8_unsigned_elt">Bigarray.int8_unsigned_elt</a>, <a href="?package=stdlib&amp;module=Bigarray&amp;type=c_layout">Bigarray.c_layout</a>) <a href="?package=stdlib&amp;module=Bigarray.Array1&amp;type=t">Bigarray.Array1.t</a></code></pre>
+      
+    
+</div>

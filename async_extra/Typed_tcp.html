@@ -1,18 +1,17 @@
-<!DOCTYPE HTML>
-<html>
-<head>
+<div class="ocaml_toplevel_module">
 
-<title>Typed_tcp</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Typed_tcp</h1>
-<pre><span class="keyword">module</span> Typed_tcp</pre>
-<hr/>
-<div file="Typed_tcp.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<div class="ocaml_module ident" name="Arg" path="?package=async_extra&amp;amp;module=Typed_tcp_intf.Arg">
+		    <pre><span class="keyword">module type</span> <a href="?package=async_extra&amp;module=Typed_tcp.Arg">Arg</a> = <code class="type"><code class="code"><a href="?package=async_extra&amp;module=Typed_tcp_intf.Arg">Typed_tcp_intf.Arg</a></code></code></pre>
+</div>
+<div class="ocaml_module ident" name="Binable_t" path="?package=async_extra&amp;amp;module=Typed_tcp_intf.Binable_t">
+		    <pre><span class="keyword">module type</span> <a href="?package=async_extra&amp;module=Typed_tcp.Binable_t">Binable_t</a> = <code class="type"><code class="code"><a href="?package=async_extra&amp;module=Typed_tcp_intf.Binable_t">Typed_tcp_intf.Binable_t</a></code></code></pre>
+</div>
+<div class="ocaml_module ident" name="S" path="?package=async_extra&amp;amp;module=Typed_tcp_intf.S">
+		    <pre><span class="keyword">module type</span> <a href="?package=async_extra&amp;module=Typed_tcp.S">S</a> = <code class="type"><code class="code"><a href="?package=async_extra&amp;module=Typed_tcp_intf.S">Typed_tcp_intf.S</a></code></code></pre>
+</div>
+<div class="ocaml_module ident" name="Make" path="?package=async_extra&amp;amp;module=Typed_tcp.S">
+		    <pre><span class="keyword">module</span> <a href="?package=async_extra&amp;module=Typed_tcp.Make">Make</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">Arg</code><code class="code"> : </code><code class="type"><a href="?package=async_extra&amp;module=Typed_tcp.Arg">Arg</a></code><code class="code">) -&gt; </code><code class="code"><a href="?package=async_extra&amp;module=Typed_tcp.S">S</a></code> with module Server_message = Arg.Server_message and module Client_message = Arg.Client_message</div></pre>
+</div>
+<div class="ocaml_module ident" name="Simple" path="?package=async_extra&amp;amp;module=Typed_tcp.S">
+		    <pre><span class="keyword">module</span> <a href="?package=async_extra&amp;module=Typed_tcp.Simple">Simple</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">Client_message</code><code class="code"> : </code><code class="type"><a href="?package=async_extra&amp;module=Typed_tcp.Binable_t">Binable_t</a></code><code class="code">) -&gt; </code><div class="sig_block"><code class="code">functor (</code><code class="code">Server_message</code><code class="code"> : </code><code class="type"><a href="?package=async_extra&amp;module=Typed_tcp.Binable_t">Binable_t</a></code><code class="code">) -&gt; </code><code class="code"><a href="?package=async_extra&amp;module=Typed_tcp.S">S</a></code> with type Client_message.t = Client_message.t with type Server_message.t = Server_message.t</div></div></pre>
+</div></div>

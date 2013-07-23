@@ -1,60 +1,63 @@
-<!DOCTYPE HTML>
 
-	  <html>
-	  <head> 
-	  <link rel="stylesheet" href="style.css" type="text/css"/>
-	  <title>Modules index</title>
-	  </head>
-	  <body>
-	  <h1>Modules</h1>
-	  <table class="indextable">
-	     <tr><td class="module"><a href="Command.html">Command</a></td><td>
-		     <div class="info"><code class="code">Async.Command</code> is <code class="code">Core.Command</code> with additional async functions.</div>
-			</td></tr><tr><td class="module"><a href="File_tail.html">File_tail</a></td><td>
-		     
-			</td></tr><tr><td class="module"><a href="File_writer.html">File_writer</a></td><td>
-		     <div class="info"><code class="code">File_writer</code> is a thin wrapper around <code class="code">Writer</code> with a couple of extra features</div>
-			</td></tr><tr><td class="module"><a href="Import.html">Import</a></td><td>
-		     
-			</td></tr><tr><td class="module"><a href="Lock_file.html">Lock_file</a></td><td>
-		     <div class="info"><code class="code">Async.Lock_file</code> is a wrapper that provides async equivalents for
-    <code class="code">Core.Lock_file</code>.</div>
-			</td></tr><tr><td class="module"><a href="Log.html">Log</a></td><td>
-		     <div class="info">A library for general logging</div>
-			</td></tr><tr><td class="module"><a href="Persistent_singleton.html">Persistent_singleton</a></td><td>
-		     
-			</td></tr><tr><td class="module"><a href="Rpc.html">Rpc</a></td><td>
-		     
-			</td></tr><tr><td class="module"><a href="Rpc_intf.html">Rpc_intf</a></td><td>
-		     
-			</td></tr><tr><td class="module"><a href="Sequencer_table.html">Sequencer_table</a></td><td>
-		     <div class="info">A table of sequencers indexed by key, so that at any moment for each key there is at
-    most one job running</div>
-			</td></tr><tr><td class="module"><a href="Std.html">Std</a></td><td>
-		     
-			</td></tr><tr><td class="module"><a href="Tcp.html">Tcp</a></td><td>
-		     
-			</td></tr><tr><td class="module"><a href="Tcp_file.html">Tcp_file</a></td><td>
-		     <div class="info">Access to on-disk files in parallel with serving them over a TCP connection.</div>
-			</td></tr><tr><td class="module"><a href="Typed_tcp.html">Typed_tcp</a></td><td>
-		     
-			</td></tr><tr><td class="module"><a href="Typed_tcp_intf.html">Typed_tcp_intf</a></td><td>
-		     
-			</td></tr><tr><td class="module"><a href="Unpack_sequence.html">Unpack_sequence</a></td><td>
-		     <div class="info"><code class="code">Unpack_sequence</code> implements a way to take an <code class="code">unpack_one</code> function that can unpack a
+<h1>Modules</h1>
+<table class="indextable">
+    
+<tr><td class="module"><a href="?package=async_extra&amp;module=Command">Command</a></td><td><div class="info">
+<code class="code">Async.Command</code> is <code class="code">Core.Command</code> with additional async functions.</div></td></tr>
+
+<tr><td class="module"><a href="?package=async_extra&amp;module=Dynamic_port_writer">Dynamic_port_writer</a></td><td><div class="info">
+For communicating a dynamically chosen TCP port from a child process to its parent</div></td></tr>
+
+<tr><td class="module"><a href="?package=async_extra&amp;module=File_tail">File_tail</a></td><td/></tr>
+
+<tr><td class="module"><a href="?package=async_extra&amp;module=File_writer">File_writer</a></td><td><div class="info">
+<code class="code">File_writer</code> is a thin wrapper around <code class="code">Writer</code> with a couple of extra features</div></td></tr>
+
+<tr><td class="module"><a href="?package=async_extra&amp;module=Import">Import</a></td><td/></tr>
+
+<tr><td class="module"><a href="?package=async_extra&amp;module=Lock_file">Lock_file</a></td><td><div class="info">
+<code class="code">Async.Lock_file</code> is a wrapper that provides async equivalents for
+    <code class="code">Core.Lock_file</code>.</div></td></tr>
+
+<tr><td class="module"><a href="?package=async_extra&amp;module=Log">Log</a></td><td><div class="info">
+A library for general logging</div></td></tr>
+
+<tr><td class="module"><a href="?package=async_extra&amp;module=Persistent_singleton">Persistent_singleton</a></td><td/></tr>
+
+<tr><td class="module"><a href="?package=async_extra&amp;module=Rpc">Rpc</a></td><td/></tr>
+
+<tr><td class="module"><a href="?package=async_extra&amp;module=Rpc_intf">Rpc_intf</a></td><td/></tr>
+
+<tr><td class="module"><a href="?package=async_extra&amp;module=Sequencer_table">Sequencer_table</a></td><td><div class="info">
+A table of sequencers indexed by key, so that at any moment for each key there is at
+    most one job running</div></td></tr>
+
+<tr><td class="module"><a href="?package=async_extra&amp;module=Std">Std</a></td><td/></tr>
+
+<tr><td class="module"><a href="?package=async_extra&amp;module=Tcp">Tcp</a></td><td/></tr>
+
+<tr><td class="module"><a href="?package=async_extra&amp;module=Tcp_file">Tcp_file</a></td><td><div class="info">
+Access to on-disk files in parallel with serving them over a TCP connection.</div></td></tr>
+
+<tr><td class="module"><a href="?package=async_extra&amp;module=Typed_tcp">Typed_tcp</a></td><td/></tr>
+
+<tr><td class="module"><a href="?package=async_extra&amp;module=Typed_tcp_intf">Typed_tcp_intf</a></td><td/></tr>
+
+<tr><td class="module"><a href="?package=async_extra&amp;module=Unpack_sequence">Unpack_sequence</a></td><td><div class="info">
+<code class="code">Unpack_sequence</code> implements a way to take an <code class="code">unpack_one</code> function that can unpack a
     value from a character buffer, and use it to unpack a sequence of packed values
-    coming via a string pipe into a pipe of upacked values.</div>
-			</td></tr><tr><td class="module"><a href="User_and_group.html">User_and_group</a></td><td>
-		     
-			</td></tr><tr><td class="module"><a href="Versioned_rpc.html">Versioned_rpc</a></td><td>
-		     <div class="info">Infrastructure code for managing RPCs which evolve over time to use
-    different types at different versions</div>
-			</td></tr><tr><td class="module"><a href="Versioned_typed_tcp.html">Versioned_typed_tcp</a></td><td>
-		     
-			</td></tr><tr><td class="module"><a href="Weak_hashtbl.html">Weak_hashtbl</a></td><td>
-		     <div class="info">A <code class="code">Weak_hashtbl.t</code> is a hashtable that will drop a key and value if the value is no
-    longer referenced (by any non-weak pointers).</div>
-			</td></tr>
-          </table>
-	  </body>
-	  </html>
+    coming via a string pipe into a pipe of upacked values.</div></td></tr>
+
+<tr><td class="module"><a href="?package=async_extra&amp;module=User_and_group">User_and_group</a></td><td/></tr>
+
+<tr><td class="module"><a href="?package=async_extra&amp;module=Versioned_rpc">Versioned_rpc</a></td><td><div class="info">
+Infrastructure code for managing RPCs which evolve over time to use
+    different types at different versions</div></td></tr>
+
+<tr><td class="module"><a href="?package=async_extra&amp;module=Versioned_typed_tcp">Versioned_typed_tcp</a></td><td/></tr>
+
+<tr><td class="module"><a href="?package=async_extra&amp;module=Weak_hashtbl">Weak_hashtbl</a></td><td><div class="info">
+A <code class="code">Weak_hashtbl.t</code> is a hashtable that will drop a key and value if the value is no
+    longer referenced (by any non-weak pointers).</div></td></tr>
+
+</table>

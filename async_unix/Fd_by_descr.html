@@ -1,19 +1,39 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-
-<title>Fd_by_descr</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Fd_by_descr</h1>
-<pre><span class="keyword">module</span> Fd_by_descr</pre><div class="info"><code class="code">Fd_by_descr</code> is a table of the open <code class="code">Fd.t</code>s, indexed by file descriptor number.<br/>    In this interface, we use <code class="code">Raw_fd.t</code> rather than <code class="code">Fd.t</code> to avoid a dependency cycle,
+<div class="ocaml_toplevel_module">
+<div class="info"><code class="code">Fd_by_descr</code> is a table of the open <code class="code">Fd.t</code>s, indexed by file descriptor number.<br/>    In this interface, we use <code class="code">Raw_fd.t</code> rather than <code class="code">Fd.t</code> to avoid a dependency cycle,
     because the <code class="code">Fd</code> module can't be defined yet.</div>
-<hr/>
-<div file="Fd_by_descr.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> </pre>
+      
+    
+<div class="ocaml_include ident" path="?package=core&amp;amp;module=Std.Invariant.S" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core&amp;module=Std.Invariant.S">Core.Std.Invariant.S</a></code> with type t = <a href="?package=async_unix&amp;module=Fd_by_descr&amp;type=t">t</a></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">num_file_descrs:int -&gt; <a href="?package=async_unix&amp;module=Fd_by_descr&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add_exn</span> : <code class="type"><a href="?package=async_unix&amp;module=Fd_by_descr&amp;type=t">t</a> -&gt; <a href="?package=async_unix&amp;module=Raw_fd&amp;type=t">Raw_fd.t</a> -&gt; unit</code></pre>
+      <div class="info"><code class="code">add_exn t fd</code> fails if the file descriptor for <code class="code">fd</code> is already in <code class="code">t</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> find</span> : <code class="type"><a href="?package=async_unix&amp;module=Fd_by_descr&amp;type=t">t</a> -&gt; <a href="?package=async_unix&amp;module=Import.File_descr&amp;type=t">Import.File_descr.t</a> -&gt; <a href="?package=async_unix&amp;module=Raw_fd&amp;type=t">Raw_fd.t</a> option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove</span> : <code class="type"><a href="?package=async_unix&amp;module=Fd_by_descr&amp;type=t">t</a> -&gt; <a href="?package=async_unix&amp;module=Raw_fd&amp;type=t">Raw_fd.t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold</span> : <code class="type"><a href="?package=async_unix&amp;module=Fd_by_descr&amp;type=t">t</a> -&gt; init:'a -&gt; f:('a -&gt; <a href="?package=async_unix&amp;module=Raw_fd&amp;type=t">Raw_fd.t</a> -&gt; 'a) -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter</span> : <code class="type"><a href="?package=async_unix&amp;module=Fd_by_descr&amp;type=t">t</a> -&gt; f:(<a href="?package=async_unix&amp;module=Raw_fd&amp;type=t">Raw_fd.t</a> -&gt; unit) -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=async_unix&amp;module=Fd_by_descr&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+<br/><code class="code">add_exn t fd</code> fails if the file descriptor for <code class="code">fd</code> is already in <code class="code">t</code>.<br/>
+	  </div>

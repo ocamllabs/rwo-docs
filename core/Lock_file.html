@@ -1,20 +1,83 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-
-<title>Lock_file</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Lock_file</h1>
-<pre><span class="keyword">module</span> Lock_file</pre><div class="info">Mutual exclusion between processes using flock and lockf.  A file is
+<div class="ocaml_toplevel_module">
+<div class="info">Mutual exclusion between processes using flock and lockf.  A file is
     considered locked if either of these mechanisms works.<br/>    These locks are OS-level but are Local (will not work across computers
     even if they mount the same directory).</div>
-<hr/>
-<div file="Lock_file.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">?message:string -&gt;
+?close_on_exec:bool -&gt; ?unlink_on_exit:bool -&gt; string -&gt; bool</code></pre>
+      <div class="info"><code class="code">create ?close_on_exec ?message path</code> tries to create a file at <code class="code">path</code> containing the
+    text <code class="code">message</code>, which defaults to the pid of the locking process.  It returns true on
+    success, false on failure.  Note: there is no way to release the lock or the fd
+    created inside!  It will only be released when the process dies. If close_on_exec is
+    false, then the lock will not be released until children created via fork and exec
+    also terminate. If not specified, close_on_exec=true.  Note that by default, the lock
+    file is not cleaned up for you when the process exits. If you pass
+    <code class="code">unlink_on_exit:true</code>, an at_exit handler will be set up to remove the lock-file on
+    program termination.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> create_exn</span> : <code class="type">?message:string -&gt;
+?close_on_exec:bool -&gt; ?unlink_on_exit:bool -&gt; string -&gt; unit</code></pre>
+      <div class="info"><code class="code">create_exn ?message path</code> is like <code class="code">create</code> except that it throws an exception on
+    failure instead of returning a boolean value</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> blocking_create</span> : <code class="type">?message:string -&gt;
+?close_on_exec:bool -&gt; ?unlink_on_exit:bool -&gt; string -&gt; unit</code></pre>
+      <div class="info"><code class="code">blocking_create t</code> tries to create the lock. If another process holds the lock this
+    function will wait until it is released.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> is_locked</span> : <code class="type">string -&gt; bool</code></pre>
+      <div class="info"><code class="code">is_locked path</code> returns true when the file at <code class="code">path</code> exists and is locked, false
+    otherwise.</div>
+    
+<div class="ocaml_module sig" name="Nfs">
+		<pre><span class="keyword">module</span> <a href="?package=core&amp;module=Lock_file.Nfs">Nfs</a> : <code class="code">sig</code> .. <code class="code">end</code></pre><div class="info">An implementation neutral NFS lock file scheme that relies on the atomicity of link
+    over NFS (see NFS Illustrated, atomicity for more information).  Rather than relying
+    on a working traditional advisory lock system over NFS we create a hard link between
+    the file given to the create call and a new file &lt;filename&gt;.nfs_lock.  This link call
+    is atomic (in that it succeeds or fails) across all systems that have the same
+    filesystem mounted.  The link file must be cleaned up on program exit (normally
+    accomplished by an at_exit handler, but see caveats below).<br/>    There are a few caveats compared to local file locks:<br/>    - These calls require the locker to have write access to the directory containing the
+      file being locked.<br/>    - Unlike a normal flock call the lock may not be removed when the calling program
+      exits (in particular if it is killed with SIGKILL).</div>
+		<div class="ocaml_module_content">
+		       
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">?message:string -&gt; string -&gt; bool</code></pre>
+      <div class="info"><code class="code">lock ?message path</code> tries to create and lock the file at <code class="code">path</code> by creating a hard
+      link to <code class="code">path</code>.nfs_lock.  The contents of <code class="code">path</code> will be replaced with a sexp
+      containing the caller's hostname and pid, and the optional <code class="code">message</code>.<br/>      Efforts will be made to release this lock when the calling program exits. But there
+      is no guarantee that this will occur under some types of program crash. If the
+      program crashes without removing the lock file an attempt will be made to clean up
+      on restart by checking the hostname and pid stored in the lockfile.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> create_exn</span> : <code class="type">?message:string -&gt; string -&gt; unit</code></pre>
+      <div class="info"><code class="code">create_exn ?message path</code> like create, but throws an exception when it fails to
+      obtain the lock</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> blocking_create</span> : <code class="type">?message:string -&gt; string -&gt; unit</code></pre>
+      <div class="info"><code class="code">blocking_create ?message path</code> like create, but sleeps for 1 second between lock
+      attempts and does not return until it succeeds</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> critical_section</span> : <code class="type">?message:string -&gt; string -&gt; f:(unit -&gt; 'a) -&gt; 'a</code></pre>
+      <div class="info"><code class="code">critical_section ?message path ~f</code> wrap function <code class="code">f</code> (including exceptions escaping
+      it) by first locking (using TODO reference : create_exn) and then unlocking the given lock
+      file.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> get_hostname_and_pid</span> : <code class="type">string -&gt; (string * <a href="?package=core_kernel&amp;module=Std.Pid&amp;type=t">Core_kernel.Std.Pid.t</a>) option</code></pre>
+      <div class="info"><code class="code">get_hostname_and_pid path</code> reads the lock file at <code class="code">path</code> and returns the hostname
+      and path in the file.  Returns <code class="code">None</code> if the file cannot be read.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> get_message</span> : <code class="type">string -&gt; string option</code></pre>
+      <div class="info"><code class="code">get_message path</code> reads the lock file at <code class="code">path</code> and returns the message in the
+      file.  Returns <code class="code">None</code> if the file cannot be read.</div>
+    
+		</div>
+</div></div>

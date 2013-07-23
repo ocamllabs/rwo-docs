@@ -1,18 +1,273 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-
-<title>Result</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Result</h1>
-<pre><span class="keyword">module</span> Result</pre><div class="info"><code class="code">Result</code> is often used to handle error messages.</div>
-<hr/>
-<div file="Result.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<div class="ocaml_toplevel_module">
+<div class="info"><code class="code">Result</code> is often used to handle error messages.</div>
+<pre><code><span id="TYPEt"><span class="keyword">type</span> <code class="type">('ok, 'err) </code>t</span> = </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Ok"><span class="constructor">Ok</span></span> <span class="keyword">of</span> <code class="type">'ok</code></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Error"><span class="constructor">Error</span></span> <span class="keyword">of</span> <code class="type">'err</code></code></td>
+	   </tr></table>
+      <div class="info"><code class="code">'a</code> is a function's expected return type, and <code class="code">'b</code> is often an error message string.
+    <pre class="codepre"><code class="code">let ric_of_ticker = function
+    | &quot;IBM&quot; -&gt; Ok &quot;IBM.N&quot;
+    | &quot;MSFT&quot; -&gt; Ok &quot;MSFT.OQ&quot;
+    | &quot;AA&quot; -&gt; Ok &quot;AA.N&quot;
+    | &quot;CSCO&quot; -&gt; Ok &quot;CSCO.OQ&quot;
+    | _ as ticker -&gt; Error (sprintf &quot;can't find ric of %s&quot; ticker) </code></pre>
+    The return type of ric_of_ticker could be <code class="code">string option</code>, but <code class="code">(string, string)
+    Result.t</code> gives more control over the error message.</div>
+    
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Monad.S2" items="[&quot;Monad_infix&quot;]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Monad.S2">Monad.S2</a></code> with type t = ('a, 'err) <a href="?package=core_kernel&amp;module=Result&amp;type=t">t</a></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> compare</span> : <code class="type">('a -&gt; 'a -&gt; int) -&gt; ('b -&gt; 'b -&gt; int) -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Result&amp;type=t">t</a> -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Result&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fail</span> : <code class="type">'err -&gt; ('a, 'err) <a href="?package=core_kernel&amp;module=Result&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> failf</span> : <code class="type">('a, unit, string, ('b, string) <a href="?package=core_kernel&amp;module=Result&amp;type=t">t</a>) <a href="?package=stdlib&amp;module=Pervasives&amp;type=format4">format4</a> -&gt; 'a</code></pre>
+      <div class="info">e.g. <code class="code">failf &quot;Couldn't find bloogle %s&quot; (Bloogle.to_string b)</code> </div>
+    
+ 
+      <pre><span><span class="keyword">val</span> is_ok</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Result&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_error</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Result&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ok</span> : <code class="type">('ok, 'a) <a href="?package=core_kernel&amp;module=Result&amp;type=t">t</a> -&gt; 'ok option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> error</span> : <code class="type">('a, 'err) <a href="?package=core_kernel&amp;module=Result&amp;type=t">t</a> -&gt; 'err option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_option</span> : <code class="type">'ok option -&gt; error:'err -&gt; ('ok, 'err) <a href="?package=core_kernel&amp;module=Result&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter</span> : <code class="type">('ok, 'a) <a href="?package=core_kernel&amp;module=Result&amp;type=t">t</a> -&gt; f:('ok -&gt; unit) -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter_error</span> : <code class="type">('a, 'err) <a href="?package=core_kernel&amp;module=Result&amp;type=t">t</a> -&gt; f:('err -&gt; unit) -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map</span> : <code class="type">('ok, 'err) <a href="?package=core_kernel&amp;module=Result&amp;type=t">t</a> -&gt; f:('ok -&gt; 'c) -&gt; ('c, 'err) <a href="?package=core_kernel&amp;module=Result&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map_error</span> : <code class="type">('ok, 'err) <a href="?package=core_kernel&amp;module=Result&amp;type=t">t</a> -&gt; f:('err -&gt; 'c) -&gt; ('ok, 'c) <a href="?package=core_kernel&amp;module=Result&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> combine</span> : <code class="type">('ok1, 'err) <a href="?package=core_kernel&amp;module=Result&amp;type=t">t</a> -&gt;
+('ok2, 'err) <a href="?package=core_kernel&amp;module=Result&amp;type=t">t</a> -&gt;
+ok:('ok1 -&gt; 'ok2 -&gt; 'ok3) -&gt; err:('err -&gt; 'err -&gt; 'err) -&gt; ('ok3, 'err) <a href="?package=core_kernel&amp;module=Result&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> call</span> : <code class="type">f:('a -&gt; unit, 'b) <a href="?package=core_kernel&amp;module=Result&amp;type=t">t</a> -&gt; 'a -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> apply</span> : <code class="type">f:('a -&gt; 'b, 'err) <a href="?package=core_kernel&amp;module=Result&amp;type=t">t</a> -&gt; 'a -&gt; ('b, 'err) <a href="?package=core_kernel&amp;module=Result&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ok_fst</span> : <code class="type">('ok, 'err) <a href="?package=core_kernel&amp;module=Result&amp;type=t">t</a> -&gt; [ `Fst of 'ok | `Snd of 'err ]</code></pre>
+      <div class="info"><code class="code">ok_fst</code> is useful with <code class="code">List.partition_map</code>.  Continuing the above example:
+<pre class="codepre"><code class="code">
+    let rics, errors = List.partition_map ~f:Result.ok_fst
+      (List.map ~f:ric_of_ticker [&quot;AA&quot;; &quot;F&quot;; &quot;CSCO&quot;; &quot;AAPL&quot;]) </code></pre> </div>
+    
+ 
+      <pre><span><span class="keyword">val</span> ok_if_true</span> : <code class="type">bool -&gt; error:'err -&gt; (unit, 'err) <a href="?package=core_kernel&amp;module=Result&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> try_with</span> : <code class="type">(unit -&gt; 'a) -&gt; ('a, exn) <a href="?package=core_kernel&amp;module=Result&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ok_exn</span> : <code class="type">('ok, exn) <a href="?package=core_kernel&amp;module=Result&amp;type=t">t</a> -&gt; 'ok</code></pre>
+      <div class="info"><code class="code">ok_exn t</code> returns <code class="code">x</code> if <code class="code">t = Ok x</code>, and raises <code class="code">exn</code> if <code class="code">t = Error exn</code> </div>
+    
+ 
+      <pre><span><span class="keyword">val</span> ok_or_failwith</span> : <code class="type">('ok, string) <a href="?package=core_kernel&amp;module=Result&amp;type=t">t</a> -&gt; 'ok</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ok_unit</span> : <code class="type">(unit, 'a) <a href="?package=core_kernel&amp;module=Result&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">ok_unit = Ok ()</code>, used to avoid allocation as a performance hack</div>
+    
+<div class="ocaml_module sig" name="Export">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Result.Export">Export</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPE_result"><span class="keyword">type</span> <code class="type">('ok, 'err) </code>_result</span> = <code class="type">('ok, 'err) <a href="?package=core_kernel&amp;module=Result&amp;type=t">t</a></code> </pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELT_result.Ok"><span class="constructor">Ok</span></span> <span class="keyword">of</span> <code class="type">'ok</code></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELT_result.Error"><span class="constructor">Error</span></span> <span class="keyword">of</span> <code class="type">'err</code></code></td>
+	   </tr></table>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="Stable">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Result.Stable">Stable</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+<div class="ocaml_module sig" name="V1">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Result.Stable.V1">V1</a> : <code class="code">sig</code> .. <code class="code">end</code> with type <a href="?package=core_kernel&amp;module=Result.Stable.V1&amp;type=t">t</a> = ('a, 'b) <a href="?package=core_kernel&amp;module=Result&amp;type=t">t</a></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'b) </code>t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> compare</span> : <code class="type">('a -&gt; 'a -&gt; int) -&gt; ('b -&gt; 'b -&gt; int) -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Result.Stable.V1&amp;type=t">t</a> -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Result.Stable.V1&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a> -&gt;
+'b <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a> -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Result.Stable.V1&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+'b <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Result.Stable.V1&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Read_ml&amp;type=reader">Bin_prot.Read_ml.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t_</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+'b <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Result.Stable.V1&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t__</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+'b <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+(int -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Result.Stable.V1&amp;type=t">t</a>) <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a> -&gt;
+'b <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a> -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Result.Stable.V1&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Size&amp;type=sizer">Bin_prot.Size.sizer</a> -&gt;
+'b <a href="?package=bin_prot&amp;module=Size&amp;type=sizer">Bin_prot.Size.sizer</a> -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Result.Stable.V1&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Size&amp;type=sizer">Bin_prot.Size.sizer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt;
+'b <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Result.Stable.V1&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Bin_prot.Write_ml.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt;
+'b <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt;
+('a, 'b) <a href="?package=core_kernel&amp;module=Result.Stable.V1&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a> -&gt;
+'b <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a> -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Result.Stable.V1&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp</span> : <code class="type">(<a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'a) -&gt;
+(<a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'b) -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Result.Stable.V1&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt;
+('b -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Result.Stable.V1&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module ident" name="V1_stable_unit_test" path="?package=core_kernel&amp;amp;module=Stable_unit_test_intf.Arg">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Result.Stable.V1_stable_unit_test">V1_stable_unit_test</a> : <code class="code"><a href="?package=core_kernel&amp;module=Stable_unit_test_intf.Arg">Stable_unit_test_intf.Arg</a></code></pre>
+</div>
+		</div>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> compare</span> : <code class="type">('ok -&gt; 'ok -&gt; int) -&gt;
+('err -&gt; 'err -&gt; int) -&gt; ('ok, 'err) <a href="?package=core_kernel&amp;module=Result&amp;type=t">t</a> -&gt; ('ok, 'err) <a href="?package=core_kernel&amp;module=Result&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp</span> : <code class="type">(<a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'ok) -&gt;
+(<a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'err) -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; ('ok, 'err) <a href="?package=core_kernel&amp;module=Result&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('ok -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt;
+('err -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; ('ok, 'err) <a href="?package=core_kernel&amp;module=Result&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_t</span> : <code class="type">'ok <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a> -&gt;
+'err <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a> -&gt; ('ok, 'err) <a href="?package=core_kernel&amp;module=Result&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t</span> : <code class="type">'ok <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+'err <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt; ('ok, 'err) <a href="?package=core_kernel&amp;module=Result&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Read_ml&amp;type=reader">Bin_prot.Read_ml.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t_</span> : <code class="type">'ok <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+'err <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+('ok, 'err) <a href="?package=core_kernel&amp;module=Result&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t__</span> : <code class="type">'ok <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+'err <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+(int -&gt; ('ok, 'err) <a href="?package=core_kernel&amp;module=Result&amp;type=t">t</a>) <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t</span> : <code class="type">'ok <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a> -&gt;
+'err <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a> -&gt; ('ok, 'err) <a href="?package=core_kernel&amp;module=Result&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t</span> : <code class="type">'ok <a href="?package=bin_prot&amp;module=Size&amp;type=sizer">Bin_prot.Size.sizer</a> -&gt;
+'err <a href="?package=bin_prot&amp;module=Size&amp;type=sizer">Bin_prot.Size.sizer</a> -&gt; ('ok, 'err) <a href="?package=core_kernel&amp;module=Result&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Size&amp;type=sizer">Bin_prot.Size.sizer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t</span> : <code class="type">'ok <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt;
+'err <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt; ('ok, 'err) <a href="?package=core_kernel&amp;module=Result&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Bin_prot.Write_ml.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_</span> : <code class="type">'ok <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt;
+'err <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt;
+('ok, 'err) <a href="?package=core_kernel&amp;module=Result&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t</span> : <code class="type">'ok <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a> -&gt;
+'err <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a> -&gt; ('ok, 'err) <a href="?package=core_kernel&amp;module=Result&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+<br/>e.g. <code class="code">failf &quot;Couldn't find bloogle %s&quot; (Bloogle.to_string b)</code> <br/>
+	  
+<br/><code class="code">ok_fst</code> is useful with <code class="code">List.partition_map</code>.  Continuing the above example:
+<pre class="codepre"><code class="code">
+    let rics, errors = List.partition_map ~f:Result.ok_fst
+      (List.map ~f:ric_of_ticker [&quot;AA&quot;; &quot;F&quot;; &quot;CSCO&quot;; &quot;AAPL&quot;]) </code></pre> <br/>
+	  
+<br/><code class="code">ok_exn t</code> returns <code class="code">x</code> if <code class="code">t = Ok x</code>, and raises <code class="code">exn</code> if <code class="code">t = Error exn</code> <br/>
+	  
+<br/><code class="code">ok_unit = Ok ()</code>, used to avoid allocation as a performance hack<br/>
+	  </div>

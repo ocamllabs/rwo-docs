@@ -1,17 +1,5 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-
-<title>Validate</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Validate</h1>
-<pre><span class="keyword">module</span> Validate</pre><div class="info">A module for organizing validations of data structures.  Allows standardized ways of
+<div class="ocaml_toplevel_module">
+<div class="info">A module for organizing validations of data structures.  Allows standardized ways of
     checking for conditions, and keeps track of the location of errors by keeping a path
     to each error found.  Thus, if you were validating the following datastructure:<br/>    <pre class="codepre"><code class="code">
       { foo = 3;
@@ -48,7 +36,126 @@
         | Snoo floogle -&gt; V.name &quot;Snoo&quot; Floogle.validate
     </code></pre>
 </div>
-<hr/>
-<div file="Validate.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> </pre>
+      <div class="info">The result of a validation.  This effectively contains the list of errors, qualified
+    by their location path</div>
+    
+<pre><span id="TYPEcheck"><span class="keyword">type</span> <code class="type">'a </code>check</span> = <code class="type">'a -&gt; <a href="?package=core_kernel&amp;module=Validate&amp;type=t">t</a></code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pass</span> : <code class="type"><a href="?package=core_kernel&amp;module=Validate&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fail</span> : <code class="type">string -&gt; <a href="?package=core_kernel&amp;module=Validate&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fails</span> : <code class="type">string -&gt; 'a -&gt; ('a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; <a href="?package=core_kernel&amp;module=Validate&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> failf</span> : <code class="type">('a, unit, string, <a href="?package=core_kernel&amp;module=Validate&amp;type=t">t</a>) <a href="?package=stdlib&amp;module=Pervasives&amp;type=format4">format4</a> -&gt; 'a</code></pre>
+      <div class="info">Like <code class="code">sprintf</code> or <code class="code">failwithf</code> but produces a <code class="code">t</code> instead of a string or exception</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> of_list</span> : <code class="type"><a href="?package=core_kernel&amp;module=Validate&amp;type=t">t</a> list -&gt; <a href="?package=core_kernel&amp;module=Validate&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> name</span> : <code class="type">string -&gt; <a href="?package=core_kernel&amp;module=Validate&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Validate&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> name_list</span> : <code class="type">string -&gt; <a href="?package=core_kernel&amp;module=Validate&amp;type=t">t</a> list -&gt; <a href="?package=core_kernel&amp;module=Validate&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fail_fn</span> : <code class="type">string -&gt; 'a <a href="?package=core_kernel&amp;module=Validate&amp;type=check">check</a></code></pre>
+      <div class="info"><code class="code">fail_fn err</code> returns a function that always returns fail, with <code class="code">err</code> as the error
+    message.  (Note that there is no <code class="code">pass_fn</code> so as to discourage people from ignoring
+    the type of the value being passed unconditionally irrespective of type.)</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> pass_bool</span> : <code class="type">bool <a href="?package=core_kernel&amp;module=Validate&amp;type=check">check</a></code></pre>
+      <div class="info">Check for unconditionally passing a bool</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> pass_unit</span> : <code class="type">unit <a href="?package=core_kernel&amp;module=Validate&amp;type=check">check</a></code></pre>
+      <div class="info">Check for unconditionally passing a unit</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> protect</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Validate&amp;type=check">check</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Validate&amp;type=check">check</a></code></pre>
+      <div class="info"><code class="code">protect f x</code> applies the validation <code class="code">f</code> to <code class="code">x</code>, catching any exceptions and returning
+    them as errors.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> result</span> : <code class="type"><a href="?package=core_kernel&amp;module=Validate&amp;type=t">t</a> -&gt; unit <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">Or_error.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> errors</span> : <code class="type"><a href="?package=core_kernel&amp;module=Validate&amp;type=t">t</a> -&gt; string list</code></pre>
+      <div class="info">Returns a list of formatted error strings, which include both the error message and
+    the path to the error.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> maybe_raise</span> : <code class="type"><a href="?package=core_kernel&amp;module=Validate&amp;type=t">t</a> -&gt; unit</code></pre>
+      <div class="info">If the result contains any errors, then raises an exception with a formatted error
+    message containing a message for every error.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> valid_or_error</span> : <code class="type">'a -&gt; 'a <a href="?package=core_kernel&amp;module=Validate&amp;type=check">check</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">Or_error.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> field</span> : <code class="type">'record -&gt; ('record, 'a) <a href="?package=fieldslib&amp;module=Field&amp;type=t">Fieldslib.Field.t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Validate&amp;type=check">check</a> -&gt; <a href="?package=core_kernel&amp;module=Validate&amp;type=t">t</a></code></pre>
+      <div class="info">Used for validating an individual field.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> field_folder</span> : <code class="type">'record -&gt; 'a <a href="?package=core_kernel&amp;module=Validate&amp;type=check">check</a> -&gt; <a href="?package=core_kernel&amp;module=Validate&amp;type=t">t</a> list -&gt; ('record, 'a) <a href="?package=fieldslib&amp;module=Field&amp;type=t">Fieldslib.Field.t</a> -&gt; <a href="?package=core_kernel&amp;module=Validate&amp;type=t">t</a> list</code></pre>
+      <div class="info">Creates a function for use in a <code class="code">Fields.fold</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> all</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Validate&amp;type=check">check</a> list -&gt; 'a <a href="?package=core_kernel&amp;module=Validate&amp;type=check">check</a></code></pre>
+      <div class="info">Combine a list of validation functions into one that does all validations.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> of_result</span> : <code class="type">('a -&gt; (unit, string) <a href="?package=core_kernel&amp;module=Result&amp;type=t">Result.t</a>) -&gt; 'a <a href="?package=core_kernel&amp;module=Validate&amp;type=check">check</a></code></pre>
+      <div class="info">Create a validation function from a function that produces a Result.t</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> of_error</span> : <code class="type">('a -&gt; unit <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">Or_error.t</a>) -&gt; 'a <a href="?package=core_kernel&amp;module=Validate&amp;type=check">check</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> booltest</span> : <code class="type">('a -&gt; bool) -&gt; if_false:string -&gt; 'a <a href="?package=core_kernel&amp;module=Validate&amp;type=check">check</a></code></pre>
+      <div class="info">Create a validation function from a function that produces a bool</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> pair</span> : <code class="type">fst:'a <a href="?package=core_kernel&amp;module=Validate&amp;type=check">check</a> -&gt; snd:'b <a href="?package=core_kernel&amp;module=Validate&amp;type=check">check</a> -&gt; ('a * 'b) <a href="?package=core_kernel&amp;module=Validate&amp;type=check">check</a></code></pre>
+      <div class="info">Validation functions for particular data types.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> list_indexed</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Validate&amp;type=check">check</a> -&gt; 'a list <a href="?package=core_kernel&amp;module=Validate&amp;type=check">check</a></code></pre>
+      <div class="info">Validates a list, naming each element by its position in the list (where the first
+    position is 1, not 0</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> list</span> : <code class="type">name:('a -&gt; string) -&gt; 'a <a href="?package=core_kernel&amp;module=Validate&amp;type=check">check</a> -&gt; 'a list <a href="?package=core_kernel&amp;module=Validate&amp;type=check">check</a></code></pre>
+      <div class="info">Validates a list, naming each element using a user-defined function for computing the
+    name</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> first_failure</span> : <code class="type"><a href="?package=core_kernel&amp;module=Validate&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Validate&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Validate&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_error_opt</span> : <code class="type">string option -&gt; <a href="?package=core_kernel&amp;module=Validate&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> alist</span> : <code class="type">name:('a -&gt; string) -&gt; 'b <a href="?package=core_kernel&amp;module=Validate&amp;type=check">check</a> -&gt; ('a * 'b) list <a href="?package=core_kernel&amp;module=Validate&amp;type=check">check</a></code></pre>
+      <div class="info">Validates an association list, naming each element using a user-defined function for
+    computing the name.</div>
+    </div>

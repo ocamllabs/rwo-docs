@@ -1,17 +1,5 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-
-<title>Core_arg</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Core_arg</h1>
-<pre><span class="keyword">module</span> Core_arg</pre><div class="info">Parsing of command line arguments.<br/>   This module provides a general mechanism for extracting options and
+<div class="ocaml_toplevel_module">
+<div class="info">Parsing of command line arguments.<br/>   This module provides a general mechanism for extracting options and
    arguments from the command line to the program.<br/>   Syntax of command lines:
     A keyword is a character string starting with a <code class="code">-</code>.
     An option is a keyword alone or followed by an argument.
@@ -25,7 +13,69 @@
     Arguments not preceded by a keyword are called anonymous arguments.<br/>   Examples (<code class="code">cmd</code> is assumed to be the command name):<ul><li>  <code class="code">cmd -flag           </code>(a unit option)</li><li>  <code class="code">cmd -int 1          </code>(an int option with argument <code class="code">1</code>)</li><li>  <code class="code">cmd -string foobar  </code>(a string option with argument <code class="code">&quot;foobar&quot;</code>)</li><li>  <code class="code">cmd -float 12.34    </code>(a float option with argument <code class="code">12.34</code>)</li><li>  <code class="code">cmd a b c           </code>(three anonymous arguments: <code class="code">&quot;a&quot;</code>, <code class="code">&quot;b&quot;</code>, and <code class="code">&quot;c&quot;</code>)</li><li>  <code class="code">cmd a b -- c d      </code>(two anonymous arguments and a rest option with
                            two arguments)
 </li></ul></div>
-<hr/>
-<div file="Core_arg.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<pre><span id="TYPEspec"><span class="keyword">type</span> spec</span> = <code class="type"><a href="?package=stdlib&amp;module=Arg&amp;type=spec">Arg.spec</a></code> </pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTspec.Unit"><span class="constructor">Unit</span></span> <span class="keyword">of</span> <code class="type">unit -&gt; unit</code></code></td><td class="typefieldcomment" align="left">Call the function with unit argument</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTspec.Bool"><span class="constructor">Bool</span></span> <span class="keyword">of</span> <code class="type">bool -&gt; unit</code></code></td><td class="typefieldcomment" align="left">Call the function with a bool argument</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTspec.Set"><span class="constructor">Set</span></span> <span class="keyword">of</span> <code class="type">bool <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a></code></code></td><td class="typefieldcomment" align="left">Set the reference to true</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTspec.Clear"><span class="constructor">Clear</span></span> <span class="keyword">of</span> <code class="type">bool <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a></code></code></td><td class="typefieldcomment" align="left">Set the reference to false</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTspec.String"><span class="constructor">String</span></span> <span class="keyword">of</span> <code class="type">string -&gt; unit</code></code></td><td class="typefieldcomment" align="left">Call the function with a string argument</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTspec.Set_string"><span class="constructor">Set_string</span></span> <span class="keyword">of</span> <code class="type">string <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a></code></code></td><td class="typefieldcomment" align="left">Set the reference to the string argument</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTspec.Int"><span class="constructor">Int</span></span> <span class="keyword">of</span> <code class="type">int -&gt; unit</code></code></td><td class="typefieldcomment" align="left">Call the function with an int argument</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTspec.Set_int"><span class="constructor">Set_int</span></span> <span class="keyword">of</span> <code class="type">int <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a></code></code></td><td class="typefieldcomment" align="left">Set the reference to the int argument</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTspec.Float"><span class="constructor">Float</span></span> <span class="keyword">of</span> <code class="type">float -&gt; unit</code></code></td><td class="typefieldcomment" align="left">Call the function with a float argument</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTspec.Set_float"><span class="constructor">Set_float</span></span> <span class="keyword">of</span> <code class="type">float <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a></code></code></td><td class="typefieldcomment" align="left">Set the reference to the float argument</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTspec.Tuple"><span class="constructor">Tuple</span></span> <span class="keyword">of</span> <code class="type"><a href="?package=core_kernel&amp;module=Core_arg&amp;type=spec">spec</a> list</code></code></td><td class="typefieldcomment" align="left">Take several arguments according to the
+                                   spec list</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTspec.Symbol"><span class="constructor">Symbol</span></span> <span class="keyword">of</span> <code class="type">string list * string -&gt; unit</code></code></td><td class="typefieldcomment" align="left">Take one of the symbols as argument and
+                                   call the function with the symbol</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTspec.Rest"><span class="constructor">Rest</span></span> <span class="keyword">of</span> <code class="type">string -&gt; unit</code></code></td><td class="typefieldcomment" align="left">Stop interpreting keywords and call the
+                                   function with each remaining argument</td>
+	   </tr></table>
+      
+    
+<pre><span id="TYPEkey"><span class="keyword">type</span> key</span> = <code class="type">string</code> </pre>
+      
+    
+<pre><span id="TYPEdoc"><span class="keyword">type</span> doc</span> = <code class="type">string</code> </pre>
+      
+    
+<pre><span id="TYPEusage_msg"><span class="keyword">type</span> usage_msg</span> = <code class="type">string</code> </pre>
+      
+    
+<pre><span id="TYPEanon_fun"><span class="keyword">type</span> anon_fun</span> = <code class="type">string -&gt; unit</code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> parse</span> : <code class="type">(<a href="?package=core_kernel&amp;module=Core_arg&amp;type=key">key</a> * <a href="?package=core_kernel&amp;module=Core_arg&amp;type=spec">spec</a> * <a href="?package=core_kernel&amp;module=Core_arg&amp;type=doc">doc</a>) list -&gt; <a href="?package=core_kernel&amp;module=Core_arg&amp;type=anon_fun">anon_fun</a> -&gt; <a href="?package=core_kernel&amp;module=Core_arg&amp;type=usage_msg">usage_msg</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> parse_argv</span> : <code class="type">?current:int <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a> -&gt;
+string array -&gt; (<a href="?package=core_kernel&amp;module=Core_arg&amp;type=key">key</a> * <a href="?package=core_kernel&amp;module=Core_arg&amp;type=spec">spec</a> * <a href="?package=core_kernel&amp;module=Core_arg&amp;type=doc">doc</a>) list -&gt; <a href="?package=core_kernel&amp;module=Core_arg&amp;type=anon_fun">anon_fun</a> -&gt; <a href="?package=core_kernel&amp;module=Core_arg&amp;type=usage_msg">usage_msg</a> -&gt; unit</code></pre>
+      
+    
+<pre><span id="EXCEPTIONHelp"><span class="keyword">exception</span> Help</span> <span class="keyword">of</span> <code class="type">string</code></pre>
+<pre><span id="EXCEPTIONBad"><span class="keyword">exception</span> Bad</span> <span class="keyword">of</span> <code class="type">string</code></pre>
+ 
+      <pre><span><span class="keyword">val</span> usage</span> : <code class="type">(<a href="?package=core_kernel&amp;module=Core_arg&amp;type=key">key</a> * <a href="?package=core_kernel&amp;module=Core_arg&amp;type=spec">spec</a> * <a href="?package=core_kernel&amp;module=Core_arg&amp;type=doc">doc</a>) list -&gt; <a href="?package=core_kernel&amp;module=Core_arg&amp;type=usage_msg">usage_msg</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> usage_string</span> : <code class="type">(<a href="?package=core_kernel&amp;module=Core_arg&amp;type=key">key</a> * <a href="?package=core_kernel&amp;module=Core_arg&amp;type=spec">spec</a> * <a href="?package=core_kernel&amp;module=Core_arg&amp;type=doc">doc</a>) list -&gt; <a href="?package=core_kernel&amp;module=Core_arg&amp;type=usage_msg">usage_msg</a> -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> align</span> : <code class="type">(<a href="?package=core_kernel&amp;module=Core_arg&amp;type=key">key</a> * <a href="?package=core_kernel&amp;module=Core_arg&amp;type=spec">spec</a> * <a href="?package=core_kernel&amp;module=Core_arg&amp;type=doc">doc</a>) list -&gt; (<a href="?package=core_kernel&amp;module=Core_arg&amp;type=key">key</a> * <a href="?package=core_kernel&amp;module=Core_arg&amp;type=spec">spec</a> * <a href="?package=core_kernel&amp;module=Core_arg&amp;type=doc">doc</a>) list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> current</span> : <code class="type">int <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a></code></pre>
+      
+    
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> = <code class="type"><a href="?package=core_kernel&amp;module=Core_arg&amp;type=key">key</a> * <a href="?package=core_kernel&amp;module=Core_arg&amp;type=spec">spec</a> * <a href="?package=core_kernel&amp;module=Core_arg&amp;type=doc">doc</a></code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sort_and_align</span> : <code class="type">(<a href="?package=core_kernel&amp;module=Core_arg&amp;type=key">key</a> * <a href="?package=core_kernel&amp;module=Core_arg&amp;type=spec">spec</a> * <a href="?package=core_kernel&amp;module=Core_arg&amp;type=doc">doc</a>) list -&gt; (<a href="?package=core_kernel&amp;module=Core_arg&amp;type=key">key</a> * <a href="?package=core_kernel&amp;module=Core_arg&amp;type=spec">spec</a> * <a href="?package=core_kernel&amp;module=Core_arg&amp;type=doc">doc</a>) list</code></pre>
+      <div class="info">Like align, except that the specification list is also sorted by key</div>
+    </div>

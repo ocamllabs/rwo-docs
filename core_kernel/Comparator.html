@@ -1,22 +1,156 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-
-<title>Comparator</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Comparator</h1>
-<pre><span class="keyword">module</span> Comparator</pre><div class="info">A Comparator.t is a type-indexed value that allows you to compare (and for generating
+<div class="ocaml_toplevel_module">
+<div class="info">A Comparator.t is a type-indexed value that allows you to compare (and for generating
     error messages, serialize) values of the type in question.  One of the type parameters
     is a phantom parameter used to distinguish comparators potentially built on different
     comparison functions.  In particular, we want to distinguish those using polymorphic
     compare and those using a monomorphic compare.</div>
-<hr/>
-<div file="Comparator.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<pre><code><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'unique_id) </code>t</span> = {<span class="keyword">private</span></code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.compare">compare</span> :<code class="type">'a -&gt; 'a -&gt; int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.sexp_of_t">sexp_of_t</span> :<code class="type">'a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code>;</code></td>
+	  </tr></table>}
+      
+    
+<pre><span id="TYPEt_"><span class="keyword">type</span> <code class="type">('a, 'unique_id) </code>t_</span> = <code class="type">('a, 'unique_id) <a href="?package=core_kernel&amp;module=Comparator&amp;type=t">t</a></code> </pre>
+      
+    
+<div class="ocaml_module sig" name="Pre">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Comparator.Pre">Pre</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> compare</span> : <code class="type"><a href="?package=core_kernel&amp;module=Comparator.Pre&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Comparator.Pre&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core_kernel&amp;module=Comparator.Pre&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Comparator.Pre&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="Pre_binable">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Comparator.Pre_binable">Pre_binable</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> compare</span> : <code class="type"><a href="?package=core_kernel&amp;module=Comparator.Pre_binable&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Comparator.Pre_binable&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core_kernel&amp;module=Comparator.Pre_binable&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Comparator.Pre_binable&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Comparator.Pre_binable&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Comparator.Pre_binable&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Read_ml&amp;type=reader">Bin_prot.Read_ml.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t_</span> : <code class="type"><a href="?package=core_kernel&amp;module=Comparator.Pre_binable&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t__</span> : <code class="type">(int -&gt; <a href="?package=core_kernel&amp;module=Comparator.Pre_binable&amp;type=t">t</a>) <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Comparator.Pre_binable&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Comparator.Pre_binable&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Size&amp;type=sizer">Bin_prot.Size.sizer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Comparator.Pre_binable&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Bin_prot.Write_ml.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_</span> : <code class="type"><a href="?package=core_kernel&amp;module=Comparator.Pre_binable&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Comparator.Pre_binable&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="S">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Comparator.S">S</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Comparator.Pre" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Comparator.Pre">Pre</a></code></pre>
+</div>
+<pre><span id="TYPEcomparator"><span class="keyword">type</span> comparator</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> comparator</span> : <code class="type">(<a href="?package=core_kernel&amp;module=Comparator.S&amp;type=t">t</a>, <a href="?package=core_kernel&amp;module=Comparator.S&amp;type=comparator">comparator</a>) <a href="?package=core_kernel&amp;module=Comparator&amp;type=t_">t_</a></code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="S_binable">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Comparator.S_binable">S_binable</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Comparator.Pre_binable" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Comparator.Pre_binable">Pre_binable</a></code></pre>
+</div>
+<pre><span id="TYPEcomparator"><span class="keyword">type</span> comparator</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> comparator</span> : <code class="type">(<a href="?package=core_kernel&amp;module=Comparator.S_binable&amp;type=t">t</a>, <a href="?package=core_kernel&amp;module=Comparator.S_binable&amp;type=comparator">comparator</a>) <a href="?package=core_kernel&amp;module=Comparator&amp;type=t_">t_</a></code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module ident" name="Make" path="?package=core_kernel&amp;amp;module=Comparator.S">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Comparator.Make">Make</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Comparator.Pre">Pre</a></code><code class="code">) -&gt; </code><code class="code"><a href="?package=core_kernel&amp;module=Comparator.S">S</a></code> with type <a href="?package=core_kernel&amp;module=Comparator.S&amp;type=t">t</a> = M.t</div></pre>
+</div>
+<div class="ocaml_module ident" name="Make_binable" path="?package=core_kernel&amp;amp;module=Comparator.S_binable">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Comparator.Make_binable">Make_binable</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Comparator.Pre_binable">Pre_binable</a></code><code class="code">) -&gt; </code><code class="code"><a href="?package=core_kernel&amp;module=Comparator.S_binable">S_binable</a></code> with type <a href="?package=core_kernel&amp;module=Comparator.S_binable&amp;type=t">t</a> = M.t</div></pre>
+</div>
+<div class="ocaml_module sig" name="S1">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Comparator.S1">S1</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> </pre>
+      
+    
+<pre><span id="TYPEcomparator"><span class="keyword">type</span> comparator</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> comparator</span> : <code class="type">('a <a href="?package=core_kernel&amp;module=Comparator.S1&amp;type=t">t</a>, <a href="?package=core_kernel&amp;module=Comparator.S1&amp;type=comparator">comparator</a>) <a href="?package=core_kernel&amp;module=Comparator&amp;type=t_">t_</a></code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module ident" name="Poly" path="?package=core_kernel&amp;amp;module=Comparator.S1">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Comparator.Poly">Poly</a> : <code class="code"><a href="?package=core_kernel&amp;module=Comparator.S1">S1</a></code> with type <a href="?package=core_kernel&amp;module=Comparator.S1&amp;type=t">t</a> = 'a</pre>
+</div>
+<div class="ocaml_module ident" name="S_to_S1" path="?package=core_kernel&amp;amp;module=Comparator.S1">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Comparator.S_to_S1">S_to_S1</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">S</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Comparator.S">S</a></code><code class="code">) -&gt; </code><code class="code"><a href="?package=core_kernel&amp;module=Comparator.S1">S1</a></code> with type <a href="?package=core_kernel&amp;module=Comparator.S1&amp;type=t">t</a> = S.t with type comparator = S.comparator</div></pre>
+</div>
+<div class="ocaml_module ident" name="Make1" path="?package=core_kernel&amp;amp;module=Comparator.S1">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Comparator.Make1">Make1</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="code">sig</code> .. <code class="code">end</code><code class="code">) -&gt; </code><code class="code"><a href="?package=core_kernel&amp;module=Comparator.S1">S1</a></code> with type <a href="?package=core_kernel&amp;module=Comparator.S1&amp;type=t">t</a> = 'a M.t</div></pre>
+</div></div>

@@ -1,18 +1,7 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-
-<title>Process_env</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Process_env</h1>
-<pre><span class="keyword">module</span> Process_env</pre><div class="info">Utility functions for dealing with the environment.</div>
-<hr/>
-<div file="Process_env.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<div class="ocaml_toplevel_module">
+<div class="info">Utility functions for dealing with the environment.</div>
+ 
+      <pre><span><span class="keyword">val</span> parse_ssh_client</span> : <code class="type">unit -&gt; [ `From of <a href="?package=core&amp;module=Core_unix.Inet_addr&amp;type=t">Core_unix.Inet_addr.t</a> | `Nowhere ] <a href="?package=core&amp;module=Or_error&amp;type=t">Or_error.t</a></code></pre>
+      <div class="info"><code class="code">parse_ssh_client</code> reads the <code class="code">SSH_CLIENT</code> environment variable, retrieving the IP from
+    which you are currently sshing.</div>
+    </div>

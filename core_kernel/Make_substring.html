@@ -1,18 +1,204 @@
-<!DOCTYPE HTML>
-<html>
-<head>
+<div class="ocaml_toplevel_module">
 
-<title>Make_substring</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
+ 
+      <pre><span><span class="keyword">val</span> __pa_ounit_275876e34cf609db118f3d84b799a790</span> : <code class="type">string</code></pre>
+      
+    
 
-<h1>Module Make_substring</h1>
-<pre><span class="keyword">module</span> Make_substring</pre>
-<hr/>
-<div file="Make_substring.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<pre><span id="TYPEbigstring"><span class="keyword">type</span> bigstring</span> = <code class="type"><a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">Bigstring.t</a></code> </pre>
+      
+    
+<div class="ocaml_module sig" name="Blit">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Make_substring.Blit">Blit</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('src, 'dst) </code>t</span> = <code class="type">('src, 'dst) <a href="?package=core_kernel&amp;module=Blit&amp;type=blito">Blit.blito</a></code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> string_string</span> : <code class="type">src:<a href="?package=core_kernel&amp;module=Std_internal.String&amp;type=t">Std_internal.String.t</a> -&gt;
+?src_pos:int -&gt;
+?src_len:int -&gt; dst:<a href="?package=core_kernel&amp;module=Core_string&amp;type=t">Core_string.t</a> -&gt; ?dst_pos:int -&gt; unit -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> string_bigstring</span> : <code class="type">(string, <a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">Bigstring.t</a>) <a href="?package=core_kernel&amp;module=Blit_intf&amp;type=blito">Blit_intf.blito</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bigstring_bigstring</span> : <code class="type">(<a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">Bigstring.t</a>, <a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">Bigstring.t</a>) <a href="?package=core_kernel&amp;module=Blit_intf&amp;type=blito">Blit_intf.blito</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bigstring_string</span> : <code class="type">(<a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">Bigstring.t</a>, string) <a href="?package=core_kernel&amp;module=Blit_intf&amp;type=blito">Blit_intf.blito</a></code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="Base">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Make_substring.Base">Base</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">int -&gt; <a href="?package=core_kernel&amp;module=Make_substring.Base&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> length</span> : <code class="type"><a href="?package=core_kernel&amp;module=Make_substring.Base&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> blit</span> : <code class="type">(<a href="?package=core_kernel&amp;module=Make_substring.Base&amp;type=t">t</a>, <a href="?package=core_kernel&amp;module=Make_substring.Base&amp;type=t">t</a>) <a href="?package=core_kernel&amp;module=Make_substring.Blit&amp;type=t">Blit.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> blit_to_string</span> : <code class="type">(<a href="?package=core_kernel&amp;module=Make_substring.Base&amp;type=t">t</a>, string) <a href="?package=core_kernel&amp;module=Make_substring.Blit&amp;type=t">Blit.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> blit_to_bigstring</span> : <code class="type">(<a href="?package=core_kernel&amp;module=Make_substring.Base&amp;type=t">t</a>, <a href="?package=core_kernel&amp;module=Make_substring&amp;type=bigstring">bigstring</a>) <a href="?package=core_kernel&amp;module=Make_substring.Blit&amp;type=t">Blit.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> blit_from_string</span> : <code class="type">(string, <a href="?package=core_kernel&amp;module=Make_substring.Base&amp;type=t">t</a>) <a href="?package=core_kernel&amp;module=Make_substring.Blit&amp;type=t">Blit.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> blit_from_bigstring</span> : <code class="type">(<a href="?package=core_kernel&amp;module=Make_substring&amp;type=bigstring">bigstring</a>, <a href="?package=core_kernel&amp;module=Make_substring.Base&amp;type=t">t</a>) <a href="?package=core_kernel&amp;module=Make_substring.Blit&amp;type=t">Blit.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_bigstring</span> : <code class="type"><a href="?package=core_kernel&amp;module=Make_substring&amp;type=bigstring">bigstring</a> -&gt; <a href="?package=core_kernel&amp;module=Make_substring.Base&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_string</span> : <code class="type">string -&gt; <a href="?package=core_kernel&amp;module=Make_substring.Base&amp;type=t">t</a></code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module ident" name="S" path="?package=core_kernel&amp;amp;module=Substring_intf.S">
+		    <pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Make_substring.S">S</a> = <code class="type"><code class="code"><a href="?package=core_kernel&amp;module=Substring_intf.S">Substring_intf.S</a></code></code></pre>
+</div>
+<div class="ocaml_module sig" name="F">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Make_substring.F">F</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">Base</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Make_substring.Base">Base</a></code><code class="code">) -&gt; </code><code class="code">sig</code> .. <code class="code">end</code></div></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEbase"><span class="keyword">type</span> base</span> = <code class="type">Base.t</code> </pre>
+      
+    
+<pre><code><span id="TYPEt"><span class="keyword">type</span> t</span> = {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.base">base</span> :<code class="type">Base.t</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.pos">pos</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.len">len</span> :<code class="type">int</code>;</code></td>
+	  </tr></table>}
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> base</span> : <code class="type"><a href="?package=core_kernel&amp;module=Make_substring.F&amp;type=t">t</a> -&gt; Base.t</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pos</span> : <code class="type"><a href="?package=core_kernel&amp;module=Make_substring.F&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> length</span> : <code class="type"><a href="?package=core_kernel&amp;module=Make_substring.F&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">?pos:int -&gt; ?len:int -&gt; Base.t -&gt; <a href="?package=core_kernel&amp;module=Make_substring.F&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> drop_prefix</span> : <code class="type"><a href="?package=core_kernel&amp;module=Make_substring.F&amp;type=t">t</a> -&gt; int -&gt; <a href="?package=core_kernel&amp;module=Make_substring.F&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> drop_suffix</span> : <code class="type"><a href="?package=core_kernel&amp;module=Make_substring.F&amp;type=t">t</a> -&gt; int -&gt; <a href="?package=core_kernel&amp;module=Make_substring.F&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> prefix</span> : <code class="type"><a href="?package=core_kernel&amp;module=Make_substring.F&amp;type=t">t</a> -&gt; int -&gt; <a href="?package=core_kernel&amp;module=Make_substring.F&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> suffix</span> : <code class="type"><a href="?package=core_kernel&amp;module=Make_substring.F&amp;type=t">t</a> -&gt; int -&gt; <a href="?package=core_kernel&amp;module=Make_substring.F&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> blit_to</span> : <code class="type">(Base.t, 'a) <a href="?package=core_kernel&amp;module=Make_substring.Blit&amp;type=t">Blit.t</a> -&gt; <a href="?package=core_kernel&amp;module=Make_substring.F&amp;type=t">t</a> -&gt; dst:'a -&gt; dst_pos:int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> blit_to_string</span> : <code class="type"><a href="?package=core_kernel&amp;module=Make_substring.F&amp;type=t">t</a> -&gt; dst:<a href="?package=core_kernel&amp;module=Std_internal.String&amp;type=t">Std_internal.String.t</a> -&gt; dst_pos:int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> blit_to_bigstring</span> : <code class="type"><a href="?package=core_kernel&amp;module=Make_substring.F&amp;type=t">t</a> -&gt; dst:<a href="?package=core_kernel&amp;module=Make_substring&amp;type=bigstring">bigstring</a> -&gt; dst_pos:int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> blit_base</span> : <code class="type"><a href="?package=core_kernel&amp;module=Make_substring.F&amp;type=t">t</a> -&gt; dst:Base.t -&gt; dst_pos:int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> blit_from</span> : <code class="type">name:string -&gt;
+('a, <a href="?package=core_kernel&amp;module=Make_substring.F&amp;type=base">base</a>) <a href="?package=core_kernel&amp;module=Make_substring.Blit&amp;type=t">Blit.t</a> -&gt; <a href="?package=core_kernel&amp;module=Make_substring.F&amp;type=t">t</a> -&gt; src:'a -&gt; src_pos:int -&gt; len:int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> blit_from_string</span> : <code class="type"><a href="?package=core_kernel&amp;module=Make_substring.F&amp;type=t">t</a> -&gt; src:string -&gt; src_pos:int -&gt; len:int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> blit_from_bigstring</span> : <code class="type"><a href="?package=core_kernel&amp;module=Make_substring.F&amp;type=t">t</a> -&gt; src:<a href="?package=core_kernel&amp;module=Make_substring&amp;type=bigstring">bigstring</a> -&gt; src_pos:int -&gt; len:int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_base</span> : <code class="type">Base.t -&gt; <a href="?package=core_kernel&amp;module=Make_substring.F&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_string</span> : <code class="type">string -&gt; <a href="?package=core_kernel&amp;module=Make_substring.F&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_bigstring</span> : <code class="type"><a href="?package=core_kernel&amp;module=Make_substring&amp;type=bigstring">bigstring</a> -&gt; <a href="?package=core_kernel&amp;module=Make_substring.F&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> make</span> : <code class="type">(int -&gt; 'a) -&gt; (<a href="?package=core_kernel&amp;module=Make_substring.F&amp;type=base">base</a>, 'a) <a href="?package=core_kernel&amp;module=Make_substring.Blit&amp;type=t">Blit.t</a> -&gt; <a href="?package=core_kernel&amp;module=Make_substring.F&amp;type=t">t</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_string</span> : <code class="type"><a href="?package=core_kernel&amp;module=Make_substring.F&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal.String&amp;type=t">Std_internal.String.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_bigstring</span> : <code class="type"><a href="?package=core_kernel&amp;module=Make_substring.F&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">Bigstring.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> concat_gen</span> : <code class="type">(int -&gt; 'a) -&gt;
+(<a href="?package=core_kernel&amp;module=Make_substring.F&amp;type=t">t</a> -&gt; dst:'a -&gt; dst_pos:int -&gt; 'b) -&gt; <a href="?package=core_kernel&amp;module=Make_substring.F&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Std_internal.List&amp;type=t">Std_internal.List.t</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> concat</span> : <code class="type"><a href="?package=core_kernel&amp;module=Make_substring.F&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Std_internal.List&amp;type=t">Std_internal.List.t</a> -&gt; <a href="?package=core_kernel&amp;module=Make_substring.F&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> concat_string</span> : <code class="type"><a href="?package=core_kernel&amp;module=Make_substring.F&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Std_internal.List&amp;type=t">Std_internal.List.t</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal.String&amp;type=t">Std_internal.String.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> concat_bigstring</span> : <code class="type"><a href="?package=core_kernel&amp;module=Make_substring.F&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Std_internal.List&amp;type=t">Std_internal.List.t</a> -&gt; <a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">Bigstring.t</a></code></pre>
+      
+    
+		</div>
+</div>
+</div>

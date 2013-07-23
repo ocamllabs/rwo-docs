@@ -1,18 +1,204 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-
-<title>Day_of_week</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Day_of_week</h1>
-<pre><span class="keyword">module</span> Day_of_week</pre><div class="info">For representing a day of the week.</div>
-<hr/>
-<div file="Day_of_week.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<div class="ocaml_toplevel_module">
+<div class="info">For representing a day of the week.</div>
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> </pre>
+      
+    
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Hashable.S" items="[&quot;Hash_heap&quot;,&quot;Hash_queue&quot;,&quot;Hash_set&quot;,&quot;Pooled_hashtbl&quot;,&quot;Table&quot;,&quot;Hashable&quot;]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Hashable.S">Hashable.S</a></code> with type t = <a href="?package=core_kernel&amp;module=Day_of_week&amp;type=t">t</a></pre>
+</div>
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Comparable.S" items="[&quot;Set&quot;,&quot;Map&quot;,&quot;Replace_polymorphic_compare&quot;]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Comparable.S">Comparable.S</a></code> with type t = <a href="?package=core_kernel&amp;module=Day_of_week&amp;type=t">t</a></pre>
+</div>
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Stringable.S" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Stringable.S">Stringable.S</a></code> with type t = <a href="?package=core_kernel&amp;module=Day_of_week&amp;type=t">t</a><div class="info"><code class="code">of_string s</code> accepts three-character abbreviations with any capitalization</div></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> invariant</span> : <code class="type"><a href="?package=core_kernel&amp;module=Day_of_week&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sun</span> : <code class="type"><a href="?package=core_kernel&amp;module=Day_of_week&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mon</span> : <code class="type"><a href="?package=core_kernel&amp;module=Day_of_week&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> tue</span> : <code class="type"><a href="?package=core_kernel&amp;module=Day_of_week&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> wed</span> : <code class="type"><a href="?package=core_kernel&amp;module=Day_of_week&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> thu</span> : <code class="type"><a href="?package=core_kernel&amp;module=Day_of_week&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fri</span> : <code class="type"><a href="?package=core_kernel&amp;module=Day_of_week&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sat</span> : <code class="type"><a href="?package=core_kernel&amp;module=Day_of_week&amp;type=t">t</a></code></pre>
+      
+    
+<pre><span id="TYPEvariant"><span class="keyword">type</span> variant</span> = <code class="type">[ `Fri | `Mon | `Sat | `Sun | `Thu | `Tue | `Wed ]</code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get</span> : <code class="type"><a href="?package=core_kernel&amp;module=Day_of_week&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Day_of_week&amp;type=variant">variant</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type"><a href="?package=core_kernel&amp;module=Day_of_week&amp;type=variant">variant</a> -&gt; <a href="?package=core_kernel&amp;module=Day_of_week&amp;type=t">t</a></code></pre>
+      
+    
+<br/>conversion between ints and weekdays uses the same mapping as Unix.tm_wday.
+    0 &lt;-&gt; Sun, ... 6 &lt;-&gt; Sat<br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> of_int</span> : <code class="type">int -&gt; <a href="?package=core_kernel&amp;module=Day_of_week&amp;type=t">t</a> option</code></pre>
+      <div class="info"><code class="code">of_int i</code> returns i'th weekday if <code class="code">i</code> is in 0,1,...,6.  Otherwise it returns
+    None.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> of_int_exn</span> : <code class="type">int -&gt; <a href="?package=core_kernel&amp;module=Day_of_week&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">of_int_exn i</code> should have i in 0,1,...,6 and returns the i'th weekday.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> to_int</span> : <code class="type"><a href="?package=core_kernel&amp;module=Day_of_week&amp;type=t">t</a> -&gt; int</code></pre>
+      <div class="info"><code class="code">to_int t</code> returns an int in 0,1,...6.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> shift</span> : <code class="type"><a href="?package=core_kernel&amp;module=Day_of_week&amp;type=t">t</a> -&gt; int -&gt; <a href="?package=core_kernel&amp;module=Day_of_week&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">shift t i</code> goes forward (or backward) the specified number of weekdays</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> is_sun_or_sat</span> : <code class="type"><a href="?package=core_kernel&amp;module=Day_of_week&amp;type=t">t</a> -&gt; bool</code></pre>
+      <div class="info"><code class="code">is_sun_or_sat</code> returns true if t is Sunday or Saturday</div>
+    
+<div class="ocaml_module sig" name="Stable">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Day_of_week.Stable">Stable</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+<div class="ocaml_module sig" name="V1">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Day_of_week.Stable.V1">V1</a> : <code class="code">sig</code> .. <code class="code">end</code> with type <a href="?package=core_kernel&amp;module=Day_of_week.Stable.V1&amp;type=t">t</a> = <a href="?package=core_kernel&amp;module=Day_of_week&amp;type=t">t</a></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> compare</span> : <code class="type"><a href="?package=core_kernel&amp;module=Day_of_week.Stable.V1&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Day_of_week.Stable.V1&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core_kernel&amp;module=Day_of_week.Stable.V1&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Day_of_week.Stable.V1&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Day_of_week.Stable.V1&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Day_of_week.Stable.V1&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Read_ml&amp;type=reader">Bin_prot.Read_ml.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t_</span> : <code class="type"><a href="?package=core_kernel&amp;module=Day_of_week.Stable.V1&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t__</span> : <code class="type">(int -&gt; <a href="?package=core_kernel&amp;module=Day_of_week.Stable.V1&amp;type=t">t</a>) <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Day_of_week.Stable.V1&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Day_of_week.Stable.V1&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Size&amp;type=sizer">Bin_prot.Size.sizer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Day_of_week.Stable.V1&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Bin_prot.Write_ml.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_</span> : <code class="type"><a href="?package=core_kernel&amp;module=Day_of_week.Stable.V1&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Day_of_week.Stable.V1&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+		</div>
+</div>
+		</div>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core_kernel&amp;module=Day_of_week&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Day_of_week&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Day_of_week&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Day_of_week&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Read_ml&amp;type=reader">Bin_prot.Read_ml.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t_</span> : <code class="type"><a href="?package=core_kernel&amp;module=Day_of_week&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t__</span> : <code class="type">(int -&gt; <a href="?package=core_kernel&amp;module=Day_of_week&amp;type=t">t</a>) <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Day_of_week&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Day_of_week&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Size&amp;type=sizer">Bin_prot.Size.sizer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Day_of_week&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Bin_prot.Write_ml.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_</span> : <code class="type"><a href="?package=core_kernel&amp;module=Day_of_week&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Day_of_week&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+<br/><code class="code">of_string s</code> accepts three-character abbreviations with any capitalization<br/>
+	  
+<br/>conversion between ints and weekdays uses the same mapping as Unix.tm_wday.
+    0 &lt;-&gt; Sun, ... 6 &lt;-&gt; Sat<br/>
+	  
+<br/><code class="code">of_int i</code> returns i'th weekday if <code class="code">i</code> is in 0,1,...,6.  Otherwise it returns
+    None.<br/>
+	  
+<br/><code class="code">of_int_exn i</code> should have i in 0,1,...,6 and returns the i'th weekday.<br/>
+	  
+<br/><code class="code">to_int t</code> returns an int in 0,1,...6.<br/>
+	  
+<br/><code class="code">shift t i</code> goes forward (or backward) the specified number of weekdays<br/>
+	  
+<br/><code class="code">is_sun_or_sat</code> returns true if t is Sunday or Saturday<br/>
+	  </div>

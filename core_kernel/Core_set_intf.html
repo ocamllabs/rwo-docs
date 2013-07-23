@@ -1,18 +1,1159 @@
-<!DOCTYPE HTML>
-<html>
-<head>
+<div class="ocaml_toplevel_module">
 
-<title>Core_set_intf</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
+ 
+      <pre><span><span class="keyword">val</span> __pa_ounit_275876e34cf609db118f3d84b799a790</span> : <code class="type">string</code></pre>
+      
+    
 
-<h1>Module Core_set_intf</h1>
-<pre><span class="keyword">module</span> Core_set_intf</pre>
-<hr/>
-<div file="Core_set_intf.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<br/>This module defines interfaces used in <code class="code">Core.Std.Set</code>.  This module uses the same
+    organizational approach as <code class="code">Core_map_intf</code>.  See the documentation in core_map.mli for
+    a description of the approach.<br/>    CRs and comments about <code class="code">Set</code> functions do not belong in this file.  They belong next
+    to the appropriate function in core_set.mli.<br/>    This module defines module types
+    <code class="code">{Creators,Accessors}{0,1,2,_generic,_with_comparator}</code>.  It uses check functors to
+    ensure that each module types is an instance of the corresponding <code class="code">_generic</code> one.<br/>    We must treat <code class="code">Creators</code> and <code class="code">Accessors</code> separately, because we sometimes need to
+    choose different instantiations of their <code class="code">options</code>.  In particular, <code class="code">Set</code> itself
+    matches <code class="code">Creators2_with_comparator</code> but <code class="code">Accessors2</code> (without comparator).<br/>
+	  
+<div class="ocaml_module ident" name="Binable" path="?package=core_kernel&amp;amp;module=Binable0">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Core_set_intf.Binable">Binable</a> : <code class="code"><a href="?package=core_kernel&amp;module=Binable0">Binable0</a></code></pre>
+</div>
+<div class="ocaml_module ident" name="Elt" path="?package=core_kernel&amp;amp;module=Comparator.Pre">
+		    <pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Core_set_intf.Elt">Elt</a> = <code class="type"><code class="code"><a href="?package=core_kernel&amp;module=Comparator.Pre">Comparator.Pre</a></code></code></pre>
+</div>
+<div class="ocaml_module ident" name="Elt_binable" path="?package=core_kernel&amp;amp;module=Comparator.Pre_binable">
+		    <pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Core_set_intf.Elt_binable">Elt_binable</a> = <code class="type"><code class="code"><a href="?package=core_kernel&amp;module=Comparator.Pre_binable">Comparator.Pre_binable</a></code></code></pre>
+</div>
+<div class="ocaml_module ident" name="Without_comparator" path="?package=core_kernel&amp;amp;module=Core_map_intf.Without_comparator">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Core_set_intf.Without_comparator">Without_comparator</a> : <code class="code"><a href="?package=core_kernel&amp;module=Core_map_intf.Without_comparator">Core_map_intf.Without_comparator</a></code></pre>
+</div>
+<div class="ocaml_module ident" name="With_comparator" path="?package=core_kernel&amp;amp;module=Core_map_intf.With_comparator">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Core_set_intf.With_comparator">With_comparator</a> : <code class="code"><a href="?package=core_kernel&amp;module=Core_map_intf.With_comparator">Core_map_intf.With_comparator</a></code></pre>
+</div>
+<div class="ocaml_module sig" name="Accessors_generic">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic">Accessors_generic</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Container.Generic_phantom" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Container.Generic_phantom">Container.Generic_phantom</a></code></pre>
+</div>
+<pre><span id="TYPEtree"><span class="keyword">type</span> <code class="type">('a, 'cmp) </code>tree</span> </pre>
+      
+    
+<pre><span id="TYPEoptions"><span class="keyword">type</span> <code class="type">('a, 'cmp, 'z) </code>options</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> invariants</span> : <code class="type">('a, 'cmp, ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=t">t</a> -&gt; bool) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=options">options</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem</span> : <code class="type">('a, 'cmp, ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=elt">elt</a> -&gt; bool) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=options">options</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add</span> : <code class="type">('a, 'cmp, ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=elt">elt</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=t">t</a>) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=options">options</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove</span> : <code class="type">('a, 'cmp, ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=elt">elt</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=t">t</a>) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=options">options</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> union</span> : <code class="type">('a, 'cmp, ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=t">t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=t">t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=t">t</a>) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=options">options</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> inter</span> : <code class="type">('a, 'cmp, ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=t">t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=t">t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=t">t</a>) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=options">options</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> diff</span> : <code class="type">('a, 'cmp, ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=t">t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=t">t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=t">t</a>) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=options">options</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> compare_direct</span> : <code class="type">('a, 'cmp, ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=t">t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=t">t</a> -&gt; int) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=options">options</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> equal</span> : <code class="type">('a, 'cmp, ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=t">t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=t">t</a> -&gt; bool) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=options">options</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> subset</span> : <code class="type">('a, 'cmp, ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=t">t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=t">t</a> -&gt; bool) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=options">options</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold_until</span> : <code class="type">('a, 'c) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=t">t</a> -&gt;
+init:'b -&gt; f:('b -&gt; 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=elt">elt</a> -&gt; [ `Continue of 'b | `Stop of 'b ]) -&gt; 'b</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold_right</span> : <code class="type">('a, 'c) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=t">t</a> -&gt; init:'b -&gt; f:('a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=elt">elt</a> -&gt; 'b -&gt; 'b) -&gt; 'b</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter2</span> : <code class="type">('a, 'cmp,
+ ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=t">t</a> -&gt;
+ ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=t">t</a> -&gt;
+ f:([ `Both of 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=elt">elt</a> * 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=elt">elt</a> | `Left of 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=elt">elt</a> | `Right of 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=elt">elt</a> ] -&gt; unit) -&gt;
+ unit)
+<a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=options">options</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> filter</span> : <code class="type">('a, 'cmp, ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=t">t</a> -&gt; f:('a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=elt">elt</a> -&gt; bool) -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=t">t</a>) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=options">options</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> partition_tf</span> : <code class="type">('a, 'cmp, ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=t">t</a> -&gt; f:('a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=elt">elt</a> -&gt; bool) -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=t">t</a> * ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=t">t</a>)
+<a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=options">options</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> elements</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=elt">elt</a> list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> min_elt</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=elt">elt</a> option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> min_elt_exn</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=elt">elt</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> max_elt</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=elt">elt</a> option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> max_elt_exn</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=elt">elt</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> choose</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=elt">elt</a> option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> choose_exn</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=elt">elt</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> split</span> : <code class="type">('a, 'cmp, ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=elt">elt</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=t">t</a> * bool * ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=t">t</a>)
+<a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=options">options</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> group_by</span> : <code class="type">('a, 'cmp,
+ ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=t">t</a> -&gt; equiv:('a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=elt">elt</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=elt">elt</a> -&gt; bool) -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=t">t</a> list)
+<a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=options">options</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_exn</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=t">t</a> -&gt; f:('a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=elt">elt</a> -&gt; bool) -&gt; 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=elt">elt</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_index</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=t">t</a> -&gt; int -&gt; 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=elt">elt</a> option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove_index</span> : <code class="type">('a, 'cmp, ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=t">t</a> -&gt; int -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=t">t</a>) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=options">options</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_tree</span> : <code class="type">('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=t">t</a> -&gt; ('a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=elt">elt</a>, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=tree">tree</a></code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="Accessors0">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0">Accessors0</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Container.S0" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Container.S0">Container.S0</a></code></pre>
+</div>
+<pre><span id="TYPEtree"><span class="keyword">type</span> tree</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> invariants</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=elt">elt</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=elt">elt</a> -&gt; <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=elt">elt</a> -&gt; <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> union</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> inter</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> diff</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> compare_direct</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> equal</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> subset</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold_until</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=t">t</a> -&gt; init:'b -&gt; f:('b -&gt; <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=elt">elt</a> -&gt; [ `Continue of 'b | `Stop of 'b ]) -&gt; 'b</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold_right</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=t">t</a> -&gt; init:'b -&gt; f:(<a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=elt">elt</a> -&gt; 'b -&gt; 'b) -&gt; 'b</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter2</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=t">t</a> -&gt;
+<a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=t">t</a> -&gt;
+f:([ `Both of <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=elt">elt</a> * <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=elt">elt</a> | `Left of <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=elt">elt</a> | `Right of <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=elt">elt</a> ] -&gt; unit) -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> filter</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=t">t</a> -&gt; f:(<a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=elt">elt</a> -&gt; bool) -&gt; <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> partition_tf</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=t">t</a> -&gt; f:(<a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=elt">elt</a> -&gt; bool) -&gt; <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=t">t</a> * <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> elements</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=elt">elt</a> list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> min_elt</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=elt">elt</a> option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> min_elt_exn</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=elt">elt</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> max_elt</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=elt">elt</a> option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> max_elt_exn</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=elt">elt</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> choose</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=elt">elt</a> option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> choose_exn</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=elt">elt</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> split</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=elt">elt</a> -&gt; <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=t">t</a> * bool * <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> group_by</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=t">t</a> -&gt; equiv:(<a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=elt">elt</a> -&gt; <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=elt">elt</a> -&gt; bool) -&gt; <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=t">t</a> list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_exn</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=t">t</a> -&gt; f:(<a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=elt">elt</a> -&gt; bool) -&gt; <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=elt">elt</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_index</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=t">t</a> -&gt; int -&gt; <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=elt">elt</a> option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove_index</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=t">t</a> -&gt; int -&gt; <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_tree</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0&amp;type=tree">tree</a></code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="Accessors1">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1">Accessors1</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Container.S1" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Container.S1">Container.S1</a></code></pre>
+</div>
+<pre><span id="TYPEtree"><span class="keyword">type</span> <code class="type">'a </code>tree</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> invariants</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1&amp;type=t">t</a> -&gt; 'a -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1&amp;type=t">t</a> -&gt; 'a -&gt; 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1&amp;type=t">t</a> -&gt; 'a -&gt; 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> union</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> inter</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> diff</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> compare_direct</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> equal</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> subset</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold_until</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1&amp;type=t">t</a> -&gt; init:'b -&gt; f:('b -&gt; 'a -&gt; [ `Continue of 'b | `Stop of 'b ]) -&gt; 'b</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold_right</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1&amp;type=t">t</a> -&gt; init:'b -&gt; f:('a -&gt; 'b -&gt; 'b) -&gt; 'b</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter2</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1&amp;type=t">t</a> -&gt;
+'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1&amp;type=t">t</a> -&gt; f:([ `Both of 'a * 'a | `Left of 'a | `Right of 'a ] -&gt; unit) -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> filter</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1&amp;type=t">t</a> -&gt; f:('a -&gt; bool) -&gt; 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> partition_tf</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1&amp;type=t">t</a> -&gt; f:('a -&gt; bool) -&gt; 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1&amp;type=t">t</a> * 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> elements</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1&amp;type=t">t</a> -&gt; 'a list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> min_elt</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1&amp;type=t">t</a> -&gt; 'a option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> min_elt_exn</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1&amp;type=t">t</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> max_elt</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1&amp;type=t">t</a> -&gt; 'a option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> max_elt_exn</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1&amp;type=t">t</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> choose</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1&amp;type=t">t</a> -&gt; 'a option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> choose_exn</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1&amp;type=t">t</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> split</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1&amp;type=t">t</a> -&gt; 'a -&gt; 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1&amp;type=t">t</a> * bool * 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> group_by</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1&amp;type=t">t</a> -&gt; equiv:('a -&gt; 'a -&gt; bool) -&gt; 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1&amp;type=t">t</a> list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_exn</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1&amp;type=t">t</a> -&gt; f:('a -&gt; bool) -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_index</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1&amp;type=t">t</a> -&gt; int -&gt; 'a option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove_index</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1&amp;type=t">t</a> -&gt; int -&gt; 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_tree</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1&amp;type=tree">tree</a></code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="Accessors2">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2">Accessors2</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Container.S1_phantom_invariant" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Container.S1_phantom_invariant">Container.S1_phantom_invariant</a></code></pre>
+</div>
+<pre><span id="TYPEtree"><span class="keyword">type</span> <code class="type">('a, 'cmp) </code>tree</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> invariants</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2&amp;type=t">t</a> -&gt; 'a -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add</span> : <code class="type">('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2&amp;type=t">t</a> -&gt; 'a -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove</span> : <code class="type">('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2&amp;type=t">t</a> -&gt; 'a -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> union</span> : <code class="type">('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2&amp;type=t">t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2&amp;type=t">t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> inter</span> : <code class="type">('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2&amp;type=t">t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2&amp;type=t">t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> diff</span> : <code class="type">('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2&amp;type=t">t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2&amp;type=t">t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> compare_direct</span> : <code class="type">('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2&amp;type=t">t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> equal</span> : <code class="type">('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2&amp;type=t">t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> subset</span> : <code class="type">('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2&amp;type=t">t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold_until</span> : <code class="type">('a, 'c) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2&amp;type=t">t</a> -&gt;
+init:'b -&gt; f:('b -&gt; 'a -&gt; [ `Continue of 'b | `Stop of 'b ]) -&gt; 'b</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold_right</span> : <code class="type">('a, 'c) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2&amp;type=t">t</a> -&gt; init:'b -&gt; f:('a -&gt; 'b -&gt; 'b) -&gt; 'b</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter2</span> : <code class="type">('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2&amp;type=t">t</a> -&gt;
+('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2&amp;type=t">t</a> -&gt;
+f:([ `Both of 'a * 'a | `Left of 'a | `Right of 'a ] -&gt; unit) -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> filter</span> : <code class="type">('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2&amp;type=t">t</a> -&gt; f:('a -&gt; bool) -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> partition_tf</span> : <code class="type">('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2&amp;type=t">t</a> -&gt; f:('a -&gt; bool) -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2&amp;type=t">t</a> * ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> elements</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2&amp;type=t">t</a> -&gt; 'a list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> min_elt</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2&amp;type=t">t</a> -&gt; 'a option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> min_elt_exn</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2&amp;type=t">t</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> max_elt</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2&amp;type=t">t</a> -&gt; 'a option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> max_elt_exn</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2&amp;type=t">t</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> choose</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2&amp;type=t">t</a> -&gt; 'a option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> choose_exn</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2&amp;type=t">t</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> split</span> : <code class="type">('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2&amp;type=t">t</a> -&gt; 'a -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2&amp;type=t">t</a> * bool * ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> group_by</span> : <code class="type">('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2&amp;type=t">t</a> -&gt; equiv:('a -&gt; 'a -&gt; bool) -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2&amp;type=t">t</a> list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_exn</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2&amp;type=t">t</a> -&gt; f:('a -&gt; bool) -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_index</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2&amp;type=t">t</a> -&gt; int -&gt; 'a option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove_index</span> : <code class="type">('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2&amp;type=t">t</a> -&gt; int -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_tree</span> : <code class="type">('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2&amp;type=t">t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2&amp;type=tree">tree</a></code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="Accessors2_with_comparator">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator">Accessors2_with_comparator</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Container.S1_phantom_invariant" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Container.S1_phantom_invariant">Container.S1_phantom_invariant</a></code></pre>
+</div>
+<pre><span id="TYPEtree"><span class="keyword">type</span> <code class="type">('a, 'cmp) </code>tree</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> invariants</span> : <code class="type">comparator:('a, 'cmp) <a href="?package=core_kernel&amp;module=Comparator&amp;type=t">Comparator.t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem</span> : <code class="type">comparator:('a, 'cmp) <a href="?package=core_kernel&amp;module=Comparator&amp;type=t">Comparator.t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator&amp;type=t">t</a> -&gt; 'a -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add</span> : <code class="type">comparator:('a, 'cmp) <a href="?package=core_kernel&amp;module=Comparator&amp;type=t">Comparator.t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator&amp;type=t">t</a> -&gt; 'a -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove</span> : <code class="type">comparator:('a, 'cmp) <a href="?package=core_kernel&amp;module=Comparator&amp;type=t">Comparator.t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator&amp;type=t">t</a> -&gt; 'a -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> union</span> : <code class="type">comparator:('a, 'cmp) <a href="?package=core_kernel&amp;module=Comparator&amp;type=t">Comparator.t</a> -&gt;
+('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator&amp;type=t">t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator&amp;type=t">t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> inter</span> : <code class="type">comparator:('a, 'cmp) <a href="?package=core_kernel&amp;module=Comparator&amp;type=t">Comparator.t</a> -&gt;
+('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator&amp;type=t">t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator&amp;type=t">t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> diff</span> : <code class="type">comparator:('a, 'cmp) <a href="?package=core_kernel&amp;module=Comparator&amp;type=t">Comparator.t</a> -&gt;
+('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator&amp;type=t">t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator&amp;type=t">t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> compare_direct</span> : <code class="type">comparator:('a, 'cmp) <a href="?package=core_kernel&amp;module=Comparator&amp;type=t">Comparator.t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator&amp;type=t">t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> equal</span> : <code class="type">comparator:('a, 'cmp) <a href="?package=core_kernel&amp;module=Comparator&amp;type=t">Comparator.t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator&amp;type=t">t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> subset</span> : <code class="type">comparator:('a, 'cmp) <a href="?package=core_kernel&amp;module=Comparator&amp;type=t">Comparator.t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator&amp;type=t">t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold_until</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator&amp;type=t">t</a> -&gt;
+init:'accum -&gt;
+f:('accum -&gt; 'a -&gt; [ `Continue of 'accum | `Stop of 'accum ]) -&gt; 'accum</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold_right</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator&amp;type=t">t</a> -&gt; init:'accum -&gt; f:('a -&gt; 'accum -&gt; 'accum) -&gt; 'accum</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter2</span> : <code class="type">comparator:('a, 'cmp) <a href="?package=core_kernel&amp;module=Comparator&amp;type=t">Comparator.t</a> -&gt;
+('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator&amp;type=t">t</a> -&gt;
+('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator&amp;type=t">t</a> -&gt;
+f:([ `Both of 'a * 'a | `Left of 'a | `Right of 'a ] -&gt; unit) -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> filter</span> : <code class="type">comparator:('a, 'cmp) <a href="?package=core_kernel&amp;module=Comparator&amp;type=t">Comparator.t</a> -&gt;
+('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator&amp;type=t">t</a> -&gt; f:('a -&gt; bool) -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> partition_tf</span> : <code class="type">comparator:('a, 'cmp) <a href="?package=core_kernel&amp;module=Comparator&amp;type=t">Comparator.t</a> -&gt;
+('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator&amp;type=t">t</a> -&gt; f:('a -&gt; bool) -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator&amp;type=t">t</a> * ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> elements</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator&amp;type=t">t</a> -&gt; 'a list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> min_elt</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator&amp;type=t">t</a> -&gt; 'a option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> min_elt_exn</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator&amp;type=t">t</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> max_elt</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator&amp;type=t">t</a> -&gt; 'a option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> max_elt_exn</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator&amp;type=t">t</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> choose</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator&amp;type=t">t</a> -&gt; 'a option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> choose_exn</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator&amp;type=t">t</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> split</span> : <code class="type">comparator:('a, 'cmp) <a href="?package=core_kernel&amp;module=Comparator&amp;type=t">Comparator.t</a> -&gt;
+('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator&amp;type=t">t</a> -&gt; 'a -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator&amp;type=t">t</a> * bool * ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> group_by</span> : <code class="type">comparator:('a, 'cmp) <a href="?package=core_kernel&amp;module=Comparator&amp;type=t">Comparator.t</a> -&gt;
+('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator&amp;type=t">t</a> -&gt; equiv:('a -&gt; 'a -&gt; bool) -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator&amp;type=t">t</a> list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_exn</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator&amp;type=t">t</a> -&gt; f:('a -&gt; bool) -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_index</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator&amp;type=t">t</a> -&gt; int -&gt; 'a option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove_index</span> : <code class="type">comparator:('a, 'cmp) <a href="?package=core_kernel&amp;module=Comparator&amp;type=t">Comparator.t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator&amp;type=t">t</a> -&gt; int -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_tree</span> : <code class="type">('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator&amp;type=t">t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator&amp;type=tree">tree</a></code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="Check_accessors">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Core_set_intf.Check_accessors">Check_accessors</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">T</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=T.T2">T.T2</a></code><code class="code">) -&gt; </code><div class="sig_block"><code class="code">functor (</code><code class="code">Tree</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=T.T2">T.T2</a></code><code class="code">) -&gt; </code><div class="sig_block"><code class="code">functor (</code><code class="code">Elt</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=T.T1">T.T1</a></code><code class="code">) -&gt; </code><div class="sig_block"><code class="code">functor (</code><code class="code">Options</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=T.T3">T.T3</a></code><code class="code">) -&gt; </code><div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="code"><a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic">Accessors_generic</a></code> with type <a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic&amp;type=options">options</a> = ('a, 'b, 'c) Options.t with type t = ('a, 'b) T.t with type tree = ('a, 'b) Tree.t with type elt = 'a Elt.t<code class="code">) -&gt; </code><code class="code">sig</code> .. <code class="code">end</code></div></div></div></div></div></pre>
+		<div class="ocaml_module_content">
+		       
+		</div>
+</div>
+<div class="ocaml_module ident" name="Check_accessors0" path="?package=core_kernel&amp;amp;module=Core_set_intf.Check_accessors">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Core_set_intf.Check_accessors0">Check_accessors0</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0">Accessors0</a></code><code class="code">) -&gt; </code>HTML_OF_MODULE_IDENT BUG(<code class="code">M</code>)</div></pre>
+</div>
+<div class="ocaml_module ident" name="Check_accessors1" path="?package=core_kernel&amp;amp;module=Core_set_intf.Check_accessors">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Core_set_intf.Check_accessors1">Check_accessors1</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1">Accessors1</a></code><code class="code">) -&gt; </code>HTML_OF_MODULE_IDENT BUG(<code class="code">M</code>)</div></pre>
+</div>
+<div class="ocaml_module ident" name="Check_accessors2" path="?package=core_kernel&amp;amp;module=Core_set_intf.Check_accessors">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Core_set_intf.Check_accessors2">Check_accessors2</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2">Accessors2</a></code><code class="code">) -&gt; </code>HTML_OF_MODULE_IDENT BUG(<code class="code">M</code>)</div></pre>
+</div>
+<div class="ocaml_module ident" name="Check_accessors2_with_comparator" path="?package=core_kernel&amp;amp;module=Core_set_intf.Check_accessors">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Core_set_intf.Check_accessors2_with_comparator">Check_accessors2_with_comparator</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator">Accessors2_with_comparator</a></code><code class="code">) -&gt; </code>HTML_OF_MODULE_IDENT BUG(<code class="code">M</code>)</div></pre>
+</div>
+<div class="ocaml_module sig" name="Creators_generic">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_generic">Creators_generic</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'cmp) </code>t</span> </pre>
+      
+    
+<pre><span id="TYPEset"><span class="keyword">type</span> <code class="type">('a, 'cmp) </code>set</span> </pre>
+      
+    
+<pre><span id="TYPEtree"><span class="keyword">type</span> <code class="type">('a, 'cmp) </code>tree</span> </pre>
+      
+    
+<pre><span id="TYPEelt"><span class="keyword">type</span> <code class="type">'a </code>elt</span> </pre>
+      
+    
+<pre><span id="TYPEoptions"><span class="keyword">type</span> <code class="type">('a, 'cmp, 'z) </code>options</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> empty</span> : <code class="type">('a, 'cmp, ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_generic&amp;type=t">t</a>) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_generic&amp;type=options">options</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> singleton</span> : <code class="type">('a, 'cmp, 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_generic&amp;type=elt">elt</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_generic&amp;type=t">t</a>) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_generic&amp;type=options">options</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> union_list</span> : <code class="type">('a, 'cmp, ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_generic&amp;type=t">t</a> list -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_generic&amp;type=t">t</a>) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_generic&amp;type=options">options</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_list</span> : <code class="type">('a, 'cmp, 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_generic&amp;type=elt">elt</a> list -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_generic&amp;type=t">t</a>) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_generic&amp;type=options">options</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_array</span> : <code class="type">('a, 'cmp, 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_generic&amp;type=elt">elt</a> array -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_generic&amp;type=t">t</a>) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_generic&amp;type=options">options</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_sorted_array</span> : <code class="type">('a, 'cmp, 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_generic&amp;type=elt">elt</a> array -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_generic&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">Or_error.t</a>) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_generic&amp;type=options">options</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_sorted_array_unchecked</span> : <code class="type">('a, 'cmp, 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_generic&amp;type=elt">elt</a> array -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_generic&amp;type=t">t</a>) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_generic&amp;type=options">options</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stable_dedup_list</span> : <code class="type">('a, 'b, 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_generic&amp;type=elt">elt</a> list -&gt; 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_generic&amp;type=elt">elt</a> list) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_generic&amp;type=options">options</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map</span> : <code class="type">('b, 'cmp, ('a, 'c) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_generic&amp;type=set">set</a> -&gt; f:('a -&gt; 'b <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_generic&amp;type=elt">elt</a>) -&gt; ('b, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_generic&amp;type=t">t</a>) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_generic&amp;type=options">options</a></code></pre>
+      <div class="info">The types of <code class="code">map</code> and <code class="code">filter_map</code> are subtle.  The input set, <code class="code">('a, _) set</code>,
+      reflects the fact that these functions take a set of *any* type, with any
+      comparator, while the output set, <code class="code">('b, 'cmp) t</code>, reflects that the output set has
+      the particular <code class="code">'cmp</code> of the creation function.  The comparator can come in one of
+      three ways, depending on which set module is used<br/>      - <code class="code">Set.map</code> -- comparator comes as an argument<ul><li><code class="code">Set.Poly.map</code> -- comparator is polymorphic comparison</li><li><code class="code">Foo.Set.map</code> -- comparator is <code class="code">Foo.comparator</code> </li></ul></div>
+    
+ 
+      <pre><span><span class="keyword">val</span> filter_map</span> : <code class="type">('b, 'cmp, ('a, 'c) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_generic&amp;type=set">set</a> -&gt; f:('a -&gt; 'b <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_generic&amp;type=elt">elt</a> option) -&gt; ('b, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_generic&amp;type=t">t</a>) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_generic&amp;type=options">options</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_tree</span> : <code class="type">('a, 'cmp, ('a <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_generic&amp;type=elt">elt</a>, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_generic&amp;type=tree">tree</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_generic&amp;type=t">t</a>) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_generic&amp;type=options">options</a></code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="Creators0">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Core_set_intf.Creators0">Creators0</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEset"><span class="keyword">type</span> <code class="type">('a, 'cmp) </code>set</span> </pre>
+      
+    
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> </pre>
+      
+    
+<pre><span id="TYPEtree"><span class="keyword">type</span> tree</span> </pre>
+      
+    
+<pre><span id="TYPEelt"><span class="keyword">type</span> elt</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> empty</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.Creators0&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> singleton</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.Creators0&amp;type=elt">elt</a> -&gt; <a href="?package=core_kernel&amp;module=Core_set_intf.Creators0&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> union_list</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.Creators0&amp;type=t">t</a> list -&gt; <a href="?package=core_kernel&amp;module=Core_set_intf.Creators0&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_list</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.Creators0&amp;type=elt">elt</a> list -&gt; <a href="?package=core_kernel&amp;module=Core_set_intf.Creators0&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_array</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.Creators0&amp;type=elt">elt</a> array -&gt; <a href="?package=core_kernel&amp;module=Core_set_intf.Creators0&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_sorted_array</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.Creators0&amp;type=elt">elt</a> array -&gt; <a href="?package=core_kernel&amp;module=Core_set_intf.Creators0&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">Or_error.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_sorted_array_unchecked</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.Creators0&amp;type=elt">elt</a> array -&gt; <a href="?package=core_kernel&amp;module=Core_set_intf.Creators0&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stable_dedup_list</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.Creators0&amp;type=elt">elt</a> list -&gt; <a href="?package=core_kernel&amp;module=Core_set_intf.Creators0&amp;type=elt">elt</a> list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators0&amp;type=set">set</a> -&gt; f:('a -&gt; <a href="?package=core_kernel&amp;module=Core_set_intf.Creators0&amp;type=elt">elt</a>) -&gt; <a href="?package=core_kernel&amp;module=Core_set_intf.Creators0&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> filter_map</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators0&amp;type=set">set</a> -&gt; f:('a -&gt; <a href="?package=core_kernel&amp;module=Core_set_intf.Creators0&amp;type=elt">elt</a> option) -&gt; <a href="?package=core_kernel&amp;module=Core_set_intf.Creators0&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_tree</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.Creators0&amp;type=tree">tree</a> -&gt; <a href="?package=core_kernel&amp;module=Core_set_intf.Creators0&amp;type=t">t</a></code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="Creators1">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Core_set_intf.Creators1">Creators1</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEset"><span class="keyword">type</span> <code class="type">('a, 'cmp) </code>set</span> </pre>
+      
+    
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> </pre>
+      
+    
+<pre><span id="TYPEtree"><span class="keyword">type</span> <code class="type">'a </code>tree</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> empty</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_set_intf.Creators1&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> singleton</span> : <code class="type">'a -&gt; 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Creators1&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> union_list</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_set_intf.Creators1&amp;type=t">t</a> list -&gt; 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Creators1&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_list</span> : <code class="type">'a list -&gt; 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Creators1&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_array</span> : <code class="type">'a array -&gt; 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Creators1&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_sorted_array</span> : <code class="type">'a array -&gt; 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Creators1&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">Or_error.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_sorted_array_unchecked</span> : <code class="type">'a array -&gt; 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Creators1&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stable_dedup_list</span> : <code class="type">'a list -&gt; 'a list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map</span> : <code class="type">('a, 'c) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators1&amp;type=set">set</a> -&gt; f:('a -&gt; 'b) -&gt; 'b <a href="?package=core_kernel&amp;module=Core_set_intf.Creators1&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> filter_map</span> : <code class="type">('a, 'c) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators1&amp;type=set">set</a> -&gt; f:('a -&gt; 'b option) -&gt; 'b <a href="?package=core_kernel&amp;module=Core_set_intf.Creators1&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_tree</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Core_set_intf.Creators1&amp;type=tree">tree</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Creators1&amp;type=t">t</a></code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="Creators2">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Core_set_intf.Creators2">Creators2</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEset"><span class="keyword">type</span> <code class="type">('a, 'cmp) </code>set</span> </pre>
+      
+    
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'cmp) </code>t</span> </pre>
+      
+    
+<pre><span id="TYPEtree"><span class="keyword">type</span> <code class="type">('a, 'cmp) </code>tree</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> empty</span> : <code class="type">('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators2&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> singleton</span> : <code class="type">'a -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators2&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> union_list</span> : <code class="type">('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators2&amp;type=t">t</a> list -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators2&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_list</span> : <code class="type">'a list -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators2&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_array</span> : <code class="type">'a array -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators2&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_sorted_array</span> : <code class="type">'a array -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators2&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">Or_error.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_sorted_array_unchecked</span> : <code class="type">'a array -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators2&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stable_dedup_list</span> : <code class="type">'a list -&gt; 'a list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map</span> : <code class="type">('a, 'c) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators2&amp;type=set">set</a> -&gt; f:('a -&gt; 'b) -&gt; ('b, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators2&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> filter_map</span> : <code class="type">('a, 'c) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators2&amp;type=set">set</a> -&gt; f:('a -&gt; 'b option) -&gt; ('b, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators2&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_tree</span> : <code class="type">('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators2&amp;type=tree">tree</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators2&amp;type=t">t</a></code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="Creators2_with_comparator">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Core_set_intf.Creators2_with_comparator">Creators2_with_comparator</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEset"><span class="keyword">type</span> <code class="type">('a, 'cmp) </code>set</span> </pre>
+      
+    
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'cmp) </code>t</span> </pre>
+      
+    
+<pre><span id="TYPEtree"><span class="keyword">type</span> <code class="type">('a, 'cmp) </code>tree</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> empty</span> : <code class="type">comparator:('a, 'cmp) <a href="?package=core_kernel&amp;module=Comparator&amp;type=t">Comparator.t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators2_with_comparator&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> singleton</span> : <code class="type">comparator:('a, 'cmp) <a href="?package=core_kernel&amp;module=Comparator&amp;type=t">Comparator.t</a> -&gt; 'a -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators2_with_comparator&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> union_list</span> : <code class="type">comparator:('a, 'cmp) <a href="?package=core_kernel&amp;module=Comparator&amp;type=t">Comparator.t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators2_with_comparator&amp;type=t">t</a> list -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators2_with_comparator&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_list</span> : <code class="type">comparator:('a, 'cmp) <a href="?package=core_kernel&amp;module=Comparator&amp;type=t">Comparator.t</a> -&gt; 'a list -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators2_with_comparator&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_array</span> : <code class="type">comparator:('a, 'cmp) <a href="?package=core_kernel&amp;module=Comparator&amp;type=t">Comparator.t</a> -&gt; 'a array -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators2_with_comparator&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_sorted_array</span> : <code class="type">comparator:('a, 'cmp) <a href="?package=core_kernel&amp;module=Comparator&amp;type=t">Comparator.t</a> -&gt; 'a array -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators2_with_comparator&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">Or_error.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_sorted_array_unchecked</span> : <code class="type">comparator:('a, 'cmp) <a href="?package=core_kernel&amp;module=Comparator&amp;type=t">Comparator.t</a> -&gt; 'a array -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators2_with_comparator&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stable_dedup_list</span> : <code class="type">comparator:('a, 'cmp) <a href="?package=core_kernel&amp;module=Comparator&amp;type=t">Comparator.t</a> -&gt; 'a list -&gt; 'a list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map</span> : <code class="type">comparator:('b, 'cmp) <a href="?package=core_kernel&amp;module=Comparator&amp;type=t">Comparator.t</a> -&gt;
+('a, 'c) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators2_with_comparator&amp;type=set">set</a> -&gt; f:('a -&gt; 'b) -&gt; ('b, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators2_with_comparator&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> filter_map</span> : <code class="type">comparator:('b, 'cmp) <a href="?package=core_kernel&amp;module=Comparator&amp;type=t">Comparator.t</a> -&gt;
+('a, 'c) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators2_with_comparator&amp;type=set">set</a> -&gt; f:('a -&gt; 'b option) -&gt; ('b, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators2_with_comparator&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_tree</span> : <code class="type">comparator:('a, 'cmp) <a href="?package=core_kernel&amp;module=Comparator&amp;type=t">Comparator.t</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators2_with_comparator&amp;type=tree">tree</a> -&gt; ('a, 'cmp) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators2_with_comparator&amp;type=t">t</a></code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="Check_creators">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Core_set_intf.Check_creators">Check_creators</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">T</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=T.T2">T.T2</a></code><code class="code">) -&gt; </code><div class="sig_block"><code class="code">functor (</code><code class="code">Tree</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=T.T2">T.T2</a></code><code class="code">) -&gt; </code><div class="sig_block"><code class="code">functor (</code><code class="code">Elt</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=T.T1">T.T1</a></code><code class="code">) -&gt; </code><div class="sig_block"><code class="code">functor (</code><code class="code">Options</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=T.T3">T.T3</a></code><code class="code">) -&gt; </code><div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="code"><a href="?package=core_kernel&amp;module=Core_set_intf.Creators_generic">Creators_generic</a></code> with type <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_generic&amp;type=options">options</a> = ('a, 'b, 'c) Options.t with type t = ('a, 'b) T.t with type tree = ('a, 'b) Tree.t with type elt = 'a Elt.t<code class="code">) -&gt; </code><code class="code">sig</code> .. <code class="code">end</code></div></div></div></div></div></pre>
+		<div class="ocaml_module_content">
+		       
+		</div>
+</div>
+<div class="ocaml_module ident" name="Check_creators0" path="?package=core_kernel&amp;amp;module=Core_set_intf.Check_creators">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Core_set_intf.Check_creators0">Check_creators0</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.Creators0">Creators0</a></code><code class="code">) -&gt; </code>HTML_OF_MODULE_IDENT BUG(<code class="code">M</code>)</div></pre>
+</div>
+<div class="ocaml_module ident" name="Check_creators1" path="?package=core_kernel&amp;amp;module=Core_set_intf.Check_creators">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Core_set_intf.Check_creators1">Check_creators1</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.Creators1">Creators1</a></code><code class="code">) -&gt; </code>HTML_OF_MODULE_IDENT BUG(<code class="code">M</code>)</div></pre>
+</div>
+<div class="ocaml_module ident" name="Check_creators2" path="?package=core_kernel&amp;amp;module=Core_set_intf.Check_creators">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Core_set_intf.Check_creators2">Check_creators2</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.Creators2">Creators2</a></code><code class="code">) -&gt; </code>HTML_OF_MODULE_IDENT BUG(<code class="code">M</code>)</div></pre>
+</div>
+<div class="ocaml_module ident" name="Check_creators2_with_comparator" path="?package=core_kernel&amp;amp;module=Core_set_intf.Check_creators">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Core_set_intf.Check_creators2_with_comparator">Check_creators2_with_comparator</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.Creators2_with_comparator">Creators2_with_comparator</a></code><code class="code">) -&gt; </code>HTML_OF_MODULE_IDENT BUG(<code class="code">M</code>)</div></pre>
+</div>
+<div class="ocaml_module sig" name="Creators_and_accessors_generic">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_and_accessors_generic">Creators_and_accessors_generic</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Core_set_intf.Accessors_generic" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Core_set_intf.Accessors_generic">Accessors_generic</a></code></pre>
+</div>
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Core_set_intf.Creators_generic" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Core_set_intf.Creators_generic">Creators_generic</a></code> with type <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_generic&amp;type=options">options</a> = ('a, 'b, 'c) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_and_accessors_generic&amp;type=options">options</a> with type t = ('a, 'b) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_and_accessors_generic&amp;type=t">t</a> with type tree = ('a, 'b) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_and_accessors_generic&amp;type=tree">tree</a> with type elt = 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_and_accessors_generic&amp;type=elt">elt</a></pre>
+</div>
+		</div>
+</div>
+<div class="ocaml_module sig" name="Creators_and_accessors0">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_and_accessors0">Creators_and_accessors0</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Core_set_intf.Accessors0" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Core_set_intf.Accessors0">Accessors0</a></code></pre>
+</div>
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Core_set_intf.Creators0" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Core_set_intf.Creators0">Creators0</a></code> with type <a href="?package=core_kernel&amp;module=Core_set_intf.Creators0&amp;type=t">t</a> = <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_and_accessors0&amp;type=t">t</a> with type tree = <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_and_accessors0&amp;type=tree">tree</a> with type elt = <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_and_accessors0&amp;type=elt">elt</a></pre>
+</div>
+		</div>
+</div>
+<div class="ocaml_module sig" name="Creators_and_accessors1">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_and_accessors1">Creators_and_accessors1</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Core_set_intf.Accessors1" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Core_set_intf.Accessors1">Accessors1</a></code></pre>
+</div>
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Core_set_intf.Creators1" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Core_set_intf.Creators1">Creators1</a></code> with type <a href="?package=core_kernel&amp;module=Core_set_intf.Creators1&amp;type=t">t</a> = 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_and_accessors1&amp;type=t">t</a> with type tree = 'a <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_and_accessors1&amp;type=tree">tree</a></pre>
+</div>
+		</div>
+</div>
+<div class="ocaml_module sig" name="Creators_and_accessors2">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_and_accessors2">Creators_and_accessors2</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Core_set_intf.Accessors2" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2">Accessors2</a></code></pre>
+</div>
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Core_set_intf.Creators2" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Core_set_intf.Creators2">Creators2</a></code> with type <a href="?package=core_kernel&amp;module=Core_set_intf.Creators2&amp;type=t">t</a> = ('a, 'b) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_and_accessors2&amp;type=t">t</a> with type tree = ('a, 'b) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_and_accessors2&amp;type=tree">tree</a></pre>
+</div>
+		</div>
+</div>
+<div class="ocaml_module sig" name="Creators_and_accessors2_with_comparator">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_and_accessors2_with_comparator">Creators_and_accessors2_with_comparator</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Core_set_intf.Accessors2_with_comparator" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Core_set_intf.Accessors2_with_comparator">Accessors2_with_comparator</a></code></pre>
+</div>
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Core_set_intf.Creators2_with_comparator" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Core_set_intf.Creators2_with_comparator">Creators2_with_comparator</a></code> with type <a href="?package=core_kernel&amp;module=Core_set_intf.Creators2_with_comparator&amp;type=t">t</a> = ('a, 'b) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_and_accessors2_with_comparator&amp;type=t">t</a> with type tree = ('a, 'b) <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_and_accessors2_with_comparator&amp;type=tree">tree</a></pre>
+</div>
+		</div>
+</div>
+<div class="ocaml_module sig" name="S0">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Core_set_intf.S0">S0</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEset"><span class="keyword">type</span> <code class="type">('a, 'cmp) </code>set</span> </pre>
+      
+    
+<pre><span id="TYPEtree"><span class="keyword">type</span> <code class="type">('a, 'cmp) </code>tree</span> </pre>
+      
+    
+<div class="ocaml_module ident" name="Elt" path="?package=core_kernel&amp;amp;module=Comparator.S">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Core_set_intf.S0.Elt">Elt</a> : <code class="code"><a href="?package=core_kernel&amp;module=Comparator.S">Comparator.S</a></code></pre>
+</div>
+<div class="ocaml_module sig" name="Tree">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Core_set_intf.S0.Tree">Tree</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> = <code class="type">(<a href="?package=core_kernel&amp;module=Core_set_intf.S0.Elt&amp;type=t">Elt.t</a>, <a href="?package=core_kernel&amp;module=Core_set_intf.S0.Elt&amp;type=comparator">Elt.comparator</a>) <a href="?package=core_kernel&amp;module=Core_set_intf.S0&amp;type=tree">tree</a></code> </pre>
+      
+    
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Core_set_intf.Creators_and_accessors0" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Core_set_intf.Creators_and_accessors0">Creators_and_accessors0</a></code> with type <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_and_accessors0&amp;type=set">set</a> = ('a, 'b) <a href="?package=core_kernel&amp;module=Core_set_intf.S0&amp;type=tree">tree</a> with type t = <a href="?package=core_kernel&amp;module=Core_set_intf.S0.Tree&amp;type=t">t</a> with type tree = <a href="?package=core_kernel&amp;module=Core_set_intf.S0.Tree&amp;type=t">t</a> with type elt = <a href="?package=core_kernel&amp;module=Core_set_intf.S0.Elt&amp;type=t">Elt.t</a></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core_kernel&amp;module=Core_set_intf.S0.Tree&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.S0.Tree&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> compare</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.S0.Tree&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Core_set_intf.S0.Tree&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+		</div>
+</div>
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> = <code class="type">(<a href="?package=core_kernel&amp;module=Core_set_intf.S0.Elt&amp;type=t">Elt.t</a>, <a href="?package=core_kernel&amp;module=Core_set_intf.S0.Elt&amp;type=comparator">Elt.comparator</a>) <a href="?package=core_kernel&amp;module=Core_set_intf.S0&amp;type=set">set</a></code> </pre>
+      
+    
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Core_set_intf.Creators_and_accessors0" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Core_set_intf.Creators_and_accessors0">Creators_and_accessors0</a></code> with type <a href="?package=core_kernel&amp;module=Core_set_intf.Creators_and_accessors0&amp;type=set">set</a> = ('a, 'b) <a href="?package=core_kernel&amp;module=Core_set_intf.S0&amp;type=set">set</a> with type t = <a href="?package=core_kernel&amp;module=Core_set_intf.S0&amp;type=t">t</a> with type tree = <a href="?package=core_kernel&amp;module=Core_set_intf.S0.Tree&amp;type=t">Tree.t</a> with type elt = <a href="?package=core_kernel&amp;module=Core_set_intf.S0.Elt&amp;type=t">Elt.t</a></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core_kernel&amp;module=Core_set_intf.S0&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.S0&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> compare</span> : <code class="type"><a href="?package=core_kernel&amp;module=Core_set_intf.S0&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Core_set_intf.S0&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+		</div>
+</div>
+
+<div class="ocaml_module sig" name="S0_binable">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Core_set_intf.S0_binable">S0_binable</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Core_set_intf.S0" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Core_set_intf.S0">S0</a></code></pre>
+</div>
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Core_set_intf.Binable&amp;amp;type=S" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Core_set_intf.Binable&amp;type=S">Binable.S</a></code> with type t = <a href="?package=core_kernel&amp;module=Core_set_intf.S0_binable&amp;type=t">t</a></pre>
+</div>
+		</div>
+</div>
+</div>

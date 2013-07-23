@@ -1,18 +1,35 @@
-<!DOCTYPE HTML>
-<html>
-<head>
+<div class="ocaml_toplevel_module">
 
-<title>Deferred_std</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
+ 
+      <pre><span><span class="keyword">val</span> __pa_ounit_275876e34cf609db118f3d84b799a790</span> : <code class="type">string</code></pre>
+      
+    
 
-<h1>Module Deferred_std</h1>
-<pre><span class="keyword">module</span> Deferred_std</pre>
-<hr/>
-<div file="Deferred_std.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<div class="ocaml_include ident" path="?package=async_core&amp;amp;module=Deferred.Infix" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=async_core&amp;module=Deferred.Infix">Deferred.Infix</a></code></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> choice</span> : <code class="type">'a <a href="?package=async_core&amp;module=Deferred&amp;type=t">Deferred.t</a> -&gt; ('a -&gt; 'b) -&gt; 'b <a href="?package=async_core&amp;module=Deferred&amp;type=choice">Deferred.choice</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> choose</span> : <code class="type">'a <a href="?package=async_core&amp;module=Deferred&amp;type=choice">Deferred.choice</a> list -&gt; 'a <a href="?package=async_core&amp;module=Deferred&amp;type=t">Deferred.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> don't_wait_for</span> : <code class="type">unit <a href="?package=async_core&amp;module=Deferred&amp;type=t">Deferred.t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> never</span> : <code class="type">unit -&gt; 'a <a href="?package=async_core&amp;module=Deferred&amp;type=t">Deferred.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> return</span> : <code class="type">'a -&gt; 'a <a href="?package=async_core&amp;module=Deferred&amp;type=t">Deferred.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> upon</span> : <code class="type">'a <a href="?package=async_core&amp;module=Deferred&amp;type=t">Deferred.t</a> -&gt; ('a -&gt; unit) -&gt; unit</code></pre>
+      
+    
+</div>

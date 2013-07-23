@@ -1,20 +1,31 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-
-<title>Union_find</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Union_find</h1>
-<pre><span class="keyword">module</span> Union_find</pre><div class="info">Imperative data structure for representing disjoint sets.<br/>    Union find is used to implement an equivalence relation on objects, where
+<div class="ocaml_toplevel_module">
+<div class="info">Imperative data structure for representing disjoint sets.<br/>    Union find is used to implement an equivalence relation on objects, where
     the equivalence relation can dynamically be coarsened by &quot;union&quot;ing two
     equivalence classes together.<br/>    All of the operations are effectively (amortized) constant time.<br/> <div class="see"><b>See also</b> <ul>  <li> <a href="en.wikipedia.org/wiki/Disjoint-set_data_structure">wikipedia.<br/>    This implementation is not thread-safe.</a></li></ul></div></div>
-<hr/>
-<div file="Union_find.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> </pre>
+      <div class="info"><code class="code">type 'a t</code> is the type of objects, where each object is part of an
+    equivalence class that is associated with a single value of type <code class="code">'a</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">'a -&gt; 'a <a href="?package=core_kernel&amp;module=Union_find&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">create v</code> returns a new object in its own equivalence class that has value <code class="code">v</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> get</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Union_find&amp;type=t">t</a> -&gt; 'a</code></pre>
+      <div class="info"><code class="code">get t</code> returns the value of the class of <code class="code">t</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> set</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Union_find&amp;type=t">t</a> -&gt; 'a -&gt; unit</code></pre>
+      <div class="info"><code class="code">set t v</code> sets the value of the class of <code class="code">t</code> to <code class="code">v</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> same_class</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Union_find&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Union_find&amp;type=t">t</a> -&gt; bool</code></pre>
+      <div class="info"><code class="code">same_class t1 t2</code> returns true iff <code class="code">t1</code> and <code class="code">t2</code> are in the same equivalence class.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> union</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Union_find&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Union_find&amp;type=t">t</a> -&gt; unit</code></pre>
+      <div class="info"><code class="code">union t1 t2</code> makes the class of <code class="code">t1</code> and the class of <code class="code">t2</code> be the same (if they are
+    already equal, then nothing changes).  The value of the combined class is the value of
+    <code class="code">t1</code> or <code class="code">t2</code>; it is unspecified which.  After <code class="code">union t1 t2</code>, it will always be the
+    case that <code class="code">same_class t1 t2</code>.</div>
+    </div>

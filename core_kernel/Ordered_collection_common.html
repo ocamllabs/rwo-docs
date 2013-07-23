@@ -1,20 +1,39 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-
-<title>Ordered_collection_common</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Ordered_collection_common</h1>
-<pre><span class="keyword">module</span> Ordered_collection_common</pre><div class="info"><code class="code">normalize length_fun thing_with_length i</code> is just <code class="code">i</code>, unless
+<div class="ocaml_toplevel_module">
+<div class="info"><code class="code">normalize length_fun thing_with_length i</code> is just <code class="code">i</code>, unless
     <code class="code">i</code> is negative, in which case it's <code class="code">length_fun thing_with_length + i</code>.
     This is used by various python-style slice functions.</div>
-<hr/>
-<div file="Ordered_collection_common.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+ 
+      <pre><span><span class="keyword">val</span> normalize</span> : <code class="type">length_fun:('a -&gt; int) -&gt; 'a -&gt; int -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> slice</span> : <code class="type">length_fun:('a -&gt; int) -&gt;
+sub_fun:('a -&gt; pos:int -&gt; len:int -&gt; 'a) -&gt; 'a -&gt; int -&gt; int -&gt; 'a</code></pre>
+      
+    
+<br/><code class="code">get_pos_len</code>, <code class="code">get_pos_len_exn</code>, and <code class="code">validate_pos_len_exn</code> are intended to be used
+    by functions that take a sequence (array, string, bigstring, ...) and an optional
+    <code class="code">pos</code> and <code class="code">len</code> specifying a subrange of the sequence.  Such functions should call
+    <code class="code">get_pos_len</code> with the length of the sequence and the optional <code class="code">pos</code> and <code class="code">len</code>, and it
+    will return the <code class="code">pos</code> and <code class="code">len</code> specifying the range, where the default <code class="code">pos</code> is zero
+    and the default <code class="code">len</code> is to go to the end of the sequence.<br/>    It should be the case that:<br/>    <pre class="codepre"><code class="code">
+      pos &gt;= 0 &amp;&amp; len &gt;= 0 &amp;&amp; pos + len &lt;= length
+    </code></pre><br/>    Note that this allows <code class="code">pos = length</code> and <code class="code">len = 0</code>, i.e. an empty subrange
+    at the end of the sequence.<br/>    <code class="code">get_pos_len</code> returns <code class="code">(pos', len')</code> specifying a subrange where:<br/>    <span class="verbatim">      pos' = match pos with None -&gt; 0 | Some i -&gt; i
+      len' = match len with None -&gt; length - pos | Some i -&gt; i
+    </span>
+<br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> get_pos_len</span> : <code class="type">?pos:int -&gt; ?len:int -&gt; length:int -&gt; (int * int, string) <a href="?package=core_kernel&amp;module=Result&amp;type=t">Result.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get_pos_len_exn</span> : <code class="type">?pos:int -&gt; ?len:int -&gt; length:int -&gt; int * int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> check_pos_len_exn</span> : <code class="type">pos:int -&gt; len:int -&gt; length:int -&gt; unit</code></pre>
+      <div class="info"><code class="code">check_pos_len_exn ~pos ~len ~length</code> raises unless
+    <code class="code">pos &gt;= 0 &amp;&amp; len &gt;= 0 &amp;&amp; pos + len &lt;= length</code>.</div>
+    </div>

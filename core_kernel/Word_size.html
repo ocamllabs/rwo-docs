@@ -1,18 +1,16 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-
-<title>Word_size</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Word_size</h1>
-<pre><span class="keyword">module</span> Word_size</pre><div class="info">For determining the word size that the program is using.</div>
-<hr/>
-<div file="Word_size.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<div class="ocaml_toplevel_module">
+<div class="info">For determining the word size that the program is using.</div>
+<pre><code><span id="TYPEt"><span class="keyword">type</span> t</span> = </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.W32"><span class="constructor">W32</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.W64"><span class="constructor">W64</span></span></code></td>
+	   </tr></table>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> num_bits</span> : <code class="type"><a href="?package=core_kernel&amp;module=Word_size&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> word_size</span> : <code class="type"><a href="?package=core_kernel&amp;module=Word_size&amp;type=t">t</a></code></pre>
+      <div class="info">Returns the word size of this program, not necessarily of the OS</div>
+    </div>

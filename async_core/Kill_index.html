@@ -1,17 +1,5 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-
-<title>Kill_index</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Kill_index</h1>
-<pre><span class="keyword">module</span> Kill_index</pre><div class="info">A timestamp used to implement <code class="code">Monitor.kill</code>.<br/>    A monitor is dead if it has an ancestor whose kill index is <code class="code">dead</code>.<br/>    Kill indices are used so that we can efficiently check whether a monitor is dead or
+<div class="ocaml_toplevel_module">
+<div class="info">A timestamp used to implement <code class="code">Monitor.kill</code>.<br/>    A monitor is dead if it has an ancestor whose kill index is <code class="code">dead</code>.<br/>    Kill indices are used so that we can efficiently check whether a monitor is dead or
     alive, given that a monitor has a pointer to its parent, but not its children.  So,
     there is no way when killing a monitor to visit all of its descendants.  Instead, we
     rely on lazily checking descendants when they are used.<br/>    Each monitor has a <code class="code">kill_index : Kill_index.t</code>, and the scheduler has a single
@@ -25,7 +13,28 @@
       we will set its <code class="code">kill_index</code> to <code class="code">dead</code>.  If not, we will set its <code class="code">kill_index</code> to
       <code class="code">global_kill_index</code>.
 </li></ul></div>
-<hr/>
-<div file="Kill_index.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> </pre>
+      
+    
+<div class="ocaml_include ident" path="?package=core&amp;amp;module=Std.Equal.S" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core&amp;module=Std.Equal.S">Core.Std.Equal.S</a></code> with type t = <a href="?package=async_core&amp;module=Kill_index&amp;type=t">t</a></pre>
+</div>
+<div class="ocaml_include ident" path="?package=core&amp;amp;module=Std.Invariant.S" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core&amp;module=Std.Invariant.S">Core.Std.Invariant.S</a></code> with type t = <a href="?package=async_core&amp;module=Kill_index&amp;type=t">t</a></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> dead</span> : <code class="type"><a href="?package=async_core&amp;module=Kill_index&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> initial</span> : <code class="type"><a href="?package=async_core&amp;module=Kill_index&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> next</span> : <code class="type"><a href="?package=async_core&amp;module=Kill_index&amp;type=t">t</a> -&gt; <a href="?package=async_core&amp;module=Kill_index&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=async_core&amp;module=Kill_index&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    </div>

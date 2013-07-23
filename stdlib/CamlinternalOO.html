@@ -1,20 +1,226 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-
-<title>CamlinternalOO</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module CamlinternalOO</h1>
-<pre><span class="keyword">module</span> CamlinternalOO</pre><div class="info">Run-time support for objects and classes.
+<div class="ocaml_toplevel_module">
+<div class="info">Run-time support for objects and classes.
     All functions in this module are for system use only, not for the
     casual user.</div>
-<hr/>
-<div file="CamlinternalOO.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<br/><br/><h6 id="6_TITLE">Classes</h6><br/> <br/>
+	  
+<pre><span id="TYPEtag"><span class="keyword">type</span> tag</span> </pre>
+      
+    
+<pre><span id="TYPElabel"><span class="keyword">type</span> label</span> </pre>
+      
+    
+<pre><span id="TYPEtable"><span class="keyword">type</span> table</span> </pre>
+      
+    
+<pre><span id="TYPEmeth"><span class="keyword">type</span> meth</span> </pre>
+      
+    
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> </pre>
+      
+    
+<pre><span id="TYPEobj"><span class="keyword">type</span> obj</span> </pre>
+      
+    
+<pre><span id="TYPEclosure"><span class="keyword">type</span> closure</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> public_method_label</span> : <code class="type">string -&gt; <a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=tag">tag</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> new_method</span> : <code class="type"><a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=table">table</a> -&gt; <a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=label">label</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> new_variable</span> : <code class="type"><a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=table">table</a> -&gt; string -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> new_methods_variables</span> : <code class="type"><a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=table">table</a> -&gt; string array -&gt; string array -&gt; <a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=label">label</a> array</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get_variable</span> : <code class="type"><a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=table">table</a> -&gt; string -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get_variables</span> : <code class="type"><a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=table">table</a> -&gt; string array -&gt; int array</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get_method_label</span> : <code class="type"><a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=table">table</a> -&gt; string -&gt; <a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=label">label</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get_method_labels</span> : <code class="type"><a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=table">table</a> -&gt; string array -&gt; <a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=label">label</a> array</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get_method</span> : <code class="type"><a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=table">table</a> -&gt; <a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=label">label</a> -&gt; <a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=meth">meth</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set_method</span> : <code class="type"><a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=table">table</a> -&gt; <a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=label">label</a> -&gt; <a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=meth">meth</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set_methods</span> : <code class="type"><a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=table">table</a> -&gt; <a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=label">label</a> array -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> narrow</span> : <code class="type"><a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=table">table</a> -&gt; string array -&gt; string array -&gt; string array -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> widen</span> : <code class="type"><a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=table">table</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add_initializer</span> : <code class="type"><a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=table">table</a> -&gt; (<a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=obj">obj</a> -&gt; unit) -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> dummy_table</span> : <code class="type"><a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=table">table</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create_table</span> : <code class="type">string array -&gt; <a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=table">table</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> init_class</span> : <code class="type"><a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=table">table</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> inherits</span> : <code class="type"><a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=table">table</a> -&gt;
+string array -&gt;
+string array -&gt;
+string array -&gt; <a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=t">t</a> * (<a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=table">table</a> -&gt; <a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=obj">obj</a> -&gt; <a href="?package=stdlib&amp;module=Obj&amp;type=t">Obj.t</a>) * <a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=t">t</a> * <a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=obj">obj</a> -&gt; bool -&gt; <a href="?package=stdlib&amp;module=Obj&amp;type=t">Obj.t</a> array</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> make_class</span> : <code class="type">string array -&gt;
+(<a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=table">table</a> -&gt; <a href="?package=stdlib&amp;module=Obj&amp;type=t">Obj.t</a> -&gt; <a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=t">t</a>) -&gt; <a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=t">t</a> * (<a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=table">table</a> -&gt; <a href="?package=stdlib&amp;module=Obj&amp;type=t">Obj.t</a> -&gt; <a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=t">t</a>) * (<a href="?package=stdlib&amp;module=Obj&amp;type=t">Obj.t</a> -&gt; <a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=t">t</a>) * <a href="?package=stdlib&amp;module=Obj&amp;type=t">Obj.t</a></code></pre>
+      
+    
+<pre><span id="TYPEinit_table"><span class="keyword">type</span> init_table</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> make_class_store</span> : <code class="type">string array -&gt; (<a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=table">table</a> -&gt; <a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=t">t</a>) -&gt; <a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=init_table">init_table</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> dummy_class</span> : <code class="type">string * int * int -&gt; <a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=t">t</a> * (<a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=table">table</a> -&gt; <a href="?package=stdlib&amp;module=Obj&amp;type=t">Obj.t</a> -&gt; <a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=t">t</a>) * (<a href="?package=stdlib&amp;module=Obj&amp;type=t">Obj.t</a> -&gt; <a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=t">t</a>) * <a href="?package=stdlib&amp;module=Obj&amp;type=t">Obj.t</a></code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Objects</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> copy</span> : <code class="type">(&lt; .. &gt; as 'a) -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create_object</span> : <code class="type"><a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=table">table</a> -&gt; <a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=obj">obj</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create_object_opt</span> : <code class="type"><a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=obj">obj</a> -&gt; <a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=table">table</a> -&gt; <a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=obj">obj</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> run_initializers</span> : <code class="type"><a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=obj">obj</a> -&gt; <a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=table">table</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> run_initializers_opt</span> : <code class="type"><a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=obj">obj</a> -&gt; <a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=obj">obj</a> -&gt; <a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=table">table</a> -&gt; <a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=obj">obj</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create_object_and_run_initializers</span> : <code class="type"><a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=obj">obj</a> -&gt; <a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=table">table</a> -&gt; <a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=obj">obj</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> send</span> : <code class="type"><a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=obj">obj</a> -&gt; <a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=tag">tag</a> -&gt; <a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sendcache</span> : <code class="type"><a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=obj">obj</a> -&gt; <a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=tag">tag</a> -&gt; <a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=t">t</a> -&gt; int -&gt; <a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sendself</span> : <code class="type"><a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=obj">obj</a> -&gt; <a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=label">label</a> -&gt; <a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> get_public_method</span> : <code class="type"><a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=obj">obj</a> -&gt; <a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=tag">tag</a> -&gt; <a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=closure">closure</a></code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Table cache</h6><br/> <br/>
+	  
+<pre><span id="TYPEtables"><span class="keyword">type</span> tables</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> lookup_tables</span> : <code class="type"><a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=tables">tables</a> -&gt; <a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=closure">closure</a> array -&gt; <a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=tables">tables</a></code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Builtins to reduce code size</h6><br/> <br/>
+	  
+<pre><code><span id="TYPEimpl"><span class="keyword">type</span> impl</span> = </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTimpl.GetConst"><span class="constructor">GetConst</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTimpl.GetVar"><span class="constructor">GetVar</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTimpl.GetEnv"><span class="constructor">GetEnv</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTimpl.GetMeth"><span class="constructor">GetMeth</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTimpl.SetVar"><span class="constructor">SetVar</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTimpl.AppConst"><span class="constructor">AppConst</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTimpl.AppVar"><span class="constructor">AppVar</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTimpl.AppEnv"><span class="constructor">AppEnv</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTimpl.AppMeth"><span class="constructor">AppMeth</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTimpl.AppConstConst"><span class="constructor">AppConstConst</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTimpl.AppConstVar"><span class="constructor">AppConstVar</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTimpl.AppConstEnv"><span class="constructor">AppConstEnv</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTimpl.AppConstMeth"><span class="constructor">AppConstMeth</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTimpl.AppVarConst"><span class="constructor">AppVarConst</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTimpl.AppEnvConst"><span class="constructor">AppEnvConst</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTimpl.AppMethConst"><span class="constructor">AppMethConst</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTimpl.MethAppConst"><span class="constructor">MethAppConst</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTimpl.MethAppVar"><span class="constructor">MethAppVar</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTimpl.MethAppEnv"><span class="constructor">MethAppEnv</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTimpl.MethAppMeth"><span class="constructor">MethAppMeth</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTimpl.SendConst"><span class="constructor">SendConst</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTimpl.SendVar"><span class="constructor">SendVar</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTimpl.SendEnv"><span class="constructor">SendEnv</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTimpl.SendMeth"><span class="constructor">SendMeth</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTimpl.Closure"><span class="constructor">Closure</span></span> <span class="keyword">of</span> <code class="type"><a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=closure">closure</a></code></code></td>
+	   </tr></table>
+      
+    
+<pre><code><span id="TYPEparams"><span class="keyword">type</span> params</span> = {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTparams.compact_table">compact_table</span> :<code class="type">bool</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTparams.copy_parent">copy_parent</span> :<code class="type">bool</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTparams.clean_when_copying">clean_when_copying</span> :<code class="type">bool</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTparams.retry_count">retry_count</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTparams.bucket_small_size">bucket_small_size</span> :<code class="type">int</code>;</code></td>
+	  </tr></table>}
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> params</span> : <code class="type"><a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=params">params</a></code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Statistics</h6><br/> <br/>
+	  
+<pre><code><span id="TYPEstats"><span class="keyword">type</span> stats</span> = {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTstats.classes">classes</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTstats.methods">methods</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTstats.inst_vars">inst_vars</span> :<code class="type">int</code>;</code></td>
+	  </tr></table>}
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stats</span> : <code class="type">unit -&gt; <a href="?package=stdlib&amp;module=CamlinternalOO&amp;type=stats">stats</a></code></pre>
+      
+    </div>

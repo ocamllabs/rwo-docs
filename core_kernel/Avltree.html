@@ -1,17 +1,5 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-
-<title>Avltree</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Avltree</h1>
-<pre><span class="keyword">module</span> Avltree</pre><div class="info">This module implements a very low level interface to a mutable AVL tree. It is not
+<div class="ocaml_toplevel_module">
+<div class="info">This module implements a very low level interface to a mutable AVL tree. It is not
     intended to be used directly by casual users. It is used for implementing other data
     structures. The interface is somewhat ugly, and it's that way for a reason. The goal
     of this module is minimum memory overhead, and maximum performance.<br/>**************** Points of Ugliness *****************<br/> compare is passed in to every function where it is used. If you pass a different
@@ -37,7 +25,64 @@
     morally compelled to put in a CR about this interface. I challenge you to write a
     better interface, implement a hash table with it, and show that your table has better
     performance than Core_hashtbl.</div>
-<hr/>
-<div file="Avltree.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<pre><code><span id="TYPEt"><span class="keyword">type</span> <code class="type">('k, 'v) </code>t</span> = </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Empty"><span class="constructor">Empty</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Node"><span class="constructor">Node</span></span> <span class="keyword">of</span> <code class="type">('k, 'v) <a href="?package=core_kernel&amp;module=Avltree&amp;type=t">t</a> * 'k * 'v * int * ('k, 'v) <a href="?package=core_kernel&amp;module=Avltree&amp;type=t">t</a></code></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Leaf"><span class="constructor">Leaf</span></span> <span class="keyword">of</span> <code class="type">'k * 'v</code></code></td>
+	   </tr></table>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> empty</span> : <code class="type">('k, 'v) <a href="?package=core_kernel&amp;module=Avltree&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> invariant</span> : <code class="type">('k, 'v) <a href="?package=core_kernel&amp;module=Avltree&amp;type=t">t</a> -&gt; compare:('k -&gt; 'k -&gt; int) -&gt; unit</code></pre>
+      <div class="info">check invariants, raise an exception if any invariants fail</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> add</span> : <code class="type">?replace:bool -&gt;
+('k, 'v) <a href="?package=core_kernel&amp;module=Avltree&amp;type=t">t</a> -&gt;
+compare:('k -&gt; 'k -&gt; int) -&gt;
+added:bool <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a> -&gt; key:'k -&gt; data:'v -&gt; ('k, 'v) <a href="?package=core_kernel&amp;module=Avltree&amp;type=t">t</a></code></pre>
+      <div class="info">adds the specified key and data to the tree destructively (previous t's are no longer
+    valid) using the specified comparison function. O(log(N)) time, O(1) space. The
+    returned t is the new root node of the tree, and should be used on all further calls
+    to any other function in this module. The bool ref, added, will be set to true if a
+    new node is added to the tree, or false if an existing node is replaced (in the case
+    that the key already exists). If <code class="code">replace</code> (default true) is true then add will
+    overwrite any existing mapping for <code class="code">key</code>. If <code class="code">replace</code> is false, and there is an
+    existing mapping for key then add has no effect.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> first</span> : <code class="type">('k, 'v) <a href="?package=core_kernel&amp;module=Avltree&amp;type=t">t</a> -&gt; ('k * 'v) option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> last</span> : <code class="type">('k, 'v) <a href="?package=core_kernel&amp;module=Avltree&amp;type=t">t</a> -&gt; ('k * 'v) option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find</span> : <code class="type">('k, 'v) <a href="?package=core_kernel&amp;module=Avltree&amp;type=t">t</a> -&gt; compare:('k -&gt; 'k -&gt; int) -&gt; 'k -&gt; 'v option</code></pre>
+      <div class="info">if the specified key exists in the tree, return the corresponding value.
+    O(log(N)) time and O(1) space.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> mem</span> : <code class="type">('k, 'v) <a href="?package=core_kernel&amp;module=Avltree&amp;type=t">t</a> -&gt; compare:('k -&gt; 'k -&gt; int) -&gt; 'k -&gt; bool</code></pre>
+      <div class="info">return true if key is present in the tree, otherwise return false.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> remove</span> : <code class="type">('k, 'v) <a href="?package=core_kernel&amp;module=Avltree&amp;type=t">t</a> -&gt;
+removed:bool <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a> -&gt; compare:('k -&gt; 'k -&gt; int) -&gt; 'k -&gt; ('k, 'v) <a href="?package=core_kernel&amp;module=Avltree&amp;type=t">t</a></code></pre>
+      <div class="info">remove key destructively from the tree if it exists, return the new root node.
+    Previous root nodes are not usable anymore, do so at your peril. the removed ref will
+    be set to true if a node was actually removed, or false otherwise.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> fold</span> : <code class="type">('k, 'v) <a href="?package=core_kernel&amp;module=Avltree&amp;type=t">t</a> -&gt; init:'a -&gt; f:(key:'k -&gt; data:'v -&gt; 'a -&gt; 'a) -&gt; 'a</code></pre>
+      <div class="info">fold over the tree</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> iter</span> : <code class="type">('k, 'v) <a href="?package=core_kernel&amp;module=Avltree&amp;type=t">t</a> -&gt; f:(key:'k -&gt; data:'v -&gt; unit) -&gt; unit</code></pre>
+      <div class="info">iterate over the tree</div>
+    </div>

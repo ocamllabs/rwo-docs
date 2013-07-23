@@ -1,7 +1,0 @@
-<div class="expanding_content">
-	<button onclick="expand_content(this)">-</button>
-	<pre><span class="keyword">include</span> module type of <a href="../core/Std.Gc.html">Core.Std.Gc</a></pre>
-	<div class="content">
-	<div file="../core/Std.Gc.html.contents" class="content_to_load"> </div>
-	</div>
-  </div>

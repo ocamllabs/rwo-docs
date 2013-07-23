@@ -1,19 +1,742 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-
-<title>Std</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Std</h1>
-<pre><span class="keyword">module</span> Std</pre><div class="info">This module defines default converters for the types defined in the OCaml
+<div class="ocaml_toplevel_module">
+<div class="info">This module defines default converters for the types defined in the OCaml
    standard library.</div>
-<hr/>
-<div file="Std.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<div class="ocaml_include ident" path="?package=bin_prot&amp;amp;module=Size" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=bin_prot&amp;module=Size">Size</a></code></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> bin_unit</span> : <code class="type">unit <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Type_class.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_unit</span> : <code class="type">unit <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Type_class.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_unit_</span> : <code class="type">unit <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Unsafe_write_c.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_unit</span> : <code class="type">unit <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Write_ml.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_unit</span> : <code class="type">unit <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Type_class.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_unit</span> : <code class="type">unit <a href="?package=bin_prot&amp;module=Read_ml&amp;type=reader">Read_ml.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_unit_</span> : <code class="type">unit <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_unit__</span> : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_bool</span> : <code class="type">bool <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Type_class.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_bool</span> : <code class="type">bool <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Type_class.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_bool_</span> : <code class="type">bool <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Unsafe_write_c.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_bool</span> : <code class="type">bool <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Write_ml.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_bool</span> : <code class="type">bool <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Type_class.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_bool</span> : <code class="type">bool <a href="?package=bin_prot&amp;module=Read_ml&amp;type=reader">Read_ml.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_bool_</span> : <code class="type">bool <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_bool__</span> : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_string</span> : <code class="type">string <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Type_class.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_string</span> : <code class="type">string <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Type_class.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_string_</span> : <code class="type">string <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Unsafe_write_c.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_string</span> : <code class="type">string <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Write_ml.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_string</span> : <code class="type">string <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Type_class.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_string</span> : <code class="type">string <a href="?package=bin_prot&amp;module=Read_ml&amp;type=reader">Read_ml.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_string_</span> : <code class="type">string <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_string__</span> : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_char</span> : <code class="type">char <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Type_class.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_char</span> : <code class="type">char <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Type_class.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_char_</span> : <code class="type">char <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Unsafe_write_c.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_char</span> : <code class="type">char <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Write_ml.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_char</span> : <code class="type">char <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Type_class.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_char</span> : <code class="type">char <a href="?package=bin_prot&amp;module=Read_ml&amp;type=reader">Read_ml.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_char_</span> : <code class="type">char <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_char__</span> : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_int</span> : <code class="type">int <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Type_class.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_int</span> : <code class="type">int <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Type_class.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_int_</span> : <code class="type">int <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Unsafe_write_c.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_int</span> : <code class="type">int <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Write_ml.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_int</span> : <code class="type">int <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Type_class.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_int</span> : <code class="type">int <a href="?package=bin_prot&amp;module=Read_ml&amp;type=reader">Read_ml.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_int_</span> : <code class="type">int <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_int__</span> : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_float</span> : <code class="type">float <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Type_class.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_float</span> : <code class="type">float <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Type_class.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_float_</span> : <code class="type">float <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Unsafe_write_c.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_float</span> : <code class="type">float <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Write_ml.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_float</span> : <code class="type">float <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Type_class.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_float</span> : <code class="type">float <a href="?package=bin_prot&amp;module=Read_ml&amp;type=reader">Read_ml.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_float_</span> : <code class="type">float <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_float__</span> : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_int32</span> : <code class="type">int32 <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Type_class.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_int32</span> : <code class="type">int32 <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Type_class.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_int32_</span> : <code class="type">int32 <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Unsafe_write_c.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_int32</span> : <code class="type">int32 <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Write_ml.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_int32</span> : <code class="type">int32 <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Type_class.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_int32</span> : <code class="type">int32 <a href="?package=bin_prot&amp;module=Read_ml&amp;type=reader">Read_ml.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_int32_</span> : <code class="type">int32 <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_int32__</span> : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_int64</span> : <code class="type">int64 <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Type_class.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_int64</span> : <code class="type">int64 <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Type_class.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_int64_</span> : <code class="type">int64 <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Unsafe_write_c.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_int64</span> : <code class="type">int64 <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Write_ml.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_int64</span> : <code class="type">int64 <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Type_class.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_int64</span> : <code class="type">int64 <a href="?package=bin_prot&amp;module=Read_ml&amp;type=reader">Read_ml.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_int64_</span> : <code class="type">int64 <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_int64__</span> : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_nativeint</span> : <code class="type">nativeint <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Type_class.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_nativeint</span> : <code class="type">nativeint <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Type_class.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_nativeint_</span> : <code class="type">nativeint <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Unsafe_write_c.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_nativeint</span> : <code class="type">nativeint <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Write_ml.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_nativeint</span> : <code class="type">nativeint <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Type_class.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_nativeint</span> : <code class="type">nativeint <a href="?package=bin_prot&amp;module=Read_ml&amp;type=reader">Read_ml.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_nativeint_</span> : <code class="type">nativeint <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_nativeint__</span> : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_ref</span> : <code class="type">('a, 'a <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a>) <a href="?package=bin_prot&amp;module=Type_class.S1&amp;type=t">Type_class.S1.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_ref</span> : <code class="type">('a, 'a <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a>) <a href="?package=bin_prot&amp;module=Type_class.S1&amp;type=writer">Type_class.S1.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_ref_</span> : <code class="type">('a, 'a <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a>) <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer1">Unsafe_write_c.writer1</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_ref</span> : <code class="type">('a, 'a <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a>) <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer1">Write_ml.writer1</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_ref</span> : <code class="type">('a, 'a <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a>) <a href="?package=bin_prot&amp;module=Type_class.S1&amp;type=reader">Type_class.S1.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_ref</span> : <code class="type">('a, 'a <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a>) <a href="?package=bin_prot&amp;module=Read_ml&amp;type=reader1">Read_ml.reader1</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_ref_</span> : <code class="type">('a, 'a <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a>) <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader1">Unsafe_read_c.reader1</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_ref__</span> : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd -&gt; 'e</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_lazy_t</span> : <code class="type">('a, 'a lazy_t) <a href="?package=bin_prot&amp;module=Type_class.S1&amp;type=t">Type_class.S1.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_lazy_t</span> : <code class="type">('a, 'a lazy_t) <a href="?package=bin_prot&amp;module=Type_class.S1&amp;type=writer">Type_class.S1.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_lazy_t_</span> : <code class="type">('a, 'a lazy_t) <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer1">Unsafe_write_c.writer1</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_lazy_t</span> : <code class="type">('a, 'a lazy_t) <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer1">Write_ml.writer1</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_lazy_t</span> : <code class="type">('a, 'a lazy_t) <a href="?package=bin_prot&amp;module=Type_class.S1&amp;type=reader">Type_class.S1.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_lazy_t</span> : <code class="type">('a, 'a lazy_t) <a href="?package=bin_prot&amp;module=Read_ml&amp;type=reader1">Read_ml.reader1</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_lazy_t_</span> : <code class="type">('a, 'a lazy_t) <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader1">Unsafe_read_c.reader1</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_lazy_t__</span> : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd -&gt; 'e</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_lazy</span> : <code class="type">('a, 'a lazy_t) <a href="?package=bin_prot&amp;module=Type_class.S1&amp;type=t">Type_class.S1.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_lazy</span> : <code class="type">('a, 'a lazy_t) <a href="?package=bin_prot&amp;module=Type_class.S1&amp;type=writer">Type_class.S1.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_lazy_</span> : <code class="type">('a, 'a lazy_t) <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer1">Unsafe_write_c.writer1</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_lazy</span> : <code class="type">('a, 'a lazy_t) <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer1">Write_ml.writer1</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_lazy</span> : <code class="type">('a, 'a lazy_t) <a href="?package=bin_prot&amp;module=Type_class.S1&amp;type=reader">Type_class.S1.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_lazy</span> : <code class="type">('a, 'a lazy_t) <a href="?package=bin_prot&amp;module=Read_ml&amp;type=reader1">Read_ml.reader1</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_lazy_</span> : <code class="type">('a, 'a lazy_t) <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader1">Unsafe_read_c.reader1</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_lazy__</span> : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd -&gt; 'e</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_option</span> : <code class="type">('a, 'a option) <a href="?package=bin_prot&amp;module=Type_class.S1&amp;type=t">Type_class.S1.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_option</span> : <code class="type">('a, 'a option) <a href="?package=bin_prot&amp;module=Type_class.S1&amp;type=writer">Type_class.S1.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_option_</span> : <code class="type">('a, 'a option) <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer1">Unsafe_write_c.writer1</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_option</span> : <code class="type">('a, 'a option) <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer1">Write_ml.writer1</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_option</span> : <code class="type">('a, 'a option) <a href="?package=bin_prot&amp;module=Type_class.S1&amp;type=reader">Type_class.S1.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_option</span> : <code class="type">('a, 'a option) <a href="?package=bin_prot&amp;module=Read_ml&amp;type=reader1">Read_ml.reader1</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_option_</span> : <code class="type">('a, 'a option) <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader1">Unsafe_read_c.reader1</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_option__</span> : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd -&gt; 'e</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_list</span> : <code class="type">('a, 'a list) <a href="?package=bin_prot&amp;module=Type_class.S1&amp;type=t">Type_class.S1.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_list</span> : <code class="type">('a, 'a list) <a href="?package=bin_prot&amp;module=Type_class.S1&amp;type=writer">Type_class.S1.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_list_</span> : <code class="type">('a, 'a list) <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer1">Unsafe_write_c.writer1</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_list</span> : <code class="type">('a, 'a list) <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer1">Write_ml.writer1</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_list</span> : <code class="type">('a, 'a list) <a href="?package=bin_prot&amp;module=Type_class.S1&amp;type=reader">Type_class.S1.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_list</span> : <code class="type">('a, 'a list) <a href="?package=bin_prot&amp;module=Read_ml&amp;type=reader1">Read_ml.reader1</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_list_</span> : <code class="type">('a, 'a list) <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader1">Unsafe_read_c.reader1</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_list__</span> : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd -&gt; 'e</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_array</span> : <code class="type">('a, 'a array) <a href="?package=bin_prot&amp;module=Type_class.S1&amp;type=t">Type_class.S1.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_array</span> : <code class="type">('a, 'a array) <a href="?package=bin_prot&amp;module=Type_class.S1&amp;type=writer">Type_class.S1.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_array_</span> : <code class="type">('a, 'a array) <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer1">Unsafe_write_c.writer1</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_array</span> : <code class="type">('a, 'a array) <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer1">Write_ml.writer1</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_array</span> : <code class="type">('a, 'a array) <a href="?package=bin_prot&amp;module=Type_class.S1&amp;type=reader">Type_class.S1.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_array</span> : <code class="type">('a, 'a array) <a href="?package=bin_prot&amp;module=Read_ml&amp;type=reader1">Read_ml.reader1</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_array_</span> : <code class="type">('a, 'a array) <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader1">Unsafe_read_c.reader1</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_array__</span> : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd -&gt; 'e</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_hashtbl</span> : <code class="type">('a, 'b, ('a, 'b) <a href="?package=stdlib&amp;module=Hashtbl&amp;type=t">Hashtbl.t</a>) <a href="?package=bin_prot&amp;module=Type_class.S2&amp;type=t">Type_class.S2.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_hashtbl</span> : <code class="type">('a, 'b, ('a, 'b) <a href="?package=stdlib&amp;module=Hashtbl&amp;type=t">Hashtbl.t</a>) <a href="?package=bin_prot&amp;module=Type_class.S2&amp;type=writer">Type_class.S2.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_hashtbl_</span> : <code class="type">('a, 'b, ('a, 'b) <a href="?package=stdlib&amp;module=Hashtbl&amp;type=t">Hashtbl.t</a>) <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer2">Unsafe_write_c.writer2</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_hashtbl</span> : <code class="type">('a, 'b, ('a, 'b) <a href="?package=stdlib&amp;module=Hashtbl&amp;type=t">Hashtbl.t</a>) <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer2">Write_ml.writer2</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_hashtbl</span> : <code class="type">('a, 'b, ('a, 'b) <a href="?package=stdlib&amp;module=Hashtbl&amp;type=t">Hashtbl.t</a>) <a href="?package=bin_prot&amp;module=Type_class.S2&amp;type=reader">Type_class.S2.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_hashtbl</span> : <code class="type">('a, 'b, ('a, 'b) <a href="?package=stdlib&amp;module=Hashtbl&amp;type=t">Hashtbl.t</a>) <a href="?package=bin_prot&amp;module=Read_ml&amp;type=reader2">Read_ml.reader2</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_hashtbl_</span> : <code class="type">('a, 'b, ('a, 'b) <a href="?package=stdlib&amp;module=Hashtbl&amp;type=t">Hashtbl.t</a>) <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader2">Unsafe_read_c.reader2</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_hashtbl__</span> : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd -&gt; 'e -&gt; 'f</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_bigstring</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=buf">Common.buf</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Type_class.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_bigstring</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=buf">Common.buf</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Type_class.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_bigstring_</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=buf">Common.buf</a> <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Unsafe_write_c.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_bigstring</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=buf">Common.buf</a> <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Write_ml.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_bigstring</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=buf">Common.buf</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Type_class.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_bigstring</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=buf">Common.buf</a> <a href="?package=bin_prot&amp;module=Read_ml&amp;type=reader">Read_ml.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_bigstring_</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=buf">Common.buf</a> <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_bigstring__</span> : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_mat</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=mat">Common.mat</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Type_class.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_mat</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=mat">Common.mat</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Type_class.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_mat_</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=mat">Common.mat</a> <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Unsafe_write_c.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_mat</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=mat">Common.mat</a> <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Write_ml.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_mat</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=mat">Common.mat</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Type_class.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_mat</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=mat">Common.mat</a> <a href="?package=bin_prot&amp;module=Read_ml&amp;type=reader">Read_ml.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_mat_</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=mat">Common.mat</a> <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_mat__</span> : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_float32_mat</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=mat32">Common.mat32</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Type_class.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_float32_mat</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=mat32">Common.mat32</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Type_class.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_float32_mat_</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=mat32">Common.mat32</a> <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Unsafe_write_c.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_float32_mat</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=mat32">Common.mat32</a> <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Write_ml.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_float32_mat</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=mat32">Common.mat32</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Type_class.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_float32_mat</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=mat32">Common.mat32</a> <a href="?package=bin_prot&amp;module=Read_ml&amp;type=reader">Read_ml.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_float32_mat_</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=mat32">Common.mat32</a> <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_float32_mat__</span> : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_float64_mat</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=mat64">Common.mat64</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Type_class.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_float64_mat</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=mat64">Common.mat64</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Type_class.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_float64_mat_</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=mat64">Common.mat64</a> <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Unsafe_write_c.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_float64_mat</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=mat64">Common.mat64</a> <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Write_ml.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_float64_mat</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=mat64">Common.mat64</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Type_class.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_float64_mat</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=mat64">Common.mat64</a> <a href="?package=bin_prot&amp;module=Read_ml&amp;type=reader">Read_ml.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_float64_mat_</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=mat64">Common.mat64</a> <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_float64_mat__</span> : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_vec</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=vec">Common.vec</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Type_class.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_vec</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=vec">Common.vec</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Type_class.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_vec_</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=vec">Common.vec</a> <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Unsafe_write_c.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_vec</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=vec">Common.vec</a> <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Write_ml.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_vec</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=vec">Common.vec</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Type_class.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_vec</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=vec">Common.vec</a> <a href="?package=bin_prot&amp;module=Read_ml&amp;type=reader">Read_ml.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_vec_</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=vec">Common.vec</a> <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_vec__</span> : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_float32_vec</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=vec32">Common.vec32</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Type_class.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_float32_vec</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=vec32">Common.vec32</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Type_class.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_float32_vec_</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=vec32">Common.vec32</a> <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Unsafe_write_c.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_float32_vec</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=vec32">Common.vec32</a> <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Write_ml.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_float32_vec</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=vec32">Common.vec32</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Type_class.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_float32_vec</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=vec32">Common.vec32</a> <a href="?package=bin_prot&amp;module=Read_ml&amp;type=reader">Read_ml.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_float32_vec_</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=vec32">Common.vec32</a> <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_float32_vec__</span> : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_float64_vec</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=vec64">Common.vec64</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Type_class.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_float64_vec</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=vec64">Common.vec64</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Type_class.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_float64_vec_</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=vec64">Common.vec64</a> <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Unsafe_write_c.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_float64_vec</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=vec64">Common.vec64</a> <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Write_ml.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_float64_vec</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=vec64">Common.vec64</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Type_class.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_float64_vec</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=vec64">Common.vec64</a> <a href="?package=bin_prot&amp;module=Read_ml&amp;type=reader">Read_ml.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_float64_vec_</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=vec64">Common.vec64</a> <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_float64_vec__</span> : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd</code></pre>
+      
+    </div>

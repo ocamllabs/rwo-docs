@@ -1,17 +1,5 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-
-<title>Staged</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Staged</h1>
-<pre><span class="keyword">module</span> Staged</pre><div class="info">A type for making staging explicit in the type of a function.  For example, you might
+<div class="ocaml_toplevel_module">
+<div class="info">A type for making staging explicit in the type of a function.  For example, you might
     want to have a function that creates a function for allocating unique identifiers.
     Rather than using the type:<br/>    <pre class="codepre"><code class="code">
     val make_id_allocator : unit -&gt; unit -&gt; int
@@ -27,7 +15,14 @@
       (alloc (), alloc ())
     </code></pre><br/>    both stage and unstage functions are available in Common.<br/>    (Note that in many cases, including perhaps the one above, it's preferable to create a
     custom type rather than use Staged.)</div>
-<hr/>
-<div file="Staged.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">+'a </code>t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stage</span> : <code class="type">'a -&gt; 'a <a href="?package=core_kernel&amp;module=Staged&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unstage</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Staged&amp;type=t">t</a> -&gt; 'a</code></pre>
+      
+    </div>

@@ -1,6 +1,0 @@
-<pre><code><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'execution_context) </code>t </span>= {</code></pre><table class="typetable">
-		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.execution_context">execution_context</span> :<code class="type">'execution_context</code>;</code></td>
-	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.run">run</span> :<code class="type">'a -&gt; unit</code>;</code></td>
-	  </tr></table>}
-      
-    

@@ -1,18 +1,12 @@
-<!DOCTYPE HTML>
-<html>
-<head>
+<div class="ocaml_toplevel_module">
 
-<title>Timed_function</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Timed_function</h1>
-<pre><span class="keyword">module</span> Timed_function</pre>
-<hr/>
-<div file="Timed_function.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<pre><span id="EXCEPTIONTimeout"><span class="keyword">exception</span> Timeout</span></pre><div class="info">Functions with timeouts<br/>   This module is here to add timeouts to any functions.</div>
+ 
+      <pre><span><span class="keyword">val</span> run</span> : <code class="type">timeout:float -&gt;
+f:('a -&gt; 'b) -&gt;
+sexp_of:('b -&gt; <a href="?package=core&amp;module=Std.Sexp&amp;type=t">Core.Std.Sexp.t</a>) -&gt;
+of_sexp:(<a href="?package=core&amp;module=Std.Sexp&amp;type=t">Core.Std.Sexp.t</a> -&gt; 'b) -&gt; 'a -&gt; 'b</code></pre>
+      <div class="info">Runs a function in a fork process to ensure a timeout.
+    The function passed must not raise an exception not have any weird
+    side effects.</div>
+    </div>

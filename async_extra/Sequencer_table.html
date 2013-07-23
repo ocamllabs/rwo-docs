@@ -1,17 +1,5 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-
-<title>Sequencer_table</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Sequencer_table</h1>
-<pre><span class="keyword">module</span> Sequencer_table</pre><div class="info">A table of sequencers indexed by key, so that at any moment for each key there is at
+<div class="ocaml_toplevel_module">
+<div class="info">A table of sequencers indexed by key, so that at any moment for each key there is at
     most one job running.<br/>    An <code class="code">'a Sequencer_table.Make(Key).t</code> is similar in concept to:<br/>    <pre class="codepre"><code class="code">
       { mutable state : 'a option;
         jobs  : 'a option Throttle.Sequencer.t;
@@ -29,7 +17,47 @@
     when one adds a job, and automatically removes a sequencer from the <code class="code">jobs</code> table
     whenever the sequencer has no jobs to run.<br/>    The implementation does not automatically release state; one must call <code class="code">set_state t
     ~key None</code>.</div>
-<hr/>
-<div file="Sequencer_table.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<div class="ocaml_module sig" name="Make">
+		<pre><span class="keyword">module</span> <a href="?package=async_extra&amp;module=Sequencer_table.Make">Make</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">Key</code><code class="code"> : </code><code class="type"><a href="?package=core&amp;module=Std.Hashable">Core.Std.Hashable</a></code><code class="code">) -&gt; </code><code class="code">sig</code> .. <code class="code">end</code></div></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">unit -&gt; 'a <a href="?package=async_extra&amp;module=Sequencer_table.Make&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> enqueue</span> : <code class="type">'a <a href="?package=async_extra&amp;module=Sequencer_table.Make&amp;type=t">t</a> -&gt;
+key:Key.t -&gt; ('a option -&gt; 'b <a href="?package=async_extra&amp;module=Import.Deferred&amp;type=t">Import.Deferred.t</a>) -&gt; 'b <a href="?package=async_extra&amp;module=Import.Deferred&amp;type=t">Import.Deferred.t</a></code></pre>
+      <div class="info"><code class="code">enqueue t ~key f</code> enqueues <code class="code">f</code> for <code class="code">key</code>.  <code class="code">f</code> will be called with the state of
+      <code class="code">key</code> when invoked.  If there is no pending job for <code class="code">key</code>, <code class="code">f</code> will be called
+      immediately.  If <code class="code">f</code> raises, then the exception will be raised to the monitor in
+      effect when <code class="code">enqueue</code> was called.  Subsequent jobs for <code class="code">key</code> will proceed.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> set_state</span> : <code class="type">'a <a href="?package=async_extra&amp;module=Sequencer_table.Make&amp;type=t">t</a> -&gt; key:Key.t -&gt; 'a option -&gt; unit</code></pre>
+      <div class="info"><code class="code">set_state t key state_opt</code> sets the state for <code class="code">key</code> immediately.  The state will be
+      kept internally until set to <code class="code">None</code> </div>
+    
+ 
+      <pre><span><span class="keyword">val</span> find_state</span> : <code class="type">'a <a href="?package=async_extra&amp;module=Sequencer_table.Make&amp;type=t">t</a> -&gt; Key.t -&gt; 'a option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> num_unfinished_jobs</span> : <code class="type">'a <a href="?package=async_extra&amp;module=Sequencer_table.Make&amp;type=t">t</a> -&gt; Key.t -&gt; int</code></pre>
+      <div class="info"><code class="code">num_unfinished_jobs t key</code> returns the number of jobs for <code class="code">key</code> including including
+      pending and running.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> mem</span> : <code class="type">'a <a href="?package=async_extra&amp;module=Sequencer_table.Make&amp;type=t">t</a> -&gt; Key.t -&gt; bool</code></pre>
+      <div class="info"><code class="code">mem t key</code> returns <code class="code">true</code> if there is state or an pending/running job</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> fold</span> : <code class="type">'a <a href="?package=async_extra&amp;module=Sequencer_table.Make&amp;type=t">t</a> -&gt; init:'b -&gt; f:('b -&gt; key:Key.t -&gt; 'a option -&gt; 'b) -&gt; 'b</code></pre>
+      <div class="info">Fold over keys with states or pending/running jobs. It's safe to mutate (<code class="code">enqueue</code>
+      or <code class="code">set_state</code>) when folding</div>
+    
+		</div>
+</div></div>

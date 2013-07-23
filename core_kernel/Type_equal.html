@@ -1,17 +1,5 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-
-<title>Type_equal</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Type_equal</h1>
-<pre><span class="keyword">module</span> Type_equal</pre><div class="info">For representing type equalities otherwise not known by the type-checker.<br/>    The purpose of <code class="code">Type_equal</code> is to represent type equalities that the type checker
+<div class="ocaml_toplevel_module">
+<div class="info">For representing type equalities otherwise not known by the type-checker.<br/>    The purpose of <code class="code">Type_equal</code> is to represent type equalities that the type checker
     otherwise would not know, perhaps because the type equality depends on dynamic data,
     or perhaps because the type system isn't powerful enough.<br/>    A value of type <code class="code">(a, b) Type_equal.t</code> represents that types <code class="code">a</code> and <code class="code">b</code> are equal.
     One can think of such a value as a proof of type equality.  The <code class="code">Type_equal</code> module
@@ -32,7 +20,199 @@
     checker that two types are equal.  The <code class="code">Type_equal.t</code> value that is passed is
     necessary for the type-checker's rules to be correct, but the compiler, could, in
     principle, not pass around values of type <code class="code">Type_equal.t</code> at run time.</div>
-<hr/>
-<div file="Type_equal.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<pre><code><span id="TYPEt"><span class="keyword">type</span> <code class="type">(_, _) </code>t</span> = </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.T"><span class="constructor">T</span></span></code></td>
+	   </tr></table>
+      
+    
+<pre><span id="TYPEequal"><span class="keyword">type</span> <code class="type">('a, 'b) </code>equal</span> = <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Type_equal&amp;type=t">t</a></code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> refl</span> : <code class="type">('a, 'a) <a href="?package=core_kernel&amp;module=Type_equal&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">refl</code>, <code class="code">sym</code>, and <code class="code">trans</code> construct proofs that type equality is reflexive,
+    symmetric, and transitive.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> sym</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Type_equal&amp;type=t">t</a> -&gt; ('b, 'a) <a href="?package=core_kernel&amp;module=Type_equal&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> trans</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Type_equal&amp;type=t">t</a> -&gt; ('b, 'c) <a href="?package=core_kernel&amp;module=Type_equal&amp;type=t">t</a> -&gt; ('a, 'c) <a href="?package=core_kernel&amp;module=Type_equal&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> conv</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Type_equal&amp;type=t">t</a> -&gt; 'a -&gt; 'b</code></pre>
+      <div class="info"><code class="code">conv t x</code> uses the type equality <code class="code">t : (a, b) t</code> as evidence to safely cast <code class="code">x</code>
+    from type <code class="code">a</code> to type <code class="code">b</code>.  <code class="code">conv</code> is semantically just the identity function.<br/>    In a program that has <code class="code">t : (a, b) t</code> where one has a value of type <code class="code">a</code> that one wants
+    to treat as a value of type <code class="code">b</code>, it is often sufficient to pattern match on
+    <code class="code">Type_equal.T</code> rather than use <code class="code">conv</code>.  However, there are situations where OCaml's
+    type checker will not use the type equality <code class="code">a = b</code>, and one must use <code class="code">conv</code>.  For
+    example:<br/>    <pre class="codepre"><code class="code">
+      module F (M1 : sig type t end) (M2 : sig type t end) : sig
+        val f : (M1.t, M2.t) equal -&gt; M1.t -&gt; M2.t
+      end = struct
+        let f equal (m1 : M1.t) = conv equal m1
+      end
+    </code></pre><br/>    If one wrote the body of <code class="code">F</code> using pattern matching on <code class="code">T</code>:<br/>    <pre class="codepre"><code class="code">
+      let f (T : (M1.t, M2.t) equal) (m1 : M1.t) = (m1 : M2.t)
+    </code></pre><br/>    this would give a type error.</div>
+    
+<br/>It is always safe to conclude that if type <code class="code">a</code> equals <code class="code">b</code>, then for any type <code class="code">'a t</code>,
+    type <code class="code">a t</code> equals <code class="code">b t</code>.  The OCaml type checker uses this fact when it can.  However,
+    sometimes, e.g. when using <code class="code">conv</code>, one needs to explicitly use this fact to construct
+    an appropriate <code class="code">Type_equal.t</code>.  The <code class="code">Lift*</code> functors do this.<br/>
+	  
+<div class="ocaml_module sig" name="Lift">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Type_equal.Lift">Lift</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">X</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=T.T1">T.T1</a></code><code class="code">) -&gt; </code><code class="code">sig</code> .. <code class="code">end</code></div></pre>
+		<div class="ocaml_module_content">
+		       
+ 
+      <pre><span><span class="keyword">val</span> lift</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Type_equal&amp;type=t">t</a> -&gt; ('a X.t, 'b X.t) <a href="?package=core_kernel&amp;module=Type_equal&amp;type=t">t</a></code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="Lift2">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Type_equal.Lift2">Lift2</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">X</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=T.T2">T.T2</a></code><code class="code">) -&gt; </code><code class="code">sig</code> .. <code class="code">end</code></div></pre>
+		<div class="ocaml_module_content">
+		       
+ 
+      <pre><span><span class="keyword">val</span> lift</span> : <code class="type">('a1, 'b1) <a href="?package=core_kernel&amp;module=Type_equal&amp;type=t">t</a> -&gt; ('a2, 'b2) <a href="?package=core_kernel&amp;module=Type_equal&amp;type=t">t</a> -&gt; (('a1, 'a2) X.t, ('b1, 'b2) X.t) <a href="?package=core_kernel&amp;module=Type_equal&amp;type=t">t</a></code></pre>
+      
+    
+		</div>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> detuple2</span> : <code class="type">('a1 * 'a2, 'b1 * 'b2) <a href="?package=core_kernel&amp;module=Type_equal&amp;type=t">t</a> -&gt; ('a1, 'b1) <a href="?package=core_kernel&amp;module=Type_equal&amp;type=t">t</a> * ('a2, 'b2) <a href="?package=core_kernel&amp;module=Type_equal&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">tuple2</code> and <code class="code">detuple2</code> convert between equality on a 2-tuple and its components.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> tuple2</span> : <code class="type">('a1, 'b1) <a href="?package=core_kernel&amp;module=Type_equal&amp;type=t">t</a> -&gt; ('a2, 'b2) <a href="?package=core_kernel&amp;module=Type_equal&amp;type=t">t</a> -&gt; ('a1 * 'a2, 'b1 * 'b2) <a href="?package=core_kernel&amp;module=Type_equal&amp;type=t">t</a></code></pre>
+      
+    
+<div class="ocaml_module sig" name="Injective">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Type_equal.Injective">Injective</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="info"><code class="code">Injective</code> is an interface that states that a type is injective, where the type is
+    viewed as a function from types to other types.  The typical usage is:<br/>    <pre class="codepre"><code class="code">
+      type 'a t
+      include Injective with type 'a t := 'a t
+    </code></pre><br/>    For example, <code class="code">'a list</code> is an injective type, because whenever <code class="code">'a list = 'b list</code>, we
+    know that <code class="code">'a</code> = <code class="code">'b</code>.  On the other hand, if we define:<br/>    <pre class="codepre"><code class="code">
+      type 'a t = unit
+    </code></pre><br/>    then clearly <code class="code">t</code> isn't injective, because, e.g. <code class="code">int t = bool t</code>, but <code class="code">int &lt;&gt; bool</code>.<br/>    If <code class="code">module M : Injective</code>, then <code class="code">M.strip</code> provides a way to get a proof that two types
+    are equal from a proof that both types transformed by <code class="code">M.t</code> are equal.<br/>    OCaml has no built-in language feature to state that a type is injective, which is why
+    we have <code class="code">module type Injective</code>.  However, OCaml can infer that a type is injective,
+    and we can use this to match <code class="code">Injective</code>.  A typical implementation will look like
+    this:<br/>    <pre class="codepre"><code class="code">
+      let strip (type a) (type b)
+          (Type_equal.T : (a t, b t) Type_equal.t) : (a, b) Type_equal.t =
+        Type_equal.T
+    </code></pre><br/>    This will not type check for all type constructors (certainly not for non-injective
+    ones!), but it's always safe to try the above implementation if you are unsure.  If
+    OCaml accepts this definition, then the type is injective.  On the other hand, if
+    OCaml doesn't, then type type may or may not be injective.  For example, if the
+    definition of the type depends on abstract types that match <code class="code">Injective</code>, OCaml will
+    not automatically use their injectivity, and one will have to write a more complicated
+    definition of <code class="code">strip</code> that causes OCaml to use that fact.  For example:<br/>    <pre class="codepre"><code class="code">
+      module F (M : Type_equal.Injective) : Type_equal.Injective = struct
+        type 'a t = 'a M.t * int
+
+        let strip (type a) (type b)
+            (e : (a t, b t) Type_equal.t) : (a, b) Type_equal.t =
+          let e1, _ = Type_equal.detuple2 e in
+          M.strip e1
+        ;;
+      end
+    </code></pre><br/>    If in the definition of <code class="code">F</code> we had written the simpler implementation of <code class="code">strip</code> that
+    didn't use <code class="code">M.strip</code>, then OCaml would have reported a type error.</div>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> strip</span> : <code class="type">('a <a href="?package=core_kernel&amp;module=Type_equal.Injective&amp;type=t">t</a>, 'b <a href="?package=core_kernel&amp;module=Type_equal.Injective&amp;type=t">t</a>) <a href="?package=core_kernel&amp;module=Type_equal&amp;type=equal">equal</a> -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Type_equal&amp;type=equal">equal</a></code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="Injective2">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Type_equal.Injective2">Injective2</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="info"><code class="code">Injective2</code> is for a binary type that is injective in both type arguments.</div>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a1, 'a2) </code>t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> strip</span> : <code class="type">(('a1, 'a2) <a href="?package=core_kernel&amp;module=Type_equal.Injective2&amp;type=t">t</a>, ('b1, 'b2) <a href="?package=core_kernel&amp;module=Type_equal.Injective2&amp;type=t">t</a>) <a href="?package=core_kernel&amp;module=Type_equal&amp;type=equal">equal</a> -&gt; ('a1, 'b1) <a href="?package=core_kernel&amp;module=Type_equal&amp;type=equal">equal</a> * ('a2, 'b2) <a href="?package=core_kernel&amp;module=Type_equal&amp;type=equal">equal</a></code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module ident" name="Composition_preserves_injectivity" path="?package=core_kernel&amp;amp;module=Type_equal.Injective">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Type_equal.Composition_preserves_injectivity">Composition_preserves_injectivity</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">M1</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Type_equal.Injective">Injective</a></code><code class="code">) -&gt; </code><div class="sig_block"><code class="code">functor (</code><code class="code">M2</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Type_equal.Injective">Injective</a></code><code class="code">) -&gt; </code><code class="code"><a href="?package=core_kernel&amp;module=Type_equal.Injective">Injective</a></code> with type <a href="?package=core_kernel&amp;module=Type_equal.Injective&amp;type=t">t</a> = 'a M1.t M2.t</div></div></pre><div class="info"><code class="code">Composition_preserves_injectivity</code> is a functor that proves that composition of
+    injective types is injective.</div>
+</div>
+<div class="ocaml_module sig" name="Id">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Type_equal.Id">Id</a> : <code class="code">sig</code> .. <code class="code">end</code></pre><div class="info"><code class="code">Id</code> provides identifiers for types, and the ability to test (via <code class="code">Id.same</code>) at
+    run-time if two identifiers are equal, and if so to get a proof of equality of their
+    types.  Unlike values of type <code class="code">Type_equal.t</code>, values of type <code class="code">Id.t</code> do have semantic
+    content and must have a nontrivial runtime representation.</div>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> </pre>
+      
+    
+<div class="ocaml_module ident" name="Uid" path="?package=core_kernel&amp;amp;module=Unique_id_intf.Id">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Type_equal.Id.Uid">Uid</a> : <code class="code"><a href="?package=core_kernel&amp;module=Unique_id_intf.Id">Unique_id_intf.Id</a></code></pre><div class="info">Every <code class="code">Id.t</code> contains a unique id that is distinct from the <code class="code">Uid.t</code> in any other
+      <code class="code">Id.t</code>.</div>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> uid</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Type_equal.Id&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Type_equal.Id.Uid&amp;type=t">Uid.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">name:string -&gt; 'a <a href="?package=core_kernel&amp;module=Type_equal.Id&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">create ~name</code> defines a new type identity.  Two calls to <code class="code">create</code> will result in
+      two distinct identifiers, even for the same arguments with the same type.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> hash</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Type_equal.Id&amp;type=t">t</a> -&gt; int</code></pre>
+      <div class="info">accessors</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> name</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Type_equal.Id&amp;type=t">t</a> -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> same</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Type_equal.Id&amp;type=t">t</a> -&gt; 'b <a href="?package=core_kernel&amp;module=Type_equal.Id&amp;type=t">t</a> -&gt; bool</code></pre>
+      <div class="info"><code class="code">same_witness t1 t2</code> and <code class="code">same_witness_exn t1 t2</code> return a type equality proof iff
+      the two identifiers are physically equal.  This is a useful way to achieve a sort of
+      dynamic typing.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> same_witness</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Type_equal.Id&amp;type=t">t</a> -&gt; 'b <a href="?package=core_kernel&amp;module=Type_equal.Id&amp;type=t">t</a> -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Type_equal&amp;type=equal">equal</a> <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">Or_error.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> same_witness_exn</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Type_equal.Id&amp;type=t">t</a> -&gt; 'b <a href="?package=core_kernel&amp;module=Type_equal.Id&amp;type=t">t</a> -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Type_equal&amp;type=equal">equal</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; 'a <a href="?package=core_kernel&amp;module=Type_equal.Id&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+<br/>Every <code class="code">Id.t</code> contains a unique id that is distinct from the <code class="code">Uid.t</code> in any other
+      <code class="code">Id.t</code>.<br/>
+	  
+<br/><code class="code">create ~name</code> defines a new type identity.  Two calls to <code class="code">create</code> will result in
+      two distinct identifiers, even for the same arguments with the same type.<br/>
+	  
+<br/>accessors<br/>
+	  
+<br/><code class="code">same_witness t1 t2</code> and <code class="code">same_witness_exn t1 t2</code> return a type equality proof iff
+      the two identifiers are physically equal.  This is a useful way to achieve a sort of
+      dynamic typing.<br/>
+	  
+		</div>
+</div></div>

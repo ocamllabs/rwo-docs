@@ -1,18 +1,18 @@
-<!DOCTYPE HTML>
-<html>
-<head>
+<div class="ocaml_toplevel_module">
 
-<title>Extra_fields</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Extra_fields</h1>
-<pre><span class="keyword">module</span> Extra_fields</pre>
-<hr/>
-<div file="Extra_fields.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<pre><span id="EXCEPTIONNot_a_record_type"><span class="keyword">exception</span> Not_a_record_type</span> <span class="keyword">of</span> <code class="type"><a href="?package=core&amp;module=Std.Sexp&amp;type=t">Core.Std.Sexp.t</a></code></pre>
+<div class="ocaml_module sig" name="Make">
+		<pre><span class="keyword">module</span> <a href="?package=core_extended&amp;module=Extra_fields.Make">Make</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="type"><a href="?package=core&amp;module=Std.Sexpable">Core.Std.Sexpable</a></code><code class="code">) -&gt; </code><code class="code">sig</code> .. <code class="code">end</code></div></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><code><span id="TYPEt"><span class="keyword">type</span> t</span> = {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.value">value</span> :<code class="type">M.t</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.extra_fields">extra_fields</span> :<code class="type">string list</code>;</code></td>
+	  </tr></table>}
+      
+    
+<div class="ocaml_include ident" path="?package=core&amp;amp;module=Std.Sexpable" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core&amp;module=Std.Sexpable">Core.Std.Sexpable</a></code> with type t = <a href="?package=core_extended&amp;module=Extra_fields.Make&amp;type=t">t</a></pre>
+</div>
+		</div>
+</div></div>

@@ -1,17 +1,5 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-
-<title>Int32</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Int32</h1>
-<pre><span class="keyword">module</span> Int32</pre><div class="info">32-bit integers.<br/>   This module provides operations on the type <code class="code">int32</code>
+<div class="ocaml_toplevel_module">
+<div class="info">32-bit integers.<br/>   This module provides operations on the type <code class="code">int32</code>
    of signed 32-bit integers.  Unlike the built-in <code class="code">int</code> type,
    the type <code class="code">int32</code> is guaranteed to be exactly 32-bit wide on all
    platforms.  All arithmetic operations over <code class="code">int32</code> are taken
@@ -19,7 +7,132 @@
    space than values of type <code class="code">int</code>, and arithmetic operations on
    <code class="code">int32</code> are generally slower than those on <code class="code">int</code>.  Use <code class="code">int32</code>
    only when the application requires exact 32-bit arithmetic.</div>
-<hr/>
-<div file="Int32.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+ 
+      <pre><span><span class="keyword">val</span> zero</span> : <code class="type">int32</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> one</span> : <code class="type">int32</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> minus_one</span> : <code class="type">int32</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> neg</span> : <code class="type">int32 -&gt; int32</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add</span> : <code class="type">int32 -&gt; int32 -&gt; int32</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sub</span> : <code class="type">int32 -&gt; int32 -&gt; int32</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mul</span> : <code class="type">int32 -&gt; int32 -&gt; int32</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> div</span> : <code class="type">int32 -&gt; int32 -&gt; int32</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rem</span> : <code class="type">int32 -&gt; int32 -&gt; int32</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> succ</span> : <code class="type">int32 -&gt; int32</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pred</span> : <code class="type">int32 -&gt; int32</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> abs</span> : <code class="type">int32 -&gt; int32</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> max_int</span> : <code class="type">int32</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> min_int</span> : <code class="type">int32</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> logand</span> : <code class="type">int32 -&gt; int32 -&gt; int32</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> logor</span> : <code class="type">int32 -&gt; int32 -&gt; int32</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> logxor</span> : <code class="type">int32 -&gt; int32 -&gt; int32</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> lognot</span> : <code class="type">int32 -&gt; int32</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> shift_left</span> : <code class="type">int32 -&gt; int -&gt; int32</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> shift_right</span> : <code class="type">int32 -&gt; int -&gt; int32</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> shift_right_logical</span> : <code class="type">int32 -&gt; int -&gt; int32</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_int</span> : <code class="type">int -&gt; int32</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_int</span> : <code class="type">int32 -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_float</span> : <code class="type">float -&gt; int32</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_float</span> : <code class="type">int32 -&gt; float</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_string</span> : <code class="type">string -&gt; int32</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_string</span> : <code class="type">int32 -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bits_of_float</span> : <code class="type">float -&gt; int32</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> float_of_bits</span> : <code class="type">int32 -&gt; float</code></pre>
+      
+    
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> = <code class="type">int32</code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> compare</span> : <code class="type"><a href="?package=stdlib&amp;module=Int32&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=Int32&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Deprecated functions</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> format</span> : <code class="type">string -&gt; int32 -&gt; string</code></pre>
+      
+    </div>

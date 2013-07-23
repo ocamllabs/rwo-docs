@@ -1,18 +1,329 @@
-<!DOCTYPE HTML>
-<html>
-<head>
+<div class="ocaml_toplevel_module">
 
-<title>Monad</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
+ 
+      <pre><span><span class="keyword">val</span> __pa_ounit_275876e34cf609db118f3d84b799a790</span> : <code class="type">string</code></pre>
+      
+    
 
-<h1>Module Monad</h1>
-<pre><span class="keyword">module</span> Monad</pre>
-<hr/>
-<div file="Monad.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<div class="ocaml_module sig" name="Basic">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Monad.Basic">Basic</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bind</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Monad.Basic&amp;type=t">t</a> -&gt; ('a -&gt; 'b <a href="?package=core_kernel&amp;module=Monad.Basic&amp;type=t">t</a>) -&gt; 'b <a href="?package=core_kernel&amp;module=Monad.Basic&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> return</span> : <code class="type">'a -&gt; 'a <a href="?package=core_kernel&amp;module=Monad.Basic&amp;type=t">t</a></code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="Infix">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Monad.Infix">Infix</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> &gt;&gt;=</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Monad.Infix&amp;type=t">t</a> -&gt; ('a -&gt; 'b <a href="?package=core_kernel&amp;module=Monad.Infix&amp;type=t">t</a>) -&gt; 'b <a href="?package=core_kernel&amp;module=Monad.Infix&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">t &gt;&gt;= f</code> returns a computation that sequences the computations represented by two
+      monad elements.  The resulting computation first does <code class="code">t</code> to yield a value <code class="code">v</code>, and
+      then runs the computation returned by <code class="code">f v</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> &gt;&gt;|</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Monad.Infix&amp;type=t">t</a> -&gt; ('a -&gt; 'b) -&gt; 'b <a href="?package=core_kernel&amp;module=Monad.Infix&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">t &gt;&gt;| f</code> is <code class="code">t &gt;&gt;= (fun a -&gt; return (f a))</code>.</div>
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="S">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Monad.S">S</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Monad.Infix" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Monad.Infix">Infix</a></code><div class="info">A monad is an abstraction of the concept of sequencing of computations.  A value of
+      type 'a monad represents a computation that returns a value of type 'a.</div></pre>
+</div>
+<div class="ocaml_module ident" name="Monad_infix" path="?package=core_kernel&amp;amp;module=Monad.Infix">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Monad.S.Monad_infix">Monad_infix</a> : <code class="code"><a href="?package=core_kernel&amp;module=Monad.Infix">Infix</a></code> with type <a href="?package=core_kernel&amp;module=Monad.Infix&amp;type=t">t</a> = 'a <a href="?package=core_kernel&amp;module=Monad.S&amp;type=t">t</a></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> bind</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Monad.S&amp;type=t">t</a> -&gt; ('a -&gt; 'b <a href="?package=core_kernel&amp;module=Monad.S&amp;type=t">t</a>) -&gt; 'b <a href="?package=core_kernel&amp;module=Monad.S&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">bind t f</code> = <code class="code">t &gt;&gt;= f</code> </div>
+    
+ 
+      <pre><span><span class="keyword">val</span> return</span> : <code class="type">'a -&gt; 'a <a href="?package=core_kernel&amp;module=Monad.S&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">return v</code> returns the (trivial) computation that returns v.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> map</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Monad.S&amp;type=t">t</a> -&gt; f:('a -&gt; 'b) -&gt; 'b <a href="?package=core_kernel&amp;module=Monad.S&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">map t ~f</code> is t &gt;&gt;| f.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> join</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Monad.S&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Monad.S&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Monad.S&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">join t</code> is <code class="code">t &gt;&gt;= (fun t' -&gt; t')</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> ignore</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Monad.S&amp;type=t">t</a> -&gt; unit <a href="?package=core_kernel&amp;module=Monad.S&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">ignore t</code> = map t ~f:(fun _ -&gt; ()).</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> all</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Monad.S&amp;type=t">t</a> list -&gt; 'a list <a href="?package=core_kernel&amp;module=Monad.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> all_ignore</span> : <code class="type">unit <a href="?package=core_kernel&amp;module=Monad.S&amp;type=t">t</a> list -&gt; unit <a href="?package=core_kernel&amp;module=Monad.S&amp;type=t">t</a></code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="Make">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Monad.Make">Make</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Monad.Basic">Basic</a></code><code class="code">) -&gt; </code><code class="code">sig</code> .. <code class="code">end</code></div></pre>
+		<div class="ocaml_module_content">
+		       
+ 
+      <pre><span><span class="keyword">val</span> bind</span> : <code class="type">'a M.t -&gt; ('a -&gt; 'b M.t) -&gt; 'b M.t</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> return</span> : <code class="type">'a -&gt; 'a M.t</code></pre>
+      
+    
+<div class="ocaml_module sig" name="Monad_infix">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Monad.Make.Monad_infix">Monad_infix</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+ 
+      <pre><span><span class="keyword">val</span> &gt;&gt;=</span> : <code class="type">'a M.t -&gt; ('a -&gt; 'b M.t) -&gt; 'b M.t</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> &gt;&gt;|</span> : <code class="type">'a M.t -&gt; ('a -&gt; 'b) -&gt; 'b M.t</code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Monad.Make.Monad_infix" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Monad.Make.Monad_infix">Monad_infix</a></code></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> join</span> : <code class="type">'a M.t M.t -&gt; 'a M.t</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map</span> : <code class="type">'a M.t -&gt; f:('a -&gt; 'b) -&gt; 'b M.t</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ignore</span> : <code class="type">'a M.t -&gt; unit M.t</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> all</span> : <code class="type">'a M.t list -&gt; 'a list M.t</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> all_ignore</span> : <code class="type">unit M.t list -&gt; unit M.t</code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="Basic2">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Monad.Basic2">Basic2</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="info">Multi parameter monad.
+   The second parameter get unified across all the computation. This is used
+   to encode monads working on a multi parameter data structure like
+   (<code class="code">('a,'b result)</code>).</div>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'd) </code>t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bind</span> : <code class="type">('a, 'd) <a href="?package=core_kernel&amp;module=Monad.Basic2&amp;type=t">t</a> -&gt; ('a -&gt; ('b, 'd) <a href="?package=core_kernel&amp;module=Monad.Basic2&amp;type=t">t</a>) -&gt; ('b, 'd) <a href="?package=core_kernel&amp;module=Monad.Basic2&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> return</span> : <code class="type">'a -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Monad.Basic2&amp;type=t">t</a></code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="Infix2">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Monad.Infix2">Infix2</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="info">Same as Infix, except the monad type has two arguments. The second is always just
+    passed through.</div>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'd) </code>t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> &gt;&gt;=</span> : <code class="type">('a, 'd) <a href="?package=core_kernel&amp;module=Monad.Infix2&amp;type=t">t</a> -&gt; ('a -&gt; ('b, 'd) <a href="?package=core_kernel&amp;module=Monad.Infix2&amp;type=t">t</a>) -&gt; ('b, 'd) <a href="?package=core_kernel&amp;module=Monad.Infix2&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> &gt;&gt;|</span> : <code class="type">('a, 'd) <a href="?package=core_kernel&amp;module=Monad.Infix2&amp;type=t">t</a> -&gt; ('a -&gt; 'b) -&gt; ('b, 'd) <a href="?package=core_kernel&amp;module=Monad.Infix2&amp;type=t">t</a></code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="S2">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Monad.S2">S2</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="info">The same as S except the monad type has two arguments. The second is always just
+    passed through.</div>
+		<div class="ocaml_module_content">
+		       
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Monad.Infix2" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Monad.Infix2">Infix2</a></code></pre>
+</div>
+<div class="ocaml_module ident" name="Monad_infix" path="?package=core_kernel&amp;amp;module=Monad.Infix2">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Monad.S2.Monad_infix">Monad_infix</a> : <code class="code"><a href="?package=core_kernel&amp;module=Monad.Infix2">Infix2</a></code> with type <a href="?package=core_kernel&amp;module=Monad.Infix2&amp;type=t">t</a> = ('a, 'd) <a href="?package=core_kernel&amp;module=Monad.S2&amp;type=t">t</a></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> bind</span> : <code class="type">('a, 'd) <a href="?package=core_kernel&amp;module=Monad.S2&amp;type=t">t</a> -&gt; ('a -&gt; ('b, 'd) <a href="?package=core_kernel&amp;module=Monad.S2&amp;type=t">t</a>) -&gt; ('b, 'd) <a href="?package=core_kernel&amp;module=Monad.S2&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> return</span> : <code class="type">'a -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Monad.S2&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map</span> : <code class="type">('a, 'd) <a href="?package=core_kernel&amp;module=Monad.S2&amp;type=t">t</a> -&gt; f:('a -&gt; 'b) -&gt; ('b, 'd) <a href="?package=core_kernel&amp;module=Monad.S2&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> join</span> : <code class="type">(('a, 'd) <a href="?package=core_kernel&amp;module=Monad.S2&amp;type=t">t</a>, 'd) <a href="?package=core_kernel&amp;module=Monad.S2&amp;type=t">t</a> -&gt; ('a, 'd) <a href="?package=core_kernel&amp;module=Monad.S2&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ignore</span> : <code class="type">('a, 'd) <a href="?package=core_kernel&amp;module=Monad.S2&amp;type=t">t</a> -&gt; (unit, 'd) <a href="?package=core_kernel&amp;module=Monad.S2&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> all</span> : <code class="type">('a, 'd) <a href="?package=core_kernel&amp;module=Monad.S2&amp;type=t">t</a> list -&gt; ('a list, 'd) <a href="?package=core_kernel&amp;module=Monad.S2&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> all_ignore</span> : <code class="type">(unit, 'd) <a href="?package=core_kernel&amp;module=Monad.S2&amp;type=t">t</a> list -&gt; (unit, 'd) <a href="?package=core_kernel&amp;module=Monad.S2&amp;type=t">t</a></code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="Check_S2_refines_S">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Monad.Check_S2_refines_S">Check_S2_refines_S</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">X</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Monad.S">S</a></code><code class="code">) -&gt; </code><code class="code">sig</code> .. <code class="code">end</code></div></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'd) </code>t</span> = <code class="type">'a X.t</code> </pre>
+      
+    
+<div class="ocaml_include sig" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code">sig</code> .. <code class="code">end</code></pre><div class="ocaml_module_content">
+			    
+ 
+      <pre><span><span class="keyword">val</span> &gt;&gt;=</span> : <code class="type">'a X.t -&gt; ('a -&gt; 'b X.t) -&gt; 'b X.t</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> &gt;&gt;|</span> : <code class="type">'a X.t -&gt; ('a -&gt; 'b) -&gt; 'b X.t</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bind</span> : <code class="type">'a X.t -&gt; ('a -&gt; 'b X.t) -&gt; 'b X.t</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> return</span> : <code class="type">'a -&gt; 'a X.t</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map</span> : <code class="type">'a X.t -&gt; f:('a -&gt; 'b) -&gt; 'b X.t</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> join</span> : <code class="type">'a X.t X.t -&gt; 'a X.t</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ignore</span> : <code class="type">'a X.t -&gt; unit X.t</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> all</span> : <code class="type">'a X.t list -&gt; 'a list X.t</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> all_ignore</span> : <code class="type">unit X.t list -&gt; unit X.t</code></pre>
+      
+    </div>
+</div>
+<div class="ocaml_module sig" name="Monad_infix">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Monad.Check_S2_refines_S.Monad_infix">Monad_infix</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+ 
+      <pre><span><span class="keyword">val</span> &gt;&gt;=</span> : <code class="type">'a X.t -&gt; ('a -&gt; 'b X.t) -&gt; 'b X.t</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> &gt;&gt;|</span> : <code class="type">'a X.t -&gt; ('a -&gt; 'b) -&gt; 'b X.t</code></pre>
+      
+    
+		</div>
+</div>
+		</div>
+</div>
+<div class="ocaml_module sig" name="Make2">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Monad.Make2">Make2</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Monad.Basic2">Basic2</a></code><code class="code">) -&gt; </code><code class="code">sig</code> .. <code class="code">end</code></div></pre>
+		<div class="ocaml_module_content">
+		       
+ 
+      <pre><span><span class="keyword">val</span> bind</span> : <code class="type">('a, 'b) M.t -&gt; ('a -&gt; ('c, 'b) M.t) -&gt; ('c, 'b) M.t</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> return</span> : <code class="type">'a -&gt; ('a, 'b) M.t</code></pre>
+      
+    
+<div class="ocaml_module sig" name="Monad_infix">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Monad.Make2.Monad_infix">Monad_infix</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+ 
+      <pre><span><span class="keyword">val</span> &gt;&gt;=</span> : <code class="type">('a, 'b) M.t -&gt; ('a -&gt; ('c, 'b) M.t) -&gt; ('c, 'b) M.t</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> &gt;&gt;|</span> : <code class="type">('a, 'b) M.t -&gt; ('a -&gt; 'c) -&gt; ('c, 'b) M.t</code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Monad.Make2.Monad_infix" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Monad.Make2.Monad_infix">Monad_infix</a></code></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> join</span> : <code class="type">(('a, 'b) M.t, 'b) M.t -&gt; ('a, 'b) M.t</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map</span> : <code class="type">('a, 'b) M.t -&gt; f:('a -&gt; 'c) -&gt; ('c, 'b) M.t</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ignore</span> : <code class="type">('a, 'b) M.t -&gt; (unit, 'b) M.t</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> all</span> : <code class="type">('a, 'b) M.t list -&gt; ('a list, 'b) M.t</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> all_ignore</span> : <code class="type">(unit, 'a) M.t list -&gt; (unit, 'a) M.t</code></pre>
+      
+    
+		</div>
+</div>
+</div>

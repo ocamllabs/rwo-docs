@@ -1,6 +1,0 @@
-<div class="expanding_content">
-	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module type</span> <a href="Type_with_layout.Make.S.html">S</a> = <code class="type"><code class="code">sig</code> <a href="Type_with_layout.Make.S.html">..</a> <code class="code">end</code></code></pre>
-	<div class="content" style="display:none">
-	<div file="Type_with_layout.Make.S.html.contents" class="content_to_load"> </div>
-	</div>
-  </div>

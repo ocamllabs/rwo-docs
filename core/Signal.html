@@ -1,18 +1,394 @@
-<!DOCTYPE HTML>
-<html>
-<head>
+<div class="ocaml_toplevel_module">
 
-<title>Signal</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Signal</h1>
-<pre><span class="keyword">module</span> Signal</pre>
-<hr/>
-<div file="Signal.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> </pre>
+      
+    
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Std.Comparable.S" items="[&quot;Set&quot;,&quot;Map&quot;,&quot;Replace_polymorphic_compare&quot;]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Std.Comparable.S">Core_kernel.Std.Comparable.S</a></code> with type t = <a href="?package=core&amp;module=Signal&amp;type=t">t</a></pre>
+</div>
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Std.Hashable.S" items="[&quot;Hash_heap&quot;,&quot;Hash_queue&quot;,&quot;Hash_set&quot;,&quot;Pooled_hashtbl&quot;,&quot;Table&quot;,&quot;Hashable&quot;]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Std.Hashable.S">Core_kernel.Std.Hashable.S</a></code> with type t = <a href="?package=core&amp;module=Signal&amp;type=t">t</a></pre>
+</div>
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Std.Stringable.S" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Std.Stringable.S">Core_kernel.Std.Stringable.S</a></code> with type t = <a href="?package=core&amp;module=Signal&amp;type=t">t</a></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> equal</span> : <code class="type"><a href="?package=core&amp;module=Signal&amp;type=t">t</a> -&gt; <a href="?package=core&amp;module=Signal&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_system_int</span> : <code class="type">int -&gt; <a href="?package=core&amp;module=Signal&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">of_system_int</code> and <code class="code">to_system_int</code> return and take respectively a signal number
+    corresponding to those in the system's /usr/include/bits/signum.h (or equivalent).  It
+    is not guaranteed that these numbers are portable across any given pair of systems --
+    although some are defined as standard by POSIX.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> to_system_int</span> : <code class="type"><a href="?package=core&amp;module=Signal&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_caml_int</span> : <code class="type">int -&gt; <a href="?package=core&amp;module=Signal&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">of_caml_int</code> constructs a Signal.t given an O'Caml internal signal number.  This is
+    only for the use of the Core_unix module.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> to_caml_int</span> : <code class="type"><a href="?package=core&amp;module=Signal&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_string</span> : <code class="type"><a href="?package=core&amp;module=Signal&amp;type=t">t</a> -&gt; string</code></pre>
+      <div class="info"><code class="code">to_string t</code> returns a human-readable name: &quot;sigabrt&quot;, &quot;sigalrm&quot;, ...</div>
+    
+<pre><span id="TYPEsys_behavior"><span class="keyword">type</span> sys_behavior</span> = <code class="type">[ `Continue | `Dump_core | `Ignore | `Stop | `Terminate ]</code> </pre>
+      <div class="info">The default behaviour of the system if these signals trickle to the top level of a
+    program.  See include/linux/kernel.h in the Linux kernel source tree (not the file
+    /usr/include/linux/kernel.h).</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> default_sys_behavior</span> : <code class="type"><a href="?package=core&amp;module=Signal&amp;type=t">t</a> -&gt; <a href="?package=core&amp;module=Signal&amp;type=sys_behavior">sys_behavior</a></code></pre>
+      <div class="info"><code class="code">default_sys_behavior t</code>
+    Query the default system behavior for a signal.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> handle_default</span> : <code class="type"><a href="?package=core&amp;module=Signal&amp;type=t">t</a> -&gt; unit</code></pre>
+      <div class="info"><code class="code">handle_default t</code> is <code class="code">set t `Default</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> ignore</span> : <code class="type"><a href="?package=core&amp;module=Signal&amp;type=t">t</a> -&gt; unit</code></pre>
+      <div class="info"><code class="code">ignore t</code> is <code class="code">set t `Ignore</code>.</div>
+    
+<pre><span id="TYPEpid_spec"><span class="keyword">type</span> pid_spec</span> = <code class="type">[ `Group of <a href="?package=core_kernel&amp;module=Std.Pid&amp;type=t">Core_kernel.Std.Pid.t</a> | `My_group | `Pid of <a href="?package=core_kernel&amp;module=Std.Pid&amp;type=t">Core_kernel.Std.Pid.t</a> ]</code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> send</span> : <code class="type"><a href="?package=core&amp;module=Signal&amp;type=t">t</a> -&gt; <a href="?package=core&amp;module=Signal&amp;type=pid_spec">pid_spec</a> -&gt; [ `No_such_process | `Ok ]</code></pre>
+      <div class="info"><code class="code">send signal pid</code> sends <code class="code">signal</code> to the process whose process id is <code class="code">pid</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> send_i</span> : <code class="type"><a href="?package=core&amp;module=Signal&amp;type=t">t</a> -&gt; <a href="?package=core&amp;module=Signal&amp;type=pid_spec">pid_spec</a> -&gt; unit</code></pre>
+      <div class="info"><code class="code">send_i signal ~pid</code> sends <code class="code">signal</code> to the process whose process id is <code class="code">pid</code>.
+ No exception will be raised if <code class="code">pid</code> is a zombie or nonexistent.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> send_exn</span> : <code class="type"><a href="?package=core&amp;module=Signal&amp;type=t">t</a> -&gt; <a href="?package=core&amp;module=Signal&amp;type=pid_spec">pid_spec</a> -&gt; unit</code></pre>
+      <div class="info"><code class="code">send_exn signal ~pid</code> sends <code class="code">signal</code> to the process whose process id is
+ <code class="code">pid</code>.  In Caml's standard library, this is called <code class="code">Unix.kill</code>.  Sending a
+ signal to a zombie and/or nonexistent process will raise an exception.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> can_send_to</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std.Pid&amp;type=t">Core_kernel.Std.Pid.t</a> -&gt; bool</code></pre>
+      <div class="info"><code class="code">can_send_to pid</code> returns true if <code class="code">pid</code> is running and the current process has
+    permission to send it signals.</div>
+    
+<pre><span id="TYPEsigprocmask_command"><span class="keyword">type</span> sigprocmask_command</span> = <code class="type">[ `Block | `Set | `Unblock ]</code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sigprocmask</span> : <code class="type"><a href="?package=core&amp;module=Signal&amp;type=sigprocmask_command">sigprocmask_command</a> -&gt; <a href="?package=core&amp;module=Signal&amp;type=t">t</a> list -&gt; <a href="?package=core&amp;module=Signal&amp;type=t">t</a> list</code></pre>
+      <div class="info"><code class="code">sigprocmask cmd sigs</code> changes the set of blocked signals.
+ If <code class="code">cmd</code> is <code class="code">`Set</code>, blocked signals are set to those in the list <code class="code">sigs</code>.
+ If <code class="code">cmd</code> is <code class="code">`Block</code>, the signals in <code class="code">sigs</code> are added to the set of blocked
+   signals.
+ If <code class="code">cmd</code> is <code class="code">`Unblock</code>, the signals in <code class="code">sigs</code> are removed from the set of
+   blocked signals.
+ <code class="code">sigprocmask</code> returns the set of previously blocked signals.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> sigpending</span> : <code class="type">unit -&gt; <a href="?package=core&amp;module=Signal&amp;type=t">t</a> list</code></pre>
+      <div class="info"><code class="code">sigpending ()</code> returns the set of blocked signals that are currently
+ pending.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> sigsuspend</span> : <code class="type"><a href="?package=core&amp;module=Signal&amp;type=t">t</a> list -&gt; unit</code></pre>
+      <div class="info"><code class="code">sigsuspend sigs</code> atomically sets the blocked signals to <code class="code">sigs</code> and waits for
+ a non-ignored, non-blocked signal to be delivered.  On return, the blocked
+ signals are reset to their initial value.</div>
+    
+<br/>Specific signals, along with their default behavior and meaning.<br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> abrt</span> : <code class="type"><a href="?package=core&amp;module=Signal&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> alrm</span> : <code class="type"><a href="?package=core&amp;module=Signal&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> chld</span> : <code class="type"><a href="?package=core&amp;module=Signal&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> cont</span> : <code class="type"><a href="?package=core&amp;module=Signal&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fpe</span> : <code class="type"><a href="?package=core&amp;module=Signal&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> hup</span> : <code class="type"><a href="?package=core&amp;module=Signal&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ill</span> : <code class="type"><a href="?package=core&amp;module=Signal&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> int</span> : <code class="type"><a href="?package=core&amp;module=Signal&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> kill</span> : <code class="type"><a href="?package=core&amp;module=Signal&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pipe</span> : <code class="type"><a href="?package=core&amp;module=Signal&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> prof</span> : <code class="type"><a href="?package=core&amp;module=Signal&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> quit</span> : <code class="type"><a href="?package=core&amp;module=Signal&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> segv</span> : <code class="type"><a href="?package=core&amp;module=Signal&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stop</span> : <code class="type"><a href="?package=core&amp;module=Signal&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> term</span> : <code class="type"><a href="?package=core&amp;module=Signal&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> tstp</span> : <code class="type"><a href="?package=core&amp;module=Signal&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ttin</span> : <code class="type"><a href="?package=core&amp;module=Signal&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ttou</span> : <code class="type"><a href="?package=core&amp;module=Signal&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> usr1</span> : <code class="type"><a href="?package=core&amp;module=Signal&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> usr2</span> : <code class="type"><a href="?package=core&amp;module=Signal&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> vtalrm</span> : <code class="type"><a href="?package=core&amp;module=Signal&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> zero</span> : <code class="type"><a href="?package=core&amp;module=Signal&amp;type=t">t</a></code></pre>
+      
+    
+<div class="ocaml_module sig" name="Expert">
+		<pre><span class="keyword">module</span> <a href="?package=core&amp;module=Signal.Expert">Expert</a> : <code class="code">sig</code> .. <code class="code">end</code></pre><div class="info">The <code class="code">Expert</code> module contains functions that novice users should avoid, due to their
+    complexity.<br/>    An OCaml signal handler can run at any time, which introduces all the semantic
+    complexities of multithreading.  It is much easier to use async signal handling, see
+    TODO reference : Async_unix.Signal, which does not involve multithreading, and runs user code as
+    ordinary async jobs.  Also, beware that there can only be a single OCaml signal
+    handler for any signal, so handling a signal with a <code class="code">Core</code> signal handler will
+    interfere if async is attempting to handle the same signal.<br/>    If you do use <code class="code">Core</code> signal handlers, you should strive to make the signal handler
+    perform a simple idempotent action, like setting a ref.</div>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEbehavior"><span class="keyword">type</span> behavior</span> = <code class="type">[ `Default | `Handle of <a href="?package=core&amp;module=Signal&amp;type=t">t</a> -&gt; unit | `Ignore ]</code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> signal</span> : <code class="type"><a href="?package=core&amp;module=Signal&amp;type=t">t</a> -&gt; <a href="?package=core&amp;module=Signal.Expert&amp;type=behavior">behavior</a> -&gt; <a href="?package=core&amp;module=Signal.Expert&amp;type=behavior">behavior</a></code></pre>
+      <div class="info"><code class="code">signal t</code> sets the behavior of the system on receipt of signal <code class="code">t</code> and returns the
+      behavior previously associated with <code class="code">t</code>.  If <code class="code">t</code> is not available on your system,
+      <code class="code">signal</code> raises.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> set</span> : <code class="type"><a href="?package=core&amp;module=Signal&amp;type=t">t</a> -&gt; <a href="?package=core&amp;module=Signal.Expert&amp;type=behavior">behavior</a> -&gt; unit</code></pre>
+      <div class="info"><code class="code">set t b</code> is <code class="code">ignore (signal t b)</code> </div>
+    
+ 
+      <pre><span><span class="keyword">val</span> handle</span> : <code class="type"><a href="?package=core&amp;module=Signal&amp;type=t">t</a> -&gt; (<a href="?package=core&amp;module=Signal&amp;type=t">t</a> -&gt; unit) -&gt; unit</code></pre>
+      <div class="info"><code class="code">handle t f</code> is <code class="code">set t (`Handle f)</code>.</div>
+    
+		</div>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core&amp;module=Signal&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=core&amp;module=Signal&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_t</span> : <code class="type"><a href="?package=core&amp;module=Signal&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Std.Bin_prot.Type_class&amp;type=t">Core_kernel.Std.Bin_prot.Type_class.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t</span> : <code class="type"><a href="?package=core&amp;module=Signal&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Std.Bin_prot.Read_ml&amp;type=reader">Core_kernel.Std.Bin_prot.Read_ml.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t_</span> : <code class="type"><a href="?package=core&amp;module=Signal&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Std.Bin_prot.Unsafe_read_c&amp;type=reader">Core_kernel.Std.Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t__</span> : <code class="type">(int -&gt; <a href="?package=core&amp;module=Signal&amp;type=t">t</a>) <a href="?package=core_kernel&amp;module=Std.Bin_prot.Unsafe_read_c&amp;type=reader">Core_kernel.Std.Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t</span> : <code class="type"><a href="?package=core&amp;module=Signal&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Std.Bin_prot.Type_class&amp;type=reader">Core_kernel.Std.Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t</span> : <code class="type"><a href="?package=core&amp;module=Signal&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Std.Bin_prot.Size&amp;type=sizer">Core_kernel.Std.Bin_prot.Size.sizer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t</span> : <code class="type"><a href="?package=core&amp;module=Signal&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Std.Bin_prot.Write_ml&amp;type=writer">Core_kernel.Std.Bin_prot.Write_ml.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_</span> : <code class="type"><a href="?package=core&amp;module=Signal&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Std.Bin_prot.Unsafe_write_c&amp;type=writer">Core_kernel.Std.Bin_prot.Unsafe_write_c.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t</span> : <code class="type"><a href="?package=core&amp;module=Signal&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Std.Bin_prot.Type_class&amp;type=writer">Core_kernel.Std.Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+<br/><code class="code">of_system_int</code> and <code class="code">to_system_int</code> return and take respectively a signal number
+    corresponding to those in the system's /usr/include/bits/signum.h (or equivalent).  It
+    is not guaranteed that these numbers are portable across any given pair of systems --
+    although some are defined as standard by POSIX.<br/>
+	  
+<br/><code class="code">of_caml_int</code> constructs a Signal.t given an O'Caml internal signal number.  This is
+    only for the use of the Core_unix module.<br/>
+	  
+<br/><code class="code">to_string t</code> returns a human-readable name: &quot;sigabrt&quot;, &quot;sigalrm&quot;, ...<br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> sys_behavior_of_sexp</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core&amp;module=Signal&amp;type=sys_behavior">sys_behavior</a></code></pre>
+      <div class="info">The default behaviour of the system if these signals trickle to the top level of a
+    program.  See include/linux/kernel.h in the Linux kernel source tree (not the file
+    /usr/include/linux/kernel.h).</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> __sys_behavior_of_sexp__</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core&amp;module=Signal&amp;type=sys_behavior">sys_behavior</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_sys_behavior</span> : <code class="type"><a href="?package=core&amp;module=Signal&amp;type=sys_behavior">sys_behavior</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+<br/><code class="code">default_sys_behavior t</code>
+    Query the default system behavior for a signal.<br/>
+	  
+<br/><code class="code">handle_default t</code> is <code class="code">set t `Default</code>.<br/>
+	  
+<br/><code class="code">ignore t</code> is <code class="code">set t `Ignore</code>.<br/>
+	  
+<br/><code class="code">send signal pid</code> sends <code class="code">signal</code> to the process whose process id is <code class="code">pid</code>.<br/>
+	  
+<br/><code class="code">send_i signal ~pid</code> sends <code class="code">signal</code> to the process whose process id is <code class="code">pid</code>.
+ No exception will be raised if <code class="code">pid</code> is a zombie or nonexistent.<br/>
+	  
+<br/><code class="code">send_exn signal ~pid</code> sends <code class="code">signal</code> to the process whose process id is
+ <code class="code">pid</code>.  In Caml's standard library, this is called <code class="code">Unix.kill</code>.  Sending a
+ signal to a zombie and/or nonexistent process will raise an exception.<br/>
+	  
+<br/><code class="code">can_send_to pid</code> returns true if <code class="code">pid</code> is running and the current process has
+    permission to send it signals.<br/>
+	  
+<br/><code class="code">sigprocmask cmd sigs</code> changes the set of blocked signals.
+ If <code class="code">cmd</code> is <code class="code">`Set</code>, blocked signals are set to those in the list <code class="code">sigs</code>.
+ If <code class="code">cmd</code> is <code class="code">`Block</code>, the signals in <code class="code">sigs</code> are added to the set of blocked
+   signals.
+ If <code class="code">cmd</code> is <code class="code">`Unblock</code>, the signals in <code class="code">sigs</code> are removed from the set of
+   blocked signals.
+ <code class="code">sigprocmask</code> returns the set of previously blocked signals.<br/>
+	  
+<br/><code class="code">sigpending ()</code> returns the set of blocked signals that are currently
+ pending.<br/>
+	  
+<br/><code class="code">sigsuspend sigs</code> atomically sets the blocked signals to <code class="code">sigs</code> and waits for
+ a non-ignored, non-blocked signal to be delivered.  On return, the blocked
+ signals are reset to their initial value.<br/>
+	  
+<br/>Specific signals, along with their default behavior and meaning.<br/>
+	  
+<br/><code class="code">Dump_core</code>  Abnormal termination<br/>
+	  
+<br/><code class="code">Terminate</code>  Timeout<br/>
+	  
+<br/><code class="code">Ignore</code>     Child process terminated<br/>
+	  
+<br/><code class="code">Continue</code>   Continue<br/>
+	  
+<br/><code class="code">Dump_core</code>  Arithmetic exception<br/>
+	  
+<br/><code class="code">Terminate</code>  Hangup on controlling terminal<br/>
+	  
+<br/><code class="code">Dump_core</code>  Invalid hardware instruction<br/>
+	  
+<br/><code class="code">Terminate</code>  Interactive interrupt (ctrl-C)<br/>
+	  
+<br/><code class="code">Terminate</code>  Termination (cannot be ignored)<br/>
+	  
+<br/><code class="code">Terminate</code>  Broken pipe<br/>
+	  
+<br/><code class="code">Terminate</code>  Profiling interrupt<br/>
+	  
+<br/><code class="code">Dump_core</code>  Interactive termination<br/>
+	  
+<br/><code class="code">Dump_core</code>  Invalid memory reference<br/>
+	  
+<br/><code class="code">Stop</code>       Stop<br/>
+	  
+<br/><code class="code">Terminate</code>  Termination<br/>
+	  
+<br/><code class="code">Stop</code>       Interactive stop<br/>
+	  
+<br/><code class="code">Stop</code>       Terminal read from background process<br/>
+	  
+<br/><code class="code">Stop</code>       Terminal write from background process<br/>
+	  
+<br/><code class="code">Terminate</code>  Application-defined signal 1<br/>
+	  
+<br/><code class="code">Terminate</code>  Application-defined signal 2<br/>
+	  
+<br/><code class="code">Terminate</code>  Timeout in virtual time<br/>
+	  
+<br/><code class="code">Ignore</code>     No-op; can be used to test whether the target
+                                 process exists and the current process has
+                                 permission to signal it<br/>
+	  
+<br/>The <code class="code">Expert</code> module contains functions that novice users should avoid, due to their
+    complexity.<br/>    An OCaml signal handler can run at any time, which introduces all the semantic
+    complexities of multithreading.  It is much easier to use async signal handling, see
+    TODO reference : Async_unix.Signal, which does not involve multithreading, and runs user code as
+    ordinary async jobs.  Also, beware that there can only be a single OCaml signal
+    handler for any signal, so handling a signal with a <code class="code">Core</code> signal handler will
+    interfere if async is attempting to handle the same signal.<br/>    If you do use <code class="code">Core</code> signal handlers, you should strive to make the signal handler
+    perform a simple idempotent action, like setting a ref.<br/>
+	  
+<br/><code class="code">signal t</code> sets the behavior of the system on receipt of signal <code class="code">t</code> and returns the
+      behavior previously associated with <code class="code">t</code>.  If <code class="code">t</code> is not available on your system,
+      <code class="code">signal</code> raises.<br/>
+	  
+<br/><code class="code">set t b</code> is <code class="code">ignore (signal t b)</code> <br/>
+	  
+<br/><code class="code">handle t f</code> is <code class="code">set t (`Handle f)</code>.<br/>
+	  </div>

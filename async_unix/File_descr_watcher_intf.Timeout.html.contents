@@ -1,9 +1,0 @@
-<pre><span id="TYPEt"><span class="keyword">type</span> t </span>= <code class="type">[ `After of <a href="../core/Std.Time.Span.html#TYPEt">Core.Std.Time.Span.t</a> | `Immediately | `Never ]</code> </pre>
-      
-    
-
- 
-      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type">[&lt; `After of <a href="../core/Std.Time.Span.html#TYPEt">Core.Std.Time.Span.t</a> | `Immediately | `Never ] -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
-      
-    
-

@@ -1,8 +1,0 @@
- 
-      <pre><span><span class="keyword">val</span> full : <code class="type">unit -&gt; string</code></span></pre>
-      
-    
- 
-      <pre><span><span class="keyword">val</span> commands_only : <code class="type">unit -&gt; string</code></span></pre>
-      
-    

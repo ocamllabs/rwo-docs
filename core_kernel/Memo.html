@@ -1,18 +1,17 @@
-<!DOCTYPE HTML>
-<html>
-<head>
+<div class="ocaml_toplevel_module">
 
-<title>Memo</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Memo</h1>
-<pre><span class="keyword">module</span> Memo</pre>
-<hr/>
-<div file="Memo.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<br/>Memoization code -- not re-entrant!<br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> general</span> : <code class="type">?hashable:'a <a href="?package=core_kernel&amp;module=Std_internal.Hashtbl.Hashable&amp;type=t">Std_internal.Hashtbl.Hashable.t</a> -&gt;
+?cache_size_bound:int -&gt; ('a -&gt; 'b) -&gt; 'a -&gt; 'b</code></pre>
+      <div class="info">Returns memoized version of any function with a single argument. The
+    default caching policy is to remember everything for the lifetime
+    of the returned closure, but one may specify an upper bound on
+    cache size.  Whenever a cache entry must be forgotten in order to
+    obey this bound, we pick the least-recently-used one.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> unit</span> : <code class="type">(unit -&gt; 'a) -&gt; unit -&gt; 'a</code></pre>
+      <div class="info">efficient special case for argument type <code class="code">unit</code> </div>
+    </div>

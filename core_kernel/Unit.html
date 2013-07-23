@@ -1,18 +1,17 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-
-<title>Unit</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Unit</h1>
-<pre><span class="keyword">module</span> Unit</pre><div class="info">Module for the type <code class="code">unit</code>.  This is mostly useful for building functor arguments.</div>
-<hr/>
-<div file="Unit.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<div class="ocaml_toplevel_module">
+<div class="info">Module for the type <code class="code">unit</code>.  This is mostly useful for building functor arguments.</div>
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> = <code class="type">unit</code> </pre>
+      
+    
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Identifiable.S" items="[&quot;Hash_heap&quot;,&quot;Hash_queue&quot;,&quot;Hash_set&quot;,&quot;Pooled_hashtbl&quot;,&quot;Table&quot;,&quot;Hashable&quot;,&quot;Set&quot;,&quot;Map&quot;,&quot;Replace_polymorphic_compare&quot;]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Identifiable.S">Identifiable.S</a></code> with type t = <a href="?package=core_kernel&amp;module=Unit&amp;type=t">t</a></pre>
+</div>
+<div class="ocaml_module sig" name="S">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Unit.S">S</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+		</div>
+</div>
+<pre><span id="TYPEm"><span class="keyword">type</span> m</span> = <code class="type">(module S)</code> </pre>
+      
+    </div>

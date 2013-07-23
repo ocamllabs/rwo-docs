@@ -1,7 +1,0 @@
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t </span></pre>
-      
-    
- 
-      <pre><span><span class="keyword">val</span> fold : <code class="type">'a <a href="Container.T.html#TYPEt">t</a> -&gt; init:'b -&gt; f:('b -&gt; 'a -&gt; 'b) -&gt; 'b</code></span></pre>
-      
-    

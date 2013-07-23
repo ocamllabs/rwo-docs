@@ -1,18 +1,1478 @@
-<!DOCTYPE HTML>
-<html>
-<head>
+<div class="ocaml_toplevel_module">
 
-<title>Std_internal</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
+ 
+      <pre><span><span class="keyword">val</span> __pa_ounit_275876e34cf609db118f3d84b799a790</span> : <code class="type">string</code></pre>
+      
+    
 
-<h1>Module Std_internal</h1>
-<pre><span class="keyword">module</span> Std_internal</pre>
-<hr/>
-<div file="Std_internal.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<div class="ocaml_module ident" name="Big_int" path="?package=sexplib&amp;amp;module=Std.Big_int">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Std_internal.Big_int">Big_int</a> : <code class="code"><a href="?package=sexplib&amp;module=Std.Big_int">Sexplib.Std.Big_int</a></code></pre>
+</div>
+<div class="ocaml_module ident" name="Nat" path="?package=sexplib&amp;amp;module=Std.Nat">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Std_internal.Nat">Nat</a> : <code class="code"><a href="?package=sexplib&amp;module=Std.Nat">Sexplib.Std.Nat</a></code></pre>
+</div>
+<div class="ocaml_module ident" name="Ratio" path="?package=sexplib&amp;amp;module=Std.Ratio">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Std_internal.Ratio">Ratio</a> : <code class="code"><a href="?package=sexplib&amp;module=Std.Ratio">Sexplib.Std.Ratio</a></code></pre>
+</div>
+<div class="ocaml_module ident" name="Num" path="?package=sexplib&amp;amp;module=Std.Num">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Std_internal.Num">Num</a> : <code class="code"><a href="?package=sexplib&amp;module=Std.Num">Sexplib.Std.Num</a></code></pre>
+</div>
+<div class="ocaml_module ident" name="Set" path="?package=core_kernel&amp;amp;module=Core_set">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Std_internal.Set">Set</a> : <code class="code"><a href="?package=core_kernel&amp;module=Core_set">Core_set</a></code></pre>
+</div>
+<div class="ocaml_module ident" name="Map" path="?package=core_kernel&amp;amp;module=Core_map">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Std_internal.Map">Map</a> : <code class="code"><a href="?package=core_kernel&amp;module=Core_map">Core_map</a></code></pre>
+</div>
+<div class="ocaml_module ident" name="Array" path="?package=core_kernel&amp;amp;module=Core_array">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Std_internal.Array">Array</a> : <code class="code"><a href="?package=core_kernel&amp;module=Core_array">Core_array</a></code></pre>
+</div>
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Std_internal.Array&amp;amp;type=Infix" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Std_internal.Array&amp;type=Infix">Array.Infix</a></code></pre>
+</div>
+<div class="ocaml_module ident" name="Hashtbl" path="?package=core_kernel&amp;amp;module=Core_hashtbl">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Std_internal.Hashtbl">Hashtbl</a> : <code class="code"><a href="?package=core_kernel&amp;module=Core_hashtbl">Core_hashtbl</a></code></pre>
+</div>
+<div class="ocaml_module ident" name="String" path="?package=core_kernel&amp;amp;module=Core_string">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Std_internal.String">String</a> : <code class="code"><a href="?package=core_kernel&amp;module=Core_string">Core_string</a></code></pre>
+</div>
+<div class="ocaml_module sig" name="List">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Std_internal.List">List</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Core_list" items="[&quot;Infix&quot;,&quot;Assoc&quot;,&quot;Monad_infix&quot;]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Core_list">Core_list</a></code></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> stable_dedup</span> : <code class="type">'a list -&gt; 'a list</code></pre>
+      <div class="info"><code class="code">stable_dedup</code> Same as <code class="code">dedup</code> but maintains the order of the list and doesn't allow
+      compare function to be specified (otherwise, the implementation in terms of Set.t
+      would hide a heavyweight functor instantiation at each call).</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> stable_dedup_staged</span> : <code class="type">compare:('a -&gt; 'a -&gt; int) -&gt; ('a list -&gt; 'a list) <a href="?package=core_kernel&amp;module=Staged&amp;type=t">Staged.t</a></code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Std_internal.List&amp;amp;type=Infix" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Std_internal.List&amp;type=Infix">List.Infix</a></code></pre>
+</div>
+<div class="ocaml_module ident" name="Queue" path="?package=core_kernel&amp;amp;module=Core_queue">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Std_internal.Queue">Queue</a> : <code class="code"><a href="?package=core_kernel&amp;module=Core_queue">Core_queue</a></code></pre>
+</div>
+<div class="ocaml_module ident" name="Random" path="?package=core_kernel&amp;amp;module=Core_random">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Std_internal.Random">Random</a> : <code class="code"><a href="?package=core_kernel&amp;module=Core_random">Core_random</a></code></pre>
+</div>
+<div class="ocaml_module ident" name="Char" path="?package=core_kernel&amp;amp;module=Core_char">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Std_internal.Char">Char</a> : <code class="code"><a href="?package=core_kernel&amp;module=Core_char">Core_char</a></code></pre>
+</div>
+<div class="ocaml_module ident" name="Ordering" path="?package=core_kernel&amp;amp;module=Ordering">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Std_internal.Ordering">Ordering</a> : <code class="code"><a href="?package=core_kernel&amp;module=Ordering">Ordering</a></code></pre>
+</div>
+<div class="ocaml_module ident" name="Bool" path="?package=core_kernel&amp;amp;module=Bool">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Std_internal.Bool">Bool</a> : <code class="code"><a href="?package=core_kernel&amp;module=Bool">Bool</a></code></pre>
+</div>
+<div class="ocaml_module ident" name="Int" path="?package=core_kernel&amp;amp;module=Core_int">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Std_internal.Int">Int</a> : <code class="code"><a href="?package=core_kernel&amp;module=Core_int">Core_int</a></code></pre>
+</div>
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Std_internal.Int&amp;amp;type=Infix" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Std_internal.Int&amp;type=Infix">Int.Infix</a></code></pre>
+</div>
+<div class="ocaml_module ident" name="Int32" path="?package=core_kernel&amp;amp;module=Core_int32">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Std_internal.Int32">Int32</a> : <code class="code"><a href="?package=core_kernel&amp;module=Core_int32">Core_int32</a></code></pre>
+</div>
+<div class="ocaml_module ident" name="Int64" path="?package=core_kernel&amp;amp;module=Core_int64">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Std_internal.Int64">Int64</a> : <code class="code"><a href="?package=core_kernel&amp;module=Core_int64">Core_int64</a></code></pre>
+</div>
+<div class="ocaml_module ident" name="Nativeint" path="?package=core_kernel&amp;amp;module=Core_nativeint">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Std_internal.Nativeint">Nativeint</a> : <code class="code"><a href="?package=core_kernel&amp;module=Core_nativeint">Core_nativeint</a></code></pre>
+</div>
+<div class="ocaml_module ident" name="Lazy" path="?package=core_kernel&amp;amp;module=Core_lazy">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Std_internal.Lazy">Lazy</a> : <code class="code"><a href="?package=core_kernel&amp;module=Core_lazy">Core_lazy</a></code></pre>
+</div>
+<div class="ocaml_module ident" name="Field" path="?package=core_kernel&amp;amp;module=Core_field">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Std_internal.Field">Field</a> : <code class="code"><a href="?package=core_kernel&amp;module=Core_field">Core_field</a></code></pre>
+</div>
+<div class="ocaml_module ident" name="Ref" path="?package=core_kernel&amp;amp;module=Ref">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Std_internal.Ref">Ref</a> : <code class="code"><a href="?package=core_kernel&amp;module=Ref">Ref</a></code></pre>
+</div>
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Common" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Common">Common</a></code></pre>
+</div>
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Float" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Float">Float</a></code></pre>
+</div>
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Std_internal.String&amp;amp;type=Infix" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Std_internal.String&amp;type=Infix">String.Infix</a></code></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> round</span> : <code class="type">?dir:[ `Down | `Nearest | `Up | `Zero ] -&gt; <a href="?package=core_kernel&amp;module=Float&amp;type=t">Float.t</a> -&gt; <a href="?package=core_kernel&amp;module=Float&amp;type=t">Float.t</a></code></pre>
+      
+    
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Interfaces" items="[&quot;Unit&quot;,&quot;Stringable&quot;,&quot;Sexpable&quot;,&quot;Robustly_comparable&quot;,&quot;Monad&quot;,&quot;Intable&quot;,&quot;Infix_comparators&quot;,&quot;Identifiable&quot;,&quot;Hashable_binable&quot;,&quot;Hashable&quot;,&quot;Floatable&quot;,&quot;Comparable_binable&quot;,&quot;Comparable&quot;,&quot;Binable&quot;]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Interfaces">Interfaces</a></code></pre>
+</div>
+<div class="ocaml_module ident" name="Sexp" path="?package=core_kernel&amp;amp;module=Core_sexp">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Std_internal.Sexp">Sexp</a> : <code class="code"><a href="?package=core_kernel&amp;module=Core_sexp">Core_sexp</a></code></pre>
+</div>
+<div class="ocaml_include ident" path="?package=sexplib&amp;amp;module=Conv" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=sexplib&amp;module=Conv">Sexplib.Conv</a></code></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> printf</span> : <code class="type">('a, <a href="?package=stdlib&amp;module=Pervasives&amp;type=out_channel">out_channel</a>, unit) <a href="?package=stdlib&amp;module=Pervasives&amp;type=format">format</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bprintf</span> : <code class="type"><a href="?package=stdlib&amp;module=Buffer&amp;type=t">Buffer.t</a> -&gt; ('a, <a href="?package=stdlib&amp;module=Buffer&amp;type=t">Buffer.t</a>, unit) <a href="?package=stdlib&amp;module=Pervasives&amp;type=format">format</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> eprintf</span> : <code class="type">('a, <a href="?package=stdlib&amp;module=Pervasives&amp;type=out_channel">out_channel</a>, unit) <a href="?package=stdlib&amp;module=Pervasives&amp;type=format">format</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fprintf</span> : <code class="type"><a href="?package=stdlib&amp;module=Pervasives&amp;type=out_channel">out_channel</a> -&gt; ('a, <a href="?package=stdlib&amp;module=Pervasives&amp;type=out_channel">out_channel</a>, unit) <a href="?package=stdlib&amp;module=Pervasives&amp;type=format">format</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sprintf</span> : <code class="type">('a, unit, string) <a href="?package=stdlib&amp;module=Pervasives&amp;type=format">format</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ksprintf</span> : <code class="type">(string -&gt; 'a) -&gt; ('b, unit, string, 'a) <a href="?package=stdlib&amp;module=Pervasives&amp;type=format4">format4</a> -&gt; 'b</code></pre>
+      
+    
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Result.Export" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Result.Export">Result.Export</a></code></pre>
+</div>
+<div class="ocaml_include sig" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code">sig</code> .. <code class="code">end</code></pre><div class="ocaml_module_content">
+			    
+<pre><span id="TYPEarray"><span class="keyword">type</span> <code class="type">'a </code>array</span> = <code class="type">'a <a href="?package=core_kernel&amp;module=Std_internal.Array&amp;type=t">Array.t</a></code> </pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> __array_of_sexp__</span> : <code class="type">'a. (<a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'a) -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=array">array</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> array_of_sexp</span> : <code class="type">'a. (<a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'a) -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=array">array</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_array</span> : <code class="type">'a. ('a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=array">array</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_size_array</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Size&amp;type=sizer">Bin_prot.Size.sizer</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal.Array&amp;type=t">Array.t</a> -&gt; int</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_array_</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr">Bin_prot.Unsafe_common.sptr</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal.Array&amp;type=t">Array.t</a> -&gt; <a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr">Bin_prot.Unsafe_common.sptr</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_array</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt;
+<a href="?package=bin_prot&amp;module=Common&amp;type=buf">Bin_prot.Common.buf</a> -&gt;
+pos:<a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal.Array&amp;type=t">Array.t</a> -&gt; <a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_array</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal.Array&amp;type=t">Array.t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_array__</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; int -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal.Array&amp;type=t">Array.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_array_</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt; <a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal.Array&amp;type=t">Array.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_array</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+<a href="?package=bin_prot&amp;module=Common&amp;type=buf">Bin_prot.Common.buf</a> -&gt; pos_ref:<a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a> <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=array">array</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_array</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=array">array</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_array</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal.Array&amp;type=t">Array.t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a></code></pre>
+      
+    
+
+<pre><span id="TYPEbool"><span class="keyword">type</span> bool</span> = <code class="type"><a href="?package=core_kernel&amp;module=Std_internal.Bool&amp;type=t">Bool.t</a></code> </pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> __bool_of_sexp__</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal.Bool&amp;type=t">Bool.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bool_of_sexp</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal.Bool&amp;type=t">Bool.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_bool</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal.Bool&amp;type=t">Bool.t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> compare_bool</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal&amp;type=bool">bool</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal&amp;type=bool">bool</a> -&gt; int</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_size_bool</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal.Bool&amp;type=t">Bool.t</a> -&gt; int</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_bool_</span> : <code class="type"><a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr">Bin_prot.Unsafe_common.sptr</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal.Bool&amp;type=t">Bool.t</a> -&gt; <a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr">Bin_prot.Unsafe_common.sptr</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_bool</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=buf">Bin_prot.Common.buf</a> -&gt;
+pos:<a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal.Bool&amp;type=t">Bool.t</a> -&gt; <a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_bool</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal.Bool&amp;type=t">Bool.t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_bool__</span> : <code class="type"><a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; int -&gt; <a href="?package=core_kernel&amp;module=Std_internal.Bool&amp;type=t">Bool.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_bool_</span> : <code class="type"><a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt; <a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal.Bool&amp;type=t">Bool.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_bool</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=buf">Bin_prot.Common.buf</a> -&gt; pos_ref:<a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a> <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal&amp;type=bool">bool</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_bool</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal&amp;type=bool">bool</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_bool</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal.Bool&amp;type=t">Bool.t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a></code></pre>
+      
+    
+
+<pre><span id="TYPEchar"><span class="keyword">type</span> char</span> = <code class="type"><a href="?package=core_kernel&amp;module=Std_internal.Char&amp;type=t">Char.t</a></code> </pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> __char_of_sexp__</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal.Char&amp;type=t">Char.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> char_of_sexp</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal.Char&amp;type=t">Char.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_char</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal.Char&amp;type=t">Char.t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> compare_char</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal&amp;type=char">char</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal&amp;type=char">char</a> -&gt; int</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_size_char</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal.Char&amp;type=t">Char.t</a> -&gt; int</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_char_</span> : <code class="type"><a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr">Bin_prot.Unsafe_common.sptr</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal.Char&amp;type=t">Char.t</a> -&gt; <a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr">Bin_prot.Unsafe_common.sptr</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_char</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=buf">Bin_prot.Common.buf</a> -&gt;
+pos:<a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal.Char&amp;type=t">Char.t</a> -&gt; <a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_char</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal.Char&amp;type=t">Char.t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_char__</span> : <code class="type"><a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; int -&gt; <a href="?package=core_kernel&amp;module=Std_internal.Char&amp;type=t">Char.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_char_</span> : <code class="type"><a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt; <a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal.Char&amp;type=t">Char.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_char</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=buf">Bin_prot.Common.buf</a> -&gt; pos_ref:<a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a> <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal&amp;type=char">char</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_char</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal&amp;type=char">char</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_char</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal.Char&amp;type=t">Char.t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a></code></pre>
+      
+    
+
+<pre><span id="TYPEfloat"><span class="keyword">type</span> float</span> = <code class="type"><a href="?package=core_kernel&amp;module=Float&amp;type=t">Float.t</a></code> </pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> __float_of_sexp__</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core_kernel&amp;module=Float&amp;type=t">Float.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> float_of_sexp</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core_kernel&amp;module=Float&amp;type=t">Float.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_float</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float&amp;type=t">Float.t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> compare_float</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal&amp;type=float">float</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal&amp;type=float">float</a> -&gt; int</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_size_float</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float&amp;type=t">Float.t</a> -&gt; int</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_float_</span> : <code class="type"><a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr">Bin_prot.Unsafe_common.sptr</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; <a href="?package=core_kernel&amp;module=Float&amp;type=t">Float.t</a> -&gt; <a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr">Bin_prot.Unsafe_common.sptr</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_float</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=buf">Bin_prot.Common.buf</a> -&gt;
+pos:<a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a> -&gt; <a href="?package=core_kernel&amp;module=Float&amp;type=t">Float.t</a> -&gt; <a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_float</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float&amp;type=t">Float.t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_float__</span> : <code class="type"><a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; int -&gt; <a href="?package=core_kernel&amp;module=Float&amp;type=t">Float.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_float_</span> : <code class="type"><a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt; <a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; <a href="?package=core_kernel&amp;module=Float&amp;type=t">Float.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_float</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=buf">Bin_prot.Common.buf</a> -&gt; pos_ref:<a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a> <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal&amp;type=float">float</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_float</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal&amp;type=float">float</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_float</span> : <code class="type"><a href="?package=core_kernel&amp;module=Float&amp;type=t">Float.t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a></code></pre>
+      
+    
+
+<pre><span id="TYPEint"><span class="keyword">type</span> int</span> = <code class="type"><a href="?package=core_kernel&amp;module=Std_internal.Int&amp;type=t">Int.t</a></code> </pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> __int_of_sexp__</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal.Int&amp;type=t">Int.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> int_of_sexp</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal.Int&amp;type=t">Int.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_int</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal.Int&amp;type=t">Int.t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> compare_int</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal&amp;type=int">int</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal&amp;type=int">int</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal&amp;type=int">int</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_size_int</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal.Int&amp;type=t">Int.t</a> -&gt; int</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_int_</span> : <code class="type"><a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr">Bin_prot.Unsafe_common.sptr</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal.Int&amp;type=t">Int.t</a> -&gt; <a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr">Bin_prot.Unsafe_common.sptr</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_int</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=buf">Bin_prot.Common.buf</a> -&gt;
+pos:<a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal.Int&amp;type=t">Int.t</a> -&gt; <a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_int</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal.Int&amp;type=t">Int.t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_int__</span> : <code class="type"><a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; int -&gt; <a href="?package=core_kernel&amp;module=Std_internal.Int&amp;type=t">Int.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_int_</span> : <code class="type"><a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt; <a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal.Int&amp;type=t">Int.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_int</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=buf">Bin_prot.Common.buf</a> -&gt; pos_ref:<a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a> <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal&amp;type=int">int</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_int</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal&amp;type=int">int</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_int</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal.Int&amp;type=t">Int.t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a></code></pre>
+      
+    
+
+<pre><span id="TYPEint32"><span class="keyword">type</span> int32</span> = <code class="type"><a href="?package=core_kernel&amp;module=Std_internal.Int32&amp;type=t">Int32.t</a></code> </pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> __int32_of_sexp__</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal.Int32&amp;type=t">Int32.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> int32_of_sexp</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal.Int32&amp;type=t">Int32.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_int32</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal.Int32&amp;type=t">Int32.t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> compare_int32</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal&amp;type=int32">int32</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal&amp;type=int32">int32</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal&amp;type=int">int</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_size_int32</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal.Int32&amp;type=t">Int32.t</a> -&gt; int</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_int32_</span> : <code class="type"><a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr">Bin_prot.Unsafe_common.sptr</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal.Int32&amp;type=t">Int32.t</a> -&gt; <a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr">Bin_prot.Unsafe_common.sptr</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_int32</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=buf">Bin_prot.Common.buf</a> -&gt;
+pos:<a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal.Int32&amp;type=t">Int32.t</a> -&gt; <a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_int32</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal.Int32&amp;type=t">Int32.t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_int32__</span> : <code class="type"><a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; int -&gt; <a href="?package=core_kernel&amp;module=Std_internal.Int32&amp;type=t">Int32.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_int32_</span> : <code class="type"><a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt; <a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal.Int32&amp;type=t">Int32.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_int32</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=buf">Bin_prot.Common.buf</a> -&gt; pos_ref:<a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a> <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal&amp;type=int32">int32</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_int32</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal&amp;type=int32">int32</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_int32</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal.Int32&amp;type=t">Int32.t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a></code></pre>
+      
+    
+
+<pre><span id="TYPEint64"><span class="keyword">type</span> int64</span> = <code class="type"><a href="?package=core_kernel&amp;module=Std_internal.Int64&amp;type=t">Int64.t</a></code> </pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> __int64_of_sexp__</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal.Int64&amp;type=t">Int64.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> int64_of_sexp</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal.Int64&amp;type=t">Int64.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_int64</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal.Int64&amp;type=t">Int64.t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> compare_int64</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal&amp;type=int64">int64</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal&amp;type=int64">int64</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal&amp;type=int">int</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_size_int64</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal.Int64&amp;type=t">Int64.t</a> -&gt; int</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_int64_</span> : <code class="type"><a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr">Bin_prot.Unsafe_common.sptr</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal.Int64&amp;type=t">Int64.t</a> -&gt; <a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr">Bin_prot.Unsafe_common.sptr</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_int64</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=buf">Bin_prot.Common.buf</a> -&gt;
+pos:<a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal.Int64&amp;type=t">Int64.t</a> -&gt; <a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_int64</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal.Int64&amp;type=t">Int64.t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_int64__</span> : <code class="type"><a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; int -&gt; <a href="?package=core_kernel&amp;module=Std_internal.Int64&amp;type=t">Int64.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_int64_</span> : <code class="type"><a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt; <a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal.Int64&amp;type=t">Int64.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_int64</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=buf">Bin_prot.Common.buf</a> -&gt; pos_ref:<a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a> <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal&amp;type=int64">int64</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_int64</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal&amp;type=int64">int64</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_int64</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal.Int64&amp;type=t">Int64.t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a></code></pre>
+      
+    
+
+<pre><span id="TYPElazy_t"><span class="keyword">type</span> <code class="type">'a </code>lazy_t</span> = <code class="type">'a <a href="?package=core_kernel&amp;module=Core_lazy&amp;type=t">Core_lazy.t</a></code> </pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> __lazy_t_of_sexp__</span> : <code class="type">'a. (<a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'a) -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=lazy_t">lazy_t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> lazy_t_of_sexp</span> : <code class="type">'a. (<a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'a) -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=lazy_t">lazy_t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_lazy_t</span> : <code class="type">'a. ('a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=lazy_t">lazy_t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> compare_lazy_t</span> : <code class="type">'a. ('a -&gt; 'a -&gt; <a href="?package=core_kernel&amp;module=Std_internal&amp;type=int">int</a>) -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=lazy_t">lazy_t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=lazy_t">lazy_t</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal&amp;type=int">int</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_size_lazy_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Size&amp;type=sizer">Bin_prot.Size.sizer</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_lazy&amp;type=t">Core_lazy.t</a> -&gt; int</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_lazy_t_</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr">Bin_prot.Unsafe_common.sptr</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_lazy&amp;type=t">Core_lazy.t</a> -&gt; <a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr">Bin_prot.Unsafe_common.sptr</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_lazy_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt;
+<a href="?package=bin_prot&amp;module=Common&amp;type=buf">Bin_prot.Common.buf</a> -&gt;
+pos:<a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_lazy&amp;type=t">Core_lazy.t</a> -&gt; <a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_lazy_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_lazy&amp;type=t">Core_lazy.t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_lazy_t__</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; int -&gt; 'a <a href="?package=core_kernel&amp;module=Core_lazy&amp;type=t">Core_lazy.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_lazy_t_</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_lazy&amp;type=t">Core_lazy.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_lazy_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+<a href="?package=bin_prot&amp;module=Common&amp;type=buf">Bin_prot.Common.buf</a> -&gt; pos_ref:<a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a> <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=lazy_t">lazy_t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_lazy_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=lazy_t">lazy_t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_lazy_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Core_lazy&amp;type=t">Core_lazy.t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a></code></pre>
+      
+    
+
+<pre><span id="TYPElist"><span class="keyword">type</span> <code class="type">'a </code>list</span> = <code class="type">'a <a href="?package=core_kernel&amp;module=Std_internal.List&amp;type=t">List.t</a></code> </pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> __list_of_sexp__</span> : <code class="type">'a. (<a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'a) -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=list">list</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> list_of_sexp</span> : <code class="type">'a. (<a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'a) -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=list">list</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_list</span> : <code class="type">'a. ('a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=list">list</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_size_list</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Size&amp;type=sizer">Bin_prot.Size.sizer</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal.List&amp;type=t">List.t</a> -&gt; int</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_list_</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr">Bin_prot.Unsafe_common.sptr</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal.List&amp;type=t">List.t</a> -&gt; <a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr">Bin_prot.Unsafe_common.sptr</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_list</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt;
+<a href="?package=bin_prot&amp;module=Common&amp;type=buf">Bin_prot.Common.buf</a> -&gt;
+pos:<a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal.List&amp;type=t">List.t</a> -&gt; <a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_list</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal.List&amp;type=t">List.t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_list__</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; int -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal.List&amp;type=t">List.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_list_</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt; <a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal.List&amp;type=t">List.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_list</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+<a href="?package=bin_prot&amp;module=Common&amp;type=buf">Bin_prot.Common.buf</a> -&gt; pos_ref:<a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a> <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=list">list</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_list</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=list">list</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_list</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal.List&amp;type=t">List.t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a></code></pre>
+      
+    
+
+<pre><span id="TYPEnativeint"><span class="keyword">type</span> nativeint</span> = <code class="type"><a href="?package=core_kernel&amp;module=Std_internal.Nativeint&amp;type=t">Nativeint.t</a></code> </pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> __nativeint_of_sexp__</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal.Nativeint&amp;type=t">Nativeint.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> nativeint_of_sexp</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal.Nativeint&amp;type=t">Nativeint.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_nativeint</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal.Nativeint&amp;type=t">Nativeint.t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> compare_nativeint</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal&amp;type=nativeint">nativeint</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal&amp;type=nativeint">nativeint</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal&amp;type=int">int</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_size_nativeint</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal.Nativeint&amp;type=t">Nativeint.t</a> -&gt; int</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_nativeint_</span> : <code class="type"><a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr">Bin_prot.Unsafe_common.sptr</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal.Nativeint&amp;type=t">Nativeint.t</a> -&gt; <a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr">Bin_prot.Unsafe_common.sptr</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_nativeint</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=buf">Bin_prot.Common.buf</a> -&gt;
+pos:<a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal.Nativeint&amp;type=t">Nativeint.t</a> -&gt; <a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_nativeint</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal.Nativeint&amp;type=t">Nativeint.t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_nativeint__</span> : <code class="type"><a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; int -&gt; <a href="?package=core_kernel&amp;module=Std_internal.Nativeint&amp;type=t">Nativeint.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_nativeint_</span> : <code class="type"><a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt; <a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal.Nativeint&amp;type=t">Nativeint.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_nativeint</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=buf">Bin_prot.Common.buf</a> -&gt; pos_ref:<a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a> <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal&amp;type=nativeint">nativeint</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_nativeint</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal&amp;type=nativeint">nativeint</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_nativeint</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal.Nativeint&amp;type=t">Nativeint.t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a></code></pre>
+      
+    
+
+<pre><span id="TYPEoption"><span class="keyword">type</span> <code class="type">'a </code>option</span> = <code class="type">'a <a href="?package=core_kernel&amp;module=Option&amp;type=t">Option.t</a></code> </pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> __option_of_sexp__</span> : <code class="type">'a. (<a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'a) -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=option">option</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> option_of_sexp</span> : <code class="type">'a. (<a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'a) -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=option">option</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_option</span> : <code class="type">'a. ('a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=option">option</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_size_option</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Size&amp;type=sizer">Bin_prot.Size.sizer</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Option&amp;type=t">Option.t</a> -&gt; int</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_option_</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr">Bin_prot.Unsafe_common.sptr</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Option&amp;type=t">Option.t</a> -&gt; <a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr">Bin_prot.Unsafe_common.sptr</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_option</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt;
+<a href="?package=bin_prot&amp;module=Common&amp;type=buf">Bin_prot.Common.buf</a> -&gt;
+pos:<a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Option&amp;type=t">Option.t</a> -&gt; <a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_option</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Option&amp;type=t">Option.t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_option__</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; int -&gt; 'a <a href="?package=core_kernel&amp;module=Option&amp;type=t">Option.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_option_</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt; <a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Option&amp;type=t">Option.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_option</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+<a href="?package=bin_prot&amp;module=Common&amp;type=buf">Bin_prot.Common.buf</a> -&gt; pos_ref:<a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a> <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=option">option</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_option</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=option">option</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_option</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Option&amp;type=t">Option.t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a></code></pre>
+      
+    
+
+<pre><span id="TYPEstring"><span class="keyword">type</span> string</span> = <code class="type"><a href="?package=core_kernel&amp;module=Std_internal.String&amp;type=t">String.t</a></code> </pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> __string_of_sexp__</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal.String&amp;type=t">String.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> string_of_sexp</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal.String&amp;type=t">String.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_string</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal.String&amp;type=t">String.t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> compare_string</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal&amp;type=string">string</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal&amp;type=string">string</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal&amp;type=int">int</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_size_string</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal.String&amp;type=t">String.t</a> -&gt; int</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_string_</span> : <code class="type"><a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr">Bin_prot.Unsafe_common.sptr</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal.String&amp;type=t">String.t</a> -&gt; <a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr">Bin_prot.Unsafe_common.sptr</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_string</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=buf">Bin_prot.Common.buf</a> -&gt;
+pos:<a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal.String&amp;type=t">String.t</a> -&gt; <a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_string</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal.String&amp;type=t">String.t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_string__</span> : <code class="type"><a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; int -&gt; <a href="?package=core_kernel&amp;module=Std_internal.String&amp;type=t">String.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_string_</span> : <code class="type"><a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt; <a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal.String&amp;type=t">String.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_string</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=buf">Bin_prot.Common.buf</a> -&gt; pos_ref:<a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a> <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal&amp;type=string">string</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_string</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal&amp;type=string">string</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_string</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal.String&amp;type=t">String.t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a></code></pre>
+      
+    
+
+<pre><span id="TYPEref"><span class="keyword">type</span> <code class="type">'a </code>ref</span> = <code class="type">'a <a href="?package=core_kernel&amp;module=Std_internal.Ref&amp;type=t">Ref.t</a></code> </pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> __ref_of_sexp__</span> : <code class="type">'a. (<a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'a) -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=ref">ref</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> ref_of_sexp</span> : <code class="type">'a. (<a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'a) -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=ref">ref</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_ref</span> : <code class="type">'a. ('a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=ref">ref</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_size_ref</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Size&amp;type=sizer">Bin_prot.Size.sizer</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal.Ref&amp;type=t">Ref.t</a> -&gt; int</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_ref_</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr">Bin_prot.Unsafe_common.sptr</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal.Ref&amp;type=t">Ref.t</a> -&gt; <a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr">Bin_prot.Unsafe_common.sptr</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_ref</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt;
+<a href="?package=bin_prot&amp;module=Common&amp;type=buf">Bin_prot.Common.buf</a> -&gt;
+pos:<a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal.Ref&amp;type=t">Ref.t</a> -&gt; <a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_ref</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal.Ref&amp;type=t">Ref.t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_ref__</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; int -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal.Ref&amp;type=t">Ref.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_ref_</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt; <a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal.Ref&amp;type=t">Ref.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_ref</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+<a href="?package=bin_prot&amp;module=Common&amp;type=buf">Bin_prot.Common.buf</a> -&gt; pos_ref:<a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a> <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=ref">ref</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_ref</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=ref">ref</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_ref</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal.Ref&amp;type=t">Ref.t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a></code></pre>
+      
+    
+
+<pre><span id="TYPEunit"><span class="keyword">type</span> unit</span> = <code class="type"><a href="?package=core_kernel&amp;module=Unit&amp;type=t">Unit.t</a></code> </pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> __unit_of_sexp__</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core_kernel&amp;module=Unit&amp;type=t">Unit.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> unit_of_sexp</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core_kernel&amp;module=Unit&amp;type=t">Unit.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_unit</span> : <code class="type"><a href="?package=core_kernel&amp;module=Unit&amp;type=t">Unit.t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> compare_unit</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal&amp;type=unit">unit</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal&amp;type=unit">unit</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal&amp;type=int">int</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_size_unit</span> : <code class="type"><a href="?package=core_kernel&amp;module=Unit&amp;type=t">Unit.t</a> -&gt; int</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_unit_</span> : <code class="type"><a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr">Bin_prot.Unsafe_common.sptr</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; <a href="?package=core_kernel&amp;module=Unit&amp;type=t">Unit.t</a> -&gt; <a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr">Bin_prot.Unsafe_common.sptr</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_unit</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=buf">Bin_prot.Common.buf</a> -&gt;
+pos:<a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a> -&gt; <a href="?package=core_kernel&amp;module=Unit&amp;type=t">Unit.t</a> -&gt; <a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_unit</span> : <code class="type"><a href="?package=core_kernel&amp;module=Unit&amp;type=t">Unit.t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_unit__</span> : <code class="type"><a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; int -&gt; <a href="?package=core_kernel&amp;module=Unit&amp;type=t">Unit.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_unit_</span> : <code class="type"><a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt; <a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; <a href="?package=core_kernel&amp;module=Unit&amp;type=t">Unit.t</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_unit</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=buf">Bin_prot.Common.buf</a> -&gt; pos_ref:<a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a> <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal&amp;type=unit">unit</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_unit</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal&amp;type=unit">unit</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_unit</span> : <code class="type"><a href="?package=core_kernel&amp;module=Unit&amp;type=t">Unit.t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a></code></pre>
+      
+    
+</div>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_exn</span> : <code class="type"><a href="?package=core_kernel&amp;module=Exn&amp;type=t">Exn.t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+<pre><span id="TYPEsexp_array"><span class="keyword">type</span> <code class="type">'a </code>sexp_array</span> = <code class="type">'a array</code> </pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> compare_sexp_array</span> : <code class="type">'a. ('a -&gt; 'a -&gt; int) -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=sexp_array">sexp_array</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=sexp_array">sexp_array</a> -&gt; int</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_size_sexp_array</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Size&amp;type=sizer">Bin_prot.Size.sizer</a> -&gt; 'a array -&gt; int</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_sexp_array_</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr">Bin_prot.Unsafe_common.sptr</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; 'a array -&gt; <a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr">Bin_prot.Unsafe_common.sptr</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_sexp_array</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt;
+<a href="?package=bin_prot&amp;module=Common&amp;type=buf">Bin_prot.Common.buf</a> -&gt;
+pos:<a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a> -&gt; 'a array -&gt; <a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_sexp_array</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a> -&gt; 'a array <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_sexp_array__</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; int -&gt; 'a array</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_sexp_array_</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt; <a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; 'a array</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_sexp_array</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+<a href="?package=bin_prot&amp;module=Common&amp;type=buf">Bin_prot.Common.buf</a> -&gt; pos_ref:<a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a> <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=sexp_array">sexp_array</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_sexp_array</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=sexp_array">sexp_array</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_sexp_array</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=sexp_array">sexp_array</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a></code></pre>
+      
+    
+
+<pre><span id="TYPEsexp_bool"><span class="keyword">type</span> sexp_bool</span> = <code class="type">bool</code> </pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> compare_sexp_bool</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal&amp;type=sexp_bool">sexp_bool</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal&amp;type=sexp_bool">sexp_bool</a> -&gt; int</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_size_sexp_bool</span> : <code class="type">bool -&gt; int</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_sexp_bool_</span> : <code class="type"><a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr">Bin_prot.Unsafe_common.sptr</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; bool -&gt; <a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr">Bin_prot.Unsafe_common.sptr</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_sexp_bool</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=buf">Bin_prot.Common.buf</a> -&gt; pos:<a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a> -&gt; bool -&gt; <a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_sexp_bool</span> : <code class="type">bool <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_sexp_bool__</span> : <code class="type"><a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt; <a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; int -&gt; bool</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_sexp_bool_</span> : <code class="type"><a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt; <a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; bool</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_sexp_bool</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=buf">Bin_prot.Common.buf</a> -&gt; pos_ref:<a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a> <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a> -&gt; <a href="?package=core_kernel&amp;module=Std_internal&amp;type=sexp_bool">sexp_bool</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_sexp_bool</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal&amp;type=sexp_bool">sexp_bool</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_sexp_bool</span> : <code class="type"><a href="?package=core_kernel&amp;module=Std_internal&amp;type=sexp_bool">sexp_bool</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a></code></pre>
+      
+    
+
+<pre><span id="TYPEsexp_list"><span class="keyword">type</span> <code class="type">'a </code>sexp_list</span> = <code class="type">'a list</code> </pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> compare_sexp_list</span> : <code class="type">'a. ('a -&gt; 'a -&gt; int) -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=sexp_list">sexp_list</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=sexp_list">sexp_list</a> -&gt; int</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_size_sexp_list</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Size&amp;type=sizer">Bin_prot.Size.sizer</a> -&gt; 'a list -&gt; int</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_sexp_list_</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr">Bin_prot.Unsafe_common.sptr</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; 'a list -&gt; <a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr">Bin_prot.Unsafe_common.sptr</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_sexp_list</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt;
+<a href="?package=bin_prot&amp;module=Common&amp;type=buf">Bin_prot.Common.buf</a> -&gt;
+pos:<a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a> -&gt; 'a list -&gt; <a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_sexp_list</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a> -&gt; 'a list <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_sexp_list__</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; int -&gt; 'a list</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_sexp_list_</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt; <a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; 'a list</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_sexp_list</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+<a href="?package=bin_prot&amp;module=Common&amp;type=buf">Bin_prot.Common.buf</a> -&gt; pos_ref:<a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a> <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=sexp_list">sexp_list</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_sexp_list</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=sexp_list">sexp_list</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_sexp_list</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=sexp_list">sexp_list</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a></code></pre>
+      
+    
+
+<pre><span id="TYPEsexp_option"><span class="keyword">type</span> <code class="type">'a </code>sexp_option</span> = <code class="type">'a option</code> </pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> compare_sexp_option</span> : <code class="type">'a. ('a -&gt; 'a -&gt; int) -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=sexp_option">sexp_option</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=sexp_option">sexp_option</a> -&gt; int</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_size_sexp_option</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Size&amp;type=sizer">Bin_prot.Size.sizer</a> -&gt; 'a option -&gt; int</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_sexp_option_</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr">Bin_prot.Unsafe_common.sptr</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; 'a option -&gt; <a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr">Bin_prot.Unsafe_common.sptr</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_sexp_option</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt;
+<a href="?package=bin_prot&amp;module=Common&amp;type=buf">Bin_prot.Common.buf</a> -&gt;
+pos:<a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a> -&gt; 'a option -&gt; <a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_sexp_option</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a> -&gt; 'a option <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_sexp_option__</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; int -&gt; 'a option</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_sexp_option_</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt; <a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; 'a option</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_sexp_option</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+<a href="?package=bin_prot&amp;module=Common&amp;type=buf">Bin_prot.Common.buf</a> -&gt; pos_ref:<a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a> <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=sexp_option">sexp_option</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_sexp_option</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=sexp_option">sexp_option</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_sexp_option</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=sexp_option">sexp_option</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a></code></pre>
+      
+    
+
+<pre><span id="TYPEsexp_opaque"><span class="keyword">type</span> <code class="type">'a </code>sexp_opaque</span> = <code class="type">'a</code> </pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> compare_sexp_opaque</span> : <code class="type">'a. ('a -&gt; 'a -&gt; int) -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=sexp_opaque">sexp_opaque</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=sexp_opaque">sexp_opaque</a> -&gt; int</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_size_sexp_opaque</span> : <code class="type">('a -&gt; 'b) -&gt; 'a -&gt; 'b</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_sexp_opaque_</span> : <code class="type">('a -&gt; 'b -&gt; 'c -&gt; 'd) -&gt; 'a -&gt; 'b -&gt; 'c -&gt; 'd</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_sexp_opaque</span> : <code class="type">(<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr">Bin_prot.Unsafe_common.sptr</a> -&gt;
+ <a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; 'a -&gt; <a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr">Bin_prot.Unsafe_common.sptr</a>) -&gt;
+<a href="?package=bin_prot&amp;module=Common&amp;type=buf">Bin_prot.Common.buf</a> -&gt; pos:<a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a> -&gt; 'a -&gt; <a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_sexp_opaque</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a> -&gt; 'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_sexp_opaque__</span> : <code class="type">'a -&gt; 'b -&gt; 'c -&gt; 'd -&gt; 'e</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_sexp_opaque_</span> : <code class="type">('a -&gt; 'b -&gt; 'c) -&gt; 'a -&gt; 'b -&gt; 'c</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_sexp_opaque</span> : <code class="type">(<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt;
+ <a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=sexp_opaque">sexp_opaque</a>) -&gt;
+<a href="?package=bin_prot&amp;module=Common&amp;type=buf">Bin_prot.Common.buf</a> -&gt; pos_ref:<a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a> <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=sexp_opaque">sexp_opaque</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_sexp_opaque</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=sexp_opaque">sexp_opaque</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a> -&gt;
+'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=sexp_opaque">sexp_opaque</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_sexp_opaque</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=sexp_opaque">sexp_opaque</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=sexp_opaque">sexp_opaque</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a></code></pre>
+      
+    
+
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Std_internal.Ordering&amp;amp;type=Export" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Std_internal.Ordering&amp;type=Export">Ordering.Export</a></code></pre>
+</div>
+<br/>&quot;structure item: Mismatch&quot;<br/>
+	  
+<br/><code class="code">stable_dedup</code> Same as <code class="code">dedup</code> but maintains the order of the list and doesn't allow
+      compare function to be specified (otherwise, the implementation in terms of Set.t
+      would hide a heavyweight functor instantiation at each call).<br/>
+	  </div>

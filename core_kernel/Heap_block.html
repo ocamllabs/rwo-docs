@@ -1,17 +1,5 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-
-<title>Heap_block</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Heap_block</h1>
-<pre><span class="keyword">module</span> Heap_block</pre><div class="info">A heap block is a value that is guaranteed to live on the OCaml heap, and is hence
+<div class="ocaml_toplevel_module">
+<div class="info">A heap block is a value that is guaranteed to live on the OCaml heap, and is hence
     guaranteed to be usable with finalization or in a weak pointer.  It is an abstract
     type so we can use the type system to guarantee that the values we put in weak
     pointers and use with finalizers are heap blocks.<br/>    Some examples of values that are not heap-allocated are integers, constant
@@ -24,7 +12,38 @@
     and collected while another copy is still in use by the program.<br/>    The results of calling TODO reference : String.make, TODO reference : String.create, TODO reference : Array.make, and
     TODO reference : Pervasives.ref are guaranteed to be heap-allocated and non-constant except when the
     length argument is <code class="code">0</code>.</div>
-<hr/>
-<div file="Heap_block.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">+'a </code>t</span> = <code class="type">'a</code> <span class="keyword">private</span></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">'a -&gt; 'a <a href="?package=core_kernel&amp;module=Heap_block&amp;type=t">t</a> option</code></pre>
+      <div class="info"><code class="code">create v</code> returns <code class="code">Some t</code> if <code class="code">v</code> is a heap block, where <code class="code">t</code> is physically equal
+    to <code class="code">v</code> </div>
+    
+ 
+      <pre><span><span class="keyword">val</span> create_exn</span> : <code class="type">'a -&gt; 'a <a href="?package=core_kernel&amp;module=Heap_block&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> value</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Heap_block&amp;type=t">t</a> -&gt; 'a</code></pre>
+      <div class="info"><code class="code">value t</code> returns the value that is physically equal to <code class="code">t</code> </div>
+    
+ 
+      <pre><span><span class="keyword">val</span> bytes</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Heap_block&amp;type=t">t</a> -&gt; int</code></pre>
+      <div class="info"><code class="code">bytes t</code> returns the number of bytes on the heap taken by heap block <code class="code">t</code>, including
+    the header.  This is just the space for the single block, not anything it points
+    to.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; 'a <a href="?package=core_kernel&amp;module=Heap_block&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+<br/><code class="code">create v</code> returns <code class="code">Some t</code> if <code class="code">v</code> is a heap block, where <code class="code">t</code> is physically equal
+    to <code class="code">v</code> <br/>
+	  
+<br/><code class="code">value t</code> returns the value that is physically equal to <code class="code">t</code> <br/>
+	  
+<br/><code class="code">bytes t</code> returns the number of bytes on the heap taken by heap block <code class="code">t</code>, including
+    the header.  This is just the space for the single block, not anything it points
+    to.<br/>
+	  </div>

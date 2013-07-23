@@ -1,4 +1,0 @@
- 
-      <pre><span><span class="keyword">val</span> logger : <code class="type"><a href="Syslog.html#TYPElev">Syslog.lev</a> -&gt; string -&gt; unit</code></span></pre>
-      
-    

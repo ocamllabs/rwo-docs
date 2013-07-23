@@ -1,18 +1,274 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-
-<title>Hashtbl</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Hashtbl</h1>
-<pre><span class="keyword">module</span> Hashtbl</pre><div class="info">Hash tables and hash functions.<br/>   Hash tables are hashed association tables, with in-place modification.</div>
-<hr/>
-<div file="Hashtbl.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<div class="ocaml_toplevel_module">
+<div class="info">Hash tables and hash functions.<br/>   Hash tables are hashed association tables, with in-place modification.</div>
+<br/><br/><h6 id="6_TITLE">Generic interface</h6><br/> <br/>
+	  
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'b) </code>t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">?random:bool -&gt; int -&gt; ('a, 'b) <a href="?package=stdlib&amp;module=Hashtbl&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> clear</span> : <code class="type">('a, 'b) <a href="?package=stdlib&amp;module=Hashtbl&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> reset</span> : <code class="type">('a, 'b) <a href="?package=stdlib&amp;module=Hashtbl&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> copy</span> : <code class="type">('a, 'b) <a href="?package=stdlib&amp;module=Hashtbl&amp;type=t">t</a> -&gt; ('a, 'b) <a href="?package=stdlib&amp;module=Hashtbl&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add</span> : <code class="type">('a, 'b) <a href="?package=stdlib&amp;module=Hashtbl&amp;type=t">t</a> -&gt; 'a -&gt; 'b -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find</span> : <code class="type">('a, 'b) <a href="?package=stdlib&amp;module=Hashtbl&amp;type=t">t</a> -&gt; 'a -&gt; 'b</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_all</span> : <code class="type">('a, 'b) <a href="?package=stdlib&amp;module=Hashtbl&amp;type=t">t</a> -&gt; 'a -&gt; 'b list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem</span> : <code class="type">('a, 'b) <a href="?package=stdlib&amp;module=Hashtbl&amp;type=t">t</a> -&gt; 'a -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove</span> : <code class="type">('a, 'b) <a href="?package=stdlib&amp;module=Hashtbl&amp;type=t">t</a> -&gt; 'a -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> replace</span> : <code class="type">('a, 'b) <a href="?package=stdlib&amp;module=Hashtbl&amp;type=t">t</a> -&gt; 'a -&gt; 'b -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter</span> : <code class="type">('a -&gt; 'b -&gt; unit) -&gt; ('a, 'b) <a href="?package=stdlib&amp;module=Hashtbl&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold</span> : <code class="type">('a -&gt; 'b -&gt; 'c -&gt; 'c) -&gt; ('a, 'b) <a href="?package=stdlib&amp;module=Hashtbl&amp;type=t">t</a> -&gt; 'c -&gt; 'c</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> length</span> : <code class="type">('a, 'b) <a href="?package=stdlib&amp;module=Hashtbl&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> randomize</span> : <code class="type">unit -&gt; unit</code></pre>
+      
+    
+<pre><code><span id="TYPEstatistics"><span class="keyword">type</span> statistics</span> = {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTstatistics.num_bindings">num_bindings</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Number of bindings present in the table.
+        Same value as returned by TODO reference : Hashtbl.length.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTstatistics.num_buckets">num_buckets</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Number of buckets in the table.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTstatistics.max_bucket_length">max_bucket_length</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Maximal number of bindings per bucket.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTstatistics.bucket_histogram">bucket_histogram</span> :<code class="type">int array</code>;</code></td><td class="typefieldcomment" align="left">Histogram of bucket sizes.  This array <code class="code">histo</code> has
+        length <code class="code">max_bucket_length + 1</code>.  The value of
+        <code class="code">histo.(i)</code> is the number of buckets whose size is <code class="code">i</code>.</td>
+	  </tr></table>}
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stats</span> : <code class="type">('a, 'b) <a href="?package=stdlib&amp;module=Hashtbl&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=Hashtbl&amp;type=statistics">statistics</a></code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Functorial interface</h6><br/> <br/>
+	  
+<div class="ocaml_module sig" name="HashedType">
+		<pre><span class="keyword">module type</span> <a href="?package=stdlib&amp;module=Hashtbl.HashedType">HashedType</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> equal</span> : <code class="type"><a href="?package=stdlib&amp;module=Hashtbl.HashedType&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=Hashtbl.HashedType&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> hash</span> : <code class="type"><a href="?package=stdlib&amp;module=Hashtbl.HashedType&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="S">
+		<pre><span class="keyword">module type</span> <a href="?package=stdlib&amp;module=Hashtbl.S">S</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEkey"><span class="keyword">type</span> key</span> </pre>
+      
+    
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">int -&gt; 'a <a href="?package=stdlib&amp;module=Hashtbl.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> clear</span> : <code class="type">'a <a href="?package=stdlib&amp;module=Hashtbl.S&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> reset</span> : <code class="type">'a <a href="?package=stdlib&amp;module=Hashtbl.S&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> copy</span> : <code class="type">'a <a href="?package=stdlib&amp;module=Hashtbl.S&amp;type=t">t</a> -&gt; 'a <a href="?package=stdlib&amp;module=Hashtbl.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add</span> : <code class="type">'a <a href="?package=stdlib&amp;module=Hashtbl.S&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=Hashtbl.S&amp;type=key">key</a> -&gt; 'a -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove</span> : <code class="type">'a <a href="?package=stdlib&amp;module=Hashtbl.S&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=Hashtbl.S&amp;type=key">key</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find</span> : <code class="type">'a <a href="?package=stdlib&amp;module=Hashtbl.S&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=Hashtbl.S&amp;type=key">key</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_all</span> : <code class="type">'a <a href="?package=stdlib&amp;module=Hashtbl.S&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=Hashtbl.S&amp;type=key">key</a> -&gt; 'a list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> replace</span> : <code class="type">'a <a href="?package=stdlib&amp;module=Hashtbl.S&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=Hashtbl.S&amp;type=key">key</a> -&gt; 'a -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem</span> : <code class="type">'a <a href="?package=stdlib&amp;module=Hashtbl.S&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=Hashtbl.S&amp;type=key">key</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter</span> : <code class="type">(<a href="?package=stdlib&amp;module=Hashtbl.S&amp;type=key">key</a> -&gt; 'a -&gt; unit) -&gt; 'a <a href="?package=stdlib&amp;module=Hashtbl.S&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold</span> : <code class="type">(<a href="?package=stdlib&amp;module=Hashtbl.S&amp;type=key">key</a> -&gt; 'a -&gt; 'b -&gt; 'b) -&gt; 'a <a href="?package=stdlib&amp;module=Hashtbl.S&amp;type=t">t</a> -&gt; 'b -&gt; 'b</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> length</span> : <code class="type">'a <a href="?package=stdlib&amp;module=Hashtbl.S&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stats</span> : <code class="type">'a <a href="?package=stdlib&amp;module=Hashtbl.S&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=Hashtbl&amp;type=statistics">statistics</a></code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module ident" name="Make" path="?package=stdlib&amp;amp;module=Hashtbl.S">
+		    <pre><span class="keyword">module</span> <a href="?package=stdlib&amp;module=Hashtbl.Make">Make</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">H</code><code class="code"> : </code><code class="type"><a href="?package=stdlib&amp;module=Hashtbl.HashedType">HashedType</a></code><code class="code">) -&gt; </code><code class="code"><a href="?package=stdlib&amp;module=Hashtbl.S">S</a></code> with type <a href="?package=stdlib&amp;module=Hashtbl.S&amp;type=key">key</a> = H.t</div></pre>
+</div>
+<div class="ocaml_module sig" name="SeededHashedType">
+		<pre><span class="keyword">module type</span> <a href="?package=stdlib&amp;module=Hashtbl.SeededHashedType">SeededHashedType</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> equal</span> : <code class="type"><a href="?package=stdlib&amp;module=Hashtbl.SeededHashedType&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=Hashtbl.SeededHashedType&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> hash</span> : <code class="type">int -&gt; <a href="?package=stdlib&amp;module=Hashtbl.SeededHashedType&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="SeededS">
+		<pre><span class="keyword">module type</span> <a href="?package=stdlib&amp;module=Hashtbl.SeededS">SeededS</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEkey"><span class="keyword">type</span> key</span> </pre>
+      
+    
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">?random:bool -&gt; int -&gt; 'a <a href="?package=stdlib&amp;module=Hashtbl.SeededS&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> clear</span> : <code class="type">'a <a href="?package=stdlib&amp;module=Hashtbl.SeededS&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> reset</span> : <code class="type">'a <a href="?package=stdlib&amp;module=Hashtbl.SeededS&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> copy</span> : <code class="type">'a <a href="?package=stdlib&amp;module=Hashtbl.SeededS&amp;type=t">t</a> -&gt; 'a <a href="?package=stdlib&amp;module=Hashtbl.SeededS&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add</span> : <code class="type">'a <a href="?package=stdlib&amp;module=Hashtbl.SeededS&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=Hashtbl.SeededS&amp;type=key">key</a> -&gt; 'a -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove</span> : <code class="type">'a <a href="?package=stdlib&amp;module=Hashtbl.SeededS&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=Hashtbl.SeededS&amp;type=key">key</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find</span> : <code class="type">'a <a href="?package=stdlib&amp;module=Hashtbl.SeededS&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=Hashtbl.SeededS&amp;type=key">key</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_all</span> : <code class="type">'a <a href="?package=stdlib&amp;module=Hashtbl.SeededS&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=Hashtbl.SeededS&amp;type=key">key</a> -&gt; 'a list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> replace</span> : <code class="type">'a <a href="?package=stdlib&amp;module=Hashtbl.SeededS&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=Hashtbl.SeededS&amp;type=key">key</a> -&gt; 'a -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem</span> : <code class="type">'a <a href="?package=stdlib&amp;module=Hashtbl.SeededS&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=Hashtbl.SeededS&amp;type=key">key</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter</span> : <code class="type">(<a href="?package=stdlib&amp;module=Hashtbl.SeededS&amp;type=key">key</a> -&gt; 'a -&gt; unit) -&gt; 'a <a href="?package=stdlib&amp;module=Hashtbl.SeededS&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold</span> : <code class="type">(<a href="?package=stdlib&amp;module=Hashtbl.SeededS&amp;type=key">key</a> -&gt; 'a -&gt; 'b -&gt; 'b) -&gt; 'a <a href="?package=stdlib&amp;module=Hashtbl.SeededS&amp;type=t">t</a> -&gt; 'b -&gt; 'b</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> length</span> : <code class="type">'a <a href="?package=stdlib&amp;module=Hashtbl.SeededS&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stats</span> : <code class="type">'a <a href="?package=stdlib&amp;module=Hashtbl.SeededS&amp;type=t">t</a> -&gt; <a href="?package=stdlib&amp;module=Hashtbl&amp;type=statistics">statistics</a></code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module ident" name="MakeSeeded" path="?package=stdlib&amp;amp;module=Hashtbl.SeededS">
+		    <pre><span class="keyword">module</span> <a href="?package=stdlib&amp;module=Hashtbl.MakeSeeded">MakeSeeded</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">H</code><code class="code"> : </code><code class="type"><a href="?package=stdlib&amp;module=Hashtbl.SeededHashedType">SeededHashedType</a></code><code class="code">) -&gt; </code><code class="code"><a href="?package=stdlib&amp;module=Hashtbl.SeededS">SeededS</a></code> with type <a href="?package=stdlib&amp;module=Hashtbl.SeededS&amp;type=key">key</a> = H.t</div></pre>
+</div>
+<br/><br/><h6 id="6_TITLE">The polymorphic hash functions</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> hash</span> : <code class="type">'a -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> seeded_hash</span> : <code class="type">int -&gt; 'a -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> hash_param</span> : <code class="type">int -&gt; int -&gt; 'a -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> seeded_hash_param</span> : <code class="type">int -&gt; int -&gt; int -&gt; 'a -&gt; int</code></pre>
+      
+    </div>

@@ -1,0 +1,226 @@
+<div class="ocaml_toplevel_module">
+<div class="info">Operation on arbitrary-precision numbers.<br/>   Numbers (type <code class="code">num</code>) are arbitrary-precision rational numbers,
+   plus the special elements <code class="code">1/0</code> (infinity) and <code class="code">0/0</code> (undefined).</div>
+<pre><code><span id="TYPEnum"><span class="keyword">type</span> num</span> = </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTnum.Int"><span class="constructor">Int</span></span> <span class="keyword">of</span> <code class="type">int</code></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTnum.Big_int"><span class="constructor">Big_int</span></span> <span class="keyword">of</span> <code class="type"><a href="?package=stdlib&amp;module=Big_int&amp;type=big_int">Big_int.big_int</a></code></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTnum.Ratio"><span class="constructor">Ratio</span></span> <span class="keyword">of</span> <code class="type"><a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">Ratio.ratio</a></code></code></td>
+	   </tr></table>
+      <div class="info">The type of numbers.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> +/</span> : <code class="type"><a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add_num</span> : <code class="type"><a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> minus_num</span> : <code class="type"><a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> -/</span> : <code class="type"><a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sub_num</span> : <code class="type"><a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> */</span> : <code class="type"><a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mult_num</span> : <code class="type"><a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> square_num</span> : <code class="type"><a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> //</span> : <code class="type"><a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> div_num</span> : <code class="type"><a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> quo_num</span> : <code class="type"><a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mod_num</span> : <code class="type"><a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> **/</span> : <code class="type"><a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> power_num</span> : <code class="type"><a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> abs_num</span> : <code class="type"><a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> succ_num</span> : <code class="type"><a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pred_num</span> : <code class="type"><a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> incr_num</span> : <code class="type"><a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> decr_num</span> : <code class="type"><a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_integer_num</span> : <code class="type"><a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; bool</code></pre>
+      
+    
+<br/>The four following functions approximate a number by an integer :<br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> integer_num</span> : <code class="type"><a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> floor_num</span> : <code class="type"><a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> round_num</span> : <code class="type"><a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ceiling_num</span> : <code class="type"><a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sign_num</span> : <code class="type"><a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; int</code></pre>
+      
+    
+<br/><br/><div class="h7">Comparisons between numbers</div><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> =/</span> : <code class="type"><a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> &lt;/</span> : <code class="type"><a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> &gt;/</span> : <code class="type"><a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> &lt;=/</span> : <code class="type"><a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> &gt;=/</span> : <code class="type"><a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> &lt;&gt;/</span> : <code class="type"><a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> eq_num</span> : <code class="type"><a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> lt_num</span> : <code class="type"><a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> le_num</span> : <code class="type"><a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> gt_num</span> : <code class="type"><a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ge_num</span> : <code class="type"><a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> compare_num</span> : <code class="type"><a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> max_num</span> : <code class="type"><a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> min_num</span> : <code class="type"><a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a></code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Coercions with strings</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> string_of_num</span> : <code class="type"><a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> approx_num_fix</span> : <code class="type">int -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> approx_num_exp</span> : <code class="type">int -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> num_of_string</span> : <code class="type">string -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a></code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Coercions between numerical types</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> int_of_num</span> : <code class="type"><a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> num_of_int</span> : <code class="type">int -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> nat_of_num</span> : <code class="type"><a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Nat&amp;type=nat">Nat.nat</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> num_of_nat</span> : <code class="type"><a href="?package=stdlib&amp;module=Nat&amp;type=nat">Nat.nat</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> num_of_big_int</span> : <code class="type"><a href="?package=stdlib&amp;module=Big_int&amp;type=big_int">Big_int.big_int</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> big_int_of_num</span> : <code class="type"><a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Big_int&amp;type=big_int">Big_int.big_int</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ratio_of_num</span> : <code class="type"><a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">Ratio.ratio</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> num_of_ratio</span> : <code class="type"><a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">Ratio.ratio</a> -&gt; <a href="?package=stdlib&amp;module=Num&amp;type=num">num</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> float_of_num</span> : <code class="type"><a href="?package=stdlib&amp;module=Num&amp;type=num">num</a> -&gt; float</code></pre>
+      
+    </div>

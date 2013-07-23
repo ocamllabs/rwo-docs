@@ -1,6 +1,0 @@
-<div class="expanding_content">
-	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Cache.Store.Table.html">Table</a> : <code class="code"><a href="Cache.Store.html">Store</a></code> with type <a href="Cache.Store.html#TYPEwith_init_args">with_init_args</a> = 'a</pre>
-	<div class="content" style="display:none">
-	<div file="Cache.Store.Table.html.contents" class="content_to_load"> </div>
-	</div>
-  </div>

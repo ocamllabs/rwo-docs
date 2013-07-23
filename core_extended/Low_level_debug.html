@@ -1,18 +1,40 @@
-<!DOCTYPE HTML>
-<html>
-<head>
+<div class="ocaml_toplevel_module">
 
-<title>Low_level_debug</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Low_level_debug</h1>
-<pre><span class="keyword">module</span> Low_level_debug</pre>
-<hr/>
-<div file="Low_level_debug.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+ 
+      <pre><span><span class="keyword">val</span> stop_upon_sigbus</span> : <code class="type">unit -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stop_upon_sigsegv</span> : <code class="type">unit -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stop_upon_sigpipe</span> : <code class="type">unit -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stop_upon_exit</span> : <code class="type">unit -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stop_me_now</span> : <code class="type">unit -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> segfault_me_now</span> : <code class="type">unit -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> start_canary_thread</span> : <code class="type">max_wait:<a href="?package=core&amp;module=Std.Time.Span&amp;type=t">Core.Std.Time.Span.t</a> -&gt; check_interval:<a href="?package=core&amp;module=Std.Time.Span&amp;type=t">Core.Std.Time.Span.t</a> -&gt; unit</code></pre>
+      <div class="info">A canary thread starts two threads, one in caml and one in C.  The caml
+    thread tries to take the caml lock every <code class="code">check_interval</code>, and immediately
+    releases it once it succeeds. The C thread checks that your thread is
+    getting the caml lock within <code class="code">max_wait</code>, and if it isn't it stops the
+    program (see stop_me_now).  You can then inspect your program with gdb and
+    hopefully determine what caused it to block.  It is safe to continue a
+    program stopped by the canary thread, though there is no special handling in
+    the canary thread to support this, so it may stop your program again.  If
+    you do manage to continue, the canary thread should continue to work.<br/>    It is not safe to call this function more than once, in a given program an
+    exception will be raised if you do (but a second canary will not be
+    started).</div>
+    </div>

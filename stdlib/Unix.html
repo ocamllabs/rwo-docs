@@ -1,0 +1,1169 @@
+<div class="ocaml_toplevel_module">
+<div class="info">Interface to the Unix system</div>
+<br/><br/><h6 id="6_TITLE">Error report</h6><br/> <br/>
+	  
+<pre><code><span id="TYPEerror"><span class="keyword">type</span> error</span> = </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.E2BIG"><span class="constructor">E2BIG</span></span></code></td><td class="typefieldcomment" align="left">Argument list too long</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.EACCES"><span class="constructor">EACCES</span></span></code></td><td class="typefieldcomment" align="left">Permission denied</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.EAGAIN"><span class="constructor">EAGAIN</span></span></code></td><td class="typefieldcomment" align="left">Resource temporarily unavailable; try again</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.EBADF"><span class="constructor">EBADF</span></span></code></td><td class="typefieldcomment" align="left">Bad file descriptor</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.EBUSY"><span class="constructor">EBUSY</span></span></code></td><td class="typefieldcomment" align="left">Resource unavailable</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.ECHILD"><span class="constructor">ECHILD</span></span></code></td><td class="typefieldcomment" align="left">No child process</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.EDEADLK"><span class="constructor">EDEADLK</span></span></code></td><td class="typefieldcomment" align="left">Resource deadlock would occur</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.EDOM"><span class="constructor">EDOM</span></span></code></td><td class="typefieldcomment" align="left">Domain error for math functions, etc.</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.EEXIST"><span class="constructor">EEXIST</span></span></code></td><td class="typefieldcomment" align="left">File exists</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.EFAULT"><span class="constructor">EFAULT</span></span></code></td><td class="typefieldcomment" align="left">Bad address</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.EFBIG"><span class="constructor">EFBIG</span></span></code></td><td class="typefieldcomment" align="left">File too large</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.EINTR"><span class="constructor">EINTR</span></span></code></td><td class="typefieldcomment" align="left">Function interrupted by signal</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.EINVAL"><span class="constructor">EINVAL</span></span></code></td><td class="typefieldcomment" align="left">Invalid argument</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.EIO"><span class="constructor">EIO</span></span></code></td><td class="typefieldcomment" align="left">Hardware I/O error</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.EISDIR"><span class="constructor">EISDIR</span></span></code></td><td class="typefieldcomment" align="left">Is a directory</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.EMFILE"><span class="constructor">EMFILE</span></span></code></td><td class="typefieldcomment" align="left">Too many open files by the process</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.EMLINK"><span class="constructor">EMLINK</span></span></code></td><td class="typefieldcomment" align="left">Too many links</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.ENAMETOOLONG"><span class="constructor">ENAMETOOLONG</span></span></code></td><td class="typefieldcomment" align="left">Filename too long</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.ENFILE"><span class="constructor">ENFILE</span></span></code></td><td class="typefieldcomment" align="left">Too many open files in the system</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.ENODEV"><span class="constructor">ENODEV</span></span></code></td><td class="typefieldcomment" align="left">No such device</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.ENOENT"><span class="constructor">ENOENT</span></span></code></td><td class="typefieldcomment" align="left">No such file or directory</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.ENOEXEC"><span class="constructor">ENOEXEC</span></span></code></td><td class="typefieldcomment" align="left">Not an executable file</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.ENOLCK"><span class="constructor">ENOLCK</span></span></code></td><td class="typefieldcomment" align="left">No locks available</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.ENOMEM"><span class="constructor">ENOMEM</span></span></code></td><td class="typefieldcomment" align="left">Not enough memory</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.ENOSPC"><span class="constructor">ENOSPC</span></span></code></td><td class="typefieldcomment" align="left">No space left on device</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.ENOSYS"><span class="constructor">ENOSYS</span></span></code></td><td class="typefieldcomment" align="left">Function not supported</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.ENOTDIR"><span class="constructor">ENOTDIR</span></span></code></td><td class="typefieldcomment" align="left">Not a directory</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.ENOTEMPTY"><span class="constructor">ENOTEMPTY</span></span></code></td><td class="typefieldcomment" align="left">Directory not empty</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.ENOTTY"><span class="constructor">ENOTTY</span></span></code></td><td class="typefieldcomment" align="left">Inappropriate I/O control operation</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.ENXIO"><span class="constructor">ENXIO</span></span></code></td><td class="typefieldcomment" align="left">No such device or address</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.EPERM"><span class="constructor">EPERM</span></span></code></td><td class="typefieldcomment" align="left">Operation not permitted</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.EPIPE"><span class="constructor">EPIPE</span></span></code></td><td class="typefieldcomment" align="left">Broken pipe</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.ERANGE"><span class="constructor">ERANGE</span></span></code></td><td class="typefieldcomment" align="left">Result too large</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.EROFS"><span class="constructor">EROFS</span></span></code></td><td class="typefieldcomment" align="left">Read-only file system</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.ESPIPE"><span class="constructor">ESPIPE</span></span></code></td><td class="typefieldcomment" align="left">Invalid seek e.g. on a pipe</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.ESRCH"><span class="constructor">ESRCH</span></span></code></td><td class="typefieldcomment" align="left">No such process</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.EXDEV"><span class="constructor">EXDEV</span></span></code></td><td class="typefieldcomment" align="left">Invalid link</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.EWOULDBLOCK"><span class="constructor">EWOULDBLOCK</span></span></code></td><td class="typefieldcomment" align="left">Operation would block</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.EINPROGRESS"><span class="constructor">EINPROGRESS</span></span></code></td><td class="typefieldcomment" align="left">Operation now in progress</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.EALREADY"><span class="constructor">EALREADY</span></span></code></td><td class="typefieldcomment" align="left">Operation already in progress</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.ENOTSOCK"><span class="constructor">ENOTSOCK</span></span></code></td><td class="typefieldcomment" align="left">Socket operation on non-socket</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.EDESTADDRREQ"><span class="constructor">EDESTADDRREQ</span></span></code></td><td class="typefieldcomment" align="left">Destination address required</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.EMSGSIZE"><span class="constructor">EMSGSIZE</span></span></code></td><td class="typefieldcomment" align="left">Message too long</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.EPROTOTYPE"><span class="constructor">EPROTOTYPE</span></span></code></td><td class="typefieldcomment" align="left">Protocol wrong type for socket</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.ENOPROTOOPT"><span class="constructor">ENOPROTOOPT</span></span></code></td><td class="typefieldcomment" align="left">Protocol not available</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.EPROTONOSUPPORT"><span class="constructor">EPROTONOSUPPORT</span></span></code></td><td class="typefieldcomment" align="left">Protocol not supported</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.ESOCKTNOSUPPORT"><span class="constructor">ESOCKTNOSUPPORT</span></span></code></td><td class="typefieldcomment" align="left">Socket type not supported</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.EOPNOTSUPP"><span class="constructor">EOPNOTSUPP</span></span></code></td><td class="typefieldcomment" align="left">Operation not supported on socket</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.EPFNOSUPPORT"><span class="constructor">EPFNOSUPPORT</span></span></code></td><td class="typefieldcomment" align="left">Protocol family not supported</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.EAFNOSUPPORT"><span class="constructor">EAFNOSUPPORT</span></span></code></td><td class="typefieldcomment" align="left">Address family not supported by protocol family</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.EADDRINUSE"><span class="constructor">EADDRINUSE</span></span></code></td><td class="typefieldcomment" align="left">Address already in use</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.EADDRNOTAVAIL"><span class="constructor">EADDRNOTAVAIL</span></span></code></td><td class="typefieldcomment" align="left">Can't assign requested address</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.ENETDOWN"><span class="constructor">ENETDOWN</span></span></code></td><td class="typefieldcomment" align="left">Network is down</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.ENETUNREACH"><span class="constructor">ENETUNREACH</span></span></code></td><td class="typefieldcomment" align="left">Network is unreachable</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.ENETRESET"><span class="constructor">ENETRESET</span></span></code></td><td class="typefieldcomment" align="left">Network dropped connection on reset</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.ECONNABORTED"><span class="constructor">ECONNABORTED</span></span></code></td><td class="typefieldcomment" align="left">Software caused connection abort</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.ECONNRESET"><span class="constructor">ECONNRESET</span></span></code></td><td class="typefieldcomment" align="left">Connection reset by peer</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.ENOBUFS"><span class="constructor">ENOBUFS</span></span></code></td><td class="typefieldcomment" align="left">No buffer space available</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.EISCONN"><span class="constructor">EISCONN</span></span></code></td><td class="typefieldcomment" align="left">Socket is already connected</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.ENOTCONN"><span class="constructor">ENOTCONN</span></span></code></td><td class="typefieldcomment" align="left">Socket is not connected</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.ESHUTDOWN"><span class="constructor">ESHUTDOWN</span></span></code></td><td class="typefieldcomment" align="left">Can't send after socket shutdown</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.ETOOMANYREFS"><span class="constructor">ETOOMANYREFS</span></span></code></td><td class="typefieldcomment" align="left">Too many references: can't splice</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.ETIMEDOUT"><span class="constructor">ETIMEDOUT</span></span></code></td><td class="typefieldcomment" align="left">Connection timed out</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.ECONNREFUSED"><span class="constructor">ECONNREFUSED</span></span></code></td><td class="typefieldcomment" align="left">Connection refused</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.EHOSTDOWN"><span class="constructor">EHOSTDOWN</span></span></code></td><td class="typefieldcomment" align="left">Host is down</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.EHOSTUNREACH"><span class="constructor">EHOSTUNREACH</span></span></code></td><td class="typefieldcomment" align="left">No route to host</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.ELOOP"><span class="constructor">ELOOP</span></span></code></td><td class="typefieldcomment" align="left">Too many levels of symbolic links</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.EOVERFLOW"><span class="constructor">EOVERFLOW</span></span></code></td><td class="typefieldcomment" align="left">File size or position not representable</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTerror.EUNKNOWNERR"><span class="constructor">EUNKNOWNERR</span></span> <span class="keyword">of</span> <code class="type">int</code></code></td><td class="typefieldcomment" align="left">Unknown error</td>
+	   </tr></table>
+      
+    
+<pre><span id="EXCEPTIONUnix_error"><span class="keyword">exception</span> Unix_error</span> <span class="keyword">of</span> <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=error">error</a> * string * string</code></pre>
+ 
+      <pre><span><span class="keyword">val</span> error_message</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=error">error</a> -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> handle_unix_error</span> : <code class="type">('a -&gt; 'b) -&gt; 'a -&gt; 'b</code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Access to the process environment</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> environment</span> : <code class="type">unit -&gt; string array</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> getenv</span> : <code class="type">string -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> putenv</span> : <code class="type">string -&gt; string -&gt; unit</code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Process handling</h6><br/> <br/>
+	  
+<pre><code><span id="TYPEprocess_status"><span class="keyword">type</span> process_status</span> = </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTprocess_status.WEXITED"><span class="constructor">WEXITED</span></span> <span class="keyword">of</span> <code class="type">int</code></code></td><td class="typefieldcomment" align="left">The process terminated normally by <code class="code">exit</code>;
+           the argument is the return code.</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTprocess_status.WSIGNALED"><span class="constructor">WSIGNALED</span></span> <span class="keyword">of</span> <code class="type">int</code></code></td><td class="typefieldcomment" align="left">The process was killed by a signal;
+           the argument is the signal number.</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTprocess_status.WSTOPPED"><span class="constructor">WSTOPPED</span></span> <span class="keyword">of</span> <code class="type">int</code></code></td><td class="typefieldcomment" align="left">The process was stopped by a signal; the argument is the
+           signal number.</td>
+	   </tr></table>
+      
+    
+<pre><code><span id="TYPEwait_flag"><span class="keyword">type</span> wait_flag</span> = </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTwait_flag.WNOHANG"><span class="constructor">WNOHANG</span></span></code></td><td class="typefieldcomment" align="left">do not block if no child has
+               died yet, but immediately return with a pid equal to 0.</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTwait_flag.WUNTRACED"><span class="constructor">WUNTRACED</span></span></code></td><td class="typefieldcomment" align="left">report also the children that receive stop signals.</td>
+	   </tr></table>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> execv</span> : <code class="type">string -&gt; string array -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> execve</span> : <code class="type">string -&gt; string array -&gt; string array -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> execvp</span> : <code class="type">string -&gt; string array -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> execvpe</span> : <code class="type">string -&gt; string array -&gt; string array -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fork</span> : <code class="type">unit -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> wait</span> : <code class="type">unit -&gt; int * <a href="?package=stdlib&amp;module=Unix&amp;type=process_status">process_status</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> waitpid</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=wait_flag">wait_flag</a> list -&gt; int -&gt; int * <a href="?package=stdlib&amp;module=Unix&amp;type=process_status">process_status</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> system</span> : <code class="type">string -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=process_status">process_status</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> getpid</span> : <code class="type">unit -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> getppid</span> : <code class="type">unit -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> nice</span> : <code class="type">int -&gt; int</code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Basic file input/output</h6><br/> <br/>
+	  
+<pre><span id="TYPEfile_descr"><span class="keyword">type</span> file_descr</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stdin</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stdout</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stderr</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a></code></pre>
+      
+    
+<pre><code><span id="TYPEopen_flag"><span class="keyword">type</span> open_flag</span> = </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTopen_flag.O_RDONLY"><span class="constructor">O_RDONLY</span></span></code></td><td class="typefieldcomment" align="left">Open for reading</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTopen_flag.O_WRONLY"><span class="constructor">O_WRONLY</span></span></code></td><td class="typefieldcomment" align="left">Open for writing</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTopen_flag.O_RDWR"><span class="constructor">O_RDWR</span></span></code></td><td class="typefieldcomment" align="left">Open for reading and writing</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTopen_flag.O_NONBLOCK"><span class="constructor">O_NONBLOCK</span></span></code></td><td class="typefieldcomment" align="left">Open in non-blocking mode</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTopen_flag.O_APPEND"><span class="constructor">O_APPEND</span></span></code></td><td class="typefieldcomment" align="left">Open for append</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTopen_flag.O_CREAT"><span class="constructor">O_CREAT</span></span></code></td><td class="typefieldcomment" align="left">Create if nonexistent</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTopen_flag.O_TRUNC"><span class="constructor">O_TRUNC</span></span></code></td><td class="typefieldcomment" align="left">Truncate to 0 length if existing</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTopen_flag.O_EXCL"><span class="constructor">O_EXCL</span></span></code></td><td class="typefieldcomment" align="left">Fail if existing</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTopen_flag.O_NOCTTY"><span class="constructor">O_NOCTTY</span></span></code></td><td class="typefieldcomment" align="left">Don't make this dev a controlling tty</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTopen_flag.O_DSYNC"><span class="constructor">O_DSYNC</span></span></code></td><td class="typefieldcomment" align="left">Writes complete as `Synchronised I/O data
+                                   integrity completion'</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTopen_flag.O_SYNC"><span class="constructor">O_SYNC</span></span></code></td><td class="typefieldcomment" align="left">Writes complete as `Synchronised I/O file
+                                   integrity completion'</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTopen_flag.O_RSYNC"><span class="constructor">O_RSYNC</span></span></code></td><td class="typefieldcomment" align="left">Reads complete as writes (depending on
+                                   O_SYNC/O_DSYNC)</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTopen_flag.O_SHARE_DELETE"><span class="constructor">O_SHARE_DELETE</span></span></code></td><td class="typefieldcomment" align="left">Windows only: allow the file to be deleted
+                                   while still open</td>
+	   </tr></table>
+      
+    
+<pre><span id="TYPEfile_perm"><span class="keyword">type</span> file_perm</span> = <code class="type">int</code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> openfile</span> : <code class="type">string -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=open_flag">open_flag</a> list -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=file_perm">file_perm</a> -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> close</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> read</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; string -&gt; int -&gt; int -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> write</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; string -&gt; int -&gt; int -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> single_write</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; string -&gt; int -&gt; int -&gt; int</code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Interfacing with the standard input/output library</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> in_channel_of_descr</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; <a href="?package=stdlib&amp;module=Pervasives&amp;type=in_channel">in_channel</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> out_channel_of_descr</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; <a href="?package=stdlib&amp;module=Pervasives&amp;type=out_channel">out_channel</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> descr_of_in_channel</span> : <code class="type"><a href="?package=stdlib&amp;module=Pervasives&amp;type=in_channel">in_channel</a> -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> descr_of_out_channel</span> : <code class="type"><a href="?package=stdlib&amp;module=Pervasives&amp;type=out_channel">out_channel</a> -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a></code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Seeking and truncating</h6><br/> <br/>
+	  
+<pre><code><span id="TYPEseek_command"><span class="keyword">type</span> seek_command</span> = </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTseek_command.SEEK_SET"><span class="constructor">SEEK_SET</span></span></code></td><td class="typefieldcomment" align="left">indicates positions relative to the beginning of the file</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTseek_command.SEEK_CUR"><span class="constructor">SEEK_CUR</span></span></code></td><td class="typefieldcomment" align="left">indicates positions relative to the current position</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTseek_command.SEEK_END"><span class="constructor">SEEK_END</span></span></code></td><td class="typefieldcomment" align="left">indicates positions relative to the end of the file</td>
+	   </tr></table>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> lseek</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; int -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=seek_command">seek_command</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> truncate</span> : <code class="type">string -&gt; int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ftruncate</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; int -&gt; unit</code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">File status</h6><br/> <br/>
+	  
+<pre><code><span id="TYPEfile_kind"><span class="keyword">type</span> file_kind</span> = </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTfile_kind.S_REG"><span class="constructor">S_REG</span></span></code></td><td class="typefieldcomment" align="left">Regular file</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTfile_kind.S_DIR"><span class="constructor">S_DIR</span></span></code></td><td class="typefieldcomment" align="left">Directory</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTfile_kind.S_CHR"><span class="constructor">S_CHR</span></span></code></td><td class="typefieldcomment" align="left">Character device</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTfile_kind.S_BLK"><span class="constructor">S_BLK</span></span></code></td><td class="typefieldcomment" align="left">Block device</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTfile_kind.S_LNK"><span class="constructor">S_LNK</span></span></code></td><td class="typefieldcomment" align="left">Symbolic link</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTfile_kind.S_FIFO"><span class="constructor">S_FIFO</span></span></code></td><td class="typefieldcomment" align="left">Named pipe</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTfile_kind.S_SOCK"><span class="constructor">S_SOCK</span></span></code></td><td class="typefieldcomment" align="left">Socket</td>
+	   </tr></table>
+      
+    
+<pre><code><span id="TYPEstats"><span class="keyword">type</span> stats</span> = {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTstats.st_dev">st_dev</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Device number</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTstats.st_ino">st_ino</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Inode number</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTstats.st_kind">st_kind</span> :<code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_kind">file_kind</a></code>;</code></td><td class="typefieldcomment" align="left">Kind of the file</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTstats.st_perm">st_perm</span> :<code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_perm">file_perm</a></code>;</code></td><td class="typefieldcomment" align="left">Access rights</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTstats.st_nlink">st_nlink</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Number of links</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTstats.st_uid">st_uid</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">User id of the owner</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTstats.st_gid">st_gid</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Group ID of the file's group</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTstats.st_rdev">st_rdev</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Device minor number</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTstats.st_size">st_size</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Size in bytes</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTstats.st_atime">st_atime</span> :<code class="type">float</code>;</code></td><td class="typefieldcomment" align="left">Last access time</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTstats.st_mtime">st_mtime</span> :<code class="type">float</code>;</code></td><td class="typefieldcomment" align="left">Last modification time</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTstats.st_ctime">st_ctime</span> :<code class="type">float</code>;</code></td><td class="typefieldcomment" align="left">Last status change time</td>
+	  </tr></table>}
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stat</span> : <code class="type">string -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=stats">stats</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> lstat</span> : <code class="type">string -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=stats">stats</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fstat</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=stats">stats</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> isatty</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; bool</code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">File operations on large files</h6><br/> <br/>
+	  
+<div class="ocaml_module sig" name="LargeFile">
+		<pre><span class="keyword">module</span> <a href="?package=stdlib&amp;module=Unix.LargeFile">LargeFile</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+ 
+      <pre><span><span class="keyword">val</span> lseek</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; int64 -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=seek_command">seek_command</a> -&gt; int64</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> truncate</span> : <code class="type">string -&gt; int64 -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ftruncate</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; int64 -&gt; unit</code></pre>
+      
+    
+<pre><code><span id="TYPEstats"><span class="keyword">type</span> stats</span> = {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTstats.st_dev">st_dev</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Device number</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTstats.st_ino">st_ino</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Inode number</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTstats.st_kind">st_kind</span> :<code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_kind">file_kind</a></code>;</code></td><td class="typefieldcomment" align="left">Kind of the file</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTstats.st_perm">st_perm</span> :<code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_perm">file_perm</a></code>;</code></td><td class="typefieldcomment" align="left">Access rights</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTstats.st_nlink">st_nlink</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Number of links</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTstats.st_uid">st_uid</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">User id of the owner</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTstats.st_gid">st_gid</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Group ID of the file's group</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTstats.st_rdev">st_rdev</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Device minor number</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTstats.st_size">st_size</span> :<code class="type">int64</code>;</code></td><td class="typefieldcomment" align="left">Size in bytes</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTstats.st_atime">st_atime</span> :<code class="type">float</code>;</code></td><td class="typefieldcomment" align="left">Last access time</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTstats.st_mtime">st_mtime</span> :<code class="type">float</code>;</code></td><td class="typefieldcomment" align="left">Last modification time</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTstats.st_ctime">st_ctime</span> :<code class="type">float</code>;</code></td><td class="typefieldcomment" align="left">Last status change time</td>
+	  </tr></table>}
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stat</span> : <code class="type">string -&gt; <a href="?package=stdlib&amp;module=Unix.LargeFile&amp;type=stats">stats</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> lstat</span> : <code class="type">string -&gt; <a href="?package=stdlib&amp;module=Unix.LargeFile&amp;type=stats">stats</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fstat</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; <a href="?package=stdlib&amp;module=Unix.LargeFile&amp;type=stats">stats</a></code></pre>
+      
+    
+		</div>
+</div>
+<br/><br/><h6 id="6_TITLE">Operations on file names</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> unlink</span> : <code class="type">string -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rename</span> : <code class="type">string -&gt; string -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> link</span> : <code class="type">string -&gt; string -&gt; unit</code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">File permissions and ownership</h6><br/> <br/>
+	  
+<pre><code><span id="TYPEaccess_permission"><span class="keyword">type</span> access_permission</span> = </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTaccess_permission.R_OK"><span class="constructor">R_OK</span></span></code></td><td class="typefieldcomment" align="left">Read permission</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTaccess_permission.W_OK"><span class="constructor">W_OK</span></span></code></td><td class="typefieldcomment" align="left">Write permission</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTaccess_permission.X_OK"><span class="constructor">X_OK</span></span></code></td><td class="typefieldcomment" align="left">Execution permission</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTaccess_permission.F_OK"><span class="constructor">F_OK</span></span></code></td><td class="typefieldcomment" align="left">File exists</td>
+	   </tr></table>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> chmod</span> : <code class="type">string -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=file_perm">file_perm</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fchmod</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=file_perm">file_perm</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> chown</span> : <code class="type">string -&gt; int -&gt; int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fchown</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; int -&gt; int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> umask</span> : <code class="type">int -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> access</span> : <code class="type">string -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=access_permission">access_permission</a> list -&gt; unit</code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Operations on file descriptors</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> dup</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> dup2</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set_nonblock</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> clear_nonblock</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set_close_on_exec</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> clear_close_on_exec</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; unit</code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Directories</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> mkdir</span> : <code class="type">string -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=file_perm">file_perm</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rmdir</span> : <code class="type">string -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> chdir</span> : <code class="type">string -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> getcwd</span> : <code class="type">unit -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> chroot</span> : <code class="type">string -&gt; unit</code></pre>
+      
+    
+<pre><span id="TYPEdir_handle"><span class="keyword">type</span> dir_handle</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> opendir</span> : <code class="type">string -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=dir_handle">dir_handle</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> readdir</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=dir_handle">dir_handle</a> -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rewinddir</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=dir_handle">dir_handle</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> closedir</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=dir_handle">dir_handle</a> -&gt; unit</code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Pipes and redirections</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> pipe</span> : <code class="type">unit -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> * <a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mkfifo</span> : <code class="type">string -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=file_perm">file_perm</a> -&gt; unit</code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">High-level process and redirection management</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> create_process</span> : <code class="type">string -&gt; string array -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create_process_env</span> : <code class="type">string -&gt;
+string array -&gt; string array -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> open_process_in</span> : <code class="type">string -&gt; <a href="?package=stdlib&amp;module=Pervasives&amp;type=in_channel">in_channel</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> open_process_out</span> : <code class="type">string -&gt; <a href="?package=stdlib&amp;module=Pervasives&amp;type=out_channel">out_channel</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> open_process</span> : <code class="type">string -&gt; <a href="?package=stdlib&amp;module=Pervasives&amp;type=in_channel">in_channel</a> * <a href="?package=stdlib&amp;module=Pervasives&amp;type=out_channel">out_channel</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> open_process_full</span> : <code class="type">string -&gt; string array -&gt; <a href="?package=stdlib&amp;module=Pervasives&amp;type=in_channel">in_channel</a> * <a href="?package=stdlib&amp;module=Pervasives&amp;type=out_channel">out_channel</a> * <a href="?package=stdlib&amp;module=Pervasives&amp;type=in_channel">in_channel</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> close_process_in</span> : <code class="type"><a href="?package=stdlib&amp;module=Pervasives&amp;type=in_channel">in_channel</a> -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=process_status">process_status</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> close_process_out</span> : <code class="type"><a href="?package=stdlib&amp;module=Pervasives&amp;type=out_channel">out_channel</a> -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=process_status">process_status</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> close_process</span> : <code class="type"><a href="?package=stdlib&amp;module=Pervasives&amp;type=in_channel">in_channel</a> * <a href="?package=stdlib&amp;module=Pervasives&amp;type=out_channel">out_channel</a> -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=process_status">process_status</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> close_process_full</span> : <code class="type"><a href="?package=stdlib&amp;module=Pervasives&amp;type=in_channel">in_channel</a> * <a href="?package=stdlib&amp;module=Pervasives&amp;type=out_channel">out_channel</a> * <a href="?package=stdlib&amp;module=Pervasives&amp;type=in_channel">in_channel</a> -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=process_status">process_status</a></code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Symbolic links</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> symlink</span> : <code class="type">string -&gt; string -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> readlink</span> : <code class="type">string -&gt; string</code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Polling</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> select</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> list -&gt;
+<a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> list -&gt;
+<a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> list -&gt;
+float -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> list * <a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> list * <a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> list</code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Locking</h6><br/> <br/>
+	  
+<pre><code><span id="TYPElock_command"><span class="keyword">type</span> lock_command</span> = </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTlock_command.F_ULOCK"><span class="constructor">F_ULOCK</span></span></code></td><td class="typefieldcomment" align="left">Unlock a region</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTlock_command.F_LOCK"><span class="constructor">F_LOCK</span></span></code></td><td class="typefieldcomment" align="left">Lock a region for writing, and block if already locked</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTlock_command.F_TLOCK"><span class="constructor">F_TLOCK</span></span></code></td><td class="typefieldcomment" align="left">Lock a region for writing, or fail if already locked</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTlock_command.F_TEST"><span class="constructor">F_TEST</span></span></code></td><td class="typefieldcomment" align="left">Test a region for other process locks</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTlock_command.F_RLOCK"><span class="constructor">F_RLOCK</span></span></code></td><td class="typefieldcomment" align="left">Lock a region for reading, and block if already locked</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTlock_command.F_TRLOCK"><span class="constructor">F_TRLOCK</span></span></code></td><td class="typefieldcomment" align="left">Lock a region for reading, or fail if already locked</td>
+	   </tr></table>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> lockf</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=lock_command">lock_command</a> -&gt; int -&gt; unit</code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Signals</h6><br/>
+   Note: installation of signal handlers is performed via
+   the functions TODO reference : Sys.signal and TODO reference : Sys.set_signal.<br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> kill</span> : <code class="type">int -&gt; int -&gt; unit</code></pre>
+      
+    
+<pre><code><span id="TYPEsigprocmask_command"><span class="keyword">type</span> sigprocmask_command</span> = </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTsigprocmask_command.SIG_SETMASK"><span class="constructor">SIG_SETMASK</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTsigprocmask_command.SIG_BLOCK"><span class="constructor">SIG_BLOCK</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTsigprocmask_command.SIG_UNBLOCK"><span class="constructor">SIG_UNBLOCK</span></span></code></td>
+	   </tr></table>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sigprocmask</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=sigprocmask_command">sigprocmask_command</a> -&gt; int list -&gt; int list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sigpending</span> : <code class="type">unit -&gt; int list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sigsuspend</span> : <code class="type">int list -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pause</span> : <code class="type">unit -&gt; unit</code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Time functions</h6><br/> <br/>
+	  
+<pre><code><span id="TYPEprocess_times"><span class="keyword">type</span> process_times</span> = {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTprocess_times.tms_utime">tms_utime</span> :<code class="type">float</code>;</code></td><td class="typefieldcomment" align="left">User time for the process</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTprocess_times.tms_stime">tms_stime</span> :<code class="type">float</code>;</code></td><td class="typefieldcomment" align="left">System time for the process</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTprocess_times.tms_cutime">tms_cutime</span> :<code class="type">float</code>;</code></td><td class="typefieldcomment" align="left">User time for the children processes</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTprocess_times.tms_cstime">tms_cstime</span> :<code class="type">float</code>;</code></td><td class="typefieldcomment" align="left">System time for the children processes</td>
+	  </tr></table>}
+      
+    
+<pre><code><span id="TYPEtm"><span class="keyword">type</span> tm</span> = {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTtm.tm_sec">tm_sec</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Seconds 0..60</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTtm.tm_min">tm_min</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Minutes 0..59</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTtm.tm_hour">tm_hour</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Hours 0..23</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTtm.tm_mday">tm_mday</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Day of month 1..31</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTtm.tm_mon">tm_mon</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Month of year 0..11</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTtm.tm_year">tm_year</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Year - 1900</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTtm.tm_wday">tm_wday</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Day of week (Sunday is 0)</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTtm.tm_yday">tm_yday</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Day of year 0..365</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTtm.tm_isdst">tm_isdst</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Daylight time savings in effect</td>
+	  </tr></table>}
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> time</span> : <code class="type">unit -&gt; float</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> gettimeofday</span> : <code class="type">unit -&gt; float</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> gmtime</span> : <code class="type">float -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=tm">tm</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> localtime</span> : <code class="type">float -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=tm">tm</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mktime</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=tm">tm</a> -&gt; float * <a href="?package=stdlib&amp;module=Unix&amp;type=tm">tm</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> alarm</span> : <code class="type">int -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sleep</span> : <code class="type">int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> times</span> : <code class="type">unit -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=process_times">process_times</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> utimes</span> : <code class="type">string -&gt; float -&gt; float -&gt; unit</code></pre>
+      
+    
+<pre><code><span id="TYPEinterval_timer"><span class="keyword">type</span> interval_timer</span> = </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTinterval_timer.ITIMER_REAL"><span class="constructor">ITIMER_REAL</span></span></code></td><td class="typefieldcomment" align="left">decrements in real time, and sends the signal <code class="code">SIGALRM</code> when
+         expired.</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTinterval_timer.ITIMER_VIRTUAL"><span class="constructor">ITIMER_VIRTUAL</span></span></code></td><td class="typefieldcomment" align="left">decrements in process virtual time, and sends <code class="code">SIGVTALRM</code>
+          when expired.</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTinterval_timer.ITIMER_PROF"><span class="constructor">ITIMER_PROF</span></span></code></td><td class="typefieldcomment" align="left">(for profiling) decrements both when the process
+         is running and when the system is running on behalf of the
+         process; it sends <code class="code">SIGPROF</code> when expired.</td>
+	   </tr></table>
+      
+    
+<pre><code><span id="TYPEinterval_timer_status"><span class="keyword">type</span> interval_timer_status</span> = {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTinterval_timer_status.it_interval">it_interval</span> :<code class="type">float</code>;</code></td><td class="typefieldcomment" align="left">Period</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTinterval_timer_status.it_value">it_value</span> :<code class="type">float</code>;</code></td><td class="typefieldcomment" align="left">Current value of the timer</td>
+	  </tr></table>}
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> getitimer</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=interval_timer">interval_timer</a> -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=interval_timer_status">interval_timer_status</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> setitimer</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=interval_timer">interval_timer</a> -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=interval_timer_status">interval_timer_status</a> -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=interval_timer_status">interval_timer_status</a></code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">User id, group id</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> getuid</span> : <code class="type">unit -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> geteuid</span> : <code class="type">unit -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> setuid</span> : <code class="type">int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> getgid</span> : <code class="type">unit -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> getegid</span> : <code class="type">unit -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> setgid</span> : <code class="type">int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> getgroups</span> : <code class="type">unit -&gt; int array</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> setgroups</span> : <code class="type">int array -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> initgroups</span> : <code class="type">string -&gt; int -&gt; unit</code></pre>
+      
+    
+<pre><code><span id="TYPEpasswd_entry"><span class="keyword">type</span> passwd_entry</span> = {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTpasswd_entry.pw_name">pw_name</span> :<code class="type">string</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTpasswd_entry.pw_passwd">pw_passwd</span> :<code class="type">string</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTpasswd_entry.pw_uid">pw_uid</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTpasswd_entry.pw_gid">pw_gid</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTpasswd_entry.pw_gecos">pw_gecos</span> :<code class="type">string</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTpasswd_entry.pw_dir">pw_dir</span> :<code class="type">string</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTpasswd_entry.pw_shell">pw_shell</span> :<code class="type">string</code>;</code></td>
+	  </tr></table>}
+      
+    
+<pre><code><span id="TYPEgroup_entry"><span class="keyword">type</span> group_entry</span> = {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTgroup_entry.gr_name">gr_name</span> :<code class="type">string</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTgroup_entry.gr_passwd">gr_passwd</span> :<code class="type">string</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTgroup_entry.gr_gid">gr_gid</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTgroup_entry.gr_mem">gr_mem</span> :<code class="type">string array</code>;</code></td>
+	  </tr></table>}
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> getlogin</span> : <code class="type">unit -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> getpwnam</span> : <code class="type">string -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=passwd_entry">passwd_entry</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> getgrnam</span> : <code class="type">string -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=group_entry">group_entry</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> getpwuid</span> : <code class="type">int -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=passwd_entry">passwd_entry</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> getgrgid</span> : <code class="type">int -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=group_entry">group_entry</a></code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Internet addresses</h6><br/> <br/>
+	  
+<pre><span id="TYPEinet_addr"><span class="keyword">type</span> inet_addr</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> inet_addr_of_string</span> : <code class="type">string -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=inet_addr">inet_addr</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> string_of_inet_addr</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=inet_addr">inet_addr</a> -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> inet_addr_any</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=inet_addr">inet_addr</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> inet_addr_loopback</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=inet_addr">inet_addr</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> inet6_addr_any</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=inet_addr">inet_addr</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> inet6_addr_loopback</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=inet_addr">inet_addr</a></code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Sockets</h6><br/> <br/>
+	  
+<pre><code><span id="TYPEsocket_domain"><span class="keyword">type</span> socket_domain</span> = </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTsocket_domain.PF_UNIX"><span class="constructor">PF_UNIX</span></span></code></td><td class="typefieldcomment" align="left">Unix domain</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTsocket_domain.PF_INET"><span class="constructor">PF_INET</span></span></code></td><td class="typefieldcomment" align="left">Internet domain (IPv4)</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTsocket_domain.PF_INET6"><span class="constructor">PF_INET6</span></span></code></td><td class="typefieldcomment" align="left">Internet domain (IPv6)</td>
+	   </tr></table>
+      
+    
+<pre><code><span id="TYPEsocket_type"><span class="keyword">type</span> socket_type</span> = </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTsocket_type.SOCK_STREAM"><span class="constructor">SOCK_STREAM</span></span></code></td><td class="typefieldcomment" align="left">Stream socket</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTsocket_type.SOCK_DGRAM"><span class="constructor">SOCK_DGRAM</span></span></code></td><td class="typefieldcomment" align="left">Datagram socket</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTsocket_type.SOCK_RAW"><span class="constructor">SOCK_RAW</span></span></code></td><td class="typefieldcomment" align="left">Raw socket</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTsocket_type.SOCK_SEQPACKET"><span class="constructor">SOCK_SEQPACKET</span></span></code></td><td class="typefieldcomment" align="left">Sequenced packets socket</td>
+	   </tr></table>
+      
+    
+<pre><code><span id="TYPEsockaddr"><span class="keyword">type</span> sockaddr</span> = </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTsockaddr.ADDR_UNIX"><span class="constructor">ADDR_UNIX</span></span> <span class="keyword">of</span> <code class="type">string</code></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTsockaddr.ADDR_INET"><span class="constructor">ADDR_INET</span></span> <span class="keyword">of</span> <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=inet_addr">inet_addr</a> * int</code></code></td><td class="typefieldcomment" align="left">The type of socket addresses. <code class="code">ADDR_UNIX name</code> is a socket
+   address in the Unix domain; <code class="code">name</code> is a file name in the file
+   system. <code class="code">ADDR_INET(addr,port)</code> is a socket address in the Internet
+   domain; <code class="code">addr</code> is the Internet address of the machine, and
+   <code class="code">port</code> is the port number.</td>
+	   </tr></table>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> socket</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=socket_domain">socket_domain</a> -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=socket_type">socket_type</a> -&gt; int -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> domain_of_sockaddr</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=sockaddr">sockaddr</a> -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=socket_domain">socket_domain</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> socketpair</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=socket_domain">socket_domain</a> -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=socket_type">socket_type</a> -&gt; int -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> * <a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> accept</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> * <a href="?package=stdlib&amp;module=Unix&amp;type=sockaddr">sockaddr</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bind</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=sockaddr">sockaddr</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> connect</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=sockaddr">sockaddr</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> listen</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; int -&gt; unit</code></pre>
+      
+    
+<pre><code><span id="TYPEshutdown_command"><span class="keyword">type</span> shutdown_command</span> = </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTshutdown_command.SHUTDOWN_RECEIVE"><span class="constructor">SHUTDOWN_RECEIVE</span></span></code></td><td class="typefieldcomment" align="left">Close for receiving</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTshutdown_command.SHUTDOWN_SEND"><span class="constructor">SHUTDOWN_SEND</span></span></code></td><td class="typefieldcomment" align="left">Close for sending</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTshutdown_command.SHUTDOWN_ALL"><span class="constructor">SHUTDOWN_ALL</span></span></code></td><td class="typefieldcomment" align="left">Close both</td>
+	   </tr></table>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> shutdown</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=shutdown_command">shutdown_command</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> getsockname</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=sockaddr">sockaddr</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> getpeername</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=sockaddr">sockaddr</a></code></pre>
+      
+    
+<pre><code><span id="TYPEmsg_flag"><span class="keyword">type</span> msg_flag</span> = </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTmsg_flag.MSG_OOB"><span class="constructor">MSG_OOB</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTmsg_flag.MSG_DONTROUTE"><span class="constructor">MSG_DONTROUTE</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTmsg_flag.MSG_PEEK"><span class="constructor">MSG_PEEK</span></span></code></td><td class="typefieldcomment" align="left">The flags for TODO reference : Unix.recv,  TODO reference : Unix.recvfrom,
+   TODO reference : Unix.send and TODO reference : Unix.sendto.</td>
+	   </tr></table>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> recv</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; string -&gt; int -&gt; int -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=msg_flag">msg_flag</a> list -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> recvfrom</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; string -&gt; int -&gt; int -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=msg_flag">msg_flag</a> list -&gt; int * <a href="?package=stdlib&amp;module=Unix&amp;type=sockaddr">sockaddr</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> send</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; string -&gt; int -&gt; int -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=msg_flag">msg_flag</a> list -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sendto</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; string -&gt; int -&gt; int -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=msg_flag">msg_flag</a> list -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=sockaddr">sockaddr</a> -&gt; int</code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Socket options</h6><br/> <br/>
+	  
+<pre><code><span id="TYPEsocket_bool_option"><span class="keyword">type</span> socket_bool_option</span> = </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTsocket_bool_option.SO_DEBUG"><span class="constructor">SO_DEBUG</span></span></code></td><td class="typefieldcomment" align="left">Record debugging information</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTsocket_bool_option.SO_BROADCAST"><span class="constructor">SO_BROADCAST</span></span></code></td><td class="typefieldcomment" align="left">Permit sending of broadcast messages</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTsocket_bool_option.SO_REUSEADDR"><span class="constructor">SO_REUSEADDR</span></span></code></td><td class="typefieldcomment" align="left">Allow reuse of local addresses for bind</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTsocket_bool_option.SO_KEEPALIVE"><span class="constructor">SO_KEEPALIVE</span></span></code></td><td class="typefieldcomment" align="left">Keep connection active</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTsocket_bool_option.SO_DONTROUTE"><span class="constructor">SO_DONTROUTE</span></span></code></td><td class="typefieldcomment" align="left">Bypass the standard routing algorithms</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTsocket_bool_option.SO_OOBINLINE"><span class="constructor">SO_OOBINLINE</span></span></code></td><td class="typefieldcomment" align="left">Leave out-of-band data in line</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTsocket_bool_option.SO_ACCEPTCONN"><span class="constructor">SO_ACCEPTCONN</span></span></code></td><td class="typefieldcomment" align="left">Report whether socket listening is enabled</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTsocket_bool_option.TCP_NODELAY"><span class="constructor">TCP_NODELAY</span></span></code></td><td class="typefieldcomment" align="left">Control the Nagle algorithm for TCP sockets</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTsocket_bool_option.IPV6_ONLY"><span class="constructor">IPV6_ONLY</span></span></code></td><td class="typefieldcomment" align="left">Forbid binding an IPv6 socket to an IPv4 address</td>
+	   </tr></table>
+      
+    
+<pre><code><span id="TYPEsocket_int_option"><span class="keyword">type</span> socket_int_option</span> = </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTsocket_int_option.SO_SNDBUF"><span class="constructor">SO_SNDBUF</span></span></code></td><td class="typefieldcomment" align="left">Size of send buffer</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTsocket_int_option.SO_RCVBUF"><span class="constructor">SO_RCVBUF</span></span></code></td><td class="typefieldcomment" align="left">Size of received buffer</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTsocket_int_option.SO_ERROR"><span class="constructor">SO_ERROR</span></span></code></td><td class="typefieldcomment" align="left">Deprecated.  Use TODO reference : Unix.getsockopt_error instead.</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTsocket_int_option.SO_TYPE"><span class="constructor">SO_TYPE</span></span></code></td><td class="typefieldcomment" align="left">Report the socket type</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTsocket_int_option.SO_RCVLOWAT"><span class="constructor">SO_RCVLOWAT</span></span></code></td><td class="typefieldcomment" align="left">Minimum number of bytes to process for input operations</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTsocket_int_option.SO_SNDLOWAT"><span class="constructor">SO_SNDLOWAT</span></span></code></td><td class="typefieldcomment" align="left">Minimum number of bytes to process for output
+                       operations</td>
+	   </tr></table>
+      
+    
+<pre><code><span id="TYPEsocket_optint_option"><span class="keyword">type</span> socket_optint_option</span> = </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTsocket_optint_option.SO_LINGER"><span class="constructor">SO_LINGER</span></span></code></td><td class="typefieldcomment" align="left">Whether to linger on closed connections
+                    that have data present, and for how long
+                    (in seconds)</td>
+	   </tr></table>
+      
+    
+<pre><code><span id="TYPEsocket_float_option"><span class="keyword">type</span> socket_float_option</span> = </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTsocket_float_option.SO_RCVTIMEO"><span class="constructor">SO_RCVTIMEO</span></span></code></td><td class="typefieldcomment" align="left">Timeout for input operations</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTsocket_float_option.SO_SNDTIMEO"><span class="constructor">SO_SNDTIMEO</span></span></code></td><td class="typefieldcomment" align="left">Timeout for output operations</td>
+	   </tr></table>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> getsockopt</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=socket_bool_option">socket_bool_option</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> setsockopt</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=socket_bool_option">socket_bool_option</a> -&gt; bool -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> getsockopt_int</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=socket_int_option">socket_int_option</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> setsockopt_int</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=socket_int_option">socket_int_option</a> -&gt; int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> getsockopt_optint</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=socket_optint_option">socket_optint_option</a> -&gt; int option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> setsockopt_optint</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=socket_optint_option">socket_optint_option</a> -&gt; int option -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> getsockopt_float</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=socket_float_option">socket_float_option</a> -&gt; float</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> setsockopt_float</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=socket_float_option">socket_float_option</a> -&gt; float -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> getsockopt_error</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=error">error</a> option</code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">High-level network connection functions</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> open_connection</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=sockaddr">sockaddr</a> -&gt; <a href="?package=stdlib&amp;module=Pervasives&amp;type=in_channel">in_channel</a> * <a href="?package=stdlib&amp;module=Pervasives&amp;type=out_channel">out_channel</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> shutdown_connection</span> : <code class="type"><a href="?package=stdlib&amp;module=Pervasives&amp;type=in_channel">in_channel</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> establish_server</span> : <code class="type">(<a href="?package=stdlib&amp;module=Pervasives&amp;type=in_channel">in_channel</a> -&gt; <a href="?package=stdlib&amp;module=Pervasives&amp;type=out_channel">out_channel</a> -&gt; unit) -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=sockaddr">sockaddr</a> -&gt; unit</code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Host and protocol databases</h6><br/> <br/>
+	  
+<pre><code><span id="TYPEhost_entry"><span class="keyword">type</span> host_entry</span> = {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELThost_entry.h_name">h_name</span> :<code class="type">string</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELThost_entry.h_aliases">h_aliases</span> :<code class="type">string array</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELThost_entry.h_addrtype">h_addrtype</span> :<code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=socket_domain">socket_domain</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELThost_entry.h_addr_list">h_addr_list</span> :<code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=inet_addr">inet_addr</a> array</code>;</code></td>
+	  </tr></table>}
+      
+    
+<pre><code><span id="TYPEprotocol_entry"><span class="keyword">type</span> protocol_entry</span> = {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTprotocol_entry.p_name">p_name</span> :<code class="type">string</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTprotocol_entry.p_aliases">p_aliases</span> :<code class="type">string array</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTprotocol_entry.p_proto">p_proto</span> :<code class="type">int</code>;</code></td>
+	  </tr></table>}
+      
+    
+<pre><code><span id="TYPEservice_entry"><span class="keyword">type</span> service_entry</span> = {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTservice_entry.s_name">s_name</span> :<code class="type">string</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTservice_entry.s_aliases">s_aliases</span> :<code class="type">string array</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTservice_entry.s_port">s_port</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTservice_entry.s_proto">s_proto</span> :<code class="type">string</code>;</code></td>
+	  </tr></table>}
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> gethostname</span> : <code class="type">unit -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> gethostbyname</span> : <code class="type">string -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=host_entry">host_entry</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> gethostbyaddr</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=inet_addr">inet_addr</a> -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=host_entry">host_entry</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> getprotobyname</span> : <code class="type">string -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=protocol_entry">protocol_entry</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> getprotobynumber</span> : <code class="type">int -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=protocol_entry">protocol_entry</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> getservbyname</span> : <code class="type">string -&gt; string -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=service_entry">service_entry</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> getservbyport</span> : <code class="type">int -&gt; string -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=service_entry">service_entry</a></code></pre>
+      
+    
+<pre><code><span id="TYPEaddr_info"><span class="keyword">type</span> addr_info</span> = {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTaddr_info.ai_family">ai_family</span> :<code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=socket_domain">socket_domain</a></code>;</code></td><td class="typefieldcomment" align="left">Socket domain</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTaddr_info.ai_socktype">ai_socktype</span> :<code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=socket_type">socket_type</a></code>;</code></td><td class="typefieldcomment" align="left">Socket type</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTaddr_info.ai_protocol">ai_protocol</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Socket protocol number</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTaddr_info.ai_addr">ai_addr</span> :<code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=sockaddr">sockaddr</a></code>;</code></td><td class="typefieldcomment" align="left">Address</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTaddr_info.ai_canonname">ai_canonname</span> :<code class="type">string</code>;</code></td><td class="typefieldcomment" align="left">Canonical host name</td>
+	  </tr></table>}
+      
+    
+<pre><code><span id="TYPEgetaddrinfo_option"><span class="keyword">type</span> getaddrinfo_option</span> = </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTgetaddrinfo_option.AI_FAMILY"><span class="constructor">AI_FAMILY</span></span> <span class="keyword">of</span> <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=socket_domain">socket_domain</a></code></code></td><td class="typefieldcomment" align="left">Impose the given socket domain</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTgetaddrinfo_option.AI_SOCKTYPE"><span class="constructor">AI_SOCKTYPE</span></span> <span class="keyword">of</span> <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=socket_type">socket_type</a></code></code></td><td class="typefieldcomment" align="left">Impose the given socket type</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTgetaddrinfo_option.AI_PROTOCOL"><span class="constructor">AI_PROTOCOL</span></span> <span class="keyword">of</span> <code class="type">int</code></code></td><td class="typefieldcomment" align="left">Impose the given protocol</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTgetaddrinfo_option.AI_NUMERICHOST"><span class="constructor">AI_NUMERICHOST</span></span></code></td><td class="typefieldcomment" align="left">Do not call name resolver,
+                                            expect numeric IP address</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTgetaddrinfo_option.AI_CANONNAME"><span class="constructor">AI_CANONNAME</span></span></code></td><td class="typefieldcomment" align="left">Fill the <code class="code">ai_canonname</code> field
+                                            of the result</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTgetaddrinfo_option.AI_PASSIVE"><span class="constructor">AI_PASSIVE</span></span></code></td><td class="typefieldcomment" align="left">Set address to ``any'' address
+                                            for use with TODO reference : Unix.bind </td>
+	   </tr></table>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> getaddrinfo</span> : <code class="type">string -&gt; string -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=getaddrinfo_option">getaddrinfo_option</a> list -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=addr_info">addr_info</a> list</code></pre>
+      
+    
+<pre><code><span id="TYPEname_info"><span class="keyword">type</span> name_info</span> = {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTname_info.ni_hostname">ni_hostname</span> :<code class="type">string</code>;</code></td><td class="typefieldcomment" align="left">Name or IP address of host</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTname_info.ni_service">ni_service</span> :<code class="type">string</code>;</code></td>
+	  </tr></table>}
+      
+    
+<br/>Host and service information returned by TODO reference : Unix.getnameinfo.<br/>
+	  
+<pre><code><span id="TYPEgetnameinfo_option"><span class="keyword">type</span> getnameinfo_option</span> = </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTgetnameinfo_option.NI_NOFQDN"><span class="constructor">NI_NOFQDN</span></span></code></td><td class="typefieldcomment" align="left">Do not qualify local host names</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTgetnameinfo_option.NI_NUMERICHOST"><span class="constructor">NI_NUMERICHOST</span></span></code></td><td class="typefieldcomment" align="left">Always return host as IP address</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTgetnameinfo_option.NI_NAMEREQD"><span class="constructor">NI_NAMEREQD</span></span></code></td><td class="typefieldcomment" align="left">Fail if host name cannot be determined</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTgetnameinfo_option.NI_NUMERICSERV"><span class="constructor">NI_NUMERICSERV</span></span></code></td><td class="typefieldcomment" align="left">Always return service as port number</td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTgetnameinfo_option.NI_DGRAM"><span class="constructor">NI_DGRAM</span></span></code></td><td class="typefieldcomment" align="left">Consider the service as UDP-based
+                             instead of the default TCP</td>
+	   </tr></table>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> getnameinfo</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=sockaddr">sockaddr</a> -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=getnameinfo_option">getnameinfo_option</a> list -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=name_info">name_info</a></code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Terminal interface</h6><br/> <br/>
+	  
+<br/>The following functions implement the POSIX standard terminal
+   interface. They provide control over asynchronous communication ports
+   and pseudo-terminals. Refer to the <code class="code">termios</code> man page for a
+   complete description.<br/>
+	  
+<pre><code><span id="TYPEterminal_io"><span class="keyword">type</span> terminal_io</span> = {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTterminal_io.c_ignbrk">c_ignbrk</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Ignore the break condition.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTterminal_io.c_brkint">c_brkint</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Signal interrupt on break condition.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTterminal_io.c_ignpar">c_ignpar</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Ignore characters with parity errors.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTterminal_io.c_parmrk">c_parmrk</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Mark parity errors.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTterminal_io.c_inpck">c_inpck</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Enable parity check on input.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTterminal_io.c_istrip">c_istrip</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Strip 8th bit on input characters.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTterminal_io.c_inlcr">c_inlcr</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Map NL to CR on input.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTterminal_io.c_igncr">c_igncr</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Ignore CR on input.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTterminal_io.c_icrnl">c_icrnl</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Map CR to NL on input.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTterminal_io.c_ixon">c_ixon</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Recognize XON/XOFF characters on input.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTterminal_io.c_ixoff">c_ixoff</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Emit XON/XOFF chars to control input flow.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTterminal_io.c_opost">c_opost</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Enable output processing.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTterminal_io.c_obaud">c_obaud</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Output baud rate (0 means close connection).</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTterminal_io.c_ibaud">c_ibaud</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Input baud rate.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTterminal_io.c_csize">c_csize</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Number of bits per character (5-8).</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTterminal_io.c_cstopb">c_cstopb</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Number of stop bits (1-2).</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTterminal_io.c_cread">c_cread</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Reception is enabled.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTterminal_io.c_parenb">c_parenb</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Enable parity generation and detection.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTterminal_io.c_parodd">c_parodd</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Specify odd parity instead of even.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTterminal_io.c_hupcl">c_hupcl</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Hang up on last close.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTterminal_io.c_clocal">c_clocal</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Ignore modem status lines.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTterminal_io.c_isig">c_isig</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Generate signal on INTR, QUIT, SUSP.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTterminal_io.c_icanon">c_icanon</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Enable canonical processing
+                                 (line buffering and editing)</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTterminal_io.c_noflsh">c_noflsh</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Disable flush after INTR, QUIT, SUSP.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTterminal_io.c_echo">c_echo</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Echo input characters.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTterminal_io.c_echoe">c_echoe</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Echo ERASE (to erase previous character).</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTterminal_io.c_echok">c_echok</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Echo KILL (to erase the current line).</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTterminal_io.c_echonl">c_echonl</span> :<code class="type">bool</code>;</code></td><td class="typefieldcomment" align="left">Echo NL even if c_echo is not set.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTterminal_io.c_vintr">c_vintr</span> :<code class="type">char</code>;</code></td><td class="typefieldcomment" align="left">Interrupt character (usually ctrl-C).</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTterminal_io.c_vquit">c_vquit</span> :<code class="type">char</code>;</code></td><td class="typefieldcomment" align="left">Quit character (usually ctrl-\).</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTterminal_io.c_verase">c_verase</span> :<code class="type">char</code>;</code></td><td class="typefieldcomment" align="left">Erase character (usually DEL or ctrl-H).</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTterminal_io.c_vkill">c_vkill</span> :<code class="type">char</code>;</code></td><td class="typefieldcomment" align="left">Kill line character (usually ctrl-U).</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTterminal_io.c_veof">c_veof</span> :<code class="type">char</code>;</code></td><td class="typefieldcomment" align="left">End-of-file character (usually ctrl-D).</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTterminal_io.c_veol">c_veol</span> :<code class="type">char</code>;</code></td><td class="typefieldcomment" align="left">Alternate end-of-line char. (usually none).</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTterminal_io.c_vmin">c_vmin</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Minimum number of characters to read
+                                 before the read request is satisfied.</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTterminal_io.c_vtime">c_vtime</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Maximum read wait (in 0.1s units).</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTterminal_io.c_vstart">c_vstart</span> :<code class="type">char</code>;</code></td><td class="typefieldcomment" align="left">Start character (usually ctrl-Q).</td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTterminal_io.c_vstop">c_vstop</span> :<code class="type">char</code>;</code></td><td class="typefieldcomment" align="left">Stop character (usually ctrl-S).</td>
+	  </tr></table>}
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> tcgetattr</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=terminal_io">terminal_io</a></code></pre>
+      
+    
+<pre><code><span id="TYPEsetattr_when"><span class="keyword">type</span> setattr_when</span> = </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTsetattr_when.TCSANOW"><span class="constructor">TCSANOW</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTsetattr_when.TCSADRAIN"><span class="constructor">TCSADRAIN</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTsetattr_when.TCSAFLUSH"><span class="constructor">TCSAFLUSH</span></span></code></td>
+	   </tr></table>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> tcsetattr</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=setattr_when">setattr_when</a> -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=terminal_io">terminal_io</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> tcsendbreak</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; int -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> tcdrain</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; unit</code></pre>
+      
+    
+<pre><code><span id="TYPEflush_queue"><span class="keyword">type</span> flush_queue</span> = </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTflush_queue.TCIFLUSH"><span class="constructor">TCIFLUSH</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTflush_queue.TCOFLUSH"><span class="constructor">TCOFLUSH</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTflush_queue.TCIOFLUSH"><span class="constructor">TCIOFLUSH</span></span></code></td>
+	   </tr></table>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> tcflush</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=flush_queue">flush_queue</a> -&gt; unit</code></pre>
+      
+    
+<pre><code><span id="TYPEflow_action"><span class="keyword">type</span> flow_action</span> = </code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTflow_action.TCOOFF"><span class="constructor">TCOOFF</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTflow_action.TCOON"><span class="constructor">TCOON</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTflow_action.TCIOFF"><span class="constructor">TCIOFF</span></span></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTflow_action.TCION"><span class="constructor">TCION</span></span></code></td>
+	   </tr></table>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> tcflow</span> : <code class="type"><a href="?package=stdlib&amp;module=Unix&amp;type=file_descr">file_descr</a> -&gt; <a href="?package=stdlib&amp;module=Unix&amp;type=flow_action">flow_action</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> setsid</span> : <code class="type">unit -&gt; int</code></pre>
+      
+    </div>

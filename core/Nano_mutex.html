@@ -1,17 +1,5 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-
-<title>Nano_mutex</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Nano_mutex</h1>
-<pre><span class="keyword">module</span> Nano_mutex</pre><div class="info">A nano-mutex is a lightweight mutex that can be used only within a single OCaml
+<div class="ocaml_toplevel_module">
+<div class="info">A nano-mutex is a lightweight mutex that can be used only within a single OCaml
     runtime.<br/>    <br/><h1 id="1_TITLE">Performance</h1><br/>
     ===============
     Nano-mutexes are intended to be significantly cheaper than OS-level mutexes.  Creating
@@ -43,7 +31,74 @@
       |--------------------+------------+------------+------------+
     </span>
 </div>
-<hr/>
-<div file="Nano_mutex.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> invariant</span> : <code class="type"><a href="?package=core&amp;module=Nano_mutex&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">unit -&gt; <a href="?package=core&amp;module=Nano_mutex&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">create ()</code> returns a new, unlocked mutex.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> equal</span> : <code class="type"><a href="?package=core&amp;module=Nano_mutex&amp;type=t">t</a> -&gt; <a href="?package=core&amp;module=Nano_mutex&amp;type=t">t</a> -&gt; bool</code></pre>
+      <div class="info"><code class="code">equal</code> is <code class="code">phys_equal</code> </div>
+    
+ 
+      <pre><span><span class="keyword">val</span> current_thread_has_lock</span> : <code class="type"><a href="?package=core&amp;module=Nano_mutex&amp;type=t">t</a> -&gt; bool</code></pre>
+      <div class="info"><code class="code">current_thread_has_lock t</code> returns <code class="code">true</code> iff the current thread has <code class="code">t</code> locked.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> lock</span> : <code class="type"><a href="?package=core&amp;module=Nano_mutex&amp;type=t">t</a> -&gt; unit <a href="?package=core_kernel&amp;module=Std.Or_error&amp;type=t">Core_kernel.Std.Or_error.t</a></code></pre>
+      <div class="info"><code class="code">lock t</code> locks the mutex <code class="code">t</code>, blocking until it can be locked.  <code class="code">lock</code> immediately
+    returns <code class="code">Error</code> if the current thread already holds <code class="code">t</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> lock_exn</span> : <code class="type"><a href="?package=core&amp;module=Nano_mutex&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> try_lock</span> : <code class="type"><a href="?package=core&amp;module=Nano_mutex&amp;type=t">t</a> -&gt; [ `Acquired | `Not_acquired ] <a href="?package=core_kernel&amp;module=Std.Or_error&amp;type=t">Core_kernel.Std.Or_error.t</a></code></pre>
+      <div class="info"><code class="code">try_lock t</code> locks <code class="code">t</code> if it can immediately do so.  The result indicates whether
+    <code class="code">try_lock</code> succeeded in acquiring the lock.  <code class="code">try_lock</code> returns <code class="code">Error</code> if the current
+    thread already holds <code class="code">t</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> try_lock_exn</span> : <code class="type"><a href="?package=core&amp;module=Nano_mutex&amp;type=t">t</a> -&gt; [ `Acquired | `Not_acquired ]</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unlock</span> : <code class="type"><a href="?package=core&amp;module=Nano_mutex&amp;type=t">t</a> -&gt; unit <a href="?package=core_kernel&amp;module=Std.Or_error&amp;type=t">Core_kernel.Std.Or_error.t</a></code></pre>
+      <div class="info"><code class="code">unlock t</code> unlocks <code class="code">t</code>, if the current thread holds it.  <code class="code">unlock</code> returns <code class="code">Error</code> if
+    the lock is not held by the calling thread.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> unlock_exn</span> : <code class="type"><a href="?package=core&amp;module=Nano_mutex&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> critical_section</span> : <code class="type"><a href="?package=core&amp;module=Nano_mutex&amp;type=t">t</a> -&gt; f:(unit -&gt; 'a) -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=core&amp;module=Nano_mutex&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+<br/><code class="code">create ()</code> returns a new, unlocked mutex.<br/>
+	  
+<br/><code class="code">equal</code> is <code class="code">phys_equal</code> <br/>
+	  
+<br/><code class="code">current_thread_has_lock t</code> returns <code class="code">true</code> iff the current thread has <code class="code">t</code> locked.<br/>
+	  
+<br/><code class="code">lock t</code> locks the mutex <code class="code">t</code>, blocking until it can be locked.  <code class="code">lock</code> immediately
+    returns <code class="code">Error</code> if the current thread already holds <code class="code">t</code>.<br/>
+	  
+<br/><code class="code">try_lock t</code> locks <code class="code">t</code> if it can immediately do so.  The result indicates whether
+    <code class="code">try_lock</code> succeeded in acquiring the lock.  <code class="code">try_lock</code> returns <code class="code">Error</code> if the current
+    thread already holds <code class="code">t</code>.<br/>
+	  
+<br/><code class="code">unlock t</code> unlocks <code class="code">t</code>, if the current thread holds it.  <code class="code">unlock</code> returns <code class="code">Error</code> if
+    the lock is not held by the calling thread.<br/>
+	  </div>

@@ -1,18 +1,53 @@
-<!DOCTYPE HTML>
-<html>
-<head>
+<div class="ocaml_toplevel_module">
 
-<title>Invariant</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
+ 
+      <pre><span><span class="keyword">val</span> __pa_ounit_275876e34cf609db118f3d84b799a790</span> : <code class="type">string</code></pre>
+      
+    
 
-<h1>Module Invariant</h1>
-<pre><span class="keyword">module</span> Invariant</pre>
-<hr/>
-<div file="Invariant.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> = <code class="type">'a -&gt; unit</code> </pre>
+      
+    
+<pre><span id="TYPEinv"><span class="keyword">type</span> <code class="type">'a </code>inv</span> = <code class="type">'a <a href="?package=core_extended&amp;module=Invariant&amp;type=t">t</a></code> </pre>
+      
+    
+<div class="ocaml_module sig" name="S1">
+		<pre><span class="keyword">module type</span> <a href="?package=core_extended&amp;module=Invariant.S1">S1</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> invariant</span> : <code class="type">'a <a href="?package=core_extended&amp;module=Invariant&amp;type=inv">inv</a> -&gt; 'a <a href="?package=core_extended&amp;module=Invariant.S1&amp;type=t">t</a> <a href="?package=core_extended&amp;module=Invariant&amp;type=inv">inv</a></code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="S2">
+		<pre><span class="keyword">module type</span> <a href="?package=core_extended&amp;module=Invariant.S2">S2</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'b) </code>t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> invariant</span> : <code class="type">'a <a href="?package=core_extended&amp;module=Invariant&amp;type=inv">inv</a> -&gt; 'b <a href="?package=core_extended&amp;module=Invariant&amp;type=inv">inv</a> -&gt; ('a, 'b) <a href="?package=core_extended&amp;module=Invariant.S2&amp;type=t">t</a> <a href="?package=core_extended&amp;module=Invariant&amp;type=inv">inv</a></code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="S3">
+		<pre><span class="keyword">module type</span> <a href="?package=core_extended&amp;module=Invariant.S3">S3</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'b, 'c) </code>t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> invariant</span> : <code class="type">'a <a href="?package=core_extended&amp;module=Invariant&amp;type=inv">inv</a> -&gt; 'b <a href="?package=core_extended&amp;module=Invariant&amp;type=inv">inv</a> -&gt; 'c <a href="?package=core_extended&amp;module=Invariant&amp;type=inv">inv</a> -&gt; ('a, 'b, 'c) <a href="?package=core_extended&amp;module=Invariant.S3&amp;type=t">t</a> <a href="?package=core_extended&amp;module=Invariant&amp;type=inv">inv</a></code></pre>
+      
+    
+		</div>
+</div>
+</div>

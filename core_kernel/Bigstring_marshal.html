@@ -1,18 +1,42 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-
-<title>Bigstring_marshal</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Bigstring_marshal</h1>
-<pre><span class="keyword">module</span> Bigstring_marshal</pre><div class="info">Utility functions for marshalling to and from bigstring<br/> <div class="authors"><b>Author(s): </b><span class="author">Markus Mottl &lt;mmottl@janestreet.com&gt;</span></div></div>
-<hr/>
-<div file="Bigstring_marshal.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<div class="ocaml_toplevel_module">
+<div class="info">Utility functions for marshalling to and from bigstring<br/> <div class="authors"><b>Author(s): </b><span class="author">Markus Mottl &lt;mmottl@janestreet.com&gt;</span></div></div>
+<br/><br/><h6 id="6_TITLE">Marshalling to/from bigstrings</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> marshal_blit</span> : <code class="type">?flags:<a href="?package=stdlib&amp;module=Marshal&amp;type=extern_flags">Marshal.extern_flags</a> list -&gt;
+'a -&gt; ?pos:int -&gt; ?len:int -&gt; <a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">Bigstring.t</a> -&gt; int</code></pre>
+      <div class="info"><code class="code">marshal_blit ?flags v ?pos ?len buf</code> marshals value <code class="code">v</code> to bigstring
+    <code class="code">buf</code> starting at position <code class="code">pos</code> and at most <code class="code">len</code> bytes.<br/> <div class="parameters"><div class="param_info"><code class="code">flags</code> : default = []</div><div class="param_info"><code class="code">pos</code> : default = 0</div><div class="param_info"><code class="code">len</code> : default = <code class="code">length buf - pos</code>
+</div></div><b>Raises</b> <code>Invalid_argument</code> if the designated range is out of bounds.<br/><code>Failure</code> if <code class="code">buf</code> cannot hold enough data for marshalling.<br/> <br/></div>
+    
+ 
+      <pre><span><span class="keyword">val</span> marshal</span> : <code class="type">?flags:<a href="?package=stdlib&amp;module=Marshal&amp;type=extern_flags">Marshal.extern_flags</a> list -&gt; 'a -&gt; <a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">Bigstring.t</a></code></pre>
+      <div class="info"><code class="code">marshal ?flags v</code> marshals value <code class="code">v</code> to a bigstring using marshalling
+    flags <code class="code">flags</code>.  This function may need two times more memory than
+    <code class="code">marshal_blit</code>.<br/> <div class="parameters"><div class="param_info"><code class="code">flags</code> : default = []</div></div></div>
+    
+ 
+      <pre><span><span class="keyword">val</span> marshal_data_size</span> : <code class="type">?pos:int -&gt; <a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">Bigstring.t</a> -&gt; int</code></pre>
+      <div class="info"><code class="code">marshal_data_size ?pos buf</code> <div class="parameters"><div class="param_info"><code class="code">pos</code> : default = 0</div></div><b>Raises</b> <code>Invalid_argument</code> if the position is out of bounds considering
+    a valid marshal header.<br/> <br/><b>Returns</b> the length of marshalled data in
+    bigstring <code class="code">buf</code> starting at position <code class="code">pos</code>.<br/> </div>
+    
+ 
+      <pre><span><span class="keyword">val</span> unmarshal</span> : <code class="type">?pos:int -&gt; <a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">Bigstring.t</a> -&gt; 'a</code></pre>
+      <div class="info"><code class="code">unmarshal ?pos buf</code> unmarshals data contained in <code class="code">buf</code> starting
+    at position <code class="code">pos</code>.<br/> <div class="parameters"><div class="param_info"><code class="code">pos</code> : default = 0</div></div><b>Raises</b> <code>Invalid_argument</code> if the position is out of bounds, or if
+    there is not enough data for unmarshalling.<br/> <br/></div>
+    
+ 
+      <pre><span><span class="keyword">val</span> unmarshal_next</span> : <code class="type">?pos:int -&gt; <a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">Bigstring.t</a> -&gt; 'a * int</code></pre>
+      <div class="info"><code class="code">unmarshal_next ?pos buf</code> unmarshals data contained in <code class="code">buf</code> starting
+    at position <code class="code">pos</code>.<div class="parameters"><div class="param_info"><code class="code">pos</code> : default = 0</div></div><b>Raises</b> <code>Invalid_argument</code> if the position is out of bounds, or if
+    there is not enough data for unmarshalling.<br/> <br/><b>Returns</b> <code class="code">(v, next_pos)</code>, where <code class="code">v</code> is the
+    unmarshalled value, and <code class="code">next_pos</code> designates the start of the byte
+    following the unmarshalled data.<br/> </div>
+    
+ 
+      <pre><span><span class="keyword">val</span> skip</span> : <code class="type">?pos:int -&gt; <a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">Bigstring.t</a> -&gt; int</code></pre>
+      <div class="info"><code class="code">skip ?pos buf</code> skips the marshalled data starting at position <code class="code">pos</code>.<div class="parameters"><div class="param_info"><code class="code">pos</code> : default = 0</div></div><b>Raises</b> <code>Invalid_argument</code> if the position is out of bounds, or if
+    there is not enough data for unmarshalling.<br/> <br/><b>Returns</b> the start of the byte following the unmarshalled data.<br/> </div>
+    </div>

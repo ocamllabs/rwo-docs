@@ -1,7 +1,0 @@
-<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
-      
-    
- 
-      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type"><a href="Type_with_layout.Make.html#TYPEt">t</a> -&gt; <a href="Type.html#TYPEt">Type.t</a></code></span></pre>
-      
-    

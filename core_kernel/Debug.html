@@ -1,0 +1,51 @@
+<div class="ocaml_toplevel_module">
+<div class="info">Utilities for printing debug messages.</div>
+ 
+      <pre><span><span class="keyword">val</span> eprints</span> : <code class="type">string -&gt; 'a -&gt; ('a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; unit</code></pre>
+      <div class="info"><code class="code">log message a sexp_of_a</code> prints to stderr <code class="code">message</code> and <code class="code">a</code> as a sexp, followed by
+    a newline.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> eprint</span> : <code class="type">string -&gt; unit</code></pre>
+      <div class="info">synonym for <code class="code">prerr_endline</code>, meaning it prints to stderr, followed by a newline</div>
+    
+<div class="ocaml_module sig" name="Make">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Debug.Make">Make</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="code">sig</code> .. <code class="code">end</code><code class="code">) -&gt; </code><code class="code">sig</code> .. <code class="code">end</code></div></pre><div class="info"><code class="code">Debug.Make</code> produces a <code class="code">debug</code> function used to wrap a function to display arguments
+    before calling and display results after returning.  Intended usage is:<br/>    <pre class="codepre"><code class="code">
+      module Foo = struct
+        type t = ...
+        let invariant = ...
+        let bar t x y : Result.t = ...
+      end
+      module Foo_debug = struct
+        open Foo
+        include Debug.Make ()
+        let debug x = debug invariant ~module_name:&quot;Foo&quot; x
+        let bar t x y =
+          debug &quot;bar&quot; [t] (t, x, y) &lt;:sexp_of&lt; t * X.t * Y.t &gt;&gt; &lt;:sexp_of&lt; Result.t &gt;&gt;
+            (fun () -&gt; bar t x y)
+      end
+    </code></pre>
+</div>
+		<div class="ocaml_module_content">
+		       
+ 
+      <pre><span><span class="keyword">val</span> check_invariant</span> : <code class="type">bool <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> show_messages</span> : <code class="type">bool <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> debug</span> : <code class="type">'t <a href="?package=core_kernel&amp;module=Invariant&amp;type=t">Invariant.t</a> -&gt;
+module_name:string -&gt;
+string -&gt;
+'t list -&gt;
+'args -&gt;
+('args -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt;
+('result -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; (unit -&gt; 'result) -&gt; 'result</code></pre>
+      
+    
+		</div>
+</div></div>

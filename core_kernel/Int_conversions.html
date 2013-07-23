@@ -1,18 +1,104 @@
-<!DOCTYPE HTML>
-<html>
-<head>
+<div class="ocaml_toplevel_module">
 
-<title>Int_conversions</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Int_conversions</h1>
-<pre><span class="keyword">module</span> Int_conversions</pre>
-<hr/>
-<div file="Int_conversions.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+ 
+      <pre><span><span class="keyword">val</span> int_to_int32</span> : <code class="type">int -&gt; int32 option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> int_to_int32_exn</span> : <code class="type">int -&gt; int32</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> int_to_int64</span> : <code class="type">int -&gt; int64</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> int_to_nativeint</span> : <code class="type">int -&gt; nativeint</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> int32_to_int</span> : <code class="type">int32 -&gt; int option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> int32_to_int_exn</span> : <code class="type">int32 -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> int32_to_int64</span> : <code class="type">int32 -&gt; int64</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> int32_to_nativeint</span> : <code class="type">int32 -&gt; nativeint</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> int64_to_int</span> : <code class="type">int64 -&gt; int option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> int64_to_int_exn</span> : <code class="type">int64 -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> int64_to_int32</span> : <code class="type">int64 -&gt; int32 option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> int64_to_int32_exn</span> : <code class="type">int64 -&gt; int32</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> int64_to_nativeint</span> : <code class="type">int64 -&gt; nativeint option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> int64_to_nativeint_exn</span> : <code class="type">int64 -&gt; nativeint</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> nativeint_to_int</span> : <code class="type">nativeint -&gt; int option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> nativeint_to_int_exn</span> : <code class="type">nativeint -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> nativeint_to_int32</span> : <code class="type">nativeint -&gt; int32 option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> nativeint_to_int32_exn</span> : <code class="type">nativeint -&gt; int32</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> nativeint_to_int64</span> : <code class="type">nativeint -&gt; int64</code></pre>
+      
+    
+<div class="ocaml_module sig" name="Make">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Int_conversions.Make">Make</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">I</code><code class="code"> : </code><code class="code">sig</code> .. <code class="code">end</code><code class="code">) -&gt; </code><code class="code">sig</code> .. <code class="code">end</code></div></pre>
+		<div class="ocaml_module_content">
+		       
+ 
+      <pre><span><span class="keyword">val</span> to_string_hum</span> : <code class="type">?delimiter:char -&gt; I.t -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type">I.t -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+		</div>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_int_style</span> : <code class="type">[ `No_underscores | `Underscores ] <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> insert_delimiter</span> : <code class="type">string -&gt; delimiter:char -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> insert_underscores</span> : <code class="type">string -&gt; string</code></pre>
+      
+    </div>

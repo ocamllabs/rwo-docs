@@ -1,19 +1,180 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-
-<title>Option</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Option</h1>
-<pre><span class="keyword">module</span> Option</pre><div class="info"><code class="code">Option</code> wraps the output <code class="code">x</code> of successful functions in <code class="code">Some x</code>.  Failed
+<div class="ocaml_toplevel_module">
+<div class="info"><code class="code">Option</code> wraps the output <code class="code">x</code> of successful functions in <code class="code">Some x</code>.  Failed
     functions return <code class="code">None</code>.</div>
-<hr/>
-<div file="Option.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> = <code class="type">'a option</code> </pre>
+      <div class="info">Options are preferred over exceptions.  For example, use
+    <pre class="codepre"><code class="code">
+    let data = [(2, &quot;two&quot;); (5, &quot;five&quot;); (8, &quot;eight&quot;)];;
+    let f x = match List.Assoc.find_opt x data with
+    | Some y -&gt; y
+    | None -&gt; &quot;zero&quot; (* where &quot;zero&quot; is some default value *);; </code></pre>
+    rather than
+    <pre class="codepre"><code class="code">
+    let f x = try List.Assoc.find x data with Not_found -&gt; &quot;zero&quot;;; </code></pre>
+    In this case using an exception is shorter, but in nontrivial code options
+    are easier to understand.</div>
+    
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Container.S1" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Container.S1">Container.S1</a></code> with type t = 'a <a href="?package=core_kernel&amp;module=Option&amp;type=t">t</a></pre>
+</div>
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Monad.S" items="[&quot;Monad_infix&quot;]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Monad.S">Monad.S</a></code> with type t = 'a <a href="?package=core_kernel&amp;module=Option&amp;type=t">t</a><div class="info">Options form a monad, where <code class="code">return x =  Some x</code>,
+    <code class="code">(None &gt;&gt;= f) = None</code>, and <code class="code">(Some x &gt;&gt;= f) = f x</code>.</div></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> is_none</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Option&amp;type=t">t</a> -&gt; bool</code></pre>
+      <div class="info"><code class="code">is_none t</code> returns true iff t = None.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> is_some</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Option&amp;type=t">t</a> -&gt; bool</code></pre>
+      <div class="info"><code class="code">is_some t</code> returns true iff t = Some x.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> value_map</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Option&amp;type=t">t</a> -&gt; default:'b -&gt; f:('a -&gt; 'b) -&gt; 'b</code></pre>
+      <div class="info"><code class="code">value_map ~default ~f</code> is the same as <code class="code">function Some x -&gt; f x | None -&gt; default</code> </div>
+    
+ 
+      <pre><span><span class="keyword">val</span> map2</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Option&amp;type=t">t</a> -&gt; 'b <a href="?package=core_kernel&amp;module=Option&amp;type=t">t</a> -&gt; f:('a -&gt; 'b -&gt; 'c) -&gt; 'c <a href="?package=core_kernel&amp;module=Option&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">map2 o f</code> map 'a option and 'b option to a 'c option using ~f</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> call</span> : <code class="type">'a -&gt; f:('a -&gt; unit) <a href="?package=core_kernel&amp;module=Option&amp;type=t">t</a> -&gt; unit</code></pre>
+      <div class="info"><code class="code">call x f</code> run optional function on argument</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> apply</span> : <code class="type">'a -&gt; f:('a -&gt; 'b) <a href="?package=core_kernel&amp;module=Option&amp;type=t">t</a> -&gt; 'b <a href="?package=core_kernel&amp;module=Option&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">apply x f</code> run optional function on argument and return an option</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> value</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Option&amp;type=t">t</a> -&gt; default:'a -&gt; 'a</code></pre>
+      <div class="info"><code class="code">value None ~default</code> = <code class="code">default</code>
+    <code class="code">value (Some x) ~default</code> = <code class="code">x</code>
+</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> value_exn</span> : <code class="type">?here:<a href="?package=core_kernel&amp;module=Source_code_position0&amp;type=t">Source_code_position0.t</a> -&gt;
+?error:<a href="?package=core_kernel&amp;module=Error&amp;type=t">Error.t</a> -&gt; ?message:string -&gt; 'a <a href="?package=core_kernel&amp;module=Option&amp;type=t">t</a> -&gt; 'a</code></pre>
+      <div class="info"><code class="code">value_exn (Some x)</code> = <code class="code">x</code>.  <code class="code">value_exn None</code> raises an error whose contents contain
+    the supplied <code class="code">~here</code>, <code class="code">~error</code>, and <code class="code">message</code>, or a default message if none are
+    supplied.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> equal</span> : <code class="type">('a -&gt; 'a -&gt; bool) -&gt; 'a <a href="?package=core_kernel&amp;module=Option&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Option&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> some</span> : <code class="type">'a -&gt; 'a <a href="?package=core_kernel&amp;module=Option&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> both</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Option&amp;type=t">t</a> -&gt; 'b <a href="?package=core_kernel&amp;module=Option&amp;type=t">t</a> -&gt; ('a * 'b) <a href="?package=core_kernel&amp;module=Option&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> first_some</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Option&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Option&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Option&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> some_if</span> : <code class="type">bool -&gt; 'a -&gt; 'a <a href="?package=core_kernel&amp;module=Option&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> merge</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Option&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Option&amp;type=t">t</a> -&gt; f:('a -&gt; 'a -&gt; 'a) -&gt; 'a <a href="?package=core_kernel&amp;module=Option&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">merge a b ~f</code> merges together the values from <code class="code">a</code> and <code class="code">b</code> using <code class="code">f</code>.  If both <code class="code">a</code> and
+    <code class="code">b</code> are <code class="code">None</code>, returns <code class="code">None</code>.  If only one is <code class="code">Some</code>, returns that one, and if both
+    are <code class="code">Some</code>, returns <code class="code">Some</code> of the result of applying <code class="code">f</code> to the contents of <code class="code">a</code> and
+    <code class="code">b</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> filter</span> : <code class="type">f:('a -&gt; bool) -&gt; 'a <a href="?package=core_kernel&amp;module=Option&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Option&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> try_with</span> : <code class="type">(unit -&gt; 'a) -&gt; 'a <a href="?package=core_kernel&amp;module=Option&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">try_with f</code> returns <code class="code">Some x</code> if <code class="code">f</code> returns <code class="code">x</code> and <code class="code">None</code> if <code class="code">f</code> raises an
+    exception.  See <code class="code">Result.try_with</code> if you'd like to know which exception.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> compare</span> : <code class="type">cmp:('a -&gt; 'a -&gt; int) -&gt; 'a <a href="?package=core_kernel&amp;module=Option&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Option&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> validate</span> : <code class="type">none:unit <a href="?package=core_kernel&amp;module=Validate&amp;type=check">Validate.check</a> -&gt; some:'a <a href="?package=core_kernel&amp;module=Validate&amp;type=check">Validate.check</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Option&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Validate&amp;type=check">Validate.check</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp</span> : <code class="type">(<a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'a) -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Option&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; 'a <a href="?package=core_kernel&amp;module=Option&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Option&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Option&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Read_ml&amp;type=reader">Bin_prot.Read_ml.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t_</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Option&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t__</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+(int -&gt; 'a <a href="?package=core_kernel&amp;module=Option&amp;type=t">t</a>) <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Option&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Size&amp;type=sizer">Bin_prot.Size.sizer</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Option&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Size&amp;type=sizer">Bin_prot.Size.sizer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Option&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Bin_prot.Write_ml.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Option&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Option&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+<br/>Options form a monad, where <code class="code">return x =  Some x</code>,
+    <code class="code">(None &gt;&gt;= f) = None</code>, and <code class="code">(Some x &gt;&gt;= f) = f x</code>.<br/>
+	  
+<br/><code class="code">is_none t</code> returns true iff t = None.<br/>
+	  
+<br/><code class="code">is_some t</code> returns true iff t = Some x.<br/>
+	  
+<br/><code class="code">value_map ~default ~f</code> is the same as <code class="code">function Some x -&gt; f x | None -&gt; default</code> <br/>
+	  
+<br/><code class="code">map2 o f</code> map 'a option and 'b option to a 'c option using ~f<br/>
+	  
+<br/><code class="code">call x f</code> run optional function on argument<br/>
+	  
+<br/><code class="code">apply x f</code> run optional function on argument and return an option<br/>
+	  
+<br/><code class="code">value None ~default</code> = <code class="code">default</code>
+    <code class="code">value (Some x) ~default</code> = <code class="code">x</code>
+<br/>
+	  
+<br/><code class="code">value_exn (Some x)</code> = <code class="code">x</code>.  <code class="code">value_exn None</code> raises an error whose contents contain
+    the supplied <code class="code">~here</code>, <code class="code">~error</code>, and <code class="code">message</code>, or a default message if none are
+    supplied.<br/>
+	  
+<br/><code class="code">merge a b ~f</code> merges together the values from <code class="code">a</code> and <code class="code">b</code> using <code class="code">f</code>.  If both <code class="code">a</code> and
+    <code class="code">b</code> are <code class="code">None</code>, returns <code class="code">None</code>.  If only one is <code class="code">Some</code>, returns that one, and if both
+    are <code class="code">Some</code>, returns <code class="code">Some</code> of the result of applying <code class="code">f</code> to the contents of <code class="code">a</code> and
+    <code class="code">b</code>.<br/>
+	  
+<br/><code class="code">try_with f</code> returns <code class="code">Some x</code> if <code class="code">f</code> returns <code class="code">x</code> and <code class="code">None</code> if <code class="code">f</code> raises an
+    exception.  See <code class="code">Result.try_with</code> if you'd like to know which exception.<br/>
+	  </div>

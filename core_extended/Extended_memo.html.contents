@@ -1,9 +1,0 @@
- 
-      <pre><span><span class="keyword">val</span> general_rec : <code class="type">(('a -&gt; 'b) -&gt; 'a -&gt; 'b) -&gt; 'a -&gt; 'b</code></span></pre>
-      <div class="info">A version of <code class="code">Memo.general</code> more suitable for memoizing
-    recursively-defined functions</div>
-    
- 
-      <pre><span><span class="keyword">val</span> reentrant_unit : <code class="type">(unit -&gt; 'a) -&gt; unit -&gt; 'a</code></span></pre>
-      
-    

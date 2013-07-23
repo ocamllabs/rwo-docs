@@ -1,0 +1,40 @@
+<div class="ocaml_toplevel_module">
+
+ 
+      <pre><span><span class="keyword">val</span> __pa_ounit_275876e34cf609db118f3d84b799a790</span> : <code class="type">string</code></pre>
+      
+    
+
+<br/>This module is a grab bag.  Originally, it was the imports used in all the Zero
+    library modules.  One nice thing it does is to remove polymorphic comparison
+    functions.  This module doesn't make so much sense now that Zero is in Core.
+    We're trying to figure out what to do with it.<br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> _squelch_unused_module_warning_</span> : <code class="type">unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> concat</span> : <code class="type">?sep:<a href="?package=core_kernel&amp;module=Std_internal.String&amp;type=t">Std_internal.String.t</a> -&gt;
+<a href="?package=core_kernel&amp;module=Std_internal.String&amp;type=t">Std_internal.String.t</a> list -&gt; <a href="?package=core_kernel&amp;module=Std_internal.String&amp;type=t">Std_internal.String.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_error</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Result&amp;type=t">Result.t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_ok</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Result&amp;type=t">Result.t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> does_fail</span> : <code class="type">(unit -&gt; 'a) -&gt; bool</code></pre>
+      
+    
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Std_internal.Int.Replace_polymorphic_compare" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Std_internal.Int.Replace_polymorphic_compare">Std_internal.Int.Replace_polymorphic_compare</a></code></pre>
+</div>
+<div class="ocaml_module ident" name="Poly" path="?package=core_kernel&amp;amp;module=Polymorphic_compare">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Import.Poly">Poly</a> : <code class="code"><a href="?package=core_kernel&amp;module=Polymorphic_compare">Polymorphic_compare</a></code></pre>
+</div>
+</div>

@@ -1,18 +1,12 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-
-<title>Sntp</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Sntp</h1>
-<pre><span class="keyword">module</span> Sntp</pre><div class="info">Simple Network Time Protocol</div>
-<hr/>
-<div file="Sntp.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<div class="ocaml_toplevel_module">
+<div class="info">Simple Network Time Protocol</div>
+ 
+      <pre><span><span class="keyword">val</span> query</span> : <code class="type">?timeout:<a href="?package=core&amp;module=Std.Time.Span&amp;type=t">Core.Std.Time.Span.t</a> -&gt;
+?port:int -&gt;
+string -&gt;
+[ `Error of <a href="?package=core&amp;module=Std.Exn&amp;type=t">Core.Std.Exn.t</a> | `Offset of <a href="?package=core&amp;module=Std.Time.Span&amp;type=t">Core.Std.Time.Span.t</a> | `Timeout ]</code></pre>
+      <div class="info"><code class="code">query hostname</code> returns the difference between the clock on the
+  local host and the clock on the host specified by <code class="code">hostname</code>.<br/>  If the remote host is down or not running an (S)NTP service this
+  call will `Timeout.  Other errors, including some classes of resolution
+  or network will raise an exception, which will be returned as `Error.</div>
+    </div>

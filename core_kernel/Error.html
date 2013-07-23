@@ -1,18 +1,17 @@
-<!DOCTYPE HTML>
-<html>
-<head>
+<div class="ocaml_toplevel_module">
 
-<title>Error</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Error</h1>
-<pre><span class="keyword">module</span> Error</pre>
-<hr/>
-<div file="Error.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Info" items="[]">
+		      <pre><span class="keyword">include</span> module type of <a href="?package=core_kernel&amp;module=Info">Info</a> with type <a href="?package=core_kernel&amp;module=Error&amp;type=t">t</a> = <a href="?package=core_kernel&amp;module=Info&amp;type=t">Info.t</a></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> raise</span> : <code class="type"><a href="?package=core_kernel&amp;module=Error&amp;type=t">t</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> failwiths</span> : <code class="type">string -&gt; 'a -&gt; ('a -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; 'b</code></pre>
+      <div class="info"><code class="code">failwiths message value sexp_of_value</code> raises an exception with the supplied
+    <code class="code">message</code> and <code class="code">value</code>, by constructing an <code class="code">Error.t</code> and using <code class="code">Error.raise</code>.  As
+    usual, the <code class="code">sexp_of_value</code> is only applied when the value is converted to a sexp or a
+    string.  So, if you mutate <code class="code">value</code> in between the time you call <code class="code">failwiths</code> and the
+    time the error is displayed, those mutations will be reflected in the error message.<br/>    <code class="code">failwiths s a f</code> = <code class="code">Error.raise (Error.create s a f)</code> </div>
+    </div>

@@ -1,18 +1,80 @@
-<!DOCTYPE HTML>
-<html>
-<head>
+<div class="ocaml_toplevel_module">
 
-<title>Exn</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Exn</h1>
-<pre><span class="keyword">module</span> Exn</pre>
-<hr/>
-<div file="Exn.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> = <code class="type">exn</code> </pre>
+      
+    
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Pretty_printer.S" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Pretty_printer.S">Pretty_printer.S</a></code> with type t = <a href="?package=core_kernel&amp;module=Exn&amp;type=t">t</a></pre>
+</div>
+<pre><span id="EXCEPTIONFinally"><span class="keyword">exception</span> Finally</span> <span class="keyword">of</span> <code class="type"><a href="?package=core_kernel&amp;module=Exn&amp;type=t">t</a> * <a href="?package=core_kernel&amp;module=Exn&amp;type=t">t</a></code></pre><div class="info">Raised when finalization after an exception failed, too.
+    The first exception argument is the one raised by the initial
+    function, the second exception the one raised by the finalizer.</div>
+<pre><span id="EXCEPTIONReraised"><span class="keyword">exception</span> Reraised</span> <span class="keyword">of</span> <code class="type">string * <a href="?package=core_kernel&amp;module=Exn&amp;type=t">t</a></code></pre>
+ 
+      <pre><span><span class="keyword">val</span> reraise</span> : <code class="type"><a href="?package=core_kernel&amp;module=Exn&amp;type=t">t</a> -&gt; string -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> reraisef</span> : <code class="type"><a href="?package=core_kernel&amp;module=Exn&amp;type=t">t</a> -&gt; ('a, unit, string, unit -&gt; 'b) <a href="?package=stdlib&amp;module=Pervasives&amp;type=format4">format4</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_string</span> : <code class="type"><a href="?package=core_kernel&amp;module=Exn&amp;type=t">t</a> -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_string_mach</span> : <code class="type"><a href="?package=core_kernel&amp;module=Exn&amp;type=t">t</a> -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Exn&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> protectx</span> : <code class="type">f:('a -&gt; 'b) -&gt; 'a -&gt; finally:('a -&gt; unit) -&gt; 'b</code></pre>
+      <div class="info">Executes <code class="code">f</code> and afterwards executes <code class="code">finally</code>, whether <code class="code">f</code> throws an exception or
+    not.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> protect</span> : <code class="type">f:(unit -&gt; 'a) -&gt; finally:(unit -&gt; unit) -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> handle_uncaught</span> : <code class="type">exit:bool -&gt; (unit -&gt; unit) -&gt; unit</code></pre>
+      <div class="info"><code class="code">handle_uncaught ~exit f</code> catches an exception escaping <code class="code">f</code> and prints an error
+    message to stderr.  Exits with return code 1 if <code class="code">exit</code> is <code class="code">true</code>.  Otherwise returns
+    unit.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> handle_uncaught_and_exit</span> : <code class="type">(unit -&gt; <a href="?package=core_kernel&amp;module=Never_returns&amp;type=never_returns">Never_returns.never_returns</a>) -&gt; <a href="?package=core_kernel&amp;module=Never_returns&amp;type=never_returns">Never_returns.never_returns</a></code></pre>
+      <div class="info">behaves as <code class="code">handle_uncaught ~exit:true</code> and also has a more precise
+    type in this case</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> reraise_uncaught</span> : <code class="type">string -&gt; (unit -&gt; 'a) -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> backtrace</span> : <code class="type">unit -&gt; string</code></pre>
+      <div class="info"><code class="code">Printexc.get_backtrace</code> </div>
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Exn&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+<br/>Raised when finalization after an exception failed, too.
+    The first exception argument is the one raised by the initial
+    function, the second exception the one raised by the finalizer.<br/>
+	  
+<br/>Executes <code class="code">f</code> and afterwards executes <code class="code">finally</code>, whether <code class="code">f</code> throws an exception or
+    not.<br/>
+	  
+<br/><code class="code">handle_uncaught ~exit f</code> catches an exception escaping <code class="code">f</code> and prints an error
+    message to stderr.  Exits with return code 1 if <code class="code">exit</code> is <code class="code">true</code>.  Otherwise returns
+    unit.<br/>
+	  
+<br/>behaves as <code class="code">handle_uncaught ~exit:true</code> and also has a more precise
+    type in this case<br/>
+	  
+<br/><code class="code">Printexc.get_backtrace</code> <br/>
+	  </div>

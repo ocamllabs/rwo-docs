@@ -1,19 +1,126 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-
-<title>Unpack_buffer</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Unpack_buffer</h1>
-<pre><span class="keyword">module</span> Unpack_buffer</pre><div class="info">A buffer for incremental decoding of an input stream.<br/>    An <code class="code">Unpack_buffer.t</code> is a buffer to which one can <code class="code">feed</code> strings, and then <code class="code">unpack</code>
+<div class="ocaml_toplevel_module">
+<div class="info">A buffer for incremental decoding of an input stream.<br/>    An <code class="code">Unpack_buffer.t</code> is a buffer to which one can <code class="code">feed</code> strings, and then <code class="code">unpack</code>
     from the buffer to produce a queue of values.</div>
-<hr/>
-<div file="Unpack_buffer.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<div class="ocaml_module sig" name="Unpack_one">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Unpack_buffer.Unpack_one">Unpack_one</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+<br/>If <code class="code">unpack_one : ('value, 'partial_unpack) unpack_one</code>, then <code class="code">unpack_one buf ?pos
+      ?len ?partial_unpack</code> must unpack at most one value of type <code class="code">'value</code> from <code class="code">buf</code>
+      starting at <code class="code">pos</code>, and not using more than <code class="code">len</code> characters.  <code class="code">unpack_one</code> must
+      returns one the following:<br/>      - <code class="code">`Ok (value, n)</code> -- unpacking succeeded and consumed <code class="code">n</code> bytes, where <code class="code">0 &lt;= n &lt;=
+      len</code>.  It is possible to have <code class="code">n = 0</code>, e.g. for sexp unpacking, which can only tell
+      it has reached the end of an atom when it encounters the following punctuation
+      character, which if it is left paren, is the start of the following sexp.<br/>      - <code class="code">`Not_enough_data (p, n)</code> -- unpacking encountered a valid proper prefix of a
+      packed value, and consumed <code class="code">n</code> bytes, where <code class="code">0 &lt;= n &lt;= len</code>.  <code class="code">p</code> is a &quot;partial
+      unpack&quot; that can be supplied to a future call to <code class="code">unpack_one</code> to continue unpacking.<br/>      - <code class="code">`Invalid_data</code> -- unpacking encountered an invalidly packed value.<br/>      A naive <code class="code">unpack_one</code> that only succeeds on a fully packed value could lead to
+      quadratic behavior if a packed value's bytes are input using a linear number of
+      calls to <code class="code">feed</code>.<br/>
+	  
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('value, 'partial_unpack) </code>t</span> = <code class="type">?partial_unpack:'partial_unpack -&gt;
+?pos:int -&gt;
+?len:int -&gt;
+<a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">Bigstring.t</a> -&gt;
+[ `Invalid_data of <a href="?package=core_kernel&amp;module=Error&amp;type=t">Error.t</a>
+| `Not_enough_data of 'partial_unpack * int
+| `Ok of 'value * int ]</code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map</span> : <code class="type">('a, 'partial_unpack) <a href="?package=core_kernel&amp;module=Unpack_buffer.Unpack_one&amp;type=t">t</a> -&gt; f:('a -&gt; 'b) -&gt; ('b, 'partial_unpack) <a href="?package=core_kernel&amp;module=Unpack_buffer.Unpack_one&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create_bin_prot</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a> -&gt; ('a, unit) <a href="?package=core_kernel&amp;module=Unpack_buffer.Unpack_one&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">create_bin_prot reader</code> returns an unpacker that reads the &quot;size-prefixed&quot; bin_prot
+      encoding, in which a value is encoded by first writing the length of the bin_prot
+      data as a 64-bit int, and then writing the data itself.  This encoding makes it
+      trivial to know if enough data is available in the buffer, so there is no need to
+      represent partially unpacked values, and hence <code class="code">'partial_unpack = unit</code>.</div>
+    
+<pre><span id="TYPEpartial_sexp"><span class="keyword">type</span> partial_sexp</span> </pre>
+      <div class="info">Beware that when unpacking sexps, one cannot tell if one is at the end of an atom
+      until one hits punctuation.  So, one should always feed a space (&quot; &quot;) to a sexp
+      unpack buffer after feeding a batch of complete sexps, to ensure that the final sexp
+      is unpacked.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp</span> : <code class="type">(<a href="?package=core_kernel&amp;module=Std_internal.Sexp&amp;type=t">Std_internal.Sexp.t</a>, <a href="?package=core_kernel&amp;module=Unpack_buffer.Unpack_one&amp;type=partial_sexp">partial_sexp</a>) <a href="?package=core_kernel&amp;module=Unpack_buffer.Unpack_one&amp;type=t">t</a></code></pre>
+      
+    
+		</div>
+</div>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('value, 'partial_unpack) </code>t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> invariant</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Unpack_buffer&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">?partial_unpack:'partial_unpack -&gt;
+('value, 'partial_unpack) <a href="?package=core_kernel&amp;module=Unpack_buffer.Unpack_one&amp;type=t">Unpack_one.t</a> -&gt; ('value, 'partial_unpack) <a href="?package=core_kernel&amp;module=Unpack_buffer&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create_bin_prot</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a> -&gt; ('a, unit) <a href="?package=core_kernel&amp;module=Unpack_buffer&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">create_bin_prot reader</code> returns an unpack buffer that unpacks the &quot;size-prefixed&quot;
+    bin_prot encoding, in which a value is encoded by first writing the length of the
+    bin_prot data as a 64-bit int, and then writing the bin_prot data itself.  This
+    encoding makes it trivial to know if enough data is available in the buffer, so there
+    is no need to represent partially unpacked values, and hence <code class="code">'partial_unpack =
+    unit</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> is_empty</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Unpack_buffer&amp;type=t">t</a> -&gt; bool <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">Or_error.t</a></code></pre>
+      <div class="info"><code class="code">is_empty t</code> returns <code class="code">true</code> if <code class="code">t</code> has no unconsumed bytes, and <code class="code">false</code> if it does.
+    <code class="code">is_empty</code> returns an error if <code class="code">t</code> has encountered an unpacking error.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> feed</span> : <code class="type">?pos:int -&gt; ?len:int -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Unpack_buffer&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Bigstring&amp;type=t">Bigstring.t</a> -&gt; unit <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">Or_error.t</a></code></pre>
+      <div class="info"><code class="code">feed t buf ?pos ?len</code> adds the specified substring of <code class="code">buf</code> to <code class="code">t</code>'s buffer.  It
+    returns an error if <code class="code">t</code> has encountered an unpacking error.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> feed_string</span> : <code class="type">?pos:int -&gt; ?len:int -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Unpack_buffer&amp;type=t">t</a> -&gt; string -&gt; unit <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">Or_error.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> unpack</span> : <code class="type">('value, 'a) <a href="?package=core_kernel&amp;module=Unpack_buffer&amp;type=t">t</a> -&gt; 'value <a href="?package=core_kernel&amp;module=Std_internal.Queue&amp;type=t">Std_internal.Queue.t</a> <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">Or_error.t</a></code></pre>
+      <div class="info"><code class="code">unpack t</code> unpacks all the values that it can from <code class="code">t</code>.  The resulting queue will be
+    empty if nothing could be unpacked.  If there is an unpacking error, <code class="code">unpack</code> returns
+    an error, and subsequent <code class="code">feed</code> and <code class="code">unpack</code> operations on <code class="code">t</code> will return that same
+    error.  I.e. no more data can be fed to or unpacked from <code class="code">t</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> debug</span> : <code class="type">bool <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a></code></pre>
+      <div class="info"><code class="code">debug</code> controls whether invariants are checked at each call.  Setting this to <code class="code">true</code>
+    can make things very slow.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('value -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt;
+('partial_unpack -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt;
+('value, 'partial_unpack) <a href="?package=core_kernel&amp;module=Unpack_buffer&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+<br/><code class="code">create_bin_prot reader</code> returns an unpack buffer that unpacks the &quot;size-prefixed&quot;
+    bin_prot encoding, in which a value is encoded by first writing the length of the
+    bin_prot data as a 64-bit int, and then writing the bin_prot data itself.  This
+    encoding makes it trivial to know if enough data is available in the buffer, so there
+    is no need to represent partially unpacked values, and hence <code class="code">'partial_unpack =
+    unit</code>.<br/>
+	  
+<br/><code class="code">is_empty t</code> returns <code class="code">true</code> if <code class="code">t</code> has no unconsumed bytes, and <code class="code">false</code> if it does.
+    <code class="code">is_empty</code> returns an error if <code class="code">t</code> has encountered an unpacking error.<br/>
+	  
+<br/><code class="code">feed t buf ?pos ?len</code> adds the specified substring of <code class="code">buf</code> to <code class="code">t</code>'s buffer.  It
+    returns an error if <code class="code">t</code> has encountered an unpacking error.<br/>
+	  
+<br/><code class="code">unpack t</code> unpacks all the values that it can from <code class="code">t</code>.  The resulting queue will be
+    empty if nothing could be unpacked.  If there is an unpacking error, <code class="code">unpack</code> returns
+    an error, and subsequent <code class="code">feed</code> and <code class="code">unpack</code> operations on <code class="code">t</code> will return that same
+    error.  I.e. no more data can be fed to or unpacked from <code class="code">t</code>.<br/>
+	  
+<br/><code class="code">debug</code> controls whether invariants are checked at each call.  Setting this to <code class="code">true</code>
+    can make things very slow.<br/>
+	  </div>

@@ -1,8 +1,0 @@
- 
-      <pre><span><span class="keyword">val</span> main : <code class="type">?buf:<a href="../stdlib/Buffer.html#TYPEt">Buffer.t</a> -&gt; <a href="../stdlib/Lexing.html#TYPElexbuf">Lexing.lexbuf</a> -&gt; <a href="Parser.html#TYPEtoken">Parser.token</a></code></span></pre>
-      
-    
- 
-      <pre><span><span class="keyword">val</span> main_with_layout : <code class="type">?buf:<a href="../stdlib/Buffer.html#TYPEt">Buffer.t</a> -&gt; <a href="../stdlib/Lexing.html#TYPElexbuf">Lexing.lexbuf</a> -&gt; <a href="Parser_with_layout.html#TYPEtoken">Parser_with_layout.token</a></code></span></pre>
-      
-    

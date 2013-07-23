@@ -1,18 +1,524 @@
-<!DOCTYPE HTML>
-<html>
-<head>
+<div class="ocaml_toplevel_module">
 
-<title>Container</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
+ 
+      <pre><span><span class="keyword">val</span> __pa_ounit_275876e34cf609db118f3d84b799a790</span> : <code class="type">string</code></pre>
+      
+    
 
-<h1>Module Container</h1>
-<pre><span class="keyword">module</span> Container</pre>
-<hr/>
-<div file="Container.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<div class="ocaml_module sig" name="T">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Container.T">T</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Container.T&amp;type=t">t</a> -&gt; init:'b -&gt; f:('b -&gt; 'a -&gt; 'b) -&gt; 'b</code></pre>
+      
+    
+		</div>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> fold_count</span> : <code class="type">('a -&gt; init:int -&gt; f:(int -&gt; 'b -&gt; int) -&gt; 'c) -&gt; 'a -&gt; f:('b -&gt; bool) -&gt; 'c</code></pre>
+      
+    
+<div class="ocaml_module sig" name="Make">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Container.Make">Make</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">T</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Container.T">T</a></code><code class="code">) -&gt; </code><code class="code">sig</code> .. <code class="code">end</code></div></pre><div class="info">The idiom for using <code class="code">Container.Make</code> is to bind the resulting module and to explicitly
+    import each of the functions that one wants:<br/>    <pre class="codepre"><code class="code">
+      module C = Container.Make (struct ... end)
+      let count    = C.count
+      let exists   = C.exists
+      let find     = C.find
+      ...
+    </code></pre><br/>    This is preferable to:<br/>    <pre class="codepre"><code class="code">
+      include Container.Make (struct ... end)
+    </code></pre><br/>    because the <code class="code">include</code> makes it to easy to shadow specialized implementations of
+    container functions (<code class="code">length</code> being a common one).</div>
+		<div class="ocaml_module_content">
+		       
+ 
+      <pre><span><span class="keyword">val</span> fold</span> : <code class="type">'a T.t -&gt; init:'b -&gt; f:('b -&gt; 'a -&gt; 'b) -&gt; 'b</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> count</span> : <code class="type">'a T.t -&gt; f:('a -&gt; bool) -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter</span> : <code class="type">'a T.t -&gt; f:('a -&gt; unit) -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> length</span> : <code class="type">'a T.t -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_empty</span> : <code class="type">'a T.t -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> exists</span> : <code class="type">'a T.t -&gt; f:('a -&gt; bool) -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem</span> : <code class="type">?equal:('a -&gt; 'a -&gt; bool) -&gt; 'a T.t -&gt; 'a -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> for_all</span> : <code class="type">'a T.t -&gt; f:('a -&gt; bool) -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_map</span> : <code class="type">'a T.t -&gt; f:('a -&gt; 'b option) -&gt; 'b option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find</span> : <code class="type">'a T.t -&gt; f:('a -&gt; bool) -&gt; 'a option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_list</span> : <code class="type">'a T.t -&gt; 'a list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_array</span> : <code class="type">'a T.t -&gt; 'a array</code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="S0">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Container.S0">S0</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> </pre>
+      
+    
+<pre><span id="TYPEelt"><span class="keyword">type</span> elt</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem</span> : <code class="type">?equal:(<a href="?package=core_kernel&amp;module=Container.S0&amp;type=elt">elt</a> -&gt; <a href="?package=core_kernel&amp;module=Container.S0&amp;type=elt">elt</a> -&gt; bool) -&gt; <a href="?package=core_kernel&amp;module=Container.S0&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Container.S0&amp;type=elt">elt</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> length</span> : <code class="type"><a href="?package=core_kernel&amp;module=Container.S0&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_empty</span> : <code class="type"><a href="?package=core_kernel&amp;module=Container.S0&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter</span> : <code class="type"><a href="?package=core_kernel&amp;module=Container.S0&amp;type=t">t</a> -&gt; f:(<a href="?package=core_kernel&amp;module=Container.S0&amp;type=elt">elt</a> -&gt; unit) -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold</span> : <code class="type"><a href="?package=core_kernel&amp;module=Container.S0&amp;type=t">t</a> -&gt; init:'accum -&gt; f:('accum -&gt; <a href="?package=core_kernel&amp;module=Container.S0&amp;type=elt">elt</a> -&gt; 'accum) -&gt; 'accum</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> exists</span> : <code class="type"><a href="?package=core_kernel&amp;module=Container.S0&amp;type=t">t</a> -&gt; f:(<a href="?package=core_kernel&amp;module=Container.S0&amp;type=elt">elt</a> -&gt; bool) -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> for_all</span> : <code class="type"><a href="?package=core_kernel&amp;module=Container.S0&amp;type=t">t</a> -&gt; f:(<a href="?package=core_kernel&amp;module=Container.S0&amp;type=elt">elt</a> -&gt; bool) -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> count</span> : <code class="type"><a href="?package=core_kernel&amp;module=Container.S0&amp;type=t">t</a> -&gt; f:(<a href="?package=core_kernel&amp;module=Container.S0&amp;type=elt">elt</a> -&gt; bool) -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find</span> : <code class="type"><a href="?package=core_kernel&amp;module=Container.S0&amp;type=t">t</a> -&gt; f:(<a href="?package=core_kernel&amp;module=Container.S0&amp;type=elt">elt</a> -&gt; bool) -&gt; <a href="?package=core_kernel&amp;module=Container.S0&amp;type=elt">elt</a> option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_map</span> : <code class="type"><a href="?package=core_kernel&amp;module=Container.S0&amp;type=t">t</a> -&gt; f:(<a href="?package=core_kernel&amp;module=Container.S0&amp;type=elt">elt</a> -&gt; 'a option) -&gt; 'a option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_list</span> : <code class="type"><a href="?package=core_kernel&amp;module=Container.S0&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Container.S0&amp;type=elt">elt</a> list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_array</span> : <code class="type"><a href="?package=core_kernel&amp;module=Container.S0&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Container.S0&amp;type=elt">elt</a> array</code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="S0_phantom">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Container.S0_phantom">S0_phantom</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEelt"><span class="keyword">type</span> elt</span> </pre>
+      
+    
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem</span> : <code class="type">?equal:(<a href="?package=core_kernel&amp;module=Container.S0_phantom&amp;type=elt">elt</a> -&gt; <a href="?package=core_kernel&amp;module=Container.S0_phantom&amp;type=elt">elt</a> -&gt; bool) -&gt; 'a <a href="?package=core_kernel&amp;module=Container.S0_phantom&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Container.S0_phantom&amp;type=elt">elt</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> length</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Container.S0_phantom&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_empty</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Container.S0_phantom&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Container.S0_phantom&amp;type=t">t</a> -&gt; f:(<a href="?package=core_kernel&amp;module=Container.S0_phantom&amp;type=elt">elt</a> -&gt; unit) -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Container.S0_phantom&amp;type=t">t</a> -&gt; init:'accum -&gt; f:('accum -&gt; <a href="?package=core_kernel&amp;module=Container.S0_phantom&amp;type=elt">elt</a> -&gt; 'accum) -&gt; 'accum</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> exists</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Container.S0_phantom&amp;type=t">t</a> -&gt; f:(<a href="?package=core_kernel&amp;module=Container.S0_phantom&amp;type=elt">elt</a> -&gt; bool) -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> for_all</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Container.S0_phantom&amp;type=t">t</a> -&gt; f:(<a href="?package=core_kernel&amp;module=Container.S0_phantom&amp;type=elt">elt</a> -&gt; bool) -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> count</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Container.S0_phantom&amp;type=t">t</a> -&gt; f:(<a href="?package=core_kernel&amp;module=Container.S0_phantom&amp;type=elt">elt</a> -&gt; bool) -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Container.S0_phantom&amp;type=t">t</a> -&gt; f:(<a href="?package=core_kernel&amp;module=Container.S0_phantom&amp;type=elt">elt</a> -&gt; bool) -&gt; <a href="?package=core_kernel&amp;module=Container.S0_phantom&amp;type=elt">elt</a> option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_map</span> : <code class="type">'b <a href="?package=core_kernel&amp;module=Container.S0_phantom&amp;type=t">t</a> -&gt; f:(<a href="?package=core_kernel&amp;module=Container.S0_phantom&amp;type=elt">elt</a> -&gt; 'a option) -&gt; 'a option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_list</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Container.S0_phantom&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Container.S0_phantom&amp;type=elt">elt</a> list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_array</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Container.S0_phantom&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Container.S0_phantom&amp;type=elt">elt</a> array</code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="S1">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Container.S1">S1</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem</span> : <code class="type">?equal:('a -&gt; 'a -&gt; bool) -&gt; 'a <a href="?package=core_kernel&amp;module=Container.S1&amp;type=t">t</a> -&gt; 'a -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> length</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Container.S1&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_empty</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Container.S1&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Container.S1&amp;type=t">t</a> -&gt; f:('a -&gt; unit) -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Container.S1&amp;type=t">t</a> -&gt; init:'accum -&gt; f:('accum -&gt; 'a -&gt; 'accum) -&gt; 'accum</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> exists</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Container.S1&amp;type=t">t</a> -&gt; f:('a -&gt; bool) -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> for_all</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Container.S1&amp;type=t">t</a> -&gt; f:('a -&gt; bool) -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> count</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Container.S1&amp;type=t">t</a> -&gt; f:('a -&gt; bool) -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Container.S1&amp;type=t">t</a> -&gt; f:('a -&gt; bool) -&gt; 'a option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_map</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Container.S1&amp;type=t">t</a> -&gt; f:('a -&gt; 'b option) -&gt; 'b option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_list</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Container.S1&amp;type=t">t</a> -&gt; 'a list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_array</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Container.S1&amp;type=t">t</a> -&gt; 'a array</code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="S1_phantom">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Container.S1_phantom">S1_phantom</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, +'phantom) </code>t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem</span> : <code class="type">?equal:('a -&gt; 'a -&gt; bool) -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Container.S1_phantom&amp;type=t">t</a> -&gt; 'a -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> length</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Container.S1_phantom&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_empty</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Container.S1_phantom&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Container.S1_phantom&amp;type=t">t</a> -&gt; f:('a -&gt; unit) -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Container.S1_phantom&amp;type=t">t</a> -&gt; init:'accum -&gt; f:('accum -&gt; 'a -&gt; 'accum) -&gt; 'accum</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> exists</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Container.S1_phantom&amp;type=t">t</a> -&gt; f:('a -&gt; bool) -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> for_all</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Container.S1_phantom&amp;type=t">t</a> -&gt; f:('a -&gt; bool) -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> count</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Container.S1_phantom&amp;type=t">t</a> -&gt; f:('a -&gt; bool) -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Container.S1_phantom&amp;type=t">t</a> -&gt; f:('a -&gt; bool) -&gt; 'a option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_map</span> : <code class="type">('a, 'c) <a href="?package=core_kernel&amp;module=Container.S1_phantom&amp;type=t">t</a> -&gt; f:('a -&gt; 'b option) -&gt; 'b option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_list</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Container.S1_phantom&amp;type=t">t</a> -&gt; 'a list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_array</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Container.S1_phantom&amp;type=t">t</a> -&gt; 'a array</code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="S1_phantom_invariant">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Container.S1_phantom_invariant">S1_phantom_invariant</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'phantom) </code>t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem</span> : <code class="type">?equal:('a -&gt; 'a -&gt; bool) -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Container.S1_phantom_invariant&amp;type=t">t</a> -&gt; 'a -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> length</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Container.S1_phantom_invariant&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_empty</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Container.S1_phantom_invariant&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Container.S1_phantom_invariant&amp;type=t">t</a> -&gt; f:('a -&gt; unit) -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Container.S1_phantom_invariant&amp;type=t">t</a> -&gt; init:'accum -&gt; f:('accum -&gt; 'a -&gt; 'accum) -&gt; 'accum</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> exists</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Container.S1_phantom_invariant&amp;type=t">t</a> -&gt; f:('a -&gt; bool) -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> for_all</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Container.S1_phantom_invariant&amp;type=t">t</a> -&gt; f:('a -&gt; bool) -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> count</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Container.S1_phantom_invariant&amp;type=t">t</a> -&gt; f:('a -&gt; bool) -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Container.S1_phantom_invariant&amp;type=t">t</a> -&gt; f:('a -&gt; bool) -&gt; 'a option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_map</span> : <code class="type">('a, 'c) <a href="?package=core_kernel&amp;module=Container.S1_phantom_invariant&amp;type=t">t</a> -&gt; f:('a -&gt; 'b option) -&gt; 'b option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_list</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Container.S1_phantom_invariant&amp;type=t">t</a> -&gt; 'a list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_array</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Container.S1_phantom_invariant&amp;type=t">t</a> -&gt; 'a array</code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="Generic">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Container.Generic">Generic</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> </pre>
+      
+    
+<pre><span id="TYPEelt"><span class="keyword">type</span> <code class="type">'a </code>elt</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem</span> : <code class="type">?equal:('a <a href="?package=core_kernel&amp;module=Container.Generic&amp;type=elt">elt</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Container.Generic&amp;type=elt">elt</a> -&gt; bool) -&gt; 'a <a href="?package=core_kernel&amp;module=Container.Generic&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Container.Generic&amp;type=elt">elt</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> length</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Container.Generic&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_empty</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Container.Generic&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Container.Generic&amp;type=t">t</a> -&gt; f:('a <a href="?package=core_kernel&amp;module=Container.Generic&amp;type=elt">elt</a> -&gt; unit) -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Container.Generic&amp;type=t">t</a> -&gt; init:'accum -&gt; f:('accum -&gt; 'a <a href="?package=core_kernel&amp;module=Container.Generic&amp;type=elt">elt</a> -&gt; 'accum) -&gt; 'accum</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> exists</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Container.Generic&amp;type=t">t</a> -&gt; f:('a <a href="?package=core_kernel&amp;module=Container.Generic&amp;type=elt">elt</a> -&gt; bool) -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> for_all</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Container.Generic&amp;type=t">t</a> -&gt; f:('a <a href="?package=core_kernel&amp;module=Container.Generic&amp;type=elt">elt</a> -&gt; bool) -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> count</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Container.Generic&amp;type=t">t</a> -&gt; f:('a <a href="?package=core_kernel&amp;module=Container.Generic&amp;type=elt">elt</a> -&gt; bool) -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Container.Generic&amp;type=t">t</a> -&gt; f:('a <a href="?package=core_kernel&amp;module=Container.Generic&amp;type=elt">elt</a> -&gt; bool) -&gt; 'a <a href="?package=core_kernel&amp;module=Container.Generic&amp;type=elt">elt</a> option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_map</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Container.Generic&amp;type=t">t</a> -&gt; f:('a <a href="?package=core_kernel&amp;module=Container.Generic&amp;type=elt">elt</a> -&gt; 'b option) -&gt; 'b option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_list</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Container.Generic&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Container.Generic&amp;type=elt">elt</a> list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_array</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Container.Generic&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Container.Generic&amp;type=elt">elt</a> array</code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="Generic_phantom">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Container.Generic_phantom">Generic_phantom</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'phantom) </code>t</span> </pre>
+      
+    
+<pre><span id="TYPEelt"><span class="keyword">type</span> <code class="type">'a </code>elt</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem</span> : <code class="type">?equal:('a <a href="?package=core_kernel&amp;module=Container.Generic_phantom&amp;type=elt">elt</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Container.Generic_phantom&amp;type=elt">elt</a> -&gt; bool) -&gt; ('a, 'b) <a href="?package=core_kernel&amp;module=Container.Generic_phantom&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Container.Generic_phantom&amp;type=elt">elt</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> length</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Container.Generic_phantom&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_empty</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Container.Generic_phantom&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Container.Generic_phantom&amp;type=t">t</a> -&gt; f:('a <a href="?package=core_kernel&amp;module=Container.Generic_phantom&amp;type=elt">elt</a> -&gt; unit) -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Container.Generic_phantom&amp;type=t">t</a> -&gt; init:'accum -&gt; f:('accum -&gt; 'a <a href="?package=core_kernel&amp;module=Container.Generic_phantom&amp;type=elt">elt</a> -&gt; 'accum) -&gt; 'accum</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> exists</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Container.Generic_phantom&amp;type=t">t</a> -&gt; f:('a <a href="?package=core_kernel&amp;module=Container.Generic_phantom&amp;type=elt">elt</a> -&gt; bool) -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> for_all</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Container.Generic_phantom&amp;type=t">t</a> -&gt; f:('a <a href="?package=core_kernel&amp;module=Container.Generic_phantom&amp;type=elt">elt</a> -&gt; bool) -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> count</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Container.Generic_phantom&amp;type=t">t</a> -&gt; f:('a <a href="?package=core_kernel&amp;module=Container.Generic_phantom&amp;type=elt">elt</a> -&gt; bool) -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Container.Generic_phantom&amp;type=t">t</a> -&gt; f:('a <a href="?package=core_kernel&amp;module=Container.Generic_phantom&amp;type=elt">elt</a> -&gt; bool) -&gt; 'a <a href="?package=core_kernel&amp;module=Container.Generic_phantom&amp;type=elt">elt</a> option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_map</span> : <code class="type">('a, 'c) <a href="?package=core_kernel&amp;module=Container.Generic_phantom&amp;type=t">t</a> -&gt; f:('a <a href="?package=core_kernel&amp;module=Container.Generic_phantom&amp;type=elt">elt</a> -&gt; 'b option) -&gt; 'b option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_list</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Container.Generic_phantom&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Container.Generic_phantom&amp;type=elt">elt</a> list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_array</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Container.Generic_phantom&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Container.Generic_phantom&amp;type=elt">elt</a> array</code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="Check">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Container.Check">Check</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">T</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=T.T1">T.T1</a></code><code class="code">) -&gt; </code><div class="sig_block"><code class="code">functor (</code><code class="code">Elt</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=T.T1">T.T1</a></code><code class="code">) -&gt; </code><div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="code"><a href="?package=core_kernel&amp;module=Container.Generic">Generic</a></code> with type <a href="?package=core_kernel&amp;module=Container.Generic&amp;type=t">t</a> = 'a T.t with type elt = 'a Elt.t<code class="code">) -&gt; </code><code class="code">sig</code> .. <code class="code">end</code></div></div></div></pre>
+		<div class="ocaml_module_content">
+		       
+		</div>
+</div>
+<div class="ocaml_module ident" name="Check_S0" path="?package=core_kernel&amp;amp;module=Container.Check">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Container.Check_S0">Check_S0</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Container.S0">S0</a></code><code class="code">) -&gt; </code>HTML_OF_MODULE_IDENT BUG(<code class="code">M</code>)</div></pre>
+</div>
+<div class="ocaml_module ident" name="Check_S0_phantom" path="?package=core_kernel&amp;amp;module=Container.Check">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Container.Check_S0_phantom">Check_S0_phantom</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Container.S0_phantom">S0_phantom</a></code><code class="code">) -&gt; </code>HTML_OF_MODULE_IDENT BUG(<code class="code">M</code>)</div></pre>
+</div>
+<div class="ocaml_module ident" name="Check_S1" path="?package=core_kernel&amp;amp;module=Container.Check">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Container.Check_S1">Check_S1</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Container.S1">S1</a></code><code class="code">) -&gt; </code>HTML_OF_MODULE_IDENT BUG(<code class="code">M</code>)</div></pre>
+</div>
+<pre><span id="TYPEphantom"><span class="keyword">type</span> phantom</span> </pre>
+      
+    
+<div class="ocaml_module ident" name="Check_S1_phantom" path="?package=core_kernel&amp;amp;module=Container.Check">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Container.Check_S1_phantom">Check_S1_phantom</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Container.S1_phantom">S1_phantom</a></code><code class="code">) -&gt; </code>HTML_OF_MODULE_IDENT BUG(<code class="code">M</code>)</div></pre>
+</div>
+<div class="ocaml_module ident" name="Check_S1_phantom_invariant" path="?package=core_kernel&amp;amp;module=Container.Check">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Container.Check_S1_phantom_invariant">Check_S1_phantom_invariant</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Container.S1_phantom_invariant">S1_phantom_invariant</a></code><code class="code">) -&gt; </code>HTML_OF_MODULE_IDENT BUG(<code class="code">M</code>)</div></pre>
+</div>
+</div>

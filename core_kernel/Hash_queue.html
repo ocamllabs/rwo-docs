@@ -1,18 +1,320 @@
-<!DOCTYPE HTML>
-<html>
-<head>
+<div class="ocaml_toplevel_module">
 
-<title>Hash_queue</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
+ 
+      <pre><span><span class="keyword">val</span> __pa_ounit_275876e34cf609db118f3d84b799a790</span> : <code class="type">string</code></pre>
+      
+    
 
-<h1>Module Hash_queue</h1>
-<pre><span class="keyword">module</span> Hash_queue</pre>
-<hr/>
-<div file="Hash_queue.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<div class="ocaml_module ident" name="List" path="?package=core_kernel&amp;amp;module=Core_list">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Hash_queue.List">List</a> : <code class="code"><a href="?package=core_kernel&amp;module=Core_list">Core_list</a></code></pre>
+</div>
+<div class="ocaml_module ident" name="Array" path="?package=core_kernel&amp;amp;module=Core_array">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Hash_queue.Array">Array</a> : <code class="code"><a href="?package=core_kernel&amp;module=Core_array">Core_array</a></code></pre>
+</div>
+<div class="ocaml_module ident" name="Hashtbl" path="?package=core_kernel&amp;amp;module=Core_hashtbl">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Hash_queue.Hashtbl">Hashtbl</a> : <code class="code"><a href="?package=core_kernel&amp;module=Core_hashtbl">Core_hashtbl</a></code></pre>
+</div>
+<div class="ocaml_module ident" name="Key" path="?package=core_kernel&amp;amp;module=Hash_queue.Hashtbl&amp;amp;type=Key">
+		    <pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Hash_queue.Key">Key</a> = <code class="type"><code class="code"><a href="?package=core_kernel&amp;module=Hash_queue.Hashtbl&amp;type=Key">Hashtbl.Key</a></code></code></pre>
+</div>
+<div class="ocaml_module sig" name="S">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Hash_queue.S">S</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<div class="ocaml_module ident" name="Key" path="?package=core_kernel&amp;amp;module=Hash_queue.Key">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Hash_queue.S.Key">Key</a> : <code class="code"><a href="?package=core_kernel&amp;module=Hash_queue.Key">Key</a></code></pre>
+</div>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> </pre>
+      <div class="info">a hash-queue, where the values are of type 'a</div>
+    
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Container.S1" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Container.S1">Container.S1</a></code> with type t = 'a <a href="?package=core_kernel&amp;module=Hash_queue.S&amp;type=t">t</a></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> invariant</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.S&amp;type=t">t</a> -&gt; unit</code></pre>
+      <div class="info"><code class="code">invariant t</code> checks the invariants of the queue.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">unit -&gt; 'a <a href="?package=core_kernel&amp;module=Hash_queue.S&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">create ()</code> returns an empty queue.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> clear</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.S&amp;type=t">t</a> -&gt; unit</code></pre>
+      <div class="info">clear the queue</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> mem</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Hash_queue.S.Key&amp;type=t">Key.t</a> -&gt; bool</code></pre>
+      <div class="info"><code class="code">mem q k</code> returns true iff there is some (k, v) in the queue.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> lookup</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Hash_queue.S.Key&amp;type=t">Key.t</a> -&gt; 'a option</code></pre>
+      <div class="info"><code class="code">lookup t k</code> returns the value of the key-value pair in the queue with
+     key k, if there is one.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> lookup_exn</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Hash_queue.S.Key&amp;type=t">Key.t</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> enqueue</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Hash_queue.S.Key&amp;type=t">Key.t</a> -&gt; 'a -&gt; [ `Key_already_present | `Ok ]</code></pre>
+      <div class="info"><code class="code">enqueue t k v</code> adds the key-value pair (k, v) to the end of the queue,
+       returning `Ok if the pair was added, or `Key_already_present
+       if there is already a (k, v') in the queue.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> enqueue_exn</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Hash_queue.S.Key&amp;type=t">Key.t</a> -&gt; 'a -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> first</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.S&amp;type=t">t</a> -&gt; 'a option</code></pre>
+      <div class="info"><code class="code">first t</code> returns the front element of the queue, without removing it.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> keys</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Hash_queue.S.Key&amp;type=t">Key.t</a> list</code></pre>
+      <div class="info"><code class="code">keys t</code> returns the keys in the order of the queue.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> dequeue</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.S&amp;type=t">t</a> -&gt; 'a option</code></pre>
+      <div class="info"><code class="code">dequeue t</code> returns the front element of the queue.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> dequeue_exn</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.S&amp;type=t">t</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> dequeue_with_key</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.S&amp;type=t">t</a> -&gt; (<a href="?package=core_kernel&amp;module=Hash_queue.S.Key&amp;type=t">Key.t</a> * 'a) option</code></pre>
+      <div class="info"><code class="code">dequeue_with_key t</code> returns the front element of the queue and its key</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> dequeue_with_key_exn</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Hash_queue.S.Key&amp;type=t">Key.t</a> * 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> dequeue_all</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.S&amp;type=t">t</a> -&gt; f:('a -&gt; unit) -&gt; unit</code></pre>
+      <div class="info"><code class="code">dequeue_all t ~f</code> dequeues every element of the queue and applies f to each
+       one.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> remove</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Hash_queue.S.Key&amp;type=t">Key.t</a> -&gt; [ `No_such_key | `Ok ]</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove_exn</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Hash_queue.S.Key&amp;type=t">Key.t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> replace</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Hash_queue.S.Key&amp;type=t">Key.t</a> -&gt; 'a -&gt; [ `No_such_key | `Ok ]</code></pre>
+      <div class="info"><code class="code">replace q k v</code> changes the value of key k in the queue to v.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> replace_exn</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Hash_queue.S.Key&amp;type=t">Key.t</a> -&gt; 'a -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iteri</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.S&amp;type=t">t</a> -&gt; f:(key:<a href="?package=core_kernel&amp;module=Hash_queue.S.Key&amp;type=t">Key.t</a> -&gt; data:'a -&gt; unit) -&gt; unit</code></pre>
+      <div class="info"><code class="code">iter t ~f</code> applies f to each key and element of the queue.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> foldi</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.S&amp;type=t">t</a> -&gt; init:'b -&gt; f:('b -&gt; key:<a href="?package=core_kernel&amp;module=Hash_queue.S.Key&amp;type=t">Key.t</a> -&gt; data:'a -&gt; 'b) -&gt; 'b</code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="Make">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Hash_queue.Make">Make</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">Key</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Hash_queue.Key">Key</a></code><code class="code">) -&gt; </code><code class="code">sig</code> .. <code class="code">end</code></div></pre>
+		<div class="ocaml_module_content">
+		       
+<div class="ocaml_module ident" name="Key">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Hash_queue.Make.Key">Key</a> : <code class="code">Key</code></pre>
+</div>
+<div class="ocaml_module ident" name="Table" path="?package=core_kernel&amp;amp;module=Hash_queue.Hashtbl&amp;amp;type=Make">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Hash_queue.Make.Table">Table</a> : <code class="code"><a href="?package=core_kernel&amp;module=Hash_queue.Hashtbl&amp;type=Make">Hashtbl.Make</a></code>(<code class="code"><a href="?package=core_kernel&amp;module=Hash_queue.Make.Key">Key</a></code>)</pre>
+</div>
+<div class="ocaml_module sig" name="Key_value">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Hash_queue.Make.Key_value">Key_value</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+<div class="ocaml_module sig" name="T">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Hash_queue.Make.Key_value.T">T</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><code><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> = {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.key">key</span> :<code class="type"><a href="?package=core_kernel&amp;module=Hash_queue.Make.Key&amp;type=t">Key.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.value">value</span> :<code class="type">'a</code>;</code></td>
+	  </tr></table>}
+      
+    
+		</div>
+</div>
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Hash_queue.Make.Key_value.T" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Hash_queue.Make.Key_value.T">T</a></code></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> key</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.Make.Key_value&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Hash_queue.Make.Key&amp;type=t">Key.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> value</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.Make.Key_value&amp;type=t">t</a> -&gt; 'a</code></pre>
+      
+    
+		</div>
+</div>
+<div class="ocaml_module ident" name="Elt" path="?package=core_kernel&amp;amp;module=Doubly_linked.Elt">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Hash_queue.Make.Elt">Elt</a> : <code class="code"><a href="?package=core_kernel&amp;module=Doubly_linked.Elt">Doubly_linked.Elt</a></code></pre>
+</div>
+<pre><code><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> = {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.num_readers">num_readers</span> :<code class="type">int</code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.queue">queue</span> :<code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.Make.Key_value&amp;type=t">Key_value.t</a> <a href="?package=core_kernel&amp;module=Doubly_linked&amp;type=t">Doubly_linked.t</a></code>;</code></td>
+	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.table">table</span> :<code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.Make.Key_value&amp;type=t">Key_value.t</a> <a href="?package=core_kernel&amp;module=Hash_queue.Make.Elt&amp;type=t">Elt.t</a> <a href="?package=core_kernel&amp;module=Hash_queue.Make.Table&amp;type=t">Table.t</a></code>;</code></td>
+	  </tr></table>}
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> invariant</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.Make&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">unit -&gt; 'a <a href="?package=core_kernel&amp;module=Hash_queue.Make&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> read</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.Make&amp;type=t">t</a> -&gt; (unit -&gt; 'b) -&gt; 'b</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ensure_can_modify</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.Make&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> clear</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.Make&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> length</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.Make&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_empty</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.Make&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> lookup</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.Make&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Hash_queue.Make.Table&amp;type=key">Table.key</a> <a href="?package=core_kernel&amp;module=Hash_queue.Hashtbl&amp;type=key">Hashtbl.key</a> -&gt; 'a option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> lookup_exn</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.Make&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Hash_queue.Make.Table&amp;type=key">Table.key</a> <a href="?package=core_kernel&amp;module=Hash_queue.Hashtbl&amp;type=key">Hashtbl.key</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.Make&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Hash_queue.Make.Table&amp;type=key">Table.key</a> <a href="?package=core_kernel&amp;module=Hash_queue.Hashtbl&amp;type=key">Hashtbl.key</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_list</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.Make&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Hash_queue.List&amp;type=t">List.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_array</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.Make&amp;type=t">t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Hash_queue.Array&amp;type=t">Array.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> for_all</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.Make&amp;type=t">t</a> -&gt; f:('a -&gt; bool) -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> exists</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.Make&amp;type=t">t</a> -&gt; f:('a -&gt; bool) -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_map</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.Make&amp;type=t">t</a> -&gt; f:('a -&gt; 'b option) -&gt; 'b option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.Make&amp;type=t">t</a> -&gt; f:('a -&gt; bool) -&gt; 'a <a href="?package=core_kernel&amp;module=Option&amp;type=t">Option.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> enqueue</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.Make&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Hash_queue.Make.Table&amp;type=key">Table.key</a> <a href="?package=core_kernel&amp;module=Hash_queue.Hashtbl&amp;type=key">Hashtbl.key</a> -&gt; 'a -&gt; [&gt; `Key_already_present | `Ok ]</code></pre>
+      
+    
+<pre><span id="EXCEPTIONEnqueue_duplicate_key"><span class="keyword">exception</span> Enqueue_duplicate_key</span> <span class="keyword">of</span> <code class="type"><a href="?package=core_kernel&amp;module=Hash_queue.Make.Key&amp;type=t">Key.t</a></code></pre>
+
+ 
+      <pre><span><span class="keyword">val</span> enqueue_exn</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.Make&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Hash_queue.Make.Table&amp;type=key">Table.key</a> <a href="?package=core_kernel&amp;module=Hash_queue.Hashtbl&amp;type=key">Hashtbl.key</a> -&gt; 'a -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> dequeue_with_key</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.Make&amp;type=t">t</a> -&gt; (<a href="?package=core_kernel&amp;module=Hash_queue.Make.Key&amp;type=t">Key.t</a> * 'a) option</code></pre>
+      
+    
+<pre><span id="EXCEPTIONDequeue_with_key_empty"><span class="keyword">exception</span> Dequeue_with_key_empty</span></pre>
+
+ 
+      <pre><span><span class="keyword">val</span> dequeue_with_key_exn</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.Make&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Hash_queue.Make.Key&amp;type=t">Key.t</a> * 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> dequeue</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.Make&amp;type=t">t</a> -&gt; 'a option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> first</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.Make&amp;type=t">t</a> -&gt; 'a option</code></pre>
+      
+    
+<pre><span id="EXCEPTIONDequeue_empty"><span class="keyword">exception</span> Dequeue_empty</span></pre>
+
+ 
+      <pre><span><span class="keyword">val</span> dequeue_exn</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.Make&amp;type=t">t</a> -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> keys</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.Make&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Hash_queue.Make.Key&amp;type=t">Key.t</a> <a href="?package=core_kernel&amp;module=Hash_queue.List&amp;type=t">List.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iteri</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.Make&amp;type=t">t</a> -&gt; f:(key:<a href="?package=core_kernel&amp;module=Hash_queue.Make.Key&amp;type=t">Key.t</a> -&gt; data:'a -&gt; unit) -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.Make&amp;type=t">t</a> -&gt; f:('a -&gt; unit) -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> foldi</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.Make&amp;type=t">t</a> -&gt; init:'b -&gt; f:('b -&gt; key:<a href="?package=core_kernel&amp;module=Hash_queue.Make.Key&amp;type=t">Key.t</a> -&gt; data:'a -&gt; 'b) -&gt; 'b</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.Make&amp;type=t">t</a> -&gt; init:'b -&gt; f:('b -&gt; 'a -&gt; 'b) -&gt; 'b</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> count</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.Make&amp;type=t">t</a> -&gt; f:('a -&gt; bool) -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> dequeue_all</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.Make&amp;type=t">t</a> -&gt; f:('a -&gt; 'b) -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.Make&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Hash_queue.Make.Table&amp;type=key">Table.key</a> <a href="?package=core_kernel&amp;module=Hash_queue.Hashtbl&amp;type=key">Hashtbl.key</a> -&gt; [&gt; `No_such_key | `Ok ]</code></pre>
+      
+    
+<pre><span id="EXCEPTIONRemove_unknown_key"><span class="keyword">exception</span> Remove_unknown_key</span> <span class="keyword">of</span> <code class="type"><a href="?package=core_kernel&amp;module=Hash_queue.Make.Key&amp;type=t">Key.t</a></code></pre>
+
+ 
+      <pre><span><span class="keyword">val</span> remove_exn</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.Make&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Hash_queue.Make.Table&amp;type=key">Table.key</a> <a href="?package=core_kernel&amp;module=Hash_queue.Hashtbl&amp;type=key">Hashtbl.key</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> replace</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.Make&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Hash_queue.Make.Table&amp;type=key">Table.key</a> <a href="?package=core_kernel&amp;module=Hash_queue.Hashtbl&amp;type=key">Hashtbl.key</a> -&gt; 'a -&gt; [&gt; `No_such_key | `Ok ]</code></pre>
+      
+    
+<pre><span id="EXCEPTIONReplace_unknown_key"><span class="keyword">exception</span> Replace_unknown_key</span> <span class="keyword">of</span> <code class="type"><a href="?package=core_kernel&amp;module=Hash_queue.Make.Key&amp;type=t">Key.t</a></code></pre>
+
+ 
+      <pre><span><span class="keyword">val</span> replace_exn</span> : <code class="type">'a <a href="?package=core_kernel&amp;module=Hash_queue.Make&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Hash_queue.Make.Table&amp;type=key">Table.key</a> <a href="?package=core_kernel&amp;module=Hash_queue.Hashtbl&amp;type=key">Hashtbl.key</a> -&gt; 'a -&gt; unit</code></pre>
+      
+    
+		</div>
+</div>
+</div>

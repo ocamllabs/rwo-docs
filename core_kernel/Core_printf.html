@@ -1,18 +1,53 @@
-<!DOCTYPE HTML>
-<html>
-<head>
+<div class="ocaml_toplevel_module">
 
-<title>Core_printf</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Core_printf</h1>
-<pre><span class="keyword">module</span> Core_printf</pre>
-<hr/>
-<div file="Core_printf.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+ 
+      <pre><span><span class="keyword">val</span> fprintf</span> : <code class="type"><a href="?package=stdlib&amp;module=Pervasives&amp;type=out_channel">out_channel</a> -&gt; ('r, <a href="?package=stdlib&amp;module=Pervasives&amp;type=out_channel">out_channel</a>, unit) <a href="?package=stdlib&amp;module=Pervasives&amp;type=format">format</a> -&gt; 'r</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> printf</span> : <code class="type">('r, <a href="?package=stdlib&amp;module=Pervasives&amp;type=out_channel">out_channel</a>, unit) <a href="?package=stdlib&amp;module=Pervasives&amp;type=format">format</a> -&gt; 'r</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> eprintf</span> : <code class="type">('r, <a href="?package=stdlib&amp;module=Pervasives&amp;type=out_channel">out_channel</a>, unit) <a href="?package=stdlib&amp;module=Pervasives&amp;type=format">format</a> -&gt; 'r</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ifprintf</span> : <code class="type">'a -&gt; ('r, 'a, unit) <a href="?package=stdlib&amp;module=Pervasives&amp;type=format">format</a> -&gt; 'r</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sprintf</span> : <code class="type">('r, unit, string) <a href="?package=stdlib&amp;module=Pervasives&amp;type=format">format</a> -&gt; 'r</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bprintf</span> : <code class="type"><a href="?package=stdlib&amp;module=Buffer&amp;type=t">Buffer.t</a> -&gt; ('r, <a href="?package=stdlib&amp;module=Buffer&amp;type=t">Buffer.t</a>, unit) <a href="?package=stdlib&amp;module=Pervasives&amp;type=format">format</a> -&gt; 'r</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> kfprintf</span> : <code class="type">(<a href="?package=stdlib&amp;module=Pervasives&amp;type=out_channel">out_channel</a> -&gt; 'a) -&gt;
+<a href="?package=stdlib&amp;module=Pervasives&amp;type=out_channel">out_channel</a> -&gt; ('r, <a href="?package=stdlib&amp;module=Pervasives&amp;type=out_channel">out_channel</a>, unit, 'a) <a href="?package=stdlib&amp;module=Pervasives&amp;type=format4">format4</a> -&gt; 'r</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ksprintf</span> : <code class="type">(string -&gt; 'a) -&gt; ('r, unit, string, 'a) <a href="?package=stdlib&amp;module=Pervasives&amp;type=format4">format4</a> -&gt; 'r</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> kbprintf</span> : <code class="type">(<a href="?package=stdlib&amp;module=Buffer&amp;type=t">Buffer.t</a> -&gt; 'a) -&gt; <a href="?package=stdlib&amp;module=Buffer&amp;type=t">Buffer.t</a> -&gt; ('r, <a href="?package=stdlib&amp;module=Buffer&amp;type=t">Buffer.t</a>, unit, 'a) <a href="?package=stdlib&amp;module=Pervasives&amp;type=format4">format4</a> -&gt; 'r</code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Formatting error and exit functions</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> failwithf</span> : <code class="type">('r, unit, string, unit -&gt; 'a) <a href="?package=stdlib&amp;module=Pervasives&amp;type=format4">format4</a> -&gt; 'r</code></pre>
+      <div class="info">raises Failure</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> invalid_argf</span> : <code class="type">('r, unit, string, unit -&gt; 'a) <a href="?package=stdlib&amp;module=Pervasives&amp;type=format4">format4</a> -&gt; 'r</code></pre>
+      <div class="info">raises Invalid_arg</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> exitf</span> : <code class="type">('r, unit, string, unit -&gt; 'a) <a href="?package=stdlib&amp;module=Pervasives&amp;type=format4">format4</a> -&gt; 'r</code></pre>
+      <div class="info">print to stderr; exit 1</div>
+    </div>

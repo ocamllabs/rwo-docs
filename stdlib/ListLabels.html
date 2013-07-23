@@ -1,24 +1,194 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-
-<title>ListLabels</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module ListLabels</h1>
-<pre><span class="keyword">module</span> ListLabels</pre><div class="info">List operations.<br/>   Some functions are flagged as not tail-recursive.  A tail-recursive
+<div class="ocaml_toplevel_module">
+<div class="info">List operations.<br/>   Some functions are flagged as not tail-recursive.  A tail-recursive
    function uses constant stack space, while a non-tail-recursive function
    uses stack space proportional to the length of its list argument, which
    can be a problem with very long lists.  When the function takes several
    list arguments, an approximate formula giving stack usage (in some
    unspecified constant unit) is shown in parentheses.<br/>   The above considerations can usually be ignored if your lists are not
    longer than about 10000 elements.</div>
-<hr/>
-<div file="ListLabels.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+ 
+      <pre><span><span class="keyword">val</span> length</span> : <code class="type">'a list -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> hd</span> : <code class="type">'a list -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> tl</span> : <code class="type">'a list -&gt; 'a list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> nth</span> : <code class="type">'a list -&gt; int -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rev</span> : <code class="type">'a list -&gt; 'a list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> append</span> : <code class="type">'a list -&gt; 'a list -&gt; 'a list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rev_append</span> : <code class="type">'a list -&gt; 'a list -&gt; 'a list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> concat</span> : <code class="type">'a list list -&gt; 'a list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> flatten</span> : <code class="type">'a list list -&gt; 'a list</code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Iterators</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> iter</span> : <code class="type">f:('a -&gt; unit) -&gt; 'a list -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iteri</span> : <code class="type">f:(int -&gt; 'a -&gt; unit) -&gt; 'a list -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map</span> : <code class="type">f:('a -&gt; 'b) -&gt; 'a list -&gt; 'b list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mapi</span> : <code class="type">f:(int -&gt; 'a -&gt; 'b) -&gt; 'a list -&gt; 'b list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rev_map</span> : <code class="type">f:('a -&gt; 'b) -&gt; 'a list -&gt; 'b list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold_left</span> : <code class="type">f:('a -&gt; 'b -&gt; 'a) -&gt; init:'a -&gt; 'b list -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold_right</span> : <code class="type">f:('a -&gt; 'b -&gt; 'b) -&gt; 'a list -&gt; init:'b -&gt; 'b</code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Iterators on two lists</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> iter2</span> : <code class="type">f:('a -&gt; 'b -&gt; unit) -&gt; 'a list -&gt; 'b list -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map2</span> : <code class="type">f:('a -&gt; 'b -&gt; 'c) -&gt; 'a list -&gt; 'b list -&gt; 'c list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rev_map2</span> : <code class="type">f:('a -&gt; 'b -&gt; 'c) -&gt; 'a list -&gt; 'b list -&gt; 'c list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold_left2</span> : <code class="type">f:('a -&gt; 'b -&gt; 'c -&gt; 'a) -&gt; init:'a -&gt; 'b list -&gt; 'c list -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold_right2</span> : <code class="type">f:('a -&gt; 'b -&gt; 'c -&gt; 'c) -&gt; 'a list -&gt; 'b list -&gt; init:'c -&gt; 'c</code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">List scanning</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> for_all</span> : <code class="type">f:('a -&gt; bool) -&gt; 'a list -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> exists</span> : <code class="type">f:('a -&gt; bool) -&gt; 'a list -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> for_all2</span> : <code class="type">f:('a -&gt; 'b -&gt; bool) -&gt; 'a list -&gt; 'b list -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> exists2</span> : <code class="type">f:('a -&gt; 'b -&gt; bool) -&gt; 'a list -&gt; 'b list -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem</span> : <code class="type">'a -&gt; set:'a list -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> memq</span> : <code class="type">'a -&gt; set:'a list -&gt; bool</code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">List searching</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> find</span> : <code class="type">f:('a -&gt; bool) -&gt; 'a list -&gt; 'a</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> filter</span> : <code class="type">f:('a -&gt; bool) -&gt; 'a list -&gt; 'a list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_all</span> : <code class="type">f:('a -&gt; bool) -&gt; 'a list -&gt; 'a list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> partition</span> : <code class="type">f:('a -&gt; bool) -&gt; 'a list -&gt; 'a list * 'a list</code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Association lists</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> assoc</span> : <code class="type">'a -&gt; ('a * 'b) list -&gt; 'b</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> assq</span> : <code class="type">'a -&gt; ('a * 'b) list -&gt; 'b</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem_assoc</span> : <code class="type">'a -&gt; map:('a * 'b) list -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem_assq</span> : <code class="type">'a -&gt; map:('a * 'b) list -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove_assoc</span> : <code class="type">'a -&gt; ('a * 'b) list -&gt; ('a * 'b) list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove_assq</span> : <code class="type">'a -&gt; ('a * 'b) list -&gt; ('a * 'b) list</code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Lists of pairs</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> split</span> : <code class="type">('a * 'b) list -&gt; 'a list * 'b list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> combine</span> : <code class="type">'a list -&gt; 'b list -&gt; ('a * 'b) list</code></pre>
+      
+    
+<br/><br/><h6 id="6_TITLE">Sorting</h6><br/> <br/>
+	  
+ 
+      <pre><span><span class="keyword">val</span> sort</span> : <code class="type">cmp:('a -&gt; 'a -&gt; int) -&gt; 'a list -&gt; 'a list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> stable_sort</span> : <code class="type">cmp:('a -&gt; 'a -&gt; int) -&gt; 'a list -&gt; 'a list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fast_sort</span> : <code class="type">cmp:('a -&gt; 'a -&gt; int) -&gt; 'a list -&gt; 'a list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> merge</span> : <code class="type">cmp:('a -&gt; 'a -&gt; int) -&gt; 'a list -&gt; 'a list -&gt; 'a list</code></pre>
+      
+    </div>

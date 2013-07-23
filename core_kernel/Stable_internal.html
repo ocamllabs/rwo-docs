@@ -1,18 +1,135 @@
-<!DOCTYPE HTML>
-<html>
-<head>
+<div class="ocaml_toplevel_module">
 
-<title>Stable_internal</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
+ 
+      <pre><span><span class="keyword">val</span> __pa_ounit_275876e34cf609db118f3d84b799a790</span> : <code class="type">string</code></pre>
+      
+    
 
-<h1>Module Stable_internal</h1>
-<pre><span class="keyword">module</span> Stable_internal</pre>
-<hr/>
-<div file="Stable_internal.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<div class="ocaml_include ident" path="?package=bin_prot&amp;amp;module=Std" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=bin_prot&amp;module=Std">Bin_prot.Std</a></code></pre>
+</div>
+<div class="ocaml_include ident" path="?package=sexplib&amp;amp;module=Std" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=sexplib&amp;module=Std">Sexplib.Std</a></code></pre>
+</div>
+<pre><span id="TYPEsexp_option"><span class="keyword">type</span> <code class="type">'a </code>sexp_option</span> = <code class="type">'a <a href="?package=core_kernel&amp;module=Std_internal&amp;type=sexp_option">Std_internal.sexp_option</a></code> </pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> compare_sexp_option</span> : <code class="type">'a. ('a -&gt; 'a -&gt; int) -&gt; 'a <a href="?package=core_kernel&amp;module=Stable_internal&amp;type=sexp_option">sexp_option</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Stable_internal&amp;type=sexp_option">sexp_option</a> -&gt; int</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_size_sexp_option</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Size&amp;type=sizer">Bin_prot.Size.sizer</a> -&gt; 'a option -&gt; int</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_sexp_option_</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr">Bin_prot.Unsafe_common.sptr</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; 'a option -&gt; <a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr">Bin_prot.Unsafe_common.sptr</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_sexp_option</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt;
+<a href="?package=bin_prot&amp;module=Common&amp;type=buf">Bin_prot.Common.buf</a> -&gt;
+pos:<a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a> -&gt; 'a option -&gt; <a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_sexp_option</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a> -&gt; 'a option <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_sexp_option__</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; int -&gt; 'a option</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_sexp_option_</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+<a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=sptr_ptr">Bin_prot.Unsafe_common.sptr_ptr</a> -&gt; <a href="?package=bin_prot&amp;module=Unsafe_common&amp;type=eptr">Bin_prot.Unsafe_common.eptr</a> -&gt; 'a option</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_sexp_option</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+<a href="?package=bin_prot&amp;module=Common&amp;type=buf">Bin_prot.Common.buf</a> -&gt; pos_ref:<a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a> <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Stable_internal&amp;type=sexp_option">sexp_option</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_sexp_option</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Stable_internal&amp;type=sexp_option">sexp_option</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_sexp_option</span> : <code class="type">'a <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a> -&gt; 'a <a href="?package=core_kernel&amp;module=Stable_internal&amp;type=sexp_option">sexp_option</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a></code></pre>
+      
+    
+
+<div class="ocaml_module sig" name="Sexp">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Stable_internal.Sexp">Sexp</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> = <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code> </pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.Atom"><span class="constructor">Atom</span></span> <span class="keyword">of</span> <code class="type">string</code></code></td>
+	   </tr><tr><td align="left" valign="top"><code><span class="keyword">|</span></code></td><td align="left" valign="top"><code><span id="TYPEELTt.List"><span class="constructor">List</span></span> <span class="keyword">of</span> <code class="type"><a href="?package=core_kernel&amp;module=Stable_internal.Sexp&amp;type=t">t</a> list</code></code></td>
+	   </tr></table>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> compare</span> : <code class="type"><a href="?package=core_kernel&amp;module=Stable_internal.Sexp&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Stable_internal.Sexp&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> compare_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Stable_internal.Sexp&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Stable_internal.Sexp&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Stable_internal.Sexp&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Stable_internal&amp;type=sizer">sizer</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_</span> : <code class="type"><a href="?package=core_kernel&amp;module=Stable_internal.Sexp&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t</span> : <code class="type"><a href="?package=bin_prot&amp;module=Common&amp;type=buf">Bin_prot.Common.buf</a> -&gt; pos:<a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a> -&gt; <a href="?package=core_kernel&amp;module=Stable_internal.Sexp&amp;type=t">t</a> -&gt; <a href="?package=bin_prot&amp;module=Common&amp;type=pos">Bin_prot.Common.pos</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Stable_internal.Sexp&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+
+
+
+
+
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Stable_internal.Sexp&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Stable_internal.Sexp&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a></code></pre>
+      
+    
+
+<br/>&quot;structure item: Mismatch&quot;<br/>
+	  
+		</div>
+</div>
+</div>

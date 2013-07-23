@@ -1,18 +1,198 @@
-<!DOCTYPE HTML>
-<html>
-<head>
+<div class="ocaml_toplevel_module">
 
-<title>Int_intf</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
+ 
+      <pre><span><span class="keyword">val</span> __pa_ounit_275876e34cf609db118f3d84b799a790</span> : <code class="type">string</code></pre>
+      
+    
 
-<h1>Module Int_intf</h1>
-<pre><span class="keyword">module</span> Int_intf</pre>
-<hr/>
-<div file="Int_intf.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<div class="ocaml_module sig" name="S">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Int_intf.S">S</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> </pre>
+      
+    
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Interfaces.Floatable" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Interfaces.Floatable">Interfaces.Floatable</a></code> with type t = <a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a></pre>
+</div>
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Interfaces.Intable" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Interfaces.Intable">Interfaces.Intable</a></code> with type t = <a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a></pre>
+</div>
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Interfaces.Identifiable" items="[&quot;Hash_heap&quot;,&quot;Hash_queue&quot;,&quot;Hash_set&quot;,&quot;Pooled_hashtbl&quot;,&quot;Table&quot;,&quot;Hashable&quot;,&quot;Set&quot;,&quot;Map&quot;,&quot;Replace_polymorphic_compare&quot;]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Interfaces.Identifiable">Interfaces.Identifiable</a></code> with type t = <a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a></pre>
+</div>
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Comparable.With_zero" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Comparable.With_zero">Comparable.With_zero</a></code> with type t = <a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> to_string_hum</span> : <code class="type">?delimiter:char -&gt; <a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a> -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> num_bits</span> : <code class="type">int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> zero</span> : <code class="type"><a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> one</span> : <code class="type"><a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> minus_one</span> : <code class="type"><a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> +</span> : <code class="type"><a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> -</span> : <code class="type"><a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> *</span> : <code class="type"><a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> /</span> : <code class="type"><a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> neg</span> : <code class="type"><a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> succ</span> : <code class="type"><a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> pred</span> : <code class="type"><a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> abs</span> : <code class="type"><a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> rem</span> : <code class="type"><a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> max_value</span> : <code class="type"><a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> min_value</span> : <code class="type"><a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bit_and</span> : <code class="type"><a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bit_or</span> : <code class="type"><a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bit_xor</span> : <code class="type"><a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bit_not</span> : <code class="type"><a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> decr</span> : <code class="type"><a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a> <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> incr</span> : <code class="type"><a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a> <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> shift_left</span> : <code class="type"><a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a> -&gt; int -&gt; <a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> shift_right</span> : <code class="type"><a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a> -&gt; int -&gt; <a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> shift_right_logical</span> : <code class="type"><a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a> -&gt; int -&gt; <a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_int32_exn</span> : <code class="type">int32 -&gt; <a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_int32_exn</span> : <code class="type"><a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a> -&gt; int32</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_int64_exn</span> : <code class="type">int64 -&gt; <a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_int64</span> : <code class="type"><a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a> -&gt; int64</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_nativeint_exn</span> : <code class="type">nativeint -&gt; <a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_nativeint_exn</span> : <code class="type"><a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a> -&gt; nativeint</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp</span> : <code class="type"><a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; <a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Read_ml&amp;type=reader">Bin_prot.Read_ml.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t_</span> : <code class="type"><a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t__</span> : <code class="type">(int -&gt; <a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a>) <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Size&amp;type=sizer">Bin_prot.Size.sizer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Bin_prot.Write_ml.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_</span> : <code class="type"><a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Int_intf.S&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+		</div>
+</div>
+
+</div>

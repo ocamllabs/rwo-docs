@@ -1,18 +1,19 @@
-<!DOCTYPE HTML>
-<html>
-<head>
+<div class="ocaml_toplevel_module">
 
-<title>Iobuf_debug</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Iobuf_debug</h1>
-<pre><span class="keyword">module</span> Iobuf_debug</pre>
-<hr/>
-<div file="Iobuf_debug.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<div class="ocaml_module sig" name="Make">
+		<pre><span class="keyword">module</span> <a href="?package=core&amp;module=Iobuf_debug.Make">Make</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="code">sig</code> .. <code class="code">end</code><code class="code">) -&gt; </code><code class="code">sig</code> .. <code class="code">end</code></div></pre>
+		<div class="ocaml_module_content">
+		       
+<div class="ocaml_include ident" path="?package=core&amp;amp;module=Iobuf" items="[&quot;Unsafe&quot;,&quot;Poke&quot;,&quot;Peek&quot;,&quot;Fill&quot;,&quot;Consume&quot;,&quot;Hi_bound&quot;,&quot;Lo_bound&quot;,&quot;Bound&quot;]">
+		      <pre><span class="keyword">include</span> module type of <a href="?package=core&amp;module=Iobuf">Iobuf</a> with type t = ('d, 'w) <a href="?package=core&amp;module=Iobuf&amp;type=t">Iobuf.t</a></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> check_invariant</span> : <code class="type">bool <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> show_messages</span> : <code class="type">bool <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a></code></pre>
+      
+    
+		</div>
+</div></div>

@@ -1,18 +1,18 @@
-<!DOCTYPE HTML>
-<html>
-<head>
+<div class="ocaml_toplevel_module">
 
-<title>Sampler</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Sampler</h1>
-<pre><span class="keyword">module</span> Sampler</pre>
-<hr/>
-<div file="Sampler.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> </pre>
+      <div class="info">a compiled finite discrete probability distribution that supports constant
+    time sampling</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">('a * float) list -&gt; 'a <a href="?package=core_extended&amp;module=Sampler&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">create dist</code> compiles a discrete probability distribution into a form
+    supporting constant-time sampling.  The running time is O(N) where N =
+    <code class="code">List.length dist</code>.  <code class="code">dist</code> may be either a probability distribution
+    (all floats are non-negative and sum to 1) or, more generally,
+    a histogram in which frequencies are interpreted as probabilities.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> sample</span> : <code class="type">?state:<a href="?package=core&amp;module=Std.Random.State&amp;type=t">Core.Std.Random.State.t</a> -&gt; 'a <a href="?package=core_extended&amp;module=Sampler&amp;type=t">t</a> -&gt; 'a</code></pre>
+      <div class="info">randomly sample the distribution in constant time</div>
+    </div>

@@ -1,18 +1,131 @@
-<!DOCTYPE HTML>
-<html>
-<head>
+<div class="ocaml_toplevel_module">
 
-<title>Flags_intf</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
+ 
+      <pre><span><span class="keyword">val</span> __pa_ounit_275876e34cf609db118f3d84b799a790</span> : <code class="type">string</code></pre>
+      
+    
 
-<h1>Module Flags_intf</h1>
-<pre><span class="keyword">module</span> Flags_intf</pre>
-<hr/>
-<div file="Flags_intf.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<br/><code class="code">module Flags</code> implements Unix-style sets of flags that are represented as
+    an <code class="code">int</code> with various bits set, one bit for each flag.  E.g. <code class="code">Linux_ext.Epoll.Flag</code>.<br/>    <code class="code">Flags</code> defines a module type <code class="code">Flags.S</code>, the interface for a flags, and a functor
+    <code class="code">Flags.Make</code> for creating a flags implementation.<br/>
+	  
+<div class="ocaml_module ident" name="Int63" path="?package=core_kernel&amp;amp;module=Core_int63">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Flags_intf.Int63">Int63</a> : <code class="code"><a href="?package=core_kernel&amp;module=Core_int63">Core_int63</a></code></pre>
+</div>
+<div class="ocaml_module sig" name="S">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Flags_intf.S">S</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre><div class="info"><code class="code">module type S</code> is the interface for a set of flags.  Values of <code class="code">type t</code> are set of
+    flags, and the various functions operate on sets of flags.  There is a finite universe
+    of flags (in particular 63 flags, one for each bit).<br/>    <code class="code">sexp_of_t</code> uses the flag names supplied to <code class="code">Flags.Make</code> </div>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_int</span> : <code class="type">int -&gt; <a href="?package=core_kernel&amp;module=Flags_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_int_exn</span> : <code class="type"><a href="?package=core_kernel&amp;module=Flags_intf.S&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> equal</span> : <code class="type"><a href="?package=core_kernel&amp;module=Flags_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Flags_intf.S&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> empty</span> : <code class="type"><a href="?package=core_kernel&amp;module=Flags_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> +</span> : <code class="type"><a href="?package=core_kernel&amp;module=Flags_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Flags_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Flags_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> -</span> : <code class="type"><a href="?package=core_kernel&amp;module=Flags_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Flags_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Flags_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> intersect</span> : <code class="type"><a href="?package=core_kernel&amp;module=Flags_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Flags_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Flags_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> complement</span> : <code class="type"><a href="?package=core_kernel&amp;module=Flags_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Flags_intf.S&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_empty</span> : <code class="type"><a href="?package=core_kernel&amp;module=Flags_intf.S&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> do_intersect</span> : <code class="type"><a href="?package=core_kernel&amp;module=Flags_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Flags_intf.S&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> are_disjoint</span> : <code class="type"><a href="?package=core_kernel&amp;module=Flags_intf.S&amp;type=t">t</a> -&gt; <a href="?package=core_kernel&amp;module=Flags_intf.S&amp;type=t">t</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=core_kernel&amp;module=Flags_intf.S&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+		</div>
+</div>
+
+<div class="ocaml_module sig" name="Make_arg">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Flags_intf.Make_arg">Make_arg</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+ 
+      <pre><span><span class="keyword">val</span> known</span> : <code class="type">(<a href="?package=core_kernel&amp;module=Flags_intf.Int63&amp;type=t">Int63.t</a> * string) list</code></pre>
+      <div class="info">An entry <code class="code">flag, name</code> in <code class="code">known</code> means that the bit(s) in <code class="code">flag</code> is (are) called
+      <code class="code">name</code>; i.e. if <code class="code">bit_and flags flag = flag</code>, then the bit(s) is (are) set and <code class="code">name</code>
+      will appear in <code class="code">sexp_of_t flags</code>.  <code class="code">known</code> is only used to make <code class="code">sexp_of_t</code>'s output
+      human readable.<br/>      The flags in the output of <code class="code">sexp_of_t</code> will occur in the same order as they appear
+      in <code class="code">known</code>.<br/>      It is allowed to have a single flag with multiple bits set.<br/>      It is an error if different flags intersect, and <code class="code">allow_intersecting = false</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> remove_zero_flags</span> : <code class="type">bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> allow_intersecting</span> : <code class="type">bool</code></pre>
+      <div class="info"><code class="code">allow_intersecting</code> says whether to allow intersecting <code class="code">known</code> flags.  It is
+      common to do <code class="code">allow_intersecting = false</code>, however in some situations, e.g.
+      Unix open flags, the flags intersect.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> should_print_error</span> : <code class="type">bool</code></pre>
+      <div class="info"><code class="code">should_print_error</code> says whether to print an error message if there is an error in
+      the known flags.  It is typical to use <code class="code">should_print_error = true</code> because
+      <code class="code">Flags.Make</code> is applied at the module level, where the exception raised isn't
+      displayed nicely.</div>
+    
+		</div>
+</div>
+<div class="ocaml_module sig" name="Flags">
+		<pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Flags_intf.Flags">Flags</a> = <code class="type"><code class="code">sig</code> .. <code class="code">end</code></code></pre>
+		<div class="ocaml_module_content">
+		       
+<div class="ocaml_module ident" name="Make_arg" path="?package=core_kernel&amp;amp;module=Flags_intf.Make_arg">
+		    <pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Flags_intf.Flags.Make_arg">Make_arg</a> = <code class="type"><code class="code"><a href="?package=core_kernel&amp;module=Flags_intf.Make_arg">Make_arg</a></code></code></pre>
+</div>
+<div class="ocaml_module ident" name="S" path="?package=core_kernel&amp;amp;module=Flags_intf.S">
+		    <pre><span class="keyword">module type</span> <a href="?package=core_kernel&amp;module=Flags_intf.Flags.S">S</a> = <code class="type"><code class="code"><a href="?package=core_kernel&amp;module=Flags_intf.S">S</a></code></code></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">bit:int -&gt; <a href="?package=core_kernel&amp;module=Flags_intf.Int63&amp;type=t">Int63.t</a></code></pre>
+      <div class="info"><code class="code">create ~bit:n</code> creates a flag with the <code class="code">n</code>th bit set.  <code class="code">n</code> must be between 0 and
+      62.<br/>      Typically a flag has one bit set; <code class="code">create</code> is useful in exactly those cases.  For
+      flags with multiple bits one can either define the Int63.t directly or create it in
+      terms of simpler flags, using <code class="code">+</code> and <code class="code">-</code>.</div>
+    
+<div class="ocaml_module ident" name="Make" path="?package=core_kernel&amp;amp;module=Flags_intf.Flags.S">
+		    <pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Flags_intf.Flags.Make">Make</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="type"><a href="?package=core_kernel&amp;module=Flags_intf.Flags.Make_arg">Make_arg</a></code><code class="code">) -&gt; </code><code class="code"><a href="?package=core_kernel&amp;module=Flags_intf.Flags.S">S</a></code> with type <a href="?package=core_kernel&amp;module=Flags_intf.S&amp;type=t">t</a> = <a href="?package=core_kernel&amp;module=Flags_intf.Int63&amp;type=t">Int63.t</a></div></pre><div class="info"><code class="code">Flags.Make</code> builds a new flags module.  If there is an error in the <code class="code">known</code> flags,
+      it behaves as per <code class="code">on_error</code>.<br/>      We expose <code class="code">type t = int</code> in the result of <code class="code">Flags.Make</code> so that one can easily use
+      flag constants as values of the flag type without having to coerce them.  It is
+      typical to hide the <code class="code">t = int</code> in another signature <code class="code">S</code>.</div>
+</div>
+		</div>
+</div>
+</div>

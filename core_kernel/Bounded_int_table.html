@@ -1,17 +1,5 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-
-<title>Bounded_int_table</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Bounded_int_table</h1>
-<pre><span class="keyword">module</span> Bounded_int_table</pre><div class="info">A <code class="code">Bounded_int_table</code> is a table whose keys can be mapped to integers in a fixed
+<div class="ocaml_toplevel_module">
+<div class="info">A <code class="code">Bounded_int_table</code> is a table whose keys can be mapped to integers in a fixed
     range, 0 ... num_keys-1, where <code class="code">num_keys</code> is specified at table-creation time.  The
     purpose of <code class="code">Bounded_int_table</code> is to be faster than <code class="code">Hashtbl</code> in situations where one
     is willing to pay a space cost for the speed.<br/>    <code class="code">Bounded_int_table</code> presents a subset of the <code class="code">Hashtbl</code> interface.  The key type can be
@@ -26,7 +14,205 @@
     two array operations.  Operations that deal with all of the keys defined in the table
     (data, fold, iter, iter_vals, keys, to_alist) take time proportional to the <code class="code">length</code>
     of the table, not <code class="code">num_keys</code>.</div>
-<hr/>
-<div file="Bounded_int_table.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('key, 'data) </code>t</span> </pre>
+      
+    
+<pre><span id="TYPEtable"><span class="keyword">type</span> <code class="type">('a, 'b) </code>table</span> = <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Bounded_int_table&amp;type=t">t</a></code> </pre>
+      
+    
+<div class="ocaml_include ident" path="?package=core_kernel&amp;amp;module=Equal.S2" items="[]">
+		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=core_kernel&amp;module=Equal.S2">Equal.S2</a></code> with type t = ('a, 'b) <a href="?package=core_kernel&amp;module=Bounded_int_table&amp;type=t">t</a></pre>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> invariant</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Bounded_int_table&amp;type=t">t</a> -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">?sexp_of_key:('key -&gt; <a href="?package=core_kernel&amp;module=Std_internal.Sexp&amp;type=t">Std_internal.Sexp.t</a>) -&gt;
+num_keys:int -&gt; key_to_int:('key -&gt; int) -&gt; unit -&gt; ('key, 'data) <a href="?package=core_kernel&amp;module=Bounded_int_table&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">create ~num_keys ~key_to_int</code> returns a table where the keys can map to 0
+    .. num_keys-1, according to <code class="code">key_to_int</code>.  It is an error if <code class="code">num_keys &lt; 0</code>.<br/>    <code class="code">sexp_of_key</code>, if supplied, will be used to display keys in error messages.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> keys</span> : <code class="type">('key, 'a) <a href="?package=core_kernel&amp;module=Bounded_int_table&amp;type=t">t</a> -&gt; 'key list</code></pre>
+      <div class="info">Standard hashtbl functions.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> data</span> : <code class="type">('a, 'data) <a href="?package=core_kernel&amp;module=Bounded_int_table&amp;type=t">t</a> -&gt; 'data list</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find</span> : <code class="type">('key, 'data) <a href="?package=core_kernel&amp;module=Bounded_int_table&amp;type=t">t</a> -&gt; 'key -&gt; 'data option</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_exn</span> : <code class="type">('key, 'data) <a href="?package=core_kernel&amp;module=Bounded_int_table&amp;type=t">t</a> -&gt; 'key -&gt; 'data</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> find_or_add</span> : <code class="type">('key, 'data) <a href="?package=core_kernel&amp;module=Bounded_int_table&amp;type=t">t</a> -&gt; 'key -&gt; default:(unit -&gt; 'data) -&gt; 'data</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> fold</span> : <code class="type">('key, 'data) <a href="?package=core_kernel&amp;module=Bounded_int_table&amp;type=t">t</a> -&gt;
+init:'accum -&gt; f:(key:'key -&gt; data:'data -&gt; 'accum -&gt; 'accum) -&gt; 'accum</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter</span> : <code class="type">('key, 'data) <a href="?package=core_kernel&amp;module=Bounded_int_table&amp;type=t">t</a> -&gt; f:(key:'key -&gt; data:'data -&gt; unit) -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> iter_vals</span> : <code class="type">('a, 'data) <a href="?package=core_kernel&amp;module=Bounded_int_table&amp;type=t">t</a> -&gt; f:('data -&gt; unit) -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> filter_mapi</span> : <code class="type">('key, 'data1) <a href="?package=core_kernel&amp;module=Bounded_int_table&amp;type=t">t</a> -&gt;
+f:(key:'key -&gt; data:'data1 -&gt; 'data2 option) -&gt; ('key, 'data2) <a href="?package=core_kernel&amp;module=Bounded_int_table&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> filter_map</span> : <code class="type">('key, 'data1) <a href="?package=core_kernel&amp;module=Bounded_int_table&amp;type=t">t</a> -&gt; f:('data1 -&gt; 'data2 option) -&gt; ('key, 'data2) <a href="?package=core_kernel&amp;module=Bounded_int_table&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mapi</span> : <code class="type">('key, 'data1) <a href="?package=core_kernel&amp;module=Bounded_int_table&amp;type=t">t</a> -&gt; f:(key:'key -&gt; data:'data1 -&gt; 'data2) -&gt; ('key, 'data2) <a href="?package=core_kernel&amp;module=Bounded_int_table&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> map</span> : <code class="type">('key, 'data1) <a href="?package=core_kernel&amp;module=Bounded_int_table&amp;type=t">t</a> -&gt; f:('data1 -&gt; 'data2) -&gt; ('key, 'data2) <a href="?package=core_kernel&amp;module=Bounded_int_table&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> for_alli</span> : <code class="type">('key, 'data) <a href="?package=core_kernel&amp;module=Bounded_int_table&amp;type=t">t</a> -&gt; f:(key:'key -&gt; data:'data -&gt; bool) -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> existsi</span> : <code class="type">('key, 'data) <a href="?package=core_kernel&amp;module=Bounded_int_table&amp;type=t">t</a> -&gt; f:(key:'key -&gt; data:'data -&gt; bool) -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> for_all</span> : <code class="type">('a, 'data) <a href="?package=core_kernel&amp;module=Bounded_int_table&amp;type=t">t</a> -&gt; f:('data -&gt; bool) -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> exists</span> : <code class="type">('a, 'data) <a href="?package=core_kernel&amp;module=Bounded_int_table&amp;type=t">t</a> -&gt; f:('data -&gt; bool) -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> length</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Bounded_int_table&amp;type=t">t</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mem</span> : <code class="type">('key, 'a) <a href="?package=core_kernel&amp;module=Bounded_int_table&amp;type=t">t</a> -&gt; 'key -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> remove</span> : <code class="type">('key, 'a) <a href="?package=core_kernel&amp;module=Bounded_int_table&amp;type=t">t</a> -&gt; 'key -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> set</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Bounded_int_table&amp;type=t">t</a> -&gt; key:'a -&gt; data:'b -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Bounded_int_table&amp;type=t">t</a> -&gt; key:'a -&gt; data:'b -&gt; [ `Duplicate of 'b | `Ok ]</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add_exn</span> : <code class="type">('a, 'b) <a href="?package=core_kernel&amp;module=Bounded_int_table&amp;type=t">t</a> -&gt; key:'a -&gt; data:'b -&gt; unit</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> to_alist</span> : <code class="type">('key, 'data) <a href="?package=core_kernel&amp;module=Bounded_int_table&amp;type=t">t</a> -&gt; ('key * 'data) list</code></pre>
+      
+    
+<div class="ocaml_module sig" name="With_key">
+		<pre><span class="keyword">module</span> <a href="?package=core_kernel&amp;module=Bounded_int_table.With_key">With_key</a> : <div class="sig_block"><code class="code">functor (</code><code class="code">Key</code><code class="code"> : </code><code class="code">sig</code> .. <code class="code">end</code><code class="code">) -&gt; </code><code class="code">sig</code> .. <code class="code">end</code></div></pre>
+		<div class="ocaml_module_content">
+		       
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'data </code>t</span> = <code class="type">(Key.t, 'data) <a href="?package=core_kernel&amp;module=Bounded_int_table&amp;type=table">table</a></code> </pre>
+      <div class="info">Serialization of a bounded int table using <code class="code">bin_io</code> or <code class="code">sexp</code> preserves <code class="code">num_keys</code>,
+      but only takes space proportional to the <code class="code">length</code> of the table.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> create</span> : <code class="type">num_keys:int -&gt; 'data <a href="?package=core_kernel&amp;module=Bounded_int_table.With_key&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_alist</span> : <code class="type">(Key.t * 'data) list -&gt; 'data <a href="?package=core_kernel&amp;module=Bounded_int_table.With_key&amp;type=t">t</a> <a href="?package=core_kernel&amp;module=Or_error&amp;type=t">Or_error.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> of_alist_exn</span> : <code class="type">(Key.t * 'data) list -&gt; 'data <a href="?package=core_kernel&amp;module=Bounded_int_table.With_key&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t_of_sexp</span> : <code class="type">(<a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'data) -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a> -&gt; 'data <a href="?package=core_kernel&amp;module=Bounded_int_table.With_key&amp;type=t">t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('data -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; 'data <a href="?package=core_kernel&amp;module=Bounded_int_table.With_key&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_t</span> : <code class="type">'data <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a> -&gt; 'data <a href="?package=core_kernel&amp;module=Bounded_int_table.With_key&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=t">Bin_prot.Type_class.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t</span> : <code class="type">'data <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt; 'data <a href="?package=core_kernel&amp;module=Bounded_int_table.With_key&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Read_ml&amp;type=reader">Bin_prot.Read_ml.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t_</span> : <code class="type">'data <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt; 'data <a href="?package=core_kernel&amp;module=Bounded_int_table.With_key&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_read_t__</span> : <code class="type">'data <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a> -&gt;
+(int -&gt; 'data <a href="?package=core_kernel&amp;module=Bounded_int_table.With_key&amp;type=t">t</a>) <a href="?package=bin_prot&amp;module=Unsafe_read_c&amp;type=reader">Bin_prot.Unsafe_read_c.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_reader_t</span> : <code class="type">'data <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a> -&gt; 'data <a href="?package=core_kernel&amp;module=Bounded_int_table.With_key&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=reader">Bin_prot.Type_class.reader</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_size_t</span> : <code class="type">'data <a href="?package=bin_prot&amp;module=Size&amp;type=sizer">Bin_prot.Size.sizer</a> -&gt; 'data <a href="?package=core_kernel&amp;module=Bounded_int_table.With_key&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Size&amp;type=sizer">Bin_prot.Size.sizer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t</span> : <code class="type">'data <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt; 'data <a href="?package=core_kernel&amp;module=Bounded_int_table.With_key&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Write_ml&amp;type=writer">Bin_prot.Write_ml.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_write_t_</span> : <code class="type">'data <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a> -&gt;
+'data <a href="?package=core_kernel&amp;module=Bounded_int_table.With_key&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Unsafe_write_c&amp;type=writer">Bin_prot.Unsafe_write_c.writer</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> bin_writer_t</span> : <code class="type">'data <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a> -&gt; 'data <a href="?package=core_kernel&amp;module=Bounded_int_table.With_key&amp;type=t">t</a> <a href="?package=bin_prot&amp;module=Type_class&amp;type=writer">Bin_prot.Type_class.writer</a></code></pre>
+      
+    
+		</div>
+</div>
+ 
+      <pre><span><span class="keyword">val</span> debug</span> : <code class="type">bool <a href="?package=stdlib&amp;module=Pervasives&amp;type=ref">ref</a></code></pre>
+      <div class="info">set <code class="code">debug := true</code> to turn on debugging, including potentially slow invariant
+    checking.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('key -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt;
+('data -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a>) -&gt; ('key, 'data) <a href="?package=core_kernel&amp;module=Bounded_int_table&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+<br/><code class="code">create ~num_keys ~key_to_int</code> returns a table where the keys can map to 0
+    .. num_keys-1, according to <code class="code">key_to_int</code>.  It is an error if <code class="code">num_keys &lt; 0</code>.<br/>    <code class="code">sexp_of_key</code>, if supplied, will be used to display keys in error messages.<br/>
+	  
+<br/>Standard hashtbl functions.<br/>
+	  
+<br/>Serialization of a bounded int table using <code class="code">bin_io</code> or <code class="code">sexp</code> preserves <code class="code">num_keys</code>,
+      but only takes space proportional to the <code class="code">length</code> of the table.<br/>
+	  
+<br/>set <code class="code">debug := true</code> to turn on debugging, including potentially slow invariant
+    checking.<br/>
+	  </div>

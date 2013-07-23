@@ -1,0 +1,246 @@
+<div class="ocaml_toplevel_module">
+<div class="info">Operation on rational numbers.<br/>    This module is used to support the implementation of TODO reference : Num and
+    should not be called directly.</div>
+<pre><span id="TYPEratio"><span class="keyword">type</span> ratio</span> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> null_denominator</span> : <code class="type"><a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> numerator_ratio</span> : <code class="type"><a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; <a href="?package=stdlib&amp;module=Big_int&amp;type=big_int">Big_int.big_int</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> denominator_ratio</span> : <code class="type"><a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; <a href="?package=stdlib&amp;module=Big_int&amp;type=big_int">Big_int.big_int</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sign_ratio</span> : <code class="type"><a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> normalize_ratio</span> : <code class="type"><a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> cautious_normalize_ratio</span> : <code class="type"><a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> cautious_normalize_ratio_when_printing</span> : <code class="type"><a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create_ratio</span> : <code class="type"><a href="?package=stdlib&amp;module=Big_int&amp;type=big_int">Big_int.big_int</a> -&gt; <a href="?package=stdlib&amp;module=Big_int&amp;type=big_int">Big_int.big_int</a> -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> create_normalized_ratio</span> : <code class="type"><a href="?package=stdlib&amp;module=Big_int&amp;type=big_int">Big_int.big_int</a> -&gt; <a href="?package=stdlib&amp;module=Big_int&amp;type=big_int">Big_int.big_int</a> -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_normalized_ratio</span> : <code class="type"><a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> report_sign_ratio</span> : <code class="type"><a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; <a href="?package=stdlib&amp;module=Big_int&amp;type=big_int">Big_int.big_int</a> -&gt; <a href="?package=stdlib&amp;module=Big_int&amp;type=big_int">Big_int.big_int</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> abs_ratio</span> : <code class="type"><a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_integer_ratio</span> : <code class="type"><a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add_ratio</span> : <code class="type"><a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> minus_ratio</span> : <code class="type"><a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add_int_ratio</span> : <code class="type">int -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> add_big_int_ratio</span> : <code class="type"><a href="?package=stdlib&amp;module=Big_int&amp;type=big_int">Big_int.big_int</a> -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> sub_ratio</span> : <code class="type"><a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mult_ratio</span> : <code class="type"><a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mult_int_ratio</span> : <code class="type">int -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> mult_big_int_ratio</span> : <code class="type"><a href="?package=stdlib&amp;module=Big_int&amp;type=big_int">Big_int.big_int</a> -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> square_ratio</span> : <code class="type"><a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> inverse_ratio</span> : <code class="type"><a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> div_ratio</span> : <code class="type"><a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> integer_ratio</span> : <code class="type"><a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; <a href="?package=stdlib&amp;module=Big_int&amp;type=big_int">Big_int.big_int</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> floor_ratio</span> : <code class="type"><a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; <a href="?package=stdlib&amp;module=Big_int&amp;type=big_int">Big_int.big_int</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> round_ratio</span> : <code class="type"><a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; <a href="?package=stdlib&amp;module=Big_int&amp;type=big_int">Big_int.big_int</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ceiling_ratio</span> : <code class="type"><a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; <a href="?package=stdlib&amp;module=Big_int&amp;type=big_int">Big_int.big_int</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> eq_ratio</span> : <code class="type"><a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> compare_ratio</span> : <code class="type"><a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> lt_ratio</span> : <code class="type"><a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> le_ratio</span> : <code class="type"><a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> gt_ratio</span> : <code class="type"><a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ge_ratio</span> : <code class="type"><a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> max_ratio</span> : <code class="type"><a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> min_ratio</span> : <code class="type"><a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> eq_big_int_ratio</span> : <code class="type"><a href="?package=stdlib&amp;module=Big_int&amp;type=big_int">Big_int.big_int</a> -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> compare_big_int_ratio</span> : <code class="type"><a href="?package=stdlib&amp;module=Big_int&amp;type=big_int">Big_int.big_int</a> -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> lt_big_int_ratio</span> : <code class="type"><a href="?package=stdlib&amp;module=Big_int&amp;type=big_int">Big_int.big_int</a> -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> le_big_int_ratio</span> : <code class="type"><a href="?package=stdlib&amp;module=Big_int&amp;type=big_int">Big_int.big_int</a> -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> gt_big_int_ratio</span> : <code class="type"><a href="?package=stdlib&amp;module=Big_int&amp;type=big_int">Big_int.big_int</a> -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ge_big_int_ratio</span> : <code class="type"><a href="?package=stdlib&amp;module=Big_int&amp;type=big_int">Big_int.big_int</a> -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> int_of_ratio</span> : <code class="type"><a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; int</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ratio_of_int</span> : <code class="type">int -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ratio_of_nat</span> : <code class="type"><a href="?package=stdlib&amp;module=Nat&amp;type=nat">Nat.nat</a> -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> nat_of_ratio</span> : <code class="type"><a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; <a href="?package=stdlib&amp;module=Nat&amp;type=nat">Nat.nat</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ratio_of_big_int</span> : <code class="type"><a href="?package=stdlib&amp;module=Big_int&amp;type=big_int">Big_int.big_int</a> -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> big_int_of_ratio</span> : <code class="type"><a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; <a href="?package=stdlib&amp;module=Big_int&amp;type=big_int">Big_int.big_int</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> div_int_ratio</span> : <code class="type">int -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> div_ratio_int</span> : <code class="type"><a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; int -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> div_big_int_ratio</span> : <code class="type"><a href="?package=stdlib&amp;module=Big_int&amp;type=big_int">Big_int.big_int</a> -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> div_ratio_big_int</span> : <code class="type"><a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; <a href="?package=stdlib&amp;module=Big_int&amp;type=big_int">Big_int.big_int</a> -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> approx_ratio_fix</span> : <code class="type">int -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> approx_ratio_exp</span> : <code class="type">int -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> float_of_rational_string</span> : <code class="type"><a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> string_of_ratio</span> : <code class="type"><a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; string</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> ratio_of_string</span> : <code class="type">string -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> float_of_ratio</span> : <code class="type"><a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; float</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> power_ratio_positive_int</span> : <code class="type"><a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; int -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> power_ratio_positive_big_int</span> : <code class="type"><a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a> -&gt; <a href="?package=stdlib&amp;module=Big_int&amp;type=big_int">Big_int.big_int</a> -&gt; <a href="?package=stdlib&amp;module=Ratio&amp;type=ratio">ratio</a></code></pre>
+      
+    </div>

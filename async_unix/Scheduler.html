@@ -1,23 +1,259 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-
-<title>Scheduler</title>
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>
-<script type="text/javascript" src="doc_loader.js"> </script>
-</head>
-<body>
-
-<h1>Module Scheduler</h1>
-<pre><span class="keyword">module</span> Scheduler</pre><div class="info">Threading model:<br/>    Only one thread is running Async code at a time.  This is enforced by a single lock in
+<div class="ocaml_toplevel_module">
+<div class="info">Threading model:<br/>    Only one thread is running Async code at a time.  This is enforced by a single lock in
     Async's scheduler data structure.  There are any number of threads running code
     without holding the lock that get data from the outside world and want to affect the
     Async world.  They do this by calling <code class="code">Thread_safe.run_in_async*</code>, which acquires the
     lock, does a computation (e.g. fills an ivar), and then runs a &quot;cycle&quot; of Async
     computations.</div>
-<hr/>
-<div file="Scheduler.html.contents" class="content_to_load"> </div>
-</body>
-</html>
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> = <code class="type"><a href="?package=async_unix&amp;module=Raw_scheduler&amp;type=t">Raw_scheduler.t</a></code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> t</span> : <code class="type">unit -&gt; <a href="?package=async_unix&amp;module=Scheduler&amp;type=t">t</a></code></pre>
+      <div class="info"><code class="code">t ()</code> returns the async scheduler.  If the scheduler hasn't been created yet, this
+    will create it and acquire the async lock.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> go</span> : <code class="type">?raise_unhandled_exn:bool -&gt; unit -&gt; <a href="?package=core&amp;module=Std&amp;type=never_returns">Core.Std.never_returns</a></code></pre>
+      <div class="info"><code class="code">go ?raise_unhandled_exn ()</code> passes control to Async, at which point Async starts
+    running handlers, one by one without interruption, until there are no more handlers to
+    run.  When Async is out of handlers it blocks until the outside world schedules more
+    of them.  Because of this, Async programs do not exit until <code class="code">shutdown</code> is called.<br/>    <code class="code">go ()</code> calls <code class="code">handle_signal Sys.sigpipe</code>, which causes the SIGPIPE signal to be
+    ignored.  Low-level syscalls (e.g. write) still raise EPIPE.<br/>    If any async job raises an unhandled exception that is not handled by any monitor,
+    async execution ceases.  Then, by default, async pretty prints the exception, and
+    exits with status 1.  If you don't want this, pass <code class="code">~raise_unhandled_exn:true</code>, which
+    will cause the unhandled exception to be raised to the caller of <code class="code">go ()</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> go_main</span> : <code class="type">?raise_unhandled_exn:bool -&gt;
+?file_descr_watcher:<a href="?package=async_unix&amp;module=Import.Config.File_descr_watcher&amp;type=t">Import.Config.File_descr_watcher.t</a> -&gt;
+main:(unit -&gt; unit) -&gt; unit -&gt; <a href="?package=core&amp;module=Std&amp;type=never_returns">Core.Std.never_returns</a></code></pre>
+      <div class="info"><code class="code">go_main</code> is like <code class="code">go</code>, except that one supplies a <code class="code">main</code> function that will be run to
+    initialize the async computation, and that <code class="code">go_main</code> will fail if any async has been
+    used prior to <code class="code">go_main</code> being called.  Moreover it allows to configure more static
+    options of the scheduler.</div>
+    
+<pre><span id="TYPEwith_options"><span class="keyword">type</span> <code class="type">'a </code>with_options</span> = <code class="type">?monitor:<a href="?package=async_unix&amp;module=Import.Monitor&amp;type=t">Import.Monitor.t</a> -&gt; ?priority:<a href="?package=async_unix&amp;module=Import.Priority&amp;type=t">Import.Priority.t</a> -&gt; 'a</code> </pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> within_context</span> : <code class="type"><a href="?package=async_unix&amp;module=Import.Execution_context&amp;type=t">Import.Execution_context.t</a> -&gt; (unit -&gt; 'a) -&gt; ('a, unit) <a href="?package=core&amp;module=Std.Result&amp;type=t">Core.Std.Result.t</a></code></pre>
+      <div class="info"><code class="code">within_context context f</code> runs <code class="code">f ()</code> right now with the specified execution
+    context.  If <code class="code">f</code> raises, then the exception is sent to the monitor of <code class="code">context</code>, and
+    <code class="code">Error ()</code> is returned.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> within'</span> : <code class="type">((unit -&gt; 'a <a href="?package=async_unix&amp;module=Import.Deferred&amp;type=t">Import.Deferred.t</a>) -&gt; 'a <a href="?package=async_unix&amp;module=Import.Deferred&amp;type=t">Import.Deferred.t</a>) <a href="?package=async_unix&amp;module=Scheduler&amp;type=with_options">with_options</a></code></pre>
+      <div class="info"><code class="code">within' f ~monitor ~priority</code> runs <code class="code">f ()</code> right now, with the specified
+    block group, monitor, and priority set as specified.  They will be reset to their
+    original values when <code class="code">f</code> returns.  If <code class="code">f</code> raises, then the result of <code class="code">within'</code> will
+    never become determined, but the exception will end up in the specified monitor.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> within</span> : <code class="type">((unit -&gt; unit) -&gt; unit) <a href="?package=async_unix&amp;module=Scheduler&amp;type=with_options">with_options</a></code></pre>
+      <div class="info"><code class="code">within</code> is like <code class="code">within'</code>, but doesn't require thunk to return a deferred.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> within_v</span> : <code class="type">((unit -&gt; 'a) -&gt; 'a option) <a href="?package=async_unix&amp;module=Scheduler&amp;type=with_options">with_options</a></code></pre>
+      <div class="info"><code class="code">within_v</code> is like <code class="code">within</code>, but allows a value to be returned by <code class="code">f</code>.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> schedule'</span> : <code class="type">((unit -&gt; 'a <a href="?package=async_unix&amp;module=Import.Deferred&amp;type=t">Import.Deferred.t</a>) -&gt; 'a <a href="?package=async_unix&amp;module=Import.Deferred&amp;type=t">Import.Deferred.t</a>) <a href="?package=async_unix&amp;module=Scheduler&amp;type=with_options">with_options</a></code></pre>
+      <div class="info">Just like <code class="code">within'</code>, but instead of running thunk right now, adds
+    it to the async queue to be run with other async jobs.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> schedule</span> : <code class="type">((unit -&gt; unit) -&gt; unit) <a href="?package=async_unix&amp;module=Scheduler&amp;type=with_options">with_options</a></code></pre>
+      <div class="info">Just like schedule', but doesn't require thunk to return a deferred.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> preserve_execution_context</span> : <code class="type">('a -&gt; unit) -&gt; ('a -&gt; unit) <a href="?package=core&amp;module=Std.Staged&amp;type=t">Core.Std.Staged.t</a></code></pre>
+      <div class="info"><code class="code">preserve_execution_context t f</code> saves the current execution context and returns a
+    function <code class="code">g</code> such that <code class="code">g a</code> runs <code class="code">f a</code> in the saved execution context.  <code class="code">g a</code> becomes
+    determined when <code class="code">f a</code> becomes determined.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> preserve_execution_context'</span> : <code class="type">('a -&gt; 'b <a href="?package=async_unix&amp;module=Import.Deferred&amp;type=t">Import.Deferred.t</a>) -&gt;
+('a -&gt; 'b <a href="?package=async_unix&amp;module=Import.Deferred&amp;type=t">Import.Deferred.t</a>) <a href="?package=core&amp;module=Std.Staged&amp;type=t">Core.Std.Staged.t</a></code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> cycle_start</span> : <code class="type">unit -&gt; <a href="?package=core&amp;module=Std.Time&amp;type=t">Core.Std.Time.t</a></code></pre>
+      <div class="info"><code class="code">cycle_start ()</code> returns the result of <code class="code">Time.now ()</code> called at the beginning of
+    cycle.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> cycle_times</span> : <code class="type">unit -&gt; <a href="?package=core&amp;module=Std.Time.Span&amp;type=t">Core.Std.Time.Span.t</a> <a href="?package=async_unix&amp;module=Import.Stream&amp;type=t">Import.Stream.t</a></code></pre>
+      <div class="info"><code class="code">cycle_times ()</code> returns a stream that will have one element for each cycle that Async
+    runs, with the amount of time that the cycle took (as determined by calls to Time.now
+    at the beginning and end of the cycle).</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> report_long_cycle_times</span> : <code class="type">?cutoff:<a href="?package=core&amp;module=Std.Time.Span&amp;type=t">Core.Std.Time.Span.t</a> -&gt; unit -&gt; unit</code></pre>
+      <div class="info"><code class="code">report_long_cycle_times ?cutoff ()</code> sets up something that will print a warning to
+    stderr whenever there is an async cycle that is too long, as specified by <code class="code">cutoff</code>,
+    whose default is 1s.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> cycle_count</span> : <code class="type">unit -&gt; int</code></pre>
+      <div class="info"><code class="code">cycle_count ()</code> returns the total number of async cycles that have happened.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> force_current_cycle_to_end</span> : <code class="type">unit -&gt; unit</code></pre>
+      <div class="info"><code class="code">force_current_cycle_to_end ()</code> causes no more normal priority jobs to run in the
+    current cycle, and for the end-of-cycle jobs (i.e. writes) to run, and then for the
+    cycle to end.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> is_running</span> : <code class="type">unit -&gt; bool</code></pre>
+      <div class="info"><code class="code">is_running ()</code> returns true if the scheduler has been started.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> set_max_num_jobs_per_priority_per_cycle</span> : <code class="type">int -&gt; unit</code></pre>
+      <div class="info"><code class="code">set_max_num_jobs_per_priority_per_cycle int</code> sets the maximum number of jobs that
+    will be done at each priority within each async cycle.  The default is <code class="code">500</code>.</div>
+    
+<pre><code><span id="TYPEfolder"><span class="keyword">type</span> <code class="type">'b </code>folder</span> = {</code></pre><table class="typetable">
+		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTfolder.folder">folder</span> :<code class="type">'a. 'b -&gt; <a href="?package=async_unix&amp;module=Scheduler&amp;type=t">t</a> -&gt; (<a href="?package=async_unix&amp;module=Scheduler&amp;type=t">t</a>, 'a) <a href="?package=core&amp;module=Std.Field&amp;type=t">Core.Std.Field.t</a> -&gt; 'b</code>;</code></td>
+	  </tr></table>}
+      <div class="info"><code class="code">fold_fields ~init folder</code> folds <code class="code">folder</code> over each field in the scheduler.  The
+    fields themselves are not exposed -- <code class="code">folder</code> must be a polymorphic function that
+    can work on any field.  So, it's only useful for generic operations, e.g. getting
+    the size of each field.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> fold_fields</span> : <code class="type">init:'b -&gt; 'b <a href="?package=async_unix&amp;module=Scheduler&amp;type=folder">folder</a> -&gt; 'b</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> is_ready_to_initialize</span> : <code class="type">unit -&gt; bool</code></pre>
+      
+    
+ 
+      <pre><span><span class="keyword">val</span> reset_in_forked_process</span> : <code class="type">unit -&gt; unit</code></pre>
+      <div class="info">If a process that has already created, but not started, the async scheduler would like
+    to fork, and would like the child to have a clean async, i.e. not inherit any of the
+    async work that was done in the parent, it can call <code class="code">reset_in_forked_process</code> at the
+    start of execution in the child process.  After that, the child can do async stuff and
+    then start the async scheduler.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> add_busy_poller</span> : <code class="type">(unit -&gt; [ `Continue_polling | `Stop_polling of 'a ]) -&gt; 'a <a href="?package=async_unix&amp;module=Import.Deferred&amp;type=t">Import.Deferred.t</a></code></pre>
+      <div class="info">Async supports &quot;busy polling&quot;, which runs a thread that busy loops running
+    user-supplied polling functions.  The busy-loop thread is distinct from async's
+    scheduler thread.<br/>    Busy polling is useful for a situation like a shared-memory ringbuffer being used for
+    IPC.  One can poll the ringbuffer with a busy poller, and then when data is detected,
+    fill some ivar that causes async code to handle the data.<br/>    <code class="code">add_busy_poller poll</code> adds <code class="code">poll</code> to the busy loop.  <code class="code">poll</code> will be called
+    continuously, once per iteration of the busy loop, until it returns <code class="code">`Stop_polling a</code>
+    at which point the result of <code class="code">add_busy_poller</code> will become determined.  <code class="code">poll</code> will
+    hold the async lock while running, so it is fine to do ordinary async operations,
+    e.g. fill an ivar.  The busy loop will run an ordinary async cycle if any of the
+    pollers add jobs.<br/>    <code class="code">poll</code> will run in monitor in effect when <code class="code">add_busy_poller</code> was called; exceptions
+    raised by <code class="code">poll</code> will be sent asynchronously to that monitor.  If <code class="code">poll</code> raises, it
+    will still be run on subsequent iterations of the busy loop.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> handle_thread_pool_stuck</span> : <code class="type">(<a href="?package=core&amp;module=Std.Time.Span&amp;type=t">Core.Std.Time.Span.t</a> -&gt; unit) -&gt; unit</code></pre>
+      <div class="info"><code class="code">handle_thread_pool_stuck f</code> causes <code class="code">f</code> to run whenever async detects its thread pool
+    is stuck (i.e. hasn't completed a job for over a second and has no available threads).
+    Async checks every second.  By default, if thread pool has been stuck for less than
+    60s, async will <code class="code">eprintf</code> a message.  If more than 60s, async will send an exception
+    to the main monitor, which will abort the program unless there is a custom handler for
+    the main monitor.<br/>    Calling <code class="code">handle_thread_pool_stuck</code> replaces whatever behavior was previously there.</div>
+    
+ 
+      <pre><span><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="?package=async_unix&amp;module=Scheduler&amp;type=t">t</a> -&gt; <a href="?package=sexplib&amp;module=Sexp&amp;type=t">Sexplib.Sexp.t</a></code></pre>
+      
+    
+<br/><code class="code">t ()</code> returns the async scheduler.  If the scheduler hasn't been created yet, this
+    will create it and acquire the async lock.<br/>
+	  
+<br/><code class="code">go ?raise_unhandled_exn ()</code> passes control to Async, at which point Async starts
+    running handlers, one by one without interruption, until there are no more handlers to
+    run.  When Async is out of handlers it blocks until the outside world schedules more
+    of them.  Because of this, Async programs do not exit until <code class="code">shutdown</code> is called.<br/>    <code class="code">go ()</code> calls <code class="code">handle_signal Sys.sigpipe</code>, which causes the SIGPIPE signal to be
+    ignored.  Low-level syscalls (e.g. write) still raise EPIPE.<br/>    If any async job raises an unhandled exception that is not handled by any monitor,
+    async execution ceases.  Then, by default, async pretty prints the exception, and
+    exits with status 1.  If you don't want this, pass <code class="code">~raise_unhandled_exn:true</code>, which
+    will cause the unhandled exception to be raised to the caller of <code class="code">go ()</code>.<br/>
+	  
+<br/><code class="code">go_main</code> is like <code class="code">go</code>, except that one supplies a <code class="code">main</code> function that will be run to
+    initialize the async computation, and that <code class="code">go_main</code> will fail if any async has been
+    used prior to <code class="code">go_main</code> being called.  Moreover it allows to configure more static
+    options of the scheduler.<br/>
+	  
+<br/><code class="code">within_context context f</code> runs <code class="code">f ()</code> right now with the specified execution
+    context.  If <code class="code">f</code> raises, then the exception is sent to the monitor of <code class="code">context</code>, and
+    <code class="code">Error ()</code> is returned.<br/>
+	  
+<br/><code class="code">within' f ~monitor ~priority</code> runs <code class="code">f ()</code> right now, with the specified
+    block group, monitor, and priority set as specified.  They will be reset to their
+    original values when <code class="code">f</code> returns.  If <code class="code">f</code> raises, then the result of <code class="code">within'</code> will
+    never become determined, but the exception will end up in the specified monitor.<br/>
+	  
+<br/><code class="code">within</code> is like <code class="code">within'</code>, but doesn't require thunk to return a deferred.<br/>
+	  
+<br/><code class="code">within_v</code> is like <code class="code">within</code>, but allows a value to be returned by <code class="code">f</code>.<br/>
+	  
+<br/>Just like <code class="code">within'</code>, but instead of running thunk right now, adds
+    it to the async queue to be run with other async jobs.<br/>
+	  
+<br/>Just like schedule', but doesn't require thunk to return a deferred.<br/>
+	  
+<br/><code class="code">preserve_execution_context t f</code> saves the current execution context and returns a
+    function <code class="code">g</code> such that <code class="code">g a</code> runs <code class="code">f a</code> in the saved execution context.  <code class="code">g a</code> becomes
+    determined when <code class="code">f a</code> becomes determined.<br/>
+	  
+<br/><code class="code">cycle_start ()</code> returns the result of <code class="code">Time.now ()</code> called at the beginning of
+    cycle.<br/>
+	  
+<br/><code class="code">cycle_times ()</code> returns a stream that will have one element for each cycle that Async
+    runs, with the amount of time that the cycle took (as determined by calls to Time.now
+    at the beginning and end of the cycle).<br/>
+	  
+<br/><code class="code">report_long_cycle_times ?cutoff ()</code> sets up something that will print a warning to
+    stderr whenever there is an async cycle that is too long, as specified by <code class="code">cutoff</code>,
+    whose default is 1s.<br/>
+	  
+<br/><code class="code">cycle_count ()</code> returns the total number of async cycles that have happened.<br/>
+	  
+<br/><code class="code">force_current_cycle_to_end ()</code> causes no more normal priority jobs to run in the
+    current cycle, and for the end-of-cycle jobs (i.e. writes) to run, and then for the
+    cycle to end.<br/>
+	  
+<br/><code class="code">is_running ()</code> returns true if the scheduler has been started.<br/>
+	  
+<br/><code class="code">set_max_num_jobs_per_priority_per_cycle int</code> sets the maximum number of jobs that
+    will be done at each priority within each async cycle.  The default is <code class="code">500</code>.<br/>
+	  
+<br/><code class="code">fold_fields ~init folder</code> folds <code class="code">folder</code> over each field in the scheduler.  The
+    fields themselves are not exposed -- <code class="code">folder</code> must be a polymorphic function that
+    can work on any field.  So, it's only useful for generic operations, e.g. getting
+    the size of each field.<br/>
+	  
+<br/>If a process that has already created, but not started, the async scheduler would like
+    to fork, and would like the child to have a clean async, i.e. not inherit any of the
+    async work that was done in the parent, it can call <code class="code">reset_in_forked_process</code> at the
+    start of execution in the child process.  After that, the child can do async stuff and
+    then start the async scheduler.<br/>
+	  
+<br/>Async supports &quot;busy polling&quot;, which runs a thread that busy loops running
+    user-supplied polling functions.  The busy-loop thread is distinct from async's
+    scheduler thread.<br/>    Busy polling is useful for a situation like a shared-memory ringbuffer being used for
+    IPC.  One can poll the ringbuffer with a busy poller, and then when data is detected,
+    fill some ivar that causes async code to handle the data.<br/>    <code class="code">add_busy_poller poll</code> adds <code class="code">poll</code> to the busy loop.  <code class="code">poll</code> will be called
+    continuously, once per iteration of the busy loop, until it returns <code class="code">`Stop_polling a</code>
+    at which point the result of <code class="code">add_busy_poller</code> will become determined.  <code class="code">poll</code> will
+    hold the async lock while running, so it is fine to do ordinary async operations,
+    e.g. fill an ivar.  The busy loop will run an ordinary async cycle if any of the
+    pollers add jobs.<br/>    <code class="code">poll</code> will run in monitor in effect when <code class="code">add_busy_poller</code> was called; exceptions
+    raised by <code class="code">poll</code> will be sent asynchronously to that monitor.  If <code class="code">poll</code> raises, it
+    will still be run on subsequent iterations of the busy loop.<br/>
+	  
+<br/><code class="code">handle_thread_pool_stuck f</code> causes <code class="code">f</code> to run whenever async detects its thread pool
+    is stuck (i.e. hasn't completed a job for over a second and has no available threads).
+    Async checks every second.  By default, if thread pool has been stuck for less than
+    60s, async will <code class="code">eprintf</code> a message.  If more than 60s, async will send an exception
+    to the main monitor, which will abort the program unless there is a custom handler for
+    the main monitor.<br/>    Calling <code class="code">handle_thread_pool_stuck</code> replaces whatever behavior was previously there.<br/>
+	  </div>
