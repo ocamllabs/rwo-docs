@@ -115,7 +115,7 @@ main:(unit -&gt; unit) -&gt; unit -&gt; <a href="?package=core&amp;module=Std&am
     
 <pre><code><span id="TYPEfolder"><span class="keyword">type</span> <code class="type">'b </code>folder</span> = {</code></pre><table class="typetable">
 		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTfolder.folder">folder</span> :<code class="type">'a. 'b -&gt; <a href="?package=async_unix&amp;module=Scheduler&amp;type=t">t</a> -&gt; (<a href="?package=async_unix&amp;module=Scheduler&amp;type=t">t</a>, 'a) <a href="?package=core&amp;module=Std.Field&amp;type=t">Core.Std.Field.t</a> -&gt; 'b</code>;</code></td>
-	  </tr></table>}
+        </tr></table>}
       <div class="info"><code class="code">fold_fields ~init folder</code> folds <code class="code">folder</code> over each field in the scheduler.  The
     fields themselves are not exposed -- <code class="code">folder</code> must be a polymorphic function that
     can work on any field.  So, it's only useful for generic operations, e.g. getting

@@ -130,7 +130,7 @@
     
 <pre><code><span id="TYPEreturn"><span class="keyword">type</span> <code class="type">'a </code>return</span> = {<span class="keyword">private</span></code></pre><table class="typetable">
 		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTreturn.return">return</span> :<code class="type">'b. 'a -&gt; 'b</code>;</code></td>
-	  </tr></table>}
+        </tr></table>}
       <div class="info"><code class="code">with_return f</code> allows for something like the return statement in C within <code class="code">f</code>.  There
    are three ways <code class="code">f</code> can terminate:<br/>   1. If <code class="code">f</code> calls <code class="code">r.return x</code>, then <code class="code">x</code> is returned by <code class="code">with_return</code>.
    2. If <code class="code">f</code> evaluates to a value <code class="code">x</code>, then <code class="code">x</code> is returned by <code class="code">with_return</code>.

@@ -1,8 +1,0 @@
-<div class="ocaml_toplevel_module">
-<div class="info"><code class="code">Runtime_blockout_detector</code> is used detect bugs in C libraries that fail
-    to release the OCaml runtime lock before making blocking calls.</div>
- 
-      <pre><span><span class="keyword">val</span> start</span> : <code class="type">?callback:(elapsed:<a href="?package=stdlib&amp;module=Std.Time.Span&amp;type=t">Core.Std.Time.Span.t</a> -&gt; unit) -&gt; unit -&gt; unit</code></pre>
-      <div class="info"><code class="code">start</code> starts a thread that watches for blockouts where the OCaml
-    lock isn't released.  By default, it prints a message to stderr.</div>
-    </div>

@@ -10,16 +10,16 @@
     many input values to be handled uniformly without having to document each one individually.</div>
 <pre><code><span id="TYPEcase"><span class="keyword">type</span> <code class="type">('input, 'output) </code>case</span> = {</code></pre><table class="typetable">
 		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTcase.pattern">pattern</span> :<code class="type">'input list</code>;</code></td>
-	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTcase.documentation">documentation</span> :<code class="type">string</code>;</code></td>
-	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTcase.value">value</span> :<code class="type">'output</code>;</code></td>
-	  </tr></table>}
+        </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTcase.documentation">documentation</span> :<code class="type">string</code>;</code></td>
+        </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTcase.value">value</span> :<code class="type">'output</code>;</code></td>
+        </tr></table>}
       
     
 <pre><code><span id="TYPEt"><span class="keyword">type</span> <code class="type">('input, 'output) </code>t</span> = {</code></pre><table class="typetable">
 		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.specific_cases">specific_cases</span> :<code class="type">('input, unit -&gt; 'output) <a href="?package=core_extended&amp;module=Documented_match_statement&amp;type=case">case</a> list</code>;</code></td>
-	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.catchall_case">catchall_case</span> :<code class="type">[ `Unused of unit -&gt; 'output
+        </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.catchall_case">catchall_case</span> :<code class="type">[ `Unused of unit -&gt; 'output
 | `Used of ([ `Catchall ], 'input -&gt; 'output) <a href="?package=core_extended&amp;module=Documented_match_statement&amp;type=case">case</a> ]</code>;</code></td>
-	  </tr></table>}
+        </tr></table>}
       
     
  

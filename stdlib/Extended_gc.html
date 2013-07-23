@@ -1,7 +1,0 @@
-<div class="ocaml_toplevel_module">
-<div class="info">Extensions to <code class="code">Core.Gc</code>.</div>
- 
-      <pre><span><span class="keyword">val</span> without_compactions</span> : <code class="type">?logger:(string -&gt; unit) -&gt; f:('a -&gt; 'b) -&gt; 'a -&gt; 'b</code></pre>
-      <div class="info"><code class="code">without_compactions f a</code> will call f a so that Gc.compact is never called
-    during its execution, then restore compactions to the previous setting.</div>
-    </div>

@@ -17,10 +17,10 @@
 <div class="ocaml_include ident" path="?package=sexplib&amp;amp;module=Type_with_layout" items="[&quot;Parsed&quot;,&quot;Make&quot;]">
 		      <pre><span class="keyword">include</span> <code class="code"><a href="?package=sexplib&amp;module=Type_with_layout">Type_with_layout</a></code></pre>
 </div>
-<pre><span id="TYPEpos"><span class="keyword">type</span> pos</span> = {<code class="type"><a href="?package=sexplib&amp;module=Src_pos.Relative&amp;type=t">Src_pos.Relative.t</a></code> </pre><table class="typetable">
+<pre><span id="TYPEpos"><span class="keyword">type</span> pos</span> = {<code class="type"><a href="?package=sexplib&amp;module=Src_pos.Relative&amp;type=t">Src_pos.Relative.t</a></code>}</pre><table class="typetable">
 		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTpos.row">row</span> :<code class="type">int</code>;</code></td>
-	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTpos.col">col</span> :<code class="type">int</code>;</code></td>
-	  </tr></table>}
+        </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTpos.col">col</span> :<code class="type">int</code>;</code></td>
+        </tr></table>}
       
     
  
@@ -52,15 +52,15 @@
 </div>
 <pre><code><span id="TYPElast_atom"><span class="keyword">type</span> last_atom</span> = {</code></pre><table class="typetable">
 		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTlast_atom.immed_after">immed_after</span> :<code class="type"><a href="?package=sexplib&amp;module=Sexp_with_layout.Render.Abs_pos&amp;type=t">Abs_pos.t</a></code>;</code></td>
-	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTlast_atom.unescaped">unescaped</span> :<code class="type">bool</code>;</code></td>
-	  </tr></table>}
+        </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTlast_atom.unescaped">unescaped</span> :<code class="type">bool</code>;</code></td>
+        </tr></table>}
       
     
 <pre><code><span id="TYPEstate"><span class="keyword">type</span> state</span> = {</code></pre><table class="typetable">
 		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTstate.row_shift">row_shift</span> :<code class="type"><a href="?package=sexplib&amp;module=Sexp_with_layout.Render.Rel_pos&amp;type=t">Rel_pos.t</a></code>;</code></td>
-	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTstate.current">current</span> :<code class="type"><a href="?package=sexplib&amp;module=Sexp_with_layout.Render.Abs_pos&amp;type=t">Abs_pos.t</a></code>;</code></td>
-	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTstate.last_atom">last_atom</span> :<code class="type"><a href="?package=sexplib&amp;module=Sexp_with_layout.Render&amp;type=last_atom">last_atom</a> option</code>;</code></td>
-	  </tr></table>}
+        </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTstate.current">current</span> :<code class="type"><a href="?package=sexplib&amp;module=Sexp_with_layout.Render.Abs_pos&amp;type=t">Abs_pos.t</a></code>;</code></td>
+        </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTstate.last_atom">last_atom</span> :<code class="type"><a href="?package=sexplib&amp;module=Sexp_with_layout.Render&amp;type=last_atom">last_atom</a> option</code>;</code></td>
+        </tr></table>}
       
     
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t</span> = <code class="type">(char -&gt; unit) -&gt; <a href="?package=sexplib&amp;module=Sexp_with_layout.Render&amp;type=state">state</a> -&gt; 'a</code> </pre>

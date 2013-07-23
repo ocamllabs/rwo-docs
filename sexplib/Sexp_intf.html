@@ -61,12 +61,12 @@
 		<pre><span class="keyword">module</span> <a href="?package=sexplib&amp;module=Sexp_intf.S.Parse_pos">Parse_pos</a> : <code class="code">sig</code> .. <code class="code">end</code></pre>
 		<div class="ocaml_module_content">
 		       
-<pre><span id="TYPEt"><span class="keyword">type</span> t</span> = {<code class="type"><a href="?package=sexplib&amp;module=Pre_sexp.Parse_pos&amp;type=t">Pre_sexp.Parse_pos.t</a></code> <span class="keyword">private</span></pre><table class="typetable">
+<pre><span id="TYPEt"><span class="keyword">type</span> t</span> = {<code class="type"><a href="?package=sexplib&amp;module=Pre_sexp.Parse_pos&amp;type=t">Pre_sexp.Parse_pos.t</a></code>}<span class="keyword">private</span></pre><table class="typetable">
 		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.text_line">text_line</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Line position in parsed text</td>
-	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.text_char">text_char</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Character position in parsed text</td>
-	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.global_offset">global_offset</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Global/logical offset</td>
-	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.buf_pos">buf_pos</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Read position in string buffer</td>
-	  </tr></table>}
+        </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.text_char">text_char</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Character position in parsed text</td>
+        </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.global_offset">global_offset</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Global/logical offset</td>
+        </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTt.buf_pos">buf_pos</span> :<code class="type">int</code>;</code></td><td class="typefieldcomment" align="left">Read position in string buffer</td>
+        </tr></table>}
       <div class="info">Position information after complete parse</div>
     
  
@@ -119,17 +119,17 @@
 		<pre><span class="keyword">module</span> <a href="?package=sexplib&amp;module=Sexp_intf.S.Annotated">Annotated</a> : <code class="code">sig</code> .. <code class="code">end</code></pre><div class="info">Module for parsing S-expressions annotated with location information</div>
 		<div class="ocaml_module_content">
 		       
-<pre><span id="TYPEpos"><span class="keyword">type</span> pos</span> = {<code class="type"><a href="?package=sexplib&amp;module=Pre_sexp.Annotated&amp;type=pos">Pre_sexp.Annotated.pos</a></code> </pre><table class="typetable">
+<pre><span id="TYPEpos"><span class="keyword">type</span> pos</span> = {<code class="type"><a href="?package=sexplib&amp;module=Pre_sexp.Annotated&amp;type=pos">Pre_sexp.Annotated.pos</a></code>}</pre><table class="typetable">
 		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTpos.line">line</span> :<code class="type">int</code>;</code></td>
-	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTpos.col">col</span> :<code class="type">int</code>;</code></td>
-	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTpos.offset">offset</span> :<code class="type">int</code>;</code></td>
-	  </tr></table>}
+        </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTpos.col">col</span> :<code class="type">int</code>;</code></td>
+        </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTpos.offset">offset</span> :<code class="type">int</code>;</code></td>
+        </tr></table>}
       <div class="info">Position information for annotated S-expressions</div>
     
-<pre><span id="TYPErange"><span class="keyword">type</span> range</span> = {<code class="type"><a href="?package=sexplib&amp;module=Pre_sexp.Annotated&amp;type=range">Pre_sexp.Annotated.range</a></code> </pre><table class="typetable">
+<pre><span id="TYPErange"><span class="keyword">type</span> range</span> = {<code class="type"><a href="?package=sexplib&amp;module=Pre_sexp.Annotated&amp;type=range">Pre_sexp.Annotated.range</a></code>}</pre><table class="typetable">
 		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTrange.start_pos">start_pos</span> :<code class="type"><a href="?package=sexplib&amp;module=Sexp_intf.S.Annotated&amp;type=pos">pos</a></code>;</code></td>
-	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTrange.end_pos">end_pos</span> :<code class="type"><a href="?package=sexplib&amp;module=Sexp_intf.S.Annotated&amp;type=pos">pos</a></code>;</code></td>
-	  </tr></table>}
+        </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTrange.end_pos">end_pos</span> :<code class="type"><a href="?package=sexplib&amp;module=Sexp_intf.S.Annotated&amp;type=pos">pos</a></code>;</code></td>
+        </tr></table>}
       <div class="info">Range information for annotated S-expressions</div>
     
 <pre><span id="TYPEt"><span class="keyword">type</span> t</span> = <code class="type"><a href="?package=sexplib&amp;module=Pre_sexp.Annotated&amp;type=t">Pre_sexp.Annotated.t</a></code> </pre><table class="typetable">
@@ -143,10 +143,10 @@
     
 <pre><span id="EXCEPTIONConv_exn"><span class="keyword">exception</span> Conv_exn</span> <span class="keyword">of</span> <code class="type">string * exn</code></pre><div class="info">Exception associated with conversion errors.  First argument describes
         the location, the second the reason.</div>
-<pre><span id="TYPEstack"><span class="keyword">type</span> stack</span> = {<code class="type"><a href="?package=sexplib&amp;module=Pre_sexp.Annotated&amp;type=stack">Pre_sexp.Annotated.stack</a></code> </pre><table class="typetable">
+<pre><span id="TYPEstack"><span class="keyword">type</span> stack</span> = {<code class="type"><a href="?package=sexplib&amp;module=Pre_sexp.Annotated&amp;type=stack">Pre_sexp.Annotated.stack</a></code>}</pre><table class="typetable">
 		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTstack.positions">positions</span> :<code class="type"><a href="?package=sexplib&amp;module=Sexp_intf.S.Annotated&amp;type=pos">pos</a> list</code>;</code></td>
-	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTstack.stack">stack</span> :<code class="type"><a href="?package=sexplib&amp;module=Sexp_intf.S.Annotated&amp;type=t">t</a> list list</code>;</code></td>
-	  </tr></table>}
+        </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTstack.stack">stack</span> :<code class="type"><a href="?package=sexplib&amp;module=Sexp_intf.S.Annotated&amp;type=t">t</a> list list</code>;</code></td>
+        </tr></table>}
       <div class="info">Stack used by annotation parsers</div>
     
  
@@ -223,18 +223,18 @@
     
 		</div>
 </div>
-<pre><span id="TYPEparse_state"><span class="keyword">type</span> <code class="type">'t </code>parse_state</span> = {<code class="type">'t <a href="?package=sexplib&amp;module=Pre_sexp&amp;type=parse_state">Pre_sexp.parse_state</a></code> <span class="keyword">private</span></pre><table class="typetable">
+<pre><span id="TYPEparse_state"><span class="keyword">type</span> <code class="type">'t </code>parse_state</span> = {<code class="type">'t <a href="?package=sexplib&amp;module=Pre_sexp&amp;type=parse_state">Pre_sexp.parse_state</a></code>}<span class="keyword">private</span></pre><table class="typetable">
 		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTparse_state.parse_pos">parse_pos</span> :<code class="type"><a href="?package=sexplib&amp;module=Sexp_intf.S.Parse_pos&amp;type=t">Parse_pos.t</a></code>;</code></td><td class="typefieldcomment" align="left">Current parse position</td>
-	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTparse_state.pstack">pstack</span> :<code class="type">'t</code>;</code></td><td class="typefieldcomment" align="left">Stack of found S-expression lists</td>
-	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTparse_state.pbuf">pbuf</span> :<code class="type"><a href="?package=stdlib&amp;module=Buffer&amp;type=t">Buffer.t</a></code>;</code></td><td class="typefieldcomment" align="left">Current atom buffer</td>
-	  </tr></table>}
+        </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code><span class="keyword">mutable</span> <span id="TYPEELTparse_state.pstack">pstack</span> :<code class="type">'t</code>;</code></td><td class="typefieldcomment" align="left">Stack of found S-expression lists</td>
+        </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTparse_state.pbuf">pbuf</span> :<code class="type"><a href="?package=stdlib&amp;module=Buffer&amp;type=t">Buffer.t</a></code>;</code></td><td class="typefieldcomment" align="left">Current atom buffer</td>
+        </tr></table>}
       <div class="info">Type of state maintained during parsing</div>
     
-<pre><span id="TYPEparse_error"><span class="keyword">type</span> parse_error</span> = {<code class="type"><a href="?package=sexplib&amp;module=Pre_sexp&amp;type=parse_error">Pre_sexp.parse_error</a></code> </pre><table class="typetable">
+<pre><span id="TYPEparse_error"><span class="keyword">type</span> parse_error</span> = {<code class="type"><a href="?package=sexplib&amp;module=Pre_sexp&amp;type=parse_error">Pre_sexp.parse_error</a></code>}</pre><table class="typetable">
 		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTparse_error.location">location</span> :<code class="type">string</code>;</code></td><td class="typefieldcomment" align="left">Function in which the parse failed</td>
-	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTparse_error.err_msg">err_msg</span> :<code class="type">string</code>;</code></td><td class="typefieldcomment" align="left">Reason why parsing failed</td>
-	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTparse_error.parse_state">parse_state</span> :<code class="type">[ `Annot of <a href="?package=sexplib&amp;module=Sexp_intf.S.Annotated&amp;type=stack">Annotated.stack</a> <a href="?package=sexplib&amp;module=Sexp_intf.S&amp;type=parse_state">parse_state</a> | `Sexp of <a href="?package=sexplib&amp;module=Sexp_intf.S&amp;type=t">t</a> list list <a href="?package=sexplib&amp;module=Sexp_intf.S&amp;type=parse_state">parse_state</a> ]</code>;</code></td><td class="typefieldcomment" align="left">State of parser</td>
-	  </tr></table>}
+        </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTparse_error.err_msg">err_msg</span> :<code class="type">string</code>;</code></td><td class="typefieldcomment" align="left">Reason why parsing failed</td>
+        </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTparse_error.parse_state">parse_state</span> :<code class="type">[ `Annot of <a href="?package=sexplib&amp;module=Sexp_intf.S.Annotated&amp;type=stack">Annotated.stack</a> <a href="?package=sexplib&amp;module=Sexp_intf.S&amp;type=parse_state">parse_state</a> | `Sexp of <a href="?package=sexplib&amp;module=Sexp_intf.S&amp;type=t">t</a> list list <a href="?package=sexplib&amp;module=Sexp_intf.S&amp;type=parse_state">parse_state</a> ]</code>;</code></td><td class="typefieldcomment" align="left">State of parser</td>
+        </tr></table>}
       <div class="info">Type of parse errors</div>
     
 <pre><span id="EXCEPTIONParse_error"><span class="keyword">exception</span> Parse_error</span> <span class="keyword">of</span> <code class="type"><a href="?package=sexplib&amp;module=Sexp_intf.S&amp;type=parse_error">parse_error</a></code></pre><div class="info">Exception raised during partial parsing</div>
@@ -372,9 +372,9 @@
 		       
 <pre><code><span id="TYPEt"><span class="keyword">type</span> t</span> = {</code></pre><table class="typetable">
 		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.exc">exc</span> :<code class="type">exn</code>;</code></td>
-	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.sexp">sexp</span> :<code class="type"><a href="?package=sexplib&amp;module=Type&amp;type=t">Type.t</a></code>;</code></td>
-	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.sub_sexp">sub_sexp</span> :<code class="type"><a href="?package=sexplib&amp;module=Type&amp;type=t">Type.t</a></code>;</code></td>
-	  </tr></table>}
+        </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.sexp">sexp</span> :<code class="type"><a href="?package=sexplib&amp;module=Type&amp;type=t">Type.t</a></code>;</code></td>
+        </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.sub_sexp">sub_sexp</span> :<code class="type"><a href="?package=sexplib&amp;module=Type&amp;type=t">Type.t</a></code>;</code></td>
+        </tr></table>}
       
     
 <pre><span id="EXCEPTIONE"><span class="keyword">exception</span> E</span> <span class="keyword">of</span> <code class="type"><a href="?package=sexplib&amp;module=Sexp_intf.S.Of_string_conv_exn&amp;type=t">t</a></code></pre>
@@ -470,10 +470,10 @@ add_string:('buffer -&gt; string -&gt; unit) -&gt; <a href="?package=sexplib&amp
 		<pre><span class="keyword">module</span> <a href="?package=sexplib&amp;module=Sexp_intf.S.With_layout">With_layout</a> : <code class="code">sig</code> .. <code class="code">end</code></pre><div class="info">S-expressions annotated with relative source positions and comments</div>
 		<div class="ocaml_module_content">
 		       
-<pre><span id="TYPEpos"><span class="keyword">type</span> pos</span> = {<code class="type"><a href="?package=sexplib&amp;module=Src_pos.Relative&amp;type=t">Src_pos.Relative.t</a></code> </pre><table class="typetable">
+<pre><span id="TYPEpos"><span class="keyword">type</span> pos</span> = {<code class="type"><a href="?package=sexplib&amp;module=Src_pos.Relative&amp;type=t">Src_pos.Relative.t</a></code>}</pre><table class="typetable">
 		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTpos.row">row</span> :<code class="type">int</code>;</code></td>
-	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTpos.col">col</span> :<code class="type">int</code>;</code></td>
-	  </tr></table>}
+        </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTpos.col">col</span> :<code class="type">int</code>;</code></td>
+        </tr></table>}
       
     
  
