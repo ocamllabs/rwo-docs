@@ -186,10 +186,12 @@ function perform_ajax_request(url, async){
 	async:async
     }).done(function(data_received){
 	$data = $(data_received.firstChild);
+	if ($data.length == 0)
+	    $data = $(data_received);
     }).fail(function(){
 	console.log("Ajax request failed on : "+url);
     });
-
+    
     return $data;
 }
 
