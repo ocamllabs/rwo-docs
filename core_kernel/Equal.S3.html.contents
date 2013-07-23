@@ -1,7 +1,0 @@
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'b, 'c) </code>t </span></pre>
-      
-    
- 
-      <pre><span><span class="keyword">val</span> equal : <code class="type">'a <a href="Equal.html#TYPEequal">equal</a> -&gt; 'b <a href="Equal.html#TYPEequal">equal</a> -&gt; 'c <a href="Equal.html#TYPEequal">equal</a> -&gt; ('a, 'b, 'c) <a href="Equal.S3.html#TYPEt">t</a> <a href="Equal.html#TYPEequal">equal</a></code></span></pre>
-      
-    

@@ -1,7 +1,0 @@
-<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
-      
-    
- 
-      <pre><span><span class="keyword">val</span> to_string : <code class="type"><a href="Int_conversions.Make.html#TYPEt">t</a> -&gt; string</code></span></pre>
-      
-    

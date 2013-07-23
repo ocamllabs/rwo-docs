@@ -1,4 +1,0 @@
- 
-      <pre><span><span class="keyword">val</span> rpc : <code class="type">(Version_i.query, Version_i.response, Version_i.error) <a href="Rpc.Pipe_rpc.html#TYPEt">Rpc.Pipe_rpc.t</a></code></span></pre>
-      
-    

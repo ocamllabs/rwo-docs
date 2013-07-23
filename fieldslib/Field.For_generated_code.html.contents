@@ -1,9 +1,0 @@
-<pre><code><span id="TYPEt"><span class="keyword">type</span> <code class="type">('perm, 'record, 'field) </code>t </span>= {</code></pre><table class="typetable">
-		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.force_variance">force_variance</span> :<code class="type">'perm -&gt; unit</code>;</code></td>
-	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.name">name</span> :<code class="type">string</code>;</code></td>
-	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.setter">setter</span> :<code class="type">('record -&gt; 'field -&gt; unit) option</code>;</code></td>
-	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.getter">getter</span> :<code class="type">'record -&gt; 'field</code>;</code></td>
-	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.fset">fset</span> :<code class="type">'record -&gt; 'field -&gt; 'record</code>;</code></td>
-	  </tr></table>}
-      
-    

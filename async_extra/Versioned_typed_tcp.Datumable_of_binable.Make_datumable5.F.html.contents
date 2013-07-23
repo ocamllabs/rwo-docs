@@ -1,5 +1,0 @@
- 
-      <pre><span><span class="keyword">val</span> f : <code class="type">(T.t -&gt; <a href="../core/Std.Bigsubstring.html#TYPEt">Core.Std.Bigsubstring.t</a> option) *
-(<a href="../core/Std.Bigsubstring.html#TYPEt">Core.Std.Bigsubstring.t</a> -&gt; T.t option)</code></span></pre>
-      
-    

@@ -1,4 +1,0 @@
- 
-      <pre><span><span class="keyword">val</span> syscall : <code class="type">(unit -&gt; 'a) -&gt; ('a, exn) <a href="../core/Std.Result.html#TYPEt">Core.Std.Result.t</a></code></span></pre>
-      
-    

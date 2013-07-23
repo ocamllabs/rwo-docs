@@ -1,7 +1,0 @@
-<pre><span id="TYPEt"><span class="keyword">type</span> t </span>= <code class="type">[ `Ok | `Reader_closed ]</code> </pre>
-      
-    
- 
-      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type"><a href="Pipe.Flushed_result.html#TYPEt">t</a> -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
-      
-    

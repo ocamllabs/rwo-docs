@@ -1,6 +1,0 @@
-<div class="expanding_content">
-	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="Extended_hashtbl.Access_control.html">Access_control</a> : <code class="code">sig</code> <a href="Extended_hashtbl.Access_control.html">..</a> <code class="code">end</code></pre>
-	<div class="content" style="display:none">
-	<div file="Extended_hashtbl.Access_control.html.contents" class="content_to_load"> </div>
-	</div>
-  </div>

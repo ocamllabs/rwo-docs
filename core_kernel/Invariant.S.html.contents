@@ -1,7 +1,0 @@
-<pre><span id="TYPEt"><span class="keyword">type</span> t </span></pre>
-      
-    
- 
-      <pre><span><span class="keyword">val</span> invariant : <code class="type"><a href="Invariant.S.html#TYPEt">t</a> <a href="Invariant.html#TYPEinv">inv</a></code></span></pre>
-      
-    

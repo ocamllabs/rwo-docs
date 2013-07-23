@@ -1,4 +1,0 @@
- 
-      <pre><span><span class="keyword">val</span> rpc : <code class="type">(Version_i.query, Version_i.response) <a href="Rpc.Rpc.html#TYPEt">Rpc.Rpc.t</a></code></span></pre>
-      
-    

@@ -1,8 +1,0 @@
- 
-      <pre><span><span class="keyword">val</span> register : <code class="type">string -&gt; 'a -&gt; unit</code></span></pre>
-      
-    
- 
-      <pre><span><span class="keyword">val</span> register_exception : <code class="type">string -&gt; exn -&gt; unit</code></span></pre>
-      
-    

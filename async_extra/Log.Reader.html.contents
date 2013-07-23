@@ -1,7 +1,0 @@
- 
-      <pre><span><span class="keyword">val</span> pipe : <code class="type">[&lt; <a href="Log.Output.html#TYPEmachine_readable_format">Output.machine_readable_format</a> ] -&gt;
-string -&gt; <a href="Log.Message.html#TYPEt">Message.t</a> <a href="Import.Pipe.Reader.html#TYPEt">Import.Pipe.Reader.t</a></code></span></pre>
-      <div class="info"><code class="code">pipe format filename</code> returns a pipe of all the messages in the log.  Errors
-      encountered when opening or reading the file will be thrown as exceptions into the
-      monitor current at the time pipe is called.</div>
-    

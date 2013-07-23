@@ -1,6 +1,0 @@
-<div class="expanding_content">
-	<button onclick="expand_content(this)">+</button><pre><span class="keyword">module</span> <a href="String_id.Stable.V1.html">V1</a> : <code class="code">sig</code> <a href="String_id.Stable.V1.html">..</a> <code class="code">end</code> with type <a href="String_id.Stable.V1.html#TYPEt">t</a> = t</pre>
-	<div class="content" style="display:none">
-	<div file="String_id.Stable.V1.html.contents" class="content_to_load"> </div>
-	</div>
-  </div>

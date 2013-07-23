@@ -1,6 +1,0 @@
-<pre><code><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a </code>t </span>= {</code></pre><table class="typetable">
-		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.flags">flags</span> :<code class="type">unit <a href="Deprecated_command.Flag.html#TYPEt">Flag.t</a> list</code>;</code></td>
-	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.get">get</span> :<code class="type">unit -&gt; 'a</code>;</code></td>
-	  </tr></table>}
-      
-    

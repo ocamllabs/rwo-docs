@@ -1,9 +1,0 @@
- 
-      <pre><span><span class="keyword">val</span> send : <code class="type">?sender:string -&gt;
-?subject:string -&gt;
-?cc:string list -&gt;
-?bcc:string list -&gt;
-?reply_to:string list -&gt;
-?content_type:string -&gt; recipients:string list -&gt; string -&gt; unit</code></span></pre>
-      
-    

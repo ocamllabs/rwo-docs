@@ -1,8 +1,0 @@
- 
-      <pre><span><span class="keyword">val</span> of_v : <code class="type">V.t -&gt; T.t option</code></span></pre>
-      
-    
- 
-      <pre><span><span class="keyword">val</span> to_v : <code class="type">T.t -&gt; V.t option</code></span></pre>
-      
-    

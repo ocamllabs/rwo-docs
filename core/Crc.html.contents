@@ -1,8 +1,0 @@
- 
-      <pre><span><span class="keyword">val</span> crc32 : <code class="type">string -&gt; int64</code></span></pre>
-      <div class="info">Compute the 32-bit crc</div>
-    
- 
-      <pre><span><span class="keyword">val</span> crc32hex : <code class="type">string -&gt; string</code></span></pre>
-      <div class="info">String version of the crc, encoded in hex.</div>
-    

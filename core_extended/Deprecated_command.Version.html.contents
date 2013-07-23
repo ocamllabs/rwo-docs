@@ -1,8 +1,0 @@
- 
-      <pre><span><span class="keyword">val</span> command : <code class="type">?version:string -&gt; ?build_info:string -&gt; unit -&gt; <a href="Deprecated_command.html#TYPEt">t</a></code></span></pre>
-      <div class="info">Provides a <code class="code">&quot;version&quot;</code> subcommand.</div>
-    
- 
-      <pre><span><span class="keyword">val</span> print_version : <code class="type">?version:string -&gt; unit -&gt; unit</code></span></pre>
-      
-    

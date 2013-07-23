@@ -1,8 +1,0 @@
- 
-      <pre><span><span class="keyword">val</span> to_string_hum : <code class="type">?delimiter:char -&gt; I.t -&gt; string</code></span></pre>
-      
-    
- 
-      <pre><span><span class="keyword">val</span> sexp_of_t : <code class="type">I.t -&gt; <a href="../sexplib/Sexp.html#TYPEt">Sexplib.Sexp.t</a></code></span></pre>
-      
-    

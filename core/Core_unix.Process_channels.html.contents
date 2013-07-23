@@ -1,7 +1,0 @@
-<pre><code><span id="TYPEt"><span class="keyword">type</span> t </span>= {</code></pre><table class="typetable">
-		    <tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.stdin">stdin</span> :<code class="type"><a href="../stdlib/Pervasives.html#TYPEout_channel">out_channel</a></code>;</code></td>
-	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.stdout">stdout</span> :<code class="type"><a href="../stdlib/Pervasives.html#TYPEin_channel">in_channel</a></code>;</code></td>
-	  </tr><tr><td align="left" valign="top"><code>  </code></td><td align="left" valign="top"><code> <span id="TYPEELTt.stderr">stderr</span> :<code class="type"><a href="../stdlib/Pervasives.html#TYPEin_channel">in_channel</a></code>;</code></td>
-	  </tr></table>}
-      
-    
